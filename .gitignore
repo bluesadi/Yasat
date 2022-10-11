@@ -1,4 +1,6 @@
 __pycache__
-.input/
-.report/
-.tmp/
+input/
+report/
+tmp/
+dataset/
+debug.sh
