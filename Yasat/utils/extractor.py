@@ -1,13 +1,10 @@
-from operator import mod
 import filetype
 import zipfile
 import binwalk
 import os
 import shutil
 
-import logging
-
-l = logging.getLogger(name=__name__)
+from .. import l, kb
 
 class Extractor:
     
@@ -15,7 +12,7 @@ class Extractor:
         with zipfile.ZipFile(path, 'r') as ref:
             ref.extractall(to_path)
             
-    def _extract_from_firmware_bin(self, origin_path, firmware_bin_path):
+    def _extract_from_firmware_bin(self, firmware_bin_path):
         binaries = []
         for module in binwalk.scan(firmware_bin_path, '-r', '-y', 'filesystem', signature=True, quiet=True, extract=True):
             for result in module.results:
@@ -29,7 +26,12 @@ class Extractor:
                                     if not os.path.islink(binary_path):
                                         binary_type = filetype.guess(binary_path)
                                         if binary_type is not None and binary_type.mime == 'application/x-executable':
-                                            binaries.append(Binary(origin_path, binary_path))
+                                            binaries.append(Binary(binary_path))
+                                    else:
+                                        src = os.path.basename(binary_path)
+                                        dest = os.path.basename(os.readlink(binary_path))
+                                        if src != dest:
+                                            kb.sym_links[src] = dest
         return binaries
 
     def extract(self, origin_path, to_path):
@@ -38,7 +40,7 @@ class Extractor:
             if origin_type.mime == 'application/x-executable':
                 # Case 1: Executable file
                 binary_path = shutil.copy(origin_path, to_path)
-                return [Binary(origin_path, binary_path)]
+                return [Binary(binary_path)]
             else:
                 # Case 2: Firmware (archive)
                 binaries = []
@@ -57,7 +59,7 @@ class Extractor:
         else:
             # Case 3: Firmware (binary)
             firmware_bin_path = shutil.copy(origin_path, to_path)
-            binaries = self._extract_from_firmware_bin(origin_path, firmware_bin_path)
+            binaries = self._extract_from_firmware_bin(firmware_bin_path)
             if len(binaries) > 0:
                 return binaries
             else:
@@ -66,6 +68,5 @@ class Extractor:
 
 class Binary():
     
-    def __init__(self, origin_path, binary_path):
-        self.origin_path = origin_path
+    def __init__(self, binary_path):
         self.binary_path = binary_path
