@@ -1,0 +1,6 @@
+input_path: 'input'
+tmp_dir: 'tmp'
+report_dir: 'report'
+log_dir: 'log'
+
+debug_mode: False
