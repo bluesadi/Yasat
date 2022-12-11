@@ -2,13 +2,21 @@
 
 ## Preparation
 
-Python virtual environment is highly recommended because Yasat is based on angr, which is a tool usually used in virtual environment. See [Installing angr](https://docs.angr.io/introductory-errata/install).
+Python virtual environment is highly recommended because Yasat is based on angr, which is a tool usually used in a virtual environment. See [Installing angr](https://docs.angr.io/introductory-errata/install).
 
 ```
 mkvirtualenv --python=$(which python3) Yasat
 ```
 
-First manually install the latest binwalk by following its [offical document](https://github.com/ReFirmLabs/binwalk/blob/master/INSTALL.md).
+Install [binwalk](https://github.com/ReFirmLabs/binwalk) on your virtual environment:
+```
+workon Yasat
+git clone https://github.com/ReFirmLabs/binwalk.git
+cd binwalk
+sudo `which python` setup.py install
+cd ..
+sudo rm -rf binwalk
+```
 
 Then install other required packages by:
 ```
