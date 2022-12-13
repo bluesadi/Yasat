@@ -1,6 +1,7 @@
 from collections import defaultdict
 
 import angr
+import ailment
 
 class Binary():
     
@@ -33,4 +34,12 @@ class Binary():
         if len(self.tasks) == 0:
             return False
         self.cfg = self.proj.analyses.CFGFast()
+        preds = self.cfg.get_any_node(self.tasks['check_constant_keys'][0]['func_addr']).predecessors
+        for node in preds:
+            ail_block = ailment.IRSBConverter.convert(
+                node.block.vex, ailment.manager.Manager(arch=self.proj.arch))
+            print(dir(ail_block))
+            for stmt in ail_block.statements:
+                if isinstance(stmt, ailment.statement.Call):
+                    print(stmt.calling_convention)
         return True

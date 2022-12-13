@@ -1,14 +1,20 @@
 # Yasat - Yet Another Static Analysis Tool to detect cryptographic API misuses in firmware
 
+## Misuse types targeted by Yasat
+
+- Constant encryption keys (working)
+- Constant salts for password-based encryption (PBE) (working)
+- *etc.*
+
 ## Preparation
 
-Python virtual environment is highly recommended because Yasat is based on angr, which is a tool usually used in a virtual environment. See [Installing angr](https://docs.angr.io/introductory-errata/install).
+I would strongly suggest you use Python virtual environment, as Yasat is based on angr, which is a tool usually used in a virtual environment (See [Installing angr](https://docs.angr.io/introductory-errata/install)). Let's create a virtual environment first:
 
 ```
 mkvirtualenv --python=$(which python3) Yasat
 ```
 
-Install [binwalk](https://github.com/ReFirmLabs/binwalk) on your virtual environment:
+Install [binwalk](https://github.com/ReFirmLabs/binwalk) on the virtual environment you just created:
 ```
 workon Yasat
 git clone https://github.com/ReFirmLabs/binwalk.git
@@ -30,13 +36,7 @@ The behavior of Yasat is fully controlled by the configuration file, which you c
 python run.py -c [configuration file]
 ```
 
-You may also want to run Yasat on some firmware samples to test whether it works well.
+You may run Yasat on our handmade *Minimum Working Cases* (MWEs) to test whether Yasat works well:
 ```
-python tests/test_sole/test_sole.py
+python tests/test_mwes/test_mwes.py
 ```
-
-## Misuse types targeted by Yasat
-
-- Constant encryption keys
-- Constant salts for password-based encryption (PBE)
-- // TODO

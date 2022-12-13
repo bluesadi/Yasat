@@ -1,7 +1,7 @@
-input_path: 'tests/test_elf/input/boa'
-tmp_dir: 'tests/test_elf/tmp'
-report_dir: 'tests/test_elf/report'
-log_dir: 'tests/test_elf/log'
+input_path: 'tests/test_mwes/input/mwe_all_in_one.bin'
+tmp_dir: 'tests/test_mwes/tmp'
+report_dir: 'tests/test_mwes/report'
+log_dir: 'tests/test_mwes/log'
 
 debug_mode: True
 preparation_timeout: 120
