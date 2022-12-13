@@ -6,6 +6,9 @@ class Config:
     log_dir: str
     
     debug_mode: bool
+    preparation_timeout: int
+    
+    tasks: list
     
     def __init__(self, yaml_config):
         self.__yaml_config = yaml_config

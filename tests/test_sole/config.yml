@@ -1,6 +1,0 @@
-input_path: 'tests/test_sole/input/freshtomato-K26USB-NVRAM32K_RT-MIPSR2-2022.5-AIO.trx'
-tmp_dir: 'tests/test_sole/tmp'
-report_dir: 'tests/test_sole/report'
-log_dir: 'tests/test_sole/log'
-
-debug_mode: True

@@ -4,7 +4,7 @@ import shutil
 
 import yaml
 
-from Yasat.task import Task
+from Yasat.analysis import Analysis
 from Yasat import Config
 from Yasat import init_logger
 from Yasat import l
@@ -32,5 +32,5 @@ if __name__ == '__main__':
     
     l.info(f'Start task(s) with configuration from {args.config}:\n{config}')
     
-    Task(config).run()
+    Analysis(config).start()
     
