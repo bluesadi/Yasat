@@ -4,7 +4,7 @@ report_dir: 'tests/test_mwes/report'
 log_dir: 'tests/test_mwes/log'
 
 debug_mode: True
-preparation_timeout: 120
+preprocess_timeout: 120
 
 tasks:
   # Task 1: Check whether specified arguments hold constant keys

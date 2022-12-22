@@ -6,7 +6,7 @@ class Config:
     log_dir: str
     
     debug_mode: bool
-    preparation_timeout: int
+    preprocess_timeout: int
     
     tasks: list
     

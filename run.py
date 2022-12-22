@@ -4,10 +4,11 @@ import shutil
 
 import yaml
 
-from Yasat.analysis import Analysis
+from Yasat.main import Main
 from Yasat import Config
 from Yasat import init_logger
 from Yasat import l
+from Yasat.utils.common import pstr
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
@@ -30,7 +31,7 @@ if __name__ == '__main__':
     
     init_logger(config)
     
-    l.info(f'Start task(s) with configuration from {args.config}:\n{config}')
+    l.info(f'Start task(s) with configuration from {args.config}:\n{pstr(yaml_config)}')
     
-    Analysis(config).start()
+    Main(config).start()
     

@@ -3,6 +3,7 @@ import logging
 import os
 
 from .config import Config
+from .utils.timer import Timer
 
 logging.getLogger('angr').propagate = False
 logging.getLogger('cle').propagate = False
@@ -10,6 +11,8 @@ logging.getLogger('pyvex').propagate = False
 
 l = logging.getLogger('Yasat')
 l.setLevel(logging.DEBUG)
+
+timer = Timer()
 
 def init_logger(config: Config):
     handler = logging.FileHandler(filename=os.path.join(

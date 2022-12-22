@@ -1,6 +1,7 @@
 __pycache__
-.input/
+input/
 report/
 tmp/
 log/
 dataset/
+debug/
