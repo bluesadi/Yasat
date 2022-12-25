@@ -57,7 +57,7 @@ class ConstantValuesChecker(RuleChecker):
         for predecessor in predecessors:
             block = self.proj.factory.block(predecessor.addr)
             caller_addr = block.instruction_addrs[-1]
-            caller_func_addr = self.kb.functions[block.addr].addr
+            caller_func_addr = self.kb.functions.floor_func(block.addr).addr
             defs = self.analysis_results.get_arg_defs(func_addr=caller_func_addr, 
                                                       insn_addr=caller_addr, 
                                                       index=criterion.arg, type=self.type)

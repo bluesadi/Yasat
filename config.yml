@@ -6,17 +6,15 @@ log_dir: 'log'
 debug_mode: True
 preprocess_timeout: 120
 
-tasks:
-  # Task 1: Check whether specified arguments hold constant keys
-  check_constant_keys:
+checkers:
+  ConstantKeysChecker:
     enable: True
     desc: 'Do not use constant encryption keys'
     criteria:
       crypt:
         lib: 'crypt'
         arg: 0
-  # Task 2: Check whether specified arguments hold constant salts
-  check_constant_salts:
+  ConstantSaltsChecker:
     enable: True
     desc: 'Do not use constant salts for password-based encryption (PBE)'
     criteria:

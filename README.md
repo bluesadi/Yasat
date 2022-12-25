@@ -1,10 +1,21 @@
 # Yasat - Yet Another Static Analysis Tool to detect cryptographic API misuses in firmware
 
+This is my undergraduate capstone project, and my very first attempt to develop a project using 
+[angr](https://github.com/angr/angr). Thanks for angr and its developers for offering such a powerful tool!
+
+Yasat's aims are as follows:
+- Minimize the false alarm rate
+- Provide an accurate bird's-eye view of the number and severity of cryptographic misuses in firmware
+- Try to exploit some misuses found in firmware
+
+> 12/15/2022\
+> Now I've completed an initial version only covering the two misuse types below. To detect the two misuse types is basically equivalent to detecting constant strings. So I simply utilize angr's builtin ReachingDefinitions analysis. It's a quite naive implemenation, because angr's ReachingDefinitions is an intraprocedural analysis and can't handle function calls. As such, my next step would be implementing an interprocedural context-sensitive ReachingDefinitions analysis to achieve better completeness.
+
 ## Misuse types targeted by Yasat
 
-- Constant encryption keys (working)
-- Constant salts for password-based encryption (PBE) (working)
-- *etc.*
+- Constant encryption keys
+- Constant salts for password-based encryption (PBE)
+- // TODO
 
 ## Preparation
 
@@ -36,7 +47,20 @@ The behavior of Yasat is fully controlled by the configuration file, which you c
 python run.py -c [configuration file]
 ```
 
-You may run Yasat on our handmade *Minimum Working Cases* (MWEs) to test whether Yasat works well:
+You may run Yasat on our handmade test cases to test whether Yasat works well. For example:
 ```
-python tests/test_mwes/test_mwes.py
+python tests/test_constant_keys_checker/test.py
+```
+One of the generated reports would be:
+```
+*** Summary ***
+Firmware path: tests/test_constant_keys_checker/input/test_constant_keys_checker_arm.bin
+
+*** Misuses Found (Grouped by Checkers) ***
+# ConstantKeysChecker
+# ConstantSaltsChecker
+## Misuse 1/1
+[-] Binary path: /home/bluesadi/Yasat/tests/test_constant_keys_checker/tmp/_test_constant_keys_checker_arm.bin.extracted/squashfs-root/crypt
+[-] Rule descrption: Do not use constant salts for password-based encryption (PBE)
+[-] Misuse description: Call to `crypt(salt="XX")` at address 0x400675
 ```

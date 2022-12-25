@@ -1,6 +1,7 @@
-angr==9.2.28
-attrs==22.1.0
+angr==9.2.30
+binwalk==2.1.0
+claripy==9.2.30
+cle==9.2.30
 filetype==1.2.0
 func_timeout==4.3.5
-pyelftools==0.29
 PyYAML==6.0
