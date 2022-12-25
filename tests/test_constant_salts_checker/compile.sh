@@ -1,4 +1,4 @@
-module="test_constant_keys_checker"
+module="test_constant_salts_checker"
 libs="-lcrypt -lcrypto -lssl"
 common_options="-I../common/include -Wno-deprecated-declarations"
 

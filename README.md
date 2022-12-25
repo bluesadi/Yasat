@@ -49,18 +49,18 @@ python run.py -c [configuration file]
 
 You may run Yasat on our handmade test cases to test whether Yasat works well. For example:
 ```
-python tests/test_constant_keys_checker/test.py
+python test.py constant_salts_checker
 ```
 One of the generated reports would be:
 ```
 *** Summary ***
-Firmware path: tests/test_constant_keys_checker/input/test_constant_keys_checker_arm.bin
+Firmware path: tests/test_constant_salts_checker/input/test_constant_salts_checker_arm.bin
 
 *** Misuses Found (Grouped by Checkers) ***
 # ConstantKeysChecker
 # ConstantSaltsChecker
 ## Misuse 1/1
-[-] Binary path: /home/bluesadi/Yasat/tests/test_constant_keys_checker/tmp/_test_constant_keys_checker_arm.bin.extracted/squashfs-root/crypt
+[-] Binary path: /home/bluesadi/Yasat/tests/test_constant_salts_checker/tmp/_test_constant_salts_checker_arm.bin.extracted/squashfs-root/crypt
 [-] Rule descrption: Do not use constant salts for password-based encryption (PBE)
 [-] Misuse description: Call to `crypt(salt="XX")` at address 0x400675
 ```

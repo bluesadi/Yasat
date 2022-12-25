@@ -1,7 +1,7 @@
-input_path: 'tests/test_constant_keys_checker/input/test_constant_keys_checker_arm.bin'
-tmp_dir: 'tests/test_constant_keys_checker/tmp'
-report_dir: 'tests/test_constant_keys_checker/report'
-log_dir: 'tests/test_constant_keys_checker/log'
+input_path: 'tests/test_constant_salts_checker/input/test_constant_salts_checker_arm.bin'
+tmp_dir: 'tests/test_constant_salts_checker/tmp'
+report_dir: 'tests/test_constant_salts_checker/report'
+log_dir: 'tests/test_constant_salts_checker/log'
 
 debug_mode: True
 preprocess_timeout: 120

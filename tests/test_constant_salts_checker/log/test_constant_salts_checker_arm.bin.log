@@ -1,0 +1,40 @@
+[INFO][21:54:10] Start task(s) with configuration from tests/test_constant_salts_checker/config.yml:
+{
+  "input_path": "tests/test_constant_salts_checker/input/test_constant_salts_checker_arm.bin",
+  "tmp_dir": "tests/test_constant_salts_checker/tmp",
+  "report_dir": "tests/test_constant_salts_checker/report",
+  "log_dir": "tests/test_constant_salts_checker/log",
+  "debug_mode": true,
+  "preprocess_timeout": 120,
+  "checkers": {
+    "ConstantKeysChecker": {
+      "enable": true,
+      "desc": "Do not use constant encryption keys",
+      "criteria": {
+        "crypt": {
+          "lib": "crypt",
+          "arg": 0
+        }
+      }
+    },
+    "ConstantSaltsChecker": {
+      "enable": true,
+      "desc": "Do not use constant salts for password-based encryption (PBE)",
+      "criteria": {
+        "crypt": {
+          "lib": "crypt",
+          "arg": 1
+        }
+      }
+    }
+  }
+}
+[INFO][21:54:10] *** Stage 1 - Extract ELF binaries***
+[INFO][21:54:10] [-] 1 binaries will be analyzed soon
+[INFO][21:54:10] *** Stage 1 Finished - Cost 0.2 seconds ***
+[INFO][21:54:10] *** Stage 2 - Preprocess target binaries ***
+[INFO][21:54:10] [-] Preprocess /home/bluesadi/Yasat/tests/test_constant_salts_checker/tmp/_test_constant_salts_checker_arm.bin.extracted/squashfs-root/crypt (1/1)
+[INFO][21:54:10] [*] 1 binaries will be checked against a set of rules soon
+[INFO][21:54:10] *** Stage 2 Finished - Costs 0.2 seconds ***
+[INFO][21:54:10] Total cost: 0.4 seconds
+[INFO][21:54:10] Overall report has been save to tests/test_constant_salts_checker/report/test_constant_salts_checker_arm.bin.log
