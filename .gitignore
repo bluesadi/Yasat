@@ -1,6 +1,6 @@
 __pycache__
-./input
-./report
-./tmp
-./log
-./debug
+/input
+/report
+/tmp
+/log
+/debug
