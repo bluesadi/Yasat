@@ -1,7 +1,7 @@
 # Yasat - Yet Another Static Analysis Tool to detect cryptographic API misuses in firmware
 
 This is my undergraduate capstone project, and my very first attempt to develop a project using 
-[angr](https://github.com/angr/angr). Thanks for angr and its developers for offering such a powerful tool!
+[angr](https://github.com/angr/angr). Thanks for angr's developers for offering such a powerful tool!
 
 Yasat's aims are as follows:
 - Minimize the false alarm rate
