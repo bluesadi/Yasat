@@ -25,7 +25,7 @@ I would strongly suggest you use Python virtual environment as Yasat is based on
 mkvirtualenv --python=$(which python3) Yasat
 ```
 
-Install [binwalk](https://github.com/ReFirmLabs/binwalk) on the virtual environment you just created:
+Install [binwalk](https://github.com/ReFirmLabs/binwalk) in the virtual environment you just created:
 ```
 workon Yasat
 git clone https://github.com/ReFirmLabs/binwalk.git
@@ -35,7 +35,7 @@ cd ..
 sudo rm -rf binwalk
 ```
 
-Then install other required packages by:
+Then install other required packages:
 ```
 pip install -r requirements.txt
 ```
