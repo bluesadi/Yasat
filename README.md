@@ -8,8 +8,8 @@ Yasat's aims are as follows:
 - Provide an accurate bird's-eye view of the number and severity of cryptographic misuses in firmware
 - Try to exploit some misuses found in firmware
 
-> 12/15/2022\
-> Now I've completed an initial version only covering the two misuse types below. To detect the two misuse types is basically equivalent to detecting constant strings. So I simply utilize angr's built-in ReachingDefinitions analysis. It's a quite naive implemenation, because angr's ReachingDefinitions is an intraprocedural analysis and can't handle function calls. As such, my next step would be implementing an interprocedural context-sensitive ReachingDefinitions analysis to achieve better completeness.
+> 12/25/2022\
+> Merry Chrismas! Now I've completed an initial version only covering the two misuse types below. To detect the two misuse types is basically equivalent to detecting constant strings. So I simply utilize angr's built-in ReachingDefinitions analysis. It's a quite naive implemenation, because angr's ReachingDefinitions is an intraprocedural analysis and can't handle function calls. As such, my next step would be implementing an interprocedural context-sensitive ReachingDefinitions analysis to achieve better completeness.
 
 ## Misuse types targeted by Yasat
 
