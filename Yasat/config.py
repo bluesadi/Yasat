@@ -8,7 +8,7 @@ class Config:
     debug_mode: bool
     preprocess_timeout: int
     
-    tasks: list
+    checkers: list
     
     def __init__(self, yaml_config):
         self.__yaml_config = yaml_config

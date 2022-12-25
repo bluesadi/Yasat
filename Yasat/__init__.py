@@ -1,9 +1,10 @@
-from inspect import isfunction
 import logging
 import os
 
 from .config import Config
 from .utils.timer import Timer
+from .knowledge_plugins import analysis_results_manager
+from .checkers import base
 
 logging.getLogger('angr').propagate = False
 logging.getLogger('cle').propagate = False

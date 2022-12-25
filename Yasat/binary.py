@@ -1,19 +1,26 @@
-from collections import defaultdict
+from typing import List
 
 import angr
-import ailment
+from angr import AngrNoPluginError
 
 from . import l
-from .utils.common import pstr
+from .checkers.base import Criterion, RuleChecker
+from .report import OverallReport
 
-class Binary():
+class Binary:
+    
+    path: str
+    proj: angr.Project
+    checkers: List[RuleChecker]
+    should_abort: bool
+    cfg: angr.analyses.cfg.cfg_fast.CFGFast
     
     def __init__(self, path):
         self.path = path
         self.proj = angr.Project(self.path, load_options={'auto_load_libs': False})
-        self.tasks = defaultdict(list)
+        self.checkers = []
         self.should_abort = False
-        self.cfg = None     # binary's cfg will be loaded later
+        self.cfg = None     # We will load binary's CFG later on
         
     def _resolve_external_function(self, func_name, lib):
         obj = self.proj.loader.main_object
@@ -24,36 +31,40 @@ class Binary():
             return symbol.resolvedby.rebased_addr
         return None
     
-    def _parse_tasks(self, tasks):
-        for task_id in tasks:
-            task = tasks[task_id]
-            if not task['enable']:
+    def _parse_checkers(self, checkers):
+        for checker_name in checkers:
+            checker_conf = checkers[checker_name]
+            if not checker_conf['enable']:
                 continue
-            for func_name in task['criteria']:
-                criterion = task['criteria'][func_name]
+            try:
+                checker_type = self.proj.analyses.get_plugin(checker_name)
+            except AngrNoPluginError:
+                l.warning(f'No such checker: {checker_name}')
+                continue
+            desc = checker_conf['desc']
+            criteria: list[Criterion] = []
+            for func_name in checker_conf['criteria']:
+                criterion = checker_conf['criteria'][func_name]
                 lib = criterion['lib']
                 arg = criterion['arg']
                 func_addr = self._resolve_external_function(func_name, lib)
                 if func_addr is not None:
-                    self.tasks[task_id].append({
-                        'func_name': func_name,
-                        'func_addr': func_addr,
-                        'arg': arg
-                    })
+                    criteria.append(Criterion(lib, arg, func_name, func_addr))
+            if len(criteria) > 0:
+                self.checkers.append(checker_type(desc, criteria))
     
     def preprocess(self, tasks):
-        self._parse_tasks(tasks)
-        if len(self.tasks) == 0:
+        self._parse_checkers(tasks)
+        if len(self.checkers) == 0:
             return False
-        self.cfg = self.proj.analyses.CFGFast()
-        preds = self.cfg.get_any_node(self.tasks['check_constant_keys'][0]['func_addr']).predecessors
-        for node in preds:
-            ail_block = ailment.IRSBConverter.convert(
-                node.block.vex, ailment.manager.Manager(arch=self.proj.arch))
-            print(ail_block)
-            node = self.cfg.get_any_node(0x400544)
-            ail_block = ailment.IRSBConverter.convert(
-                node.block.vex, ailment.manager.Manager(arch=self.proj.arch))
-            print(node.block.vex)
-            print(ail_block)
+        self.cfg = self.proj.analyses.CFGFast(resolve_indirect_jumps=True, 
+                                              cross_references=True, 
+                                              force_complete_scan=False, 
+                                              normalize=True, 
+                                              symbols=True)
         return True
+    
+    def analyze(self, report: OverallReport):
+        for checker in self.checkers:
+            misuse_reports = checker.check()
+            report.report_misuses(checker.name, misuse_reports)

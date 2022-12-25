@@ -2,7 +2,7 @@ import filetype
 import zipfile
 import os
 import shutil
-from elftools.elf.elffile import ELFFile
+from typing import List
 
 import binwalk
 
@@ -40,7 +40,7 @@ class Extractor:
                                             pass
         return binaries
 
-    def extract(self, origin_path, to_path):
+    def extract(self, origin_path, to_path) -> List[Binary]:
         origin_type = filetype.guess(origin_path)
         binaries = []
         if origin_type is not None:

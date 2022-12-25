@@ -15,7 +15,7 @@ tasks:
       crypt:
         lib: 'crypt'
         arg: 0
-  # Task 2: Check whether specified arguments hold constant saltss
+  # Task 2: Check whether specified arguments hold constant salts
   check_constant_salts:
     enable: True
     desc: 'Do not use constant salts for password-based encryption (PBE)'

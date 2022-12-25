@@ -1,4 +1,5 @@
-input_path: 'tests/test_mwes/input/mwe_all_in_one.bin'
+# input_path: 'tests/test_mwes/input/mwe_all_in_one.bin'
+input_path: '/home/bluesadi/Yasat/debug/test_elf/arm/crypt'
 tmp_dir: 'tests/test_mwes/tmp'
 report_dir: 'tests/test_mwes/report'
 log_dir: 'tests/test_mwes/log'
@@ -6,17 +7,17 @@ log_dir: 'tests/test_mwes/log'
 debug_mode: True
 preprocess_timeout: 120
 
-tasks:
-  # Task 1: Check whether specified arguments hold constant keys
-  check_constant_keys:
+checkers:
+  # Checker 1: Check whether specified arguments hold constant keys
+  ConstantKeysChecker:
     enable: True
     desc: 'Do not use constant encryption keys'
     criteria:
       crypt:
         lib: 'crypt'
         arg: 0
-  # Task 2: Check whether specified arguments hold constant saltss
-  check_constant_salts:
+  # Checker 2: Check whether specified arguments hold constant saltss
+  ConstantSaltsChecker:
     enable: True
     desc: 'Do not use constant salts for password-based encryption (PBE)'
     criteria:

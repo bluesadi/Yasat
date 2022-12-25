@@ -19,4 +19,4 @@ class Timer:
     
     @property
     def total(self):
-        return format(time.time() - self.init_time, '.1f')
+        return format(time.time() - self.start_time, '.1f')
