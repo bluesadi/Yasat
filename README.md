@@ -19,7 +19,7 @@ Yasat's aims are as follows:
 
 ## Preparation
 
-I would strongly suggest you use Python virtual environment, as Yasat is based on angr, which is a tool usually used in a virtual environment; see [Installing angr](https://docs.angr.io/introductory-errata/install)). Let's create a virtual environment first:
+I would strongly suggest you use Python virtual environment as Yasat is based on angr, which is a tool usually used in a virtual environment; see [Installing angr](https://docs.angr.io/introductory-errata/install). Let's create a virtual environment first:
 
 ```
 mkvirtualenv --python=$(which python3) Yasat
