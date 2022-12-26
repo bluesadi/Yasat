@@ -42,7 +42,9 @@ pip install -r requirements.txt
 
 ## Usage
 
-Yasat's behavior is fully controlled by the configuration file, which you can specify by `-c` option. If not specified, Yasat will use [config.yml](config.yml) by default. Yasat also supports multiprocessing. Use `-p` option to specify the maximum CPU cores for analyzing input files. Set this option to `1` if you do not want to use multiprocessing; the default number is half of the CPU cores of your machine.
+**Configuration:** Yasat's behavior is fully controlled by the configuration file, which you can specify by `-c` option. If not specified, Yasat will use [config.yml](config.yml) by default. 
+
+**Multiprocessing:** Use `-p` option to specify the maximum CPU cores for analyzing input files. Set this option to `1` if you do not want to use multiprocessing; the default number is half of the CPU cores of your machine.
 ```
 python run.py [-c <config>] [-p <processes>]
 ```
