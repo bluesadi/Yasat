@@ -1,4 +1,4 @@
-[INFO][16:27:50] Start task(s) with configuration from tests/test_constant_salts_checker/config.yml:
+[INFO][17:10:25] Start task(s) with configuration from tests/test_constant_salts_checker/config.yml:
 {
   "input_path": "tests/test_constant_salts_checker/input/test_constant_salts_checker_arm.bin",
   "tmp_dir": "tests/test_constant_salts_checker/tmp/",
@@ -29,12 +29,12 @@
     }
   }
 }
-[INFO][16:27:50] *** Stage 1 - Extract ELF binaries***
-[INFO][16:27:51] [-] 1 binaries will be analyzed soon
-[INFO][16:27:51] *** Stage 1 Finished - Cost 0.1 seconds ***
-[INFO][16:27:51] *** Stage 2 - Preprocess target binaries ***
-[INFO][16:27:51] [-] Preprocess /home/bluesadi/Yasat/tests/test_constant_salts_checker/tmp/_test_constant_salts_checker_arm.bin.extracted/squashfs-root/crypt (1/1)
-[INFO][16:27:51] [*] 1 binaries will be checked against a set of rules soon
-[INFO][16:27:51] *** Stage 2 Finished - Costs 0.2 seconds ***
-[INFO][16:27:51] Total cost: 0.4 seconds
-[INFO][16:27:51] Overall report has been save to tests/test_constant_salts_checker/report/test_constant_salts_checker_arm.bin.log
+[INFO][17:10:25] *** Stage 1 - Extract ELF binaries***
+[INFO][17:10:25] [-] 1 binaries will be analyzed soon
+[INFO][17:10:25] *** Stage 1 Finished - Cost 0.2 seconds ***
+[INFO][17:10:25] *** Stage 2 - Preprocess target binaries ***
+[INFO][17:10:25] [-] Preprocess /home/bluesadi/Yasat/tests/test_constant_salts_checker/tmp/_test_constant_salts_checker_arm.bin.extracted/squashfs-root/crypt (1/1)
+[INFO][17:10:25] [*] 1 binaries will be checked against a set of rules soon
+[INFO][17:10:25] *** Stage 2 Finished - Costs 0.3 seconds ***
+[INFO][17:10:25] Total cost: 0.5 seconds
+[INFO][17:10:25] Overall report has been save to tests/test_constant_salts_checker/report/test_constant_salts_checker_arm.bin.log
