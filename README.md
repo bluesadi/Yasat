@@ -49,6 +49,8 @@ pip install -r requirements.txt
 python run.py [-c <config>] [-p <processes>]
 ```
 
+## Test
+
 You may run Yasat on our handmade test cases to test whether Yasat works well. For example:
 ```
 python test.py constant_salts_checker

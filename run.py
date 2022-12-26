@@ -19,10 +19,7 @@ if __name__ == '__main__':
                         help='configuration file path',
                         default='config.yml')
     parser.add_argument('-p', '--processes', 
-                        help='the maximum number of processes used for analyzing input files '\
-                            '(applicable when input file is a directory; use `1` if you do not'\
-                            'want to use multiprocessing; by default we use half of the CPU cores'\
-                            'of your machine',
+                        help='the maximum number of processes used for analyzing input files',
                         default=cpu_count() // 2)
     args = parser.parse_args()
     with open(args.config, "r") as fd:
