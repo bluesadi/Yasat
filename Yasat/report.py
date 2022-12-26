@@ -49,5 +49,7 @@ class OverallReport:
         self._misuse_reports[checker_name] += misuse_reports
         
     def save(self, path):
-        with open(path, 'w+') as fd:
+        with open(path, 'w') as fd:
             fd.write(self.__str__())
+            fd.flush()
+            

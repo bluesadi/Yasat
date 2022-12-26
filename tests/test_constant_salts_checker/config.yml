@@ -1,4 +1,4 @@
-input_path: 'tests/test_constant_salts_checker/input/test_constant_salts_checker_arm.bin'
+input_path: 'tests/test_constant_salts_checker/input'
 tmp_dir: 'tests/test_constant_salts_checker/tmp'
 report_dir: 'tests/test_constant_salts_checker/report'
 log_dir: 'tests/test_constant_salts_checker/log'
