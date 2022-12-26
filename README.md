@@ -17,9 +17,9 @@ Yasat's aims are as follows:
 - Constant salts for password-based encryption (PBE)
 - // TODO
 
-## Preparation
+## Installation
 
-I would strongly suggest you use Python virtual environment as Yasat is based on angr, which is a tool usually used in a virtual environment; see [Installing angr](https://docs.angr.io/introductory-errata/install). Let's create a virtual environment first:
+Python virtual environment is highly recommended as Yasat is based on angr, which is a tool usually used in a virtual environment; see [Installing angr](https://docs.angr.io/introductory-errata/install). Let's create a virtual environment first:
 
 ```
 mkvirtualenv --python=$(which python3) Yasat
