@@ -19,7 +19,7 @@ Yasat's aims are as follows:
 
 ## Installation
 
-Python virtual environment is highly recommended as Yasat is based on angr, which is a tool usually used in a virtual environment; see [Installing angr](https://docs.angr.io/introductory-errata/install). Let's create a virtual environment first:
+Python virtual environment is highly recommended as Yasat is based on angr, which is a tool usually used in a virtual environment (see [Installing angr](https://docs.angr.io/introductory-errata/install)). Let's create a virtual environment first:
 
 ```
 mkvirtualenv --python=$(which python3) Yasat
@@ -44,7 +44,7 @@ pip install -r requirements.txt
 
 **Configuration:** Yasat's behavior is fully controlled by the configuration file, which you can specify by `-c` option. If not specified, Yasat will use [config.yml](config.yml) by default. 
 
-**Multiprocessing:** Use `-p` option to specify the maximum CPU cores for analyzing input files. Set this option to `1` if you do not want to use multiprocessing; the default number is half of the CPU cores of your machine.
+**Multiprocessing:** Use `-p` option to specify the maximum CPU cores for analyzing input files. Set this option to `1` if you do not want to use multiprocessing. The default number is half of the CPU cores of your machine.
 ```
 python run.py [-c <config>] [-p <processes>]
 ```
