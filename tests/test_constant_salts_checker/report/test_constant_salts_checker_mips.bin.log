@@ -11,5 +11,5 @@ Total time cost: 1.2 seconds
 ## Misuse 1/1
 [-] Binary path: /home/bluesadi/Yasat/tests/test_constant_salts_checker/tmp/_test_constant_salts_checker_mips.bin.extracted/squashfs-root/crypt
 [-] Rule descrption: Do not use constant salts for password-based encryption (PBE)
-[-] Misuse description: Call to `crypt(salt="XX")` at address 0x400908
+[-] Misuse description: Call to "crypt::crypt(salt='XX')" at address 0x400908
 

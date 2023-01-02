@@ -1,5 +1,4 @@
 from collections import defaultdict
-import os
 from typing import Dict, List
 
 class MisuseReport:

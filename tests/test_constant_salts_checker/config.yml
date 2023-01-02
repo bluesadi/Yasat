@@ -12,12 +12,12 @@ checkers:
     desc: 'Do not use constant encryption keys'
     criteria:
       crypt:
-        lib: 'crypt'
-        arg: 0
+        lib_from: 'crypt'
+        arg_index: 0
   ConstantSaltsChecker:
     enable: True
     desc: 'Do not use constant salts for password-based encryption (PBE)'
     criteria:
       crypt:
-        lib: 'crypt'
-        arg: 1
+        lib_from: 'crypt'
+        arg_index: 1

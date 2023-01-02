@@ -8,9 +8,9 @@ from ..knowledge_plugins.analysis_results_manager import AnalysisResultsManager
 
 class Criterion:
     
-    def __init__(self, lib, arg, func_name, func_addr):
-        self.lib = lib
-        self.arg = arg
+    def __init__(self, lib_from, arg_index, func_name, func_addr):
+        self.lib_from = lib_from
+        self.arg_index = arg_index
         self.func_name = func_name
         self.func_addr = func_addr
 
@@ -46,10 +46,11 @@ class ConstantValuesChecker(RuleChecker):
         self.arg_name = arg_name
         self.type = type
        
-    def _build_misuse_desc(self, func_name, arg_name, arg_value, caller_addr):
+    def _build_misuse_desc(self, criterion, arg_name, arg_value, caller_addr):
         if isinstance(arg_value, bytes):
-            arg_value = f'"{arg_value.decode("utf-8")}"'
-        return f'Call to `{func_name}({arg_name}={arg_value})` at address {hex(caller_addr)}'
+            arg_value = f'\'{arg_value.decode("utf-8")}\''
+        return f'Call to "{criterion.lib_from}::{criterion.func_name}({arg_name}={arg_value})" '\
+            f'at address {hex(caller_addr)}'
         
     def _check_one(self, criterion: Criterion) -> List[MisuseReport]:
         results = []
@@ -60,9 +61,9 @@ class ConstantValuesChecker(RuleChecker):
             caller_func_addr = self.kb.functions.floor_func(block.addr).addr
             defs = self.analysis_results.get_arg_defs(func_addr=caller_func_addr, 
                                                       insn_addr=caller_addr, 
-                                                      index=criterion.arg, type=self.type)
+                                                      index=criterion.arg_index, type=self.type)
             results += [MisuseReport(self.proj.filename, self.desc, 
-                                     self._build_misuse_desc(criterion.func_name, self.arg_name, 
+                                     self._build_misuse_desc(criterion, self.arg_name, 
                                                              def_, caller_addr)) for def_ in defs]
         return results
     

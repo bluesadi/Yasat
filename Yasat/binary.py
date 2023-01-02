@@ -45,11 +45,11 @@ class Binary:
             criteria: list[Criterion] = []
             for func_name in checker_conf['criteria']:
                 criterion = checker_conf['criteria'][func_name]
-                lib = criterion['lib']
-                arg = criterion['arg']
-                func_addr = self._resolve_external_function(func_name, lib)
+                lib_from = criterion['lib_from']
+                arg_index = criterion['arg_index']
+                func_addr = self._resolve_external_function(func_name, lib_from)
                 if func_addr is not None:
-                    criteria.append(Criterion(lib, arg, func_name, func_addr))
+                    criteria.append(Criterion(lib_from, arg_index, func_name, func_addr))
             if len(criteria) > 0:
                 self.checkers.append(checker_type(desc, criteria))
     
