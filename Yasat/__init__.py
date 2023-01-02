@@ -2,7 +2,6 @@ import logging
 import os
 
 from .config import Config
-from .utils.timer import Timer
 from .knowledge_plugins import analysis_results_manager
 from .checkers import base
 
@@ -12,8 +11,6 @@ logging.getLogger('pyvex').propagate = False
 
 l = logging.getLogger('Yasat')
 l.setLevel(logging.DEBUG)
-
-timer = Timer()
 
 def init_logger(config: Config):
     handler = logging.FileHandler(filename=os.path.join(
