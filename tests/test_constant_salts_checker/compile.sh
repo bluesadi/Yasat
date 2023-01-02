@@ -1,3 +1,7 @@
+if [ ! -d "../common/include/openssl" ]; then
+    tar -xzf ../common/include/openssl.tar.gz -C ../common/include
+fi
+
 module="test_constant_salts_checker"
 libs="-lcrypt -lcrypto -lssl"
 common_options="-I../common/include -Wno-deprecated-declarations"

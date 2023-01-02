@@ -4,3 +4,4 @@ __pycache__
 /tmp
 /log
 /debug
+/tests/common/include/openssl
