@@ -2,7 +2,7 @@ import logging
 import os
 
 from .config import Config
-from .knowledge_plugins import analysis_results_manager
+from .knowledge_plugins import argument_definition_manager
 from .checkers import base
 
 logging.getLogger('angr').propagate = False

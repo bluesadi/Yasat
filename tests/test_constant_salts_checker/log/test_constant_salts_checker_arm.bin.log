@@ -1,4 +1,4 @@
-[INFO][21:08:19] Start task(s) with configuration from tests/test_constant_salts_checker/config.yml:
+[INFO][22:10:50] Start task(s) with configuration from tests/test_constant_salts_checker/config.yml:
 {
   "input_path": "tests/test_constant_salts_checker/input/test_constant_salts_checker_arm.bin",
   "tmp_dir": "tests/test_constant_salts_checker/tmp/",
@@ -29,14 +29,14 @@
     }
   }
 }
-[INFO][21:08:19] *** Stage 1 - Extract ELF binaries ***
-[INFO][21:08:19] [-] 1 binaries will be analyzed soon
-[INFO][21:08:19] *** Stage 1 Finished - Cost 0.4 seconds ***
-[INFO][21:08:19] *** Stage 2 - Preprocess target binaries ***
-[INFO][21:08:19] [-] Stage is progressing (1/1)
-[INFO][21:08:19] [-] 1 binaries will be checked against a set of rules soon
-[INFO][21:08:19] *** Stage 2 Finished - Cost 0.2 seconds ***
-[INFO][21:08:19] *** Stage 3 - Analyze target binaries ***
-[INFO][21:08:19] [-] Stage is progressing (1/1)
-[INFO][21:08:19] *** Stage 3 Finished - Cost 0.0 seconds ***
-[INFO][21:08:19] Overall report has been save to tests/test_constant_salts_checker/report/test_constant_salts_checker_arm.bin.log
+[INFO][22:10:50] *** Stage 1 - Extract ELF binaries ***
+[INFO][22:10:51] [-] 1 binaries will be analyzed soon
+[INFO][22:10:51] *** Stage 1 Finished - Cost 0.4 seconds ***
+[INFO][22:10:51] *** Stage 2 - Preprocess target binaries ***
+[INFO][22:10:51] [-] Stage is progressing (1/1)
+[INFO][22:10:51] [-] 1 binaries will be checked against a set of rules soon
+[INFO][22:10:51] *** Stage 2 Finished - Cost 0.3 seconds ***
+[INFO][22:10:51] *** Stage 3 - Analyze target binaries ***
+[INFO][22:10:51] [-] Stage is progressing (1/1)
+[INFO][22:10:51] *** Stage 3 Finished - Cost 0.0 seconds ***
+[INFO][22:10:51] Overall report has been save to tests/test_constant_salts_checker/report/test_constant_salts_checker_arm.bin.log

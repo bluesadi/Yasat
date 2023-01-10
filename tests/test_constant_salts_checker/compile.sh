@@ -12,6 +12,7 @@ do
     
     arm-linux-gnueabihf-gcc $src -o bin/arm/$bin -L../common/lib/arm $libs $common_options
     mipsel-linux-gnu-gcc $src -o bin/mips/$bin -L../common/lib/mips $libs $common_options
+    echo arm-linux-gnueabihf-gcc $src -o bin/arm/$bin -L../common/lib/arm $libs $common_options
 done
 
 rm -f input/${module}_arm.bin input/${module}_mips.bin

@@ -9,15 +9,18 @@ import binwalk
 from ..binary import Binary
 from .. import l
 
-# Basically dirty work
 class Extractor:
+    """
+    Basically dirty work.
+    You won't want to dive into it.
+    """
     
     def _decompress_zip(self, path, to_path):
         with zipfile.ZipFile(path, 'r') as ref:
             ref.extractall(to_path)
     
     def __extract_from_firmware_bin(self, firmware_bin_path):
-        binaries = []
+        binary_paths = []
         for module in binwalk.scan(firmware_bin_path, '-r', '-y', 'filesystem', 
                                    signature=True, quiet=True, extract=True):
             for result in module.results:
@@ -31,23 +34,23 @@ class Extractor:
                                     if not os.path.islink(binary_path):
                                         binary_type = filetype.guess(binary_path)
                                         if binary_type is not None and binary_type.extension == 'elf':
-                                            binaries.append(Binary(binary_path))
+                                            binary_paths.append(Binary(binary_path))
                                     else:
                                         src = os.path.basename(binary_path)
                                         dest = os.path.basename(os.readlink(binary_path))
                                         if src != dest:
                                             # kb.sym_links[src] = dest
                                             pass
-        return binaries
+        return binary_paths
 
     def extract(self, origin_path, to_path) -> List[Binary]:
         origin_type = filetype.guess(origin_path)
-        binaries = []
+        binary_paths = []
         if origin_type is not None:
             if origin_type.extension == 'elf':
                 # Case 1: Executable file
                 binary_path = shutil.copy(origin_path, to_path)
-                binaries.append(Binary(binary_path))
+                binary_paths.append(binary_path)
             else:
                 # Case 2: Firmware (archive)
                 # Find a proper decompressing function
@@ -58,15 +61,15 @@ class Extractor:
                         for filename in files:
                             firmware_bin_path = os.path.join(root, filename)
                             # Try to extract binaries from firmware via binwalk
-                            binaries += self.__extract_from_firmware_bin(firmware_bin_path)
+                            binary_paths += self.__extract_from_firmware_bin(firmware_bin_path)
                 else:
                     l.warning(f'Failed to decompress {origin_path}')
         else:
             # Case 3: Firmware (binary)
             firmware_bin_path = shutil.copy(origin_path, to_path)
-            binaries = self.__extract_from_firmware_bin(firmware_bin_path)
-            if len(binaries) == 0:
+            binary_paths = self.__extract_from_firmware_bin(firmware_bin_path)
+            if len(binary_paths) == 0:
                 l.warning(f'Failed to extract from {origin_path}')
                 return []
-        return binaries
+        return binary_paths
     

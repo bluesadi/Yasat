@@ -4,7 +4,7 @@ from angr import Analysis, Project
 from angr.knowledge_plugins.cfg.cfg_model import CFGModel
 
 from ..report import MisuseReport
-from ..knowledge_plugins.analysis_results_manager import AnalysisResultsManager
+from ..knowledge_plugins.argument_definition_manager import ArgumentDefinitionManager
 
 class Criterion:
     
@@ -17,11 +17,11 @@ class Criterion:
 class RuleChecker(Analysis):
     
     proj: Project
-    analysis_results: AnalysisResultsManager
+    arg_defs: ArgumentDefinitionManager
     
     def __init__(self, name, desc, criteria):
         self.proj = self.project
-        self.analysis_results = self.proj.kb.analysis_results
+        self.arg_defs = self.proj.kb.arg_defs
         self.name = name
         self.desc = desc
         self.criteria: list[Criterion] = criteria
@@ -54,17 +54,10 @@ class ConstantValuesChecker(RuleChecker):
         
     def _check_one(self, criterion: Criterion) -> List[MisuseReport]:
         results = []
-        predecessors = self.cfg.get_predecessors(self.cfg.get_any_node(criterion.func_addr))
-        for predecessor in predecessors:
-            block = self.proj.factory.block(predecessor.addr)
-            caller_addr = block.instruction_addrs[-1]
-            caller_func_addr = self.kb.functions.floor_func(block.addr).addr
-            defs = self.analysis_results.get_arg_defs(func_addr=caller_func_addr, 
-                                                      insn_addr=caller_addr, 
-                                                      index=criterion.arg_index, type=self.type)
-            results += [MisuseReport(self.proj.filename, self.desc, 
-                                     self._build_misuse_desc(criterion, self.arg_name, 
-                                                             def_, caller_addr)) for def_ in defs]
+        defs = self.arg_defs.get_arg_defs(criterion.func_addr, criterion.arg_index, self.type)
+        for caller_func_addr, caller_insn_addr, arg_def in defs:
+            results.append(MisuseReport(self.proj.filename, self.desc, 
+                                        self._build_misuse_desc(criterion, self.arg_name, arg_def, caller_insn_addr)))
         return results
     
 class ConstantStringsChecker(ConstantValuesChecker):

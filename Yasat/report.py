@@ -22,11 +22,11 @@ class MisuseReport:
     
 class OverallReport:
     
-    _firmware_path: str
+    _input_path: str
     _misuse_reports: Dict[str, List[MisuseReport]]
     
-    def __init__(self, firmware_path):
-        self._firmware_path = firmware_path
+    def __init__(self, input_path):
+        self._input_path = input_path
         self._misuse_reports = defaultdict(list)
         self.time_costs = []
         
@@ -35,7 +35,7 @@ class OverallReport:
         
     def __str__(self) -> str:
         report = '*** Summary ***\n'\
-            f'Firmware path: {self._firmware_path}\n'
+            f'Input path: {self._input_path}\n'
         for i, desc_cost in enumerate(self.time_costs):
             report += f'Stage {i + 1} ({desc_cost[0]}) time cost: {desc_cost[1]:.1f} seconds\n'
         report += f'Total time cost: {sum(map(lambda ele : ele[1], self.time_costs)):.1f} seconds'\

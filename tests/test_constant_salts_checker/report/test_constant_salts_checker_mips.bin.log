@@ -2,8 +2,8 @@
 Firmware path: tests/test_constant_salts_checker/input/test_constant_salts_checker_mips.bin
 Stage 1 (Extract ELF binaries) time cost: 0.4 seconds
 Stage 2 (Preprocess target binaries) time cost: 0.8 seconds
-Stage 3 (Analyze target binaries) time cost: 0.0 seconds
-Total time cost: 1.2 seconds
+Stage 3 (Analyze target binaries) time cost: 0.1 seconds
+Total time cost: 1.3 seconds
 
 *** Misuses Found (Grouped by Checkers) ***
 # ConstantKeysChecker

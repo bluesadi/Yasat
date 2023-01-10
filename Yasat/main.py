@@ -1,11 +1,13 @@
 import os
 import time
+from typing import List
 
 from .config import Config
 from .utils.extractor import Extractor
 from .utils.common import call_with_timeout
 from . import l
 from .report import OverallReport
+from .binary import Binary
 
 class Main:
     
@@ -49,30 +51,32 @@ class Main:
         '''
         self._start_stage('Extract ELF binaries')
         
-        binaries = Extractor().extract(self.config.input_path, self.config.tmp_dir)
+        binary_paths = Extractor().extract(self.config.input_path, self.config.tmp_dir)
         
-        l.info(f'[-] {len(binaries)} binaries will be analyzed soon')
+        l.info(f'[-] {len(binary_paths)} binaries will be analyzed soon')
         self._end_stage()
         
         '''
         Stage 2:
-        - For each binary in `binaries` list, check whether it imports any of cryptographic APIs
-          specified in `config.checkers`. If not, discard it.
-        - Then generate a CFG for each of the reset.
-        - If the whole process of a binary costs more than `config.preprocess_timeout`, also 
-          discard it because the binary might be too large to finish analyzing in acceptable time.
+        - For each binary_path in `binary_paths` list, check whether the binary of this path imports any of 
+          cryptographic APIs specified in `config.checkers`. If not, discard it.
+        - Then create a Binary instance for each of the rest.
+        - If the whole process of creating a binary costs more than `config.preprocess_timeout` seconds, also discard it
+          because the binary might be too large to finish analyzing within acceptable time.
+        - Instantiating a Binary could be rather slow. That's basically because the CFG generation process takes 
+          a lot of time.
         '''
         self._start_stage('Preprocess target binaries')
         self._init_stage_progress(len(binaries))
         
-        binaries_tmp = []
-        for i, binary in enumerate(binaries):
-            should_keep = call_with_timeout(binary.preprocess, args=(self.config.checkers,),
-                                            timeout=self.config.preprocess_timeout)
-            if should_keep:
-                binaries_tmp.append(binary)
+        binaries: List[Binary] = []
+        for binary_path in binary_paths:
+            binary = call_with_timeout(Binary.new, args=(binary_path, self.config.checkers),
+                                       timeout=self.config.preprocess_timeout)
+            if isinstance(binary, Binary):
+                binaries.append(binary)
             self._progress_stage()
-        binaries = binaries_tmp
+        binaries = binaries
         
         l.info(f'[-] {len(binaries)} binaries will be checked against a set of rules soon')
         self._end_stage()
@@ -80,8 +84,10 @@ class Main:
         self._start_stage('Analyze target binaries')
         self._init_stage_progress(len(binaries))
         
-        for i, binary in enumerate(binaries):
-            binary.analyze(self.report)
+        for binary in binaries:
+            for checker in binary.bound_checkers:
+                misuse_reports = checker.check()
+                self.report.report_misuses(checker.name, misuse_reports)
             self._progress_stage()
             
         self._end_stage()
