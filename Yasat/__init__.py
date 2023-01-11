@@ -2,8 +2,9 @@ import logging
 import os
 
 from .config import Config
-from .knowledge_plugins import argument_definition_manager
-from .checkers import base
+from . import knowledge_plugins
+from . import checkers
+from . import analyses
 
 logging.getLogger('angr').propagate = False
 logging.getLogger('cle').propagate = False

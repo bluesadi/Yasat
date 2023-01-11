@@ -1,14 +1,17 @@
-from tests.common import YasatTestCase
 
 from angr.analyses.decompiler.clinic import Clinic
 from ailment.statement import *
 from ailment.expression import *
+from Yasat.binary import Binary
+from Yasat.analyses.backward_slicing import SlicingCriterion, BackwardSlicing
+
+from tests.common import YasatTestCase
 
 class DevTestCase(YasatTestCase):
     
     def test_sum(self):
         for binary in self.get_test_binaries():
-            print(binary.proj)
+            binary: Binary
             func_addr = binary.resolve_local_function('main')
             cfg = binary.proj.analyses.CFGFast(resolve_indirect_jumps=True, 
                                                cross_references=True, 
@@ -18,10 +21,8 @@ class DevTestCase(YasatTestCase):
             target_func = cfg.kb.functions[func_addr]
             clinic: Clinic = binary.proj.analyses.Clinic(target_func)
             
-            print(clinic.dbg_repr())
-            
-            for block in clinic.graph:
-                for stmt in block.statements:
-                    if isinstance(stmt, Call):
-                        for arg in stmt.args:
-                            print(type(arg.variable))
+            bs: BackwardSlicing = binary.proj.analyses.BackwardSlicing(SlicingCriterion(0x400528 + 1, 0))
+            for track in bs.concrete_results:
+                print(track.ast)
+                print(track.path)
+            return
