@@ -58,13 +58,15 @@ class SimEngineBackwardSlicing(
         if whitelist is not None:
             whitelist = set(whitelist)
 
-        for stmt_idx, stmt in enumerate(self.block.statements[::]):
+        for stmt_idx, stmt in enumerate(self.block.statements[::-1]):
+            print('-------')
+            print(f'Processing: {stmt_idx} | {hex(stmt.ins_addr)} | {stmt}')
+            print(f'Tracks (before): {self.state._tracks}')
             if whitelist is not None and stmt_idx not in whitelist:
                 continue
 
             self.stmt_idx = stmt_idx
             self.ins_addr = stmt.ins_addr
-            
             if self.analysis._handled_slicing_criterion:
                 self._handle_Stmt(stmt)
             else:
@@ -82,6 +84,7 @@ class SimEngineBackwardSlicing(
                 arg_expr = call_stmt.args[self.analysis.slicing_criterion.arg_index]
                 self.state.add_track(self._expr(arg_expr), call_stmt)
                 self.analysis._handled_slicing_criterion = True
+            print(f'Tracks (after): {self.state._tracks}')
                 
     
     def _handle_Stmt(self, stmt):
@@ -103,7 +106,7 @@ class SimEngineBackwardSlicing(
         pass
     
     def _ail_handle_Store(self, stmt: Store):
-        dst = self._expr(stmt.addr)
+        dst = claripy.BVS(f'Load[{str(self._expr(stmt.addr))}]', stmt.addr.bits, explicit_name=True)
         src = self._expr(stmt.data)
         if not self.state.is_top(dst):
             self.state.update_tracks(dst, src, stmt)
@@ -142,7 +145,7 @@ class SimEngineBackwardSlicing(
         src = self._expr(expr.addr)
         if self.state.is_top(src):
             return self.state.top(expr.bits)
-        return claripy.BVS('load_' + str(src), expr.bits)
+        return claripy.BVS(f'Load[{str(src)}]', expr.bits, explicit_name=True)
     
     def _ail_handle_Convert(self, expr: Convert):
         src = self._expr(expr.operand)
@@ -221,7 +224,7 @@ class SimEngineBackwardSlicing(
         return claripy.Concat(self._expr(expr.operands[0]), self._expr(expr.operands[1]))
     
     def _ail_handle_StackBaseOffset(self, expr: StackBaseOffset):
-        pass
+        return claripy.BVS(str(expr), expr.bits, explicit_name=True)
     
     def _ail_handle_DirtyExpression(self, expr: DirtyExpression):
         pass

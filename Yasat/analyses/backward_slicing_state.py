@@ -1,4 +1,5 @@
 from typing import Set, List, Dict
+import copy
 
 from ailment import Block
 from ailment.statement import Statement
@@ -10,12 +11,18 @@ class SlicingTrack:
         self.ast = ast
         self.path = path
         
+    def __str__(self) -> str:
+        return f'{{ast={self.ast}, path={self.path}}}'
+    
+    def __repr__(self) -> str:
+        return str(self)
+        
     def __hash__(self) -> int:
         return self.ast.__hash__() + sum(stmt.__hash__() for stmt in self.path)
     
     def __eq__(self, another: object) -> bool:
         if isinstance(another, SlicingTrack):
-            return self.ast == another.ast and self.path == another.path
+            return self.ast.__hash__() == another.ast.__hash__() and self.path == another.path
         return False
 
 class BackwardSlicingState:
@@ -53,30 +60,31 @@ class BackwardSlicingState:
     
     def copy(self):
         state_copy = BackwardSlicingState(self.analysis, self.block.copy())
-        state_copy._tracks = self._tracks.copy()
-        state_copy._concrete_tracks = self._concrete_tracks.copy()
-        state_copy._tops = self._tops.copy()
+        state_copy._tracks = copy.deepcopy(self._tracks)
+        state_copy._concrete_tracks = copy.deepcopy(self._concrete_tracks)
+        state_copy._tops = copy.deepcopy(self._tops)
         return state_copy
-    
-    def _check_track(self, track: SlicingTrack):
-        if track.ast.concrete:
-            self._concrete_tracks.add(track)
-            self._tracks.discard(track)
     
     def add_track(self, ast, stmt):
         track = SlicingTrack(ast, [stmt])
-        self._tracks.add(track)
+        if ast.concrete:
+            self._concrete_tracks.add(track)
+        else:
+            self._tracks.add(track)
         self.changed = True
-        self._check_track(track)
+            
     
     def update_tracks(self, old, new, stmt):
-        for track in self._tracks:
-            track.path.append(stmt)
+        for track in self._tracks.copy():
             old_ast = track.ast
-            track.ast = track.ast.replace(old, new)
-            if old_ast != track.ast:
+            new_ast = track.ast.replace(old, new)
+            if old_ast.__hash__() != new_ast.__hash__():
                 self.changed = True
-                self._check_track(track)
+                if new_ast.concrete:
+                    self._tracks.remove(track)
+                    self._concrete_tracks.add(track)
+                track.path.append(stmt)
+                track.ast = new_ast
         
     def top(self, bits: int):
         if bits in BackwardSlicingState._tops:

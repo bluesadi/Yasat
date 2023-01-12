@@ -13,5 +13,9 @@ int sink(int a){
 }
 
 int main(){
-    sink(123);
+    int a = 123;
+    if(rand()){
+        a = 233;
+    }
+    sink(a);
 }
