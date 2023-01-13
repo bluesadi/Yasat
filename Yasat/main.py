@@ -5,16 +5,17 @@ from typing import List
 from .config import Config
 from .utils.extractor import Extractor
 from .utils.common import call_with_timeout
-from . import l
 from .report import OverallReport
 from .binary import Binary
+from .utils.logger import LoggerMixin
 
-class Main:
+class Main(LoggerMixin):
     
     config: Config
     report: OverallReport
     
     def __init__(self, config):
+        super().__init__()
         self.config = config
         self.report = OverallReport(config.input_path)
         self.stage_id = 0
@@ -25,7 +26,7 @@ class Main:
     def _start_stage(self, stage_desc):
         self.stage_id += 1
         self.stage_desc = stage_desc
-        l.info(f'*** Stage {self.stage_id} - {stage_desc} ***')
+        self.l.info(f'*** Stage {self.stage_id} - {stage_desc} ***')
         self.stage_start = time.time()
         
     def _init_stage_progress(self, total):
@@ -33,12 +34,12 @@ class Main:
     
     def _progress_stage(self):
         self.stage_progress[0] += 1
-        l.info(f'[-] Stage is progressing ({"/".join(map(str, self.stage_progress))})')
+        self.l.info(f'[-] Stage is progressing ({"/".join(map(str, self.stage_progress))})')
         
     def _end_stage(self):
         stage_cost = time.time() - self.stage_start
         self.report.report_time_cost(self.stage_desc, stage_cost)
-        l.info(f'*** Stage {self.stage_id} Finished - Cost {stage_cost:.1f} seconds ***')
+        self.l.info(f'*** Stage {self.stage_id} Finished - Cost {stage_cost:.1f} seconds ***')
         
     def start(self):
         '''
@@ -53,7 +54,7 @@ class Main:
         
         binary_paths = Extractor().extract(self.config.input_path, self.config.tmp_dir)
         
-        l.info(f'[-] {len(binary_paths)} binaries will be analyzed soon')
+        self.l.info(f'[-] {len(binary_paths)} binaries will be analyzed soon')
         self._end_stage()
         
         '''
@@ -78,7 +79,7 @@ class Main:
             self._progress_stage()
         binaries = binaries
         
-        l.info(f'[-] {len(binaries)} binaries will be checked against a set of rules soon')
+        self.l.info(f'[-] {len(binaries)} binaries will be checked against a set of rules soon')
         self._end_stage()
         
         self._start_stage('Analyze target binaries')
@@ -96,4 +97,4 @@ class Main:
                                    os.path.basename(self.config.input_path)) + '.log'
         self.report.save(report_path)
         
-        l.info(f'Overall report has been save to {report_path}')
+        self.l.info(f'Overall report has been save to {report_path}')

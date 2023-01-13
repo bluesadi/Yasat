@@ -25,6 +25,7 @@ class DevTestCase(YasatTestCase):
                 print(hex(callsite))
                 bs: BackwardSlicing = binary.proj.analyses.BackwardSlicing(SlicingCriterion(callsite, 0))
                 for track in bs.concrete_results:
-                    print(f'AST: {track.ast}')
-                    print(f'Path: {track.path}')
+                    print(f'Expr: {track.concrete_int()}')
+                    print(f'Slice ({hex(id(track.slice))}): {track.slice}')
+                
                 return

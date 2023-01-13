@@ -1,1 +1,1 @@
-from .backward_slicing import BackwardSlicing
+from .backward_slicing.backward_slicing import BackwardSlicing
