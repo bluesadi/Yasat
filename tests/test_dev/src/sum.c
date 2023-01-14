@@ -12,10 +12,8 @@ int sink(int a){
     return a;
 }
 
+int a = 123;
+
 int main(){
-    int a = 123;
-    if(rand()){
-        a = 233;
-    }
     sink(a);
 }

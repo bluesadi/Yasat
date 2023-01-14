@@ -50,24 +50,25 @@ class SlicingState:
     
     block: Block
     addr: int
-    solver: claripy.Solver
+    stmt_idx: Statement
     
     _tracks: Set[SlicingTrack]
     _concrete_tracks: Set[SlicingTrack]
+    _ended: bool
     
-    _tops: Dict[int, claripy.ast.BV] = set()
+    _tops: Dict[int, claripy.ast.BV] = {}
     
     def __init__(self, analysis, block: Block):
         self.block = block
         self.addr = block.addr
-        self.changed = None
-        self.solver = claripy.Solver()
+        self.stmt_idx = -1
         
         self.analysis = analysis
         self.arch = analysis.project.arch
         
         self._tracks = set()
         self._concrete_tracks = set()
+        self._ended = False
         
     def top(self, bits: int):
         if bits in SlicingState._tops:
@@ -89,7 +90,6 @@ class SlicingState:
         for another in others:
             state._tracks |= another._tracks
             state._concrete_tracks |= another._concrete_tracks
-            state._tops |= another._tops
         return state
     
     def copy(self):
@@ -122,10 +122,19 @@ class SlicingState:
                     continue
             new_tracks.add(new_track)
         self._tracks = new_tracks
+        self._ended = len(new_tracks) == 0
     
     @property
     def ended(self):
-        return self.changed is not None and len(self._tracks) == 0
+        return self._ended
+    
+    @property
+    def num_tracks(self):
+        return len(self._tracks)
+    
+    @property
+    def num_concrete_tracks(self):
+        return len(self._concrete_tracks)
     
     @property
     def has_concrete_results(self):
@@ -149,5 +158,8 @@ class SlicingState:
                 'expr': str(track.expr),
                 'slice': [stmt_to_str(stmt) for stmt in track.slice]
             }
-        return 'BackwardSlicingState ' + pstr({'tracks': [track_to_dict(track) for track in self._tracks], 
-                                               'concrete_tracks': [track_to_dict(track) for track in self._concrete_tracks]})
+        return 'BackwardSlicingState ' + \
+            pstr({'stmts': [('-> ' if self.stmt_idx == stmt_idx else '') + stmt_to_str(stmt) 
+                            for stmt_idx, stmt in enumerate(self.block.statements)],
+                  'tracks': [track_to_dict(track) for track in self._tracks], 
+                  'concrete_tracks': [track_to_dict(track) for track in self._concrete_tracks]})

@@ -21,9 +21,8 @@ class DevTestCase(YasatTestCase):
             target_func = cfg.kb.functions[func_addr]
             clinic: Clinic = binary.proj.analyses.Clinic(target_func)
             print(clinic.dbg_repr())
-            for callsite in binary.resolve_callsites(binary.resolve_local_function('sink')):
-                print(hex(callsite))
-                bs: BackwardSlicing = binary.proj.analyses.BackwardSlicing(SlicingCriterion(callsite, 0))
+            for caller in binary.resolve_callers(binary.resolve_local_function('sink')):
+                bs: BackwardSlicing = binary.proj.analyses.BackwardSlicing(SlicingCriterion(caller, 0))
                 for track in bs.concrete_results:
                     print(f'Expr: {track.concrete_int()}')
                     print(f'Slice ({hex(id(track.slice))}): {track.slice}')

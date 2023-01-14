@@ -68,15 +68,15 @@ class Binary:
             return symbol.resolvedby.rebased_addr
         return None
     
-    def resolve_callsites(self, func_addr):
-        callsites = set()
+    def resolve_callers(self, func_addr):
+        callers = set()
         if self.cfg is not None:
             predecessors = self.cfg.get_predecessors(self.cfg.get_any_node(func_addr))
             for predecessor in predecessors:
                 block = self.proj.factory.block(predecessor.addr)
                 caller_insn_addr = block.instruction_addrs[-1]
-                callsites.add(caller_insn_addr)
-        return iter(callsites)
+                callers.add(caller_insn_addr)
+        return iter(callers)
     
     def _parse_checkers(self, checkers_conf):
         for checker_name in checkers_conf:

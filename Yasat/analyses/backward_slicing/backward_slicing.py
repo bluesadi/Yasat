@@ -3,6 +3,7 @@ from collections import defaultdict
 
 from networkx import DiGraph
 from angr.analyses.analysis import Analysis
+from angr.analyses.decompiler.clinic import Clinic
 from ailment import Block
 
 from .slicing_state import SlicingState, SlicingTrack
@@ -10,9 +11,9 @@ from .engine_ail import SimEngineBackwardSlicing
 
 class SlicingCriterion:
     
-    def __init__(self, callsite_addr: int, arg_index: int):
-        self.callsite_addr = callsite_addr
-        self.arg_index = arg_index
+    def __init__(self, caller_addr: int, arg_idx: int):
+        self.caller_addr = caller_addr
+        self.arg_idx = arg_idx
         
 
 class BackwardSlicing(Analysis):
@@ -23,7 +24,6 @@ class BackwardSlicing(Analysis):
     
     _max_iterations: int
     _entry_block: Block
-    _callsite_stmt_idx: int
     _should_abort: bool
     _blocks_by_addr: Dict[int, Block]
     _output_states_by_addr: Dict[int, SlicingState]
@@ -33,34 +33,58 @@ class BackwardSlicing(Analysis):
     
     def __init__(self, 
                  slicing_criterion,
-                 max_iterations=3) -> None:
+                 max_iterations=5) -> None:
         super().__init__()
         self.slicing_criterion = slicing_criterion
         self._max_iterations = max_iterations
         
+        # Get or generate CFG
         cfg = self.project.kb.cfgs.get_most_accurate()
         if cfg is None:
-            raise RuntimeError('CFG should be generated first before backward slicing')
+            cfg = self.project.analyses.CFGFast(resolve_indirect_jumps=True, 
+                                                force_complete_scan=False, 
+                                                normalize=True)
         
-        target_func = self.project.kb.functions.floor_func(slicing_criterion.callsite_addr)
+        # Find the target function
+        target_func = self.project.kb.functions.floor_func(slicing_criterion.caller_addr)
         if target_func is None:
-            raise ValueError(f'slicing_criterion.callsite_addr ({hex(slicing_criterion.callsite_addr)}) is not a valid address.')
+            raise ValueError(f'Cannot find the corresponding function that contains address ' \
+                             f'{hex(slicing_criterion.caller_addr)}.')
         
-        clinic = self.project.analyses.Clinic(target_func)
-        self.graph = clinic.graph
+        # Generate the AIL CFG for the target function
+        clinic: Clinic = self.project.analyses.Clinic(target_func)
+        self.graph = clinic.graph.copy()
         
         self._blocks_by_addr = dict()
         self._output_states_by_addr = dict()
+        
+        # Find the entry block
         for block in self.graph:
             for stmt in block.statements:
-                if stmt.ins_addr == slicing_criterion.callsite_addr:
+                if stmt.ins_addr == slicing_criterion.caller_addr:
                     self._entry_block = block
-                    self._callsite_stmt_idx = stmt.idx
-            self._blocks_by_addr[block.addr] = block
-            self._output_states_by_addr[block.addr] = self._initial_state(block)
             
         if self._entry_block is None:
-            raise ValueError(f'Can\'t find callsite at address {hex(slicing_criterion.callsite_addr)}.')
+            raise ValueError(f'Cannot find caller statement at address {hex(slicing_criterion.caller_addr)}.')
+        
+        # Remove all blocks that are unreachable from the entry block.
+        # Because we don't want to waste time on those unrelated blocks.
+        reachable_blocks = set()
+        queue = {self._entry_block}
+        while queue:
+            block = queue.pop()
+            if block in reachable_blocks:
+                continue
+            reachable_blocks.add(block)
+            queue |= set(self.graph.predecessors(block))
+        unreachable_blocks = set(self.graph.nodes) - reachable_blocks
+        for unreachable_block in unreachable_blocks:
+            self.graph.remove_node(unreachable_block)
+        
+        # Initialize address-block mappings and output states
+        for block in self.graph:
+            self._blocks_by_addr[block.addr] = block
+            self._output_states_by_addr[block.addr] = self._initial_state(block)
         
         self._engine = SimEngineBackwardSlicing(self)
         self._handled_slicing_criterion = False
@@ -86,36 +110,44 @@ class BackwardSlicing(Analysis):
         return state
     
     def _analyze(self):
-        all_blocks = list(self.graph.nodes)
-        all_blocks.sort(key=lambda block: block.addr)
-        working_queue = list(all_blocks)
-        pending_queue = set(all_blocks)
+        working_queue = [self._entry_block.addr]
+        pending_queue = {self._entry_block.addr}
+        ended_blocks = set()
+        
         while working_queue:
-            block = working_queue.pop()
+            block = self._blocks_by_addr[working_queue.pop()]
             pending_queue.discard(block)
-            # Current block's out-state (input state) is merged from the sucessors' in-states (output states)
+            # Current block's out-state (input state) is merged from the sucessors' in-states (output states).
             state = self.meet_successors(block)
             
-            if state.ended:
+            state = self._run_on_node(state)
+            
+            old_state = self._output_states_by_addr[block.addr]
+            # Update output state
+            self._output_states_by_addr[block.addr] = state
+            
+            # Update results when new concrete tracks are found
+            if old_state.num_concrete_tracks != state.num_concrete_tracks:
+                self.concrete_results |= state.concrete_results
+            
+            # We set a limitation of iterations to avoid stucking in infinite loop
+            self._node_iterations[block.addr] += 1
+            
+            if state.num_tracks == 0 or self._node_iterations[block.addr] >= self._max_iterations:
+                ended_blocks.add(block.addr)
                 continue
             
-            state, changed = self._run_on_node(state)
-            
-            self._output_states_by_addr[block.addr] = state
-            if state.ended and state.has_concrete_results:
-                self.concrete_results |= state.concrete_results
+            if old_state.num_tracks != state.num_tracks or old_state.num_concrete_tracks != state.num_concrete_tracks:
+                # Since we only add new track to state.tracks or move track from state.tracks to state.concrete_tracks,
+                # if state has changed, either state.tracks or state.concrete_tracks must have changed as well.
+                # When state has changed, revisit all it's predecessors.
+                revisit_iter = filter(lambda pred : pred.addr not in pending_queue and pred.addr not in ended_blocks,
+                                      self.graph.predecessors(block))
+                working_queue += list(block.addr for block in revisit_iter)
+                pending_queue |= set(block.addr for block in revisit_iter)
                 
-            if changed:
-                revisit_iter = filter(lambda pred : pred not in pending_queue, self.graph.predecessors(block))
-                working_queue += list(revisit_iter)
-                pending_queue |= set(revisit_iter)
-                
-    def _run_on_node(self, state: SlicingState) -> Tuple[SlicingState, bool]:
-        state_copy = state.copy()
-        self._node_iterations[state_copy.addr] += 1
-        if self._node_iterations[state_copy.addr] <= self._max_iterations:
-            return self._engine.process(state_copy, block = state.block)
-        return state_copy, False
+    def _run_on_node(self, state: SlicingState) -> SlicingState:
+        return self._engine.process(state.copy(), block=state.block)
     
 from angr import AnalysesHub
 AnalysesHub.register_default('BackwardSlicing', BackwardSlicing)

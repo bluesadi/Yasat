@@ -54,7 +54,7 @@ class SimEngineBackwardSlicing(
             )
         except SimEngineError as e:
             raise e
-        return state, self.state.changed
+        return state
     
     def _process_Stmt(self, whitelist=None):
         if whitelist is not None:
@@ -67,11 +67,13 @@ class SimEngineBackwardSlicing(
                 continue
 
             self.stmt_idx = stmt_idx
+            self.state.stmt_idx = stmt_idx
             self.ins_addr = stmt.ins_addr
+            
             if self.analysis._handled_slicing_criterion:
                 self._handle_Stmt(stmt)
             else:
-                if stmt.ins_addr != self.analysis.slicing_criterion.callsite_addr:
+                if stmt.ins_addr != self.analysis.slicing_criterion.caller_addr:
                     # Ignore all statements before handling slicing criterion
                     return
                 if isinstance(stmt, Store) and isinstance(stmt.data, Call):
@@ -79,10 +81,10 @@ class SimEngineBackwardSlicing(
                 elif isinstance(stmt, Call):
                     call_stmt = stmt
                 else:
-                    raise ValueError(f'{hex(self.analysis.slicing_criterion)} is not a valid callsite address.')
-                if self.analysis.slicing_criterion.arg_index >= len(call_stmt.args):
-                    raise ValueError(f'{self.analysis.slicing_criterion.arg_index} is not a valid argument index.')
-                arg_expr = call_stmt.args[self.analysis.slicing_criterion.arg_index]
+                    raise ValueError(f'{stmt_to_str(stmt, stmt_idx)} is not a valid caller.')
+                if self.analysis.slicing_criterion.arg_idx >= len(call_stmt.args):
+                    raise ValueError(f'{self.analysis.slicing_criterion.arg_idx} is not a valid argument index.')
+                arg_expr = call_stmt.args[self.analysis.slicing_criterion.arg_idx]
                 self.state.add_track(self._expr(arg_expr), call_stmt)
                 self.analysis._handled_slicing_criterion = True
                 
@@ -132,7 +134,7 @@ class SimEngineBackwardSlicing(
         pass
     
     def _ail_handle_CallExpr(self, expr: Call):
-        return self._expr(expr)
+        return self.state.top(expr.bits)
     
     def _ail_handle_BV(self, expr: claripy.ast.BV):
         return expr
