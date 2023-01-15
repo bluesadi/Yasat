@@ -112,39 +112,47 @@ class BackwardSlicing(Analysis):
     def _analyze(self):
         working_queue = [self._entry_block.addr]
         pending_queue = {self._entry_block.addr}
-        ended_blocks = set()
+        last_states = {}
         
         while working_queue:
-            block = self._blocks_by_addr[working_queue.pop()]
-            pending_queue.discard(block)
+            block = self._blocks_by_addr[working_queue.pop(0)]
+            pending_queue.discard(block.addr)
             # Current block's out-state (input state) is merged from the sucessors' in-states (output states).
             state = self.meet_successors(block)
             
+            # We set a limitation of iterations to avoid stucking in infinite loop
+            self._node_iterations[block.addr] += 1
+            
+            last_states[block.addr] = state
+            if self._node_iterations[block.addr] > self._max_iterations:
+                continue
+            
+            if block.addr != self._entry_block.addr and state.num_tracks == 0:
+                continue
+            
             state = self._run_on_node(state)
+            last_states[block.addr] = state
             
             old_state = self._output_states_by_addr[block.addr]
             # Update output state
             self._output_states_by_addr[block.addr] = state
             
             # Update results when new concrete tracks are found
-            if old_state.num_concrete_tracks != state.num_concrete_tracks:
-                self.concrete_results |= state.concrete_results
-            
-            # We set a limitation of iterations to avoid stucking in infinite loop
-            self._node_iterations[block.addr] += 1
-            
-            if state.num_tracks == 0 or self._node_iterations[block.addr] >= self._max_iterations:
-                ended_blocks.add(block.addr)
-                continue
             
             if old_state.num_tracks != state.num_tracks or old_state.num_concrete_tracks != state.num_concrete_tracks:
                 # Since we only add new track to state.tracks or move track from state.tracks to state.concrete_tracks,
                 # if state has changed, either state.tracks or state.concrete_tracks must have changed as well.
                 # When state has changed, revisit all it's predecessors.
-                revisit_iter = filter(lambda pred : pred.addr not in pending_queue and pred.addr not in ended_blocks,
+                
+                revisit_iter = filter(lambda pred : pred.addr not in pending_queue,
                                       self.graph.predecessors(block))
                 working_queue += list(block.addr for block in revisit_iter)
                 pending_queue |= set(block.addr for block in revisit_iter)
+        
+        # Collect concrete results from the last state of each block
+        for state in last_states.values():
+            self.concrete_results |= state.concrete_results
+            
                 
     def _run_on_node(self, state: SlicingState) -> SlicingState:
         return self._engine.process(state.copy(), block=state.block)

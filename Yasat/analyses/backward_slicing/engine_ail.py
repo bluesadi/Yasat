@@ -5,13 +5,11 @@ from angr.errors import SimEngineError
 from ailment.statement import *
 from ailment.expression import *
 
-from ...utils.logger import LoggerMixin
 from ...utils.ailment import stmt_to_str
 
 class SimEngineBackwardSlicing(
     SimEngineLightAILMixin,
     SimEngineLight,
-    LoggerMixin
 ):
     
     def __init__(self, analysis):
@@ -52,6 +50,7 @@ class SimEngineBackwardSlicing(
                 None,
                 block=kwargs.pop('block', None),
             )
+            self.l.debug(f'State: {self.state.dbg_repr()}')
         except SimEngineError as e:
             raise e
         return state
@@ -86,10 +85,7 @@ class SimEngineBackwardSlicing(
                     raise ValueError(f'{self.analysis.slicing_criterion.arg_idx} is not a valid argument index.')
                 arg_expr = call_stmt.args[self.analysis.slicing_criterion.arg_idx]
                 self.state.add_track(self._expr(arg_expr), call_stmt)
-                self.analysis._handled_slicing_criterion = True
-                
-            self.l.debug(f'State (After processing): {self.state.dbg_repr()}')
-                
+                self.analysis._handled_slicing_criterion = True                
     
     def _handle_Stmt(self, stmt):
         handler = self._stmt_handlers.get(type(stmt), None)
@@ -110,10 +106,11 @@ class SimEngineBackwardSlicing(
         pass
     
     def _ail_handle_Store(self, stmt: Store):
-        dst = claripy.BVS(f'Load[{str(self._expr(stmt.addr))}]', stmt.addr.bits, explicit_name=True)
+        load_op = claripy.BVS(f'__load__', stmt.addr.bits, explicit_name=True)
+        dst = self._expr(stmt.addr)
         src = self._expr(stmt.data)
         if not self.state.is_top(dst):
-            self.state.update_tracks(dst, src, stmt)
+            self.state.update_tracks(load_op ** dst, src, stmt)
         
     def _ail_handle_Assignment(self, stmt: Assignment):
         dst = self._expr(stmt.dst)
@@ -122,16 +119,16 @@ class SimEngineBackwardSlicing(
             self.state.update_tracks(dst, src, stmt)
         
     def _ail_handle_Jump(self, stmt: Jump):
-        pass
+        self.l.debug(f'Ignore Jump: {stmt}')
     
     def _ail_handle_ConditionalJump(self, stmt: ConditionalJump):
-        pass
+        self.l.debug(f'Ignore ConditionalJump: {stmt}')
     
     def _ail_handle_Return(self, stmt: Return):
-        pass
+        self.l.debug(f'Ignore Return: {stmt}')
     
     def _ail_handle_DirtyStatement(self, stmt: DirtyStatement):
-        pass
+        self.l.debug(f'Ignore DirtyStatement: {stmt}')
     
     def _ail_handle_CallExpr(self, expr: Call):
         return self.state.top(expr.bits)
@@ -146,10 +143,11 @@ class SimEngineBackwardSlicing(
         return claripy.BVS(str(expr), expr.bits, explicit_name=True)
     
     def _ail_handle_Load(self, expr: Load):
+        load_op = claripy.BVS(f'__load__', expr.addr.bits, explicit_name=True)
         src = self._expr(expr.addr)
         if self.state.is_top(src):
             return self.state.top(expr.bits)
-        return claripy.BVS(f'Load[{str(src)}]', expr.bits, explicit_name=True)
+        return load_op ** src
     
     def _ail_handle_Convert(self, expr: Convert):
         src = self._expr(expr.operand)
@@ -231,7 +229,8 @@ class SimEngineBackwardSlicing(
         return claripy.BVS(str(expr), expr.bits, explicit_name=True)
     
     def _ail_handle_DirtyExpression(self, expr: DirtyExpression):
-        pass
+        self.l.debug(f'Ignore DirtyExpression: {expr}')
+        return self.state.top(expr.bits)
     
     def _ail_handle_Const(self, expr: Const):
         return claripy.BVV(expr.value, expr.bits)
