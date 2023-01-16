@@ -188,7 +188,7 @@ class SlicingState:
             should_continue = True
             while should_continue:
                 should_continue = False
-                for ast in list(track.expr.children_asts()) + [track.expr]:
+                for ast in list(new_expr.children_asts()) + [new_expr]:
                     if self._is_concrete_load(ast):
                         should_continue = True
                         repl = sim_state.memory.load(ast.args[1]._model_concrete.value, 

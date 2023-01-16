@@ -17,6 +17,6 @@ int a = 123;
 int main(){
     int r = rand();
     for(int i = 0;i < r; i++){
-        sink(i);
+        sink(a);
     }
 }
