@@ -16,6 +16,7 @@ Yasat's aims are as follows:
 ## BackwardSlicing analysis development Process
 - [x] A skeleton of intra-procedural BackwardSlicing
 - [x] Make it able to handle global variables
+- [ ] Keep Refining [SimEngineBackwardSlicing](Yasat/analyses/backward_slicing/engine_ail.py)
 - [ ] Make it inter-procedural
 - [ ] Make it able to handle some standard functions (e.g, memcpy, malloc)
 - [ ] ...
