@@ -68,7 +68,7 @@ class Main(LoggerMixin):
           a lot of time.
         '''
         self._start_stage('Preprocess target binaries')
-        self._init_stage_progress(len(binaries))
+        self._init_stage_progress(len(binary_paths))
         
         binaries: List[Binary] = []
         for binary_path in binary_paths:

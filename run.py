@@ -23,10 +23,7 @@ if __name__ == '__main__':
                         default=cpu_count() // 2)
     args = parser.parse_args()
     with open(args.config, "r") as fd:
-        try:
-            yaml_config = yaml.safe_load(fd)
-        except yaml.YAMLError:
-            print(f'Failed to load configuration from {args.config}')
+        yaml_config = yaml.safe_load(fd)
             
     config = Config(yaml_config)
     

@@ -12,8 +12,11 @@ int sink(char* a){
     return a;
 }
 
-char* a = "123";
+int a = 123;
 
 int main(){
-    sink(a);
+    int r = rand();
+    for(int i = 0;i < r; i++){
+        sink(i);
+    }
 }

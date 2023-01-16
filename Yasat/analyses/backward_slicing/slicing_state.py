@@ -8,8 +8,9 @@ import claripy
 
 from ...utils.common import pstr
 from ...utils.ailment import stmt_to_str
+from ...utils.logger import LoggerMixin
 
-class SlicingTrack:
+class SlicingTrack(LoggerMixin):
     
     def __init__(self, expr: claripy.ast.BV, slice: Tuple[Statement], state):
         self._expr = expr
@@ -29,15 +30,17 @@ class SlicingTrack:
     def string_expr(self):
         int_expr = self.int_expr
         if int_expr is None:
-            raise RuntimeError(f'Expression {self._expr} is not a concrete value')
+            self.l.error(f'Expression {self._expr} is not a concrete value')
+            return None
         sim_state: angr.sim_state.SimState = self._proj.factory.entry_state()
-        return sim_state.mem[int_expr].string.concrete
+        return sim_state.mem[int_expr].string.concrete.decode('UTF-8')
     
     @property
     def int_expr(self):
         if self._expr.concrete:
             return self.expr._model_concrete.value
-        raise RuntimeError(f'Expression {self._expr} is not a concrete value')
+        self.l.error(f'Expression {self._expr} is not a concrete value')
+        return None
         
     def __str__(self) -> str:
         return 'SlicingTrack ' + pstr({'expr': str(self.expr), 'slice': [str(stmt) for stmt in self.slice]})
@@ -181,9 +184,13 @@ class SlicingState:
         concrete_tracks = self._concrete_tracks.copy()
         for track in self._tracks:
             new_expr = track.expr
-            while self.contains_load(new_expr):
+            # Iteratively find and replace concrete load until we can't find concrete loads in an iteration
+            should_continue = True
+            while should_continue:
+                should_continue = False
                 for ast in list(track.expr.children_asts()) + [track.expr]:
                     if self._is_concrete_load(ast):
+                        should_continue = True
                         repl = sim_state.memory.load(ast.args[1]._model_concrete.value, 
                                                ast.size() // self.arch.byte_width,
                                                endness=self.arch.memory_endness)

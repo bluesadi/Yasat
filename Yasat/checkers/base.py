@@ -5,6 +5,7 @@ from angr.knowledge_plugins.cfg.cfg_model import CFGModel
 
 from ..report import MisuseReport
 from ..knowledge_plugins.argument_definition_manager import ArgumentDefinitionManager
+from ..analyses.backward_slicing import BackwardSlicing, SlicingCriterion, SlicingTrack
 
 class Criterion:
     
@@ -52,15 +53,27 @@ class ConstantValuesChecker(RuleChecker):
         return f'Call to "{criterion.lib_from}::{criterion.func_name}({arg_name}={arg_value})" '\
             f'at address {hex(caller_addr)}'
         
+    def _resolve_callers(self, func_addr):
+        callers = set()
+        if self.cfg is not None:
+            predecessors = self.cfg.get_predecessors(self.cfg.get_any_node(func_addr))
+            for predecessor in predecessors:
+                block = self.proj.factory.block(predecessor.addr)
+                caller_insn_addr = block.instruction_addrs[-1]
+                callers.add(caller_insn_addr)
+        return iter(callers)
+    
     def _check_one(self, criterion: Criterion) -> List[MisuseReport]:
         results = []
-        defs = self.arg_defs.get_arg_defs(criterion.func_addr, criterion.arg_index, self.type)
-        for caller_func_addr, caller_insn_addr, arg_def in defs:
-            results.append(MisuseReport(self.proj.filename, self.desc, 
-                                        self._build_misuse_desc(criterion, self.arg_name, arg_def, caller_insn_addr)))
+        for caller_addr in self._resolve_callers(criterion.func_addr):
+            bs: BackwardSlicing = self.proj.analyses.BackwardSlicing(SlicingCriterion(caller_addr, criterion.arg_index))
+            for concrete_result in bs.concrete_results:
+                arg_value = concrete_result.string_expr if self.type is str else concrete_result.int_expr
+                results.append(MisuseReport(self.proj.filename, self.desc, 
+                                            self._build_misuse_desc(criterion, self.arg_name, arg_value, caller_addr)))
         return results
     
 class ConstantStringsChecker(ConstantValuesChecker):
     
     def __init__(self, name, desc, criteria, arg_name):
-        super().__init__(name, desc, criteria, arg_name=arg_name, type=bytes)
+        super().__init__(name, desc, criteria, arg_name=arg_name, type=str)

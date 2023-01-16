@@ -16,6 +16,7 @@ class SimEngineBackwardSlicing(
         super().__init__()
         
         self.analysis = analysis
+        self._synced_with_slicing_criterion = False
         
         self._stmt_handlers = {
             ailment.Stmt.Assignment: self._ail_handle_Assignment,
@@ -60,32 +61,16 @@ class SimEngineBackwardSlicing(
             whitelist = set(whitelist)
 
         for stmt_idx, stmt in reversed(list(enumerate(self.block.statements))):
-            self.l.debug(stmt_to_str(stmt, stmt_idx))
             
             if whitelist is not None and stmt_idx not in whitelist:
                 continue
-
+            
+            self.stmt = stmt
             self.stmt_idx = stmt_idx
             self.state.stmt_idx = stmt_idx
             self.ins_addr = stmt.ins_addr
             
-            if self.analysis._handled_slicing_criterion:
-                self._handle_Stmt(stmt)
-            else:
-                if stmt.ins_addr != self.analysis.slicing_criterion.caller_addr:
-                    # Ignore all statements before handling slicing criterion
-                    return
-                if isinstance(stmt, Store) and isinstance(stmt.data, Call):
-                    call_stmt = stmt.data
-                elif isinstance(stmt, Call):
-                    call_stmt = stmt
-                else:
-                    raise ValueError(f'{stmt_to_str(stmt, stmt_idx)} is not a valid caller.')
-                if self.analysis.slicing_criterion.arg_idx >= len(call_stmt.args):
-                    raise ValueError(f'{self.analysis.slicing_criterion.arg_idx} is not a valid argument index.')
-                arg_expr = call_stmt.args[self.analysis.slicing_criterion.arg_idx]
-                self.state.add_track(self._expr(arg_expr), call_stmt)
-                self.analysis._handled_slicing_criterion = True                
+            self._handle_Stmt(stmt)
     
     def _handle_Stmt(self, stmt):
         handler = self._stmt_handlers.get(type(stmt), None)
@@ -103,7 +88,8 @@ class SimEngineBackwardSlicing(
             return self.state.top(expr.bits)
         
     def _ail_handle_Call(self, stmt: Call):
-        pass
+        if stmt.ins_addr == self.analysis.slicing_criterion.caller_addr:
+            self.state.add_track(self._expr(stmt.args[self.analysis.slicing_criterion.arg_idx]), self.stmt)
     
     def _ail_handle_Store(self, stmt: Store):
         load_op = claripy.BVS(f'__load__', stmt.addr.bits, explicit_name=True)
@@ -125,12 +111,16 @@ class SimEngineBackwardSlicing(
         self.l.debug(f'Ignore ConditionalJump: {stmt}')
     
     def _ail_handle_Return(self, stmt: Return):
-        self.l.debug(f'Ignore Return: {stmt}')
+        for expr in stmt.ret_exprs:
+            self._expr(expr)
     
     def _ail_handle_DirtyStatement(self, stmt: DirtyStatement):
         self.l.debug(f'Ignore DirtyStatement: {stmt}')
     
     def _ail_handle_CallExpr(self, expr: Call):
+        if expr.ins_addr == self.analysis.slicing_criterion.caller_addr:
+            self.state.add_track(self._expr(expr.args[self.analysis.slicing_criterion.arg_idx]), self.stmt)
+            return self.state.top(expr.bits)
         return self.state.top(expr.bits)
     
     def _ail_handle_BV(self, expr: claripy.ast.BV):

@@ -34,7 +34,7 @@ class Extractor:
                                     if not os.path.islink(binary_path):
                                         binary_type = filetype.guess(binary_path)
                                         if binary_type is not None and binary_type.extension == 'elf':
-                                            binary_paths.append(Binary(binary_path))
+                                            binary_paths.append(binary_path)
                                     else:
                                         src = os.path.basename(binary_path)
                                         dest = os.path.basename(os.readlink(binary_path))
