@@ -18,7 +18,7 @@ Yasat's aims are as follows:
 - [x] Make it able to handle global variables
 - [ ] Keep refining [SimEngineBackwardSlicing](Yasat/analyses/backward_slicing/engine_ail.py)
 - [ ] Make it inter-procedural
-- [ ] Make it able to handle some standard functions (e.g, memcpy, malloc)
+- [ ] Make it able to handle some standard functions (e.g., memcpy, malloc)
 - [ ] ...
 
 ## Misuse types targeted by Yasat
