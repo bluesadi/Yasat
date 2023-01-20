@@ -66,7 +66,7 @@ class SlicingState:
     _ended: bool
     
     _tops: Dict[int, claripy.ast.BV] = {}
-    _loads: Dict[int, claripy.ast.BV] = {}
+    _load_ops: Dict[int, claripy.ast.BV] = {}
     _proj: angr.Project
     
     def __init__(self, analysis, block: Block):
@@ -99,12 +99,12 @@ class SlicingState:
         return False
     
     @staticmethod
-    def load(addr: claripy.ast.BV, bits:int):
-        if bits in SlicingState._loads:
-            load = SlicingState._loads[bits]
+    def load_expr(addr: claripy.ast.BV, bits:int):
+        if bits in SlicingState._load_ops:
+            load = SlicingState._load_ops[bits]
         else:
             load = claripy.BVS('__load__', bits, explicit_name=True)
-            SlicingState._loads[bits] = load
+            SlicingState._load_ops[bits] = load
         return load ** addr
     
     @staticmethod

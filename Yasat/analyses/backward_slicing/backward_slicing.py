@@ -1,16 +1,15 @@
-from typing import Dict, Set, Tuple
+from typing import Dict, Set, List
 from collections import defaultdict
 
 from networkx import DiGraph
 from angr.analyses.analysis import Analysis
 from angr.analyses.decompiler.clinic import Clinic
 from ailment import Block
-import ailment
-from angr.analyses.decompiler.optimization_passes import get_default_optimization_passes
-from angr.analyses.decompiler.optimization_passes.eager_returns import EagerReturnsSimplifier
+from angr.knowledge_plugins.functions import Function
 
 from .slicing_state import SlicingState, SlicingTrack
 from .engine_ail import SimEngineBackwardSlicing
+from .criterion_selector import CriterionSelector
 
 class SlicingCriterion:
     
@@ -21,7 +20,8 @@ class SlicingCriterion:
 
 class BackwardSlicing(Analysis):
     
-    slicing_criterion: SlicingCriterion
+    target_func: Function
+    criterion_selectors: List[CriterionSelector]
     graph: DiGraph
     concrete_results: Set[SlicingTrack]
     
@@ -34,10 +34,20 @@ class BackwardSlicing(Analysis):
     _node_iterations: Dict[int, int]
     
     def __init__(self, 
-                 slicing_criterion,
+                 target_func,
+                 criterion_selectors,
                  max_iterations=5) -> None:
         super().__init__()
-        self.slicing_criterion = slicing_criterion
+        self.target_func = target_func
+        self.criterion_selectors = criterion_selectors
+        
+        if criterion_selectors is None or len(criterion_selectors) == 0:
+            raise ValueError('You should set up at least 1 criterion selector.')
+        
+        # Bind this analysis to slicing citerion selectors
+        for selector in criterion_selectors:
+            selector.hook(self)
+        
         self._max_iterations = max_iterations
         
         # Get or generate CFG
@@ -47,11 +57,6 @@ class BackwardSlicing(Analysis):
                                                 force_complete_scan=False, 
                                                 normalize=True)
         
-        # Find the target function
-        target_func = self.project.kb.functions.floor_func(slicing_criterion.caller_addr)
-        if target_func is None:
-            raise ValueError(f'Cannot find the corresponding function that contains address ' \
-                             f'{hex(slicing_criterion.caller_addr)}.')
         # Generate the AIL CFG for the target function
         clinic: Clinic = self.project.analyses.Clinic(target_func)
         self.graph = clinic.graph.copy()
@@ -124,7 +129,6 @@ class BackwardSlicing(Analysis):
         for state in last_states.values():
             self.concrete_results |= state.concrete_results
             
-                
     def _run_on_node(self, state: SlicingState) -> SlicingState:
         return self._engine.process(state.copy(), block=state.block)
     
