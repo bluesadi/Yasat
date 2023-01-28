@@ -1,11 +1,16 @@
+from typing import List
+
 import ailment
 import claripy
 from angr.engines.light.engine import SimEngineLight, SimEngineLightAILMixin
 from angr.errors import SimEngineError
+from angr.storage.memory_mixins.paged_memory.pages.multi_values import MultiValues
 from ailment.statement import *
 from ailment.expression import *
 
 from ...utils.ailment import stmt_to_str
+from .criteria_selector import ReturnSelector
+from .ast_enhancer import AstEnhancer
 
 class SimEngineBackwardSlicing(
     SimEngineLightAILMixin,
@@ -16,6 +21,7 @@ class SimEngineBackwardSlicing(
         super().__init__()
         
         self.analysis = analysis
+        self.project = self.analysis.project
         self._synced_with_slicing_criterion = False
         
         self._stmt_handlers = {
@@ -73,37 +79,43 @@ class SimEngineBackwardSlicing(
             self._handle_Stmt(stmt)
     
     def _handle_Stmt(self, stmt):
+        for selector in self.analysis.criteria_selectors:
+            criteria = selector.select_from_stmt(stmt)
+            for criterion in criteria:
+                self.state.add_track(self._expr(criterion), self.stmt)
         handler = self._stmt_handlers.get(type(stmt), None)
         if handler is not None:
             handler(stmt)
         else:
             self.l.warning('Unsupported statement type %s.', type(stmt).__name__)
             
-    def _expr(self, expr: Expression) -> claripy.ast.BV:
+    def _expr(self, expr: Expression) -> MultiValues:
+        # Identify criteria and start tracking them
+        for selector in self.analysis.criteria_selectors:
+            criteria = selector.select_from_expr(expr)
+            for criterion in criteria:
+                self.state.add_track(self._expr(criterion), self.stmt)
         handler = self._expr_handlers.get(type(expr), None)
         if handler is not None:
-            for selector in self.analysis.criterion_selectors:
-                criterion = selector.select(expr)
-                if criterion is not None:
-                    self.state.add_track(self._expr(criterion), self.stmt)
             return handler(expr)
         else:
             self.l.warning('Unsupported expression type %s.', type(expr).__name__)
-            return self.state.top(expr.bits)
+            return [AstEnhancer.top(expr.bits)]
         
     def _ail_handle_Call(self, stmt: Call):
+        # We treat Call statements as Call expressions
         self._expr(stmt)
     
     def _ail_handle_Store(self, stmt: Store):
-        dst = self._expr(stmt.addr)
-        src = self._expr(stmt.data)
-        if not self.state.is_top(dst):
-            self.state.update_tracks(self.state.load_expr(dst, stmt.addr.bits), src, stmt)
+        addr = self._expr(stmt.addr)
+        data = self._expr(stmt.data)
+        if not AstEnhancer.is_top(addr):
+            self.state.update_tracks(AstEnhancer.load(addr, stmt.addr.bits), data, stmt)
         
     def _ail_handle_Assignment(self, stmt: Assignment):
         dst = self._expr(stmt.dst)
         src = self._expr(stmt.src)
-        if not self.state.is_top(dst):
+        if not AstEnhancer.is_top(dst):
             self.state.update_tracks(dst, src, stmt)
         
     def _ail_handle_Jump(self, stmt: Jump):
@@ -120,133 +132,152 @@ class SimEngineBackwardSlicing(
         self.l.debug(f'Ignore DirtyStatement: {stmt}')
     
     def _ail_handle_CallExpr(self, expr: Call):
-        if hasattr(expr, 'bits'):
-            return self.state.top(expr.bits)
-        return None
+        func_addr = self._expr(expr.target)
+        args = [] if expr.args is None else [self._expr(arg) for arg in expr.args]
+        if expr.args is not None:
+            print(len(expr.args))
+        for func_addr_v in next(func_addr.values()):
+            if func_addr_v.concrete:
+                handler = self.analysis.function_handler
+                if handler is not None:
+                    func = self.project.kb.functions[func_addr_v._model_concrete.value]
+                    ret_expr = handler.handle(func, args)
+                    if ret_expr is not None:
+                        return ret_expr
+            return MultiValues(AstEnhancer.top(func_addr_v.size()))
     
     def _ail_handle_BV(self, expr: claripy.ast.BV):
-        return expr
-    
-    def _ail_handle_Tmp(self, expr: Tmp):
-        return claripy.BVS(str(expr), expr.bits, explicit_name=True)
-    
-    def _ail_handle_Register(self, expr: Register):
-        return claripy.BVS(str(expr), expr.bits, explicit_name=True)
+        return MultiValues(expr)
     
     def _ail_handle_Load(self, expr: Load):
         src = self._expr(expr.addr)
-        if self.state.is_top(src):
-            return self.state.top(expr.bits)
-        return self.state.load_expr(src, expr.bits)
+        if AstEnhancer.is_top(src):
+            return AstEnhancer.top(expr.bits)
+        return AstEnhancer.load(src, expr.bits)
     
     def _ail_handle_Convert(self, expr: Convert):
         src = self._expr(expr.operand)
-        if self.state.is_top(src):
-            return self.state.top(expr.to_bits)
-        elif expr.to_bits < expr.from_bits:
-            return src[expr.to_bits - 1: 0]
-        elif expr.to_bits > expr.from_bits:
-            return claripy.ZeroExt(expr.to_bits - expr.from_bits, src)
-        return src
+        results = set()
+        for src_v in next(src.values()):
+            if AstEnhancer.is_top(src_v):
+                results.add(AstEnhancer.top(expr.to_bits))
+            elif expr.to_bits < expr.from_bits:
+                results.add(src[expr.to_bits - 1: 0])
+            elif expr.to_bits > expr.from_bits:
+                results.add(claripy.ZeroExt(expr.to_bits - expr.from_bits, src))
+            results.add(src_v)
+        return MultiValues(offset_to_values={0: results})
     
     def _ail_handle_Reinterpret(self, expr: Reinterpret):
-        return self.state.top(expr.bits)
+        return MultiValues(AstEnhancer.top(expr.bits))
     
     def _ail_handle_ITE(self, expr: ITE):
         cond = self._expr(expr.cond)
-        iftrue = self._expr(expr.iftrue)
-        iffalse = self._expr(expr.iffalse)
-        if cond.concrete:
-            if cond._model_concrete.value != 0:
-                return iftrue
-            else:
-                return iffalse
-        return claripy.If(cond, iftrue, iffalse)
+        results = set()
+        for cond_v in next(cond.values()):
+            iftrue = self._expr(expr.iftrue)
+            iffalse = self._expr(expr.iffalse)
+            for iftrue_v in next(iftrue.values()):
+                for iffalse_v in next(iffalse.values()):
+                    results.add(claripy.If(cond_v, iftrue_v, iffalse_v))
+        return MultiValues(offset_to_values={0: results})
+    
+    # Unary operations start
+    def _calc_UnaryOp(self, expr: UnaryOp, op_func) -> MultiValues:
+        expr0 = expr.operand
+        results = set()
+        for expr0_v in next(expr0.values()):
+            results.add(op_func(expr0_v))
+        return MultiValues(offset_to_values={0: results})
     
     def _ail_handle_Not(self, expr: UnaryOp):
-        return ~self._expr(expr)
+        return self._calc_UnaryOp(expr, lambda v: ~v)
     
     def _ail_handle_Neg(self, expr: UnaryOp):
-        return -self._expr(expr)
+        return self._calc_UnaryOp(expr, lambda v: -v)
+    
+    # Binary operations start
+    def _calc_BinaryOp(self, expr: BinaryOp, op_func) -> MultiValues:
+        expr0 = self._expr(expr.operands[0])
+        expr1 = self._expr(expr.operands[1])
+        results = set()
+        for expr0_v in next(expr0.values()):
+            for expr1_v in next(expr1.values()):
+                results.add(op_func(expr0_v, expr1_v))
+        return MultiValues(offset_to_values={0: results})
+    
+    def _is_zero(self, expr_v):
+        return expr_v.concrete and expr_v._model_concrete.value == 0
     
     def _ail_handle_Add(self, expr: BinaryOp):
-        return self._expr(expr.operands[0]) + self._expr(expr.operands[1])
+        return self._calc_BinaryOp(expr, lambda v0, v1: v0 + v1)
         
     def _ail_handle_Sub(self, expr: BinaryOp):
-        return self._expr(expr.operands[0]) - self._expr(expr.operands[1])
+        return self._calc_BinaryOp(expr, lambda v0, v1: v0 - v1)
     
     def _ail_handle_Div(self, expr: BinaryOp):
-        dividend = self._expr(expr.operands[0])
-        divisor = self._expr(expr.operands[1])
-        if divisor.concrete and divisor._model_concrete.value == 0:
-            return self.state.top(expr.bits)
-        if dividend.concrete and divisor._model_concrete.value == 0:
-            return claripy.BVV(0, expr.bits)
-        return dividend / divisor
+        return self._calc_BinaryOp(expr, lambda v0, v1: AstEnhancer.top(expr.bits) 
+                                         if self._is_zero(v1) else v0 / v1)
     
     def _ail_handle_DivMod(self, expr: BinaryOp):
-        # How is an assembly instruction translated to DivMod?
-        self.l.debug(f'Divmod: {expr}')
+        # What' this
+        self.l.debug(f'Unusual statement Divmod: {expr}')
         return self._ail_handle_Div(expr)
     
     def _ail_handle_Mul(self, expr: BinaryOp):
-        expr0 = self._expr(expr.operands[0])
-        expr1 = self._expr(expr.operands[1])
-        if (expr0.concrete and expr0._model_concrete.value == 0) or \
-                (expr1.concrete and expr1._model_concrete.value == 0):
-            return claripy.BVV(0, expr.bits)
-        return expr0 * expr1
+        return self._calc_BinaryOp(expr, lambda v0, v1: MultiValues(claripy.BVV(0, expr.bits)) 
+                                         if self._is_zero(v0) or self._is_zero(v1) else v0 * v1)
     
     def _ail_handle_Mull(self, expr: BinaryOp):
         # What's this?
+        self.l.debug(f'Unusual statement Mull: {expr}')
         return self._ail_handle_Mul(expr)
     
     def _ail_handle_Mod(self, expr: BinaryOp):
-        return self._expr(expr.operands[0]) % self._expr(expr.operands[1])
+        return self._calc_BinaryOp(expr, lambda v0, v1: AstEnhancer.top(expr.bits) 
+                                         if self._is_zero(v1) else v0 % v1)
     
     def _ail_handle_Shr(self, expr: BinaryOp):
-        return self._expr(expr.operands[0]) >> self._expr(expr.operands[1])
+        return self._calc_BinaryOp(expr, lambda v0, v1: v0 >> v1)
     
     def _ail_handle_Sar(self, expr: BinaryOp):
-        return self._expr(expr.operands[0]) >> self._expr(expr.operands[1])
+        return self._calc_BinaryOp(expr, lambda v0, v1: v0 >> v1)
     
     def _ail_handle_Shl(self, expr: BinaryOp):
-        return self._expr(expr.operands[0]) << self._expr(expr.operands[1])
+        return self._calc_BinaryOp(expr, lambda v0, v1: v0 << v1)
     
     def _ail_handle_And(self, expr: BinaryOp):
-        return self._expr(expr.operands[0]) & self._expr(expr.operands[1])
+        return self._calc_BinaryOp(expr, lambda v0, v1: v0 & v1)
     
     def _ail_handle_Or(self, expr: BinaryOp):
-        return self._expr(expr.operands[0]) | self._expr(expr.operands[1])
+        return self._calc_BinaryOp(expr, lambda v0, v1: v0 | v1)
     
     def _ail_handle_LogicalAnd(self, expr: BinaryOp):
-        expr0 = self._expr(expr.operands[0])
-        expr1 = self._expr(expr.operands[1])
-        if self.state.is_top(expr0) or self.state.is_top(expr1):
-            return self.state.top(expr.bits)
-        return claripy.If(expr0 == 0, expr0, expr1)
+        return self._calc_BinaryOp(expr, lambda v0, v1: claripy.If(v0 == 0, v0, v1))
     
     def _ail_handle_LogicalOr(self, expr: BinaryOp):
-        expr0 = self._expr(expr.operands[0])
-        expr1 = self._expr(expr.operands[1])
-        if self.state.is_top(expr0) or self.state.is_top(expr1):
-            return self.state.top(expr.bits)
-        return claripy.If(expr0 != 0, expr0, expr1)
+        return self._calc_BinaryOp(expr, lambda v0, v1: claripy.If(v0 != 0, v0, v1))
     
     def _ail_handle_Xor(self, expr: BinaryOp):
-        return self._expr(expr.operands[0]) ^ self._expr(expr.operands[1])
+        return self._calc_BinaryOp(expr, lambda v0, v1: v0 ^ v1)
     
     def _ail_handle_Concat(self, expr: BinaryOp):
         # What's this?
-        self.l.debug(f'Debug: {expr}')
-        return self.state.top(expr.bits)
-    
+        self.l.debug(f'Unusual statement Concat: {expr}')
+        return MultiValues(AstEnhancer.top(expr.bits))
+
     def _ail_handle_StackBaseOffset(self, expr: StackBaseOffset):
-        return claripy.BVS(str(expr), expr.bits, explicit_name=True)
+        return MultiValues(claripy.BVS(AstEnhancer.stack_expr_to_name(expr), expr.bits, explicit_name=True))
+    
+    def _ail_handle_Tmp(self, expr: Tmp):
+        return MultiValues(claripy.BVS(str(expr), expr.bits, explicit_name=True))
+    
+    def _ail_handle_Register(self, expr: Register):
+        return MultiValues(claripy.BVS(AstEnhancer.reg_expr_to_name(expr), expr.bits, explicit_name=True))
     
     def _ail_handle_DirtyExpression(self, expr: DirtyExpression):
         self.l.debug(f'Ignore DirtyExpression: {expr}')
-        return self.state.top(expr.bits)
+        return MultiValues(AstEnhancer.top(expr.bits))
     
     def _ail_handle_Const(self, expr: Const):
-        return claripy.BVV(expr.value, expr.bits)
+        return MultiValues(claripy.BVV(expr.value, expr.bits))

@@ -1,14 +1,17 @@
-from typing import Set, Tuple, Dict
+from typing import Set, Tuple
 
 import angr
 from ailment import Block
 from ailment.statement import Statement
 from ailment.utils import stable_hash
 import claripy
+from angr.storage.memory_mixins.paged_memory.pages.multi_values import MultiValues
+from angr.sim_variable import SimStackVariable, SimRegisterVariable
 
 from ...utils.common import pstr
 from ...utils.ailment import stmt_to_str
 from ...utils.logger import LoggerMixin
+from .ast_enhancer import AstEnhancer
 
 class SlicingTrack(LoggerMixin):
     
@@ -64,9 +67,7 @@ class SlicingState:
     _tracks: Set[SlicingTrack]
     _concrete_tracks: Set[SlicingTrack]
     _ended: bool
-    
-    _tops: Dict[int, claripy.ast.BV] = {}
-    _load_ops: Dict[int, claripy.ast.BV] = {}
+
     _proj: angr.Project
     
     def __init__(self, analysis, block: Block):
@@ -81,41 +82,6 @@ class SlicingState:
         self._concrete_tracks = set()
         self._ended = False
         
-    @staticmethod
-    def top(bits: int):
-        if bits in SlicingState._tops:
-            return SlicingState._tops[bits]
-        top = claripy.BVS('TOP', bits, explicit_name=True)
-        SlicingState._tops[bits] = top
-        return top
-    
-    @staticmethod
-    def is_top(expr) -> bool:
-        if isinstance(expr, claripy.ast.BV):
-            if expr.op == 'BVS' and expr.args[0] == 'TOP':
-                return True
-            if 'TOP' in expr.variables:
-                return True
-        return False
-    
-    @staticmethod
-    def load_expr(addr: claripy.ast.BV, bits:int):
-        if bits in SlicingState._load_ops:
-            load = SlicingState._load_ops[bits]
-        else:
-            load = claripy.BVS('__load__', bits, explicit_name=True)
-            SlicingState._load_ops[bits] = load
-        return load ** addr
-    
-    @staticmethod
-    def contains_load(expr) -> bool:
-        if isinstance(expr, claripy.ast.BV):
-            if expr.op == 'BVS' and expr.args[0] == '__load__':
-                return True
-            if '__load__' in expr.variables:
-                return True
-        return False
-        
     def merge(self, *others):
         state = self.copy()
         for another in others:
@@ -129,35 +95,49 @@ class SlicingState:
         state_copy._concrete_tracks = self._concrete_tracks.copy()
         return state_copy
     
-    def add_track(self, expr, stmt):
-        if self.is_top(expr):
-            return
-        track = SlicingTrack(expr, (stmt,), self)
-        if expr.concrete:
-            self._concrete_tracks.add(track)
-        else:
-            self._tracks.add(track)
-        self.changed = True
+    def _apply_function_handlers(self, track: SlicingTrack) -> Set[SlicingTrack]:
+        """
+        Apply function functions handlers to specific track, replacing "__call__ ** addr" expr with concrete expr 
+        or TOP.
+        
+        :param track:   The original track.
+        :return:        Tracks after applying function handlers. One "__call__ ** addr" expr may produce multilple
+                        tracks.
+        """
+        calls = AstEnhancer.extract_calls(track)
+        if not calls:
+            return set([track])
+        tracks = set()
+        for call in calls:
+            func_addr = call.args[1]._model_concrete.value
+            tracks |= self.analysis.function_handler.handle(self._proj.kb.functions[func_addr])
     
-    def update_tracks(self, old, new, stmt):
+    def add_track(self, expr: MultiValues, stmt):
+        for expr_v in next(expr.values()):
+            if AstEnhancer.is_top(expr_v):
+                return
+            track = SlicingTrack(expr_v, (stmt,), self)
+            if expr_v.concrete:
+                self._concrete_tracks.add(track)
+            else:
+                self._tracks.add(track)
+    
+    def update_tracks(self, old: MultiValues, new: MultiValues, stmt):
         new_tracks = set()
-        for track in self._tracks:
-            new_expr = track.expr.replace(old, new)
-            if self.is_top(new_expr):
-                continue
-            new_track = SlicingTrack(new_expr, track.slice + (stmt,), self)
-            if hash(track.expr) != hash(new_track.expr):
-                self.changed = True
-                if new_track.expr.concrete:
-                    self._concrete_tracks.add(new_track)
-                    continue
-            new_tracks.add(new_track)
+        for old_v in next(old.values()):
+            for new_v in next(new.values()):
+                for track in self._tracks:
+                    new_expr = track.expr.replace(old_v, new_v)
+                    if AstEnhancer.is_top(new_expr):
+                        continue
+                    new_track = track
+                    if hash(track.expr) != hash(new_expr):
+                        new_track = SlicingTrack(new_expr, track.slice + (stmt,), self)
+                        if new_expr.concrete:
+                            self._concrete_tracks.add(new_track)
+                            continue
+                    new_tracks.add(new_track)
         self._tracks = new_tracks
-        self._ended = len(new_tracks) == 0
-    
-    @property
-    def ended(self):
-        return self._ended
     
     @property
     def num_tracks(self):
@@ -171,30 +151,38 @@ class SlicingState:
     def has_concrete_results(self):
         return len(self._concrete_tracks) > 0
     
-    def _is_concrete_load(self, ast):
-        if isinstance(ast, claripy.ast.BV) and len(ast.args) == 2:
-            if isinstance(ast.args[0], claripy.ast.BV) and isinstance(ast.args[1], claripy.ast.BV):
-                if ast.args[0].op == 'BVS' and '__load__' in ast.args[0].variables:
-                    return ast.args[1].concrete
-        return False
-    
     @property
     def concrete_results(self):
         sim_state = self._proj.factory.entry_state()
         concrete_tracks = self._concrete_tracks.copy()
         for track in self._tracks:
             new_expr = track.expr
-            # Iteratively find and replace concrete load until we can't find concrete loads in an iteration
-            should_continue = True
-            while should_continue:
-                should_continue = False
-                for ast in list(new_expr.children_asts()) + [new_expr]:
-                    if self._is_concrete_load(ast):
-                        should_continue = True
-                        repl = sim_state.memory.load(ast.args[1]._model_concrete.value, 
-                                               ast.size() // self.arch.byte_width,
-                                               endness=self.arch.memory_endness)
-                        new_expr = new_expr.replace(ast, repl)
+            # Step 1. Replace passed arguments if applicable
+            for var, expr in self.analysis.preset_arguments:
+                for expr_v in next(expr.values()):
+                    # If the arg is passed by stack
+                    if isinstance(var, SimStackVariable):
+                        stack_expr_v = claripy.BVS(AstEnhancer.stack_var_to_name(var), expr_v.size(), 
+                                                   explicit_name=True)
+                        # Like global memory, stack variable is always used with Load expression
+                        new_expr = new_expr.replace(
+                            AstEnhancer.load(MultiValues(stack_expr_v), expr_v.size()).one_value(),
+                            expr_v)
+                    # If the arg is passed by register
+                    elif isinstance(var, SimRegisterVariable):
+                        reg_expr_v = claripy.BVS(AstEnhancer.reg_var_to_name(var), expr_v.size(), explicit_name=True)
+                        new_expr = new_expr.replace(reg_expr_v, expr_v)
+            # Step 2. Iteratively find and replace concrete load (e.g., load from global memory) 
+            # until we can't find concrete loads in an iteration
+            while True:
+                loads = AstEnhancer.extract_loads(new_expr)
+                if not loads:
+                    break
+                for load in loads:
+                    repl = sim_state.memory.load(load.args[1]._model_concrete.value, 
+                                                 load.size() // self.arch.byte_width,
+                                                 endness=self.arch.memory_endness)
+                    new_expr = new_expr.replace(load, repl)
             if new_expr.concrete:
                 concrete_tracks.add(SlicingTrack(new_expr, track.slice, self))    
                             

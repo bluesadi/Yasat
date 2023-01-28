@@ -6,8 +6,8 @@ from angr.knowledge_plugins.cfg.cfg_model import CFGModel
 
 from ..report import MisuseReport
 from ..knowledge_plugins.argument_definition_manager import ArgumentDefinitionManager
-from ..analyses.backward_slicing import BackwardSlicing, SlicingCriterion
-from ..analyses.backward_slicing.criterion_selector.argument_selector import ArgumentSelector
+from ..analyses.backward_slicing import BackwardSlicing
+from ..analyses.backward_slicing.criteria_selector.argument_selector import ArgumentSelector
 
 class Criterion:
     

@@ -3,8 +3,6 @@ from angr.knowledge_base.knowledge_base import KnowledgeBase
 from angr.knowledge_plugins.key_definitions.constants import OP_BEFORE, OP_AFTER
 from angr.analyses.reaching_definitions.dep_graph import DepGraph
 
-from ..analyses.interprocedural_function_handler import InterproceduralFunctionHandler
-
 class ArgumentDefinitionManager(KnowledgeBasePlugin):
     
     def __init__(self, kb: KnowledgeBase):

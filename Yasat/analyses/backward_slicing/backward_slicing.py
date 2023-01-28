@@ -1,15 +1,19 @@
-from typing import Dict, Set, List
+from typing import Dict, Set, List, Any, Tuple
 from collections import defaultdict
 
 from networkx import DiGraph
 from angr.analyses.analysis import Analysis
 from angr.analyses.decompiler.clinic import Clinic
 from ailment import Block
+from ailment.expression import Expression
 from angr.knowledge_plugins.functions import Function
+from angr.storage.memory_mixins.paged_memory.pages.multi_values import MultiValues
+from angr.sim_variable import SimVariable
 
 from .slicing_state import SlicingState, SlicingTrack
 from .engine_ail import SimEngineBackwardSlicing
-from .criterion_selector import CriterionSelector
+from .criteria_selector import CriteriaSelector
+from .function_handler import InterproceduralFunctionHandler, FunctionHandler
 
 class SlicingCriterion:
     
@@ -21,11 +25,14 @@ class SlicingCriterion:
 class BackwardSlicing(Analysis):
     
     target_func: Function
-    criterion_selectors: List[CriterionSelector]
+    criteria_selectors: List[CriteriaSelector]
+    preset_arguments: List[Tuple[SimVariable, MultiValues]]
+    function_handler: FunctionHandler
     graph: DiGraph
     concrete_results: Set[SlicingTrack]
     
     _max_iterations: int
+    _max_call_depth: int
     _entry_block: Block
     _should_abort: bool
     _blocks_by_addr: Dict[int, Block]
@@ -35,20 +42,26 @@ class BackwardSlicing(Analysis):
     
     def __init__(self, 
                  target_func,
-                 criterion_selectors,
-                 max_iterations=5) -> None:
+                 criteria_selectors,
+                 preset_arguments=[],
+                 function_handler=InterproceduralFunctionHandler(),
+                 max_iterations=5,
+                 max_call_depth=2) -> None:
         super().__init__()
         self.target_func = target_func
-        self.criterion_selectors = criterion_selectors
+        self.criteria_selectors = criteria_selectors
+        self.preset_arguments = preset_arguments
+        self.function_handler = function_handler
         
-        if criterion_selectors is None or len(criterion_selectors) == 0:
-            raise ValueError('You should set up at least 1 criterion selector.')
+        if criteria_selectors is None or len(criteria_selectors) == 0:
+            raise ValueError('You should set up at least 1 criteria selector.')
         
-        # Bind this analysis to slicing citerion selectors
-        for selector in criterion_selectors:
+        # Bind this analysis to slicing citeria selectors
+        for selector in criteria_selectors:
             selector.hook(self)
         
         self._max_iterations = max_iterations
+        self._max_call_depth = max_call_depth
         
         # Get or generate CFG
         cfg = self.project.kb.cfgs.get_most_accurate()
@@ -59,6 +72,10 @@ class BackwardSlicing(Analysis):
         
         # Generate the AIL CFG for the target function
         clinic: Clinic = self.project.analyses.Clinic(target_func)
+        print(clinic.dbg_repr())
+        # TODO Check args length
+        self.preset_arguments = list(zip(clinic.arg_list, preset_arguments))
+        
         self.graph = clinic.graph.copy()
         
         self._blocks_by_addr = dict()

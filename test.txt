@@ -1,0 +1,141 @@
+[===================================================================|] 1/1 100%
+[===================================================================|] 1/1 100%
+[===================================================================|] 1/1 100%
+[===================================================================|] 1/1 100%
+[===================================================================|] 1/1 100%
+[===================================================================|] 1/1 100%
+tests/test_dev/bin/arm/sum
+## Block 4005d3
+00 | 0x4005d7 | Call(0x400587<32>, <SimCCARMHF>: [Call (target: 0x40050d<32>, prototype: (unsigned int (32 bits), unsigned int (32 bits), unsigned int (32 bits), unsigned int (32 bits), unsigned int (32 bits), unsigned int (32 bits)) -> int (32 bits), args: [Load(addr=0x411008<32>, size=4, endness=Iend_LE), Load(addr=0x41100c<32>, size=4, endness=Iend_LE), Load(addr=0x411010<32>, size=4, endness=Iend_LE), Load(addr=0x411014<32>, size=4, endness=Iend_LE), Load(addr=0x411018<32>, size=4, endness=Iend_LE), Load(addr=0x41101c<32>, size=4, endness=Iend_LE)])], ret: no-ret-value, fp_ret: no-fp-ret-value)
+
+## Block 4005db
+00 | 0x4005e1 | return 0x0<32>;
+
+
+6
+## Block 40050d
+00 | 0x400513 | s_c =L r0<4><4>
+01 | 0x400519 | s_18 =L r3<4><4>
+
+## Block 40051f
+00 | 0x40051f | r3<4> = Call(0x4003e4<32>, <SimCCARMHF>: [], ret: r0<4>, fp_ret: no-fp-ret-value)
+01 | 0x400523 | if ((r3<4> == 0x0<32>)) { Goto 0x40052d<32> } else { Goto 0x400525<32> }
+
+## Block 400525
+00 | 0x400525 | r3<4> = r1<4>
+01 | 0x400527 | Goto(0x400563<32>)
+
+## Block 40052d
+00 | 0x40052d | r3<4> = Call(0x4003e4<32>, <SimCCARMHF>: [], ret: r0<4>, fp_ret: no-fp-ret-value)
+01 | 0x400531 | if ((r3<4> == 0x0<32>)) { Goto 0x40053b<32> } else { Goto 0x400533<32> }
+
+## Block 400533
+00 | 0x400533 | r3<4> = r2<4>
+01 | 0x400535 | Goto(0x400563<32>)
+
+## Block 40053b
+00 | 0x40053b | r3<4> = Call(0x4003e4<32>, <SimCCARMHF>: [], ret: r0<4>, fp_ret: no-fp-ret-value)
+01 | 0x40053f | if ((r3<4> == 0x0<32>)) { Goto 0x400549<32> } else { Goto 0x400541<32> }
+
+## Block 400541
+00 | 0x400541 | r3<4> = Load(addr=stack_base-24, size=4, endness=Iend_LE)
+01 | 0x400543 | Goto(0x400563<32>)
+
+## Block 400549
+00 | 0x400549 | r3<4> = Call(0x4003e4<32>, <SimCCARMHF>: [], ret: r0<4>, fp_ret: no-fp-ret-value)
+01 | 0x40054d | if ((r3<4> == 0x0<32>)) { Goto 0x400553<32> } else { Goto 0x40054f<32> }
+
+## Block 40054f
+00 | 0x40054f | r3<4> = Load(addr=stack_base+0, size=4, endness=Iend_LE)
+01 | 0x400551 | Goto(0x400563<32>)
+
+## Block 400553
+00 | 0x400553 | Call(0x4003e4<32>, <SimCCARMHF>: [], ret: r0<4>, fp_ret: no-fp-ret-value)
+
+## Block 400557
+00 | 0x40055b | if ((r0<4> == 0x0<32>)) { Goto 0x400561<32> } else { Goto 0x40055d<32> }
+
+## Block 40055d
+00 | 0x40055d | r3<4> = Load(addr=stack_base+4, size=4, endness=Iend_LE)
+01 | 0x40055f | Goto(0x400563<32>)
+
+## Block 400561
+00 | 0x400561 | r3<4> = Load(addr=stack_base-12, size=4, endness=Iend_LE)
+01 | 0x400561 | Goto(0x400563<32>)
+
+## Block 400563
+00 | 0x400569 | return r3<4>;
+
+
+6
+## Block 40050d
+00 | 0x400513 | s_c =L r0<4><4>
+01 | 0x400519 | s_18 =L r3<4><4>
+
+## Block 40051f
+00 | 0x40051f | r3<4> = Call(0x4003e4<32>, <SimCCARMHF>: [], ret: r0<4>, fp_ret: no-fp-ret-value)
+01 | 0x400523 | if ((r3<4> == 0x0<32>)) { Goto 0x40052d<32> } else { Goto 0x400525<32> }
+
+## Block 400525
+00 | 0x400525 | r3<4> = r1<4>
+01 | 0x400527 | Goto(0x400563<32>)
+
+## Block 40052d
+00 | 0x40052d | r3<4> = Call(0x4003e4<32>, <SimCCARMHF>: [], ret: r0<4>, fp_ret: no-fp-ret-value)
+01 | 0x400531 | if ((r3<4> == 0x0<32>)) { Goto 0x40053b<32> } else { Goto 0x400533<32> }
+
+## Block 400533
+00 | 0x400533 | r3<4> = r2<4>
+01 | 0x400535 | Goto(0x400563<32>)
+
+## Block 40053b
+00 | 0x40053b | r3<4> = Call(0x4003e4<32>, <SimCCARMHF>: [], ret: r0<4>, fp_ret: no-fp-ret-value)
+01 | 0x40053f | if ((r3<4> == 0x0<32>)) { Goto 0x400549<32> } else { Goto 0x400541<32> }
+
+## Block 400541
+00 | 0x400541 | r3<4> = Load(addr=stack_base-24, size=4, endness=Iend_LE)
+01 | 0x400543 | Goto(0x400563<32>)
+
+## Block 400549
+00 | 0x400549 | r3<4> = Call(0x4003e4<32>, <SimCCARMHF>: [], ret: r0<4>, fp_ret: no-fp-ret-value)
+01 | 0x40054d | if ((r3<4> == 0x0<32>)) { Goto 0x400553<32> } else { Goto 0x40054f<32> }
+
+## Block 40054f
+00 | 0x40054f | r3<4> = Load(addr=stack_base+0, size=4, endness=Iend_LE)
+01 | 0x400551 | Goto(0x400563<32>)
+
+## Block 400553
+00 | 0x400553 | Call(0x4003e4<32>, <SimCCARMHF>: [], ret: r0<4>, fp_ret: no-fp-ret-value)
+
+## Block 400557
+00 | 0x40055b | if ((r0<4> == 0x0<32>)) { Goto 0x400561<32> } else { Goto 0x40055d<32> }
+
+## Block 40055d
+00 | 0x40055d | r3<4> = Load(addr=stack_base+4, size=4, endness=Iend_LE)
+01 | 0x40055f | Goto(0x400563<32>)
+
+## Block 400561
+00 | 0x400561 | r3<4> = Load(addr=stack_base-12, size=4, endness=Iend_LE)
+01 | 0x400561 | Goto(0x400563<32>)
+
+## Block 400563
+00 | 0x400569 | return r3<4>;
+
+
+1
+## Block 400587
+00 | 0x40059b | return r0<4>;
+
+
+Expr: 6
+Slice (0x7f96ad43a7f0): (Call (target: 0x400587<32>, prototype: (int (32 bits)) -> None, args: [Call (target: 0x40050d<32>, prototype: (unsigned int (32 bits), unsigned int (32 bits), unsigned int (32 bits), unsigned int (32 bits), unsigned int (32 bits), unsigned int (32 bits)) -> int (32 bits), args: [Load(addr=0x411008<32>, size=4, endness=Iend_LE), Load(addr=0x41100c<32>, size=4, endness=Iend_LE), Load(addr=0x411010<32>, size=4, endness=Iend_LE), Load(addr=0x411014<32>, size=4, endness=Iend_LE), Load(addr=0x411018<32>, size=4, endness=Iend_LE), Load(addr=0x41101c<32>, size=4, endness=Iend_LE)])]),)
+Expr: 5
+Slice (0x7f96ad7208b0): (Call (target: 0x400587<32>, prototype: (int (32 bits)) -> None, args: [Call (target: 0x40050d<32>, prototype: (unsigned int (32 bits), unsigned int (32 bits), unsigned int (32 bits), unsigned int (32 bits), unsigned int (32 bits), unsigned int (32 bits)) -> int (32 bits), args: [Load(addr=0x411008<32>, size=4, endness=Iend_LE), Load(addr=0x41100c<32>, size=4, endness=Iend_LE), Load(addr=0x411010<32>, size=4, endness=Iend_LE), Load(addr=0x411014<32>, size=4, endness=Iend_LE), Load(addr=0x411018<32>, size=4, endness=Iend_LE), Load(addr=0x41101c<32>, size=4, endness=Iend_LE)])]),)
+Expr: 4
+Slice (0x7f96ad4e5490): (Call (target: 0x400587<32>, prototype: (int (32 bits)) -> None, args: [Call (target: 0x40050d<32>, prototype: (unsigned int (32 bits), unsigned int (32 bits), unsigned int (32 bits), unsigned int (32 bits), unsigned int (32 bits), unsigned int (32 bits)) -> int (32 bits), args: [Load(addr=0x411008<32>, size=4, endness=Iend_LE), Load(addr=0x41100c<32>, size=4, endness=Iend_LE), Load(addr=0x411010<32>, size=4, endness=Iend_LE), Load(addr=0x411014<32>, size=4, endness=Iend_LE), Load(addr=0x411018<32>, size=4, endness=Iend_LE), Load(addr=0x41101c<32>, size=4, endness=Iend_LE)])]),)
+Expr: 3
+Slice (0x7f96ad720880): (Call (target: 0x400587<32>, prototype: (int (32 bits)) -> None, args: [Call (target: 0x40050d<32>, prototype: (unsigned int (32 bits), unsigned int (32 bits), unsigned int (32 bits), unsigned int (32 bits), unsigned int (32 bits), unsigned int (32 bits)) -> int (32 bits), args: [Load(addr=0x411008<32>, size=4, endness=Iend_LE), Load(addr=0x41100c<32>, size=4, endness=Iend_LE), Load(addr=0x411010<32>, size=4, endness=Iend_LE), Load(addr=0x411014<32>, size=4, endness=Iend_LE), Load(addr=0x411018<32>, size=4, endness=Iend_LE), Load(addr=0x41101c<32>, size=4, endness=Iend_LE)])]),)
+Expr: 2
+Slice (0x7f96ad4e58b0): (Call (target: 0x400587<32>, prototype: (int (32 bits)) -> None, args: [Call (target: 0x40050d<32>, prototype: (unsigned int (32 bits), unsigned int (32 bits), unsigned int (32 bits), unsigned int (32 bits), unsigned int (32 bits), unsigned int (32 bits)) -> int (32 bits), args: [Load(addr=0x411008<32>, size=4, endness=Iend_LE), Load(addr=0x41100c<32>, size=4, endness=Iend_LE), Load(addr=0x411010<32>, size=4, endness=Iend_LE), Load(addr=0x411014<32>, size=4, endness=Iend_LE), Load(addr=0x411018<32>, size=4, endness=Iend_LE), Load(addr=0x41101c<32>, size=4, endness=Iend_LE)])]),)
+Expr: 1
+Slice (0x7f96ad7524f0): (Call (target: 0x400587<32>, prototype: (int (32 bits)) -> None, args: [Call (target: 0x40050d<32>, prototype: (unsigned int (32 bits), unsigned int (32 bits), unsigned int (32 bits), unsigned int (32 bits), unsigned int (32 bits), unsigned int (32 bits)) -> int (32 bits), args: [Load(addr=0x411008<32>, size=4, endness=Iend_LE), Load(addr=0x41100c<32>, size=4, endness=Iend_LE), Load(addr=0x411010<32>, size=4, endness=Iend_LE), Load(addr=0x411014<32>, size=4, endness=Iend_LE), Load(addr=0x411018<32>, size=4, endness=Iend_LE), Load(addr=0x41101c<32>, size=4, endness=Iend_LE)])]),)
