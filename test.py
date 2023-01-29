@@ -48,15 +48,15 @@ def compile_all():
             clear_dirs(*dirs)
             # Compile C files in src/ directory    
             src_dir = join(test_case_dir, 'src')
-            for src_file in filter(lambda filename : filename.endswith('.c'), os.listdir(src_dir)):
-                for arch, compiler in COMPILERS.items():
-                    # Path of dynamic libiraies
-                    lib_option = f'-L{join(lib_dir, arch)}'
-                    output_dir = join(bin_dir, arch)
-                    clear_dirs(output_dir)
+            for arch, compiler in COMPILERS.items():
+                lib_option = f'-L{join(lib_dir, arch)}'
+                output_dir = join(bin_dir, arch)
+                clear_dirs(output_dir)
+                for src_file in filter(lambda filename : filename.endswith('.c'), os.listdir(src_dir)):
                     output_path = join(output_dir, f'{os.path.splitext(src_file)[0]}')
                     src_path = join(src_dir, src_file)
-                    os.system(f'{compiler} {src_path} -o {output_path} {lib_option} {COMMON_OPTIONS}')
+                    compiler_command = f'{compiler} {src_path} -o {output_path} {lib_option} {COMMON_OPTIONS}'
+                    os.system(compiler_command)
                     squashfs_path = join(input_dir, f'{os.path.splitext(src_file)[0]}_{arch}.bin')
                     os.system(f'mksquashfs {output_dir} {squashfs_path} -quiet')
                     

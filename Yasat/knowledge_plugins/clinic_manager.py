@@ -1,0 +1,35 @@
+from typing import Dict, Union
+
+from angr.knowledge_plugins.plugin import KnowledgeBasePlugin
+from angr.knowledge_base.knowledge_base import KnowledgeBase
+from angr.analyses.decompiler.clinic import Clinic
+from angr.knowledge_plugins.functions.function import Function
+
+class ClinicManager(KnowledgeBasePlugin):
+    
+    _cached: Dict[int, Clinic]
+    
+    def __init__(self, kb: KnowledgeBase) -> None:
+        self._kb = kb
+        self._proj = kb._project
+        self._cfg = kb.cfgs.get_most_accurate()
+        self._cached = {}
+        
+    def get_clinic(self, func: Union[int, Function]) -> Clinic:
+        '''
+        Get Clinic instance from cache. If cache the required Clinic does not exists in cache, create one and cache it.
+        
+        :param func:    Function's address or Function instance.
+        '''
+        if isinstance(func, int):
+            func = self._kb.functions[func]
+        if func.addr in self._cached:
+            return self._cached[func.addr]
+        print('start')
+        print(func)
+        clinic = self._proj.analyses.Clinic(func)
+        print('end')
+        self._cached[func.addr] = clinic
+        return clinic
+        
+KnowledgeBasePlugin.register_default('clinic_manager', ClinicManager)

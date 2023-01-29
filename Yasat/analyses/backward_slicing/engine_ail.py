@@ -1,4 +1,5 @@
 from typing import List
+import logging
 
 import ailment
 import claripy
@@ -19,6 +20,7 @@ class SimEngineBackwardSlicing(
     
     def __init__(self, analysis):
         super().__init__()
+        self.l.setLevel(logging.INFO)
         
         self.analysis = analysis
         self.project = self.analysis.project
@@ -67,7 +69,6 @@ class SimEngineBackwardSlicing(
             whitelist = set(whitelist)
 
         for stmt_idx, stmt in reversed(list(enumerate(self.block.statements))):
-            
             if whitelist is not None and stmt_idx not in whitelist:
                 continue
             
@@ -76,7 +77,9 @@ class SimEngineBackwardSlicing(
             self.state.stmt_idx = stmt_idx
             self.ins_addr = stmt.ins_addr
             
+            print(stmt, 'Start')
             self._handle_Stmt(stmt)
+            print(stmt, 'End')
     
     def _handle_Stmt(self, stmt):
         for selector in self.analysis.criteria_selectors:
@@ -134,8 +137,6 @@ class SimEngineBackwardSlicing(
     def _ail_handle_CallExpr(self, expr: Call):
         func_addr = self._expr(expr.target)
         args = [] if expr.args is None else [self._expr(arg) for arg in expr.args]
-        if expr.args is not None:
-            print(len(expr.args))
         for func_addr_v in next(func_addr.values()):
             if func_addr_v.concrete:
                 handler = self.analysis.function_handler

@@ -70,10 +70,18 @@ class BackwardSlicing(Analysis):
                                                 force_complete_scan=False, 
                                                 normalize=True)
         
+        # That's for recovering prototypes of callees in this function, in order to achieve a higher accuracy
+        # e.g., sometimes Clinic analysis cannot correctly deduce callees' stack arguments
+        for addr in self.project.kb.callgraph[target_func.addr]:
+            if target_func.name == 'div':
+                print('div')
+            self.project.kb.clinic_manager.get_clinic(addr)
+            if target_func.name == 'div':
+                print('div end')
+            
         # Generate the AIL CFG for the target function
-        clinic: Clinic = self.project.analyses.Clinic(target_func)
-        print(clinic.dbg_repr())
-        # TODO Check args length
+        clinic: Clinic = self.project.kb.clinic_manager.get_clinic(target_func)
+            
         self.preset_arguments = list(zip(clinic.arg_list, preset_arguments))
         
         self.graph = clinic.graph.copy()
@@ -89,7 +97,6 @@ class BackwardSlicing(Analysis):
         self._engine = SimEngineBackwardSlicing(self)
         self._node_iterations = defaultdict(int)
         self.concrete_results = set()
-        
         self._analyze()
         
     def _initial_state(self, block: Block):
@@ -141,11 +148,11 @@ class BackwardSlicing(Analysis):
                                       self.graph.predecessors(block))
                 working_queue += list(block.addr for block in revisit_iter)
                 pending_queue |= set(block.addr for block in revisit_iter)
-                
+        
         # Collect concrete results from the last state of each block
         for state in last_states.values():
             self.concrete_results |= state.concrete_results
-            
+        
     def _run_on_node(self, state: SlicingState) -> SlicingState:
         return self._engine.process(state.copy(), block=state.block)
     

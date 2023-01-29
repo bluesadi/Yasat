@@ -1,0 +1,3 @@
+void sink(int a){
+    
+}
