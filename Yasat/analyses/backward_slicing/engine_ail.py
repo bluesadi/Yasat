@@ -1,4 +1,3 @@
-from typing import List
 import logging
 
 import ailment
@@ -9,8 +8,6 @@ from angr.storage.memory_mixins.paged_memory.pages.multi_values import MultiValu
 from ailment.statement import *
 from ailment.expression import *
 
-from ...utils.ailment import stmt_to_str
-from .criteria_selector import ReturnSelector
 from .ast_enhancer import AstEnhancer
 
 class SimEngineBackwardSlicing(
@@ -34,6 +31,7 @@ class SimEngineBackwardSlicing(
             ailment.Stmt.Call: self._ail_handle_Call,
             ailment.Stmt.Return: self._ail_handle_Return,
             ailment.Stmt.DirtyStatement: self._ail_handle_DirtyStatement,
+            ailment.Stmt.Label: self._ail_handle_Label
         }
 
         self._expr_handlers = {
@@ -59,7 +57,7 @@ class SimEngineBackwardSlicing(
                 None,
                 block=kwargs.pop('block', None),
             )
-            self.l.debug(f'State: {self.state.dbg_repr()}')
+            self.l.debug(f'Current state: {self.state.dbg_repr()}')
         except SimEngineError as e:
             raise e
         return state
@@ -77,9 +75,7 @@ class SimEngineBackwardSlicing(
             self.state.stmt_idx = stmt_idx
             self.ins_addr = stmt.ins_addr
             
-            print(stmt, 'Start')
             self._handle_Stmt(stmt)
-            print(stmt, 'End')
     
     def _handle_Stmt(self, stmt):
         for selector in self.analysis.criteria_selectors:
@@ -90,7 +86,7 @@ class SimEngineBackwardSlicing(
         if handler is not None:
             handler(stmt)
         else:
-            self.l.warning('Unsupported statement type %s.', type(stmt).__name__)
+            self.l.warning(f'Unsupported statement: {stmt}')
             
     def _expr(self, expr: Expression) -> MultiValues:
         # Identify criteria and start tracking them
@@ -102,7 +98,7 @@ class SimEngineBackwardSlicing(
         if handler is not None:
             return handler(expr)
         else:
-            self.l.warning('Unsupported expression type %s.', type(expr).__name__)
+            self.l.warning(f'Unsupported expression: {expr}')
             return [AstEnhancer.top(expr.bits)]
         
     def _ail_handle_Call(self, stmt: Call):
@@ -122,7 +118,7 @@ class SimEngineBackwardSlicing(
             self.state.update_tracks(dst, src, stmt)
         
     def _ail_handle_Jump(self, stmt: Jump):
-        self.l.debug(f'Ignore Jump: {stmt}')
+        self.l.debug(f'Ignore Jump: {stmt}.')
     
     def _ail_handle_ConditionalJump(self, stmt: ConditionalJump):
         self._expr(stmt.condition)
@@ -130,6 +126,9 @@ class SimEngineBackwardSlicing(
     def _ail_handle_Return(self, stmt: Return):
         for expr in stmt.ret_exprs:
             self._expr(expr)
+    
+    def _ail_handle_Label(self, stmt: Label):
+        pass
     
     def _ail_handle_DirtyStatement(self, stmt: DirtyStatement):
         self.l.debug(f'Ignore DirtyStatement: {stmt}')

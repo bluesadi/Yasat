@@ -25,10 +25,7 @@ class ClinicManager(KnowledgeBasePlugin):
             func = self._kb.functions[func]
         if func.addr in self._cached:
             return self._cached[func.addr]
-        print('start')
-        print(func)
         clinic = self._proj.analyses.Clinic(func)
-        print('end')
         self._cached[func.addr] = clinic
         return clinic
         

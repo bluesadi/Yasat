@@ -1,11 +1,10 @@
-from typing import Dict, Set, List, Any, Tuple
+from typing import Dict, Set, List, Tuple
 from collections import defaultdict
 
 from networkx import DiGraph
 from angr.analyses.analysis import Analysis
 from angr.analyses.decompiler.clinic import Clinic
 from ailment import Block
-from ailment.expression import Expression
 from angr.knowledge_plugins.functions import Function
 from angr.storage.memory_mixins.paged_memory.pages.multi_values import MultiValues
 from angr.sim_variable import SimVariable
@@ -73,11 +72,7 @@ class BackwardSlicing(Analysis):
         # That's for recovering prototypes of callees in this function, in order to achieve a higher accuracy
         # e.g., sometimes Clinic analysis cannot correctly deduce callees' stack arguments
         for addr in self.project.kb.callgraph[target_func.addr]:
-            if target_func.name == 'div':
-                print('div')
             self.project.kb.clinic_manager.get_clinic(addr)
-            if target_func.name == 'div':
-                print('div end')
             
         # Generate the AIL CFG for the target function
         clinic: Clinic = self.project.kb.clinic_manager.get_clinic(target_func)

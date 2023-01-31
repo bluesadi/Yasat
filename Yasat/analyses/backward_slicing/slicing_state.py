@@ -8,9 +8,8 @@ import claripy
 from angr.storage.memory_mixins.paged_memory.pages.multi_values import MultiValues
 from angr.sim_variable import SimStackVariable, SimRegisterVariable
 
-from ...utils.common import pstr
-from ...utils.ailment import stmt_to_str
 from ...utils.logger import LoggerMixin
+from ...utils.print import PrintUtil
 from .ast_enhancer import AstEnhancer
 
 class SlicingTrack(LoggerMixin):
@@ -46,7 +45,8 @@ class SlicingTrack(LoggerMixin):
         return None
         
     def __str__(self) -> str:
-        return 'SlicingTrack ' + pstr({'expr': str(self.expr), 'slice': [str(stmt) for stmt in self.slice]})
+        return 'SlicingTrack ' + PrintUtil.pstr({'expr': str(self.expr), 
+                                                 'slice': [PrintUtil.pstr_stmt(stmt) for stmt in self.slice]})
     
     def __repr__(self) -> str:
         return str(self)
@@ -94,23 +94,6 @@ class SlicingState:
         state_copy._tracks = self._tracks.copy()
         state_copy._concrete_tracks = self._concrete_tracks.copy()
         return state_copy
-    
-    def _apply_function_handlers(self, track: SlicingTrack) -> Set[SlicingTrack]:
-        """
-        Apply function functions handlers to specific track, replacing "__call__ ** addr" expr with concrete expr 
-        or TOP.
-        
-        :param track:   The original track.
-        :return:        Tracks after applying function handlers. One "__call__ ** addr" expr may produce multilple
-                        tracks.
-        """
-        calls = AstEnhancer.extract_calls(track)
-        if not calls:
-            return set([track])
-        tracks = set()
-        for call in calls:
-            func_addr = call.args[1]._model_concrete.value
-            tracks |= self.analysis.function_handler.handle(self._proj.kb.functions[func_addr])
     
     def add_track(self, expr: MultiValues, stmt):
         for expr_v in next(expr.values()):
@@ -193,16 +176,13 @@ class SlicingState:
             return self.block == another.block and \
                 self.addr == another.addr
                 
-    def __hash__(self) -> int:
-        pass
-    
     def dbg_repr(self):
         def track_to_dict(track):
             return {
                 'expr': str(track.expr),
-                'slice': [stmt_to_str(stmt) for stmt in track.slice]
+                'slice': [PrintUtil.pstr_stmt(stmt) for stmt in track.slice]
             }
         return 'BackwardSlicingState ' + \
-            pstr({'stmts': [stmt_to_str(stmt) for stmt in self.block.statements],
-                  'tracks': [track_to_dict(track) for track in self._tracks], 
-                  'concrete_tracks': [track_to_dict(track) for track in self._concrete_tracks]})
+            PrintUtil.pstr({'stmts': [PrintUtil.pstr_stmt(stmt) for stmt in self.block.statements],
+                            'tracks': [track_to_dict(track) for track in self._tracks],
+                            'concrete_tracks': [track_to_dict(track) for track in self._concrete_tracks]})

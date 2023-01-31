@@ -7,13 +7,6 @@ from func_timeout import func_timeout
 from func_timeout.exceptions import FunctionTimedOut
 
 from .logger import default_logger
-
-def pstr(obj):
-    try:
-        return str(json.dumps(obj, indent=2))
-    except BaseException:
-        print(json.dumps(obj, indent=2))
-        return str(obj)
     
 def call_with_timeout(func: Callable, args, timeout):
     l = default_logger

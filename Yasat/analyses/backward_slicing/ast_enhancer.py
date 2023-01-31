@@ -1,4 +1,4 @@
-from typing import Dict, List
+from typing import Dict
 
 import claripy
 from angr.storage.memory_mixins.paged_memory.pages.multi_values import MultiValues
