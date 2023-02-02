@@ -5,7 +5,6 @@ from angr import Analysis, Project
 from angr.knowledge_plugins.cfg.cfg_model import CFGModel
 
 from ..report import MisuseReport
-from ..knowledge_plugins.argument_definition_manager import ArgumentDefinitionManager
 from ..analyses.backward_slicing import BackwardSlicing
 from ..analyses.backward_slicing.criteria_selector.argument_selector import ArgumentSelector
 
@@ -20,11 +19,9 @@ class Criterion:
 class RuleChecker(Analysis):
     
     proj: Project
-    arg_defs: ArgumentDefinitionManager
     
     def __init__(self, name, desc, criteria):
         self.proj = self.project
-        self.arg_defs = self.proj.kb.arg_defs
         self.name = name
         self.desc = desc
         self.criteria: list[Criterion] = criteria

@@ -52,6 +52,7 @@ class SimEngineBackwardSlicing(
         
     def process(self, state, *args, **kwargs):
         try:
+            print(state.dbg_repr())
             self._process(
                 state,
                 None,
@@ -108,8 +109,7 @@ class SimEngineBackwardSlicing(
     def _ail_handle_Store(self, stmt: Store):
         addr = self._expr(stmt.addr)
         data = self._expr(stmt.data)
-        if not AstEnhancer.is_top(addr):
-            self.state.update_tracks(AstEnhancer.load(addr, stmt.addr.bits), data, stmt)
+        return self.state.update_tracks(AstEnhancer.load(addr, stmt.data.bits), data, stmt)
         
     def _ail_handle_Assignment(self, stmt: Assignment):
         dst = self._expr(stmt.dst)
@@ -118,7 +118,7 @@ class SimEngineBackwardSlicing(
             self.state.update_tracks(dst, src, stmt)
         
     def _ail_handle_Jump(self, stmt: Jump):
-        self.l.debug(f'Ignore Jump: {stmt}.')
+        pass
     
     def _ail_handle_ConditionalJump(self, stmt: ConditionalJump):
         self._expr(stmt.condition)
@@ -131,7 +131,7 @@ class SimEngineBackwardSlicing(
         pass
     
     def _ail_handle_DirtyStatement(self, stmt: DirtyStatement):
-        self.l.debug(f'Ignore DirtyStatement: {stmt}')
+        pass
     
     def _ail_handle_CallExpr(self, expr: Call):
         func_addr = self._expr(expr.target)
@@ -151,24 +151,18 @@ class SimEngineBackwardSlicing(
     
     def _ail_handle_Load(self, expr: Load):
         src = self._expr(expr.addr)
-        if AstEnhancer.is_top(src):
-            return AstEnhancer.top(expr.bits)
         return AstEnhancer.load(src, expr.bits)
     
     def _ail_handle_Convert(self, expr: Convert):
         src = self._expr(expr.operand)
         results = set()
         for src_v in next(src.values()):
-            if AstEnhancer.is_top(src_v):
-                results.add(AstEnhancer.top(expr.to_bits))
-            elif expr.to_bits < expr.from_bits:
-                results.add(src[expr.to_bits - 1: 0])
-            elif expr.to_bits > expr.from_bits:
-                results.add(claripy.ZeroExt(expr.to_bits - expr.from_bits, src))
-            results.add(src_v)
+            results.add(AstEnhancer.convert(src_v, expr.to_bits))
         return MultiValues(offset_to_values={0: results})
     
     def _ail_handle_Reinterpret(self, expr: Reinterpret):
+        # What's this?
+        self.l.debug(f'Unusual expression Reinterpret: {expr}')
         return MultiValues(AstEnhancer.top(expr.bits))
     
     def _ail_handle_ITE(self, expr: ITE):
@@ -182,7 +176,7 @@ class SimEngineBackwardSlicing(
                     results.add(claripy.If(cond_v, iftrue_v, iffalse_v))
         return MultiValues(offset_to_values={0: results})
     
-    # Unary operations start
+    # Unary operations
     def _calc_UnaryOp(self, expr: UnaryOp, op_func) -> MultiValues:
         expr0 = expr.operand
         results = set()
@@ -196,13 +190,20 @@ class SimEngineBackwardSlicing(
     def _ail_handle_Neg(self, expr: UnaryOp):
         return self._calc_UnaryOp(expr, lambda v: -v)
     
-    # Binary operations start
+    # Binary operations
     def _calc_BinaryOp(self, expr: BinaryOp, op_func) -> MultiValues:
         expr0 = self._expr(expr.operands[0])
         expr1 = self._expr(expr.operands[1])
         results = set()
         for expr0_v in next(expr0.values()):
             for expr1_v in next(expr1.values()):
+                # Two operands of a binary operation can be of different sizes
+                # It's very weird but does happen (e.g., shr   edx, cl)
+                # Thus we should do some adjustment for that
+                if expr0_v.size() > expr1_v.size():
+                    expr1_v = expr1_v.zero_extend(expr0_v.size() - expr1_v.size())
+                elif expr0_v.size() > expr1_v.size():
+                    expr0_v = expr1_v.zero_extend(expr1_v.size() - expr0_v.size())
                 results.add(op_func(expr0_v, expr1_v))
         return MultiValues(offset_to_values={0: results})
     
@@ -220,8 +221,8 @@ class SimEngineBackwardSlicing(
                                          if self._is_zero(v1) else v0 / v1)
     
     def _ail_handle_DivMod(self, expr: BinaryOp):
-        # What' this
-        self.l.debug(f'Unusual statement Divmod: {expr}')
+        # What's this
+        self.l.debug(f'Unusual expression Divmod: {expr}')
         return self._ail_handle_Div(expr)
     
     def _ail_handle_Mul(self, expr: BinaryOp):
@@ -230,7 +231,7 @@ class SimEngineBackwardSlicing(
     
     def _ail_handle_Mull(self, expr: BinaryOp):
         # What's this?
-        self.l.debug(f'Unusual statement Mull: {expr}')
+        self.l.debug(f'Unusual expression Mull: {expr}')
         return self._ail_handle_Mul(expr)
     
     def _ail_handle_Mod(self, expr: BinaryOp):
@@ -238,7 +239,7 @@ class SimEngineBackwardSlicing(
                                          if self._is_zero(v1) else v0 % v1)
     
     def _ail_handle_Shr(self, expr: BinaryOp):
-        return self._calc_BinaryOp(expr, lambda v0, v1: v0 >> v1)
+        return self._calc_BinaryOp(expr, lambda v0, v1: claripy.LShR(v0, v1))
     
     def _ail_handle_Sar(self, expr: BinaryOp):
         return self._calc_BinaryOp(expr, lambda v0, v1: v0 >> v1)
@@ -263,7 +264,7 @@ class SimEngineBackwardSlicing(
     
     def _ail_handle_Concat(self, expr: BinaryOp):
         # What's this?
-        self.l.debug(f'Unusual statement Concat: {expr}')
+        self.l.debug(f'Unusual expression Concat: {expr}')
         return MultiValues(AstEnhancer.top(expr.bits))
 
     def _ail_handle_StackBaseOffset(self, expr: StackBaseOffset):
@@ -276,7 +277,6 @@ class SimEngineBackwardSlicing(
         return MultiValues(claripy.BVS(AstEnhancer.reg_expr_to_name(expr), expr.bits, explicit_name=True))
     
     def _ail_handle_DirtyExpression(self, expr: DirtyExpression):
-        self.l.debug(f'Ignore DirtyExpression: {expr}')
         return MultiValues(AstEnhancer.top(expr.bits))
     
     def _ail_handle_Const(self, expr: Const):

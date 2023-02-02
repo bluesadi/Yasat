@@ -19,24 +19,33 @@ class AstEnhancer:
         return top
     
     @staticmethod
-    def is_top(expr) -> bool:
-        if isinstance(expr, claripy.ast.BV):
-            if expr.op == 'BVS' and expr.args[0] == 'TOP':
-                return True
-            if 'TOP' in expr.variables:
-                return True
-        return False
+    def is_top(expr: claripy.ast.BV) -> bool:
+        assert isinstance(expr, claripy.ast.BV)
+        if expr.op == 'BVS' and expr.args[0] == 'TOP':
+            return True
+        return 'TOP' in expr.variables
+    
+    @staticmethod
+    def convert(expr: claripy.ast.BV, to_bits: int):
+        assert isinstance(expr, claripy.ast.BV)
+        if AstEnhancer.is_top(expr):
+            return AstEnhancer.top(to_bits)
+        elif to_bits < expr.size():
+            return expr[to_bits - 1: 0]
+        elif to_bits > expr.size():
+            return claripy.ZeroExt(to_bits - expr.size(), expr)
+        return expr
     
     @staticmethod
     def load(addr: MultiValues, bits:int):
         results = set()
         for addr_v in next(addr.values()):
             if bits in AstEnhancer._load_ops:
-                load = AstEnhancer._load_ops[bits]
+                load = AstEnhancer._load_ops[addr_v.size()]
             else:
-                load = claripy.BVS('__load__', bits, explicit_name=True)
-                AstEnhancer._load_ops[bits] = load
-            results.add(load ** addr_v)
+                load = claripy.BVS('__load__', addr_v.size(), explicit_name=True)
+                AstEnhancer._load_ops[addr_v.size()] = load
+            results.add(AstEnhancer.convert(load ** addr_v, bits))
         return MultiValues(offset_to_values={0: results})
     
     def _is_load(ast, concrete=True):

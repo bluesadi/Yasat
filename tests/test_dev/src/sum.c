@@ -17,13 +17,8 @@ int sink(char* a){
     return a;
 }
 
-int a = 1;
-int b = 2;
-int c = 3;
-int d = 4;
-int e = 5;
-int f = 6;
-
 int main(){
-    sink(foo(a, b, c, d, e, f));
+    unsigned int a = -0x123;
+    char b = 2;
+    sink(a >> b);
 }
