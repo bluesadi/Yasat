@@ -1,6 +1,6 @@
 
 from Yasat.binary import Binary
-from tests.common import YasatTestCase
+from tests_.common import YasatTestCase
 
 class BackwardSlicingEngineTestCase(YasatTestCase):
     

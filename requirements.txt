@@ -1,7 +1,0 @@
-angr==9.2.30
-binwalk==2.1.0
-claripy==9.2.30
-cle==9.2.30
-filetype==1.2.0
-func_timeout==4.3.5
-PyYAML==6.0

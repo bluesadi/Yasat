@@ -6,3 +6,5 @@ __pycache__
 /debug
 /tests/common/include/openssl
 /dist
+/.pytest_cache
+/.vscode

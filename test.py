@@ -5,7 +5,7 @@ import tarfile
 import shutil
 from os.path import join, isdir, exists
 
-import tests
+import tests_
 
 COMPILERS = {
     'arm': 'arm-linux-gnueabihf-gcc',
@@ -63,7 +63,7 @@ def compile_all():
 def build_suite():
     loader = unittest.TestLoader()
     suite = unittest.TestSuite()
-    suite.addTests(loader.loadTestsFromModule(tests))
+    suite.addTests(loader.loadTestsFromModule(tests_))
     return suite
 
 if __name__ == '__main__':

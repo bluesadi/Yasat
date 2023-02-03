@@ -7,7 +7,7 @@ from Yasat.analyses.backward_slicing import BackwardSlicing
 from Yasat.analyses.backward_slicing.criteria_selector import ArgumentSelector
 from Yasat.analyses.backward_slicing.function_handler import InterproceduralFunctionHandler
 
-from tests.common import YasatTestCase
+from tests_.common import YasatTestCase
 
 class DevTestCase(YasatTestCase):
     

@@ -1,4 +1,4 @@
-from tests.common import YasatTestCase
+from tests_.common import YasatTestCase
 
 class ConstantSaltsCheckerTestCase(YasatTestCase):
     

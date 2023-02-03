@@ -1,0 +1,3 @@
+[submodule "Yasat-TestsGenerator"]
+	path = Yasat-TestsGenerator
+	url = https://github.com/bluesadi/Yasat-TestsGenerator

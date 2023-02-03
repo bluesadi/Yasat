@@ -6,6 +6,7 @@ from .config import Config
 from .checkers import constant_keys, constant_salts
 from .analyses import backward_slicing
 from .knowledge_plugins import clinic_manager
+from .binary import Binary
 
 logging.getLogger('angr').propagate = False
 logging.getLogger('cle').propagate = False
