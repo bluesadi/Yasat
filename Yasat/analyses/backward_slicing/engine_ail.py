@@ -52,7 +52,6 @@ class SimEngineBackwardSlicing(
         
     def process(self, state, *args, **kwargs):
         try:
-            print(state.dbg_repr())
             self._process(
                 state,
                 None,
@@ -114,8 +113,7 @@ class SimEngineBackwardSlicing(
     def _ail_handle_Assignment(self, stmt: Assignment):
         dst = self._expr(stmt.dst)
         src = self._expr(stmt.src)
-        if not AstEnhancer.is_top(dst):
-            self.state.update_tracks(dst, src, stmt)
+        self.state.update_tracks(dst, src, stmt)
         
     def _ail_handle_Jump(self, stmt: Jump):
         pass

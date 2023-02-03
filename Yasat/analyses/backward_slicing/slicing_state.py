@@ -29,16 +29,15 @@ class SlicingTrack(LoggerMixin):
         return self._slice
     
     @property
-    def string_expr(self):
-        int_expr = self.int_expr
-        if int_expr is None:
-            self.l.error(f'Expression {self._expr} is not a concrete value')
+    def string_value(self):
+        int_value = self.int_value
+        if int_value is None:
             return None
         sim_state: angr.sim_state.SimState = self._proj.factory.entry_state()
-        return sim_state.mem[int_expr].string.concrete.decode('UTF-8')
+        return sim_state.mem[int_value].string.concrete.decode('UTF-8')
     
     @property
-    def int_expr(self):
+    def int_value(self):
         if self._expr.concrete:
             return self.expr._model_concrete.value
         self.l.error(f'Expression {self._expr} is not a concrete value')
@@ -169,7 +168,12 @@ class SlicingState:
             if new_expr.concrete:
                 concrete_tracks.add(SlicingTrack(new_expr, track.slice, self))    
                             
+        
         return concrete_tracks
+    
+    @property
+    def sorted_concrete_results(self):
+        return sorted(self.concrete_results, key=lambda track: track.slice[0].ins_addr)
     
     def __eq__(self, another: object) -> bool:
         if isinstance(another, SlicingState):

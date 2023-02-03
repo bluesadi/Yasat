@@ -55,7 +55,7 @@ class ConstantValuesChecker(RuleChecker):
     def _resolve_callers(self, callee_addr):
         callers = defaultdict(list)
         if self.cfg is not None:
-            predecessors = self.cfg.get_predecessors(self.cfg.get_any_node(callee_addr))
+            predecessors = self.cfg.get_predecessors(self.cfg.model.get_any_node(callee_addr))
             for predecessor in predecessors:
                 block = self.proj.factory.block(predecessor.addr)
                 caller_insn_addr = block.instruction_addrs[-1]

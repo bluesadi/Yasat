@@ -5,7 +5,7 @@ import angr
 from angr import AngrNoPluginError
 from angr.analyses.cfg.cfg_fast import CFGFast
 
-from . import l
+from .utils.logger import default_logger as l
 from .checkers.base import Criterion, RuleChecker
 
 class Binary:
@@ -71,7 +71,7 @@ class Binary:
     def resolve_callers(self, func_addr):
         callers = set()
         if self.cfg is not None:
-            predecessors = self.cfg.get_predecessors(self.cfg.get_any_node(func_addr))
+            predecessors = self.cfg.get_predecessors(self.cfg.model.get_any_node(func_addr))
             for predecessor in predecessors:
                 block = self.proj.factory.block(predecessor.addr)
                 caller_insn_addr = block.instruction_addrs[-1]

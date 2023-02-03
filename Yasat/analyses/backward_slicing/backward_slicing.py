@@ -28,7 +28,7 @@ class BackwardSlicing(Analysis):
     preset_arguments: List[Tuple[SimVariable, MultiValues]]
     function_handler: FunctionHandler
     graph: DiGraph
-    concrete_results: Set[SlicingTrack]
+    concrete_results: List[SlicingTrack]
     
     _max_iterations: int
     _max_call_depth: int
@@ -91,7 +91,7 @@ class BackwardSlicing(Analysis):
         
         self._engine = SimEngineBackwardSlicing(self)
         self._node_iterations = defaultdict(int)
-        self.concrete_results = set()
+        self.concrete_results = []
         self._analyze()
         
     def _initial_state(self, block: Block):
@@ -145,8 +145,11 @@ class BackwardSlicing(Analysis):
                 pending_queue |= set(block.addr for block in revisit_iter)
         
         # Collect concrete results from the last state of each block
+        self.concrete_results = set()
         for state in last_states.values():
             self.concrete_results |= state.concrete_results
+        self.concrete_results = sorted(self.concrete_results, key=lambda track: track.slice[0].ins_addr)
+        
         
     def _run_on_node(self, state: SlicingState) -> SlicingState:
         return self._engine.process(state.copy(), block=state.block)
