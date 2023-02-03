@@ -5,3 +5,4 @@ __pycache__
 /log
 /debug
 /tests/common/include/openssl
+/dist
