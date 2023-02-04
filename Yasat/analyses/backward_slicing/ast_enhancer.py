@@ -7,8 +7,8 @@ from angr.sim_variable import SimStackVariable, SimRegisterVariable
 
 class AstEnhancer:
     
-    _tops: Dict[int, claripy.ast.BV] = {}
-    _load_ops: Dict[int, claripy.ast.BV] = {}
+    _tops: Dict[int, claripy.ast.Base] = {}
+    _load_ops: Dict[int, claripy.ast.Base] = {}
     
     @staticmethod
     def top(bits: int):
@@ -19,15 +19,15 @@ class AstEnhancer:
         return top
     
     @staticmethod
-    def is_top(expr: claripy.ast.BV) -> bool:
-        assert isinstance(expr, claripy.ast.BV)
+    def is_top(expr: claripy.ast.Base) -> bool:
+        assert isinstance(expr, claripy.ast.Base)
         if expr.op == 'BVS' and expr.args[0] == 'TOP':
             return True
         return 'TOP' in expr.variables
     
     @staticmethod
-    def convert(expr: claripy.ast.BV, to_bits: int):
-        assert isinstance(expr, claripy.ast.BV)
+    def convert(expr: claripy.ast.Base, to_bits: int):
+        assert isinstance(expr, claripy.ast.Base)
         if AstEnhancer.is_top(expr):
             return AstEnhancer.top(to_bits)
         elif to_bits < expr.size():
@@ -49,14 +49,14 @@ class AstEnhancer:
         return MultiValues(offset_to_values={0: results})
     
     def _is_load(ast, concrete=True):
-        if isinstance(ast, claripy.ast.BV) and len(ast.args) == 2:
-            if isinstance(ast.args[0], claripy.ast.BV) and isinstance(ast.args[1], claripy.ast.BV):
+        if isinstance(ast, claripy.ast.Base) and len(ast.args) == 2:
+            if isinstance(ast.args[0], claripy.ast.Base) and isinstance(ast.args[1], claripy.ast.Base):
                 if ast.args[0].op == 'BVS' and '__load__' in ast.args[0].variables:
                     return not concrete or ast.args[1].concrete
         return False
     
     @staticmethod
-    def extract_loads(expr: claripy.ast.BV, concrete=True):
+    def extract_loads(expr: claripy.ast.Base, concrete=True):
         asts = list(expr.children_asts()) + [expr]
         loads = []
         for ast in asts:

@@ -14,7 +14,7 @@ from .ast_enhancer import AstEnhancer
 
 class SlicingTrack(LoggerMixin):
     
-    def __init__(self, expr: claripy.ast.BV, slice: Tuple[Statement], state):
+    def __init__(self, expr: claripy.ast.Base, slice: Tuple[Statement], state):
         self._expr = expr
         self._slice = slice
         self._state = state
@@ -41,6 +41,13 @@ class SlicingTrack(LoggerMixin):
         if self._expr.concrete:
             return self.expr._model_concrete.value
         self.l.error(f'Expression {self._expr} is not a concrete value')
+        return None
+    
+    @property
+    def bool_value(self):
+        if isinstance(self.expr, claripy.ast.Bool) and self.expr.concrete:
+            return self.expr._model_concrete
+        self.l.error(f'Expression {self._expr} is not BoolV')
         return None
         
     def __str__(self) -> str:

@@ -5,13 +5,15 @@ from networkx import DiGraph
 from angr.analyses.analysis import Analysis
 from angr.analyses.decompiler.clinic import Clinic
 from ailment import Block
+from ailment.statement import ConditionalJump
+from ailment.expression import Const
 from angr.knowledge_plugins.functions import Function
 from angr.storage.memory_mixins.paged_memory.pages.multi_values import MultiValues
 from angr.sim_variable import SimVariable
 
 from .slicing_state import SlicingState, SlicingTrack
 from .engine_ail import SimEngineBackwardSlicing
-from .criteria_selector import CriteriaSelector
+from .criteria_selector import CriteriaSelector, ConditionSelector
 from .function_handler import InterproceduralFunctionHandler, FunctionHandler
 
 class SlicingCriterion:
@@ -42,10 +44,11 @@ class BackwardSlicing(Analysis):
     def __init__(self, 
                  target_func,
                  criteria_selectors,
-                 preset_arguments=[],
+                 preset_arguments: List[MultiValues] = [],
                  function_handler=InterproceduralFunctionHandler(),
                  max_iterations=5,
-                 max_call_depth=2) -> None:
+                 max_call_depth=2,
+                 remove_unreachable_blocks=True) -> None:
         super().__init__()
         self.target_func = target_func
         self.criteria_selectors = criteria_selectors
@@ -76,7 +79,6 @@ class BackwardSlicing(Analysis):
             
         # Generate the AIL CFG for the target function
         clinic: Clinic = self.project.kb.clinic_manager.get_clinic(target_func)
-            
         self.preset_arguments = list(zip(clinic.arg_list, preset_arguments))
         
         self.graph = clinic.graph.copy()
@@ -92,7 +94,52 @@ class BackwardSlicing(Analysis):
         self._engine = SimEngineBackwardSlicing(self)
         self._node_iterations = defaultdict(int)
         self.concrete_results = []
+        
+        if remove_unreachable_blocks:
+            self._remove_unreachable_blocks()
+        
         self._analyze()
+        
+    def _remove_unreachable_blocks(self):
+        graph = self.graph.copy()
+        preset_arguments = [mv for _, mv in self.preset_arguments]
+        bs = self.project.analyses.BackwardSlicing(target_func=self.target_func,
+                                                   criteria_selectors=[ConditionSelector()],
+                                                   function_handler=None,
+                                                   max_iterations=1,
+                                                   preset_arguments=preset_arguments,
+                                                   remove_unreachable_blocks=False)
+        constant_conds = {}
+        for result in bs.concrete_results:
+            constant_conds[result.slice[-1].ins_addr] = result.bool_value
+        entry_block = None
+        for block in graph:
+            if graph.in_degree(block) == 0:
+                entry_block = block
+                break
+        queue = [entry_block]
+        reachable_blocks = set()
+        while queue:
+            block = queue.pop(0)
+            if block in reachable_blocks:
+                continue
+            reachable_blocks.add(block)
+            stmt = block.statements[-1]
+            if isinstance(stmt, ConditionalJump):
+                if stmt.ins_addr in constant_conds:
+                    cond_v = constant_conds[stmt.ins_addr]
+                    if cond_v and isinstance(stmt.true_target, Const):
+                        succ = self._blocks_by_addr[stmt.true_target.value]
+                        queue.append(succ)
+                    elif not cond_v and isinstance(stmt.false_target, Const):
+                        succ = self._blocks_by_addr[stmt.false_target.value]
+                        queue.append(succ)
+            else:
+                queue += list(graph.successors(block))
+        for block in graph:
+            if block not in reachable_blocks:
+                self.graph.remove_node(block)
+                del self._blocks_by_addr[block.addr]
         
     def _initial_state(self, block: Block):
         return SlicingState(analysis=self,

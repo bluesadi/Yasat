@@ -99,7 +99,7 @@ class SimEngineBackwardSlicing(
             return handler(expr)
         else:
             self.l.warning(f'Unsupported expression: {expr}')
-            return [AstEnhancer.top(expr.bits)]
+            return MultiValues(AstEnhancer.top(expr.bits))
         
     def _ail_handle_Call(self, stmt: Call):
         # We treat Call statements as Call expressions
@@ -165,10 +165,10 @@ class SimEngineBackwardSlicing(
     
     def _ail_handle_ITE(self, expr: ITE):
         cond = self._expr(expr.cond)
+        iftrue = self._expr(expr.iftrue)
+        iffalse = self._expr(expr.iffalse)
         results = set()
         for cond_v in next(cond.values()):
-            iftrue = self._expr(expr.iftrue)
-            iffalse = self._expr(expr.iffalse)
             for iftrue_v in next(iftrue.values()):
                 for iffalse_v in next(iffalse.values()):
                     results.add(claripy.If(cond_v, iftrue_v, iffalse_v))
@@ -259,6 +259,37 @@ class SimEngineBackwardSlicing(
     
     def _ail_handle_Xor(self, expr: BinaryOp):
         return self._calc_BinaryOp(expr, lambda v0, v1: v0 ^ v1)
+    
+    def _ail_handle_Cmp(self, expr: BinaryOp) -> MultiValues:
+        op0 = self._expr(expr.operands[0])
+        op1 = self._expr(expr.operands[1])
+        
+        results = set()
+        if expr.op == 'CmpLT':
+            for op0_v in next(op0.values()):
+                for op1_v in next(op1.values()):
+                    results.add(op0_v < op1_v)
+            return MultiValues(offset_to_values={0: results})
+        
+        if expr.op == 'CmpEQ':
+            for op0_v in next(op0.values()):
+                for op1_v in next(op1.values()):
+                    results.add(op0_v == op1_v)
+            return MultiValues(offset_to_values={0: results})
+            
+        return MultiValues(AstEnhancer.top(expr.bits))
+
+    _ail_handle_CmpF = _ail_handle_Cmp
+    _ail_handle_CmpEQ = _ail_handle_Cmp
+    _ail_handle_CmpNE = _ail_handle_Cmp
+    _ail_handle_CmpLE = _ail_handle_Cmp
+    _ail_handle_CmpLEs = _ail_handle_Cmp
+    _ail_handle_CmpLT = _ail_handle_Cmp
+    _ail_handle_CmpLTs = _ail_handle_Cmp
+    _ail_handle_CmpGE = _ail_handle_Cmp
+    _ail_handle_CmpGEs = _ail_handle_Cmp
+    _ail_handle_CmpGT = _ail_handle_Cmp
+    _ail_handle_CmpGTs = _ail_handle_Cmp
     
     def _ail_handle_Concat(self, expr: BinaryOp):
         # What's this?
