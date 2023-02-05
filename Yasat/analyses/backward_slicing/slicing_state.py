@@ -5,12 +5,12 @@ from ailment import Block
 from ailment.statement import Statement
 from ailment.utils import stable_hash
 import claripy
-from angr.storage.memory_mixins.paged_memory.pages.multi_values import MultiValues
 from angr.sim_variable import SimStackVariable, SimRegisterVariable
 
 from ...utils.logger import LoggerMixin
 from ...utils.print import PrintUtil
 from .ast_enhancer import AstEnhancer
+from .multi_values import MultiValues
 
 class SlicingTrack(LoggerMixin):
     
@@ -40,14 +40,14 @@ class SlicingTrack(LoggerMixin):
     def int_value(self):
         if self._expr.concrete:
             return self.expr._model_concrete.value
-        self.l.error(f'Expression {self._expr} is not a concrete value')
+        self.l.error(f'Expression {self._expr} is not a BV or concrete value')
         return None
     
     @property
     def bool_value(self):
         if isinstance(self.expr, claripy.ast.Bool) and self.expr.concrete:
             return self.expr._model_concrete
-        self.l.error(f'Expression {self._expr} is not BoolV')
+        self.l.error(f'Expression {self._expr} is not a Bool or concrete value')
         return None
         
     def __str__(self) -> str:
@@ -87,6 +87,7 @@ class SlicingState:
         self._tracks = set()
         self._concrete_tracks = set()
         self._ended = False
+        self._concrete_results = None
         
     def merge(self, *others):
         state = self.copy()
@@ -102,7 +103,7 @@ class SlicingState:
         return state_copy
     
     def add_track(self, expr: MultiValues, stmt):
-        for expr_v in next(expr.values()):
+        for expr_v in expr:
             if AstEnhancer.is_top(expr_v):
                 return
             track = SlicingTrack(expr_v, (stmt,), self)
@@ -113,8 +114,8 @@ class SlicingState:
     
     def update_tracks(self, old: MultiValues, new: MultiValues, stmt):
         new_tracks = set()
-        for old_v in next(old.values()):
-            for new_v in next(new.values()):
+        for old_v in old:
+            for new_v in new:
                 for track in self._tracks:
                     new_expr = track.expr.replace(old_v, new_v)
                     if AstEnhancer.is_top(new_expr):
@@ -142,20 +143,22 @@ class SlicingState:
     
     @property
     def concrete_results(self):
+        if self._concrete_results:
+            return self._concrete_results
         sim_state = self._proj.factory.entry_state()
-        concrete_tracks = self._concrete_tracks.copy()
+        concrete_results = self._concrete_tracks.copy()
         for track in self._tracks:
             new_expr = track.expr
             # Step 1. Replace passed arguments if applicable
             for var, expr in self.analysis.preset_arguments:
-                for expr_v in next(expr.values()):
+                for expr_v in expr:
                     # If the arg is passed by stack
                     if isinstance(var, SimStackVariable):
                         stack_expr_v = claripy.BVS(AstEnhancer.stack_var_to_name(var), expr_v.size(), 
                                                    explicit_name=True)
                         # Like global memory, stack variable is always used with Load expression
                         new_expr = new_expr.replace(
-                            AstEnhancer.load(MultiValues(stack_expr_v), expr_v.size()).one_value(),
+                            AstEnhancer.load_v(stack_expr_v, expr_v.size()),
                             expr_v)
                     # If the arg is passed by register
                     elif isinstance(var, SimRegisterVariable):
@@ -173,10 +176,9 @@ class SlicingState:
                                                  endness=self.arch.memory_endness)
                     new_expr = new_expr.replace(load, repl)
             if new_expr.concrete:
-                concrete_tracks.add(SlicingTrack(new_expr, track.slice, self))    
-                            
-        
-        return concrete_tracks
+                concrete_results.add(SlicingTrack(new_expr, track.slice, self))
+        self._concrete_results = concrete_results
+        return concrete_results
     
     @property
     def sorted_concrete_results(self):

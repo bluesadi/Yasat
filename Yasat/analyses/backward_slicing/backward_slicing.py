@@ -8,13 +8,13 @@ from ailment import Block
 from ailment.statement import ConditionalJump
 from ailment.expression import Const
 from angr.knowledge_plugins.functions import Function
-from angr.storage.memory_mixins.paged_memory.pages.multi_values import MultiValues
 from angr.sim_variable import SimVariable
 
 from .slicing_state import SlicingState, SlicingTrack
 from .engine_ail import SimEngineBackwardSlicing
 from .criteria_selector import CriteriaSelector, ConditionSelector
 from .function_handler import InterproceduralFunctionHandler, FunctionHandler
+from .multi_values import MultiValues
 
 class SlicingCriterion:
     
@@ -65,6 +65,8 @@ class BackwardSlicing(Analysis):
         self._max_iterations = max_iterations
         self._max_call_depth = max_call_depth
         
+        self._call_stack = [target_func.addr]
+        
         # Get or generate CFG
         cfg = self.project.kb.cfgs.get_most_accurate()
         if cfg is None:
@@ -95,7 +97,9 @@ class BackwardSlicing(Analysis):
         self._node_iterations = defaultdict(int)
         self.concrete_results = []
         
-        if remove_unreachable_blocks:
+        # Sometimes a called function with preset arguments may contain some unreachable branches
+        # We remove them to make analysis more precise and efficient
+        if remove_unreachable_blocks and preset_arguments:
             self._remove_unreachable_blocks()
         
         self._analyze()

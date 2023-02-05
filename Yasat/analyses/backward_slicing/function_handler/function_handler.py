@@ -1,7 +1,8 @@
 from typing import Tuple, List
 
-from angr.storage.memory_mixins.paged_memory.pages.multi_values import MultiValues
 from angr.knowledge_plugins.functions.function import Function
+
+from ..multi_values import MultiValues
 
 class FunctionHandler:
     

@@ -4,10 +4,10 @@ import ailment
 import claripy
 from angr.engines.light.engine import SimEngineLight, SimEngineLightAILMixin
 from angr.errors import SimEngineError
-from angr.storage.memory_mixins.paged_memory.pages.multi_values import MultiValues
 from ailment.statement import *
 from ailment.expression import *
 
+from .multi_values import MultiValues
 from .ast_enhancer import AstEnhancer
 
 class SimEngineBackwardSlicing(
@@ -78,6 +78,7 @@ class SimEngineBackwardSlicing(
             self._handle_Stmt(stmt)
     
     def _handle_Stmt(self, stmt):
+        # Identify criteria using CriteriaSelector
         for selector in self.analysis.criteria_selectors:
             criteria = selector.select_from_stmt(stmt)
             for criterion in criteria:
@@ -89,7 +90,7 @@ class SimEngineBackwardSlicing(
             self.l.warning(f'Unsupported statement: {stmt}')
             
     def _expr(self, expr: Expression) -> MultiValues:
-        # Identify criteria and start tracking them
+        # Identify criteria using CriteriaSelector
         for selector in self.analysis.criteria_selectors:
             criteria = selector.select_from_expr(expr)
             for criterion in criteria:
@@ -120,6 +121,8 @@ class SimEngineBackwardSlicing(
     
     def _ail_handle_ConditionalJump(self, stmt: ConditionalJump):
         self._expr(stmt.condition)
+        self._expr(stmt.true_target)
+        self._expr(stmt.false_target)
     
     def _ail_handle_Return(self, stmt: Return):
         for expr in stmt.ret_exprs:
@@ -132,17 +135,18 @@ class SimEngineBackwardSlicing(
         pass
     
     def _ail_handle_CallExpr(self, expr: Call):
-        func_addr = self._expr(expr.target)
-        args = [] if expr.args is None else [self._expr(arg) for arg in expr.args]
-        for func_addr_v in next(func_addr.values()):
-            if func_addr_v.concrete:
-                handler = self.analysis.function_handler
-                if handler is not None:
-                    func = self.project.kb.functions[func_addr_v._model_concrete.value]
-                    ret_expr = handler.handle(func, args)
-                    if ret_expr is not None:
-                        return ret_expr
-            return MultiValues(AstEnhancer.top(func_addr_v.size()))
+        func_addr_v = self._expr(expr.target).one_concrete
+        if func_addr_v is not None:
+            args = [self._expr(arg) for arg in expr.args] if expr.args else []
+            handler = self.analysis.function_handler
+            if handler:
+                func = self.project.kb.functions[func_addr_v._model_concrete.value]
+                ret_expr = handler.handle(func, args)
+                if ret_expr:
+                    return ret_expr
+        if expr.ret_expr:
+            return MultiValues(AstEnhancer.top(expr.ret_expr.bits))
+        return None
     
     def _ail_handle_BV(self, expr: claripy.ast.BV):
         return MultiValues(expr)
@@ -153,10 +157,7 @@ class SimEngineBackwardSlicing(
     
     def _ail_handle_Convert(self, expr: Convert):
         src = self._expr(expr.operand)
-        results = set()
-        for src_v in next(src.values()):
-            results.add(AstEnhancer.convert(src_v, expr.to_bits))
-        return MultiValues(offset_to_values={0: results})
+        return MultiValues({AstEnhancer.convert(src_v, expr.to_bits) for src_v in src})
     
     def _ail_handle_Reinterpret(self, expr: Reinterpret):
         # What's this?
@@ -167,20 +168,15 @@ class SimEngineBackwardSlicing(
         cond = self._expr(expr.cond)
         iftrue = self._expr(expr.iftrue)
         iffalse = self._expr(expr.iffalse)
-        results = set()
-        for cond_v in next(cond.values()):
-            for iftrue_v in next(iftrue.values()):
-                for iffalse_v in next(iffalse.values()):
-                    results.add(claripy.If(cond_v, iftrue_v, iffalse_v))
-        return MultiValues(offset_to_values={0: results})
+        return MultiValues({claripy.If(cond_v, iftrue_v, iffalse_v) 
+                            for iffalse_v in iffalse 
+                            for iftrue_v in iftrue 
+                            for cond_v in cond})
     
     # Unary operations
     def _calc_UnaryOp(self, expr: UnaryOp, op_func) -> MultiValues:
-        expr0 = expr.operand
-        results = set()
-        for expr0_v in next(expr0.values()):
-            results.add(op_func(expr0_v))
-        return MultiValues(offset_to_values={0: results})
+        op = self._expr(expr.operand)
+        return MultiValues({op_func(op_v) for op_v in op})
     
     def _ail_handle_Not(self, expr: UnaryOp):
         return self._calc_UnaryOp(expr, lambda v: ~v)
@@ -190,20 +186,20 @@ class SimEngineBackwardSlicing(
     
     # Binary operations
     def _calc_BinaryOp(self, expr: BinaryOp, op_func) -> MultiValues:
-        expr0 = self._expr(expr.operands[0])
-        expr1 = self._expr(expr.operands[1])
-        results = set()
-        for expr0_v in next(expr0.values()):
-            for expr1_v in next(expr1.values()):
+        op0 = self._expr(expr.operands[0])
+        op1 = self._expr(expr.operands[1])
+        values = set()
+        for op0_v in op0:
+            for op1_v in op1:
                 # Two operands of a binary operation can be of different sizes
                 # It's very weird but does happen (e.g., shr   edx, cl)
                 # Thus we should do some adjustment for that
-                if expr0_v.size() > expr1_v.size():
-                    expr1_v = expr1_v.zero_extend(expr0_v.size() - expr1_v.size())
-                elif expr0_v.size() > expr1_v.size():
-                    expr0_v = expr1_v.zero_extend(expr1_v.size() - expr0_v.size())
-                results.add(op_func(expr0_v, expr1_v))
-        return MultiValues(offset_to_values={0: results})
+                if op0_v.size() > op1_v.size():
+                    op1_v = op1_v.zero_extend(op0_v.size() - op1_v.size())
+                elif op0_v.size() > op1_v.size():
+                    op0_v = op1_v.zero_extend(op1_v.size() - op0_v.size())
+                values.add(op_func(op0_v, op1_v))
+        return MultiValues(values)
     
     def _is_zero(self, expr_v):
         return expr_v.concrete and expr_v._model_concrete.value == 0
@@ -224,8 +220,8 @@ class SimEngineBackwardSlicing(
         return self._ail_handle_Div(expr)
     
     def _ail_handle_Mul(self, expr: BinaryOp):
-        return self._calc_BinaryOp(expr, lambda v0, v1: MultiValues(claripy.BVV(0, expr.bits)) 
-                                         if self._is_zero(v0) or self._is_zero(v1) else v0 * v1)
+        return self._calc_BinaryOp(expr, lambda v0, v1: MultiValues(claripy.BVV(0, expr.bits))
+                                   if self._is_zero(v0) or self._is_zero(v1) else v0 * v1)
     
     def _ail_handle_Mull(self, expr: BinaryOp):
         # What's this?
@@ -234,7 +230,7 @@ class SimEngineBackwardSlicing(
     
     def _ail_handle_Mod(self, expr: BinaryOp):
         return self._calc_BinaryOp(expr, lambda v0, v1: AstEnhancer.top(expr.bits) 
-                                         if self._is_zero(v1) else v0 % v1)
+                                   if self._is_zero(v1) else v0 % v1)
     
     def _ail_handle_Shr(self, expr: BinaryOp):
         return self._calc_BinaryOp(expr, lambda v0, v1: claripy.LShR(v0, v1))
@@ -260,24 +256,22 @@ class SimEngineBackwardSlicing(
     def _ail_handle_Xor(self, expr: BinaryOp):
         return self._calc_BinaryOp(expr, lambda v0, v1: v0 ^ v1)
     
+    _Cmp_handlers = {
+        'CmpEQ': lambda v0, v1 : v0 == v1,
+        'CmpLT': lambda v0, v1 : v0 < v1
+    }
+    
     def _ail_handle_Cmp(self, expr: BinaryOp) -> MultiValues:
         op0 = self._expr(expr.operands[0])
         op1 = self._expr(expr.operands[1])
         
-        results = set()
-        if expr.op == 'CmpLT':
-            for op0_v in next(op0.values()):
-                for op1_v in next(op1.values()):
-                    results.add(op0_v < op1_v)
-            return MultiValues(offset_to_values={0: results})
-        
-        if expr.op == 'CmpEQ':
-            for op0_v in next(op0.values()):
-                for op1_v in next(op1.values()):
-                    results.add(op0_v == op1_v)
-            return MultiValues(offset_to_values={0: results})
+        handler = lambda v0, v1 : AstEnhancer.top(expr.bits)
+        if expr.op in self._Cmp_handlers:
+            handler = self._Cmp_handlers[expr.op]
             
-        return MultiValues(AstEnhancer.top(expr.bits))
+        return MultiValues({handler(op0_v, op1_v)
+                            for op0_v in op0
+                            for op1_v in op1})
 
     _ail_handle_CmpF = _ail_handle_Cmp
     _ail_handle_CmpEQ = _ail_handle_Cmp

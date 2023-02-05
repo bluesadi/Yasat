@@ -1,7 +1,7 @@
 from typing import List
 
 import ailment
-from angr.storage.memory_mixins.paged_memory.pages.multi_values import MultiValues
+import claripy
 
 from .criteria_selector import CriteriaSelector
 
@@ -16,6 +16,7 @@ class ArgumentSelector(CriteriaSelector):
     
     def select_from_expr(self, expr: ailment.expression.Expression) -> List[ailment.expression.Expression]:
         if isinstance(expr, ailment.statement.Call):
-            if self.eval(expr.target) == self.callee_addr:
+            v = self.eval(expr.target).one_concrete
+            if isinstance(v, claripy.ast.BV) and v._model_concrete.value == self.callee_addr:
                 return [expr.args[self.arg_idx]]
         return []

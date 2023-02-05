@@ -1,11 +1,6 @@
 __pycache__
 .pytest_cache
-/input
-/report
-/tmp
-/log
 /debug
-/tests/common/include/openssl
-/dist
-/.pytest_cache
 /.vscode
+/tests_dev
+/test.py
