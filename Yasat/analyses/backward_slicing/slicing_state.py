@@ -87,7 +87,7 @@ class SlicingState:
         self._tracks = set()
         self._concrete_tracks = set()
         self._ended = False
-        self._concrete_results = None
+        self._cached_concrete_results = None
         
     def merge(self, *others):
         state = self.copy()
@@ -141,43 +141,67 @@ class SlicingState:
     def has_concrete_results(self):
         return len(self._concrete_tracks) > 0
     
+    def _apply_preset_arguments(self, expr: claripy.ast.Base):
+        # Step 1. Replace passed arguments if applicable
+        new_expr = expr
+        for var, arg in self.analysis.preset_arguments:
+            for arg_v in arg:
+                # If the arg is passed by stack
+                if isinstance(var, SimStackVariable):
+                    stack_expr_v = claripy.BVS(AstEnhancer.stack_var_to_name(var), arg_v.size(), explicit_name=True)
+                    # Like global memory, stack variable is always used with Load expression
+                    new_expr = new_expr.replace(AstEnhancer.load_v(stack_expr_v, arg_v.size()), arg_v)
+                # If the arg is passed by register
+                elif isinstance(var, SimRegisterVariable):
+                    reg_expr_v = claripy.BVS(AstEnhancer.reg_var_to_name(var), arg_v.size(), explicit_name=True)
+                    new_expr = new_expr.replace(reg_expr_v, arg_v)
+        return new_expr
+    
+    def _resolve_load_exprs(self, expr: claripy.ast.Base):
+        '''
+        Iteratively find and replace concrete load (e.g., load from global memory) 
+        until we can't find concrete loads in an iteration
+        '''
+        sim_state = self._proj.factory.entry_state()
+        new_expr = expr
+        while True:
+            loads = AstEnhancer.extract_loads(new_expr)
+            if not loads:
+                break
+            for load in loads:
+                repl = sim_state.memory.load(load.args[1]._model_concrete.value, 
+                                             load.size() // self.arch.byte_width,
+                                             endness=self.arch.memory_endness)
+                new_expr = new_expr.replace(load, repl)
+        return new_expr
+    
+    def _simplify(self, expr):
+        new_expr = expr
+        for children_ast in new_expr.children_asts():
+            if children_ast.op == 'If':
+                cond, iftrue, iffalse = children_ast.args
+                if cond.is_true():
+                    new_expr = new_expr.replace(children_ast, iftrue)
+                elif cond.is_false():
+                    new_expr = new_expr.replace(children_ast, iffalse)
+        return new_expr
+    
     @property
     def concrete_results(self):
-        if self._concrete_results:
-            return self._concrete_results
-        sim_state = self._proj.factory.entry_state()
+        if self._cached_concrete_results:
+            return self._cached_concrete_results
+        
         concrete_results = self._concrete_tracks.copy()
+        
         for track in self._tracks:
-            new_expr = track.expr
-            # Step 1. Replace passed arguments if applicable
-            for var, expr in self.analysis.preset_arguments:
-                for expr_v in expr:
-                    # If the arg is passed by stack
-                    if isinstance(var, SimStackVariable):
-                        stack_expr_v = claripy.BVS(AstEnhancer.stack_var_to_name(var), expr_v.size(), 
-                                                   explicit_name=True)
-                        # Like global memory, stack variable is always used with Load expression
-                        new_expr = new_expr.replace(
-                            AstEnhancer.load_v(stack_expr_v, expr_v.size()),
-                            expr_v)
-                    # If the arg is passed by register
-                    elif isinstance(var, SimRegisterVariable):
-                        reg_expr_v = claripy.BVS(AstEnhancer.reg_var_to_name(var), expr_v.size(), explicit_name=True)
-                        new_expr = new_expr.replace(reg_expr_v, expr_v)
-            # Step 2. Iteratively find and replace concrete load (e.g., load from global memory) 
-            # until we can't find concrete loads in an iteration
-            while True:
-                loads = AstEnhancer.extract_loads(new_expr)
-                if not loads:
-                    break
-                for load in loads:
-                    repl = sim_state.memory.load(load.args[1]._model_concrete.value, 
-                                                 load.size() // self.arch.byte_width,
-                                                 endness=self.arch.memory_endness)
-                    new_expr = new_expr.replace(load, repl)
+            new_expr = self._apply_preset_arguments(track.expr)
+            new_expr = self._resolve_load_exprs(new_expr)
+            new_expr = self._simplify(new_expr)
+            
             if new_expr.concrete:
                 concrete_results.add(SlicingTrack(new_expr, track.slice, self))
-        self._concrete_results = concrete_results
+                
+        self._cached_concrete_results = concrete_results
         return concrete_results
     
     @property

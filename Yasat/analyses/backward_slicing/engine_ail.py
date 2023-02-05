@@ -69,7 +69,6 @@ class SimEngineBackwardSlicing(
         for stmt_idx, stmt in reversed(list(enumerate(self.block.statements))):
             if whitelist is not None and stmt_idx not in whitelist:
                 continue
-            
             self.stmt = stmt
             self.stmt_idx = stmt_idx
             self.state.stmt_idx = stmt_idx
@@ -168,10 +167,19 @@ class SimEngineBackwardSlicing(
         cond = self._expr(expr.cond)
         iftrue = self._expr(expr.iftrue)
         iffalse = self._expr(expr.iffalse)
-        return MultiValues({claripy.If(cond_v, iftrue_v, iffalse_v) 
-                            for iffalse_v in iffalse 
-                            for iftrue_v in iftrue 
-                            for cond_v in cond})
+        values = set()
+        for cond_v in cond:
+            if isinstance(cond_v, claripy.ast.Bool):
+                if cond_v.is_true():
+                    values |= iftrue_v.values
+                    continue
+                elif cond_v.is_false():
+                    values |= iffalse_v.values
+                    continue
+            for iftrue_v in iftrue:
+                for iffalse_v in iffalse:
+                    values.add(claripy.If(cond_v, iftrue_v, iffalse_v))
+        return MultiValues(values)
     
     # Unary operations
     def _calc_UnaryOp(self, expr: UnaryOp, op_func) -> MultiValues:
@@ -258,13 +266,16 @@ class SimEngineBackwardSlicing(
     
     _Cmp_handlers = {
         'CmpEQ': lambda v0, v1 : v0 == v1,
-        'CmpLT': lambda v0, v1 : v0 < v1
+        'CmpNE': lambda v0, v1 : v0 != v1,
+        'CmpLE': lambda v0, v1 : v0 <= v1,
+        'CmpLT': lambda v0, v1 : v0 < v1,
+        'CmpGE': lambda v0, v1 : v0 >= v1,
+        'CmpGT': lambda v0, v1 : v0 > v1
     }
     
     def _ail_handle_Cmp(self, expr: BinaryOp) -> MultiValues:
         op0 = self._expr(expr.operands[0])
         op1 = self._expr(expr.operands[1])
-        
         handler = lambda v0, v1 : AstEnhancer.top(expr.bits)
         if expr.op in self._Cmp_handlers:
             handler = self._Cmp_handlers[expr.op]
