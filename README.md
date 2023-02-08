@@ -8,14 +8,7 @@ Yasat's aims are as follows:
 - Provide an accurate bird's-eye view of the number and severity of cryptographic misuses in firmware
 - Try to exploit some misuses found in firmware
 
-> 12/25/2022\
-> Merry Chrismas! Now I've completed an initial version only covering the two misuse types below. To detect the two misuse types is basically equivalent to detecting constant strings. So I simply utilize angr's built-in ReachingDefinitions analysis. It's a quite naive implemenation, because angr's ReachingDefinitions is an intraprocedural analysis and can't handle function calls. As such, my next step would be implementing an interprocedural context-sensitive ReachingDefinitions analysis to achieve better completeness.\
-> 1/16/2023\
-> I gradually realized ReachingDefinitions maybe not the best way to implement constant values dectection, so I ended up turning to implementing an on-demand BackwardSlicing analysis based on AIL (Angr Intermediate Language) CFG. Now I've completed an initial version (see: [Yasat/analyses/backward_slicing](Yasat/analyses/backward_slicing)), which is able to under-approximatively calculate the values of the slicing criterion (i.e., the argument of a callsite). However, current BackwardSlicing analysis is still imperfect. So I write a todo list to show what I've done and what I plan to do next.\
-> 1/28/2023\
-> Completed an initial version of inter-procedural backward slicing. Maybe there's still room for improvement.
-
-## BackwardSlicing analysis development Process
+## Development progress
 - [x] A skeleton of intra-procedural BackwardSlicing
 - [x] Make it able to handle global variables
 - [ ] Refine [SimEngineBackwardSlicing](Yasat/analyses/backward_slicing/engine_ail.py)
