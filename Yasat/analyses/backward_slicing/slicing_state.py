@@ -188,20 +188,23 @@ class SlicingState:
     
     @property
     def concrete_results(self):
-        if self._cached_concrete_results:
-            return self._cached_concrete_results
+        # if self._cached_concrete_results:
+            # return self._cached_concrete_results
         
         concrete_results = self._concrete_tracks.copy()
-        
         for track in self._tracks:
             new_expr = self._apply_preset_arguments(track.expr)
             new_expr = self._resolve_load_exprs(new_expr)
             new_expr = self._simplify(new_expr)
             
+            print(new_expr)
+            if not new_expr.concrete:
+                print(track)
+            
             if new_expr.concrete:
                 concrete_results.add(SlicingTrack(new_expr, track.slice, self))
                 
-        self._cached_concrete_results = concrete_results
+        # self._cached_concrete_results = concrete_results
         return concrete_results
     
     @property
