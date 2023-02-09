@@ -1,6 +1,8 @@
 __pycache__
 .pytest_cache
-/debug
 /.vscode
+/debug
 /tests_dev
+/config_dev.yml
+/run_dev.py
 /test.py

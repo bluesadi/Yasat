@@ -6,10 +6,16 @@ from .function_handler import FunctionHandler
 from ..criteria_selector import ReturnSelector
 from ..multi_values import MultiValues
 
+
 class InterproceduralFunctionHandler(FunctionHandler):
-    
-    def handle_local_function(self, func: Function, args: List[MultiValues]) -> MultiValues:
-        bs = func.project.analyses.BackwardSlicing(target_func=func, 
-                                                   criteria_selectors=[ReturnSelector()], 
-                                                   preset_arguments=args)
-        return MultiValues({concrete_result.expr for concrete_result in bs.concrete_results})
+    def handle_local_function(
+        self, func: Function, args: List[MultiValues]
+    ) -> MultiValues:
+        bs = func.project.analyses.BackwardSlicing(
+            target_func=func,
+            criteria_selectors=[ReturnSelector()],
+            preset_arguments=args,
+        )
+        return MultiValues(
+            {concrete_result.expr for concrete_result in bs.concrete_results}
+        )
