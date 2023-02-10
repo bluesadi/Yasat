@@ -1,5 +1,6 @@
 from typing import Dict, Set, List, Tuple
 from collections import defaultdict
+import logging
 
 from networkx import DiGraph
 from angr.analyses.analysis import Analysis
@@ -48,7 +49,8 @@ class BackwardSlicing(Analysis):
         function_handler=InterproceduralFunctionHandler(),
         max_iterations=5,
         max_call_depth=2,
-        remove_unreachable_blocks=False,
+        remove_unreachable_blocks=True,
+        call_stack=None,
     ) -> None:
         super().__init__()
         self.target_func = target_func
@@ -62,11 +64,14 @@ class BackwardSlicing(Analysis):
         # Bind this analysis to slicing citeria selectors
         for selector in criteria_selectors:
             selector.hook(self)
+        function_handler.hook(self)
 
         self._max_iterations = max_iterations
         self._max_call_depth = max_call_depth
 
-        self._call_stack = [target_func.addr]
+        if call_stack is None:
+            call_stack = [target_func.addr]
+        self._call_stack = call_stack
         # Get or generate CFG
         cfg = self.project.kb.cfgs.get_most_accurate()
         if cfg is None:
@@ -84,7 +89,9 @@ class BackwardSlicing(Analysis):
 
         # Generate the AIL CFG for the target function
         clinic: Clinic = self.project.kb.clinic_manager.get_clinic(target_func)
-        self.preset_arguments = list(zip(clinic.arg_list, preset_arguments))
+        self.preset_arguments = (
+            list(zip(clinic.arg_list, preset_arguments)) if clinic.arg_list else []
+        )
 
         self.graph = clinic.graph.copy()
 
@@ -97,13 +104,17 @@ class BackwardSlicing(Analysis):
             self._output_states_by_addr[block.addr] = self._initial_state(block)
 
         self._engine = SimEngineBackwardSlicing(self)
+
         self._node_iterations = defaultdict(int)
         self.concrete_results = []
 
         # Sometimes a called function with preset arguments may contain some unreachable branches
         # We remove them to make analysis more precise and efficient
         if remove_unreachable_blocks and preset_arguments:
-            self._remove_unreachable_blocks()
+            # self._remove_unreachable_blocks()
+            pass
+
+        self._sim_state = self.project.factory.entry_state()
 
         self._analyze()
 
@@ -184,6 +195,7 @@ class BackwardSlicing(Analysis):
             last_states[block.addr] = state
             if self._node_iterations[block.addr] > self._max_iterations:
                 continue
+
             state = self._run_on_node(state)
             last_states[block.addr] = state
 

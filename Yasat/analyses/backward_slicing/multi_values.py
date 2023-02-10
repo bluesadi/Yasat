@@ -6,9 +6,20 @@ import claripy
 class MultiValues:
     def __init__(self, values: Union[claripy.ast.Base, Set[claripy.ast.Base]]):
         self.values = {values} if isinstance(values, claripy.ast.Base) else values
+        self.values = {self._normalize(v) for v in self.values}
 
     def __iter__(self):
         return iter(self.values)
+
+    def _normalize(self, v: claripy.ast.Base) -> claripy.ast.BV:
+        if isinstance(v, claripy.ast.Bool):
+            if v.op == "BoolS":
+                return claripy.BVS(v.args[0], 0, explicit_name=True)
+            elif v.concrete:
+                return claripy.BVV(1 if v.is_true() else 0, 1)
+            else:
+                return claripy.If(v, claripy.BVV(1, 1), claripy.BVV(0, 1))
+        return v
 
     @property
     def one_concrete(self) -> Optional[claripy.ast.Base]:

@@ -15,6 +15,7 @@ class InterproceduralFunctionHandler(FunctionHandler):
             target_func=func,
             criteria_selectors=[ReturnSelector()],
             preset_arguments=args,
+            call_stack=self.analysis._call_stack + [func.addr],
         )
         return MultiValues(
             {concrete_result.expr for concrete_result in bs.concrete_results}

@@ -1,9 +1,12 @@
 from typing import Dict, Union
+import logging
 
 from angr.knowledge_plugins.plugin import KnowledgeBasePlugin
 from angr.knowledge_base.knowledge_base import KnowledgeBase
 from angr.analyses.decompiler.clinic import Clinic
 from angr.knowledge_plugins.functions.function import Function
+
+l = logging.getLogger(__name__)
 
 
 class ClinicManager(KnowledgeBasePlugin):
@@ -25,7 +28,12 @@ class ClinicManager(KnowledgeBasePlugin):
             func = self._kb.functions[func]
         if func.addr in self._cached:
             return self._cached[func.addr]
-        clinic = self._proj.analyses.Clinic(func)
+        try:
+            clinic = self._proj.analyses.Clinic(
+                func, cfg=self._kb.cfgs.get_most_accurate()
+            )
+        except:
+            clinic = self._proj.analyses.Clinic(func)
         self._cached[func.addr] = clinic
         return clinic
 

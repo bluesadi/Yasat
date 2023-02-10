@@ -1,12 +1,14 @@
 from typing import List
 import os
+import logging
 
 import angr
 from angr import AngrNoPluginError
 from angr.analyses.cfg.cfg_fast import CFGFast
 
-from .utils.logger import default_logger as l
 from .checkers.base import Criterion, RuleChecker
+
+l = logging.getLogger(__name__)
 
 
 class Binary:

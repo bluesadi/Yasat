@@ -1,4 +1,5 @@
 from typing import Set, Tuple
+import logging
 
 import angr
 from ailment import Block
@@ -7,13 +8,14 @@ from ailment.utils import stable_hash
 import claripy
 from angr.sim_variable import SimStackVariable, SimRegisterVariable
 
-from ...utils.logger import LoggerMixin
 from ...utils.print import PrintUtil
 from .ast_enhancer import AstEnhancer
 from .multi_values import MultiValues
 
+l = logging.getLogger(__name__)
 
-class SlicingTrack(LoggerMixin):
+
+class SlicingTrack:
     def __init__(self, expr: claripy.ast.Base, slice: Tuple[Statement], state):
         self._expr = expr
         self._slice = slice
@@ -40,14 +42,14 @@ class SlicingTrack(LoggerMixin):
     def int_value(self):
         if self._expr.concrete:
             return self.expr._model_concrete.value
-        self.l.error(f"Expression {self._expr} is not a BV or concrete value")
+        l.error(f"Expression {self._expr} is not a BV or concrete value")
         return None
 
     @property
     def bool_value(self):
         if isinstance(self.expr, claripy.ast.Bool) and self.expr.concrete:
             return self.expr._model_concrete
-        self.l.error(f"Expression {self._expr} is not a Bool or concrete value")
+        l.error(f"Expression {self._expr} is not a Bool or concrete value")
         return None
 
     def __str__(self) -> str:

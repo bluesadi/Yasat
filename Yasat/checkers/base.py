@@ -23,6 +23,7 @@ class RuleChecker(Analysis):
     proj: Project
 
     def __init__(self, name, desc, criteria):
+        super().__init__()
         self.proj = self.project
         self.name = name
         self.desc = desc

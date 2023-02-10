@@ -1,3 +1,4 @@
+import traceback
 import logging
 
 import ailment
@@ -9,6 +10,9 @@ from ailment.expression import *
 
 from .multi_values import MultiValues
 from .ast_enhancer import AstEnhancer
+from ...utils.print import PrintUtil
+
+l = logging.getLogger(__name__)
 
 
 class SimEngineBackwardSlicing(
@@ -17,7 +21,6 @@ class SimEngineBackwardSlicing(
 ):
     def __init__(self, analysis):
         super().__init__()
-        # self.l.setLevel(logging.INFO)
 
         self.analysis = analysis
         self.project = self.analysis.project
@@ -57,7 +60,6 @@ class SimEngineBackwardSlicing(
                 None,
                 block=kwargs.pop("block", None),
             )
-            self.l.debug(f"Current state: {self.state.dbg_repr()}")
         except SimEngineError as e:
             raise e
         return state
@@ -86,11 +88,13 @@ class SimEngineBackwardSlicing(
         if handler is not None:
             try:
                 handler(stmt)
-            except BaseException as e:
-                self.l.error(f"Error occured when handling statment: {stmt}")
-                raise e
+            except:
+                l.error(
+                    f"Error occured when handling statment: {PrintUtil.pstr_stmt(stmt)}"
+                )
+                l.error(traceback.format_exc())
         else:
-            self.l.warning(f"Unsupported statement: {stmt}")
+            l.warning(f"Unsupported statement: {PrintUtil.pstr_stmt(stmt)}")
 
     def _expr(self, expr: Expression) -> MultiValues:
         # Identify criteria using CriteriaSelector
@@ -102,7 +106,7 @@ class SimEngineBackwardSlicing(
         if handler is not None:
             return handler(expr)
         else:
-            self.l.warning(f"Unsupported expression: {expr}")
+            l.warning(f"Unsupported expression: {expr}")
             return MultiValues(AstEnhancer.top(expr.bits))
 
     def _ail_handle_Call(self, stmt: Call):
@@ -141,7 +145,10 @@ class SimEngineBackwardSlicing(
 
     def _ail_handle_CallExpr(self, expr: Call):
         func_addr_v = self._expr(expr.target).one_concrete
-        if func_addr_v is not None:
+        if (
+            len(self.analysis._call_stack) <= self.analysis._max_call_depth
+            and func_addr_v is not None
+        ):
             args = [self._expr(arg) for arg in expr.args] if expr.args else []
             handler = self.analysis.function_handler
             if handler:
@@ -157,8 +164,21 @@ class SimEngineBackwardSlicing(
         return MultiValues(expr)
 
     def _ail_handle_Load(self, expr: Load):
-        src = self._expr(expr.addr)
-        return AstEnhancer.load(src, expr.bits)
+        addr = self._expr(expr.addr)
+        values = set()
+        for addr_v in addr:
+            if addr_v.concrete:
+                values.add(
+                    self.analysis._sim_state.memory.load(
+                        addr_v._model_concrete.value,
+                        addr_v.size() // self.arch.byte_width,
+                        endness=self.arch.memory_endness,
+                    )
+                )
+            else:
+                values.add(AstEnhancer.load_v(addr_v, expr.bits))
+        # return AstEnhancer.load(addr, expr.bits)
+        return MultiValues(values)
 
     def _ail_handle_Convert(self, expr: Convert):
         src = self._expr(expr.operand)
@@ -166,7 +186,7 @@ class SimEngineBackwardSlicing(
 
     def _ail_handle_Reinterpret(self, expr: Reinterpret):
         # What's this?
-        self.l.debug(f"Unusual expression Reinterpret: {expr}")
+        l.warning(f"Unusual expression Reinterpret: {expr}")
         return MultiValues(AstEnhancer.top(expr.bits))
 
     def _ail_handle_ITE(self, expr: ITE):
@@ -232,7 +252,7 @@ class SimEngineBackwardSlicing(
 
     def _ail_handle_DivMod(self, expr: BinaryOp):
         # What's this
-        self.l.debug(f"Unusual expression Divmod: {expr}")
+        l.warning(f"Unusual expression Divmod: {expr}")
         return self._ail_handle_Div(expr)
 
     def _ail_handle_Mul(self, expr: BinaryOp):
@@ -245,7 +265,7 @@ class SimEngineBackwardSlicing(
 
     def _ail_handle_Mull(self, expr: BinaryOp):
         # What's this?
-        self.l.debug(f"Unusual expression Mull: {expr}")
+        l.warning(f"Unusual expression Mull: {expr}")
         return self._ail_handle_Mul(expr)
 
     def _ail_handle_Mod(self, expr: BinaryOp):
@@ -310,7 +330,7 @@ class SimEngineBackwardSlicing(
 
     def _ail_handle_Concat(self, expr: BinaryOp):
         # What's this?
-        self.l.debug(f"Unusual expression Concat: {expr}")
+        l.warning(f"Unusual expression Concat: {expr}")
         return MultiValues(AstEnhancer.top(expr.bits))
 
     def _ail_handle_StackBaseOffset(self, expr: StackBaseOffset):

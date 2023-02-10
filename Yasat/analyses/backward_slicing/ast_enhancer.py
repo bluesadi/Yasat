@@ -82,8 +82,6 @@ class AstEnhancer:
             name = f"statck_base_{expr.offset}"
         else:
             raise TypeError(f"expr's type should be Register or SimRegisterVariable")
-        if expr.bits == 1:
-            return claripy.BoolS(name, explicit_name=True)
         return claripy.BVS(name, expr.bits, explicit_name=True)
 
     def reg(expr: Union[Register, SimRegisterVariable]):
@@ -93,17 +91,10 @@ class AstEnhancer:
             name = f"reg_{expr.reg}"
         else:
             raise TypeError(f"expr's type should be Register or SimRegisterVariable")
-        if expr.bits == 1:
-            return claripy.BoolS(name, explicit_name=True)
         return claripy.BVS(name, expr.bits, explicit_name=True)
 
     def tmp(expr: Tmp):
-        name = str(expr)
-        if expr.bits == 1:
-            return claripy.BoolS(name, explicit_name=True)
-        return claripy.BVS(name, expr.bits, explicit_name=True)
+        return claripy.BVS(str(expr), expr.bits, explicit_name=True)
 
     def const(expr: Const):
-        if expr.bits == 1:
-            return claripy.BoolV(expr.value)
         return claripy.BVV(expr.value, expr.bits)

@@ -1,8 +1,9 @@
 import json
+import logging
 
 from ailment.statement import Statement
 
-from .logger import default_logger
+l = logging.getLogger(__name__)
 
 
 class PrintUtil:
@@ -12,10 +13,12 @@ class PrintUtil:
 
         :param obj: The object to be converted.
         """
+        if not isinstance(obj, dict):
+            return str(obj)
         try:
             return str(json.dumps(obj, indent=2))
-        except BaseException:
-            default_logger.warning(f"Cannot convert {type(obj)} to Json format")
+        except:
+            l.warning(f"Cannot convert {type(obj)} to Json format")
             return str(obj)
 
     def pstr_stmt(stmt: Statement):

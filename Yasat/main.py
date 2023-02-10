@@ -1,17 +1,17 @@
 import os
 import time
 from typing import List
-import traceback
+import logging
 
 from .config import Config
-from .utils.extractor import Extractor
-from .utils.common import call_with_timeout
+from .utils import Extractor, TimeoutUtil
 from .report import OverallReport
 from .binary import Binary
-from .utils.logger import LoggerMixin
+
+l = logging.getLogger(__name__)
 
 
-class Main(LoggerMixin):
+class Main:
     config: Config
     report: OverallReport
 
@@ -27,7 +27,7 @@ class Main(LoggerMixin):
     def _start_stage(self, stage_desc):
         self.stage_id += 1
         self.stage_desc = stage_desc
-        self.l.info(f"*** Stage {self.stage_id} - {stage_desc} ***")
+        l.info(f"*** Stage {self.stage_id} - {stage_desc} ***")
         self.stage_start = time.time()
 
     def _init_stage_progress(self, total):
@@ -35,14 +35,12 @@ class Main(LoggerMixin):
 
     def _progress_stage(self):
         self.stage_progress[0] += 1
-        self.l.info(
-            f'[-] Stage is progressing ({"/".join(map(str, self.stage_progress))})'
-        )
+        l.info(f'[-] Stage is progressing ({"/".join(map(str, self.stage_progress))})')
 
     def _end_stage(self):
         stage_cost = time.time() - self.stage_start
         self.report.report_time_cost(self.stage_desc, stage_cost)
-        self.l.info(
+        l.info(
             f"*** Stage {self.stage_id} Finished - Cost {stage_cost:.1f} seconds ***"
         )
 
@@ -59,7 +57,7 @@ class Main(LoggerMixin):
 
         binary_paths = Extractor().extract(self.config.input_path, self.config.tmp_dir)
 
-        self.l.info(f"[-] {len(binary_paths)} binaries will be analyzed soon")
+        l.info(f"[-] {len(binary_paths)} binaries will be analyzed soon")
         self._end_stage()
 
         """
@@ -77,7 +75,7 @@ class Main(LoggerMixin):
 
         binaries: List[Binary] = []
         for binary_path in binary_paths:
-            binary = call_with_timeout(
+            binary = TimeoutUtil.call_with_timeout(
                 Binary.new,
                 args=(binary_path, self.config.checkers),
                 timeout=self.config.preprocess_timeout,
@@ -87,7 +85,7 @@ class Main(LoggerMixin):
             self._progress_stage()
         binaries = binaries
 
-        self.l.info(
+        l.info(
             f"[-] {len(binaries)} binaries will be checked against a set of rules soon"
         )
         self._end_stage()
@@ -95,11 +93,17 @@ class Main(LoggerMixin):
         self._start_stage("Analyze target binaries")
         self._init_stage_progress(len(binaries))
 
-        for binary in binaries:
-            for checker in binary.bound_checkers:
-                misuse_reports = checker.check()
-                self.report.report_misuses(checker.name, misuse_reports)
-            self._progress_stage()
+        try:
+            for binary in binaries:
+                for checker in binary.bound_checkers:
+                    misuse_reports = checker.check()
+                    self.report.report_misuses(checker.name, misuse_reports)
+                self._progress_stage()
+
+        except:
+            import traceback
+
+            traceback.print_exc()
 
         self._end_stage()
 
@@ -111,4 +115,4 @@ class Main(LoggerMixin):
         )
         self.report.save(report_path)
 
-        self.l.info(f"Overall report has been save to {report_path}")
+        l.info(f"Overall report has been saved to {report_path}")

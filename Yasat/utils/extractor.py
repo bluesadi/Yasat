@@ -3,11 +3,13 @@ import zipfile
 import os
 import shutil
 from typing import List
+import logging
 
 import binwalk
 
 from ..binary import Binary
-from .. import l
+
+l = logging.getLogger(__name__)
 
 
 class Extractor:
