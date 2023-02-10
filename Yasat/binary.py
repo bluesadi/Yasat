@@ -1,10 +1,10 @@
-from typing import List
+from typing import List, Tuple
 import os
 import logging
 
 import angr
 from angr import AngrNoPluginError
-from angr.analyses.cfg.cfg_fast import CFGFast
+from angr.knowledge_plugins.cfg.cfg_model import CFGModel
 
 from .checkers.base import Criterion, RuleChecker
 
@@ -16,21 +16,9 @@ class Binary:
     proj: angr.Project
     bound_checkers: List[RuleChecker]
     should_abort: bool
-    cfg: CFGFast
+    cfg: CFGModel
 
     def __init__(self, path):
-        """
-        Do not call this constructor directly
-        Please use `Binary.new(path, checkers_conf)` instead
-        """
-        self.path = path
-        self.proj = angr.Project(self.path, load_options={"auto_load_libs": False})
-        self.bound_checkers = []
-        self.should_abort = False
-        self.cfg = None  # We will load the CFG later on
-
-    @staticmethod
-    def new(path, checkers_conf=None):
         """
         Create an instance of Binary
 
@@ -41,20 +29,11 @@ class Binary:
         :return:                None or a Binary instance with all properties initialized.
         :rtype:                 Binary
         """
-        if not os.path.exists(path):
-            return None
-        binary = Binary(path)
-        if checkers_conf is not None and len(checkers_conf) > 0:
-            if not binary._parse_checkers(checkers_conf):
-                return None
-        binary.cfg = binary.proj.analyses.CFGFast(
-            resolve_indirect_jumps=True,
-            cross_references=True,
-            force_complete_scan=False,
-            normalize=True,
-            symbols=True,
-        )
-        return binary
+        self.path = path
+        self.proj = angr.Project(self.path, load_options={"auto_load_libs": False})
+        self.bound_checkers = []
+        self.should_abort = False
+        self.cfg = None  # We will load the CFG later on
 
     def resolve_local_function(self, func_name):
         for func_addr in self.proj.kb.functions:
@@ -76,7 +55,7 @@ class Binary:
         callers = set()
         if self.cfg is not None:
             predecessors = self.cfg.get_predecessors(
-                self.cfg.model.get_any_node(func_addr)
+                self.cfg.get_any_node(func_addr)
             )
             for predecessor in predecessors:
                 block = self.proj.factory.block(predecessor.addr)
@@ -84,27 +63,25 @@ class Binary:
                 callers.add(caller_insn_addr)
         return iter(callers)
 
-    def _parse_checkers(self, checkers_conf):
-        for checker_name in checkers_conf:
-            checker_conf = checkers_conf[checker_name]
-            if not checker_conf["enable"]:
-                continue
+    def setup_cfg(self):
+        self.cfg = self.proj.analyses.CFGFast(
+            resolve_indirect_jumps=True,
+            force_complete_scan=False,
+            normalize=True,
+        )
+
+    def bind_checkers(self, checkers: List[Tuple[str, str, List[Criterion]]]):
+        for checker_name, desc, criteria in checkers:
             try:
                 checker_type = self.proj.analyses.get_plugin(checker_name)
             except AngrNoPluginError:
                 l.warning(f"No such checker: {checker_name}")
                 continue
-            desc = checker_conf["desc"]
-            criteria: list[Criterion] = []
-            for func_name in checker_conf["criteria"]:
-                criterion = checker_conf["criteria"][func_name]
-                lib_from = criterion["lib_from"]
-                arg_index = criterion["arg_index"]
-                func_addr = self.resolve_external_function(func_name, lib_from)
+            bound_criteria = []
+            for criterion in criteria:
+                func_addr = self.resolve_external_function(criterion.func_name, criterion.lib)
                 if func_addr is not None:
-                    criteria.append(
-                        Criterion(lib_from, arg_index, func_name, func_addr)
+                    bound_criteria.append(
+                        Criterion(criterion.lib, criterion.arg_idx, criterion.func_name, func_addr)
                     )
-            if len(criteria) > 0:
-                self.bound_checkers.append(checker_type(desc, criteria))
-        return len(self.bound_checkers) > 0
+            self.bound_checkers.append(checker_type(desc, bound_criteria))

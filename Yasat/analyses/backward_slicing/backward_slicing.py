@@ -64,7 +64,9 @@ class BackwardSlicing(Analysis):
         # Bind this analysis to slicing citeria selectors
         for selector in criteria_selectors:
             selector.hook(self)
-        function_handler.hook(self)
+            
+        if function_handler is not None:
+            function_handler.hook(self)
 
         self._max_iterations = max_iterations
         self._max_call_depth = max_call_depth
@@ -111,8 +113,7 @@ class BackwardSlicing(Analysis):
         # Sometimes a called function with preset arguments may contain some unreachable branches
         # We remove them to make analysis more precise and efficient
         if remove_unreachable_blocks and preset_arguments:
-            # self._remove_unreachable_blocks()
-            pass
+            self._remove_unreachable_blocks()
 
         self._sim_state = self.project.factory.entry_state()
 

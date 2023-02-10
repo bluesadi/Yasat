@@ -1,12 +1,15 @@
 import os
 import time
-from typing import List
+from typing import List, Tuple, Dict
 import logging
 
+from angr import AngrNoPluginError
+
 from .config import Config
-from .utils import Extractor, TimeoutUtil
+from .utils import Extractor, TimeoutUtil, Color
 from .report import OverallReport
 from .binary import Binary
+from .checkers.base import Criterion
 
 l = logging.getLogger(__name__)
 
@@ -14,34 +17,52 @@ l = logging.getLogger(__name__)
 class Main:
     config: Config
     report: OverallReport
-
+    
+    _parsed_checkers: List[Tuple[str, str, List[Criterion]]]
+    
     def __init__(self, config):
         super().__init__()
         self.config = config
         self.report = OverallReport(config.input_path)
-        self.stage_id = 0
-        self.stage_desc = "Not started yet"
-        self.stage_start = 0
-        self.stage_progress = [0, 0]
+        self._stage_id = 0
+        self._stage_desc = "Not started yet"
+        self._stage_start = 0
+        self._parsed_checkers = []
+
+    def _fill80(self, msg):
+        length = len(msg)
+        msg = '=' * ((80 - length) // 2 - 1) + ' ' + msg
+        length = len(msg)
+        msg += ' ' + '=' * (79 - length)
+        return Color.color(msg, Color.BOLD)
+    
+    def _parse_checkers(self):
+        for checker_name in self.config.checkers:
+            checker_conf = self.config.checkers[checker_name]
+            if not checker_conf["enable"]:
+                continue
+            desc = checker_conf["desc"]
+            criteria: list[Criterion] = []
+            for func_name in checker_conf["criteria"]:
+                criterion = checker_conf["criteria"][func_name]
+                lib = criterion["lib"]
+                arg_idx = criterion["arg_idx"]
+                criteria.append(
+                    Criterion(lib, arg_idx, func_name)
+                )
+            self._parsed_checkers.append((checker_name, desc, criteria))
 
     def _start_stage(self, stage_desc):
-        self.stage_id += 1
-        self.stage_desc = stage_desc
-        l.info(f"*** Stage {self.stage_id} - {stage_desc} ***")
-        self.stage_start = time.time()
-
-    def _init_stage_progress(self, total):
-        self.stage_progress = [0, total]
-
-    def _progress_stage(self):
-        self.stage_progress[0] += 1
-        l.info(f'[-] Stage is progressing ({"/".join(map(str, self.stage_progress))})')
+        self._stage_id += 1
+        self._stage_desc = stage_desc
+        l.info(self._fill80(f"Stage {self._stage_id} - {stage_desc}"))
+        self._stage_start = time.process_time()
 
     def _end_stage(self):
-        stage_cost = time.time() - self.stage_start
-        self.report.report_time_cost(self.stage_desc, stage_cost)
+        stage_cost = time.process_time() - self._stage_start
+        self.report.report_time_cost(self._stage_desc, stage_cost)
         l.info(
-            f"*** Stage {self.stage_id} Finished - Cost {stage_cost:.1f} seconds ***"
+            self._fill80(f"Stage {self._stage_id} Finished - Cost {stage_cost:.1f} seconds")
         )
 
     def start(self):
@@ -54,10 +75,10 @@ class Main:
         - Save all the ELF executable(s) from to `config.tmp_dir` for subsequent procedures.
         """
         self._start_stage("Extract ELF binaries")
-
+        
         binary_paths = Extractor().extract(self.config.input_path, self.config.tmp_dir)
 
-        l.info(f"[-] {len(binary_paths)} binaries will be analyzed soon")
+        l.info(f"[-] Extracted {len(binary_paths)} ELF binaries")
         self._end_stage()
 
         """
@@ -71,39 +92,40 @@ class Main:
           a lot of time.
         """
         self._start_stage("Preprocess target binaries")
-        self._init_stage_progress(len(binary_paths))
-
+        
+        self._parse_checkers()
+        l.info(f'[-] Parsed {len(self._parsed_checkers)} checkers from configuration')
+        
         binaries: List[Binary] = []
-        for binary_path in binary_paths:
-            binary = TimeoutUtil.call_with_timeout(
-                Binary.new,
-                args=(binary_path, self.config.checkers),
+        for path in binary_paths:
+            def preprocess_binary():
+                a = time.process_time()
+                binary = Binary(path)
+                binary.bind_checkers(self._parsed_checkers)
+                selected = len(binary.bound_checkers) > 0
+                if selected:
+                    binary.setup_cfg()
+                    binaries.append(binary)
+                b = time.process_time()
+                l.info(f"[-] Bound rule checkers and initialized CFG for {path} "
+                       f"in {b-a:.1f} seconds ({'selected' if selected else 'discarded'})")
+            TimeoutUtil.call_with_timeout(
+                preprocess_binary,
+                args=(),
                 timeout=self.config.preprocess_timeout,
             )
-            if isinstance(binary, Binary):
-                binaries.append(binary)
-            self._progress_stage()
-        binaries = binaries
-
+                
         l.info(
             f"[-] {len(binaries)} binaries will be checked against a set of rules soon"
         )
         self._end_stage()
 
         self._start_stage("Analyze target binaries")
-        self._init_stage_progress(len(binaries))
 
-        try:
-            for binary in binaries:
-                for checker in binary.bound_checkers:
-                    misuse_reports = checker.check()
-                    self.report.report_misuses(checker.name, misuse_reports)
-                self._progress_stage()
-
-        except:
-            import traceback
-
-            traceback.print_exc()
+        for binary in binaries:
+            for checker in binary.bound_checkers:
+                misuse_reports = checker.check()
+                self.report.report_misuses(checker.name, misuse_reports)
 
         self._end_stage()
 

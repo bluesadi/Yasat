@@ -1,7 +1,7 @@
 from typing import List
 from collections import defaultdict
 
-from angr import Analysis, Project
+from angr import Analysis
 from angr.knowledge_plugins.cfg.cfg_model import CFGModel
 
 from ..report import MisuseReport
@@ -12,22 +12,22 @@ from ..analyses.backward_slicing.criteria_selector.argument_selector import (
 
 
 class Criterion:
-    def __init__(self, lib_from, arg_index, func_name, func_addr):
-        self.lib_from = lib_from
-        self.arg_index = arg_index
+    def __init__(self, lib, arg_idx, func_name, func_addr=None):
+        self.lib = lib
+        self.arg_idx = arg_idx
         self.func_name = func_name
         self.func_addr = func_addr
 
 
 class RuleChecker(Analysis):
-    proj: Project
 
     def __init__(self, name, desc, criteria):
         super().__init__()
         self.proj = self.project
         self.name = name
         self.desc = desc
-        self.criteria: list[Criterion] = criteria
+        assert all([criterion.func_addr is not None for criterion in criteria])
+        self.criteria = criteria
 
     @property
     def cfg(self) -> CFGModel:
@@ -53,7 +53,7 @@ class ConstantValuesChecker(RuleChecker):
         if isinstance(arg_value, bytes):
             arg_value = f'\'{arg_value.decode("utf-8")}\''
         return (
-            f'Call to "{criterion.lib_from}::{criterion.func_name}({arg_name}={arg_value})" '
+            f'Call to "lib{criterion.lib}::{criterion.func_name}({arg_name}={arg_value})" '
             f"at address {hex(caller_addr)}"
         )
 
@@ -78,7 +78,7 @@ class ConstantValuesChecker(RuleChecker):
             criterion_selectors = []
             for caller_insn_addr in callers[caller_func_addr]:
                 criterion_selectors.append(
-                    ArgumentSelector(criterion.func_addr, criterion.arg_index)
+                    ArgumentSelector(criterion.func_addr, criterion.arg_idx)
                 )
 
             bs: BackwardSlicing = self.proj.analyses.BackwardSlicing(

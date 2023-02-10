@@ -195,12 +195,12 @@ class SimEngineBackwardSlicing(
         iffalse = self._expr(expr.iffalse)
         values = set()
         for cond_v in cond:
-            if isinstance(cond_v, claripy.ast.Bool):
-                if cond_v.is_true():
-                    values |= iftrue_v.values
+            if cond_v.concrete:
+                if cond_v._model_concrete.value != 0:
+                    values |= iftrue.values
                     continue
-                elif cond_v.is_false():
-                    values |= iffalse_v.values
+                elif cond_v._model_concrete.value == 0:
+                    values |= iffalse.values
                     continue
             for iftrue_v in iftrue:
                 for iffalse_v in iffalse:

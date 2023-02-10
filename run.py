@@ -47,10 +47,10 @@ if __name__ == "__main__":
             for filename in filenames:
                 # Reset config to avoid path conflict
                 new_config = Config(yaml_config)
-                new_config.input_path = os.path.join(dirpath, filename)
-                new_config.log_dir = os.path.join(config.log_dir, rel_path)
-                new_config.tmp_dir = os.path.join(config.tmp_dir, rel_path)
-                new_config.report_dir = os.path.join(config.report_dir, rel_path)
+                new_config.input_path = os.path.normpath(os.path.join(dirpath, filename))
+                new_config.log_dir = os.path.normpath(os.path.join(config.log_dir, rel_path))
+                new_config.tmp_dir = os.path.normpath(os.path.join(config.tmp_dir, rel_path))
+                new_config.report_dir = os.path.normpath(os.path.join(config.report_dir, rel_path))
                 for path in [
                     new_config.tmp_dir,
                     new_config.report_dir,

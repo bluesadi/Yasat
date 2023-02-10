@@ -47,9 +47,9 @@ class SlicingTrack:
 
     @property
     def bool_value(self):
-        if isinstance(self.expr, claripy.ast.Bool) and self.expr.concrete:
-            return self.expr._model_concrete
-        l.error(f"Expression {self._expr} is not a Bool or concrete value")
+        int_value = self.int_value
+        if int_value is not None:
+            return int_value != 0
         return None
 
     def __str__(self) -> str:
@@ -190,13 +190,14 @@ class SlicingState:
 
     def _simplify(self, expr):
         new_expr = expr
-        for children_ast in new_expr.children_asts():
-            if children_ast.op == "If":
-                cond, iftrue, iffalse = children_ast.args
-                if cond.is_true():
-                    new_expr = new_expr.replace(children_ast, iftrue)
-                elif cond.is_false():
-                    new_expr = new_expr.replace(children_ast, iffalse)
+        for ast in list(new_expr.children_asts()) + [new_expr]:
+            if ast.op == "If":
+                cond, iftrue, iffalse = ast.args
+                if cond.concrete:
+                    if cond._model_concrete.value == 1:
+                        new_expr = new_expr.replace(ast, iftrue)
+                    elif cond._model_concrete.value == 0:
+                        new_expr = new_expr.replace(ast, iffalse)
         return new_expr
 
     @property
