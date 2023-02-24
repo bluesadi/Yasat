@@ -11,7 +11,7 @@ logging.getLogger("pyvex").propagate = False
 
 
 def init_logger(config: Config):
-    root_logger = logging.getLogger("Yasat")
+    root = logging.getLogger("Yasat")
     handler = logging.FileHandler(
         filename=os.path.join(
             config.log_dir, os.path.basename(config.input_path) + ".log"
@@ -23,5 +23,5 @@ def init_logger(config: Config):
             fmt="[%(levelname)s][%(asctime)s] %(message)s", datefmt="%H:%M:%S"
         )
     )
-    root_logger.addHandler(handler)
-    root_logger.setLevel(logging.DEBUG if config.debug_mode else logging.INFO)
+    root.addHandler(handler)
+    root.setLevel(logging.DEBUG if config.debug_mode else logging.INFO)

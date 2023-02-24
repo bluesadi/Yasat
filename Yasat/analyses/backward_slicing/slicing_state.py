@@ -36,7 +36,11 @@ class SlicingTrack:
         if int_value is None:
             return None
         sim_state: angr.sim_state.SimState = self._proj.factory.entry_state()
-        return sim_state.mem[int_value].string.concrete.decode("UTF-8")
+        try:
+            return sim_state.mem[int_value].string.concrete.decode("UTF-8")
+        except:
+            l.warning(f"Failed to extract concrete string at {hex(int_value)}")
+            return None
 
     @property
     def int_value(self):
@@ -125,6 +129,8 @@ class SlicingState:
         new_tracks = set()
         for old_v in old:
             for new_v in new:
+                if old_v.size() != new_v.size():
+                    l.error(f"Unequal sizes: {old_v}; {new_v}")
                 for track in self._tracks:
                     new_expr = track.expr.replace(old_v, new_v)
                     if AstEnhancer.is_top(new_expr):

@@ -4,9 +4,9 @@ import logging
 import ailment
 import claripy
 from angr.engines.light.engine import SimEngineLight, SimEngineLightAILMixin
-from angr.errors import SimEngineError
 from ailment.statement import *
 from ailment.expression import *
+from func_timeout.exceptions import FunctionTimedOut
 
 from .multi_values import MultiValues
 from .ast_enhancer import AstEnhancer
@@ -54,14 +54,11 @@ class SimEngineBackwardSlicing(
         }
 
     def process(self, state, *args, **kwargs):
-        try:
-            self._process(
-                state,
-                None,
-                block=kwargs.pop("block", None),
-            )
-        except SimEngineError as e:
-            raise e
+        self._process(
+            state,
+            None,
+            block=kwargs.pop("block", None),
+        )
         return state
 
     def _process_Stmt(self, whitelist=None):
@@ -76,53 +73,68 @@ class SimEngineBackwardSlicing(
             self.state.stmt_idx = stmt_idx
             self.ins_addr = stmt.ins_addr
 
-            self._handle_Stmt(stmt)
+            try:
+                self._handle_Stmt(stmt)
+            except FunctionTimedOut as e:
+                raise e
+            except:
+                l.error(f"Error occured when handling {self.project.filename}")
+                l.error(
+                    f"Error occured when handling statment: {PrintUtil.pstr_stmt(stmt)}"
+                )
+                l.error(traceback.format_exc())
 
-    def _handle_Stmt(self, stmt):
+    def _select_criteria_from_stmt(self, stmt):
         # Identify criteria using CriteriaSelector
         for selector in self.analysis.criteria_selectors:
             criteria = selector.select_from_stmt(stmt)
             for criterion in criteria:
                 self.state.add_track(self._expr(criterion), self.stmt)
+
+    def _handle_Stmt(self, stmt):
+        self._select_criteria_from_stmt(stmt)
         handler = self._stmt_handlers.get(type(stmt), None)
         if handler is not None:
-            try:
-                handler(stmt)
-            except:
-                l.error(
-                    f"Error occured when handling statment: {PrintUtil.pstr_stmt(stmt)}"
-                )
-                l.error(traceback.format_exc())
+            handler(stmt)
         else:
             l.warning(f"Unsupported statement: {PrintUtil.pstr_stmt(stmt)}")
 
-    def _expr(self, expr: Expression) -> MultiValues:
+    def _select_criteria_from_expr(self, expr):
         # Identify criteria using CriteriaSelector
         for selector in self.analysis.criteria_selectors:
             criteria = selector.select_from_expr(expr)
             for criterion in criteria:
                 self.state.add_track(self._expr(criterion), self.stmt)
+
+    def _expr(self, expr: Expression, bits: int = None) -> MultiValues:
+        if bits is None:
+            bits = expr.bits
+        self._select_criteria_from_expr(expr)
         handler = self._expr_handlers.get(type(expr), None)
         if handler is not None:
-            return handler(expr)
+            result = handler(expr)
+            if result is None:
+                result = AstEnhancer.top(bits)
+            elif result.size != bits:
+                result = AstEnhancer.multi_convert(result, bits)
+            return result
         else:
             l.warning(f"Unsupported expression: {expr}")
-            return MultiValues(AstEnhancer.top(expr.bits))
+            return MultiValues(AstEnhancer.top(bits))
 
     def _ail_handle_Call(self, stmt: Call):
-        # We treat Call statements as Call expressions
-        self._expr(stmt)
+        self._select_criteria_from_expr(stmt)
+        self._ail_handle_CallExpr(stmt)
 
     def _ail_handle_Store(self, stmt: Store):
         addr = self._expr(stmt.addr)
-        data = self._expr(stmt.data)
-        return self.state.update_tracks(
-            AstEnhancer.load(addr, stmt.data.bits), data, stmt
-        )
+        data = self._expr(stmt.data, stmt.size)
+        self.state.update_tracks(AstEnhancer.load(addr, stmt.size), data, stmt)
 
     def _ail_handle_Assignment(self, stmt: Assignment):
-        dst = self._expr(stmt.dst)
-        src = self._expr(stmt.src)
+        bits = stmt.dst.bits
+        dst = self._expr(stmt.dst, bits)
+        src = self._expr(stmt.src, bits)
         self.state.update_tracks(dst, src, stmt)
 
     def _ail_handle_Jump(self, stmt: Jump):
@@ -130,8 +142,6 @@ class SimEngineBackwardSlicing(
 
     def _ail_handle_ConditionalJump(self, stmt: ConditionalJump):
         self._expr(stmt.condition)
-        self._expr(stmt.true_target)
-        self._expr(stmt.false_target)
 
     def _ail_handle_Return(self, stmt: Return):
         for expr in stmt.ret_exprs:
@@ -144,15 +154,13 @@ class SimEngineBackwardSlicing(
         pass
 
     def _ail_handle_CallExpr(self, expr: Call):
-        func_addr_v = self._expr(expr.target).one_concrete
-        if (
-            len(self.analysis._call_stack) <= self.analysis._max_call_depth
-            and func_addr_v is not None
-        ):
+        if len(
+            self.analysis._call_stack
+        ) <= self.analysis._max_call_depth and isinstance(expr.target, Const):
             args = [self._expr(arg) for arg in expr.args] if expr.args else []
             handler = self.analysis.function_handler
             if handler:
-                func = self.project.kb.functions[func_addr_v._model_concrete.value]
+                func = self.project.kb.functions[expr.target.value]
                 ret_expr = handler.handle(func, args)
                 if ret_expr:
                     return ret_expr
@@ -225,13 +233,7 @@ class SimEngineBackwardSlicing(
         values = set()
         for op0_v in op0:
             for op1_v in op1:
-                # Two operands of a binary operation can be of different sizes
-                # It's very weird but does happen (e.g., shr   edx, cl)
-                # Thus we should do some adjustment for that
-                if op0_v.size() > op1_v.size():
-                    op1_v = op1_v.zero_extend(op0_v.size() - op1_v.size())
-                elif op0_v.size() > op1_v.size():
-                    op0_v = op1_v.zero_extend(op1_v.size() - op0_v.size())
+                op0_v, op1_v = AstEnhancer.unify(op0_v, op1_v)
                 values.add(op_func(op0_v, op1_v))
         return MultiValues(values)
 
@@ -258,7 +260,7 @@ class SimEngineBackwardSlicing(
     def _ail_handle_Mul(self, expr: BinaryOp):
         return self._calc_BinaryOp(
             expr,
-            lambda v0, v1: MultiValues(claripy.BVV(0, expr.bits))
+            lambda v0, v1: claripy.BVV(0, expr.bits)
             if self._is_zero(v0) or self._is_zero(v1)
             else v0 * v1,
         )
@@ -308,13 +310,15 @@ class SimEngineBackwardSlicing(
     }
 
     def _ail_handle_Cmp(self, expr: BinaryOp) -> MultiValues:
-        op0 = self._expr(expr.operands[0])
-        op1 = self._expr(expr.operands[1])
-        handler = lambda v0, v1: AstEnhancer.top(expr.bits)
+        bits = min(expr.operands[0].bits, expr.operands[1].bits)
+        op0 = self._expr(expr.operands[0], bits)
+        op1 = self._expr(expr.operands[1], bits)
         if expr.op in self._Cmp_handlers:
             handler = self._Cmp_handlers[expr.op]
-
-        return MultiValues({handler(op0_v, op1_v) for op0_v in op0 for op1_v in op1})
+            return MultiValues(
+                {handler(op0_v, op1_v) for op0_v in op0 for op1_v in op1}
+            )
+        return MultiValues(AstEnhancer.top(expr.bits))
 
     _ail_handle_CmpF = _ail_handle_Cmp
     _ail_handle_CmpEQ = _ail_handle_Cmp

@@ -3,13 +3,35 @@ import pathlib
 import shutil
 import os
 from multiprocessing import Pool, cpu_count
+import traceback
+import logging
+import pathlib
+
+l = logging.getLogger('run_dev')
 
 import yaml
 
 from Yasat.main import Main
-from Yasat import Config, init_logger
+from Yasat import Config
+from Yasat.report import OverallReport
+from Yasat.utils import TimeoutUtil
+
+def init_logger():
+    for path in ('run_dev.log', 'error.log'):
+        pathlib.Path(path).unlink()
+        
+    handler = logging.FileHandler('run_dev.log')
+    handler.setLevel(logging.DEBUG)
+    l.addHandler(handler)
+    
+    root = logging.getLogger('Yasat')
+    handler = logging.FileHandler('error.log')
+    handler.setLevel(logging.ERROR)
+    root.addHandler(handler)
 
 if __name__ == "__main__":
+    init_logger()
+    
     parser = argparse.ArgumentParser()
     parser.add_argument(
         "-c", "--config", help="configuration file path", default="config.yml"
@@ -33,8 +55,7 @@ if __name__ == "__main__":
         pathlib.Path(path).mkdir(parents=True, exist_ok=True)
 
     def run_with_config(config: Config):
-        init_logger(config)
-        Main(config).start()
+        return Main(config).start()
 
     # When the input path is a file, simply run on it
     if os.path.isfile(config.input_path):
@@ -47,10 +68,18 @@ if __name__ == "__main__":
             for filename in filenames:
                 # Reset config to avoid path conflict
                 new_config = Config(yaml_config)
-                new_config.input_path = os.path.normpath(os.path.join(dirpath, filename))
-                new_config.log_dir = os.path.normpath(os.path.join(config.log_dir, rel_path))
-                new_config.tmp_dir = os.path.normpath(os.path.join(config.tmp_dir, rel_path))
-                new_config.report_dir = os.path.normpath(os.path.join(config.report_dir, rel_path))
+                new_config.input_path = os.path.normpath(
+                    os.path.join(dirpath, filename)
+                )
+                new_config.log_dir = os.path.normpath(
+                    os.path.join(config.log_dir, rel_path)
+                )
+                new_config.tmp_dir = os.path.normpath(
+                    os.path.join(os.path.join(config.tmp_dir, rel_path), filename)
+                )
+                new_config.report_dir = os.path.normpath(
+                    os.path.join(config.report_dir, rel_path)
+                )
                 for path in [
                     new_config.tmp_dir,
                     new_config.report_dir,
@@ -65,8 +94,25 @@ if __name__ == "__main__":
         else:
             pool = Pool(args.processes)
             try:
-                result = pool.map_async(run_with_config, config_list)
+                merged_report = OverallReport(config.input_path)
+
+                def callback(report: OverallReport):
+                    try:
+                        if report.completed:
+                            global merged_report
+                            merged_report = merged_report.merge(report)
+                    except:
+                        l.error(traceback.format_exc())
+
+                results = []
+                for config in config_list:
+                    result = pool.apply_async(
+                        run_with_config, (config,), callback=callback
+                    )
+                    results.append(result)
                 pool.close()
-                result.wait()
+                for result in results:
+                    result.wait()
+                merged_report.save(os.path.join(config.report_dir, "report.log"))
             except KeyboardInterrupt:
                 pool.terminate()

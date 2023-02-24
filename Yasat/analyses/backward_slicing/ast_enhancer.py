@@ -43,6 +43,26 @@ class AstEnhancer:
         return expr
 
     @staticmethod
+    def multi_convert(expr: MultiValues, to_bits: int):
+        return MultiValues({AstEnhancer.convert(v, to_bits) for v in expr})
+
+    @staticmethod
+    def unify(op0_v, op1_v):
+        if op0_v.size() > op1_v.size():
+            op0_v = AstEnhancer.convert(op0_v, op1_v.size())
+        elif op1_v.size() > op0_v.size():
+            op1_v = AstEnhancer.convert(op1_v, op0_v.size())
+        return op0_v, op1_v
+
+    @staticmethod
+    def multi_unify(op0: MultiValues, op1: MultiValues):
+        if op0.size > op1.size:
+            return AstEnhancer.multi_convert(op0, op1.size), op1
+        elif op1.size > op0.size:
+            return op0, AstEnhancer.multi_convert(op1, op0.size)
+        return op0, op1
+
+    @staticmethod
     def load(addr: MultiValues, bits: int):
         values = set()
         for addr_v in addr:
@@ -52,7 +72,7 @@ class AstEnhancer:
     @staticmethod
     def load_v(addr_v: claripy.ast.BV, bits: int):
         assert isinstance(addr_v, claripy.ast.BV)
-        if bits in AstEnhancer._load_ops:
+        if addr_v.size() in AstEnhancer._load_ops:
             load = AstEnhancer._load_ops[addr_v.size()]
         else:
             load = claripy.BVS("__load__", addr_v.size(), explicit_name=True)

@@ -23,3 +23,10 @@ class PrintUtil:
 
     def pstr_stmt(stmt: Statement):
         return f"{hex(stmt.ins_addr)} | {stmt}"
+
+    def fill80(msg):
+        length = len(msg)
+        msg = "=" * ((80 - length) // 2 - 1) + " " + msg
+        length = len(msg)
+        msg += " " + "=" * (79 - length)
+        return msg

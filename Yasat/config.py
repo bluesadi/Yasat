@@ -9,6 +9,7 @@ class Config:
 
     debug_mode: bool
     preprocess_timeout: int
+    analyze_timeout: int
 
     checkers: list
 
@@ -19,6 +20,7 @@ class Config:
         "log_dir",
         "debug_mode",
         "preprocess_timeout",
+        "analyze_timeout",
         "checkers",
     )
 

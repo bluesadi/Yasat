@@ -7,6 +7,10 @@ class MultiValues:
     def __init__(self, values: Union[claripy.ast.Base, Set[claripy.ast.Base]]):
         self.values = {values} if isinstance(values, claripy.ast.Base) else values
         self.values = {self._normalize(v) for v in self.values}
+        assert all([isinstance(v, claripy.ast.Base) for v in self.values])
+        assert len(self.values) > 0
+        self.size = next(iter(self.values)).size()
+        assert all([v.size() == self.size for v in self.values])
 
     def __iter__(self):
         return iter(self.values)

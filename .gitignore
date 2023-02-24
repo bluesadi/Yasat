@@ -5,4 +5,6 @@ __pycache__
 /tests_dev
 /config_dev.yml
 /run_dev.py
+/run_dev.log
 /test.py
+/error.log

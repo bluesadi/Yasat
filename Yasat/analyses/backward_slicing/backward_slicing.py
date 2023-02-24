@@ -64,7 +64,7 @@ class BackwardSlicing(Analysis):
         # Bind this analysis to slicing citeria selectors
         for selector in criteria_selectors:
             selector.hook(self)
-            
+
         if function_handler is not None:
             function_handler.hook(self)
 

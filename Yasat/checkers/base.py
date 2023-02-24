@@ -20,7 +20,6 @@ class Criterion:
 
 
 class RuleChecker(Analysis):
-
     def __init__(self, name, desc, criteria):
         super().__init__()
         self.proj = self.project
@@ -90,15 +89,16 @@ class ConstantValuesChecker(RuleChecker):
                     if self.type is str
                     else concrete_result.int_value
                 )
-                results.append(
-                    MisuseReport(
-                        self.proj.filename,
-                        self.desc,
-                        self._build_misuse_desc(
-                            criterion, self.arg_name, arg_value, caller_insn_addr
-                        ),
+                if arg_value is not None:
+                    results.append(
+                        MisuseReport(
+                            self.proj.filename,
+                            self.desc,
+                            self._build_misuse_desc(
+                                criterion, self.arg_name, arg_value, caller_insn_addr
+                            ),
+                        )
                     )
-                )
         return results
 
 

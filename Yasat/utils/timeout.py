@@ -14,11 +14,10 @@ class TimeoutUtil:
         try:
             return func_timeout(timeout, func, args=args)
         except FunctionTimedOut as e:
-            l.warn(
+            l.warning(
                 f"Function {func.__name__} timed out after {e.timedOutAfter} seconds"
             )
-        except BaseException as e:
-            l.warn(
-                f"Error occured when executing function {func.__name__}: {e}\n{traceback.format_exc()}"
-            )
-        return False
+        except:
+            l.warning(f"Error occured when executing function {func.__name__}")
+            l.warning(traceback.format_exc())
+        return None

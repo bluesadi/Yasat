@@ -54,9 +54,7 @@ class Binary:
     def resolve_callers(self, func_addr):
         callers = set()
         if self.cfg is not None:
-            predecessors = self.cfg.get_predecessors(
-                self.cfg.get_any_node(func_addr)
-            )
+            predecessors = self.cfg.get_predecessors(self.cfg.get_any_node(func_addr))
             for predecessor in predecessors:
                 block = self.proj.factory.block(predecessor.addr)
                 caller_insn_addr = block.instruction_addrs[-1]
@@ -79,9 +77,16 @@ class Binary:
                 continue
             bound_criteria = []
             for criterion in criteria:
-                func_addr = self.resolve_external_function(criterion.func_name, criterion.lib)
+                func_addr = self.resolve_external_function(
+                    criterion.func_name, criterion.lib
+                )
                 if func_addr is not None:
                     bound_criteria.append(
-                        Criterion(criterion.lib, criterion.arg_idx, criterion.func_name, func_addr)
+                        Criterion(
+                            criterion.lib,
+                            criterion.arg_idx,
+                            criterion.func_name,
+                            func_addr,
+                        )
                     )
             self.bound_checkers.append(checker_type(desc, bound_criteria))
