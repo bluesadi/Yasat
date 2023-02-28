@@ -7,33 +7,39 @@ class MisuseReport:
     binary_path: str
     rule_desc: str
     misuse_desc: str
+    stmts: List[str]
 
-    def __init__(self, binary_path, rule_desc, misuse_desc):
+    def __init__(self, binary_path, rule_desc, misuse_desc, stmts):
         self.binary_path = binary_path
         self.rule_desc = rule_desc
         self.misuse_desc = misuse_desc
+        self.stmts = stmts
 
     def __repr__(self) -> str:
         return self.__str__()
 
     def __str__(self) -> str:
-        return (
+        repr = (
             f"[-] Binary path: {self.binary_path}\n"
             f"[-] Rule descrption: {self.rule_desc}\n"
-            f"[-] Misuse description: {self.misuse_desc}"
+            f"[-] Misuse description: {self.misuse_desc}\n"
+            f"[-] Statements:"
         )
+        for stmt in self.stmts:
+            repr += f"\n{stmt}"
+        return repr
 
 
 class OverallReport:
     _input_path: str
     _misuse_reports: Dict[str, List[MisuseReport]]
-    completed: bool
+    finished: bool
 
     def __init__(self, input_path):
         self._input_path = input_path
         self._misuse_reports = defaultdict(list)
         self._time_costs = []
-        self.completed = False
+        self.finished = False
 
     def __repr__(self) -> str:
         return self.__str__()
@@ -60,6 +66,10 @@ class OverallReport:
 
     def report_misuses(self, checker_name: str, misuse_reports: List[MisuseReport]):
         self._misuse_reports[checker_name] += misuse_reports
+
+    @property
+    def num_misuses(self):
+        return sum(len(self._misuse_reports[checker_name]) for checker_name in self._misuse_reports)
 
     def save(self, path):
         with open(path, "w") as fd:

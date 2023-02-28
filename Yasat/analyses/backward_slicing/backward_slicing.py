@@ -16,7 +16,9 @@ from .engine_ail import SimEngineBackwardSlicing
 from .criteria_selector import CriteriaSelector, ConditionSelector
 from .function_handler import InterproceduralFunctionHandler, FunctionHandler
 from .multi_values import MultiValues
+from ...logging import get_logger
 
+l = get_logger(__name__)
 
 class SlicingCriterion:
     def __init__(self, caller_addr: int, arg_idx: int):
@@ -84,10 +86,13 @@ class BackwardSlicing(Analysis):
         # That's for recovering prototypes of callees in this function, in order to achieve a higher accuracy
         # e.g., sometimes Clinic analysis cannot correctly deduce callees' stack arguments
         for addr in self.project.kb.callgraph[target_func.addr]:
-            called_func = self.project.kb.functions[addr]
-            if not called_func.normalized:
-                called_func.normalize()
-            self.project.kb.clinic_manager.get_clinic(called_func)
+            if addr in self.project.kb.functions:
+                called_func = self.project.kb.functions[addr]
+                if not called_func.normalized:
+                    called_func.normalize()
+                self.project.kb.clinic_manager.get_clinic(called_func)
+            else:
+                l.warning(f'Cannot find function at {hex(addr)}')
 
         # Generate the AIL CFG for the target function
         clinic: Clinic = self.project.kb.clinic_manager.get_clinic(target_func)

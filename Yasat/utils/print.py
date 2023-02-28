@@ -3,7 +3,9 @@ import logging
 
 from ailment.statement import Statement
 
-l = logging.getLogger(__name__)
+from ..logging import get_logger
+
+l = get_logger(__name__)
 
 
 class PrintUtil:

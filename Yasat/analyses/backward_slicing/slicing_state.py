@@ -11,8 +11,9 @@ from angr.sim_variable import SimStackVariable, SimRegisterVariable
 from ...utils.print import PrintUtil
 from .ast_enhancer import AstEnhancer
 from .multi_values import MultiValues
+from ...logging import get_logger
 
-l = logging.getLogger(__name__)
+l = get_logger(__name__)
 
 
 class SlicingTrack:
@@ -45,7 +46,7 @@ class SlicingTrack:
     @property
     def int_value(self):
         if self._expr.concrete:
-            return self.expr._model_concrete.value
+            return AstEnhancer.concrete_value(self._expr)
         l.error(f"Expression {self._expr} is not a BV or concrete value")
         return None
 
@@ -187,7 +188,7 @@ class SlicingState:
                 break
             for load in loads:
                 repl = sim_state.memory.load(
-                    load.args[1]._model_concrete.value,
+                    AstEnhancer.concrete_value(load.args[1]),
                     load.size() // self.arch.byte_width,
                     endness=self.arch.memory_endness,
                 )
@@ -199,10 +200,11 @@ class SlicingState:
         for ast in list(new_expr.children_asts()) + [new_expr]:
             if ast.op == "If":
                 cond, iftrue, iffalse = ast.args
-                if cond.concrete:
-                    if cond._model_concrete.value == 1:
+                concrete_cond_v = AstEnhancer.concrete_value(cond)
+                if concrete_cond_v is not None:
+                    if concrete_cond_v != 0:
                         new_expr = new_expr.replace(ast, iftrue)
-                    elif cond._model_concrete.value == 0:
+                    elif concrete_cond_v == 0:
                         new_expr = new_expr.replace(ast, iffalse)
         return new_expr
 

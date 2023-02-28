@@ -11,8 +11,9 @@ from func_timeout.exceptions import FunctionTimedOut
 from .multi_values import MultiValues
 from .ast_enhancer import AstEnhancer
 from ...utils.print import PrintUtil
+from ...logging import get_logger
 
-l = logging.getLogger(__name__)
+l = get_logger(__name__)
 
 
 class SimEngineBackwardSlicing(
@@ -114,7 +115,7 @@ class SimEngineBackwardSlicing(
         if handler is not None:
             result = handler(expr)
             if result is None:
-                result = AstEnhancer.top(bits)
+                result = MultiValues(AstEnhancer.top(bits))
             elif result.size != bits:
                 result = AstEnhancer.multi_convert(result, bits)
             return result
@@ -128,8 +129,8 @@ class SimEngineBackwardSlicing(
 
     def _ail_handle_Store(self, stmt: Store):
         addr = self._expr(stmt.addr)
-        data = self._expr(stmt.data, stmt.size)
-        self.state.update_tracks(AstEnhancer.load(addr, stmt.size), data, stmt)
+        data = self._expr(stmt.data, stmt.size * 8)
+        self.state.update_tracks(AstEnhancer.load(addr, stmt.size * 8), data, stmt)
 
     def _ail_handle_Assignment(self, stmt: Assignment):
         bits = stmt.dst.bits
@@ -160,10 +161,13 @@ class SimEngineBackwardSlicing(
             args = [self._expr(arg) for arg in expr.args] if expr.args else []
             handler = self.analysis.function_handler
             if handler:
-                func = self.project.kb.functions[expr.target.value]
-                ret_expr = handler.handle(func, args)
-                if ret_expr:
-                    return ret_expr
+                if expr.target.value in self.project.kb.functions:
+                    func = self.project.kb.functions[expr.target.value]
+                    ret_expr = handler.handle(func, args)
+                    if ret_expr:
+                        return ret_expr
+                else:
+                    l.warning(f'Cannot find function at {hex(expr.target.value)}')
         if expr.ret_expr:
             return MultiValues(AstEnhancer.top(expr.ret_expr.bits))
         return None
@@ -178,7 +182,7 @@ class SimEngineBackwardSlicing(
             if addr_v.concrete:
                 values.add(
                     self.analysis._sim_state.memory.load(
-                        addr_v._model_concrete.value,
+                        AstEnhancer.concrete_value(addr_v),
                         addr_v.size() // self.arch.byte_width,
                         endness=self.arch.memory_endness,
                     )
@@ -203,11 +207,12 @@ class SimEngineBackwardSlicing(
         iffalse = self._expr(expr.iffalse)
         values = set()
         for cond_v in cond:
-            if cond_v.concrete:
-                if cond_v._model_concrete.value != 0:
+            concrete_cond_v = AstEnhancer.concrete_value(cond_v)
+            if concrete_cond_v is not None:
+                if concrete_cond_v != 0:
                     values |= iftrue.values
                     continue
-                elif cond_v._model_concrete.value == 0:
+                elif concrete_cond_v == 0:
                     values |= iffalse.values
                     continue
             for iftrue_v in iftrue:
@@ -227,18 +232,19 @@ class SimEngineBackwardSlicing(
         return self._calc_UnaryOp(expr, lambda v: -v)
 
     # Binary operations
-    def _calc_BinaryOp(self, expr: BinaryOp, op_func) -> MultiValues:
-        op0 = self._expr(expr.operands[0])
-        op1 = self._expr(expr.operands[1])
+    def _calc_BinaryOp(self, expr: BinaryOp, op_func, bits=None) -> MultiValues:
+        if bits is None:
+            bits = max(expr.operands[0].bits, expr.operands[1].bits)
+        op0 = self._expr(expr.operands[0], bits)
+        op1 = self._expr(expr.operands[1], bits)
         values = set()
         for op0_v in op0:
             for op1_v in op1:
-                op0_v, op1_v = AstEnhancer.unify(op0_v, op1_v)
                 values.add(op_func(op0_v, op1_v))
         return MultiValues(values)
 
     def _is_zero(self, expr_v):
-        return expr_v.concrete and expr_v._model_concrete.value == 0
+        return AstEnhancer.concrete_value(expr_v) == 0
 
     def _ail_handle_Add(self, expr: BinaryOp):
         return self._calc_BinaryOp(expr, lambda v0, v1: v0 + v1)
@@ -277,13 +283,13 @@ class SimEngineBackwardSlicing(
         )
 
     def _ail_handle_Shr(self, expr: BinaryOp):
-        return self._calc_BinaryOp(expr, lambda v0, v1: claripy.LShR(v0, v1))
+        return self._calc_BinaryOp(expr, lambda v0, v1: claripy.LShR(v0, v1), bits=expr.operands[0].bits)
 
     def _ail_handle_Sar(self, expr: BinaryOp):
-        return self._calc_BinaryOp(expr, lambda v0, v1: v0 >> v1)
+        return self._calc_BinaryOp(expr, lambda v0, v1: v0 >> v1, bits=expr.operands[0].bits)
 
     def _ail_handle_Shl(self, expr: BinaryOp):
-        return self._calc_BinaryOp(expr, lambda v0, v1: v0 << v1)
+        return self._calc_BinaryOp(expr, lambda v0, v1: v0 << v1, bits=expr.operands[0].bits)
 
     def _ail_handle_And(self, expr: BinaryOp):
         return self._calc_BinaryOp(expr, lambda v0, v1: v0 & v1)

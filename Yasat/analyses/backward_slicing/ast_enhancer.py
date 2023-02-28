@@ -1,4 +1,4 @@
-from typing import Dict, Union
+from typing import Dict, Union, Optional
 
 import claripy
 from ailment.expression import StackBaseOffset, Register, Tmp, Const
@@ -15,10 +15,7 @@ class AstEnhancer:
     def top(bits: int):
         if bits in AstEnhancer._tops:
             return AstEnhancer._tops[bits]
-        if bits == 1:
-            top = claripy.BoolS("TOP", explicit_name=True)
-        else:
-            top = claripy.BVS("TOP", bits, explicit_name=True)
+        top = claripy.BVS("TOP", bits, explicit_name=True)
         AstEnhancer._tops[bits] = top
         return top
 
@@ -45,22 +42,6 @@ class AstEnhancer:
     @staticmethod
     def multi_convert(expr: MultiValues, to_bits: int):
         return MultiValues({AstEnhancer.convert(v, to_bits) for v in expr})
-
-    @staticmethod
-    def unify(op0_v, op1_v):
-        if op0_v.size() > op1_v.size():
-            op0_v = AstEnhancer.convert(op0_v, op1_v.size())
-        elif op1_v.size() > op0_v.size():
-            op1_v = AstEnhancer.convert(op1_v, op0_v.size())
-        return op0_v, op1_v
-
-    @staticmethod
-    def multi_unify(op0: MultiValues, op1: MultiValues):
-        if op0.size > op1.size:
-            return AstEnhancer.multi_convert(op0, op1.size), op1
-        elif op1.size > op0.size:
-            return op0, AstEnhancer.multi_convert(op1, op0.size)
-        return op0, op1
 
     @staticmethod
     def load(addr: MultiValues, bits: int):
@@ -118,3 +99,14 @@ class AstEnhancer:
 
     def const(expr: Const):
         return claripy.BVV(expr.value, expr.bits)
+    
+    def concrete_value(base: claripy.ast.Base) -> Optional[int]:
+        if base.concrete:
+            if isinstance(base, claripy.ast.Bool):
+                if base.is_true():
+                    return 1
+                elif base.is_false():
+                    return 0
+            elif isinstance(base, claripy.ast.BV):
+                return base._model_concrete.value
+        return None

@@ -1,0 +1,664 @@
+*** Summary ***
+Input path: /mnt/e/firmware_dataset/download
+Total time cost: 0.0 seconds
+
+*** Misuses Found (Grouped by Checkers) ***
+# ConstantKeysChecker
+## Misuse 1/8
+[-] Binary path: /home/bluesadi/Yasat/tests_dev/tmp/D-Link/DSR-250N_FIRMWARE_1.05B20.ZIP/dsr250n_105B20/_DSR-250N_FW_1.05B20_WW.extracted/squashfs-root/bin/sslvpnConfig
+[-] Rule descrption: Do not use constant encryption keys
+[-] Misuse description: Call to libcrypt::crypt(key="user") at address 0xf230
+[-] Statements:
+0xf230 | r1<4> = Call(0x99f4<32>, <SimCCARM>: [r2<4>, 0x10001a920<32>], ret: r0<4>, fp_ret: no-fp-ret-value)
+0xf198 | r2<4> = 0x10001a86c<32>
+
+## Misuse 2/8
+[-] Binary path: /home/bluesadi/Yasat/tests_dev/tmp/D-Link/DSR-150_A1_FIRMWARE_1.08B29.ZIP/_DSR-150_A1_FW1.08B29_WW.extracted/squashfs-root/bin/sslvpnConfig
+[-] Rule descrption: Do not use constant encryption keys
+[-] Misuse description: Call to libcrypt::crypt(key="user") at address 0xf398
+[-] Statements:
+0xf398 | r1<4> = Call(0x9a9c<32>, <SimCCARM>: [r2<4>, 0x10001b84c<32>], ret: r0<4>, fp_ret: no-fp-ret-value)
+0xf300 | r2<4> = 0x10001b798<32>
+
+## Misuse 3/8
+[-] Binary path: /home/bluesadi/Yasat/tests_dev/tmp/D-Link/DSR-250_FIRMWARE_1.05B20.ZIP/dsr250_105B20/_DSR-250_FW_1.05B20_WW.extracted/squashfs-root/bin/sslvpnConfig
+[-] Rule descrption: Do not use constant encryption keys
+[-] Misuse description: Call to libcrypt::crypt(key="user") at address 0xf230
+[-] Statements:
+0xf230 | r1<4> = Call(0x99f4<32>, <SimCCARM>: [r2<4>, 0x10001a920<32>], ret: r0<4>, fp_ret: no-fp-ret-value)
+0xf198 | r2<4> = 0x10001a86c<32>
+
+## Misuse 4/8
+[-] Binary path: /home/bluesadi/Yasat/tests_dev/tmp/Netgear/PLW1000v2-V1.0.0.14.zip/_PLW1000v2-V1.0.0.14.img.extracted/squashfs-root/usr/bin/logic
+[-] Rule descrption: Do not use constant encryption keys
+[-] Misuse description: Call to libcrypt::crypt(key="tw007") at address 0x20e40
+[-] Statements:
+0x20e40 | Call(0xaf58<32>, <SimCCARM>: [0x49a32<32>, 0x499d0<32>], ret: no-ret-value, fp_ret: no-fp-ret-value)
+
+## Misuse 5/8
+[-] Binary path: /home/bluesadi/Yasat/tests_dev/tmp/Netgear/PLW1000v2-V1.0.0.14.zip/_PLW1000v2-V1.0.0.14.img.extracted/squashfs-root/usr/bin/logic
+[-] Rule descrption: Do not use constant encryption keys
+[-] Misuse description: Call to libcrypt::crypt(key="password") at address 0x21eb4
+[-] Statements:
+0x21eb4 | Call(0xb81c<32>, <SimCCARM>: [0x49c86<32>, r5<4>, r5<4>, Call (target: 0xaf58<32>, prototype: (char*, char*) -> char*, args: [0x49a3e<32>, 0x499d0<32>])], ret: r0<4>, fp_ret: no-fp-ret-value)
+
+## Misuse 6/8
+[-] Binary path: /home/bluesadi/Yasat/tests_dev/tmp/Netgear/RAX120v2v1-V1.2.1.22.zip/_RAX120-V1.2.1.22.img.extracted/squashfs-root/usr/sbin/proftpd
+[-] Rule descrption: Do not use constant encryption keys
+[-] Misuse description: Call to libcrypt::crypt(key="key") at address 0x45acb4
+[-] Statements:
+0x45acb4 | Call(0x405cb0<64>, <SimCCAArch64>: [0x4855a9<64>, 0x48dfb3<64>], ret: x0<8>, fp_ret: no-fp-ret-value)
+
+## Misuse 7/8
+[-] Binary path: /home/bluesadi/Yasat/tests_dev/tmp/Tomato/tomato-RT-AC3200-ARM--140-AIO-64K.zip/image/_tomato-RT-AC3200-ARM--140-AIO-64K.trx.extracted/squashfs-root/sbin/rc
+[-] Rule descrption: Do not use constant encryption keys
+[-] Misuse description: Call to libcrypt::crypt(key="admin") at address 0x2cdf8
+[-] Statements:
+0x2cdf8 | r2<4> = Call(0xb224<32>, <SimCCARM>: [r7<4>, BaseOffset(stack_base, -56)], ret: r0<4>, fp_ret: no-fp-ret-value)
+0x2cd78 | r7<4> = 0x4a657<32>
+
+## Misuse 8/8
+[-] Binary path: /home/bluesadi/Yasat/tests_dev/tmp/Tomato/tomato-RT-AC3200-ARM--140-AIO-64K.zip/image/_tomato-RT-AC3200-ARM--140-AIO-64K.trx.extracted/squashfs-root/sbin/rc
+[-] Rule descrption: Do not use constant encryption keys
+[-] Misuse description: Call to libcrypt::crypt(key="admin") at address 0x2cdf8
+[-] Statements:
+0x2cdf8 | r2<4> = Call(0xb224<32>, <SimCCARM>: [r7<4>, BaseOffset(stack_base, -56)], ret: r0<4>, fp_ret: no-fp-ret-value)
+0x2cd8c | r7<4> = ((Conv(8->1, (0x696d6461<8> == 0x0<8>))) ? (0x4a657<32>) : (0x4a657<32>))
+
+# ConstantSaltsChecker
+## Misuse 1/80
+[-] Binary path: /home/bluesadi/Yasat/tests_dev/tmp/D-Link/DES-1210-08P_REVA_FIRMWARE_2.03.B016_BETA_WW.ZIP/_DES-1210-08P_A1_2_03_B016_BETA.hex.extracted/squashfs-root/lib/security/pam_unix.so
+[-] Rule descrption: Do not use constant salts for password-based encryption (PBE)
+[-] Misuse description: Call to libcrypt::crypt(salt="") at address 0x40af90
+[-] Statements:
+0x40af90 | Call(0x50003c<32>, <SimCCO32>: [s0<4>, Add(Call(0x500034<32>, <SimCCO32>: [s2<4>, a1<4>], ret: v0<4>, fp_ret: no-fp-ret-value), 0x2<32>), 0xb<32>], ret: no-ret-value, fp_ret: no-fp-ret-value)
+0x40af54 | a1<4> = 0x459792<32>
+
+## Misuse 2/80
+[-] Binary path: /home/bluesadi/Yasat/tests_dev/tmp/D-Link/DES-1210-08P_REVA_FIRMWARE_2.03.B016_BETA_WW.ZIP/_DES-1210-08P_A1_2_03_B016_BETA.hex.extracted/squashfs-root/lib/security/pam_unix.so
+[-] Rule descrption: Do not use constant salts for password-based encryption (PBE)
+[-] Misuse description: Call to libcrypt::crypt(salt="") at address 0x40af90
+[-] Statements:
+0x40af90 | Call(0x50003c<32>, <SimCCO32>: [s0<4>, Add(Call(0x500034<32>, <SimCCO32>: [s2<4>, a1<4>], ret: v0<4>, fp_ret: no-fp-ret-value), 0x2<32>), 0xb<32>], ret: no-ret-value, fp_ret: no-fp-ret-value)
+0x40afa8 | a1<4> = (s0<4> - 0xb<32>)
+0x40af98 | s0<4> = (s0<4> + 0xb<32>)
+0x40af44 | s0<4> = 0x45979d<32>
+
+## Misuse 3/80
+[-] Binary path: /home/bluesadi/Yasat/tests_dev/tmp/D-Link/DES-1210-08P_REVA_FIRMWARE_2.03.B016_BETA_WW.ZIP/_DES-1210-08P_A1_2_03_B016_BETA.hex.extracted/squashfs-root/lib/security/pam_unix.so
+[-] Rule descrption: Do not use constant salts for password-based encryption (PBE)
+[-] Misuse description: Call to libcrypt::crypt(salt="") at address 0x40af90
+[-] Statements:
+0x40af90 | Call(0x50003c<32>, <SimCCO32>: [s0<4>, Add(Call(0x500034<32>, <SimCCO32>: [s2<4>, a1<4>], ret: v0<4>, fp_ret: no-fp-ret-value), 0x2<32>), 0xb<32>], ret: no-ret-value, fp_ret: no-fp-ret-value)
+0x40afa8 | a1<4> = (s0<4> - 0xb<32>)
+0x40af98 | s0<4> = (s0<4> + 0xb<32>)
+0x40af98 | s0<4> = (s0<4> + 0xb<32>)
+0x40af44 | s0<4> = 0x45979d<32>
+
+## Misuse 4/80
+[-] Binary path: /home/bluesadi/Yasat/tests_dev/tmp/D-Link/DES-1210-08P_REVA_FIRMWARE_2.03.B016_BETA_WW.ZIP/_DES-1210-08P_A1_2_03_B016_BETA.hex.extracted/squashfs-root/lib/security/pam_unix.so
+[-] Rule descrption: Do not use constant salts for password-based encryption (PBE)
+[-] Misuse description: Call to libcrypt::crypt(salt="") at address 0x40af90
+[-] Statements:
+0x40af90 | Call(0x50003c<32>, <SimCCO32>: [s0<4>, Add(Call(0x500034<32>, <SimCCO32>: [s2<4>, a1<4>], ret: v0<4>, fp_ret: no-fp-ret-value), 0x2<32>), 0xb<32>], ret: no-ret-value, fp_ret: no-fp-ret-value)
+0x40afa8 | a1<4> = (s0<4> - 0xb<32>)
+0x40af98 | s0<4> = (s0<4> + 0xb<32>)
+0x40af98 | s0<4> = (s0<4> + 0xb<32>)
+0x40af98 | s0<4> = (s0<4> + 0xb<32>)
+0x40af98 | s0<4> = (s0<4> + 0xb<32>)
+0x40af44 | s0<4> = 0x45979d<32>
+
+## Misuse 5/80
+[-] Binary path: /home/bluesadi/Yasat/tests_dev/tmp/D-Link/DES-1210-08P_REVA_FIRMWARE_2.03.B016_BETA_WW.ZIP/_DES-1210-08P_A1_2_03_B016_BETA.hex.extracted/squashfs-root/lib/security/pam_unix.so
+[-] Rule descrption: Do not use constant salts for password-based encryption (PBE)
+[-] Misuse description: Call to libcrypt::crypt(salt="") at address 0x40af90
+[-] Statements:
+0x40af90 | Call(0x50003c<32>, <SimCCO32>: [s0<4>, Add(Call(0x500034<32>, <SimCCO32>: [s2<4>, a1<4>], ret: v0<4>, fp_ret: no-fp-ret-value), 0x2<32>), 0xb<32>], ret: no-ret-value, fp_ret: no-fp-ret-value)
+0x40afa8 | a1<4> = (s0<4> - 0xb<32>)
+0x40af98 | s0<4> = (s0<4> + 0xb<32>)
+0x40af98 | s0<4> = (s0<4> + 0xb<32>)
+0x40af98 | s0<4> = (s0<4> + 0xb<32>)
+0x40af44 | s0<4> = 0x45979d<32>
+
+## Misuse 6/80
+[-] Binary path: /home/bluesadi/Yasat/tests_dev/tmp/D-Link/DCS-8200LH_REVA_FIRMWARE_1.01.01.ZIP/_DCS-8200LH_A1_FW_1.01.01_r3845.bin.extracted/squashfs-root/usr/sbin/set_passwd
+[-] Rule descrption: Do not use constant salts for password-based encryption (PBE)
+[-] Misuse description: Call to libcrypt::crypt(salt="") at address 0x400c8c
+[-] Statements:
+0x400c8c | a3<4> = Call(0x500030<32>, <SimCCO32>: [a1<4>, 0x4112f0<32>], ret: v0<4>, fp_ret: no-fp-ret-value)
+
+## Misuse 7/80
+[-] Binary path: /home/bluesadi/Yasat/tests_dev/tmp/D-Link/DNR-150N_REVA_FIRMWARE_v3.11.zip/_DSR-150N_A2_FW3.11_WW_intermediate.extracted/squashfs-root/sslvpn/bin/smm
+[-] Rule descrption: Do not use constant salts for password-based encryption (PBE)
+[-] Misuse description: Call to libcrypt::crypt(salt="$1$mldcsfp$") at address 0x1bb2c
+[-] Statements:
+0x1bb2c | Call(0x202d8<32>, <SimCCARM>: [Add(r4<4>, 0xb4<32>), Call (target: 0xa4c0<32>, prototype: (char*, char*) -> char*, args: [r0<4>, 0x10002bb1b<32>])], ret: r0<4>, fp_ret: no-fp-ret-value)
+
+## Misuse 8/80
+[-] Binary path: /home/bluesadi/Yasat/tests_dev/tmp/D-Link/DNR-150N_REVA_FIRMWARE_v3.11.zip/_DSR-150N_A2_FW3.11_WW_intermediate.extracted/squashfs-root/sslvpn/bin/smm
+[-] Rule descrption: Do not use constant salts for password-based encryption (PBE)
+[-] Misuse description: Call to libcrypt::crypt(salt="$1$mldcsfp$") at address 0x215e4
+[-] Statements:
+0x215e4 | Call(0xa598<32>, <SimCCARM>: [Add(r0<4>, 0x80<32>), Call (target: 0xa4c0<32>, prototype: (char*, char*) -> char*, args: [r1<4>, 0x10002bb1b<32>])], ret: r0<4>, fp_ret: no-fp-ret-value)
+
+## Misuse 9/80
+[-] Binary path: /home/bluesadi/Yasat/tests_dev/tmp/D-Link/DNR-150N_REVA_FIRMWARE_v3.11.zip/_DSR-150N_A2_FW3.11_WW_intermediate.extracted/squashfs-root/sslvpn/bin/smm
+[-] Rule descrption: Do not use constant salts for password-based encryption (PBE)
+[-] Misuse description: Call to libcrypt::crypt(salt="$1$mldcsfp$") at address 0x27494
+[-] Statements:
+0x27494 | Call(0xa364<32>, <SimCCARM>: [Add(r7<4>, 0x80<32>), Call (target: 0xa4c0<32>, prototype: (char*, char*) -> char*, args: [r0<4>, 0x10002bb1b<32>])], ret: no-ret-value, fp_ret: no-fp-ret-value)
+
+## Misuse 10/80
+[-] Binary path: /home/bluesadi/Yasat/tests_dev/tmp/D-Link/DNR-150N_REVA_FIRMWARE_v3.11.zip/_DSR-150N_A2_FW3.11_WW_intermediate.extracted/squashfs-root/sslvpn/bin/smm
+[-] Rule descrption: Do not use constant salts for password-based encryption (PBE)
+[-] Misuse description: Call to libcrypt::crypt(salt="$1$mldcsfp$") at address 0x275f4
+[-] Statements:
+0x275f4 | r1<4> = Call(0xa4c0<32>, <SimCCARM>: [Load(addr=0x369f8<32>, size=4, endness=Iend_LE), 0x10002bb1b<32>], ret: r0<4>, fp_ret: no-fp-ret-value)
+
+## Misuse 11/80
+[-] Binary path: /home/bluesadi/Yasat/tests_dev/tmp/D-Link/DNR-150N_REVA_FIRMWARE_v3.11.zip/_DSR-150N_A2_FW3.11_WW_intermediate.extracted/squashfs-root/bin/sslvpnConfig
+[-] Rule descrption: Do not use constant salts for password-based encryption (PBE)
+[-] Misuse description: Call to libcrypt::crypt(salt="$1$mldcsfp$") at address 0xe8a4
+[-] Statements:
+0xe8a4 | r1<4> = Call(0x9a9c<32>, <SimCCARM>: [r4<4>, 0x100018508<32>], ret: r0<4>, fp_ret: no-fp-ret-value)
+
+## Misuse 12/80
+[-] Binary path: /home/bluesadi/Yasat/tests_dev/tmp/D-Link/DNR-150N_REVA_FIRMWARE_v3.11.zip/_DSR-150N_A2_A3_FW3.11_WW_common.extracted/squashfs-root/sslvpn/bin/smm
+[-] Rule descrption: Do not use constant salts for password-based encryption (PBE)
+[-] Misuse description: Call to libcrypt::crypt(salt="$1$mldcsfp$") at address 0x1bb2c
+[-] Statements:
+0x1bb2c | Call(0x202d8<32>, <SimCCARM>: [Add(r4<4>, 0xb4<32>), Call (target: 0xa4c0<32>, prototype: (char*, char*) -> char*, args: [r0<4>, 0x10002bb1b<32>])], ret: r0<4>, fp_ret: no-fp-ret-value)
+
+## Misuse 13/80
+[-] Binary path: /home/bluesadi/Yasat/tests_dev/tmp/D-Link/DNR-150N_REVA_FIRMWARE_v3.11.zip/_DSR-150N_A2_A3_FW3.11_WW_common.extracted/squashfs-root/sslvpn/bin/smm
+[-] Rule descrption: Do not use constant salts for password-based encryption (PBE)
+[-] Misuse description: Call to libcrypt::crypt(salt="$1$mldcsfp$") at address 0x215e4
+[-] Statements:
+0x215e4 | Call(0xa598<32>, <SimCCARM>: [Add(r0<4>, 0x80<32>), Call (target: 0xa4c0<32>, prototype: (char*, char*) -> char*, args: [r1<4>, 0x10002bb1b<32>])], ret: r0<4>, fp_ret: no-fp-ret-value)
+
+## Misuse 14/80
+[-] Binary path: /home/bluesadi/Yasat/tests_dev/tmp/D-Link/DNR-150N_REVA_FIRMWARE_v3.11.zip/_DSR-150N_A2_A3_FW3.11_WW_common.extracted/squashfs-root/sslvpn/bin/smm
+[-] Rule descrption: Do not use constant salts for password-based encryption (PBE)
+[-] Misuse description: Call to libcrypt::crypt(salt="$1$mldcsfp$") at address 0x27494
+[-] Statements:
+0x27494 | Call(0xa364<32>, <SimCCARM>: [Add(r7<4>, 0x80<32>), Call (target: 0xa4c0<32>, prototype: (char*, char*) -> char*, args: [r0<4>, 0x10002bb1b<32>])], ret: no-ret-value, fp_ret: no-fp-ret-value)
+
+## Misuse 15/80
+[-] Binary path: /home/bluesadi/Yasat/tests_dev/tmp/D-Link/DNR-150N_REVA_FIRMWARE_v3.11.zip/_DSR-150N_A2_A3_FW3.11_WW_common.extracted/squashfs-root/sslvpn/bin/smm
+[-] Rule descrption: Do not use constant salts for password-based encryption (PBE)
+[-] Misuse description: Call to libcrypt::crypt(salt="$1$mldcsfp$") at address 0x275f4
+[-] Statements:
+0x275f4 | r1<4> = Call(0xa4c0<32>, <SimCCARM>: [Load(addr=0x369f8<32>, size=4, endness=Iend_LE), 0x10002bb1b<32>], ret: r0<4>, fp_ret: no-fp-ret-value)
+
+## Misuse 16/80
+[-] Binary path: /home/bluesadi/Yasat/tests_dev/tmp/D-Link/DNR-150N_REVA_FIRMWARE_v3.11.zip/_DSR-150N_A2_A3_FW3.11_WW_common.extracted/squashfs-root/bin/sslvpnConfig
+[-] Rule descrption: Do not use constant salts for password-based encryption (PBE)
+[-] Misuse description: Call to libcrypt::crypt(salt="$1$mldcsfp$") at address 0xe8a4
+[-] Statements:
+0xe8a4 | r1<4> = Call(0x9a9c<32>, <SimCCARM>: [r4<4>, 0x100018508<32>], ret: r0<4>, fp_ret: no-fp-ret-value)
+
+## Misuse 17/80
+[-] Binary path: /home/bluesadi/Yasat/tests_dev/tmp/D-Link/DSR-1000N_REVA_FIRMWARE_1.09.B61_WW.ZIP/_DSR-1000N_A1_FW1.09B61_WW.extracted/squashfs-root/sslvpn/bin/smm
+[-] Rule descrption: Do not use constant salts for password-based encryption (PBE)
+[-] Misuse description: Call to libcrypt::crypt(salt="$1$mldcsfp$") at address 0x10016ee0
+[-] Statements:
+0x10016ee0 | Call(0x10100044<32>, <SimCCO32>: [a0<4>, 0x10029970<32>], ret: no-ret-value, fp_ret: no-fp-ret-value)
+
+## Misuse 18/80
+[-] Binary path: /home/bluesadi/Yasat/tests_dev/tmp/D-Link/DSR-1000N_REVA_FIRMWARE_1.09.B61_WW.ZIP/_DSR-1000N_A1_FW1.09B61_WW.extracted/squashfs-root/sslvpn/bin/smm
+[-] Rule descrption: Do not use constant salts for password-based encryption (PBE)
+[-] Misuse description: Call to libcrypt::crypt(salt="$1$mldcsfp$") at address 0x1001c6e0
+[-] Statements:
+0x1001c6e0 | Call(0x10100044<32>, <SimCCO32>: [a0<4>, 0x10029970<32>], ret: no-ret-value, fp_ret: no-fp-ret-value)
+
+## Misuse 19/80
+[-] Binary path: /home/bluesadi/Yasat/tests_dev/tmp/D-Link/DSR-1000N_REVA_FIRMWARE_1.09.B61_WW.ZIP/_DSR-1000N_A1_FW1.09B61_WW.extracted/squashfs-root/sslvpn/bin/smm
+[-] Rule descrption: Do not use constant salts for password-based encryption (PBE)
+[-] Misuse description: Call to libcrypt::crypt(salt="$1$mldcsfp$") at address 0x1001c788
+[-] Statements:
+0x1001c788 | Call(0x10100044<32>, <SimCCO32>: [a0<4>, 0x10029970<32>], ret: no-ret-value, fp_ret: no-fp-ret-value)
+
+## Misuse 20/80
+[-] Binary path: /home/bluesadi/Yasat/tests_dev/tmp/D-Link/DSR-1000N_REVA_FIRMWARE_1.09.B61_WW.ZIP/_DSR-1000N_A1_FW1.09B61_WW.extracted/squashfs-root/sslvpn/bin/smm
+[-] Rule descrption: Do not use constant salts for password-based encryption (PBE)
+[-] Misuse description: Call to libcrypt::crypt(salt="$1$mldcsfp$") at address 0x10024e14
+[-] Statements:
+0x10024e14 | Call(0x10100044<32>, <SimCCO32>: [Load(addr=(s3<4> + 0x4<32>), size=4, endness=Iend_BE), 0x10029970<32>], ret: no-ret-value, fp_ret: no-fp-ret-value)
+
+## Misuse 21/80
+[-] Binary path: /home/bluesadi/Yasat/tests_dev/tmp/D-Link/DSR-1000_A1_FIRMWARE_v2.13_WW.zip/_DSR-1000_A1_FW2.13_WW.extracted/squashfs-root/sslvpn/bin/smm
+[-] Rule descrption: Do not use constant salts for password-based encryption (PBE)
+[-] Misuse description: Call to libcrypt::crypt(salt="$1$mldcsfp$") at address 0x10016ee0
+[-] Statements:
+0x10016ee0 | Call(0x10100044<32>, <SimCCO32>: [a0<4>, 0x10029930<32>], ret: no-ret-value, fp_ret: no-fp-ret-value)
+
+## Misuse 22/80
+[-] Binary path: /home/bluesadi/Yasat/tests_dev/tmp/D-Link/DSR-1000_A1_FIRMWARE_v2.13_WW.zip/_DSR-1000_A1_FW2.13_WW.extracted/squashfs-root/sslvpn/bin/smm
+[-] Rule descrption: Do not use constant salts for password-based encryption (PBE)
+[-] Misuse description: Call to libcrypt::crypt(salt="$1$mldcsfp$") at address 0x1001c6f0
+[-] Statements:
+0x1001c6f0 | Call(0x10100044<32>, <SimCCO32>: [a0<4>, 0x10029930<32>], ret: no-ret-value, fp_ret: no-fp-ret-value)
+
+## Misuse 23/80
+[-] Binary path: /home/bluesadi/Yasat/tests_dev/tmp/D-Link/DSR-1000_A1_FIRMWARE_v2.13_WW.zip/_DSR-1000_A1_FW2.13_WW.extracted/squashfs-root/sslvpn/bin/smm
+[-] Rule descrption: Do not use constant salts for password-based encryption (PBE)
+[-] Misuse description: Call to libcrypt::crypt(salt="$1$mldcsfp$") at address 0x1001c798
+[-] Statements:
+0x1001c798 | Call(0x10100044<32>, <SimCCO32>: [a0<4>, 0x10029930<32>], ret: no-ret-value, fp_ret: no-fp-ret-value)
+
+## Misuse 24/80
+[-] Binary path: /home/bluesadi/Yasat/tests_dev/tmp/D-Link/DSR-1000_A1_FIRMWARE_v2.13_WW.zip/_DSR-1000_A1_FW2.13_WW.extracted/squashfs-root/sslvpn/bin/smm
+[-] Rule descrption: Do not use constant salts for password-based encryption (PBE)
+[-] Misuse description: Call to libcrypt::crypt(salt="$1$mldcsfp$") at address 0x10024dd4
+[-] Statements:
+0x10024dd4 | Call(0x10100044<32>, <SimCCO32>: [Load(addr=(s3<4> + 0x4<32>), size=4, endness=Iend_BE), 0x10029930<32>], ret: no-ret-value, fp_ret: no-fp-ret-value)
+
+## Misuse 25/80
+[-] Binary path: /home/bluesadi/Yasat/tests_dev/tmp/D-Link/DSR-250N_FIRMWARE_1.05B20.ZIP/dsr250n_105B20/_DSR-250N_FW_1.05B20_WW.extracted/squashfs-root/bin/sslvpnConfig
+[-] Rule descrption: Do not use constant salts for password-based encryption (PBE)
+[-] Misuse description: Call to libcrypt::crypt(salt="$1$mldcsfp$") at address 0xf230
+[-] Statements:
+0xf230 | r1<4> = Call(0x99f4<32>, <SimCCARM>: [r2<4>, 0x10001a920<32>], ret: r0<4>, fp_ret: no-fp-ret-value)
+
+## Misuse 26/80
+[-] Binary path: /home/bluesadi/Yasat/tests_dev/tmp/D-Link/DSR-150_A1_FIRMWARE_1.08B29.ZIP/_DSR-150_A1_FW1.08B29_WW.extracted/squashfs-root/bin/sslvpnConfig
+[-] Rule descrption: Do not use constant salts for password-based encryption (PBE)
+[-] Misuse description: Call to libcrypt::crypt(salt="$1$mldcsfp$") at address 0xf398
+[-] Statements:
+0xf398 | r1<4> = Call(0x9a9c<32>, <SimCCARM>: [r2<4>, 0x10001b84c<32>], ret: r0<4>, fp_ret: no-fp-ret-value)
+
+## Misuse 27/80
+[-] Binary path: /home/bluesadi/Yasat/tests_dev/tmp/D-Link/DSR-250_FIRMWARE_1.05B20.ZIP/dsr250_105B20/_DSR-250_FW_1.05B20_WW.extracted/squashfs-root/bin/sslvpnConfig
+[-] Rule descrption: Do not use constant salts for password-based encryption (PBE)
+[-] Misuse description: Call to libcrypt::crypt(salt="$1$mldcsfp$") at address 0xf230
+[-] Statements:
+0xf230 | r1<4> = Call(0x99f4<32>, <SimCCARM>: [r2<4>, 0x10001a920<32>], ret: r0<4>, fp_ret: no-fp-ret-value)
+
+## Misuse 28/80
+[-] Binary path: /home/bluesadi/Yasat/tests_dev/tmp/D-Link/DSR-500_A1_FIRMWARE_v2.13_WW.zip/_DSR-500_A1_FW2.13_WW.extracted/squashfs-root/sslvpn/bin/smm
+[-] Rule descrption: Do not use constant salts for password-based encryption (PBE)
+[-] Misuse description: Call to libcrypt::crypt(salt="$1$mldcsfp$") at address 0x10016ee0
+[-] Statements:
+0x10016ee0 | Call(0x10100044<32>, <SimCCO32>: [a0<4>, 0x10029930<32>], ret: no-ret-value, fp_ret: no-fp-ret-value)
+
+## Misuse 29/80
+[-] Binary path: /home/bluesadi/Yasat/tests_dev/tmp/D-Link/DSR-500_A1_FIRMWARE_v2.13_WW.zip/_DSR-500_A1_FW2.13_WW.extracted/squashfs-root/sslvpn/bin/smm
+[-] Rule descrption: Do not use constant salts for password-based encryption (PBE)
+[-] Misuse description: Call to libcrypt::crypt(salt="$1$mldcsfp$") at address 0x1001c6f0
+[-] Statements:
+0x1001c6f0 | Call(0x10100044<32>, <SimCCO32>: [a0<4>, 0x10029930<32>], ret: no-ret-value, fp_ret: no-fp-ret-value)
+
+## Misuse 30/80
+[-] Binary path: /home/bluesadi/Yasat/tests_dev/tmp/D-Link/DSR-500_A1_FIRMWARE_v2.13_WW.zip/_DSR-500_A1_FW2.13_WW.extracted/squashfs-root/sslvpn/bin/smm
+[-] Rule descrption: Do not use constant salts for password-based encryption (PBE)
+[-] Misuse description: Call to libcrypt::crypt(salt="$1$mldcsfp$") at address 0x1001c798
+[-] Statements:
+0x1001c798 | Call(0x10100044<32>, <SimCCO32>: [a0<4>, 0x10029930<32>], ret: no-ret-value, fp_ret: no-fp-ret-value)
+
+## Misuse 31/80
+[-] Binary path: /home/bluesadi/Yasat/tests_dev/tmp/D-Link/DSR-500_A1_FIRMWARE_v2.13_WW.zip/_DSR-500_A1_FW2.13_WW.extracted/squashfs-root/sslvpn/bin/smm
+[-] Rule descrption: Do not use constant salts for password-based encryption (PBE)
+[-] Misuse description: Call to libcrypt::crypt(salt="$1$mldcsfp$") at address 0x10024dd4
+[-] Statements:
+0x10024dd4 | Call(0x10100044<32>, <SimCCO32>: [Load(addr=(s3<4> + 0x4<32>), size=4, endness=Iend_BE), 0x10029930<32>], ret: no-ret-value, fp_ret: no-fp-ret-value)
+
+## Misuse 32/80
+[-] Binary path: /home/bluesadi/Yasat/tests_dev/tmp/D-Link/DWC-1000_FIRMWARE_4.1.0.2.ZIP/_DWC-1000_A1_FW_v4.1.0.2_10222W.extracted/squashfs-root/sslvpn/bin/smm
+[-] Rule descrption: Do not use constant salts for password-based encryption (PBE)
+[-] Misuse description: Call to libcrypt::crypt(salt="$1$mldcsfp$") at address 0x10016c40
+[-] Statements:
+0x10016c40 | Call(0x10200034<32>, <SimCCO32>: [a0<4>, 0x100283d0<32>], ret: no-ret-value, fp_ret: no-fp-ret-value)
+
+## Misuse 33/80
+[-] Binary path: /home/bluesadi/Yasat/tests_dev/tmp/D-Link/DWC-1000_FIRMWARE_4.1.0.2.ZIP/_DWC-1000_A1_FW_v4.1.0.2_10222W.extracted/squashfs-root/sslvpn/bin/smm
+[-] Rule descrption: Do not use constant salts for password-based encryption (PBE)
+[-] Misuse description: Call to libcrypt::crypt(salt="$1$mldcsfp$") at address 0x1001bf4c
+[-] Statements:
+0x1001bf4c | Call(0x10200034<32>, <SimCCO32>: [a0<4>, 0x100283d0<32>], ret: no-ret-value, fp_ret: no-fp-ret-value)
+
+## Misuse 34/80
+[-] Binary path: /home/bluesadi/Yasat/tests_dev/tmp/D-Link/DWC-1000_FIRMWARE_4.1.0.2.ZIP/_DWC-1000_A1_FW_v4.1.0.2_10222W.extracted/squashfs-root/sslvpn/bin/smm
+[-] Rule descrption: Do not use constant salts for password-based encryption (PBE)
+[-] Misuse description: Call to libcrypt::crypt(salt="$1$mldcsfp$") at address 0x1001bff4
+[-] Statements:
+0x1001bff4 | Call(0x10200034<32>, <SimCCO32>: [a0<4>, 0x100283d0<32>], ret: no-ret-value, fp_ret: no-fp-ret-value)
+
+## Misuse 35/80
+[-] Binary path: /home/bluesadi/Yasat/tests_dev/tmp/D-Link/DWC-1000_FIRMWARE_4.1.0.2.ZIP/_DWC-1000_A1_FW_v4.1.0.2_10222W.extracted/squashfs-root/sslvpn/bin/smm
+[-] Rule descrption: Do not use constant salts for password-based encryption (PBE)
+[-] Misuse description: Call to libcrypt::crypt(salt="$1$mldcsfp$") at address 0x100241ac
+[-] Statements:
+0x100241ac | Call(0x10200034<32>, <SimCCO32>: [Load(addr=(s3<4> + 0x4<32>), size=4, endness=Iend_BE), 0x100283d0<32>], ret: no-ret-value, fp_ret: no-fp-ret-value)
+
+## Misuse 36/80
+[-] Binary path: /home/bluesadi/Yasat/tests_dev/tmp/D-Link/DWC-1000_FIRMWARE_4.1.0.2.ZIP/_DWC-1000_A1_FW_v4.1.0.2_10222W.extracted/squashfs-root/lib/modules/lighttpd/mod_auth.so
+[-] Rule descrption: Do not use constant salts for password-based encryption (PBE)
+[-] Misuse description: Call to libcrypt::crypt(salt="http_auth.c") at address 0x405008
+[-] Statements:
+0x405008 | Call(0x600018<32>, <SimCCO32>: [a0<4>, 0x407248<32>], ret: no-ret-value, fp_ret: no-fp-ret-value)
+
+## Misuse 37/80
+[-] Binary path: /home/bluesadi/Yasat/tests_dev/tmp/Netgear/AC1450-V1.0.0.36_10.0.17.zip/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/bin/busybox
+[-] Rule descrption: Do not use constant salts for password-based encryption (PBE)
+[-] Misuse description: Call to libcrypt::crypt(salt="aa") at address 0x5026c
+[-] Statements:
+0x5026c | r5<4> = Call(0xb758<32>, <SimCCARM>: [r0<4>, r4<4>], ret: r0<4>, fp_ret: no-fp-ret-value)
+0x50230 | r4<4> = 0x6040a<32>
+
+## Misuse 38/80
+[-] Binary path: /home/bluesadi/Yasat/tests_dev/tmp/Netgear/AC1450-V1.0.0.36_10.0.17.zip/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/bin/busybox
+[-] Rule descrption: Do not use constant salts for password-based encryption (PBE)
+[-] Misuse description: Call to libcrypt::crypt(salt="aa") at address 0x5026c
+[-] Statements:
+0x5026c | r5<4> = Call(0xb758<32>, <SimCCARM>: [r0<4>, r4<4>], ret: r0<4>, fp_ret: no-fp-ret-value)
+0x50248 | r4<4> = 0x6040a<32>
+
+## Misuse 39/80
+[-] Binary path: /home/bluesadi/Yasat/tests_dev/tmp/Netgear/DC112A_V1.0.0.60_1.0.60.zip/_DC112A-V1.0.0.60_1.0.60.chk.extracted/squashfs-root/bin/busybox
+[-] Rule descrption: Do not use constant salts for password-based encryption (PBE)
+[-] Misuse description: Call to libcrypt::crypt(salt="aa") at address 0x519dc
+[-] Statements:
+0x519dc | r5<4> = Call(0xb7d4<32>, <SimCCARM>: [r0<4>, r4<4>], ret: r0<4>, fp_ret: no-fp-ret-value)
+0x519a0 | r4<4> = 0x61fd2<32>
+
+## Misuse 40/80
+[-] Binary path: /home/bluesadi/Yasat/tests_dev/tmp/Netgear/DC112A_V1.0.0.60_1.0.60.zip/_DC112A-V1.0.0.60_1.0.60.chk.extracted/squashfs-root/bin/busybox
+[-] Rule descrption: Do not use constant salts for password-based encryption (PBE)
+[-] Misuse description: Call to libcrypt::crypt(salt="aa") at address 0x519dc
+[-] Statements:
+0x519dc | r5<4> = Call(0xb7d4<32>, <SimCCARM>: [r0<4>, r4<4>], ret: r0<4>, fp_ret: no-fp-ret-value)
+0x519b8 | r4<4> = 0x61fd2<32>
+
+## Misuse 41/80
+[-] Binary path: /home/bluesadi/Yasat/tests_dev/tmp/Netgear/D8500_V1.0.3.60_1.0.1.zip/_D8500-V1.0.3.60_1.0.1.chk.extracted/squashfs-root/bin/busybox
+[-] Rule descrption: Do not use constant salts for password-based encryption (PBE)
+[-] Misuse description: Call to libcrypt::crypt(salt="aa") at address 0x50f10
+[-] Statements:
+0x50f10 | r5<4> = Call(0xb7a4<32>, <SimCCARM>: [r0<4>, 0x613ae<32>], ret: r0<4>, fp_ret: no-fp-ret-value)
+
+## Misuse 42/80
+[-] Binary path: /home/bluesadi/Yasat/tests_dev/tmp/Netgear/DGN3500-V1.1.00.37NA.zip/_DGN3500-V1.1.00.37_1.00.37NA.img.extracted/squashfs-root/usr/sbin/rc
+[-] Rule descrption: Do not use constant salts for password-based encryption (PBE)
+[-] Misuse description: Call to libcrypt::crypt(salt="sc") at address 0x41c558
+[-] Statements:
+0x41c558 | Call(0x10100164<32>, <SimCCO32>: [BaseOffset(stack_base, -104), Call (target: 0x10100098<32>, prototype: (char*, char*) -> char*, args: [BaseOffset(stack_base, -104), 0x42a814<32>])], ret: no-ret-value, fp_ret: no-fp-ret-value)
+
+## Misuse 43/80
+[-] Binary path: /home/bluesadi/Yasat/tests_dev/tmp/Netgear/DGN3500-V1.1.00.37NA.zip/_DGN3500-V1.1.00.37_1.00.37NA.img.extracted/squashfs-root/usr/sbin/rc
+[-] Rule descrption: Do not use constant salts for password-based encryption (PBE)
+[-] Misuse description: Call to libcrypt::crypt(salt="sc") at address 0x41c590
+[-] Statements:
+0x41c590 | Call(0x10100164<32>, <SimCCO32>: [BaseOffset(stack_base, -88), Call (target: 0x10100098<32>, prototype: (char*, char*) -> char*, args: [BaseOffset(stack_base, -88), 0x42a814<32>])], ret: no-ret-value, fp_ret: no-fp-ret-value)
+
+## Misuse 44/80
+[-] Binary path: /home/bluesadi/Yasat/tests_dev/tmp/Netgear/DST6501-V1.0.1.6.zip/_DST6501-V1.0.1.6.img.extracted/squashfs-root/bin/busybox
+[-] Rule descrption: Do not use constant salts for password-based encryption (PBE)
+[-] Misuse description: Call to libcrypt::crypt(salt="aa") at address 0x34100
+[-] Statements:
+0x34100 | r5<4> = Call(0xb4e8<32>, <SimCCARM>: [r0<4>, r4<4>], ret: r0<4>, fp_ret: no-fp-ret-value)
+0x340dc | r4<4> = 0x3e9f0<32>
+
+## Misuse 45/80
+[-] Binary path: /home/bluesadi/Yasat/tests_dev/tmp/Netgear/PLW1000-V1.0.1.6.zip/_PLW1000-V1.0.1.6.img.extracted/squashfs-root/bin/busybox
+[-] Rule descrption: Do not use constant salts for password-based encryption (PBE)
+[-] Misuse description: Call to libcrypt::crypt(salt="aa") at address 0x34100
+[-] Statements:
+0x34100 | r5<4> = Call(0xb4e8<32>, <SimCCARM>: [r0<4>, r4<4>], ret: r0<4>, fp_ret: no-fp-ret-value)
+0x340dc | r4<4> = 0x3e9f0<32>
+
+## Misuse 46/80
+[-] Binary path: /home/bluesadi/Yasat/tests_dev/tmp/Netgear/PLW1000v2-V1.0.0.14.zip/_PLW1000v2-V1.0.0.14.img.extracted/squashfs-root/usr/bin/logic
+[-] Rule descrption: Do not use constant salts for password-based encryption (PBE)
+[-] Misuse description: Call to libcrypt::crypt(salt="$1$TW") at address 0x209d8
+[-] Statements:
+0x209d8 | Call(0xb0b4<32>, <SimCCARM>: [0x102<32>, 0x49960<32>, Call (target: 0xaf58<32>, prototype: (char*, char*) -> char*, args: [BaseOffset(stack_base, -84), 0x499d0<32>])], ret: r0<4>, fp_ret: no-fp-ret-value)
+
+## Misuse 47/80
+[-] Binary path: /home/bluesadi/Yasat/tests_dev/tmp/Netgear/PLW1000v2-V1.0.0.14.zip/_PLW1000v2-V1.0.0.14.img.extracted/squashfs-root/usr/bin/logic
+[-] Rule descrption: Do not use constant salts for password-based encryption (PBE)
+[-] Misuse description: Call to libcrypt::crypt(salt="$1$TW") at address 0x209fc
+[-] Statements:
+0x209fc | Call(0xb0b4<32>, <SimCCARM>: [0x102<32>, 0x49998<32>, Call (target: 0xaf58<32>, prototype: (char*, char*) -> char*, args: [BaseOffset(stack_base, -152), 0x499d0<32>])], ret: r0<4>, fp_ret: no-fp-ret-value)
+
+## Misuse 48/80
+[-] Binary path: /home/bluesadi/Yasat/tests_dev/tmp/Netgear/PLW1000v2-V1.0.0.14.zip/_PLW1000v2-V1.0.0.14.img.extracted/squashfs-root/usr/bin/logic
+[-] Rule descrption: Do not use constant salts for password-based encryption (PBE)
+[-] Misuse description: Call to libcrypt::crypt(salt="$1$TW") at address 0x20aec
+[-] Statements:
+0x20aec | r1<4> = Call(0xaf58<32>, <SimCCARM>: [BaseOffset(stack_base, -160), 0x499d0<32>], ret: r0<4>, fp_ret: no-fp-ret-value)
+
+## Misuse 49/80
+[-] Binary path: /home/bluesadi/Yasat/tests_dev/tmp/Netgear/PLW1000v2-V1.0.0.14.zip/_PLW1000v2-V1.0.0.14.img.extracted/squashfs-root/usr/bin/logic
+[-] Rule descrption: Do not use constant salts for password-based encryption (PBE)
+[-] Misuse description: Call to libcrypt::crypt(salt="$1$TW") at address 0x20b34
+[-] Statements:
+0x20b34 | Call(0xb0b4<32>, <SimCCARM>: [0x102<32>, r8<4>, Call (target: 0xaf58<32>, prototype: (char*, char*) -> char*, args: [BaseOffset(stack_base, -224), 0x499d0<32>])], ret: r0<4>, fp_ret: no-fp-ret-value)
+
+## Misuse 50/80
+[-] Binary path: /home/bluesadi/Yasat/tests_dev/tmp/Netgear/PLW1000v2-V1.0.0.14.zip/_PLW1000v2-V1.0.0.14.img.extracted/squashfs-root/usr/bin/logic
+[-] Rule descrption: Do not use constant salts for password-based encryption (PBE)
+[-] Misuse description: Call to libcrypt::crypt(salt="$1$TW") at address 0x20e40
+[-] Statements:
+0x20e40 | Call(0xaf58<32>, <SimCCARM>: [0x49a32<32>, 0x499d0<32>], ret: no-ret-value, fp_ret: no-fp-ret-value)
+
+## Misuse 51/80
+[-] Binary path: /home/bluesadi/Yasat/tests_dev/tmp/Netgear/PLW1000v2-V1.0.0.14.zip/_PLW1000v2-V1.0.0.14.img.extracted/squashfs-root/usr/bin/logic
+[-] Rule descrption: Do not use constant salts for password-based encryption (PBE)
+[-] Misuse description: Call to libcrypt::crypt(salt="$1$TW") at address 0x21500
+[-] Statements:
+0x21500 | r1<4> = Call(0xaf58<32>, <SimCCARM>: [BaseOffset(stack_base, -616), 0x499d0<32>], ret: r0<4>, fp_ret: no-fp-ret-value)
+
+## Misuse 52/80
+[-] Binary path: /home/bluesadi/Yasat/tests_dev/tmp/Netgear/PLW1000v2-V1.0.0.14.zip/_PLW1000v2-V1.0.0.14.img.extracted/squashfs-root/usr/bin/logic
+[-] Rule descrption: Do not use constant salts for password-based encryption (PBE)
+[-] Misuse description: Call to libcrypt::crypt(salt="$1$TW") at address 0x21e64
+[-] Statements:
+0x21e64 | Call(0xaf58<32>, <SimCCARM>: [BaseOffset(stack_base, -890), 0x499d0<32>], ret: no-ret-value, fp_ret: no-fp-ret-value)
+
+## Misuse 53/80
+[-] Binary path: /home/bluesadi/Yasat/tests_dev/tmp/Netgear/PLW1000v2-V1.0.0.14.zip/_PLW1000v2-V1.0.0.14.img.extracted/squashfs-root/usr/bin/logic
+[-] Rule descrption: Do not use constant salts for password-based encryption (PBE)
+[-] Misuse description: Call to libcrypt::crypt(salt="$1$TW") at address 0x21e84
+[-] Statements:
+0x21e84 | Call(0xaf58<32>, <SimCCARM>: [BaseOffset(stack_base, -825), 0x499d0<32>], ret: no-ret-value, fp_ret: no-fp-ret-value)
+
+## Misuse 54/80
+[-] Binary path: /home/bluesadi/Yasat/tests_dev/tmp/Netgear/PLW1000v2-V1.0.0.14.zip/_PLW1000v2-V1.0.0.14.img.extracted/squashfs-root/usr/bin/logic
+[-] Rule descrption: Do not use constant salts for password-based encryption (PBE)
+[-] Misuse description: Call to libcrypt::crypt(salt="$1$TW") at address 0x21eb4
+[-] Statements:
+0x21eb4 | Call(0xb81c<32>, <SimCCARM>: [0x49c86<32>, r5<4>, r5<4>, Call (target: 0xaf58<32>, prototype: (char*, char*) -> char*, args: [0x49a3e<32>, 0x499d0<32>])], ret: r0<4>, fp_ret: no-fp-ret-value)
+
+## Misuse 55/80
+[-] Binary path: /home/bluesadi/Yasat/tests_dev/tmp/Netgear/PLW1000v2-V1.0.0.14.zip/_PLW1000v2-V1.0.0.14.img.extracted/squashfs-root/bin/busybox
+[-] Rule descrption: Do not use constant salts for password-based encryption (PBE)
+[-] Misuse description: Call to libcrypt::crypt(salt="aa") at address 0x34100
+[-] Statements:
+0x34100 | r5<4> = Call(0xb4e8<32>, <SimCCARM>: [r0<4>, r4<4>], ret: r0<4>, fp_ret: no-fp-ret-value)
+0x340dc | r4<4> = 0x3e9f0<32>
+
+## Misuse 56/80
+[-] Binary path: /home/bluesadi/Yasat/tests_dev/tmp/Netgear/PLW1000v2-V1.0.0.18.zip/_PLW1000v2-V1.0.0.18.img.extracted/squashfs-root/bin/busybox
+[-] Rule descrption: Do not use constant salts for password-based encryption (PBE)
+[-] Misuse description: Call to libcrypt::crypt(salt="aa") at address 0x34100
+[-] Statements:
+0x34100 | r5<4> = Call(0xb4e8<32>, <SimCCARM>: [r0<4>, r4<4>], ret: r0<4>, fp_ret: no-fp-ret-value)
+0x340dc | r4<4> = 0x3e9f0<32>
+
+## Misuse 57/80
+[-] Binary path: /home/bluesadi/Yasat/tests_dev/tmp/Netgear/R6200v2-V1.0.3.12_10.1.11.zip/_R6200v2-V1.0.3.12_10.1.11.chk.extracted/squashfs-root/usr/local/samba/smbd
+[-] Rule descrption: Do not use constant salts for password-based encryption (PBE)
+[-] Misuse description: Call to libcrypt::crypt(salt="") at address 0xcc218
+[-] Statements:
+0xcc218 | Call(0x2ddb8<32>, <SimCCARM>: [r0<4>, 0x100028<32>], ret: no-ret-value, fp_ret: no-fp-ret-value)
+
+## Misuse 58/80
+[-] Binary path: /home/bluesadi/Yasat/tests_dev/tmp/Netgear/R6200v2-V1.0.3.12_10.1.11.zip/_R6200v2-V1.0.3.12_10.1.11.chk.extracted/squashfs-root/bin/busybox
+[-] Rule descrption: Do not use constant salts for password-based encryption (PBE)
+[-] Misuse description: Call to libcrypt::crypt(salt="aa") at address 0x5026c
+[-] Statements:
+0x5026c | r5<4> = Call(0xb758<32>, <SimCCARM>: [r0<4>, r4<4>], ret: r0<4>, fp_ret: no-fp-ret-value)
+0x50230 | r4<4> = 0x6040a<32>
+
+## Misuse 59/80
+[-] Binary path: /home/bluesadi/Yasat/tests_dev/tmp/Netgear/R6200v2-V1.0.3.12_10.1.11.zip/_R6200v2-V1.0.3.12_10.1.11.chk.extracted/squashfs-root/bin/busybox
+[-] Rule descrption: Do not use constant salts for password-based encryption (PBE)
+[-] Misuse description: Call to libcrypt::crypt(salt="aa") at address 0x5026c
+[-] Statements:
+0x5026c | r5<4> = Call(0xb758<32>, <SimCCARM>: [r0<4>, r4<4>], ret: r0<4>, fp_ret: no-fp-ret-value)
+0x50248 | r4<4> = 0x6040a<32>
+
+## Misuse 60/80
+[-] Binary path: /home/bluesadi/Yasat/tests_dev/tmp/Netgear/R6250-V1.0.4.48_10.1.30.zip/_R6250-V1.0.4.48_10.1.30.chk.extracted/squashfs-root/bin/busybox
+[-] Rule descrption: Do not use constant salts for password-based encryption (PBE)
+[-] Misuse description: Call to libcrypt::crypt(salt="aa") at address 0x5074c
+[-] Statements:
+0x5074c | r5<4> = Call(0xb7a4<32>, <SimCCARM>: [r0<4>, 0x609fa<32>], ret: r0<4>, fp_ret: no-fp-ret-value)
+
+## Misuse 61/80
+[-] Binary path: /home/bluesadi/Yasat/tests_dev/tmp/Netgear/R6300v2-V1.0.4.52_10.0.93.zip/_R6300v2-V1.0.4.52_10.0.93.chk.extracted/squashfs-root/bin/busybox
+[-] Rule descrption: Do not use constant salts for password-based encryption (PBE)
+[-] Misuse description: Call to libcrypt::crypt(salt="aa") at address 0x5026c
+[-] Statements:
+0x5026c | r5<4> = Call(0xb758<32>, <SimCCARM>: [r0<4>, r4<4>], ret: r0<4>, fp_ret: no-fp-ret-value)
+0x50230 | r4<4> = 0x6040a<32>
+
+## Misuse 62/80
+[-] Binary path: /home/bluesadi/Yasat/tests_dev/tmp/Netgear/R6300v2-V1.0.4.52_10.0.93.zip/_R6300v2-V1.0.4.52_10.0.93.chk.extracted/squashfs-root/bin/busybox
+[-] Rule descrption: Do not use constant salts for password-based encryption (PBE)
+[-] Misuse description: Call to libcrypt::crypt(salt="aa") at address 0x5026c
+[-] Statements:
+0x5026c | r5<4> = Call(0xb758<32>, <SimCCARM>: [r0<4>, r4<4>], ret: r0<4>, fp_ret: no-fp-ret-value)
+0x50248 | r4<4> = 0x6040a<32>
+
+## Misuse 63/80
+[-] Binary path: /home/bluesadi/Yasat/tests_dev/tmp/Netgear/R6400-V1.0.1.74_1.0.48.zip/_R6400-V1.0.1.74_1.0.48.chk.extracted/squashfs-root/bin/busybox
+[-] Rule descrption: Do not use constant salts for password-based encryption (PBE)
+[-] Misuse description: Call to libcrypt::crypt(salt="aa") at address 0x50848
+[-] Statements:
+0x50848 | r5<4> = Call(0xb7a4<32>, <SimCCARM>: [r0<4>, 0x60b06<32>], ret: r0<4>, fp_ret: no-fp-ret-value)
+
+## Misuse 64/80
+[-] Binary path: /home/bluesadi/Yasat/tests_dev/tmp/Netgear/R6700v3-V1.0.4.120_10.0.91.zip/_R6700v3-V1.0.4.120_10.0.91.chk.extracted/squashfs-root/bin/busybox
+[-] Rule descrption: Do not use constant salts for password-based encryption (PBE)
+[-] Misuse description: Call to libcrypt::crypt(salt="aa") at address 0x50990
+[-] Statements:
+0x50990 | r5<4> = Call(0xb7e8<32>, <SimCCARM>: [r0<4>, 0x60c7e<32>], ret: r0<4>, fp_ret: no-fp-ret-value)
+
+## Misuse 65/80
+[-] Binary path: /home/bluesadi/Yasat/tests_dev/tmp/Netgear/R7100LG_V1.0.0.70_1.0.6.zip/_R7100LG-V1.0.0.70_1.0.6EUS.chk.extracted/squashfs-root/usr/local/samba/smbd
+[-] Rule descrption: Do not use constant salts for password-based encryption (PBE)
+[-] Misuse description: Call to libcrypt::crypt(salt="") at address 0xcc008
+[-] Statements:
+0xcc008 | Call(0x2dd88<32>, <SimCCARM>: [r0<4>, 0xffc50<32>], ret: no-ret-value, fp_ret: no-fp-ret-value)
+
+## Misuse 66/80
+[-] Binary path: /home/bluesadi/Yasat/tests_dev/tmp/Netgear/R7100LG_V1.0.0.70_1.0.6.zip/_R7100LG-V1.0.0.70_1.0.6EUS.chk.extracted/squashfs-root/bin/busybox
+[-] Rule descrption: Do not use constant salts for password-based encryption (PBE)
+[-] Misuse description: Call to libcrypt::crypt(salt="aa") at address 0x521d0
+[-] Statements:
+0x521d0 | r5<4> = Call(0xb820<32>, <SimCCARM>: [r0<4>, r4<4>], ret: r0<4>, fp_ret: no-fp-ret-value)
+0x52194 | r4<4> = 0x629e6<32>
+
+## Misuse 67/80
+[-] Binary path: /home/bluesadi/Yasat/tests_dev/tmp/Netgear/R7100LG_V1.0.0.70_1.0.6.zip/_R7100LG-V1.0.0.70_1.0.6EUS.chk.extracted/squashfs-root/bin/busybox
+[-] Rule descrption: Do not use constant salts for password-based encryption (PBE)
+[-] Misuse description: Call to libcrypt::crypt(salt="aa") at address 0x521d0
+[-] Statements:
+0x521d0 | r5<4> = Call(0xb820<32>, <SimCCARM>: [r0<4>, r4<4>], ret: r0<4>, fp_ret: no-fp-ret-value)
+0x521ac | r4<4> = 0x629e6<32>
+
+## Misuse 68/80
+[-] Binary path: /home/bluesadi/Yasat/tests_dev/tmp/Netgear/R7300-V1.0.0.74_1.0.29.zip/_R7300-V1.0.0.74_1.0.29.chk.extracted/squashfs-root/usr/local/samba/smbd
+[-] Rule descrption: Do not use constant salts for password-based encryption (PBE)
+[-] Misuse description: Call to libcrypt::crypt(salt="") at address 0xcc008
+[-] Statements:
+0xcc008 | Call(0x2dd88<32>, <SimCCARM>: [r0<4>, 0xffc48<32>], ret: no-ret-value, fp_ret: no-fp-ret-value)
+
+## Misuse 69/80
+[-] Binary path: /home/bluesadi/Yasat/tests_dev/tmp/Netgear/R7300-V1.0.0.74_1.0.29.zip/_R7300-V1.0.0.74_1.0.29.chk.extracted/squashfs-root/bin/busybox
+[-] Rule descrption: Do not use constant salts for password-based encryption (PBE)
+[-] Misuse description: Call to libcrypt::crypt(salt="aa") at address 0x52160
+[-] Statements:
+0x52160 | r5<4> = Call(0xb86c<32>, <SimCCARM>: [r0<4>, 0x6293e<32>], ret: r0<4>, fp_ret: no-fp-ret-value)
+
+## Misuse 70/80
+[-] Binary path: /home/bluesadi/Yasat/tests_dev/tmp/Netgear/R8300-V1.0.2.154_1.0.102.zip/_R8300-V1.0.2.154_1.0.102.chk.extracted/squashfs-root/bin/busybox
+[-] Rule descrption: Do not use constant salts for password-based encryption (PBE)
+[-] Misuse description: Call to libcrypt::crypt(salt="aa") at address 0x50790
+[-] Statements:
+0x50790 | r5<4> = Call(0xb7a4<32>, <SimCCARM>: [r0<4>, 0x60a56<32>], ret: r0<4>, fp_ret: no-fp-ret-value)
+
+## Misuse 71/80
+[-] Binary path: /home/bluesadi/Yasat/tests_dev/tmp/Netgear/R8500-V1.0.2.156_1.0.105.zip/_R8500-V1.0.2.156_1.0.105.chk.extracted/squashfs-root/bin/busybox
+[-] Rule descrption: Do not use constant salts for password-based encryption (PBE)
+[-] Misuse description: Call to libcrypt::crypt(salt="aa") at address 0x50790
+[-] Statements:
+0x50790 | r5<4> = Call(0xb7a4<32>, <SimCCARM>: [r0<4>, 0x60a56<32>], ret: r0<4>, fp_ret: no-fp-ret-value)
+
+## Misuse 72/80
+[-] Binary path: /home/bluesadi/Yasat/tests_dev/tmp/Netgear/RAX120v2v1-V1.2.1.22.zip/_RAX120-V1.2.1.22.img.extracted/squashfs-root/usr/sbin/proftpd
+[-] Rule descrption: Do not use constant salts for password-based encryption (PBE)
+[-] Misuse description: Call to libcrypt::crypt(salt="") at address 0x45acb4
+[-] Statements:
+0x45acb4 | Call(0x405cb0<64>, <SimCCAArch64>: [0x4855a9<64>, 0x48dfb3<64>], ret: x0<8>, fp_ret: no-fp-ret-value)
+
+## Misuse 73/80
+[-] Binary path: /home/bluesadi/Yasat/tests_dev/tmp/Netgear/WNHD3004 Firmware Version 1.3.0.3 (North America).zip/_WNHD3004_V1.3.0.3NA.bin.extracted/squashfs-root/bin/busybox
+[-] Rule descrption: Do not use constant salts for password-based encryption (PBE)
+[-] Misuse description: Call to libcrypt::crypt(salt="aa") at address 0x35750
+[-] Statements:
+0x35750 | r4<4> = Call(0xb22c<32>, <SimCCARM>: [r0<4>, r1<4>], ret: r0<4>, fp_ret: no-fp-ret-value)
+0x35740 | r1<4> = r6<4>
+0x35714 | r6<4> = 0x42330<32>
+
+## Misuse 74/80
+[-] Binary path: /home/bluesadi/Yasat/tests_dev/tmp/Tomato/freshtomato-RT-AC3200-ARM-2022.5-AIO-64K.zip/_freshtomato-RT-AC3200-ARM-2022.5-AIO-64K.trx.extracted/squashfs-root/sbin/rc
+[-] Rule descrption: Do not use constant salts for password-based encryption (PBE)
+[-] Misuse description: Call to libcrypt::crypt(salt="$1$") at address 0x21120
+[-] Statements:
+0x21120 | Call(0xbbb4<32>, <SimCCARM>: [Load(addr=stack_base-52, size=4, endness=Iend_LE), 0x54669<32>], ret: r0<4>, fp_ret: no-fp-ret-value)
+
+## Misuse 75/80
+[-] Binary path: /home/bluesadi/Yasat/tests_dev/tmp/Tomato/freshtomato-RT-AC3200-ARM-2022.5-AIO-64K.zip/_freshtomato-RT-AC3200-ARM-2022.5-AIO-64K.trx.extracted/squashfs-root/sbin/rc
+[-] Rule descrption: Do not use constant salts for password-based encryption (PBE)
+[-] Misuse description: Call to libcrypt::crypt(salt="$1$") at address 0x21264
+[-] Statements:
+0x21264 | r3<4> = Call(0xbbb4<32>, <SimCCARM>: [Load(addr=stack_base-52, size=4, endness=Iend_LE), 0x54669<32>], ret: r0<4>, fp_ret: no-fp-ret-value)
+
+## Misuse 76/80
+[-] Binary path: /home/bluesadi/Yasat/tests_dev/tmp/Tomato/tomato-RT-AC3200-ARM--140-AIO-64K.zip/image/_tomato-RT-AC3200-ARM--140-AIO-64K.trx.extracted/squashfs-root/usr/sbin/smbd
+[-] Rule descrption: Do not use constant salts for password-based encryption (PBE)
+[-] Misuse description: Call to libcrypt::crypt(salt="") at address 0x7e8d8
+[-] Statements:
+0x7e8d8 | Call(0x16d64<32>, <SimCCARM>: [r0<4>, 0xb3b34<32>], ret: no-ret-value, fp_ret: no-fp-ret-value)
+
+## Misuse 77/80
+[-] Binary path: /home/bluesadi/Yasat/tests_dev/tmp/Tomato/tomato-RT-AC3200-ARM--140-AIO-64K.zip/image/_tomato-RT-AC3200-ARM--140-AIO-64K.trx.extracted/squashfs-root/sbin/rc
+[-] Rule descrption: Do not use constant salts for password-based encryption (PBE)
+[-] Misuse description: Call to libcrypt::crypt(salt="$1$") at address 0x23f40
+[-] Statements:
+0x23f40 | Call(0xb224<32>, <SimCCARM>: [Load(addr=stack_base-52, size=4, endness=Iend_LE), 0x4b254<32>], ret: r0<4>, fp_ret: no-fp-ret-value)
+
+## Misuse 78/80
+[-] Binary path: /home/bluesadi/Yasat/tests_dev/tmp/Tomato/tomato-RT-AC3200-ARM--140-AIO-64K.zip/image/_tomato-RT-AC3200-ARM--140-AIO-64K.trx.extracted/squashfs-root/sbin/rc
+[-] Rule descrption: Do not use constant salts for password-based encryption (PBE)
+[-] Misuse description: Call to libcrypt::crypt(salt="$1$") at address 0x2406c
+[-] Statements:
+0x2406c | r3<4> = Call(0xb224<32>, <SimCCARM>: [Load(addr=stack_base-52, size=4, endness=Iend_LE), 0x4b254<32>], ret: r0<4>, fp_ret: no-fp-ret-value)
+
+## Misuse 79/80
+[-] Binary path: /home/bluesadi/Yasat/tests_dev/tmp/TP-Link/Deco_XE75_V1_1.1.4_20220328.zip/_XE75 1.0 en_1.1.4 Build 20220328 Rel. 82156_US_EU_CA_up.bin.extracted/squashfs-root/usr/sbin/uhttpd
+[-] Rule descrption: Do not use constant salts for password-based encryption (PBE)
+[-] Misuse description: Call to libcrypt::crypt(salt="$1$") at address 0x123ac
+[-] Statements:
+0x123ac | Call(0x11d00<32>, <SimCCARM>: [Load(addr=0x2a314<32>, size=4, endness=Iend_LE), 0x176b1<32>], ret: no-ret-value, fp_ret: no-fp-ret-value)
+
+## Misuse 80/80
+[-] Binary path: /home/bluesadi/Yasat/tests_dev/tmp/WD/My_Cloud_LT4A_2.12.127.bin/_My_Cloud_LT4A_2.12.127.bin.extracted/squashfs-root/sbin/sshd
+[-] Rule descrption: Do not use constant salts for password-based encryption (PBE)
+[-] Misuse description: Call to libcrypt::crypt(salt="") at address 0x4866e8
+[-] Statements:
+0x4866e8 | Call(0x4069e0<32>, <SimCCARM>: [r6<4>, r1<4>], ret: r0<4>, fp_ret: no-fp-ret-value)
+0x4867a8 | r1<4> = 0x4c6288<32>
+

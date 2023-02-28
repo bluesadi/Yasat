@@ -5,8 +5,10 @@ import logging
 from func_timeout import func_timeout
 from func_timeout.exceptions import FunctionTimedOut
 
+from ..logging import get_logger
 
-l = logging.getLogger(__name__)
+
+l = get_logger(__name__)
 
 
 class TimeoutUtil:

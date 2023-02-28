@@ -9,6 +9,7 @@ from ..analyses.backward_slicing import BackwardSlicing
 from ..analyses.backward_slicing.criteria_selector.argument_selector import (
     ArgumentSelector,
 )
+from ..utils.print import PrintUtil
 
 
 class Criterion:
@@ -49,10 +50,10 @@ class ConstantValuesChecker(RuleChecker):
         self.type = type
 
     def _build_misuse_desc(self, criterion, arg_name, arg_value, caller_addr):
-        if isinstance(arg_value, bytes):
-            arg_value = f'\'{arg_value.decode("utf-8")}\''
+        if isinstance(arg_value, str):
+            arg_value = f'"{arg_value}"'
         return (
-            f'Call to "lib{criterion.lib}::{criterion.func_name}({arg_name}={arg_value})" '
+            f"Call to lib{criterion.lib}::{criterion.func_name}({arg_name}={arg_value}) "
             f"at address {hex(caller_addr)}"
         )
 
@@ -95,8 +96,9 @@ class ConstantValuesChecker(RuleChecker):
                             self.proj.filename,
                             self.desc,
                             self._build_misuse_desc(
-                                criterion, self.arg_name, arg_value, caller_insn_addr
+                                criterion, self.arg_name, arg_value, concrete_result.slice[0].ins_addr
                             ),
+                            [PrintUtil.pstr_stmt(stmt) for stmt in concrete_result.slice]
                         )
                     )
         return results

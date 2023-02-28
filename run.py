@@ -3,35 +3,53 @@ import pathlib
 import shutil
 import os
 from multiprocessing import Pool, cpu_count
+import multiprocessing as mp
 import traceback
 import logging
 import pathlib
-
-l = logging.getLogger('run_dev')
 
 import yaml
 
 from Yasat.main import Main
 from Yasat import Config
 from Yasat.report import OverallReport
-from Yasat.utils import TimeoutUtil
+
+l = logging.getLogger("Yasat.entry")
 
 def init_logger():
-    for path in ('run_dev.log', 'error.log'):
-        pathlib.Path(path).unlink()
+    
+    class LevelFilterer(logging.Filterer):
+    
+        def __init__(self, levelno):
+            super().__init__()
+            self.levelno = levelno
         
-    handler = logging.FileHandler('run_dev.log')
+        def filter(self, record: logging.LogRecord) -> bool:
+            return record.levelno == self.levelno
+        
+    for filename in ("__run__.log", "__error__.log", "__warning__.log", "__report__.log"):
+        pathlib.Path(filename).unlink(missing_ok=True)
+        
+    handler = logging.FileHandler(filename="__run__.log")
     handler.setLevel(logging.DEBUG)
     l.addHandler(handler)
+    l.setLevel(logging.DEBUG)
     
-    root = logging.getLogger('Yasat')
-    handler = logging.FileHandler('error.log')
-    handler.setLevel(logging.ERROR)
-    root.addHandler(handler)
+    root = logging.getLogger("Yasat")
+    err_handler = logging.FileHandler(filename="__error__.log")
+    err_handler.setLevel(logging.ERROR)
+    root.addHandler(err_handler)
+    
+    warning_handler = logging.FileHandler(filename="__warning__.log")
+    warning_handler.setLevel(logging.WARNING)
+    warning_handler.addFilter(LevelFilterer(logging.WARNING))
+    root.addHandler(warning_handler)
+    
+    root.setLevel(logging.DEBUG)
 
 if __name__ == "__main__":
     init_logger()
-    
+
     parser = argparse.ArgumentParser()
     parser.add_argument(
         "-c", "--config", help="configuration file path", default="config.yml"
@@ -80,10 +98,14 @@ if __name__ == "__main__":
                 new_config.report_dir = os.path.normpath(
                     os.path.join(config.report_dir, rel_path)
                 )
+                new_config.db_dir = os.path.normpath(
+                    os.path.join(os.path.join(config.db_dir, rel_path), filename)
+                )
                 for path in [
                     new_config.tmp_dir,
                     new_config.report_dir,
                     new_config.log_dir,
+                    new_config.db_dir
                 ]:
                     shutil.rmtree(path, ignore_errors=True)
                     pathlib.Path(path).mkdir(parents=True, exist_ok=True)
@@ -95,12 +117,28 @@ if __name__ == "__main__":
             pool = Pool(args.processes)
             try:
                 merged_report = OverallReport(config.input_path)
-
+                num_finished = 0
+                num_failed = 0
+                num_timeout = 0
+                num_total = len(config_list)
+                
                 def callback(report: OverallReport):
                     try:
-                        if report.completed:
-                            global merged_report
-                            merged_report = merged_report.merge(report)
+                        global merged_report
+                        global num_finished
+                        global num_failed
+                        global num_timeout
+                        global num_total
+                        if report is None:
+                            num_timeout += 1
+                        elif report.finished:
+                            num_finished += 1
+                            if report.num_misuses > 0:
+                                merged_report = merged_report.merge(report)
+                                merged_report.save("__report__.log")
+                        else:
+                            num_failed += 1
+                        l.info(f"Progressing... ({num_finished + num_failed + num_timeout}/{num_total}, {num_finished} finished, {num_failed} failed, {num_timeout} timeouted)")
                     except:
                         l.error(traceback.format_exc())
 
@@ -112,7 +150,10 @@ if __name__ == "__main__":
                     results.append(result)
                 pool.close()
                 for result in results:
-                    result.wait()
-                merged_report.save(os.path.join(config.report_dir, "report.log"))
+                    try:
+                        result.get(20 * 60)
+                    except mp.TimeoutError:
+                        l.warning("Timeout after 20 minutes")
+                        callback(None)
             except KeyboardInterrupt:
                 pool.terminate()

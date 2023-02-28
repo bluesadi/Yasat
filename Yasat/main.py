@@ -1,6 +1,6 @@
 import os
 import time
-from typing import List, Tuple, Dict
+from typing import List, Tuple
 import logging
 import subprocess
 import traceback
@@ -10,9 +10,9 @@ from .utils import Extractor, TimeoutUtil, PrintUtil
 from .report import OverallReport
 from .binary import Binary
 from .checkers.base import Criterion
-from . import init_logger
+from .logging import get_logger, init_logger
 
-l = logging.getLogger(__name__)
+l = get_logger(__name__)
 
 
 class Main:
@@ -165,9 +165,12 @@ class Main:
             )
             + ".log"
         )
-        self.report.save(report_path)
-
-        l.info(f"Overall report has been saved to {report_path}")
         
+        if self.report.num_misuses > 0:
+            self.report.save(report_path)
+            l.info(f"Overall report has been saved to {report_path}")
+        else:
+            l.info(f"No misuses are found in {self.config.input_path}")
+
         self.report.completed = True
         return self.report

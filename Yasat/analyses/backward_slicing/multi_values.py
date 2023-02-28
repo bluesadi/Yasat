@@ -18,7 +18,7 @@ class MultiValues:
     def _normalize(self, v: claripy.ast.Base) -> claripy.ast.BV:
         if isinstance(v, claripy.ast.Bool):
             if v.op == "BoolS":
-                return claripy.BVS(v.args[0], 0, explicit_name=True)
+                return claripy.BVS(v.args[0], 1, explicit_name=True)
             elif v.concrete:
                 return claripy.BVV(1 if v.is_true() else 0, 1)
             else:
@@ -31,3 +31,9 @@ class MultiValues:
             if v.concrete:
                 return v
         return None
+    
+    def __repr__(self) -> str:
+        str(self)
+        
+    def __str__(self) -> str:
+        return f'MultiValues {self.values}'

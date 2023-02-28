@@ -7,8 +7,9 @@ from angr import AngrNoPluginError
 from angr.knowledge_plugins.cfg.cfg_model import CFGModel
 
 from .checkers.base import Criterion, RuleChecker
+from .logging import get_logger
 
-l = logging.getLogger(__name__)
+l = get_logger(__name__)
 
 
 class Binary:
@@ -73,7 +74,7 @@ class Binary:
             try:
                 checker_type = self.proj.analyses.get_plugin(checker_name)
             except AngrNoPluginError:
-                l.warning(f"No such checker: {checker_name}")
+                l.error(f"No such checker: {checker_name}")
                 continue
             bound_criteria = []
             for criterion in criteria:

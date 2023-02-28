@@ -23,5 +23,6 @@ class ArgumentSelector(CriteriaSelector):
                 isinstance(v, claripy.ast.BV)
                 and v._model_concrete.value == self.callee_addr
             ):
-                return [expr.args[self.arg_idx]]
+                if expr.args is not None and len(expr.args) > self.arg_idx:
+                    return [expr.args[self.arg_idx]]
         return []

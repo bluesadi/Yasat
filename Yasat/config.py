@@ -6,6 +6,7 @@ class Config:
     tmp_dir: str
     report_dir: str
     log_dir: str
+    db_dir: str
 
     debug_mode: bool
     preprocess_timeout: int
@@ -18,6 +19,7 @@ class Config:
         "tmp_dir",
         "report_dir",
         "log_dir",
+        "db_dir",
         "debug_mode",
         "preprocess_timeout",
         "analyze_timeout",

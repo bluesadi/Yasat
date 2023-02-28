@@ -8,8 +8,9 @@ import logging
 import binwalk
 
 from ..binary import Binary
+from ..logging import get_logger
 
-l = logging.getLogger(__name__)
+l = get_logger(__name__)
 
 
 class Extractor:
@@ -64,9 +65,7 @@ class Extractor:
                                         dest = os.path.basename(
                                             os.readlink(binary_path)
                                         )
-                                        if src != dest:
-                                            # kb.sym_links[src] = dest
-                                            pass
+                            break
         return binary_paths
 
     def extract(self, origin_path, to_path) -> List[Binary]:

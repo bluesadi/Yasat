@@ -6,7 +6,9 @@ from angr.knowledge_base.knowledge_base import KnowledgeBase
 from angr.analyses.decompiler.clinic import Clinic
 from angr.knowledge_plugins.functions.function import Function
 
-l = logging.getLogger(__name__)
+from ..logging import get_logger
+
+l = get_logger(__name__)
 
 
 class ClinicManager(KnowledgeBasePlugin):
