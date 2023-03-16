@@ -11,9 +11,8 @@ from func_timeout.exceptions import FunctionTimedOut
 from .multi_values import MultiValues
 from .ast_enhancer import AstEnhancer
 from ...utils.print import PrintUtil
-from ...logging import get_logger
 
-l = get_logger(__name__)
+l = logging.getLogger(__name__)
 
 
 class SimEngineBackwardSlicing(

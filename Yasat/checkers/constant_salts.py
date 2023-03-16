@@ -1,4 +1,4 @@
-from .base import ConstantStringsChecker
+from ..analyses.rule_checker import ConstantStringsChecker
 
 
 class ConstantSaltsChecker(ConstantStringsChecker):

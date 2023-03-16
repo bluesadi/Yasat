@@ -7,10 +7,10 @@ class Config:
     report_dir: str
     log_dir: str
     db_dir: str
-
+    
     debug_mode: bool
-    preprocess_timeout: int
-    analyze_timeout: int
+    timeout: int
+    analyzing_timeout: int
 
     checkers: list
 
@@ -21,8 +21,8 @@ class Config:
         "log_dir",
         "db_dir",
         "debug_mode",
-        "preprocess_timeout",
-        "analyze_timeout",
+        "timeout",
+        "analyzing_timeout",
         "checkers",
     )
 

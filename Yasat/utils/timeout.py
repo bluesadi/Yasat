@@ -5,10 +5,7 @@ import logging
 from func_timeout import func_timeout
 from func_timeout.exceptions import FunctionTimedOut
 
-from ..logging import get_logger
-
-
-l = get_logger(__name__)
+l = logging.getLogger(__name__)
 
 
 class TimeoutUtil:
@@ -20,6 +17,6 @@ class TimeoutUtil:
                 f"Function {func.__name__} timed out after {e.timedOutAfter} seconds"
             )
         except:
-            l.warning(f"Error occured when executing function {func.__name__}")
-            l.warning(traceback.format_exc())
+            l.error(f"Error occured when executing function {func.__name__}")
+            l.error(traceback.format_exc())
         return None

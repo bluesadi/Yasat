@@ -7,10 +7,7 @@ import logging
 
 import binwalk
 
-from ..binary import Binary
-from ..logging import get_logger
-
-l = get_logger(__name__)
+l = logging.getLogger(__name__)
 
 
 class Extractor:
@@ -24,7 +21,7 @@ class Extractor:
             ref.extractall(to_path)
 
     def __extract_from_firmware_bin(self, firmware_bin_path):
-        binary_paths = []
+        paths = []
         for module in binwalk.scan(
             firmware_bin_path,
             "-r",
@@ -59,23 +56,17 @@ class Extractor:
                                             binary_type is not None
                                             and binary_type.extension == "elf"
                                         ):
-                                            binary_paths.append(binary_path)
-                                    else:
-                                        src = os.path.basename(binary_path)
-                                        dest = os.path.basename(
-                                            os.readlink(binary_path)
-                                        )
+                                            paths.append(binary_path)
                             break
-        return binary_paths
+        return paths
 
-    def extract(self, origin_path, to_path) -> List[Binary]:
+    def extract(self, origin_path, to_path):
         origin_type = filetype.guess(origin_path)
-        binary_paths = []
+        paths = []
         if origin_type is not None:
             if origin_type.extension == "elf":
                 # Case 1: Executable file
-                binary_path = shutil.copy(origin_path, to_path)
-                binary_paths.append(binary_path)
+                paths.append(shutil.copy(origin_path, to_path))
             else:
                 # Case 2: Firmware (archive)
                 # Find a proper decompressing function
@@ -86,7 +77,7 @@ class Extractor:
                         for filename in files:
                             firmware_bin_path = os.path.join(root, filename)
                             # Try to extract binaries from firmware via binwalk
-                            binary_paths += self.__extract_from_firmware_bin(
+                            paths += self.__extract_from_firmware_bin(
                                 firmware_bin_path
                             )
                 else:
@@ -94,8 +85,8 @@ class Extractor:
         else:
             # Case 3: Firmware (binary)
             firmware_bin_path = shutil.copy(origin_path, to_path)
-            binary_paths = self.__extract_from_firmware_bin(firmware_bin_path)
-            if len(binary_paths) == 0:
+            paths = self.__extract_from_firmware_bin(firmware_bin_path)
+            if len(paths) == 0:
                 l.warning(f"Failed to extract from {origin_path}")
                 return []
-        return binary_paths
+        return paths

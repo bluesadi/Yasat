@@ -1,6 +1,8 @@
 from typing import Dict, Set, List, Tuple
 from collections import defaultdict
 import logging
+import time
+import traceback
 
 from networkx import DiGraph
 from angr.analyses.analysis import Analysis
@@ -16,9 +18,8 @@ from .engine_ail import SimEngineBackwardSlicing
 from .criteria_selector import CriteriaSelector, ConditionSelector
 from .function_handler import InterproceduralFunctionHandler, FunctionHandler
 from .multi_values import MultiValues
-from ...logging import get_logger
 
-l = get_logger(__name__)
+l = logging.getLogger(__name__)
 
 class SlicingCriterion:
     def __init__(self, caller_addr: int, arg_idx: int):
@@ -82,7 +83,6 @@ class BackwardSlicing(Analysis):
             cfg = self.project.analyses.CFGFast(
                 resolve_indirect_jumps=True, force_complete_scan=False, normalize=True
             )
-
         # That's for recovering prototypes of callees in this function, in order to achieve a higher accuracy
         # e.g., sometimes Clinic analysis cannot correctly deduce callees' stack arguments
         for addr in self.project.kb.callgraph[target_func.addr]:
@@ -93,7 +93,6 @@ class BackwardSlicing(Analysis):
                 self.project.kb.clinic_manager.get_clinic(called_func)
             else:
                 l.warning(f'Cannot find function at {hex(addr)}')
-
         # Generate the AIL CFG for the target function
         clinic: Clinic = self.project.kb.clinic_manager.get_clinic(target_func)
         self.preset_arguments = (
@@ -121,7 +120,6 @@ class BackwardSlicing(Analysis):
             self._remove_unreachable_blocks()
 
         self._sim_state = self.project.factory.entry_state()
-
         self._analyze()
 
     def _remove_unreachable_blocks(self):

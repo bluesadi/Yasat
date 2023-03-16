@@ -1,37 +1,31 @@
 from typing import List
-from collections import defaultdict
 
 from angr import Analysis
-from angr.knowledge_plugins.cfg.cfg_model import CFGModel
 
 from ..report import MisuseReport
-from ..analyses.backward_slicing import BackwardSlicing
-from ..analyses.backward_slicing.criteria_selector.argument_selector import (
-    ArgumentSelector,
-)
+from ..knowledge_plugins import Subject
+from .backward_slicing import BackwardSlicing
+from .backward_slicing.criteria_selector.argument_selector import ArgumentSelector
 from ..utils.print import PrintUtil
 
 
 class Criterion:
-    def __init__(self, lib, arg_idx, func_name, func_addr=None):
+    def __init__(self, lib, arg_idx, func_name):
         self.lib = lib
         self.arg_idx = arg_idx
         self.func_name = func_name
-        self.func_addr = func_addr
 
 
 class RuleChecker(Analysis):
+    subject: Subject
+    
     def __init__(self, name, desc, criteria):
         super().__init__()
         self.proj = self.project
+        self.subject = self.proj.kb.subject
         self.name = name
         self.desc = desc
-        assert all([criterion.func_addr is not None for criterion in criteria])
         self.criteria = criteria
-
-    @property
-    def cfg(self) -> CFGModel:
-        return self.proj.kb.cfgs.get_most_accurate()
 
     def check(self) -> List[MisuseReport]:
         reports = []
@@ -57,32 +51,15 @@ class ConstantValuesChecker(RuleChecker):
             f"at address {hex(caller_addr)}"
         )
 
-    def _resolve_callers(self, callee_addr):
-        callers = defaultdict(list)
-        if self.cfg is not None:
-            predecessors = self.cfg.get_predecessors(self.cfg.get_any_node(callee_addr))
-            for predecessor in predecessors:
-                block = self.proj.factory.block(predecessor.addr)
-                caller_insn_addr = block.instruction_addrs[-1]
-                caller_func_addr = self.proj.kb.functions.floor_func(
-                    predecessor.addr
-                ).addr
-                callers[caller_func_addr].append(caller_insn_addr)
-        return callers
-
     def _check_one(self, criterion: Criterion) -> List[MisuseReport]:
         results = []
-        callers = self._resolve_callers(criterion.func_addr)
+        callee_addr = self.subject.resolve_external_function(criterion.func_name, criterion.lib)
+        callers = self.subject.resolve_callers(callee_addr)
         for caller_func_addr in callers:
             target_func = self.proj.kb.functions[caller_func_addr]
-            criterion_selectors = []
-            for caller_insn_addr in callers[caller_func_addr]:
-                criterion_selectors.append(
-                    ArgumentSelector(criterion.func_addr, criterion.arg_idx)
-                )
-
             bs: BackwardSlicing = self.proj.analyses.BackwardSlicing(
-                target_func, criterion_selectors
+                target_func=target_func, 
+                criteria_selectors=[ArgumentSelector(callee_addr, criterion.arg_idx)]
             )
             for concrete_result in bs.concrete_results:
                 arg_value = (

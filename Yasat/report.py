@@ -1,6 +1,5 @@
 from collections import defaultdict
-from typing import Dict, List
-import logging
+from typing import Dict, List, Tuple
 
 
 class MisuseReport:
@@ -33,36 +32,35 @@ class MisuseReport:
 class OverallReport:
     _input_path: str
     _misuse_reports: Dict[str, List[MisuseReport]]
+    _time_cost: int
     finished: bool
 
     def __init__(self, input_path):
         self._input_path = input_path
         self._misuse_reports = defaultdict(list)
-        self._time_costs = []
+        self._time_cost = 0
         self.finished = False
 
     def __repr__(self) -> str:
         return self.__str__()
 
     def __str__(self) -> str:
-        report = "*** Summary ***\n" f"Input path: {self._input_path}\n"
-        for i, desc_cost in enumerate(self._time_costs):
-            report += f"Stage {i + 1} ({desc_cost[0]}) time cost: {desc_cost[1]:.1f} seconds\n"
-        report += (
-            f"Total time cost: {sum(map(lambda ele : ele[1], self._time_costs)):.1f} seconds"
-            "\n\n"
+        report = (
+            "*** Summary ***\n"
+            f"Input path: {self._input_path}\n"
+            f"Total time cost: {self._time_cost} seconds\n"
+            "\n"
             "*** Misuses Found (Grouped by Checkers) ***\n"
         )
-        for checker_id in self._misuse_reports:
-            report += f"# {checker_id}\n"
-            for i, misuse_report in enumerate(self._misuse_reports[checker_id]):
-                report += f"## Misuse {i + 1}/{len(self._misuse_reports[checker_id])}\n"
+        for checker_name in self._misuse_reports:
+            report += f"# {checker_name}\n"
+            for i, misuse_report in enumerate(self._misuse_reports[checker_name]):
+                report += f"## Misuse {i + 1}/{len(self._misuse_reports[checker_name])}\n"
                 report += f"{misuse_report}\n\n"
         return report
 
-    def report_time_cost(self, stage_desc, time_cost):
-        self._time_costs.append((stage_desc, time_cost))
-        return time_cost
+    def report_time_cost(self, time_cost):
+        self._time_cost = int(time_cost)
 
     def report_misuses(self, checker_name: str, misuse_reports: List[MisuseReport]):
         self._misuse_reports[checker_name] += misuse_reports
@@ -71,6 +69,11 @@ class OverallReport:
     def num_misuses(self):
         return sum(len(self._misuse_reports[checker_name]) for checker_name in self._misuse_reports)
 
+    """
+    Save this report to `path`
+    
+    :param path:    Self explanatory.
+    """
     def save(self, path):
         with open(path, "w") as fd:
             fd.write(self.__str__())

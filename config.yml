@@ -2,9 +2,11 @@ input_path: 'input/freshtomato-RT-AC3200-ARM-2022.5-AIO-64K.zip'
 tmp_dir: 'tmp'
 report_dir: 'report'
 log_dir: 'log'
+db_dir: 'db'
 
-debug_mode: True
-preprocess_timeout: 120
+debug_mode: False
+timeout: 1200
+analyzing_timeout: 300
 
 checkers:
   ConstantKeysChecker:
@@ -12,12 +14,12 @@ checkers:
     desc: 'Do not use constant encryption keys'
     criteria:
       crypt:
-        lib_from: 'crypt'
-        arg_index: 0
+        lib: 'crypt'
+        arg_idx: 0
   ConstantSaltsChecker:
     enable: True
     desc: 'Do not use constant salts for password-based encryption (PBE)'
     criteria:
       crypt:
-        lib_from: 'crypt'
-        arg_index: 1
+        lib: 'crypt'
+        arg_idx: 1

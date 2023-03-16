@@ -11,9 +11,8 @@ from angr.sim_variable import SimStackVariable, SimRegisterVariable
 from ...utils.print import PrintUtil
 from .ast_enhancer import AstEnhancer
 from .multi_values import MultiValues
-from ...logging import get_logger
 
-l = get_logger(__name__)
+l = logging.getLogger(__name__)
 
 
 class SlicingTrack:
