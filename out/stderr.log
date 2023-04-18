@@ -1,0 +1,100 @@
+
+WARNING: Symlink points outside of the extraction directory: /mnt/f/Yasat-storage/tmp/Netgear/_JR6150_R6050-V1.0.1.26_1.0.1.zip.extracted/_JR6150_R6050-V1.0.1.26_1.0.1.img.extracted/_JR6150.bin.extracted/squashfs-root/etc -> /tmp/etc; changing link target to /dev/null for security purposes.
+
+WARNING: Symlink points outside of the extraction directory: /mnt/f/Yasat-storage/tmp/Netgear/_JR6150_R6050-V1.0.1.26_1.0.1.zip.extracted/_JR6150_R6050-V1.0.1.26_1.0.1.img.extracted/_JR6150.bin.extracted/squashfs-root/etc_ro -> /tmp/etc_ro; changing link target to /dev/null for security purposes.
+
+WARNING: Symlink points outside of the extraction directory: /mnt/f/Yasat-storage/tmp/Netgear/_JR6150_R6050-V1.0.1.26_1.0.1.zip.extracted/_JR6150_R6050-V1.0.1.26_1.0.1.img.extracted/_JR6150.bin.extracted/squashfs-root/mnt -> /tmp/mnt; changing link target to /dev/null for security purposes.
+
+WARNING: Symlink points outside of the extraction directory: /mnt/f/Yasat-storage/tmp/Netgear/_JR6150_R6050-V1.0.1.26_1.0.1.zip.extracted/_JR6150_R6050-V1.0.1.26_1.0.1.img.extracted/_JR6150.bin.extracted/squashfs-root/var -> /tmp/var; changing link target to /dev/null for security purposes.
+
+WARNING: Symlink points outside of the extraction directory: /mnt/f/Yasat-storage/tmp/Netgear/_JR6150_R6050-V1.0.1.26_1.0.1.zip.extracted/_JR6150_R6050-V1.0.1.26_1.0.1.img.extracted/_JR6150.bin.extracted/squashfs-root/www -> /tmp/www; changing link target to /dev/null for security purposes.
+
+WARNING: Symlink points outside of the extraction directory: /mnt/f/Yasat-storage/tmp/Netgear/_JR6150_R6050-V1.0.1.26_1.0.1.zip.extracted/_JR6150_R6050-V1.0.1.26_1.0.1.img.extracted/_JR6150.bin.extracted/squashfs-root/usr/etc/download_job.cgi -> /usr/sbin/download_job.cgi; changing link target to /dev/null for security purposes.
+
+WARNING: Symlink points outside of the extraction directory: /mnt/f/Yasat-storage/tmp/Netgear/_JR6150_R6050-V1.0.1.26_1.0.1.zip.extracted/_JR6150_R6050-V1.0.1.26_1.0.1.img.extracted/_JR6150.bin.extracted/squashfs-root/usr/etc/htpwd_recovery.cgi -> /usr/sbin/htpwd_recovery.cgi; changing link target to /dev/null for security purposes.
+
+WARNING: Symlink points outside of the extraction directory: /mnt/f/Yasat-storage/tmp/Netgear/_JR6150_R6050-V1.0.1.26_1.0.1.zip.extracted/_JR6150_R6050-V1.0.1.26_1.0.1.img.extracted/_JR6150.bin.extracted/squashfs-root/usr/etc/language -> /www.eng/langs/ENU; changing link target to /dev/null for security purposes.
+
+WARNING: Symlink points outside of the extraction directory: /mnt/f/Yasat-storage/tmp/Netgear/_JR6150_R6050-V1.0.1.26_1.0.1.zip.extracted/_JR6150_R6050-V1.0.1.26_1.0.1.img.extracted/_JR6150.bin.extracted/squashfs-root/usr/etc/restore_config.cgi -> /usr/sbin/restore_config.cgi; changing link target to /dev/null for security purposes.
+
+WARNING: Symlink points outside of the extraction directory: /mnt/f/Yasat-storage/tmp/Netgear/_JR6150_R6050-V1.0.1.26_1.0.1.zip.extracted/_JR6150_R6050-V1.0.1.26_1.0.1.img.extracted/_JR6150.bin.extracted/squashfs-root/usr/etc/setup.cgi -> /usr/sbin/setup.cgi; changing link target to /dev/null for security purposes.
+
+WARNING: Symlink points outside of the extraction directory: /mnt/f/Yasat-storage/tmp/Netgear/_JR6150_R6050-V1.0.1.26_1.0.1.zip.extracted/_JR6150_R6050-V1.0.1.26_1.0.1.img.extracted/_JR6150.bin.extracted/squashfs-root/usr/etc/upgrade_flash.cgi -> /usr/sbin/upgrade_flash.cgi; changing link target to /dev/null for security purposes.
+
+WARNING: Symlink points outside of the extraction directory: /mnt/f/Yasat-storage/tmp/Netgear/_JR6150_R6050-V1.0.1.26_1.0.1.zip.extracted/_JR6150_R6050-V1.0.1.26_1.0.1.img.extracted/_JR6150.bin.extracted/squashfs-root/usr/etc/upgrade_stringTbl.cgi -> /usr/sbin/setup.cgi; changing link target to /dev/null for security purposes.
+
+WARNING: Symlink points outside of the extraction directory: /mnt/f/Yasat-storage/tmp/Netgear/_JR6150_R6050-V1.0.1.26_1.0.1.zip.extracted/_JR6150_R6050-V1.0.1.26_1.0.1.img.extracted/_JR6150.bin.extracted/squashfs-root/usr/sbin/dongle_cmd -> /tmp/etc/dongle_cmd; changing link target to /dev/null for security purposes.
+
+WARNING: Symlink points outside of the extraction directory: /mnt/f/Yasat-storage/tmp/Netgear/_JR6150_R6050-V1.0.1.26_1.0.1.zip.extracted/_JR6150_R6050-V1.0.1.26_1.0.1.img.extracted/_JR6150.bin.extracted/squashfs-root/usr/sbin/dongle_mgnt -> /tmp/etc/dongle_mgnt; changing link target to /dev/null for security purposes.
+
+WARNING: Symlink points outside of the extraction directory: /mnt/f/Yasat-storage/tmp/Netgear/_JR6150_R6050-V1.0.1.26_1.0.1.zip.extracted/_JR6150_R6050-V1.0.1.26_1.0.1.img.extracted/_JR6150.bin.extracted/squashfs-root/usr/sbin/dongle_monitor -> /tmp/etc/dongle_monitor; changing link target to /dev/null for security purposes.
+
+WARNING: Symlink points outside of the extraction directory: /mnt/f/Yasat-storage/tmp/Netgear/_JR6150_R6050-V1.0.1.26_1.0.1.zip.extracted/_JR6150_R6050-V1.0.1.26_1.0.1.img.extracted/_JR6150.bin.extracted/squashfs-root/usr/sbin/msg_send_robot -> /tmp/etc/msg_send_robot; changing link target to /dev/null for security purposes.
+
+WARNING: Symlink points outside of the extraction directory: /mnt/f/Yasat-storage/tmp/Netgear/_JR6150_R6050-V1.0.1.26_1.0.1.zip.extracted/_JR6150_R6050-V1.0.1.26_1.0.1.img.extracted/_JR6150.bin.extracted/squashfs-root/www.eng/.htpasswd -> /etc/htpasswd; changing link target to /dev/null for security purposes.
+
+WARNING: Symlink points outside of the extraction directory: /mnt/f/Yasat-storage/tmp/Netgear/_JR6150_R6050-V1.0.1.26_1.0.1.zip.extracted/_JR6150_R6050-V1.0.1.26_1.0.1.img.extracted/_JR6150.bin.extracted/squashfs-root/www.eng/download_job.cgi -> /etc/download_job.cgi; changing link target to /dev/null for security purposes.
+
+WARNING: Symlink points outside of the extraction directory: /mnt/f/Yasat-storage/tmp/Netgear/_JR6150_R6050-V1.0.1.26_1.0.1.zip.extracted/_JR6150_R6050-V1.0.1.26_1.0.1.img.extracted/_JR6150.bin.extracted/squashfs-root/www.eng/err401.htm -> /etc/err401.htm; changing link target to /dev/null for security purposes.
+
+WARNING: Symlink points outside of the extraction directory: /mnt/f/Yasat-storage/tmp/Netgear/_JR6150_R6050-V1.0.1.26_1.0.1.zip.extracted/_JR6150_R6050-V1.0.1.26_1.0.1.img.extracted/_JR6150.bin.extracted/squashfs-root/www.eng/genie_restore_config.cgi -> /etc/restore_config.cgi; changing link target to /dev/null for security purposes.
+
+WARNING: Symlink points outside of the extraction directory: /mnt/f/Yasat-storage/tmp/Netgear/_JR6150_R6050-V1.0.1.26_1.0.1.zip.extracted/_JR6150_R6050-V1.0.1.26_1.0.1.img.extracted/_JR6150.bin.extracted/squashfs-root/www.eng/htpwd_recovery.cgi -> /etc/htpwd_recovery.cgi; changing link target to /dev/null for security purposes.
+
+WARNING: Symlink points outside of the extraction directory: /mnt/f/Yasat-storage/tmp/Netgear/_JR6150_R6050-V1.0.1.26_1.0.1.zip.extracted/_JR6150_R6050-V1.0.1.26_1.0.1.img.extracted/_JR6150.bin.extracted/squashfs-root/www.eng/netgear.cfg -> /tmp/netgear.cfg; changing link target to /dev/null for security purposes.
+
+WARNING: Symlink points outside of the extraction directory: /mnt/f/Yasat-storage/tmp/Netgear/_JR6150_R6050-V1.0.1.26_1.0.1.zip.extracted/_JR6150_R6050-V1.0.1.26_1.0.1.img.extracted/_JR6150.bin.extracted/squashfs-root/www.eng/NETGEAR_JNR3000.cfg -> /tmp/NETGEAR_JNR3000.cfg; changing link target to /dev/null for security purposes.
+
+WARNING: Symlink points outside of the extraction directory: /mnt/f/Yasat-storage/tmp/Netgear/_JR6150_R6050-V1.0.1.26_1.0.1.zip.extracted/_JR6150_R6050-V1.0.1.26_1.0.1.img.extracted/_JR6150.bin.extracted/squashfs-root/www.eng/NETGEAR_JR6150.cfg -> /tmp/NETGEAR_JR6150.cfg; changing link target to /dev/null for security purposes.
+
+WARNING: Symlink points outside of the extraction directory: /mnt/f/Yasat-storage/tmp/Netgear/_JR6150_R6050-V1.0.1.26_1.0.1.zip.extracted/_JR6150_R6050-V1.0.1.26_1.0.1.img.extracted/_JR6150.bin.extracted/squashfs-root/www.eng/NETGEAR_R6050.cfg -> /tmp/NETGEAR_R6050.cfg; changing link target to /dev/null for security purposes.
+
+WARNING: Symlink points outside of the extraction directory: /mnt/f/Yasat-storage/tmp/Netgear/_JR6150_R6050-V1.0.1.26_1.0.1.zip.extracted/_JR6150_R6050-V1.0.1.26_1.0.1.img.extracted/_JR6150.bin.extracted/squashfs-root/www.eng/ppp_log -> /tmp/ppp_log; changing link target to /dev/null for security purposes.
+
+WARNING: Symlink points outside of the extraction directory: /mnt/f/Yasat-storage/tmp/Netgear/_JR6150_R6050-V1.0.1.26_1.0.1.zip.extracted/_JR6150_R6050-V1.0.1.26_1.0.1.img.extracted/_JR6150.bin.extracted/squashfs-root/www.eng/restore_config.cgi -> /etc/restore_config.cgi; changing link target to /dev/null for security purposes.
+
+WARNING: Symlink points outside of the extraction directory: /mnt/f/Yasat-storage/tmp/Netgear/_JR6150_R6050-V1.0.1.26_1.0.1.zip.extracted/_JR6150_R6050-V1.0.1.26_1.0.1.img.extracted/_JR6150.bin.extracted/squashfs-root/www.eng/setup.cgi -> /etc/setup.cgi; changing link target to /dev/null for security purposes.
+
+WARNING: Symlink points outside of the extraction directory: /mnt/f/Yasat-storage/tmp/Netgear/_JR6150_R6050-V1.0.1.26_1.0.1.zip.extracted/_JR6150_R6050-V1.0.1.26_1.0.1.img.extracted/_JR6150.bin.extracted/squashfs-root/www.eng/setupwizard.cgi -> /tmp/setupwizard.cgi; changing link target to /dev/null for security purposes.
+
+WARNING: Symlink points outside of the extraction directory: /mnt/f/Yasat-storage/tmp/Netgear/_JR6150_R6050-V1.0.1.26_1.0.1.zip.extracted/_JR6150_R6050-V1.0.1.26_1.0.1.img.extracted/_JR6150.bin.extracted/squashfs-root/www.eng/shares -> /mnt/shares; changing link target to /dev/null for security purposes.
+
+WARNING: Symlink points outside of the extraction directory: /mnt/f/Yasat-storage/tmp/Netgear/_JR6150_R6050-V1.0.1.26_1.0.1.zip.extracted/_JR6150_R6050-V1.0.1.26_1.0.1.img.extracted/_JR6150.bin.extracted/squashfs-root/www.eng/svn.info -> /etc/svn.info; changing link target to /dev/null for security purposes.
+
+WARNING: Symlink points outside of the extraction directory: /mnt/f/Yasat-storage/tmp/Netgear/_JR6150_R6050-V1.0.1.26_1.0.1.zip.extracted/_JR6150_R6050-V1.0.1.26_1.0.1.img.extracted/_JR6150.bin.extracted/squashfs-root/www.eng/upgrade_flash.cgi -> /etc/upgrade_flash.cgi; changing link target to /dev/null for security purposes.
+
+WARNING: Symlink points outside of the extraction directory: /mnt/f/Yasat-storage/tmp/Netgear/_JR6150_R6050-V1.0.1.26_1.0.1.zip.extracted/_JR6150_R6050-V1.0.1.26_1.0.1.img.extracted/_JR6150.bin.extracted/squashfs-root/www.eng/upgrade_stringTbl.cgi -> /etc/upgrade_stringTbl.cgi; changing link target to /dev/null for security purposes.
+
+WARNING: Symlink points outside of the extraction directory: /mnt/f/Yasat-storage/tmp/Netgear/_JR6150_R6050-V1.0.1.26_1.0.1.zip.extracted/_JR6150_R6050-V1.0.1.26_1.0.1.img.extracted/_JR6150.bin.extracted/squashfs-root/www.eng/wiz_log -> /tmp/wizard.log; changing link target to /dev/null for security purposes.
+
+WARNING: Symlink points outside of the extraction directory: /mnt/f/Yasat-storage/tmp/Netgear/_JR6150_R6050-V1.0.1.26_1.0.1.zip.extracted/_JR6150_R6050-V1.0.1.26_1.0.1.img.extracted/_JR6150.bin.extracted/squashfs-root/www.eng/langs/language -> /etc/language; changing link target to /dev/null for security purposes.
+
+WARNING: Symlink points outside of the extraction directory: /mnt/f/Yasat-storage/tmp/Netgear/_JR6150_R6050-V1.0.1.26_1.0.1.zip.extracted/_JR6150_R6050-V1.0.1.26_1.0.1.img.extracted/_JR6150.bin.extracted/squashfs-root-0/etc -> /tmp/etc; changing link target to /dev/null for security purposes.
+
+WARNING: Symlink points outside of the extraction directory: /mnt/f/Yasat-storage/tmp/Netgear/_JR6150_R6050-V1.0.1.26_1.0.1.zip.extracted/_JR6150_R6050-V1.0.1.26_1.0.1.img.extracted/_JR6150.bin.extracted/squashfs-root-0/etc_ro -> /tmp/etc_ro; changing link target to /dev/null for security purposes.
+
+WARNING: Symlink points outside of the extraction directory: /mnt/f/Yasat-storage/tmp/Netgear/_JR6150_R6050-V1.0.1.26_1.0.1.zip.extracted/_JR6150_R6050-V1.0.1.26_1.0.1.img.extracted/_JR6150.bin.extracted/squashfs-root-0/mnt -> /tmp/mnt; changing link target to /dev/null for security purposes.
+
+WARNING: Symlink points outside of the extraction directory: /mnt/f/Yasat-storage/tmp/Netgear/_JR6150_R6050-V1.0.1.26_1.0.1.zip.extracted/_JR6150_R6050-V1.0.1.26_1.0.1.img.extracted/_JR6150.bin.extracted/squashfs-root-0/var -> /tmp/var; changing link target to /dev/null for security purposes.
+
+WARNING: Symlink points outside of the extraction directory: /mnt/f/Yasat-storage/tmp/Netgear/_JR6150_R6050-V1.0.1.26_1.0.1.zip.extracted/_JR6150_R6050-V1.0.1.26_1.0.1.img.extracted/_JR6150.bin.extracted/squashfs-root-0/www -> /tmp/www; changing link target to /dev/null for security purposes.
+
+WARNING: Symlink points outside of the extraction directory: /mnt/f/Yasat-storage/tmp/Netgear/_JR6150_R6050-V1.0.1.26_1.0.1.zip.extracted/_JR6150_R6050-V1.0.1.26_1.0.1.img.extracted/_JR6150.bin.extracted/squashfs-root-0/usr/etc/download_job.cgi -> /usr/sbin/download_job.cgi; changing link target to /dev/null for security purposes.
+
+WARNING: Symlink points outside of the extraction directory: /mnt/f/Yasat-storage/tmp/Netgear/_JR6150_R6050-V1.0.1.26_1.0.1.zip.extracted/_JR6150_R6050-V1.0.1.26_1.0.1.img.extracted/_JR6150.bin.extracted/squashfs-root-0/usr/etc/htpwd_recovery.cgi -> /usr/sbin/htpwd_recovery.cgi; changing link target to /dev/null for security purposes.
+
+WARNING: Symlink points outside of the extraction directory: /mnt/f/Yasat-storage/tmp/Netgear/_JR6150_R6050-V1.0.1.26_1.0.1.zip.extracted/_JR6150_R6050-V1.0.1.26_1.0.1.img.extracted/_JR6150.bin.extracted/squashfs-root-0/usr/etc/language -> /www.eng/langs/ENU; changing link target to /dev/null for security purposes.
+
+WARNING: Symlink points outside of the extraction directory: /mnt/f/Yasat-storage/tmp/Netgear/_JR6150_R6050-V1.0.1.26_1.0.1.zip.extracted/_JR6150_R6050-V1.0.1.26_1.0.1.img.extracted/_JR6150.bin.extracted/squashfs-root-0/usr/etc/restore_config.cgi -> /usr/sbin/restore_config.cgi; changing link target to /dev/null for security purposes.
+
+WARNING: Symlink points outside of the extraction directory: /mnt/f/Yasat-storage/tmp/Netgear/_JR6150_R6050-V1.0.1.26_1.0.1.zip.extracted/_JR6150_R6050-V1.0.1.26_1.0.1.img.extracted/_JR6150.bin.extracted/squashfs-root-0/usr/etc/setup.cgi -> /usr/sbin/setup.cgi; changing link target to /dev/null for security purposes.
+
+WARNING: Symlink points outside of the extraction directory: /mnt/f/Yasat-storage/tmp/Netgear/_JR6150_R6050-V1.0.1.26_1.0.1.zip.extracted/_JR6150_R6050-V1.0.1.26_1.0.1.img.extracted/_JR6150.bin.extracted/squashfs-root-0/usr/etc/upgrade_flash.cgi -> /usr/sbin/upgrade_flash.cgi; changing link target to /dev/null for security purposes.
+
+WARNING: Symlink points outside of the extraction directory: /mnt/f/Yasat-storage/tmp/Netgear/_JR6150_R6050-V1.0.1.26_1.0.1.zip.extracted/_JR6150_R6050-V1.0.1.26_1.0.1.img.extracted/_JR6150.bin.extracted/squashfs-root-0/usr/etc/upgrade_stringTbl.cgi -> /usr/sbin/setup.cgi; changing link target to /dev/null for security purposes.
+
+WARNING: Symlink points outside of the extraction directory: /mnt/f/Yasat-storage/tmp/Netgear/_JR6150_R6050-V1.0.1.26_1.0.1.zip.extracted/_JR6150_R6050-V1.0.1.26_1.0.1.img.extracted/_JR6150.bin.extracted/squashfs-root-0/usr/sbin/dongle_cmd -> /tmp/etc/dongle_cmd; changing link target to /dev/null for security purposes.
+
+WARNING: Symlink points outside of the extraction directory: /mnt/f/Yasat-storage/tmp/Netgear/_JR6150_R6050-V1.0.1.26_1.0.1.zip.extracted/_JR6150_R6050-V1.0.1.26_1.0.1.img.extracted/_JR6150.bin.extracted/squashfs-root-0/usr/sbin/dongle_mgnt -> /tmp/etc/dongle_mgnt; changing link target to /dev/null for security purposes.
+
+WARNING: Symlink points outside of the extraction directory: /mnt/f/Yasat-storage/tmp/Netgear/_JR6150_R6050-V1.0.1.26_1.0.1.zip.extracted/_JR6150_R6050-V1.0.1.26_1.0.1.img.extracted/_JR6150.bin.extracted/squashfs-root-0/usr/sbin/dongle_monitor -> /tmp/etc/dongle_monitor; changing link target to /dev/null for security purposes.

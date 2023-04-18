@@ -1,8 +1,6 @@
 from typing import Dict, Set, List, Tuple
 from collections import defaultdict
 import logging
-import time
-import traceback
 
 from networkx import DiGraph
 from angr.analyses.analysis import Analysis
@@ -56,71 +54,78 @@ class BackwardSlicing(Analysis):
         call_stack=None,
     ) -> None:
         super().__init__()
+        
+        if call_stack is None:
+            call_stack = [target_func.addr]
+            
         self.target_func = target_func
         self.criteria_selectors = criteria_selectors
         self.preset_arguments = preset_arguments
         self.function_handler = function_handler
-
-        if criteria_selectors is None or len(criteria_selectors) == 0:
-            raise ValueError("You should set up at least 1 criteria selector.")
-
-        # Bind this analysis to slicing citeria selectors
-        for selector in criteria_selectors:
-            selector.hook(self)
-
-        if function_handler is not None:
-            function_handler.hook(self)
+        self.concrete_results = []
 
         self._max_iterations = max_iterations
         self._max_call_depth = max_call_depth
-
-        if call_stack is None:
-            call_stack = [target_func.addr]
         self._call_stack = call_stack
-        # Get or generate CFG
+        self._node_iterations = defaultdict(int)
+        self._sim_state = self.project.factory.entry_state()
+        self._engine = SimEngineBackwardSlicing(self)
+        self._blocks_by_addr = dict()
+        self._output_states_by_addr = dict()
+        
+        if criteria_selectors is None or len(criteria_selectors) == 0:
+            raise ValueError("You should set up at least 1 criteria selector.")
+
+        # Bind to slicing citeria selectors
+        for selector in criteria_selectors:
+            selector.hook(self)
+            
+        # Bind to function handler
+        if function_handler is not None:
+            function_handler.hook(self)
+
+        # Get CFG
         cfg = self.project.kb.cfgs.get_most_accurate()
         if cfg is None:
             cfg = self.project.analyses.CFGFast(
                 resolve_indirect_jumps=True, force_complete_scan=False, normalize=True
             )
-        # That's for recovering prototypes of callees in this function, in order to achieve a higher accuracy
-        # e.g., sometimes Clinic analysis cannot correctly deduce callees' stack arguments
-        for addr in self.project.kb.callgraph[target_func.addr]:
-            if addr in self.project.kb.functions:
-                called_func = self.project.kb.functions[addr]
-                if not called_func.normalized:
-                    called_func.normalize()
-                self.project.kb.clinic_manager.get_clinic(called_func)
-            else:
-                l.warning(f'Cannot find function at {hex(addr)}')
-        # Generate the AIL CFG for the target function
+            
+        # That's for recovering prototypes of callees in this function, in order to achieve a higher
+        # accuracy
+        # Sometimes Clinic analysis cannot correctly deduce callees' stack arguments
+        # for addr in self.project.kb.callgraph[target_func.addr]:
+        #     if addr in self.project.kb.functions:
+        #         called_func = self.project.kb.functions[addr]
+        #         if self.kb.subject.is_local_function(called_func):
+        #             if not called_func.normalized:
+        #                 called_func.normalize()
+        #             self.project.kb.clinic_manager.get_clinic(called_func)
+        #     else:
+        #         l.warning(f'Cannot find function at {hex(addr)}')
+                
+        # Generate AIL CFG for target function
         clinic: Clinic = self.project.kb.clinic_manager.get_clinic(target_func)
-        self.preset_arguments = (
-            list(zip(clinic.arg_list, preset_arguments)) if clinic.arg_list else []
-        )
+        if clinic is not None:
+            self.preset_arguments = (
+                list(zip(clinic.arg_list, preset_arguments)) if clinic.arg_list else []
+            )
 
-        self.graph = clinic.graph.copy()
+            self.graph = clinic.graph.copy()
+            
+            # Initialize address-block mappings and output states
+            for block in self.graph:
+                self._blocks_by_addr[block.addr] = block
+                self._output_states_by_addr[block.addr] = self._initial_state(block)
 
-        self._blocks_by_addr = dict()
-        self._output_states_by_addr = dict()
+            # Sometimes a called function with preset arguments may contain some unreachable 
+            # branches.
+            # We remove them to make analysis more precise and efficient.
+            if remove_unreachable_blocks and preset_arguments:
+                # self._remove_unreachable_blocks()
+                pass
 
-        # Initialize address-block mappings and output states
-        for block in self.graph:
-            self._blocks_by_addr[block.addr] = block
-            self._output_states_by_addr[block.addr] = self._initial_state(block)
-
-        self._engine = SimEngineBackwardSlicing(self)
-
-        self._node_iterations = defaultdict(int)
-        self.concrete_results = []
-
-        # Sometimes a called function with preset arguments may contain some unreachable branches
-        # We remove them to make analysis more precise and efficient
-        if remove_unreachable_blocks and preset_arguments:
-            self._remove_unreachable_blocks()
-
-        self._sim_state = self.project.factory.entry_state()
-        self._analyze()
+            self._analyze()
 
     def _remove_unreachable_blocks(self):
         graph = self.graph.copy()
@@ -145,9 +150,9 @@ class BackwardSlicing(Analysis):
         reachable_blocks = set()
         while queue:
             block = queue.pop(0)
-            if block in reachable_blocks:
+            if block.addr in reachable_blocks:
                 continue
-            reachable_blocks.add(block)
+            reachable_blocks.add(block.addr)
             stmt = block.statements[-1]
             if isinstance(stmt, ConditionalJump):
                 if stmt.ins_addr in constant_conds:
@@ -161,9 +166,10 @@ class BackwardSlicing(Analysis):
             else:
                 queue += list(graph.successors(block))
         for block in graph:
-            if block not in reachable_blocks:
+            if block.addr not in reachable_blocks:
                 self.graph.remove_node(block)
-                del self._blocks_by_addr[block.addr]
+                if block.addr in self._blocks_by_addr:
+                    del self._blocks_by_addr[block.addr]
 
     def _initial_state(self, block: Block):
         return SlicingState(analysis=self, block=block)

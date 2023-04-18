@@ -1,8 +1,9 @@
 __pycache__
-.pytest_cache
+/.pytest_cache
 /.vscode
 /debug
 /tests_dev
 /config_dev.yml
 /run_dev.py
 /test.py
+/examples/tmp

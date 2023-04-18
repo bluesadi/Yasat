@@ -1,0 +1,338 @@
+INFO     | 2023-04-18 20:29:22,532 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/ATT_AC340U_eMR2_upgrade_Mac.zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,533 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/AC2600_V1.2.0.88_1.0.1.zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,533 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/BR200-FW-V5.10.0.5.zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,533 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/700 Series Managed Switch Firmware 2.6.5.zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,534 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/AC319U_telus_FW_Mac_N2.0.8.1C.zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,534 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/AC803S_1780690_01.13.00_032.field.zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,534 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/AC1450-V1.0.0.36_10.0.17.zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,534 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/AC802S_1453010_01.07.09_041.field.zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,534 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/AC2400_V1.2.0.88_1.0.1.zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,534 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/AC2100_V1.2.0.88_1.0.1.zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,546 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/BR500-FW-V5.10.0.5.zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,547 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/CAX30-V1.4.11.2.zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,547 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/CAX80-V2.1.3.5.zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,550 | Yasat.main_cli | [4/581 (1 success, 3 failure)] Extracted 42 ELF files from /mnt/f/Yasat-storage/dataset/Netgear/AC803S_1780690_01.13.00_032.field.zip
+INFO     | 2023-04-18 20:29:22,550 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/CBR40-V2.5.0.28.zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,552 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/CBR750-V4.6.14.4.zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,551 | Yasat.main_cli | [5/581 (2 success, 3 failure)] Extracted 155 ELF files from /mnt/f/Yasat-storage/dataset/Netgear/AC1450-V1.0.0.36_10.0.17.zip
+INFO     | 2023-04-18 20:29:22,554 | Yasat.main_cli | [6/581 (3 success, 3 failure)] Extracted 287 ELF files from /mnt/f/Yasat-storage/dataset/Netgear/AC2400_V1.2.0.88_1.0.1.zip
+INFO     | 2023-04-18 20:29:22,554 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/CGD24G Firmware Version 4.4.8.zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,557 | Yasat.main_cli | [7/581 (4 success, 3 failure)] Extracted 1278 ELF files from /mnt/f/Yasat-storage/dataset/Netgear/BR200-FW-V5.10.0.5.zip
+INFO     | 2023-04-18 20:29:22,559 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/D1500-V1.0.0.28_1.0.1PE.zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,559 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/D3600_V1.0.0.76_1.0.1.zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,559 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/CSM4532_V7.0.1.13.zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,559 | Yasat.main_cli | [8/581 (5 success, 3 failure)] Extracted 287 ELF files from /mnt/f/Yasat-storage/dataset/Netgear/AC2600_V1.2.0.88_1.0.1.zip
+INFO     | 2023-04-18 20:29:22,562 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/D500-V1.0.0.28_1.0.1PE.zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,562 | Yasat.main_cli | [9/581 (6 success, 3 failure)] Extracted 41 ELF files from /mnt/f/Yasat-storage/dataset/Netgear/AC802S_1453010_01.07.09_041.field.zip
+INFO     | 2023-04-18 20:29:22,563 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/D6000_V1.0.0.80_1.0.1.zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,563 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/D6100_V1.0.0.63_0.0.63.zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,563 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/D6200_V1.1.00.40_1.00.40.zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,563 | Yasat.main_cli | [10/581 (7 success, 3 failure)] Extracted 287 ELF files from /mnt/f/Yasat-storage/dataset/Netgear/AC2100_V1.2.0.88_1.0.1.zip
+INFO     | 2023-04-18 20:29:22,564 | Yasat.main_cli | [11/581 (8 success, 3 failure)] Extracted 1 ELF files from /mnt/f/Yasat-storage/dataset/Netgear/CAX30-V1.4.11.2.zip
+INFO     | 2023-04-18 20:29:22,571 | Yasat.main_cli | [14/581 (9 success, 5 failure)] Extracted 1278 ELF files from /mnt/f/Yasat-storage/dataset/Netgear/BR500-FW-V5.10.0.5.zip
+INFO     | 2023-04-18 20:29:22,573 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/D6220-V1.0.0.74_1.0.74.zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,574 | Yasat.main_cli | [15/581 (10 success, 5 failure)] Extracted 1289 ELF files from /mnt/f/Yasat-storage/dataset/Netgear/CAX80-V2.1.3.5.zip
+INFO     | 2023-04-18 20:29:22,579 | Yasat.main_cli | [19/581 (11 success, 8 failure)] Extracted 235 ELF files from /mnt/f/Yasat-storage/dataset/Netgear/D3600_V1.0.0.76_1.0.1.zip
+INFO     | 2023-04-18 20:29:22,580 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/D6400-V1.0.0.106_1.0.106.zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,580 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/D7000_V1.0.1.80_1.0.1.zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,580 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/D7800_FW_V1.0.1.60.zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,580 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/D8500_V1.0.3.60_1.0.1.zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,581 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/D7000v2_V1.0.0.76_1.0.1.zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,581 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/D6300-V1.0.0.102_1.0.102.zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,583 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/DC112A_V1.0.0.60_1.0.60.zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,585 | Yasat.main_cli | [21/581 (12 success, 9 failure)] Extracted 249 ELF files from /mnt/f/Yasat-storage/dataset/Netgear/D6100_V1.0.0.63_0.0.63.zip
+INFO     | 2023-04-18 20:29:22,587 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/DG632 Firmware Version 3.6.0C_38 (from 3.3.x or 3.4.x to this version).zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,588 | Yasat.main_cli | [22/581 (13 success, 9 failure)] Extracted 235 ELF files from /mnt/f/Yasat-storage/dataset/Netgear/D6000_V1.0.0.80_1.0.1.zip
+INFO     | 2023-04-18 20:29:22,592 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/DG814 Firmware version 4.10.zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,593 | Yasat.main_cli | [23/581 (14 success, 9 failure)] Extracted 255 ELF files from /mnt/f/Yasat-storage/dataset/Netgear/D6200_V1.1.00.40_1.00.40.zip
+INFO     | 2023-04-18 20:29:22,594 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/DG824M Firmware Version 1.4 Release 05.zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,595 | Yasat.main_cli | [24/581 (15 success, 9 failure)] Extracted 357 ELF files from /mnt/f/Yasat-storage/dataset/Netgear/D6220-V1.0.0.74_1.0.74.zip
+INFO     | 2023-04-18 20:29:22,597 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/DG834 and DG834G Firmware Version 3.01.38 (for use in UK only).zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,598 | Yasat.main_cli | [25/581 (16 success, 9 failure)] Extracted 374 ELF files from /mnt/f/Yasat-storage/dataset/Netgear/D8500_V1.0.3.60_1.0.1.zip
+INFO     | 2023-04-18 20:29:22,599 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/DG834(v1_v2) and DG834G(v1_v2) Firmware Version 3.01.29.zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,599 | Yasat.main_cli | [26/581 (17 success, 9 failure)] Extracted 339 ELF files from /mnt/f/Yasat-storage/dataset/Netgear/D7000_V1.0.1.80_1.0.1.zip
+INFO     | 2023-04-18 20:29:22,601 | Yasat.main_cli | [27/581 (18 success, 9 failure)] Extracted 348 ELF files from /mnt/f/Yasat-storage/dataset/Netgear/D6400-V1.0.0.106_1.0.106.zip
+INFO     | 2023-04-18 20:29:22,601 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/DG834GBv3_V4.01.41.zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,603 | Yasat.main_cli | [28/581 (19 success, 9 failure)] Extracted 559 ELF files from /mnt/f/Yasat-storage/dataset/Netgear/D7000v2_V1.0.0.76_1.0.1.zip
+INFO     | 2023-04-18 20:29:22,604 | Yasat.main_cli | [29/581 (20 success, 9 failure)] Extracted 229 ELF files from /mnt/f/Yasat-storage/dataset/Netgear/D6300-V1.0.0.102_1.0.102.zip
+INFO     | 2023-04-18 20:29:22,604 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/DG834GT_V1.03.23.zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,604 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/DG834GV Firmware Version 1.02.42.zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,605 | Yasat.main_cli | [30/581 (21 success, 9 failure)] Extracted 1155 ELF files from /mnt/f/Yasat-storage/dataset/Netgear/D7800_FW_V1.0.1.60.zip
+INFO     | 2023-04-18 20:29:22,607 | Yasat.main_cli | [31/581 (22 success, 9 failure)] Extracted 195 ELF files from /mnt/f/Yasat-storage/dataset/Netgear/DC112A_V1.0.0.60_1.0.60.zip
+INFO     | 2023-04-18 20:29:22,609 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/DG834Gv2_V3.01.26.zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,610 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/DG834GV v2 Firmware Version 2.02.42.zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,611 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/DG834Gv4NA_V5.03.16.zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,611 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/DG834Gv5-V1.6.01.34.zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,611 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/DG834PN Firmware Version 1.03.39.zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,612 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/DG834Nv1 Firmware Version 1.02.15 (For users OUTSIDE Germany and Austria only).zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,612 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/dg834v3_dg834gv3_na_4_03_04.zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,610 | Yasat.main_cli | [32/581 (23 success, 9 failure)] Extracted 43 ELF files from /mnt/f/Yasat-storage/dataset/Netgear/DG632 Firmware Version 3.6.0C_38 (from 3.3.x or 3.4.x to this version).zip
+INFO     | 2023-04-18 20:29:22,615 | Yasat.main_cli | [33/581 (24 success, 9 failure)] Extracted 86 ELF files from /mnt/f/Yasat-storage/dataset/Netgear/DG834(v1_v2) and DG834G(v1_v2) Firmware Version 3.01.29.zip
+INFO     | 2023-04-18 20:29:22,618 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/DGFV338 DSL Board Firmware Version 2.00.62 (Outside Germany).zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,619 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/DGN1000v3-V1.0.0.22_0.0.22.zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,622 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/DGN1000_V1.1.00.56_NA.zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,622 | Yasat.main_cli | [35/581 (25 success, 10 failure)] Extracted 86 ELF files from /mnt/f/Yasat-storage/dataset/Netgear/DG834 and DG834G Firmware Version 3.01.38 (for use in UK only).zip
+INFO     | 2023-04-18 20:29:22,626 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/DGN2000_V1.3.16.0.zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,627 | Yasat.main_cli | [37/581 (26 success, 11 failure)] Extracted 83 ELF files from /mnt/f/Yasat-storage/dataset/Netgear/DG834GBv3_V4.01.41.zip
+INFO     | 2023-04-18 20:29:22,627 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/DGN2200M Firmware Version 1.0.0.35 (North America).zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,627 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/DGN2200-V1.0.0.60_7.0.57.zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,628 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/DGN2200v4-V1.0.0.118_1.0.118.zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,628 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/DGN2200v3-V1.1.00.25_1.00.25.zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,628 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/DGN3500-V1.1.00.37NA.zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,628 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/DGND3300 Firmware Version 1.1.00.41 (North America).zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,630 | Yasat.main_cli | [39/581 (27 success, 12 failure)] Extracted 78 ELF files from /mnt/f/Yasat-storage/dataset/Netgear/DG834GV Firmware Version 1.02.42.zip
+INFO     | 2023-04-18 20:29:22,636 | Yasat.main_cli | [41/581 (28 success, 13 failure)] Extracted 86 ELF files from /mnt/f/Yasat-storage/dataset/Netgear/DG834Gv2_V3.01.26.zip
+INFO     | 2023-04-18 20:29:22,637 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/DGND3700 Firmware Version 1.0.0.17(NA).zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,637 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/DGND3300v2 Firmware Version 2.1.00.54 (All regions except NA).zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,640 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/DGND3700v2-V1.1.00.26_1.00.26NA.zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,642 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/DGND4000_V1.1.00.14_1.00.14NA.zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,647 | Yasat.main_cli | [46/581 (29 success, 17 failure)] Extracted 82 ELF files from /mnt/f/Yasat-storage/dataset/Netgear/DG834GV v2 Firmware Version 2.02.42.zip
+INFO     | 2023-04-18 20:29:22,647 | Yasat.main_cli | [47/581 (30 success, 17 failure)] Extracted 40 ELF files from /mnt/f/Yasat-storage/dataset/Netgear/DGFV338 DSL Board Firmware Version 2.00.62 (Outside Germany).zip
+INFO     | 2023-04-18 20:29:22,648 | Yasat.main_cli | [48/581 (31 success, 17 failure)] Extracted 146 ELF files from /mnt/f/Yasat-storage/dataset/Netgear/DGN1000v3-V1.0.0.22_0.0.22.zip
+INFO     | 2023-04-18 20:29:22,649 | Yasat.main_cli | [49/581 (32 success, 17 failure)] Extracted 103 ELF files from /mnt/f/Yasat-storage/dataset/Netgear/DGN1000_V1.1.00.56_NA.zip
+INFO     | 2023-04-18 20:29:22,650 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/Disclaimer.aspx?redirecturl=http:%2F%2Fwww.downloads.netgear.com%2Ffiles%2Faircard%2FM3.0.9.0ap.zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,651 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/DM111PSPv2_v1.1.00.09_NA.zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,651 | Yasat.main_cli | [51/581 (33 success, 18 failure)] Extracted 121 ELF files from /mnt/f/Yasat-storage/dataset/Netgear/DGN2200-V1.0.0.60_7.0.57.zip
+INFO     | 2023-04-18 20:29:22,652 | Yasat.main_cli | [52/581 (34 success, 18 failure)] Extracted 162 ELF files from /mnt/f/Yasat-storage/dataset/Netgear/DGN2200M Firmware Version 1.0.0.35 (North America).zip
+INFO     | 2023-04-18 20:29:22,653 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/DM111Pv1 Firmware Version 3.64p.zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,653 | Yasat.main_cli | [53/581 (35 success, 18 failure)] Extracted 178 ELF files from /mnt/f/Yasat-storage/dataset/Netgear/DGN2200v4-V1.0.0.118_1.0.118.zip
+INFO     | 2023-04-18 20:29:22,653 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/DM111Pv2_V2.00.31.zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,654 | Yasat.main_cli | [54/581 (36 success, 18 failure)] Extracted 154 ELF files from /mnt/f/Yasat-storage/dataset/Netgear/DGN3500-V1.1.00.37NA.zip
+INFO     | 2023-04-18 20:29:22,655 | Yasat.main_cli | [55/581 (37 success, 18 failure)] Extracted 205 ELF files from /mnt/f/Yasat-storage/dataset/Netgear/DGN2200v3-V1.1.00.25_1.00.25.zip
+INFO     | 2023-04-18 20:29:22,656 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/DM200_V1.0.0.66.zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,657 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/DST6501-V1.0.1.6.zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,658 | Yasat.main_cli | [56/581 (38 success, 18 failure)] Extracted 122 ELF files from /mnt/f/Yasat-storage/dataset/Netgear/DGND3300 Firmware Version 1.1.00.41 (North America).zip
+INFO     | 2023-04-18 20:29:22,659 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/EAX12_EAX11v2_EAX15v2-V1.0.2.30.zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,659 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/EAX15_EAX11_EAX14-V1.0.3.34.zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,663 | Yasat.main_cli | [58/581 (39 success, 19 failure)] Extracted 175 ELF files from /mnt/f/Yasat-storage/dataset/Netgear/DGND3300v2 Firmware Version 2.1.00.54 (All regions except NA).zip
+INFO     | 2023-04-18 20:29:22,664 | Yasat.main_cli | [59/581 (40 success, 19 failure)] Extracted 233 ELF files from /mnt/f/Yasat-storage/dataset/Netgear/DGND3700v2-V1.1.00.26_1.00.26NA.zip
+INFO     | 2023-04-18 20:29:22,666 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/EAX20-EAX18-V1.0.1.62_1.0.103.zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,666 | Yasat.main_cli | [60/581 (41 success, 19 failure)] Extracted 248 ELF files from /mnt/f/Yasat-storage/dataset/Netgear/DGND4000_V1.1.00.14_1.00.14NA.zip
+INFO     | 2023-04-18 20:29:22,668 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/EAX80-V1.0.1.70_1.0.2.zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,668 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/EVA8000 Firmware Recovery Tool (North America).zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,669 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/EVA9000 Firmware Recovery Tool (NA).zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,669 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/EVA9100 Firmware Version 2.4.170 (North America).zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,670 | Yasat.main_cli | [62/581 (42 success, 20 failure)] Extracted 73 ELF files from /mnt/f/Yasat-storage/dataset/Netgear/DM111PSPv2_v1.1.00.09_NA.zip
+INFO     | 2023-04-18 20:29:22,670 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/EX2700-V1.0.1.66.zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,670 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/EX6000-V1.0.0.44_1.0.28.zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,671 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/EX3700_EX3800-V1.0.0.90_1.0.59.zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,671 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/EX6110_EX3110_EX5000_EX2800-V1.0.1.80.zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,671 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/EX6100-V1.0.2.28_1.1.138.zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,676 | Yasat.main_cli | [64/581 (43 success, 21 failure)] Extracted 66 ELF files from /mnt/f/Yasat-storage/dataset/Netgear/DM111Pv2_V2.00.31.zip
+INFO     | 2023-04-18 20:29:22,682 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/EX6120-V1.0.0.54_1.0.34.zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,684 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/EX6120-V1.0.0.64_1.0.39.zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,686 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/EX6150-V1.0.0.46_1.0.76.zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,686 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/EX6130-V1.0.0.44_1.0.26.zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,687 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/EX6150v2_EX6100v2-V1.0.1.106.zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,690 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/EX6250v2_EX6400v3_EX6410v2_EX6470-V1.0.3.30.zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,690 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/EX7000-V1.0.1.104_1.0.184.zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,690 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/EX6200v2-V1.0.1.86.zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,690 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/EX6200-V1.0.3.94_1.1.128.zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,692 | Yasat.main_cli | [68/581 (44 success, 24 failure)] Extracted 63 ELF files from /mnt/f/Yasat-storage/dataset/Netgear/DST6501-V1.0.1.6.zip
+INFO     | 2023-04-18 20:29:22,695 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/EX7000-V1.0.1.86_1.0.150_BETA.zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,702 | Yasat.main_cli | [73/581 (45 success, 28 failure)] Extracted 9 ELF files from /mnt/f/Yasat-storage/dataset/Netgear/EVA8000 Firmware Recovery Tool (North America).zip
+INFO     | 2023-04-18 20:29:22,703 | Yasat.main_cli | [74/581 (46 success, 28 failure)] Extracted 59 ELF files from /mnt/f/Yasat-storage/dataset/Netgear/EX2700-V1.0.1.66.zip
+INFO     | 2023-04-18 20:29:22,704 | Yasat.main_cli | [75/581 (47 success, 28 failure)] Extracted 72 ELF files from /mnt/f/Yasat-storage/dataset/Netgear/EX3700_EX3800-V1.0.0.90_1.0.59.zip
+INFO     | 2023-04-18 20:29:22,705 | Yasat.main_cli | [76/581 (48 success, 28 failure)] Extracted 68 ELF files from /mnt/f/Yasat-storage/dataset/Netgear/EX6110_EX3110_EX5000_EX2800-V1.0.1.80.zip
+INFO     | 2023-04-18 20:29:22,705 | Yasat.main_cli | [77/581 (49 success, 28 failure)] Extracted 72 ELF files from /mnt/f/Yasat-storage/dataset/Netgear/EX6000-V1.0.0.44_1.0.28.zip
+INFO     | 2023-04-18 20:29:22,708 | Yasat.main_cli | [78/581 (50 success, 28 failure)] Extracted 84 ELF files from /mnt/f/Yasat-storage/dataset/Netgear/EX6100-V1.0.2.28_1.1.138.zip
+INFO     | 2023-04-18 20:29:22,708 | Yasat.main_cli | [79/581 (51 success, 28 failure)] Extracted 72 ELF files from /mnt/f/Yasat-storage/dataset/Netgear/EX6120-V1.0.0.54_1.0.34.zip
+INFO     | 2023-04-18 20:29:22,709 | Yasat.main_cli | [80/581 (52 success, 28 failure)] Extracted 72 ELF files from /mnt/f/Yasat-storage/dataset/Netgear/EX6120-V1.0.0.64_1.0.39.zip
+INFO     | 2023-04-18 20:29:22,710 | Yasat.main_cli | [81/581 (53 success, 28 failure)] Extracted 86 ELF files from /mnt/f/Yasat-storage/dataset/Netgear/EX6150-V1.0.0.46_1.0.76.zip
+INFO     | 2023-04-18 20:29:22,711 | Yasat.main_cli | [83/581 (54 success, 29 failure)] Extracted 72 ELF files from /mnt/f/Yasat-storage/dataset/Netgear/EX6130-V1.0.0.44_1.0.26.zip
+INFO     | 2023-04-18 20:29:22,712 | Yasat.main_cli | [84/581 (55 success, 29 failure)] Extracted 258 ELF files from /mnt/f/Yasat-storage/dataset/Netgear/EX6150v2_EX6100v2-V1.0.1.106.zip
+INFO     | 2023-04-18 20:29:22,712 | Yasat.main_cli | [85/581 (56 success, 29 failure)] Extracted 274 ELF files from /mnt/f/Yasat-storage/dataset/Netgear/EX6200v2-V1.0.1.86.zip
+INFO     | 2023-04-18 20:29:22,713 | Yasat.main_cli | [86/581 (57 success, 29 failure)] Extracted 231 ELF files from /mnt/f/Yasat-storage/dataset/Netgear/EX7000-V1.0.1.104_1.0.184.zip
+INFO     | 2023-04-18 20:29:22,713 | Yasat.main_cli | [87/581 (58 success, 29 failure)] Extracted 99 ELF files from /mnt/f/Yasat-storage/dataset/Netgear/EX6200-V1.0.3.94_1.1.128.zip
+INFO     | 2023-04-18 20:29:22,714 | Yasat.main_cli | [88/581 (59 success, 29 failure)] Extracted 140 ELF files from /mnt/f/Yasat-storage/dataset/Netgear/EX7000-V1.0.1.86_1.0.150_BETA.zip
+INFO     | 2023-04-18 20:29:22,720 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/EX7300-EX6400-V1.0.2.158.zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,721 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/EX7500-V1.0.1.76_1.0.80.zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,721 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/EX7700-V1.0.0.222.zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,721 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/EX7300v2_EX6400v2_EX6250v1_V1.0.0.132.zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,722 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/EX7300v2_EX6400v2_EX6250v1_V1.0.0.134.zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,722 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/FM114P Firmware version 1.3 (Release 05).zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,723 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/Firmware version 3.24 for the RT311 and RT314.zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,724 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/EX8000-V1.0.1.232.zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,724 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/FR114P Firmware Version 1.5 Release 14.zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,724 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/Firmware to Convert WG102 to WGL102 - Version 1.5.9 (North America).zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,735 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/FR114W Firmware version 1.3 Release 05.zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,736 | Yasat.main_cli | [92/581 (60 success, 32 failure)] Extracted 397 ELF files from /mnt/f/Yasat-storage/dataset/Netgear/EX7300-EX6400-V1.0.2.158.zip
+INFO     | 2023-04-18 20:29:22,737 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/FR314 Release Firmware Release 6.3.1.0.zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,738 | Yasat.main_cli | [95/581 (61 success, 34 failure)] Extracted 421 ELF files from /mnt/f/Yasat-storage/dataset/Netgear/EX7700-V1.0.0.222.zip
+INFO     | 2023-04-18 20:29:22,738 | Yasat.main_cli | [96/581 (62 success, 34 failure)] Extracted 363 ELF files from /mnt/f/Yasat-storage/dataset/Netgear/EX7300v2_EX6400v2_EX6250v1_V1.0.0.132.zip
+INFO     | 2023-04-18 20:29:22,740 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/FS726Tv2_FW_V1.0.0.16.zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,740 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/FS728TLP_V1.0.1.36.zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,740 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/FR318 and FV318 Firmware Upgrade 6.3.1.0.zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,740 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/FS728TLP_FS526Tv2_V1.0.1.23.zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,740 | Yasat.main_cli | [97/581 (63 success, 34 failure)] Extracted 363 ELF files from /mnt/f/Yasat-storage/dataset/Netgear/EX7300v2_EX6400v2_EX6250v1_V1.0.0.134.zip
+INFO     | 2023-04-18 20:29:22,740 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/FS726T_V2.0.1_14.zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,741 | Yasat.main_cli | [98/581 (64 success, 34 failure)] Extracted 462 ELF files from /mnt/f/Yasat-storage/dataset/Netgear/EX8000-V1.0.1.232.zip
+INFO     | 2023-04-18 20:29:22,744 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/FS728TP Firmware Version 5.0.0.8.zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,745 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/FS728TS, FS752TS Firmware Version 3.1.0.1.zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,745 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/FS728TPv2_V5.0.2.52.zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,750 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/FS728TS, FS752TS, FS752TPS Firmware Version 3.0.0.30.zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,752 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/FS728TS_FS752TS Firmware Version 3.1.0.1.zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,755 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/FS752TP_V5.4.2.30.zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,755 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/FSM726E Firmware Version 7.3.2.1.zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,756 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/FSM7226RS_FSM7250RS Firmware Version 7.3.1.7.zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,756 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/FSM7326P Firmware Version 6.2.0.14.zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,757 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/FSM7328S, FSM7328PS, FSM7352S, and FSM7352PS Firmware Version 7.3.1.7.zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,760 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/FVG318 Firmware Version 2.1.2-67 (North America).zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,761 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/FSM7328S_FSM7328PS_FSM7352S_and FSM7352PS Firmware Version 7.3.1.7.zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,762 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/FVL328 Firmware Version 2.0_08.zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,767 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/FVS114 Firmware Version 1.1_15.zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,767 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/FVM318 Firmware Version R1.2.zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,770 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/FVS124G Firmware V1.1.48.zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,770 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/FVS318 Firmware Version 2.4.zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,770 | Yasat.main_cli | [115/581 (65 success, 50 failure)] Extracted 3 ELF files from /mnt/f/Yasat-storage/dataset/Netgear/FSM7326P Firmware Version 6.2.0.14.zip
+INFO     | 2023-04-18 20:29:22,771 | Yasat.main_cli | [116/581 (66 success, 50 failure)] Extracted 3 ELF files from /mnt/f/Yasat-storage/dataset/Netgear/FSM7328S, FSM7328PS, FSM7352S, and FSM7352PS Firmware Version 7.3.1.7.zip
+INFO     | 2023-04-18 20:29:22,772 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/FVS318Gv2_V4.3.5-3.zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,774 | Yasat.main_cli | [118/581 (67 success, 51 failure)] Extracted 3 ELF files from /mnt/f/Yasat-storage/dataset/Netgear/FSM7328S_FSM7328PS_FSM7352S_and FSM7352PS Firmware Version 7.3.1.7.zip
+INFO     | 2023-04-18 20:29:22,774 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/FVS318G_V3.1.1-18.zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,775 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/FVS318N_V4.3.5-3.zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,775 | Yasat.main_cli | Extracting from /mnt/f/Yasat-storage/dataset/Netgear/FVS336Gv1 Firmware Version 3.0.7-24.zip
+INFO     | 2023-04-18 20:29:22,776 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/FVS318v3 Firmware Version 3.0_28.zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,777 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/FVS328 Firmware Version 1.0.15.zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,780 | Yasat.main_cli | Extracting from /mnt/f/Yasat-storage/dataset/Netgear/fvs338_v3.1.1-08.zip
+INFO     | 2023-04-18 20:29:22,782 | Yasat.main_cli | Extracting from /mnt/f/Yasat-storage/dataset/Netgear/FVX538 Firmware Version 3.0.5-28.zip
+INFO     | 2023-04-18 20:29:22,782 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/fvs336gv2_v4.3.3-6.zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,783 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/FVS336Gv3_V4.3.5-3.zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,787 | Yasat.main_cli | [123/581 (68 success, 55 failure)] Extracted 595 ELF files from /mnt/f/Yasat-storage/dataset/Netgear/FVS318Gv2_V4.3.5-3.zip
+INFO     | 2023-04-18 20:29:22,788 | Yasat.main_cli | Extracting from /mnt/f/Yasat-storage/dataset/Netgear/fvx538_v3.1.1-08.zip
+INFO     | 2023-04-18 20:29:22,790 | Yasat.main_cli | [124/581 (69 success, 55 failure)] Extracted 135 ELF files from /mnt/f/Yasat-storage/dataset/Netgear/FVS318G_V3.1.1-18.zip
+INFO     | 2023-04-18 20:29:22,792 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/FWAG114 Beta Version 1.0.29.zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,793 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/FWG114P Firmware Version 2.0 Release 18.zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,793 | Yasat.main_cli | [127/581 (70 success, 57 failure)] Extracted 610 ELF files from /mnt/f/Yasat-storage/dataset/Netgear/FVS318N_V4.3.5-3.zip
+INFO     | 2023-04-18 20:29:22,794 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/FWG114Pv2 Firmware Version 1.2_07 (North America).zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,798 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/GA511 Initial Release Firmware.zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,799 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/GC108Pv1_GC108PPv1_V1.0.8.9.zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,800 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/GC110_GC110P_GC510P_GC510PP_V1.0.5.36.zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,807 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/GC728X_GC728XP_GC752X_GC752XP_V1.0.5.36.zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,810 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/GS105E_V1.02.04.zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,810 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/GS105Ev2_V1.6.0.10.zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,814 | Yasat.main_cli | [134/581 (71 success, 63 failure)] Extracted 111 ELF files from /mnt/f/Yasat-storage/dataset/Netgear/GC108Pv1_GC108PPv1_V1.0.8.9.zip
+INFO     | 2023-04-18 20:29:22,814 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/GS105PE_V1.6.0.10.zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,815 | Yasat.main_cli | [135/581 (72 success, 63 failure)] Extracted 101 ELF files from /mnt/f/Yasat-storage/dataset/Netgear/GC110_GC110P_GC510P_GC510PP_V1.0.5.36.zip
+INFO     | 2023-04-18 20:29:22,818 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/GS108E-Firmware Version-_1.00.09.zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,819 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/GS108EV2_V1.00.12.zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,820 | Yasat.main_cli | [137/581 (73 success, 64 failure)] Extracted 69 ELF files from /mnt/f/Yasat-storage/dataset/Netgear/GC728X_GC728XP_GC752X_GC752XP_V1.0.5.36.zip
+INFO     | 2023-04-18 20:29:22,824 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/GS108PE Firmware Version 1.00.09.zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,824 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/GS108Ev3_V2.06.16EN.zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,826 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/GS108PEV2_V1.00.12.zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,830 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/GS108PEv3_V2.06.16EN.zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,834 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/GS108Tv1 Firmware Version 3.0.4.10.zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,835 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/GS108Tv2_GS110TPv2_V5.4.2.36.zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,838 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/GS108Tv3_GS110TPv3_GS110TPPv1_V7.0.7.2.zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,840 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/GS110EMX_V1.0.2.7.zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,841 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/GS110TP_GS108Tv2 Firmware Version 5.0.1.10.zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,846 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/GS110TUPv1_GS710TUPv1_V1.0.5.9.zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,847 | Yasat.main_cli | [147/581 (74 success, 73 failure)] Extracted 1 ELF files from /mnt/f/Yasat-storage/dataset/Netgear/GS108Tv1 Firmware Version 3.0.4.10.zip
+INFO     | 2023-04-18 20:29:22,849 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/GS110T_V5.4.0.6.zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,851 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/GS116E-v1.00.21.zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,852 | Yasat.main_cli | [149/581 (75 success, 74 failure)] Extracted 113 ELF files from /mnt/f/Yasat-storage/dataset/Netgear/GS108Tv3_GS110TPv3_GS110TPPv1_V7.0.7.2.zip
+INFO     | 2023-04-18 20:29:22,854 | Yasat.main_cli | [150/581 (76 success, 74 failure)] Extracted 118 ELF files from /mnt/f/Yasat-storage/dataset/Netgear/GS110EMX_V1.0.2.7.zip
+INFO     | 2023-04-18 20:29:22,856 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/GS305EP_V1.0.0.10.zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,856 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/GS305EPP_V1.0.0.10.zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,857 | Yasat.main_cli | [151/581 (77 success, 74 failure)] Extracted 115 ELF files from /mnt/f/Yasat-storage/dataset/Netgear/GS110TUPv1_GS710TUPv1_V1.0.5.9.zip
+INFO     | 2023-04-18 20:29:22,858 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/GS305E_V1.0.0.9.zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,861 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/GS308EPP_V1.0.0.10.zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,862 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/GS308EP_V1.0.0.10.zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,864 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/GS308E_V1.00.10EN.zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,868 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/GS308T_GS310TP_V1.0.3.2.zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,869 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/GS316EP_GS316EPP_V1.0.2.4.zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,871 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/GS324Tv1_GS324TPv1_V1.0.0.34.zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,874 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/GS348Tv1_V1.0.0.43.zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,877 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/GS408EPP_V1.0.0.22.zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,879 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/GS418TPP_GS510TLP_GS510TPP_V7.0.0.20.zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,882 | Yasat.main_cli | [160/581 (78 success, 82 failure)] Extracted 69 ELF files from /mnt/f/Yasat-storage/dataset/Netgear/GS308T_GS310TP_V1.0.3.2.zip
+INFO     | 2023-04-18 20:29:22,884 | Yasat.main_cli | [161/581 (79 success, 82 failure)] Extracted 68 ELF files from /mnt/f/Yasat-storage/dataset/Netgear/GS316EP_GS316EPP_V1.0.2.4.zip
+INFO     | 2023-04-18 20:29:22,886 | Yasat.main_cli | [162/581 (80 success, 82 failure)] Extracted 54 ELF files from /mnt/f/Yasat-storage/dataset/Netgear/GS324Tv1_GS324TPv1_V1.0.0.34.zip
+INFO     | 2023-04-18 20:29:22,887 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/GS510TP_V5.4.2.30.zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,888 | Yasat.main_cli | [164/581 (81 success, 83 failure)] Extracted 83 ELF files from /mnt/f/Yasat-storage/dataset/Netgear/GS348Tv1_V1.0.0.43.zip
+INFO     | 2023-04-18 20:29:22,889 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/GS516TP_V6.0.1.30.zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,891 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/GS700TPS_TS_TS-V5.2.0.11.zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,893 | Yasat.main_cli | [165/581 (82 success, 83 failure)] Extracted 79 ELF files from /mnt/f/Yasat-storage/dataset/Netgear/GS418TPP_GS510TLP_GS510TPP_V7.0.0.20.zip
+INFO     | 2023-04-18 20:29:22,893 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/GS700TR_V4.0.2.2.zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,893 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/GS716T Firmware Version 1.1.8.zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,897 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/GS716TPv1_GS716TPPv1_V1.0.4.8.zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,902 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/GS716Tv2_GS724Tv3_V5.4.2.30.zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,904 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/GS716Tv3_GS724Tv4_GS748Tv5_V6.3.1.43.zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,906 | Yasat.main_cli | [170/581 (83 success, 87 failure)] Extracted 3 ELF files from /mnt/f/Yasat-storage/dataset/Netgear/GS700TR_V4.0.2.2.zip
+INFO     | 2023-04-18 20:29:22,907 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/GS724AT, GS748AT Switch Firmware Version 4.0.1.1.zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,908 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/GS724AT_GS748AT Switch Firmware Version 4.0.1.1.zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,911 | Yasat.main_cli | [171/581 (84 success, 87 failure)] Extracted 112 ELF files from /mnt/f/Yasat-storage/dataset/Netgear/GS716TPv1_GS716TPPv1_V1.0.4.8.zip
+INFO     | 2023-04-18 20:29:22,911 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/GS724T Firmware Version 1.2.3.zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,915 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/GS724TPv2_GS724TPP_V2.0.6.3.zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,916 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/GS724TR GS748TR Firmware Version 4.0.2.2.zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,918 | Yasat.main_cli | [174/581 (85 success, 89 failure)] Extracted 24 ELF files from /mnt/f/Yasat-storage/dataset/Netgear/GS716Tv3_GS724Tv4_GS748Tv5_V6.3.1.43.zip
+INFO     | 2023-04-18 20:29:22,921 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/gs724tv2_1_0_3_33.zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,923 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/GS724_748TP-V5.2.0.11.zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,924 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/GS728TPv2_GS728TPPv2_GS752TPv2_GS752TPPv1_V6.0.8.2.zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,925 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/GS728TP_GS728TPP_GS752TP_V6.0.1.30.zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,929 | Yasat.main_cli | [177/581 (86 success, 91 failure)] Extracted 107 ELF files from /mnt/f/Yasat-storage/dataset/Netgear/GS724TPv2_GS724TPP_V2.0.6.3.zip
+INFO     | 2023-04-18 20:29:22,930 | Yasat.main_cli | [178/581 (87 success, 91 failure)] Extracted 3 ELF files from /mnt/f/Yasat-storage/dataset/Netgear/GS724TR GS748TR Firmware Version 4.0.2.2.zip
+INFO     | 2023-04-18 20:29:22,932 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/GS728TS_GS728TPS_GS752TS_GS752TPS_V5.3.0.36.zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,934 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/GS728TXS_GS752TXS_V6.1.0.39.zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,936 | Yasat.main_cli | [182/581 (88 success, 94 failure)] Extracted 111 ELF files from /mnt/f/Yasat-storage/dataset/Netgear/GS728TPv2_GS728TPPv2_GS752TPv2_GS752TPPv1_V6.0.8.2.zip
+INFO     | 2023-04-18 20:29:22,936 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/GS748Tv2 GS748Tv3 Firmware Version 3.0.7.zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,937 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/GS728TX_GS728TXP_GS752TX_GS752TXP_V6.6.4.28.zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,938 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/GS748Tv3 Firmware Version 3.1.4.zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,942 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/GS748Tv4_V5.4.2.30.zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,945 | Yasat.main_cli | [183/581 (89 success, 94 failure)] Extracted 19 ELF files from /mnt/f/Yasat-storage/dataset/Netgear/GS728TS_GS728TPS_GS752TS_GS752TPS_V5.3.0.36.zip
+INFO     | 2023-04-18 20:29:22,947 | Yasat.main_cli | [184/581 (90 success, 94 failure)] Extracted 19 ELF files from /mnt/f/Yasat-storage/dataset/Netgear/GS728TXS_GS752TXS_V6.1.0.39.zip
+INFO     | 2023-04-18 20:29:22,949 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/GS750E_V1.0.1.10.zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,950 | Yasat.main_cli | [186/581 (91 success, 95 failure)] Extracted 1 ELF files from /mnt/f/Yasat-storage/dataset/Netgear/GS748Tv2 GS748Tv3 Firmware Version 3.0.7.zip
+INFO     | 2023-04-18 20:29:22,952 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/GS808E_V1.7.1.0.zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,952 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/GS810EMX_V1.7.1.3.zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,954 | Yasat.main_cli | [188/581 (92 success, 96 failure)] Extracted 1 ELF files from /mnt/f/Yasat-storage/dataset/Netgear/GS748Tv3 Firmware Version 3.1.4.zip
+INFO     | 2023-04-18 20:29:22,955 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/GS908E_V1.7.0.3.zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,958 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/GSM4210P_V12.0.17.6.zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,958 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/GSM421xxx_MSM4214_XSM4216F_V13.0.4.12.zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,962 | Yasat.main_cli | [189/581 (93 success, 96 failure)] Extracted 25 ELF files from /mnt/f/Yasat-storage/dataset/Netgear/GS750E_V1.0.1.10.zip
+INFO     | 2023-04-18 20:29:22,965 | Yasat.main_cli | [192/581 (94 success, 98 failure)] Extracted 118 ELF files from /mnt/f/Yasat-storage/dataset/Netgear/GS810EMX_V1.7.1.3.zip
+INFO     | 2023-04-18 20:29:22,966 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/GSM4230xx_GSM4248xx_V13.0.4.12.zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,966 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/GSM7200_7300S_P_FS_V11.0.0.40.zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,969 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/GSM7212 Firmware Version 6.3.3.7.zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,970 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/GSM7224 Firmware Version 6.2.0.14.zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,970 | Yasat.main_cli | [193/581 (95 success, 98 failure)] Extracted 45 ELF files from /mnt/f/Yasat-storage/dataset/Netgear/GSM4210P_V12.0.17.6.zip
+INFO     | 2023-04-18 20:29:22,972 | Yasat.main_cli | [194/581 (96 success, 98 failure)] Extracted 137 ELF files from /mnt/f/Yasat-storage/dataset/Netgear/GSM421xxx_MSM4214_XSM4216F_V13.0.4.12.zip
+INFO     | 2023-04-18 20:29:22,975 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/GSM7224R, GSM7248R Firmware Version 7.3.1.7.zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,976 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/GSM7248 Firmware Version 6.3.3.7.zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,979 | Yasat.main_cli | [196/581 (97 success, 99 failure)] Extracted 32 ELF files from /mnt/f/Yasat-storage/dataset/Netgear/GSM7200_7300S_P_FS_V11.0.0.40.zip
+INFO     | 2023-04-18 20:29:22,982 | Yasat.main_cli | [198/581 (98 success, 100 failure)] Extracted 183 ELF files from /mnt/f/Yasat-storage/dataset/Netgear/GSM4230xx_GSM4248xx_V13.0.4.12.zip
+INFO     | 2023-04-18 20:29:22,983 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/GSM7300S_7200PS_V10.0.0.53.zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,984 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/GSM7312 Firmware Version 6.2.0.14.zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,985 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/GSM7328S-FS-7352S_V8.0.3.49.zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,985 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/GSM7324 Firmware Version 6.3.3.6.zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,989 | Yasat.main_cli | [200/581 (99 success, 101 failure)] Extracted 2 ELF files from /mnt/f/Yasat-storage/dataset/Netgear/GSM7248 Firmware Version 6.3.3.7.zip
+INFO     | 2023-04-18 20:29:22,991 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/GSM_FSM_52_7200_V10.0.2.35.zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,993 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/GSM_XSM4300_V12.0.13.8.zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,996 | Yasat.main_cli | [204/581 (100 success, 104 failure)] Extracted 3 ELF files from /mnt/f/Yasat-storage/dataset/Netgear/GSM7312 Firmware Version 6.2.0.14.zip
+INFO     | 2023-04-18 20:29:22,998 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/GSS108EPP_V1.0.0.22.zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,999 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/GSS108E_V1.6.0.9.zip.cache is available!!!
+INFO     | 2023-04-18 20:29:22,999 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/HDX111 Firmware Version 4.4.9.zip.cache is available!!!
+INFO     | 2023-04-18 20:29:23,002 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/HR314 Firmware version 1.4.2.zip.cache is available!!!
+INFO     | 2023-04-18 20:29:23,006 | Yasat.main_cli | [205/581 (101 success, 104 failure)] Extracted 28 ELF files from /mnt/f/Yasat-storage/dataset/Netgear/GSM_FSM_52_7200_V10.0.2.35.zip
+INFO     | 2023-04-18 20:29:23,008 | Yasat.main_cli | [206/581 (102 success, 104 failure)] Extracted 130 ELF files from /mnt/f/Yasat-storage/dataset/Netgear/GSM_XSM4300_V12.0.13.8.zip
+INFO     | 2023-04-18 20:29:23,010 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/JGS516PE_GS116Ev2_V2.6.0.48.zip.cache is available!!!
+INFO     | 2023-04-18 20:29:23,012 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/JGS524E-v1.00.21.zip.cache is available!!!
+INFO     | 2023-04-18 20:29:23,013 | Yasat.main_cli | Extracting from /mnt/f/Yasat-storage/dataset/Netgear/JNR1010-v1.0.0.32.zip
+INFO     | 2023-04-18 20:29:23,014 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/JGS524PE_JGS524Ev2_V2.6.0.48.zip.cache is available!!!
+INFO     | 2023-04-18 20:29:23,015 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/JGSM7224_V9.2.0.15.zip.cache is available!!!
+INFO     | 2023-04-18 20:29:23,018 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/JNR3000_V1.1.0.29_1.0.1.zip.cache is available!!!
+INFO     | 2023-04-18 20:29:23,023 | Yasat.main_cli | Extracting from /mnt/f/Yasat-storage/dataset/Netgear/JR6150_R6050-V1.0.1.26_1.0.1.zip
+INFO     | 2023-04-18 20:29:23,026 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/JNR3210_V1.1.0.30_1.0.2.zip.cache is available!!!
+INFO     | 2023-04-18 20:29:23,027 | Yasat.main_cli | [214/581 (103 success, 111 failure)] Extracted 25 ELF files from /mnt/f/Yasat-storage/dataset/Netgear/JGSM7224_V9.2.0.15.zip
+INFO     | 2023-04-18 20:29:23,028 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/JWNR2000 Firmware Version 1.0.0.7 (China).zip.cache is available!!!
+INFO     | 2023-04-18 20:29:23,031 | Yasat.main_cli | [215/581 (104 success, 111 failure)] Extracted 176 ELF files from /mnt/f/Yasat-storage/dataset/Netgear/JNR3000_V1.1.0.29_1.0.1.zip
+INFO     | 2023-04-18 20:29:23,032 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/JWNR2000v2_WNR1500-V1.0.0.11_1.0.1.zip.cache is available!!!
+INFO     | 2023-04-18 20:29:23,033 | Yasat.main_cli | Extracting from /mnt/f/Yasat-storage/dataset/Netgear/JWNR2000v3_JWNR2010v3_JWNR2000Tv3-v1.0.0.32.zip
+INFO     | 2023-04-18 20:29:23,039 | Yasat.main_cli | [216/581 (105 success, 111 failure)] Extracted 176 ELF files from /mnt/f/Yasat-storage/dataset/Netgear/JNR3210_V1.1.0.30_1.0.2.zip
+INFO     | 2023-04-18 20:29:23,042 | Yasat.main_cli | [217/581 (106 success, 111 failure)] Extracted 66 ELF files from /mnt/f/Yasat-storage/dataset/Netgear/JWNR2000 Firmware Version 1.0.0.7 (China).zip
+INFO     | 2023-04-18 20:29:23,044 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/KWGR614 Firmware Version 1.0.0_09.25 (North America).zip.cache is available!!!
+INFO     | 2023-04-18 20:29:23,045 | Yasat.main_cli | [218/581 (107 success, 111 failure)] Extracted 68 ELF files from /mnt/f/Yasat-storage/dataset/Netgear/JWNR2000v2_WNR1500-V1.0.0.11_1.0.1.zip
+INFO     | 2023-04-18 20:29:23,046 | Yasat.main_cli | Extracting from /mnt/f/Yasat-storage/dataset/Netgear/LBR1020_V2.6.3.58.zip
+INFO     | 2023-04-18 20:29:23,047 | Yasat.main_cli | Lol! Extraction cache file /mnt/f/Yasat-storage/tmp/Netgear/LAX20-V1.1.6.28_2.0.49.zip.cache is available!!!
+INFO     | 2023-04-18 20:29:23,058 | Yasat.main_cli | Extracting from /mnt/f/Yasat-storage/dataset/Netgear/LBR20_V2.6.5.2.zip
+INFO     | 2023-04-18 20:29:23,058 | Yasat.main_cli | Extracting from /mnt/f/Yasat-storage/dataset/Netgear/LBR20_V2.5.3.6.zip
+INFO     | 2023-04-18 20:29:23,058 | Yasat.main_cli | [220/581 (108 success, 112 failure)] Extracted 36 ELF files from /mnt/f/Yasat-storage/dataset/Netgear/KWGR614 Firmware Version 1.0.0_09.25 (North America).zip

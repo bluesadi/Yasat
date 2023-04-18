@@ -1,0 +1,15 @@
+ERROR    | 2023-04-18 20:35:07,518 | Yasat.main_cli | Traceback (most recent call last):
+  File "/home/bluesadi/Yasat/Yasat/main_cli.py", line 141, in main_cli
+    subjects = _collect_subjects()
+  File "/home/bluesadi/Yasat/Yasat/main_cli.py", line 136, in _collect_subjects
+    result.wait()
+  File "/usr/lib/python3.8/multiprocessing/pool.py", line 762, in wait
+    self._event.wait(timeout)
+  File "/usr/lib/python3.8/threading.py", line 558, in wait
+    signaled = self._cond.wait(timeout)
+  File "/usr/lib/python3.8/threading.py", line 302, in wait
+    waiter.acquire()
+  File "/home/bluesadi/virtualenvs/Yasat/lib/python3.8/site-packages/claripy/backends/backend_z3.py", line 34, in handle_sigint
+    raise KeyboardInterrupt()
+KeyboardInterrupt
+

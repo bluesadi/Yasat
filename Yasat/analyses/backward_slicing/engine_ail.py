@@ -64,7 +64,7 @@ class SimEngineBackwardSlicing(
     def _process_Stmt(self, whitelist=None):
         if whitelist is not None:
             whitelist = set(whitelist)
-
+        # print(self.state.dbg_repr())
         for stmt_idx, stmt in reversed(list(enumerate(self.block.statements))):
             if whitelist is not None and stmt_idx not in whitelist:
                 continue

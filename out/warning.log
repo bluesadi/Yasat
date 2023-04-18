@@ -1,0 +1,112 @@
+WARNING  | 2023-04-18 20:29:22,543 | Yasat.main_cli | [1/581 (0 success, 1 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/ATT_AC340U_eMR2_upgrade_Mac.zip
+WARNING  | 2023-04-18 20:29:22,547 | Yasat.main_cli | [2/581 (0 success, 2 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/700 Series Managed Switch Firmware 2.6.5.zip
+WARNING  | 2023-04-18 20:29:22,549 | Yasat.main_cli | [3/581 (0 success, 3 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/AC319U_telus_FW_Mac_N2.0.8.1C.zip
+WARNING  | 2023-04-18 20:29:22,568 | Yasat.main_cli | [12/581 (8 success, 4 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/CBR40-V2.5.0.28.zip
+WARNING  | 2023-04-18 20:29:22,569 | Yasat.main_cli | [13/581 (8 success, 5 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/CBR750-V4.6.14.4.zip
+WARNING  | 2023-04-18 20:29:22,575 | Yasat.main_cli | [16/581 (10 success, 6 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/CGD24G Firmware Version 4.4.8.zip
+WARNING  | 2023-04-18 20:29:22,577 | Yasat.main_cli | [17/581 (10 success, 7 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/D1500-V1.0.0.28_1.0.1PE.zip
+WARNING  | 2023-04-18 20:29:22,577 | Yasat.main_cli | [18/581 (10 success, 8 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/CSM4532_V7.0.1.13.zip
+WARNING  | 2023-04-18 20:29:22,582 | Yasat.main_cli | [20/581 (11 success, 9 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/D500-V1.0.0.28_1.0.1PE.zip
+WARNING  | 2023-04-18 20:29:22,618 | Yasat.main_cli | [34/581 (24 success, 10 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/DG814 Firmware version 4.10.zip
+WARNING  | 2023-04-18 20:29:22,624 | Yasat.main_cli | [36/581 (25 success, 11 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/DG824M Firmware Version 1.4 Release 05.zip
+WARNING  | 2023-04-18 20:29:22,629 | Yasat.main_cli | [38/581 (26 success, 12 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/DG834GT_V1.03.23.zip
+WARNING  | 2023-04-18 20:29:22,634 | Yasat.main_cli | [40/581 (27 success, 13 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/DG834Gv4NA_V5.03.16.zip
+WARNING  | 2023-04-18 20:29:22,640 | Yasat.main_cli | [42/581 (28 success, 14 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/DG834Gv5-V1.6.01.34.zip
+WARNING  | 2023-04-18 20:29:22,644 | Yasat.main_cli | [43/581 (28 success, 15 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/DG834Nv1 Firmware Version 1.02.15 (For users OUTSIDE Germany and Austria only).zip
+WARNING  | 2023-04-18 20:29:22,645 | Yasat.main_cli | [44/581 (28 success, 16 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/DG834PN Firmware Version 1.03.39.zip
+WARNING  | 2023-04-18 20:29:22,646 | Yasat.main_cli | [45/581 (28 success, 17 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/dg834v3_dg834gv3_na_4_03_04.zip
+WARNING  | 2023-04-18 20:29:22,650 | Yasat.main_cli | [50/581 (32 success, 18 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/DGN2000_V1.3.16.0.zip
+WARNING  | 2023-04-18 20:29:22,662 | Yasat.main_cli | [57/581 (38 success, 19 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/DGND3700 Firmware Version 1.0.0.17(NA).zip
+WARNING  | 2023-04-18 20:29:22,668 | Yasat.main_cli | [61/581 (41 success, 20 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/Disclaimer.aspx?redirecturl=http:%2F%2Fwww.downloads.netgear.com%2Ffiles%2Faircard%2FM3.0.9.0ap.zip
+WARNING  | 2023-04-18 20:29:22,671 | Yasat.main_cli | [63/581 (42 success, 21 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/DM111Pv1 Firmware Version 3.64p.zip
+WARNING  | 2023-04-18 20:29:22,678 | Yasat.main_cli | [65/581 (43 success, 22 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/DM200_V1.0.0.66.zip
+WARNING  | 2023-04-18 20:29:22,682 | Yasat.main_cli | [66/581 (43 success, 23 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/EAX15_EAX11_EAX14-V1.0.3.34.zip
+WARNING  | 2023-04-18 20:29:22,688 | Yasat.main_cli | [67/581 (43 success, 24 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/EAX12_EAX11v2_EAX15v2-V1.0.2.30.zip
+WARNING  | 2023-04-18 20:29:22,696 | Yasat.main_cli | [69/581 (44 success, 25 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/EAX20-EAX18-V1.0.1.62_1.0.103.zip
+WARNING  | 2023-04-18 20:29:22,699 | Yasat.main_cli | [70/581 (44 success, 26 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/EAX80-V1.0.1.70_1.0.2.zip
+WARNING  | 2023-04-18 20:29:22,701 | Yasat.main_cli | [71/581 (44 success, 27 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/EVA9000 Firmware Recovery Tool (NA).zip
+WARNING  | 2023-04-18 20:29:22,702 | Yasat.main_cli | [72/581 (44 success, 28 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/EVA9100 Firmware Version 2.4.170 (North America).zip
+WARNING  | 2023-04-18 20:29:22,711 | Yasat.main_cli | [82/581 (53 success, 29 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/EX6250v2_EX6400v3_EX6410v2_EX6470-V1.0.3.30.zip
+WARNING  | 2023-04-18 20:29:22,730 | Yasat.main_cli | [89/581 (59 success, 30 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/EX7500-V1.0.1.76_1.0.80.zip
+WARNING  | 2023-04-18 20:29:22,733 | Yasat.main_cli | [90/581 (59 success, 31 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/FM114P Firmware version 1.3 (Release 05).zip
+WARNING  | 2023-04-18 20:29:22,735 | Yasat.main_cli | [91/581 (59 success, 32 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/Firmware version 3.24 for the RT311 and RT314.zip
+WARNING  | 2023-04-18 20:29:22,737 | Yasat.main_cli | [93/581 (60 success, 33 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/FR114P Firmware Version 1.5 Release 14.zip
+WARNING  | 2023-04-18 20:29:22,738 | Yasat.main_cli | [94/581 (60 success, 34 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/Firmware to Convert WG102 to WGL102 - Version 1.5.9 (North America).zip
+WARNING  | 2023-04-18 20:29:22,745 | Yasat.main_cli | [99/581 (64 success, 35 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/FR114W Firmware version 1.3 Release 05.zip
+WARNING  | 2023-04-18 20:29:22,748 | Yasat.main_cli | [100/581 (64 success, 36 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/FR314 Release Firmware Release 6.3.1.0.zip
+WARNING  | 2023-04-18 20:29:22,750 | Yasat.main_cli | [101/581 (64 success, 37 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/FR318 and FV318 Firmware Upgrade 6.3.1.0.zip
+WARNING  | 2023-04-18 20:29:22,751 | Yasat.main_cli | [102/581 (64 success, 38 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/FS726Tv2_FW_V1.0.0.16.zip
+WARNING  | 2023-04-18 20:29:22,754 | Yasat.main_cli | [103/581 (64 success, 39 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/FS728TLP_FS526Tv2_V1.0.1.23.zip
+WARNING  | 2023-04-18 20:29:22,754 | Yasat.main_cli | [104/581 (64 success, 40 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/FS726T_V2.0.1_14.zip
+WARNING  | 2023-04-18 20:29:22,755 | Yasat.main_cli | [105/581 (64 success, 41 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/FS728TLP_V1.0.1.36.zip
+WARNING  | 2023-04-18 20:29:22,756 | Yasat.main_cli | [106/581 (64 success, 42 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/FS728TP Firmware Version 5.0.0.8.zip
+WARNING  | 2023-04-18 20:29:22,757 | Yasat.main_cli | [107/581 (64 success, 43 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/FS728TS, FS752TS Firmware Version 3.1.0.1.zip
+WARNING  | 2023-04-18 20:29:22,758 | Yasat.main_cli | [108/581 (64 success, 44 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/FS728TPv2_V5.0.2.52.zip
+WARNING  | 2023-04-18 20:29:22,761 | Yasat.main_cli | [109/581 (64 success, 45 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/FS728TS, FS752TS, FS752TPS Firmware Version 3.0.0.30.zip
+WARNING  | 2023-04-18 20:29:22,763 | Yasat.main_cli | [110/581 (64 success, 46 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/FS728TS_FS752TS Firmware Version 3.1.0.1.zip
+WARNING  | 2023-04-18 20:29:22,765 | Yasat.main_cli | [111/581 (64 success, 47 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/FS752TP_V5.4.2.30.zip
+WARNING  | 2023-04-18 20:29:22,766 | Yasat.main_cli | [112/581 (64 success, 48 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/FSM726E Firmware Version 7.3.2.1.zip
+WARNING  | 2023-04-18 20:29:22,767 | Yasat.main_cli | [113/581 (64 success, 49 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/FSM7226RS_FSM7250RS Firmware Version 7.3.1.7.zip
+WARNING  | 2023-04-18 20:29:22,770 | Yasat.main_cli | [114/581 (64 success, 50 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/FVG318 Firmware Version 2.1.2-67 (North America).zip
+WARNING  | 2023-04-18 20:29:22,773 | Yasat.main_cli | [117/581 (66 success, 51 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/FVL328 Firmware Version 2.0_08.zip
+WARNING  | 2023-04-18 20:29:22,778 | Yasat.main_cli | [119/581 (67 success, 52 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/FVM318 Firmware Version R1.2.zip
+WARNING  | 2023-04-18 20:29:22,778 | Yasat.main_cli | [120/581 (67 success, 53 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/FVS114 Firmware Version 1.1_15.zip
+WARNING  | 2023-04-18 20:29:22,779 | Yasat.main_cli | [121/581 (67 success, 54 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/FVS124G Firmware V1.1.48.zip
+WARNING  | 2023-04-18 20:29:22,780 | Yasat.main_cli | [122/581 (67 success, 55 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/FVS318 Firmware Version 2.4.zip
+WARNING  | 2023-04-18 20:29:22,791 | Yasat.main_cli | [125/581 (69 success, 56 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/FVS328 Firmware Version 1.0.15.zip
+WARNING  | 2023-04-18 20:29:22,792 | Yasat.main_cli | [126/581 (69 success, 57 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/FVS318v3 Firmware Version 3.0_28.zip
+WARNING  | 2023-04-18 20:29:22,794 | Yasat.main_cli | [128/581 (70 success, 58 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/fvs336gv2_v4.3.3-6.zip
+WARNING  | 2023-04-18 20:29:22,795 | Yasat.main_cli | [129/581 (70 success, 59 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/FVS336Gv3_V4.3.5-3.zip
+WARNING  | 2023-04-18 20:29:22,802 | Yasat.main_cli | [130/581 (70 success, 60 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/FWG114Pv2 Firmware Version 1.2_07 (North America).zip
+WARNING  | 2023-04-18 20:29:22,804 | Yasat.main_cli | [131/581 (70 success, 61 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/FWAG114 Beta Version 1.0.29.zip
+WARNING  | 2023-04-18 20:29:22,805 | Yasat.main_cli | [132/581 (70 success, 62 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/FWG114P Firmware Version 2.0 Release 18.zip
+WARNING  | 2023-04-18 20:29:22,809 | Yasat.main_cli | [133/581 (70 success, 63 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/GA511 Initial Release Firmware.zip
+WARNING  | 2023-04-18 20:29:22,820 | Yasat.main_cli | [136/581 (72 success, 64 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/GS105E_V1.02.04.zip
+WARNING  | 2023-04-18 20:29:22,821 | Yasat.main_cli | [138/581 (73 success, 65 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/GS105Ev2_V1.6.0.10.zip
+WARNING  | 2023-04-18 20:29:22,825 | Yasat.main_cli | [139/581 (73 success, 66 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/GS105PE_V1.6.0.10.zip
+WARNING  | 2023-04-18 20:29:22,829 | Yasat.main_cli | [140/581 (73 success, 67 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/GS108E-Firmware Version-_1.00.09.zip
+WARNING  | 2023-04-18 20:29:22,830 | Yasat.main_cli | [141/581 (73 success, 68 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/GS108EV2_V1.00.12.zip
+WARNING  | 2023-04-18 20:29:22,834 | Yasat.main_cli | [142/581 (73 success, 69 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/GS108PE Firmware Version 1.00.09.zip
+WARNING  | 2023-04-18 20:29:22,836 | Yasat.main_cli | [143/581 (73 success, 70 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/GS108PEV2_V1.00.12.zip
+WARNING  | 2023-04-18 20:29:22,836 | Yasat.main_cli | [144/581 (73 success, 71 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/GS108Ev3_V2.06.16EN.zip
+WARNING  | 2023-04-18 20:29:22,841 | Yasat.main_cli | [145/581 (73 success, 72 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/GS108PEv3_V2.06.16EN.zip
+WARNING  | 2023-04-18 20:29:22,846 | Yasat.main_cli | [146/581 (73 success, 73 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/GS108Tv2_GS110TPv2_V5.4.2.36.zip
+WARNING  | 2023-04-18 20:29:22,852 | Yasat.main_cli | [148/581 (74 success, 74 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/GS110TP_GS108Tv2 Firmware Version 5.0.1.10.zip
+WARNING  | 2023-04-18 20:29:22,858 | Yasat.main_cli | [152/581 (77 success, 75 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/GS110T_V5.4.0.6.zip
+WARNING  | 2023-04-18 20:29:22,860 | Yasat.main_cli | [153/581 (77 success, 76 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/GS116E-v1.00.21.zip
+WARNING  | 2023-04-18 20:29:22,864 | Yasat.main_cli | [154/581 (77 success, 77 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/GS305EP_V1.0.0.10.zip
+WARNING  | 2023-04-18 20:29:22,865 | Yasat.main_cli | [155/581 (77 success, 78 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/GS305EPP_V1.0.0.10.zip
+WARNING  | 2023-04-18 20:29:22,865 | Yasat.main_cli | [156/581 (77 success, 79 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/GS305E_V1.0.0.9.zip
+WARNING  | 2023-04-18 20:29:22,869 | Yasat.main_cli | [157/581 (77 success, 80 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/GS308EPP_V1.0.0.10.zip
+WARNING  | 2023-04-18 20:29:22,870 | Yasat.main_cli | [158/581 (77 success, 81 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/GS308EP_V1.0.0.10.zip
+WARNING  | 2023-04-18 20:29:22,873 | Yasat.main_cli | [159/581 (77 success, 82 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/GS308E_V1.00.10EN.zip
+WARNING  | 2023-04-18 20:29:22,888 | Yasat.main_cli | [163/581 (80 success, 83 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/GS408EPP_V1.0.0.22.zip
+WARNING  | 2023-04-18 20:29:22,898 | Yasat.main_cli | [166/581 (82 success, 84 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/GS510TP_V5.4.2.30.zip
+WARNING  | 2023-04-18 20:29:22,900 | Yasat.main_cli | [167/581 (82 success, 85 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/GS516TP_V6.0.1.30.zip
+WARNING  | 2023-04-18 20:29:22,902 | Yasat.main_cli | [168/581 (82 success, 86 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/GS700TPS_TS_TS-V5.2.0.11.zip
+WARNING  | 2023-04-18 20:29:22,903 | Yasat.main_cli | [169/581 (82 success, 87 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/GS716T Firmware Version 1.1.8.zip
+WARNING  | 2023-04-18 20:29:22,912 | Yasat.main_cli | [172/581 (84 success, 88 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/GS716Tv2_GS724Tv3_V5.4.2.30.zip
+WARNING  | 2023-04-18 20:29:22,917 | Yasat.main_cli | [173/581 (84 success, 89 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/GS724AT, GS748AT Switch Firmware Version 4.0.1.1.zip
+WARNING  | 2023-04-18 20:29:22,919 | Yasat.main_cli | [175/581 (85 success, 90 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/GS724AT_GS748AT Switch Firmware Version 4.0.1.1.zip
+WARNING  | 2023-04-18 20:29:22,921 | Yasat.main_cli | [176/581 (85 success, 91 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/GS724T Firmware Version 1.2.3.zip
+WARNING  | 2023-04-18 20:29:22,932 | Yasat.main_cli | [179/581 (87 success, 92 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/gs724tv2_1_0_3_33.zip
+WARNING  | 2023-04-18 20:29:22,933 | Yasat.main_cli | [180/581 (87 success, 93 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/GS724_748TP-V5.2.0.11.zip
+WARNING  | 2023-04-18 20:29:22,934 | Yasat.main_cli | [181/581 (87 success, 94 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/GS728TP_GS728TPP_GS752TP_V6.0.1.30.zip
+WARNING  | 2023-04-18 20:29:22,948 | Yasat.main_cli | [185/581 (90 success, 95 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/GS728TX_GS728TXP_GS752TX_GS752TXP_V6.6.4.28.zip
+WARNING  | 2023-04-18 20:29:22,953 | Yasat.main_cli | [187/581 (91 success, 96 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/GS748Tv4_V5.4.2.30.zip
+WARNING  | 2023-04-18 20:29:22,963 | Yasat.main_cli | [190/581 (93 success, 97 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/GS808E_V1.7.1.0.zip
+WARNING  | 2023-04-18 20:29:22,964 | Yasat.main_cli | [191/581 (93 success, 98 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/GS908E_V1.7.0.3.zip
+WARNING  | 2023-04-18 20:29:22,978 | Yasat.main_cli | [195/581 (96 success, 99 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/GSM7212 Firmware Version 6.3.3.7.zip
+WARNING  | 2023-04-18 20:29:22,981 | Yasat.main_cli | [197/581 (97 success, 100 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/GSM7224 Firmware Version 6.2.0.14.zip
+WARNING  | 2023-04-18 20:29:22,986 | Yasat.main_cli | [199/581 (98 success, 101 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/GSM7224R, GSM7248R Firmware Version 7.3.1.7.zip
+WARNING  | 2023-04-18 20:29:22,994 | Yasat.main_cli | [201/581 (99 success, 102 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/GSM7300S_7200PS_V10.0.0.53.zip
+WARNING  | 2023-04-18 20:29:22,995 | Yasat.main_cli | [202/581 (99 success, 103 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/GSM7328S-FS-7352S_V8.0.3.49.zip
+WARNING  | 2023-04-18 20:29:22,996 | Yasat.main_cli | [203/581 (99 success, 104 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/GSM7324 Firmware Version 6.3.3.6.zip
+WARNING  | 2023-04-18 20:29:23,009 | Yasat.main_cli | [207/581 (102 success, 105 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/GSS108EPP_V1.0.0.22.zip
+WARNING  | 2023-04-18 20:29:23,010 | Yasat.main_cli | [208/581 (102 success, 106 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/GSS108E_V1.6.0.9.zip
+WARNING  | 2023-04-18 20:29:23,012 | Yasat.main_cli | [209/581 (102 success, 107 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/HDX111 Firmware Version 4.4.9.zip
+WARNING  | 2023-04-18 20:29:23,013 | Yasat.main_cli | [210/581 (102 success, 108 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/HR314 Firmware version 1.4.2.zip
+WARNING  | 2023-04-18 20:29:23,022 | Yasat.main_cli | [211/581 (102 success, 109 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/JGS524E-v1.00.21.zip
+WARNING  | 2023-04-18 20:29:23,023 | Yasat.main_cli | [212/581 (102 success, 110 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/JGS516PE_GS116Ev2_V2.6.0.48.zip
+WARNING  | 2023-04-18 20:29:23,024 | Yasat.main_cli | [213/581 (102 success, 111 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/JGS524PE_JGS524Ev2_V2.6.0.48.zip
+WARNING  | 2023-04-18 20:29:23,057 | Yasat.main_cli | [219/581 (107 success, 112 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/LAX20-V1.1.6.28_2.0.49.zip
