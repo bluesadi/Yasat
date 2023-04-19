@@ -1,15 +1,59 @@
-ERROR    | 2023-04-18 20:35:07,518 | Yasat.main_cli | Traceback (most recent call last):
-  File "/home/bluesadi/Yasat/Yasat/main_cli.py", line 141, in main_cli
-    subjects = _collect_subjects()
-  File "/home/bluesadi/Yasat/Yasat/main_cli.py", line 136, in _collect_subjects
-    result.wait()
-  File "/usr/lib/python3.8/multiprocessing/pool.py", line 762, in wait
-    self._event.wait(timeout)
-  File "/usr/lib/python3.8/threading.py", line 558, in wait
-    signaled = self._cond.wait(timeout)
-  File "/usr/lib/python3.8/threading.py", line 302, in wait
-    waiter.acquire()
-  File "/home/bluesadi/virtualenvs/Yasat/lib/python3.8/site-packages/claripy/backends/backend_z3.py", line 34, in handle_sigint
+ERROR    | 2023-04-19 16:35:04,264 | Yasat.main_cli | Analyzing tests_dev/tmp/Netgear/_R6080_V1.0.0.48.zip.extracted/_R6080_V1.0.0.48.img.extracted/_R6020.bin.extracted/squashfs-root/lib/libzebra.so.0 failed with exception
+ERROR    | 2023-04-19 16:35:04,267 | Yasat.main_cli | Traceback (most recent call last):
+  File "/home/bluesadi/dev/Yasat/Yasat/main_cli.py", line 59, in _analysis_worker
+    task.start(global_state)
+  File "/home/bluesadi/dev/Yasat/Yasat/task.py", line 57, in start
+    if any(proj.kb.subject.resolve_external_function(target_api) is not None
+  File "/home/bluesadi/dev/Yasat/Yasat/task.py", line 57, in <genexpr>
+    if any(proj.kb.subject.resolve_external_function(target_api) is not None
+  File "/home/bluesadi/dev/Yasat/Yasat/knowledge_plugins/subject.py", line 75, in resolve_external_function
+    return symbol.resolvedby.rebased_addr
+AttributeError: 'NoneType' object has no attribute 'rebased_addr'
+
+ERROR    | 2023-04-19 16:35:55,470 | Yasat.main_cli | Analyzing tests_dev/tmp/Netgear/_WNDR4300-V1.0.2.104.zip.extracted/_WNDR4300-V1.0.2.104.img.extracted/squashfs-root/usr/sbin/smbd failed with exception
+ERROR    | 2023-04-19 16:35:55,470 | Yasat.main_cli | Analyzing tests_dev/tmp/Netgear/_WNDR4300-V1.0.2.104.zip.extracted/_WNDR4300-V1.0.2.104.img.extracted/squashfs-root/usr/sbin/proftpd failed with exception
+ERROR    | 2023-04-19 16:35:55,470 | Yasat.analyses.backward_slicing.engine_ail | Error occured when handling /home/bluesadi/dev/Yasat/tests_dev/tmp/Netgear/_R6080_V1.0.0.48.zip.extracted/_R6080_V1.0.0.48.img.extracted/_R6020.bin.extracted/squashfs-root/usr/sbin/pppd
+ERROR    | 2023-04-19 16:35:55,470 | Yasat.main_cli | Analyzing tests_dev/tmp/Netgear/_WNDR4300-V1.0.2.104.zip.extracted/_WNDR4300-V1.0.2.104.img.extracted/squashfs-root/usr/sbin/pppd failed with exception
+ERROR    | 2023-04-19 16:35:55,471 | Yasat.main_cli | Analyzing tests_dev/tmp/Netgear/_JNR3210_V1.1.0.30_1.0.2.zip.extracted/_JNR3210-V1.1.0.30_1.0.2.img.extracted/_JNR3210.bin.extracted/squashfs-root/lib/libzebra.so.0 failed with exception
+ERROR    | 2023-04-19 16:35:55,471 | Yasat.main_cli | Analyzing tests_dev/tmp/Netgear/_GC110_GC110P_GC510P_GC510PP_V1.0.5.36.zip.extracted/_GC110_510_v1.0.5.36.stk.extracted/_2798C0.extracted/_restAgent.tar.gz.extracted/_0.extracted/bin/openssl failed with exception
+ERROR    | 2023-04-19 16:35:55,471 | Yasat.analyses.backward_slicing.engine_ail | Error occured when handling statment: 0x41e660 | v0<4> = (0x45729c<32> + Load(addr=stack_base-56, size=4, endness=Iend_LE))
+ERROR    | 2023-04-19 16:35:55,475 | Yasat.main_cli | Traceback (most recent call last):
+  File "/home/bluesadi/dev/Yasat/Yasat/main_cli.py", line 221, in main_cli
+    _analyze_subjects()
+  File "/home/bluesadi/dev/Yasat/Yasat/main_cli.py", line 219, in _analyze_subjects
+    time.sleep(1)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/claripy/backends/backend_z3.py", line 34, in handle_sigint
+    raise KeyboardInterrupt()
+KeyboardInterrupt
+
+ERROR    | 2023-04-19 16:35:55,481 | Yasat.analyses.backward_slicing.engine_ail | Traceback (most recent call last):
+  File "/home/bluesadi/dev/Yasat/Yasat/analyses/backward_slicing/engine_ail.py", line 76, in _process_Stmt
+    self._handle_Stmt(stmt)
+  File "/home/bluesadi/dev/Yasat/Yasat/analyses/backward_slicing/engine_ail.py", line 95, in _handle_Stmt
+    handler(stmt)
+  File "/home/bluesadi/dev/Yasat/Yasat/analyses/backward_slicing/engine_ail.py", line 134, in _ail_handle_Assignment
+    src = self._expr(stmt.src, bits)
+  File "/home/bluesadi/dev/Yasat/Yasat/analyses/backward_slicing/engine_ail.py", line 112, in _expr
+    result = handler(expr)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/engines/light/engine.py", line 935, in _ail_handle_BinaryOp
+    return handler(expr)
+  File "/home/bluesadi/dev/Yasat/Yasat/analyses/backward_slicing/engine_ail.py", line 246, in _ail_handle_Add
+    return self._calc_BinaryOp(expr, lambda v0, v1: v0 + v1)
+  File "/home/bluesadi/dev/Yasat/Yasat/analyses/backward_slicing/engine_ail.py", line 239, in _calc_BinaryOp
+    values.add(op_func(op0_v, op1_v))
+  File "/home/bluesadi/dev/Yasat/Yasat/analyses/backward_slicing/engine_ail.py", line 246, in <lambda>
+    return self._calc_BinaryOp(expr, lambda v0, v1: v0 + v1)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/claripy/operations.py", line 57, in _op
+    simp = _handle_annotations(simplifications.simpleton.simplify(name, fixed_args), args)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/claripy/simplifications.py", line 41, in simplify
+    return self._simplifiers[op](*args)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/claripy/simplifications.py", line 500, in bitwise_add_simplifier
+    return SimplificationManager._flatten_simplifier(
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/claripy/simplifications.py", line 482, in _flatten_simplifier
+    variables = frozenset(itertools.chain.from_iterable(a.variables for a in args if isinstance(a, ast.Base)))
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/claripy/simplifications.py", line 482, in <genexpr>
+    variables = frozenset(itertools.chain.from_iterable(a.variables for a in args if isinstance(a, ast.Base)))
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/claripy/backends/backend_z3.py", line 34, in handle_sigint
     raise KeyboardInterrupt()
 KeyboardInterrupt
 

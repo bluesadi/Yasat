@@ -1,103 +1,421 @@
-WARNING  | 2023-04-18 21:42:48,452 | Yasat.analyses.backward_slicing.engine_ail | Unusual expression Mull: (0x55e63b89<32> Mull Load(addr=stack_base-36, size=4, endness=Iend_LE))
-WARNING  | 2023-04-18 21:42:48,454 | Yasat.analyses.backward_slicing.engine_ail | Unusual expression Mull: (0x55e63b89<32> Mull Load(addr=stack_base-36, size=4, endness=Iend_LE))
-WARNING  | 2023-04-18 21:43:13,177 | Yasat.analyses.backward_slicing.engine_ail | Unusual expression Mull: (0xc22e4507<32> Mulls r0<4>)
-WARNING  | 2023-04-18 21:43:35,737 | Yasat.knowledge_plugins.clinic_manager | Failed to build AIL graph for sub_410d84 (1/2)
-WARNING  | 2023-04-18 21:43:35,741 | Yasat.knowledge_plugins.clinic_manager | Traceback (most recent call last):
-  File "/home/bluesadi/Yasat/Yasat/knowledge_plugins/clinic_manager.py", line 43, in get_clinic
+WARNING  | 2023-04-19 13:05:02,524 | Yasat.knowledge_plugins.clinic_manager | Failed to build AIL graph for sub_ea6c (1/2)
+WARNING  | 2023-04-19 13:05:02,531 | Yasat.knowledge_plugins.clinic_manager | Traceback (most recent call last):
+  File "/home/bluesadi/dev/Yasat/Yasat/knowledge_plugins/clinic_manager.py", line 43, in get_clinic
     clinic = self._proj.analyses.Clinic(
-  File "/home/bluesadi/virtualenvs/Yasat/lib/python3.8/site-packages/angr/analyses/analysis.py", line 143, in __call__
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/analysis.py", line 143, in __call__
     r = w(*args, **kwargs)
-  File "/home/bluesadi/virtualenvs/Yasat/lib/python3.8/site-packages/angr/analyses/analysis.py", line 128, in wrapper
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/analysis.py", line 128, in wrapper
     oself.__init__(*args, **kwargs)
-  File "/home/bluesadi/virtualenvs/Yasat/lib/python3.8/site-packages/angr/analyses/decompiler/clinic.py", line 108, in __init__
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/decompiler/clinic.py", line 108, in __init__
     self._analyze()
-  File "/home/bluesadi/virtualenvs/Yasat/lib/python3.8/site-packages/angr/analyses/decompiler/clinic.py", line 255, in _analyze
-    _, stackarg_offsets = self._make_callsites(ail_graph, stack_pointer_tracker=spt)
-  File "/home/bluesadi/virtualenvs/Yasat/lib/python3.8/site-packages/angr/utils/timing.py", line 36, in timed_func
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/decompiler/clinic.py", line 163, in _analyze
+    self._recover_calling_conventions()
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/utils/timing.py", line 36, in timed_func
     return func(*args, **kwargs)
-  File "/home/bluesadi/virtualenvs/Yasat/lib/python3.8/site-packages/angr/analyses/decompiler/clinic.py", line 864, in _make_callsites
-    AILGraphWalker(ail_graph, _handler, replace_nodes=True).walk()
-  File "/home/bluesadi/virtualenvs/Yasat/lib/python3.8/site-packages/angr/analyses/decompiler/ailgraph_walker.py", line 21, in walk
-    r = self.handler(node)
-  File "/home/bluesadi/virtualenvs/Yasat/lib/python3.8/site-packages/angr/analyses/decompiler/clinic.py", line 843, in _handler
-    csm = self.project.analyses.AILCallSiteMaker(
-  File "/home/bluesadi/virtualenvs/Yasat/lib/python3.8/site-packages/angr/analyses/analysis.py", line 143, in __call__
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/decompiler/clinic.py", line 432, in _recover_calling_conventions
+    cc = self.project.analyses.CallingConvention(
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/analysis.py", line 143, in __call__
     r = w(*args, **kwargs)
-  File "/home/bluesadi/virtualenvs/Yasat/lib/python3.8/site-packages/angr/analyses/analysis.py", line 128, in wrapper
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/analysis.py", line 128, in wrapper
     oself.__init__(*args, **kwargs)
-  File "/home/bluesadi/virtualenvs/Yasat/lib/python3.8/site-packages/angr/analyses/decompiler/callsite_maker.py", line 40, in __init__
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/calling_convention.py", line 143, in __init__
+    self._analyze_callsite_only()
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/calling_convention.py", line 231, in _analyze_callsite_only
+    self._analyze_callsite(
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/calling_convention.py", line 379, in _analyze_callsite
+    fact = self._collect_callsite_fact(
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/calling_convention.py", line 500, in _collect_callsite_fact
+    self._analyze_callsite_arguments(cc, caller_block_addr, call_insn_addr, rda, fact)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/calling_convention.py", line 548, in _analyze_callsite_arguments
+    state = rda.observed_results[("insn", call_insn_addr, OP_BEFORE)]
+KeyError: ('insn', 0, <ObservationPointType.OP_BEFORE: 0>)
+
+WARNING  | 2023-04-19 13:05:02,538 | Yasat.knowledge_plugins.clinic_manager | Failed to build AIL graph for sub_ea6c (2/2)
+WARNING  | 2023-04-19 13:05:02,539 | Yasat.knowledge_plugins.clinic_manager | Traceback (most recent call last):
+  File "/home/bluesadi/dev/Yasat/Yasat/knowledge_plugins/clinic_manager.py", line 43, in get_clinic
+    clinic = self._proj.analyses.Clinic(
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/analysis.py", line 143, in __call__
+    r = w(*args, **kwargs)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/analysis.py", line 128, in wrapper
+    oself.__init__(*args, **kwargs)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/decompiler/clinic.py", line 108, in __init__
     self._analyze()
-  File "/home/bluesadi/virtualenvs/Yasat/lib/python3.8/site-packages/angr/analyses/decompiler/callsite_maker.py", line 122, in _analyze
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/decompiler/clinic.py", line 163, in _analyze
+    self._recover_calling_conventions()
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/utils/timing.py", line 36, in timed_func
+    return func(*args, **kwargs)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/decompiler/clinic.py", line 432, in _recover_calling_conventions
+    cc = self.project.analyses.CallingConvention(
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/analysis.py", line 143, in __call__
+    r = w(*args, **kwargs)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/analysis.py", line 128, in wrapper
+    oself.__init__(*args, **kwargs)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/calling_convention.py", line 143, in __init__
+    self._analyze_callsite_only()
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/calling_convention.py", line 231, in _analyze_callsite_only
+    self._analyze_callsite(
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/calling_convention.py", line 379, in _analyze_callsite
+    fact = self._collect_callsite_fact(
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/calling_convention.py", line 500, in _collect_callsite_fact
+    self._analyze_callsite_arguments(cc, caller_block_addr, call_insn_addr, rda, fact)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/calling_convention.py", line 548, in _analyze_callsite_arguments
+    state = rda.observed_results[("insn", call_insn_addr, OP_BEFORE)]
+KeyError: ('insn', 0, <ObservationPointType.OP_BEFORE: 0>)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/bluesadi/dev/Yasat/Yasat/knowledge_plugins/clinic_manager.py", line 52, in get_clinic
+    clinic = self._proj.analyses.Clinic(func,
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/analysis.py", line 143, in __call__
+    r = w(*args, **kwargs)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/analysis.py", line 128, in wrapper
+    oself.__init__(*args, **kwargs)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/decompiler/clinic.py", line 108, in __init__
+    self._analyze()
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/decompiler/clinic.py", line 163, in _analyze
+    self._recover_calling_conventions()
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/utils/timing.py", line 36, in timed_func
+    return func(*args, **kwargs)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/decompiler/clinic.py", line 432, in _recover_calling_conventions
+    cc = self.project.analyses.CallingConvention(
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/analysis.py", line 143, in __call__
+    r = w(*args, **kwargs)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/analysis.py", line 128, in wrapper
+    oself.__init__(*args, **kwargs)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/calling_convention.py", line 143, in __init__
+    self._analyze_callsite_only()
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/calling_convention.py", line 231, in _analyze_callsite_only
+    self._analyze_callsite(
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/calling_convention.py", line 379, in _analyze_callsite
+    fact = self._collect_callsite_fact(
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/calling_convention.py", line 500, in _collect_callsite_fact
+    self._analyze_callsite_arguments(cc, caller_block_addr, call_insn_addr, rda, fact)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/calling_convention.py", line 548, in _analyze_callsite_arguments
+    state = rda.observed_results[("insn", call_insn_addr, OP_BEFORE)]
+KeyError: ('insn', 0, <ObservationPointType.OP_BEFORE: 0>)
+
+WARNING  | 2023-04-19 13:05:19,444 | Yasat.analyses.backward_slicing.engine_ail | Unusual expression Mull: (0x55e63b89<32> Mull Load(addr=stack_base-36, size=4, endness=Iend_LE))
+WARNING  | 2023-04-19 13:05:19,445 | Yasat.analyses.backward_slicing.engine_ail | Unusual expression Mull: (0x55e63b89<32> Mull Load(addr=stack_base-36, size=4, endness=Iend_LE))
+WARNING  | 2023-04-19 13:05:19,888 | Yasat.knowledge_plugins.clinic_manager | Failed to build AIL graph for lcp_close (1/2)
+WARNING  | 2023-04-19 13:05:19,891 | Yasat.knowledge_plugins.clinic_manager | Traceback (most recent call last):
+  File "/home/bluesadi/dev/Yasat/Yasat/knowledge_plugins/clinic_manager.py", line 43, in get_clinic
+    clinic = self._proj.analyses.Clinic(
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/analysis.py", line 143, in __call__
+    r = w(*args, **kwargs)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/analysis.py", line 128, in wrapper
+    oself.__init__(*args, **kwargs)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/decompiler/clinic.py", line 108, in __init__
+    self._analyze()
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/decompiler/clinic.py", line 163, in _analyze
+    self._recover_calling_conventions()
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/utils/timing.py", line 36, in timed_func
+    return func(*args, **kwargs)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/decompiler/clinic.py", line 432, in _recover_calling_conventions
+    cc = self.project.analyses.CallingConvention(
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/analysis.py", line 143, in __call__
+    r = w(*args, **kwargs)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/analysis.py", line 128, in wrapper
+    oself.__init__(*args, **kwargs)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/calling_convention.py", line 143, in __init__
+    self._analyze_callsite_only()
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/calling_convention.py", line 231, in _analyze_callsite_only
+    self._analyze_callsite(
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/calling_convention.py", line 379, in _analyze_callsite
+    fact = self._collect_callsite_fact(
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/calling_convention.py", line 500, in _collect_callsite_fact
+    self._analyze_callsite_arguments(cc, caller_block_addr, call_insn_addr, rda, fact)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/calling_convention.py", line 548, in _analyze_callsite_arguments
+    state = rda.observed_results[("insn", call_insn_addr, OP_BEFORE)]
+KeyError: ('insn', 0, <ObservationPointType.OP_BEFORE: 0>)
+
+WARNING  | 2023-04-19 13:05:19,899 | Yasat.knowledge_plugins.clinic_manager | Failed to build AIL graph for lcp_close (2/2)
+WARNING  | 2023-04-19 13:05:19,899 | Yasat.knowledge_plugins.clinic_manager | Traceback (most recent call last):
+  File "/home/bluesadi/dev/Yasat/Yasat/knowledge_plugins/clinic_manager.py", line 43, in get_clinic
+    clinic = self._proj.analyses.Clinic(
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/analysis.py", line 143, in __call__
+    r = w(*args, **kwargs)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/analysis.py", line 128, in wrapper
+    oself.__init__(*args, **kwargs)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/decompiler/clinic.py", line 108, in __init__
+    self._analyze()
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/decompiler/clinic.py", line 163, in _analyze
+    self._recover_calling_conventions()
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/utils/timing.py", line 36, in timed_func
+    return func(*args, **kwargs)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/decompiler/clinic.py", line 432, in _recover_calling_conventions
+    cc = self.project.analyses.CallingConvention(
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/analysis.py", line 143, in __call__
+    r = w(*args, **kwargs)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/analysis.py", line 128, in wrapper
+    oself.__init__(*args, **kwargs)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/calling_convention.py", line 143, in __init__
+    self._analyze_callsite_only()
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/calling_convention.py", line 231, in _analyze_callsite_only
+    self._analyze_callsite(
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/calling_convention.py", line 379, in _analyze_callsite
+    fact = self._collect_callsite_fact(
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/calling_convention.py", line 500, in _collect_callsite_fact
+    self._analyze_callsite_arguments(cc, caller_block_addr, call_insn_addr, rda, fact)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/calling_convention.py", line 548, in _analyze_callsite_arguments
+    state = rda.observed_results[("insn", call_insn_addr, OP_BEFORE)]
+KeyError: ('insn', 0, <ObservationPointType.OP_BEFORE: 0>)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/bluesadi/dev/Yasat/Yasat/knowledge_plugins/clinic_manager.py", line 52, in get_clinic
+    clinic = self._proj.analyses.Clinic(func,
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/analysis.py", line 143, in __call__
+    r = w(*args, **kwargs)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/analysis.py", line 128, in wrapper
+    oself.__init__(*args, **kwargs)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/decompiler/clinic.py", line 108, in __init__
+    self._analyze()
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/decompiler/clinic.py", line 163, in _analyze
+    self._recover_calling_conventions()
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/utils/timing.py", line 36, in timed_func
+    return func(*args, **kwargs)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/decompiler/clinic.py", line 432, in _recover_calling_conventions
+    cc = self.project.analyses.CallingConvention(
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/analysis.py", line 143, in __call__
+    r = w(*args, **kwargs)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/analysis.py", line 128, in wrapper
+    oself.__init__(*args, **kwargs)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/calling_convention.py", line 143, in __init__
+    self._analyze_callsite_only()
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/calling_convention.py", line 231, in _analyze_callsite_only
+    self._analyze_callsite(
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/calling_convention.py", line 379, in _analyze_callsite
+    fact = self._collect_callsite_fact(
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/calling_convention.py", line 500, in _collect_callsite_fact
+    self._analyze_callsite_arguments(cc, caller_block_addr, call_insn_addr, rda, fact)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/calling_convention.py", line 548, in _analyze_callsite_arguments
+    state = rda.observed_results[("insn", call_insn_addr, OP_BEFORE)]
+KeyError: ('insn', 0, <ObservationPointType.OP_BEFORE: 0>)
+
+WARNING  | 2023-04-19 13:05:23,385 | Yasat.analyses.backward_slicing.engine_ail | Unusual expression Mull: (0xc22e4507<32> Mulls r0<4>)
+WARNING  | 2023-04-19 13:05:23,666 | Yasat.knowledge_plugins.clinic_manager | Failed to build AIL graph for sub_40434c (1/2)
+WARNING  | 2023-04-19 13:05:23,668 | Yasat.knowledge_plugins.clinic_manager | Traceback (most recent call last):
+  File "/home/bluesadi/dev/Yasat/Yasat/knowledge_plugins/clinic_manager.py", line 43, in get_clinic
+    clinic = self._proj.analyses.Clinic(
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/analysis.py", line 143, in __call__
+    r = w(*args, **kwargs)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/analysis.py", line 128, in wrapper
+    oself.__init__(*args, **kwargs)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/decompiler/clinic.py", line 108, in __init__
+    self._analyze()
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/decompiler/clinic.py", line 163, in _analyze
+    self._recover_calling_conventions()
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/utils/timing.py", line 36, in timed_func
+    return func(*args, **kwargs)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/decompiler/clinic.py", line 432, in _recover_calling_conventions
+    cc = self.project.analyses.CallingConvention(
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/analysis.py", line 143, in __call__
+    r = w(*args, **kwargs)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/analysis.py", line 128, in wrapper
+    oself.__init__(*args, **kwargs)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/calling_convention.py", line 143, in __init__
+    self._analyze_callsite_only()
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/calling_convention.py", line 231, in _analyze_callsite_only
+    self._analyze_callsite(
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/calling_convention.py", line 379, in _analyze_callsite
+    fact = self._collect_callsite_fact(
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/calling_convention.py", line 500, in _collect_callsite_fact
+    self._analyze_callsite_arguments(cc, caller_block_addr, call_insn_addr, rda, fact)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/calling_convention.py", line 548, in _analyze_callsite_arguments
+    state = rda.observed_results[("insn", call_insn_addr, OP_BEFORE)]
+KeyError: ('insn', 0, <ObservationPointType.OP_BEFORE: 0>)
+
+WARNING  | 2023-04-19 13:05:23,674 | Yasat.knowledge_plugins.clinic_manager | Failed to build AIL graph for sub_40434c (2/2)
+WARNING  | 2023-04-19 13:05:23,675 | Yasat.knowledge_plugins.clinic_manager | Traceback (most recent call last):
+  File "/home/bluesadi/dev/Yasat/Yasat/knowledge_plugins/clinic_manager.py", line 43, in get_clinic
+    clinic = self._proj.analyses.Clinic(
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/analysis.py", line 143, in __call__
+    r = w(*args, **kwargs)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/analysis.py", line 128, in wrapper
+    oself.__init__(*args, **kwargs)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/decompiler/clinic.py", line 108, in __init__
+    self._analyze()
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/decompiler/clinic.py", line 163, in _analyze
+    self._recover_calling_conventions()
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/utils/timing.py", line 36, in timed_func
+    return func(*args, **kwargs)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/decompiler/clinic.py", line 432, in _recover_calling_conventions
+    cc = self.project.analyses.CallingConvention(
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/analysis.py", line 143, in __call__
+    r = w(*args, **kwargs)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/analysis.py", line 128, in wrapper
+    oself.__init__(*args, **kwargs)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/calling_convention.py", line 143, in __init__
+    self._analyze_callsite_only()
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/calling_convention.py", line 231, in _analyze_callsite_only
+    self._analyze_callsite(
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/calling_convention.py", line 379, in _analyze_callsite
+    fact = self._collect_callsite_fact(
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/calling_convention.py", line 500, in _collect_callsite_fact
+    self._analyze_callsite_arguments(cc, caller_block_addr, call_insn_addr, rda, fact)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/calling_convention.py", line 548, in _analyze_callsite_arguments
+    state = rda.observed_results[("insn", call_insn_addr, OP_BEFORE)]
+KeyError: ('insn', 0, <ObservationPointType.OP_BEFORE: 0>)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/bluesadi/dev/Yasat/Yasat/knowledge_plugins/clinic_manager.py", line 52, in get_clinic
+    clinic = self._proj.analyses.Clinic(func,
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/analysis.py", line 143, in __call__
+    r = w(*args, **kwargs)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/analysis.py", line 128, in wrapper
+    oself.__init__(*args, **kwargs)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/decompiler/clinic.py", line 108, in __init__
+    self._analyze()
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/decompiler/clinic.py", line 163, in _analyze
+    self._recover_calling_conventions()
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/utils/timing.py", line 36, in timed_func
+    return func(*args, **kwargs)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/decompiler/clinic.py", line 432, in _recover_calling_conventions
+    cc = self.project.analyses.CallingConvention(
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/analysis.py", line 143, in __call__
+    r = w(*args, **kwargs)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/analysis.py", line 128, in wrapper
+    oself.__init__(*args, **kwargs)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/calling_convention.py", line 143, in __init__
+    self._analyze_callsite_only()
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/calling_convention.py", line 231, in _analyze_callsite_only
+    self._analyze_callsite(
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/calling_convention.py", line 379, in _analyze_callsite
+    fact = self._collect_callsite_fact(
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/calling_convention.py", line 500, in _collect_callsite_fact
+    self._analyze_callsite_arguments(cc, caller_block_addr, call_insn_addr, rda, fact)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/calling_convention.py", line 548, in _analyze_callsite_arguments
+    state = rda.observed_results[("insn", call_insn_addr, OP_BEFORE)]
+KeyError: ('insn', 0, <ObservationPointType.OP_BEFORE: 0>)
+
+WARNING  | 2023-04-19 13:05:26,306 | Yasat.knowledge_plugins.clinic_manager | Failed to build AIL graph for sub_ea6c (1/2)
+WARNING  | 2023-04-19 13:05:26,307 | Yasat.knowledge_plugins.clinic_manager | Traceback (most recent call last):
+  File "/home/bluesadi/dev/Yasat/Yasat/knowledge_plugins/clinic_manager.py", line 43, in get_clinic
+    clinic = self._proj.analyses.Clinic(
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/analysis.py", line 143, in __call__
+    r = w(*args, **kwargs)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/analysis.py", line 128, in wrapper
+    oself.__init__(*args, **kwargs)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/decompiler/clinic.py", line 108, in __init__
+    self._analyze()
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/decompiler/clinic.py", line 163, in _analyze
+    self._recover_calling_conventions()
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/utils/timing.py", line 36, in timed_func
+    return func(*args, **kwargs)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/decompiler/clinic.py", line 432, in _recover_calling_conventions
+    cc = self.project.analyses.CallingConvention(
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/analysis.py", line 143, in __call__
+    r = w(*args, **kwargs)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/analysis.py", line 128, in wrapper
+    oself.__init__(*args, **kwargs)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/calling_convention.py", line 143, in __init__
+    self._analyze_callsite_only()
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/calling_convention.py", line 231, in _analyze_callsite_only
+    self._analyze_callsite(
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/calling_convention.py", line 379, in _analyze_callsite
+    fact = self._collect_callsite_fact(
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/calling_convention.py", line 500, in _collect_callsite_fact
+    self._analyze_callsite_arguments(cc, caller_block_addr, call_insn_addr, rda, fact)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/calling_convention.py", line 548, in _analyze_callsite_arguments
+    state = rda.observed_results[("insn", call_insn_addr, OP_BEFORE)]
+KeyError: ('insn', 0, <ObservationPointType.OP_BEFORE: 0>)
+
+WARNING  | 2023-04-19 13:05:26,310 | Yasat.knowledge_plugins.clinic_manager | Failed to build AIL graph for sub_ea6c (2/2)
+WARNING  | 2023-04-19 13:05:26,311 | Yasat.knowledge_plugins.clinic_manager | Traceback (most recent call last):
+  File "/home/bluesadi/dev/Yasat/Yasat/knowledge_plugins/clinic_manager.py", line 43, in get_clinic
+    clinic = self._proj.analyses.Clinic(
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/analysis.py", line 143, in __call__
+    r = w(*args, **kwargs)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/analysis.py", line 128, in wrapper
+    oself.__init__(*args, **kwargs)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/decompiler/clinic.py", line 108, in __init__
+    self._analyze()
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/decompiler/clinic.py", line 163, in _analyze
+    self._recover_calling_conventions()
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/utils/timing.py", line 36, in timed_func
+    return func(*args, **kwargs)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/decompiler/clinic.py", line 432, in _recover_calling_conventions
+    cc = self.project.analyses.CallingConvention(
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/analysis.py", line 143, in __call__
+    r = w(*args, **kwargs)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/analysis.py", line 128, in wrapper
+    oself.__init__(*args, **kwargs)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/calling_convention.py", line 143, in __init__
+    self._analyze_callsite_only()
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/calling_convention.py", line 231, in _analyze_callsite_only
+    self._analyze_callsite(
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/calling_convention.py", line 379, in _analyze_callsite
+    fact = self._collect_callsite_fact(
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/calling_convention.py", line 500, in _collect_callsite_fact
+    self._analyze_callsite_arguments(cc, caller_block_addr, call_insn_addr, rda, fact)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/calling_convention.py", line 548, in _analyze_callsite_arguments
+    state = rda.observed_results[("insn", call_insn_addr, OP_BEFORE)]
+KeyError: ('insn', 0, <ObservationPointType.OP_BEFORE: 0>)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/bluesadi/dev/Yasat/Yasat/knowledge_plugins/clinic_manager.py", line 52, in get_clinic
+    clinic = self._proj.analyses.Clinic(func,
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/analysis.py", line 143, in __call__
+    r = w(*args, **kwargs)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/analysis.py", line 128, in wrapper
+    oself.__init__(*args, **kwargs)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/decompiler/clinic.py", line 108, in __init__
+    self._analyze()
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/decompiler/clinic.py", line 163, in _analyze
+    self._recover_calling_conventions()
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/utils/timing.py", line 36, in timed_func
+    return func(*args, **kwargs)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/decompiler/clinic.py", line 432, in _recover_calling_conventions
+    cc = self.project.analyses.CallingConvention(
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/analysis.py", line 143, in __call__
+    r = w(*args, **kwargs)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/analysis.py", line 128, in wrapper
+    oself.__init__(*args, **kwargs)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/calling_convention.py", line 143, in __init__
+    self._analyze_callsite_only()
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/calling_convention.py", line 231, in _analyze_callsite_only
+    self._analyze_callsite(
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/calling_convention.py", line 379, in _analyze_callsite
+    fact = self._collect_callsite_fact(
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/calling_convention.py", line 500, in _collect_callsite_fact
+    self._analyze_callsite_arguments(cc, caller_block_addr, call_insn_addr, rda, fact)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/calling_convention.py", line 548, in _analyze_callsite_arguments
+    state = rda.observed_results[("insn", call_insn_addr, OP_BEFORE)]
+KeyError: ('insn', 0, <ObservationPointType.OP_BEFORE: 0>)
+
+WARNING  | 2023-04-19 13:05:39,828 | Yasat.knowledge_plugins.clinic_manager | Failed to build AIL graph for sub_410d84 (1/2)
+WARNING  | 2023-04-19 13:05:39,833 | Yasat.knowledge_plugins.clinic_manager | Traceback (most recent call last):
+  File "/home/bluesadi/dev/Yasat/Yasat/knowledge_plugins/clinic_manager.py", line 43, in get_clinic
+    clinic = self._proj.analyses.Clinic(
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/analysis.py", line 143, in __call__
+    r = w(*args, **kwargs)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/analysis.py", line 128, in wrapper
+    oself.__init__(*args, **kwargs)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/decompiler/clinic.py", line 108, in __init__
+    self._analyze()
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/decompiler/clinic.py", line 255, in _analyze
+    _, stackarg_offsets = self._make_callsites(ail_graph, stack_pointer_tracker=spt)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/utils/timing.py", line 36, in timed_func
+    return func(*args, **kwargs)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/decompiler/clinic.py", line 864, in _make_callsites
+    AILGraphWalker(ail_graph, _handler, replace_nodes=True).walk()
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/decompiler/ailgraph_walker.py", line 21, in walk
+    r = self.handler(node)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/decompiler/clinic.py", line 843, in _handler
+    csm = self.project.analyses.AILCallSiteMaker(
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/analysis.py", line 143, in __call__
+    r = w(*args, **kwargs)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/analysis.py", line 128, in wrapper
+    oself.__init__(*args, **kwargs)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/decompiler/callsite_maker.py", line 40, in __init__
+    self._analyze()
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/decompiler/callsite_maker.py", line 122, in _analyze
     raise NotImplementedError("Not implemented yet.")
 NotImplementedError: Not implemented yet.
 
-WARNING  | 2023-04-18 21:44:02,797 | Yasat.analyses.backward_slicing.engine_ail | Cannot find function at 0x20900
-WARNING  | 2023-04-18 21:44:04,627 | Yasat.analyses.backward_slicing.engine_ail | Unusual expression Mull: (0x55e63b89<32> Mull Load(addr=stack_base-36, size=4, endness=Iend_LE))
-WARNING  | 2023-04-18 21:44:04,629 | Yasat.analyses.backward_slicing.engine_ail | Unusual expression Mull: (0x55e63b89<32> Mull Load(addr=stack_base-36, size=4, endness=Iend_LE))
-WARNING  | 2023-04-18 21:44:04,631 | Yasat.analyses.backward_slicing.engine_ail | Unusual expression Mull: (0x55e63b89<32> Mull Load(addr=stack_base-36, size=4, endness=Iend_LE))
-WARNING  | 2023-04-18 21:44:04,633 | Yasat.analyses.backward_slicing.engine_ail | Unusual expression Mull: (0x55e63b89<32> Mull Load(addr=stack_base-36, size=4, endness=Iend_LE))
-WARNING  | 2023-04-18 21:44:06,448 | Yasat.analyses.backward_slicing.engine_ail | Cannot find function at 0x21290
-WARNING  | 2023-04-18 21:44:07,001 | Yasat.analyses.backward_slicing.engine_ail | Unusual expression Mull: (0x55e63b89<32> Mull Load(addr=stack_base-36, size=4, endness=Iend_LE))
-WARNING  | 2023-04-18 21:44:07,002 | Yasat.analyses.backward_slicing.engine_ail | Unusual expression Mull: (0x55e63b89<32> Mull Load(addr=stack_base-36, size=4, endness=Iend_LE))
-WARNING  | 2023-04-18 21:44:07,014 | Yasat.analyses.backward_slicing.engine_ail | Unusual expression Mull: (0x55e63b89<32> Mull Load(addr=stack_base-36, size=4, endness=Iend_LE))
-WARNING  | 2023-04-18 21:44:07,015 | Yasat.analyses.backward_slicing.engine_ail | Unusual expression Mull: (0x55e63b89<32> Mull Load(addr=stack_base-36, size=4, endness=Iend_LE))
-WARNING  | 2023-04-18 21:44:07,017 | Yasat.analyses.backward_slicing.engine_ail | Unusual expression Mull: (0x55e63b89<32> Mull Load(addr=stack_base-36, size=4, endness=Iend_LE))
-WARNING  | 2023-04-18 21:44:07,018 | Yasat.analyses.backward_slicing.engine_ail | Unusual expression Mull: (0x55e63b89<32> Mull Load(addr=stack_base-36, size=4, endness=Iend_LE))
-WARNING  | 2023-04-18 21:44:07,187 | Yasat.analyses.backward_slicing.engine_ail | Unusual expression Mull: (0xc22e4507<32> Mulls r0<4>)
-WARNING  | 2023-04-18 21:44:07,193 | Yasat.analyses.backward_slicing.engine_ail | Unusual expression Mull: (0xc22e4507<32> Mulls r0<4>)
-WARNING  | 2023-04-18 21:44:07,344 | Yasat.analyses.backward_slicing.engine_ail | Unusual expression Mull: (0x55e63b89<32> Mull Load(addr=stack_base-36, size=4, endness=Iend_LE))
-WARNING  | 2023-04-18 21:44:07,345 | Yasat.analyses.backward_slicing.engine_ail | Unusual expression Mull: (0x55e63b89<32> Mull Load(addr=stack_base-36, size=4, endness=Iend_LE))
-WARNING  | 2023-04-18 21:44:07,355 | Yasat.analyses.backward_slicing.engine_ail | Unusual expression Mull: (0x55e63b89<32> Mull Load(addr=stack_base-36, size=4, endness=Iend_LE))
-WARNING  | 2023-04-18 21:44:07,357 | Yasat.analyses.backward_slicing.engine_ail | Unusual expression Mull: (0x55e63b89<32> Mull Load(addr=stack_base-36, size=4, endness=Iend_LE))
-WARNING  | 2023-04-18 21:44:07,358 | Yasat.analyses.backward_slicing.engine_ail | Unusual expression Mull: (0x55e63b89<32> Mull Load(addr=stack_base-36, size=4, endness=Iend_LE))
-WARNING  | 2023-04-18 21:44:07,359 | Yasat.analyses.backward_slicing.engine_ail | Unusual expression Mull: (0x55e63b89<32> Mull Load(addr=stack_base-36, size=4, endness=Iend_LE))
-WARNING  | 2023-04-18 21:44:07,697 | Yasat.analyses.backward_slicing.engine_ail | Unusual expression Mull: (0x55e63b89<32> Mull Load(addr=stack_base-36, size=4, endness=Iend_LE))
-WARNING  | 2023-04-18 21:44:07,698 | Yasat.analyses.backward_slicing.engine_ail | Unusual expression Mull: (0x55e63b89<32> Mull Load(addr=stack_base-36, size=4, endness=Iend_LE))
-WARNING  | 2023-04-18 21:44:07,710 | Yasat.analyses.backward_slicing.engine_ail | Unusual expression Mull: (0x55e63b89<32> Mull Load(addr=stack_base-36, size=4, endness=Iend_LE))
-WARNING  | 2023-04-18 21:44:07,712 | Yasat.analyses.backward_slicing.engine_ail | Unusual expression Mull: (0x55e63b89<32> Mull Load(addr=stack_base-36, size=4, endness=Iend_LE))
-WARNING  | 2023-04-18 21:44:07,714 | Yasat.analyses.backward_slicing.engine_ail | Unusual expression Mull: (0x55e63b89<32> Mull Load(addr=stack_base-36, size=4, endness=Iend_LE))
-WARNING  | 2023-04-18 21:44:07,716 | Yasat.analyses.backward_slicing.engine_ail | Unusual expression Mull: (0x55e63b89<32> Mull Load(addr=stack_base-36, size=4, endness=Iend_LE))
-WARNING  | 2023-04-18 21:44:08,109 | Yasat.analyses.backward_slicing.engine_ail | Unusual expression Mull: (0x55e63b89<32> Mull Load(addr=stack_base-36, size=4, endness=Iend_LE))
-WARNING  | 2023-04-18 21:44:08,114 | Yasat.analyses.backward_slicing.engine_ail | Unusual expression Mull: (0x55e63b89<32> Mull Load(addr=stack_base-36, size=4, endness=Iend_LE))
-WARNING  | 2023-04-18 21:44:08,131 | Yasat.analyses.backward_slicing.engine_ail | Unusual expression Mull: (0x55e63b89<32> Mull Load(addr=stack_base-36, size=4, endness=Iend_LE))
-WARNING  | 2023-04-18 21:44:08,133 | Yasat.analyses.backward_slicing.engine_ail | Unusual expression Mull: (0x55e63b89<32> Mull Load(addr=stack_base-36, size=4, endness=Iend_LE))
-WARNING  | 2023-04-18 21:44:08,135 | Yasat.analyses.backward_slicing.engine_ail | Unusual expression Mull: (0x55e63b89<32> Mull Load(addr=stack_base-36, size=4, endness=Iend_LE))
-WARNING  | 2023-04-18 21:44:08,137 | Yasat.analyses.backward_slicing.engine_ail | Unusual expression Mull: (0x55e63b89<32> Mull Load(addr=stack_base-36, size=4, endness=Iend_LE))
-WARNING  | 2023-04-18 21:44:09,263 | Yasat.analyses.backward_slicing.engine_ail | Unusual expression Mull: (0xc22e4507<32> Mulls r0<4>)
-WARNING  | 2023-04-18 21:44:09,662 | Yasat.analyses.backward_slicing.engine_ail | Cannot find function at 0x20900
-WARNING  | 2023-04-18 21:44:10,697 | Yasat.analyses.backward_slicing.engine_ail | Unusual expression Mull: (0x55e63b89<32> Mull Load(addr=stack_base-36, size=4, endness=Iend_LE))
-WARNING  | 2023-04-18 21:44:10,699 | Yasat.analyses.backward_slicing.engine_ail | Unusual expression Mull: (0x55e63b89<32> Mull Load(addr=stack_base-36, size=4, endness=Iend_LE))
-WARNING  | 2023-04-18 21:44:11,974 | Yasat.analyses.backward_slicing.engine_ail | Unusual expression Mull: (0x55e63b89<32> Mull Load(addr=stack_base-36, size=4, endness=Iend_LE))
-WARNING  | 2023-04-18 21:44:11,975 | Yasat.analyses.backward_slicing.engine_ail | Unusual expression Mull: (0x55e63b89<32> Mull Load(addr=stack_base-36, size=4, endness=Iend_LE))
-WARNING  | 2023-04-18 21:44:11,977 | Yasat.analyses.backward_slicing.engine_ail | Unusual expression Mull: (0x55e63b89<32> Mull Load(addr=stack_base-36, size=4, endness=Iend_LE))
-WARNING  | 2023-04-18 21:44:11,978 | Yasat.analyses.backward_slicing.engine_ail | Unusual expression Mull: (0x55e63b89<32> Mull Load(addr=stack_base-36, size=4, endness=Iend_LE))
-WARNING  | 2023-04-18 21:44:12,936 | Yasat.analyses.backward_slicing.engine_ail | Unusual expression Mull: (0x55e63b89<32> Mull Load(addr=stack_base-36, size=4, endness=Iend_LE))
-WARNING  | 2023-04-18 21:44:12,938 | Yasat.analyses.backward_slicing.engine_ail | Unusual expression Mull: (0x55e63b89<32> Mull Load(addr=stack_base-36, size=4, endness=Iend_LE))
-WARNING  | 2023-04-18 21:44:12,952 | Yasat.analyses.backward_slicing.engine_ail | Unusual expression Mull: (0x55e63b89<32> Mull Load(addr=stack_base-36, size=4, endness=Iend_LE))
-WARNING  | 2023-04-18 21:44:12,953 | Yasat.analyses.backward_slicing.engine_ail | Unusual expression Mull: (0x55e63b89<32> Mull Load(addr=stack_base-36, size=4, endness=Iend_LE))
-WARNING  | 2023-04-18 21:44:12,955 | Yasat.analyses.backward_slicing.engine_ail | Unusual expression Mull: (0x55e63b89<32> Mull Load(addr=stack_base-36, size=4, endness=Iend_LE))
-WARNING  | 2023-04-18 21:44:12,956 | Yasat.analyses.backward_slicing.engine_ail | Unusual expression Mull: (0x55e63b89<32> Mull Load(addr=stack_base-36, size=4, endness=Iend_LE))
-WARNING  | 2023-04-18 21:44:13,247 | Yasat.analyses.backward_slicing.engine_ail | Unusual expression Mull: (0x55e63b89<32> Mull Load(addr=stack_base-36, size=4, endness=Iend_LE))
-WARNING  | 2023-04-18 21:44:13,248 | Yasat.analyses.backward_slicing.engine_ail | Unusual expression Mull: (0x55e63b89<32> Mull Load(addr=stack_base-36, size=4, endness=Iend_LE))
-WARNING  | 2023-04-18 21:44:13,260 | Yasat.analyses.backward_slicing.engine_ail | Unusual expression Mull: (0x55e63b89<32> Mull Load(addr=stack_base-36, size=4, endness=Iend_LE))
-WARNING  | 2023-04-18 21:44:13,261 | Yasat.analyses.backward_slicing.engine_ail | Unusual expression Mull: (0x55e63b89<32> Mull Load(addr=stack_base-36, size=4, endness=Iend_LE))
-WARNING  | 2023-04-18 21:44:13,263 | Yasat.analyses.backward_slicing.engine_ail | Unusual expression Mull: (0x55e63b89<32> Mull Load(addr=stack_base-36, size=4, endness=Iend_LE))
-WARNING  | 2023-04-18 21:44:13,264 | Yasat.analyses.backward_slicing.engine_ail | Unusual expression Mull: (0x55e63b89<32> Mull Load(addr=stack_base-36, size=4, endness=Iend_LE))
-WARNING  | 2023-04-18 21:44:13,579 | Yasat.analyses.backward_slicing.engine_ail | Unusual expression Mull: (0x55e63b89<32> Mull Load(addr=stack_base-36, size=4, endness=Iend_LE))
-WARNING  | 2023-04-18 21:44:13,580 | Yasat.analyses.backward_slicing.engine_ail | Unusual expression Mull: (0x55e63b89<32> Mull Load(addr=stack_base-36, size=4, endness=Iend_LE))
-WARNING  | 2023-04-18 21:44:13,590 | Yasat.analyses.backward_slicing.engine_ail | Unusual expression Mull: (0x55e63b89<32> Mull Load(addr=stack_base-36, size=4, endness=Iend_LE))
-WARNING  | 2023-04-18 21:44:13,592 | Yasat.analyses.backward_slicing.engine_ail | Unusual expression Mull: (0x55e63b89<32> Mull Load(addr=stack_base-36, size=4, endness=Iend_LE))
-WARNING  | 2023-04-18 21:44:13,593 | Yasat.analyses.backward_slicing.engine_ail | Unusual expression Mull: (0x55e63b89<32> Mull Load(addr=stack_base-36, size=4, endness=Iend_LE))
-WARNING  | 2023-04-18 21:44:13,594 | Yasat.analyses.backward_slicing.engine_ail | Unusual expression Mull: (0x55e63b89<32> Mull Load(addr=stack_base-36, size=4, endness=Iend_LE))
-WARNING  | 2023-04-18 21:44:13,927 | Yasat.analyses.backward_slicing.engine_ail | Unusual expression Mull: (0x55e63b89<32> Mull Load(addr=stack_base-36, size=4, endness=Iend_LE))
-WARNING  | 2023-04-18 21:44:13,929 | Yasat.analyses.backward_slicing.engine_ail | Unusual expression Mull: (0x55e63b89<32> Mull Load(addr=stack_base-36, size=4, endness=Iend_LE))
-WARNING  | 2023-04-18 21:44:13,941 | Yasat.analyses.backward_slicing.engine_ail | Unusual expression Mull: (0x55e63b89<32> Mull Load(addr=stack_base-36, size=4, endness=Iend_LE))
-WARNING  | 2023-04-18 21:44:13,942 | Yasat.analyses.backward_slicing.engine_ail | Unusual expression Mull: (0x55e63b89<32> Mull Load(addr=stack_base-36, size=4, endness=Iend_LE))
-WARNING  | 2023-04-18 21:44:13,944 | Yasat.analyses.backward_slicing.engine_ail | Unusual expression Mull: (0x55e63b89<32> Mull Load(addr=stack_base-36, size=4, endness=Iend_LE))
-WARNING  | 2023-04-18 21:44:13,946 | Yasat.analyses.backward_slicing.engine_ail | Unusual expression Mull: (0x55e63b89<32> Mull Load(addr=stack_base-36, size=4, endness=Iend_LE))
-WARNING  | 2023-04-18 21:44:14,379 | Yasat.analyses.backward_slicing.slicing_state | Failed to extract concrete string at 0x0
-WARNING  | 2023-04-18 21:44:15,744 | Yasat.analyses.backward_slicing.engine_ail | Cannot find function at 0x20900
-WARNING  | 2023-04-18 21:44:17,451 | Yasat.analyses.backward_slicing.engine_ail | Cannot find function at 0x21290
-WARNING  | 2023-04-18 21:44:18,745 | Yasat.analyses.backward_slicing.engine_ail | Unusual expression Mull: (0xc22e4507<32> Mulls r0<4>)
-WARNING  | 2023-04-18 21:44:18,749 | Yasat.analyses.backward_slicing.engine_ail | Unusual expression Mull: (0xc22e4507<32> Mulls r0<4>)
-WARNING  | 2023-04-18 21:44:18,947 | Yasat.analyses.backward_slicing.engine_ail | Cannot find function at 0x20900

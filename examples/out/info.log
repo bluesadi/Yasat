@@ -1,1416 +1,1238 @@
-INFO     | 2023-04-18 21:42:01,053 | Yasat.main_cli | Extracting from examples/input/boa
-INFO     | 2023-04-18 21:42:01,054 | Yasat.main_cli | Extracting from examples/input/AC1450-V1.0.0.36_10.0.17.zip
-INFO     | 2023-04-18 21:42:01,054 | Yasat.main_cli | Extracting from examples/input/logic
-INFO     | 2023-04-18 21:42:01,054 | Yasat.main_cli | Extracting from examples/input/busybox
-INFO     | 2023-04-18 21:42:01,054 | Yasat.main_cli | Extracting from examples/input/dropbearmulti
-INFO     | 2023-04-18 21:42:01,056 | Yasat.main_cli | [1/5 (1 success, 0 failure)] Extracted 1 ELF files from examples/input/boa
-INFO     | 2023-04-18 21:42:01,057 | Yasat.main_cli | [2/5 (2 success, 0 failure)] Extracted 1 ELF files from examples/input/busybox
-INFO     | 2023-04-18 21:42:01,058 | Yasat.main_cli | [3/5 (3 success, 0 failure)] Extracted 1 ELF files from examples/input/logic
-INFO     | 2023-04-18 21:42:01,058 | Yasat.main_cli | [4/5 (4 success, 0 failure)] Extracted 1 ELF files from examples/input/dropbearmulti
-INFO     | 2023-04-18 21:42:06,032 | Yasat.main_cli | [5/5 (5 success, 0 failure)] Extracted 155 ELF files from examples/input/AC1450-V1.0.0.36_10.0.17.zip
-INFO     | 2023-04-18 21:42:06,033 | Yasat.main_cli | Extraction completed
-INFO     | 2023-04-18 21:42:06,043 | Yasat.main_cli | There are 0 tasks running now (0 success, 0 failure, 0 timeout, 159 pending)
-INFO     | 2023-04-18 21:42:06,083 | Yasat.main_cli | Analyzing examples/tmp/boa
-INFO     | 2023-04-18 21:42:06,085 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/bin/taskset
-INFO     | 2023-04-18 21:42:06,086 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/local/samba/nmbd
-INFO     | 2023-04-18 21:42:06,086 | Yasat.main_cli | Analyzing examples/tmp/busybox
-INFO     | 2023-04-18 21:42:06,087 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/local/samba/smbd
-INFO     | 2023-04-18 21:42:06,088 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/local/lib/openvpn/plugins/openvpn-plugin-down-root.so
-INFO     | 2023-04-18 21:42:06,088 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/local/samba/smb_pass
-INFO     | 2023-04-18 21:42:06,089 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/local/sbin/openvpn
-INFO     | 2023-04-18 21:42:06,091 | Yasat.main_cli | Analyzing examples/tmp/dropbearmulti
-INFO     | 2023-04-18 21:42:06,091 | Yasat.main_cli | Analyzing examples/tmp/logic
-INFO     | 2023-04-18 21:42:06,185 | Yasat.main_cli | [1/ 159 (1 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/bin/taskset
+INFO     | 2023-04-19 13:05:01,429 | Yasat.main_cli | Lol! Extraction cache file examples/tmp/AC1450-V1.0.0.36_10.0.17.zip.cache is available!!!
+INFO     | 2023-04-19 13:05:01,430 | Yasat.main_cli | Lol! Extraction cache file examples/tmp/dropbearmulti.cache is available!!!
+INFO     | 2023-04-19 13:05:01,430 | Yasat.main_cli | Lol! Extraction cache file examples/tmp/busybox.cache is available!!!
+INFO     | 2023-04-19 13:05:01,430 | Yasat.main_cli | Lol! Extraction cache file examples/tmp/boa.cache is available!!!
+INFO     | 2023-04-19 13:05:01,430 | Yasat.main_cli | Lol! Extraction cache file examples/tmp/logic.cache is available!!!
+INFO     | 2023-04-19 13:05:01,431 | Yasat.main_cli | [1/5 (1 success, 0 failure)] Extracted 1 ELF files from examples/input/busybox
+INFO     | 2023-04-19 13:05:01,432 | Yasat.main_cli | [2/5 (2 success, 0 failure)] Extracted 155 ELF files from examples/input/AC1450-V1.0.0.36_10.0.17.zip
+INFO     | 2023-04-19 13:05:01,432 | Yasat.main_cli | [3/5 (3 success, 0 failure)] Extracted 1 ELF files from examples/input/dropbearmulti
+INFO     | 2023-04-19 13:05:01,432 | Yasat.main_cli | [4/5 (4 success, 0 failure)] Extracted 1 ELF files from examples/input/boa
+INFO     | 2023-04-19 13:05:01,432 | Yasat.main_cli | [5/5 (5 success, 0 failure)] Extracted 1 ELF files from examples/input/logic
+INFO     | 2023-04-19 13:05:01,433 | Yasat.main_cli | Extraction completed
+INFO     | 2023-04-19 13:05:01,522 | Yasat.main_cli | There are 0 tasks running now (0 success, 0 failure, 0 timeout, 159 pending)
+INFO     | 2023-04-19 13:05:01,525 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/ddnsd
+INFO     | 2023-04-19 13:05:01,542 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/wlconf
+INFO     | 2023-04-19 13:05:01,546 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/pppoecd
+INFO     | 2023-04-19 13:05:01,547 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/ip6tables-save
+INFO     | 2023-04-19 13:05:01,548 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/ip6tables-restore
+INFO     | 2023-04-19 13:05:01,548 | Yasat.main_cli | Analyzing examples/tmp/busybox
+INFO     | 2023-04-19 13:05:01,553 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/swresetd
+INFO     | 2023-04-19 13:05:01,554 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/dnsmasq
+INFO     | 2023-04-19 13:05:01,555 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/mld
+INFO     | 2023-04-19 13:05:01,559 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/emf
+INFO     | 2023-04-19 13:05:01,615 | Yasat.main_cli | [1/ 159 (1 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/ddnsd
 **************************************************
                      Summary                      
 **************************************************
 Time: 0 seconds
 Misuses number: 0
 
-INFO     | 2023-04-18 21:42:06,191 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/bin/vmstat
-INFO     | 2023-04-18 21:42:06,226 | Yasat.main_cli | [2/ 159 (2 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/local/lib/openvpn/plugins/openvpn-plugin-down-root.so
+INFO     | 2023-04-19 13:05:01,622 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/pptp
+INFO     | 2023-04-19 13:05:01,637 | Yasat.main_cli | [2/ 159 (2 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/wlconf
 **************************************************
                      Summary                      
 **************************************************
 Time: 0 seconds
 Misuses number: 0
 
-INFO     | 2023-04-18 21:42:06,232 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/zipcloak
-INFO     | 2023-04-18 21:42:06,302 | Yasat.main_cli | [3/ 159 (3 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/bin/vmstat
+INFO     | 2023-04-19 13:05:01,642 | Yasat.main_cli | [3/ 159 (3 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/mld
 **************************************************
                      Summary                      
 **************************************************
 Time: 0 seconds
 Misuses number: 0
 
-INFO     | 2023-04-18 21:42:06,306 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/ip6tables-restore
-INFO     | 2023-04-18 21:42:06,427 | Yasat.main_cli | [4/ 159 (4 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/zipcloak
+INFO     | 2023-04-19 13:05:01,648 | Yasat.main_cli | [4/ 159 (4 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/swresetd
 **************************************************
                      Summary                      
 **************************************************
 Time: 0 seconds
 Misuses number: 0
 
-INFO     | 2023-04-18 21:42:06,433 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/ftpc
-INFO     | 2023-04-18 21:42:06,442 | Yasat.main_cli | [5/ 159 (5 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/local/samba/nmbd
+INFO     | 2023-04-19 13:05:01,653 | Yasat.main_cli | [5/ 159 (5 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/pppoecd
 **************************************************
                      Summary                      
 **************************************************
 Time: 0 seconds
 Misuses number: 0
 
-INFO     | 2023-04-18 21:42:06,448 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/wpsd
-INFO     | 2023-04-18 21:42:06,561 | Yasat.main_cli | [6/ 159 (6 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/wpsd
+INFO     | 2023-04-19 13:05:01,653 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/dlnad
+INFO     | 2023-04-19 13:05:01,658 | Yasat.main_cli | [6/ 159 (6 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/emf
 **************************************************
                      Summary                      
 **************************************************
 Time: 0 seconds
 Misuses number: 0
 
-INFO     | 2023-04-18 21:42:06,571 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/unzip
-INFO     | 2023-04-18 21:42:06,571 | Yasat.main_cli | [7/ 159 (7 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/ftpc
+INFO     | 2023-04-19 13:05:01,671 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/bftpd
+INFO     | 2023-04-19 13:05:01,671 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/autoipd
+INFO     | 2023-04-19 13:05:01,675 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/timesync
+INFO     | 2023-04-19 13:05:01,679 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/check_fw
+INFO     | 2023-04-19 13:05:01,680 | Yasat.main_cli | [7/ 159 (7 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/dnsmasq
 **************************************************
                      Summary                      
 **************************************************
 Time: 0 seconds
 Misuses number: 0
 
-INFO     | 2023-04-18 21:42:06,581 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/telnetenabled
-INFO     | 2023-04-18 21:42:06,658 | Yasat.main_cli | [8/ 159 (8 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/ip6tables-restore
+INFO     | 2023-04-19 13:05:01,688 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/dnsRedirectReplyd
+INFO     | 2023-04-19 13:05:01,709 | Yasat.main_cli | [8/ 159 (8 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/dlnad
 **************************************************
                      Summary                      
 **************************************************
 Time: 0 seconds
 Misuses number: 0
 
-INFO     | 2023-04-18 21:42:06,665 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/bzip2
-INFO     | 2023-04-18 21:42:06,689 | Yasat.main_cli | [9/ 159 (9 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/telnetenabled
+INFO     | 2023-04-19 13:05:01,713 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/wan_debug
+INFO     | 2023-04-19 13:05:01,727 | Yasat.main_cli | [9/ 159 (9 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/autoipd
 **************************************************
                      Summary                      
 **************************************************
 Time: 0 seconds
 Misuses number: 0
 
-INFO     | 2023-04-18 21:42:06,696 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/tcpdump
-INFO     | 2023-04-18 21:42:06,735 | Yasat.main_cli | [10/ 159 (10 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/unzip
+INFO     | 2023-04-19 13:05:01,729 | Yasat.main_cli | [10/ 159 (10 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/timesync
 **************************************************
                      Summary                      
 **************************************************
 Time: 0 seconds
 Misuses number: 0
 
-INFO     | 2023-04-18 21:42:06,742 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/autoipd
-INFO     | 2023-04-18 21:42:06,779 | Yasat.main_cli | [11/ 159 (11 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/bzip2
+INFO     | 2023-04-19 13:05:01,735 | Yasat.main_cli | [11/ 159 (11 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/pptp
 **************************************************
                      Summary                      
 **************************************************
 Time: 0 seconds
 Misuses number: 0
 
-INFO     | 2023-04-18 21:42:06,788 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/pot
-INFO     | 2023-04-18 21:42:06,835 | Yasat.main_cli | [12/ 159 (12 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/autoipd
+INFO     | 2023-04-19 13:05:01,737 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/zipcloak
+INFO     | 2023-04-19 13:05:01,740 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/tfmeter
+INFO     | 2023-04-19 13:05:01,749 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/ip
+INFO     | 2023-04-19 13:05:01,751 | Yasat.main_cli | [12/ 159 (12 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/dnsRedirectReplyd
 **************************************************
                      Summary                      
 **************************************************
 Time: 0 seconds
 Misuses number: 0
 
-INFO     | 2023-04-18 21:42:06,840 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/xtables-multi
-INFO     | 2023-04-18 21:42:06,906 | Yasat.main_cli | [13/ 159 (13 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/pot
+INFO     | 2023-04-19 13:05:01,754 | Yasat.main_cli | [13/ 159 (13 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/wan_debug
 **************************************************
                      Summary                      
 **************************************************
 Time: 0 seconds
 Misuses number: 0
 
-INFO     | 2023-04-18 21:42:06,916 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/ip
-INFO     | 2023-04-18 21:42:07,047 | Yasat.main_cli | There are 10 tasks running now (13 success, 0 failure, 0 timeout, 136 pending)
-INFO     | 2023-04-18 21:42:07,054 | Yasat.main_cli | [14/ 159 (14 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/ip
+INFO     | 2023-04-19 13:05:01,758 | Yasat.main_cli | [14/ 159 (14 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/check_fw
 **************************************************
                      Summary                      
 **************************************************
 Time: 0 seconds
 Misuses number: 0
 
-INFO     | 2023-04-18 21:42:07,059 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/httpd
-INFO     | 2023-04-18 21:42:07,062 | Yasat.main_cli | [15/ 159 (15 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/local/samba/smb_pass
+INFO     | 2023-04-19 13:05:01,763 | Yasat.main_cli | [15/ 159 (15 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/ip6tables-save
 **************************************************
                      Summary                      
 **************************************************
 Time: 0 seconds
 Misuses number: 0
 
-INFO     | 2023-04-18 21:42:07,069 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/ses
-INFO     | 2023-04-18 21:42:07,088 | Yasat.main_cli | [16/ 159 (16 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/local/sbin/openvpn
+INFO     | 2023-04-19 13:05:01,778 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/tcpdump
+INFO     | 2023-04-19 13:05:01,779 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/nvram
+INFO     | 2023-04-19 13:05:01,780 | Yasat.main_cli | [16/ 159 (16 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/ip6tables-restore
 **************************************************
                      Summary                      
 **************************************************
 Time: 0 seconds
 Misuses number: 0
 
-INFO     | 2023-04-18 21:42:07,093 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/wandetect
-INFO     | 2023-04-18 21:42:07,140 | Yasat.main_cli | [17/ 159 (17 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/xtables-multi
+INFO     | 2023-04-19 13:05:01,782 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/zebra
+INFO     | 2023-04-19 13:05:01,783 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/upnpd
+INFO     | 2023-04-19 13:05:01,793 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/mevent
+INFO     | 2023-04-19 13:05:01,820 | Yasat.main_cli | [17/ 159 (17 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/tfmeter
 **************************************************
                      Summary                      
 **************************************************
 Time: 0 seconds
 Misuses number: 0
 
-INFO     | 2023-04-18 21:42:07,146 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/zipnote
-INFO     | 2023-04-18 21:42:07,190 | Yasat.main_cli | [18/ 159 (18 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/ses
+INFO     | 2023-04-19 13:05:01,830 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/vconfig
+INFO     | 2023-04-19 13:05:01,852 | Yasat.main_cli | [18/ 159 (18 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/nvram
 **************************************************
                      Summary                      
 **************************************************
 Time: 0 seconds
 Misuses number: 0
 
-INFO     | 2023-04-18 21:42:07,196 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/zebra
-INFO     | 2023-04-18 21:42:07,207 | Yasat.main_cli | [19/ 159 (19 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/wandetect
+INFO     | 2023-04-19 13:05:01,857 | Yasat.main_cli | [19/ 159 (19 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/ip
 **************************************************
                      Summary                      
 **************************************************
 Time: 0 seconds
 Misuses number: 0
 
-INFO     | 2023-04-18 21:42:07,214 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/nvram
-INFO     | 2023-04-18 21:42:07,276 | Yasat.main_cli | [20/ 159 (20 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/nvram
+INFO     | 2023-04-19 13:05:01,866 | Yasat.main_cli | [20/ 159 (20 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/mevent
 **************************************************
                      Summary                      
 **************************************************
 Time: 0 seconds
 Misuses number: 0
 
-INFO     | 2023-04-18 21:42:07,281 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/gproxy
-INFO     | 2023-04-18 21:42:07,311 | Yasat.main_cli | [21/ 159 (21 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/zebra
+INFO     | 2023-04-19 13:05:01,872 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/igs
+INFO     | 2023-04-19 13:05:01,876 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/et
+INFO     | 2023-04-19 13:05:01,881 | Yasat.main_cli | [21/ 159 (21 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/zipcloak
 **************************************************
                      Summary                      
 **************************************************
 Time: 0 seconds
 Misuses number: 0
 
-INFO     | 2023-04-18 21:42:07,321 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/zipinfo
-INFO     | 2023-04-18 21:42:07,460 | Yasat.main_cli | [22/ 159 (22 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/zipinfo
+INFO     | 2023-04-19 13:05:01,886 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/tcpdump.4.4.0
+INFO     | 2023-04-19 13:05:01,892 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/wpsd
+INFO     | 2023-04-19 13:05:01,892 | Yasat.main_cli | [22/ 159 (22 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/vconfig
 **************************************************
                      Summary                      
 **************************************************
 Time: 0 seconds
 Misuses number: 0
 
-INFO     | 2023-04-18 21:42:07,467 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/zip
-INFO     | 2023-04-18 21:42:07,494 | Yasat.main_cli | [23/ 159 (23 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/httpd
+INFO     | 2023-04-19 13:05:01,900 | Yasat.main_cli | [23/ 159 (23 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/zebra
 **************************************************
                      Summary                      
 **************************************************
 Time: 0 seconds
 Misuses number: 0
 
-INFO     | 2023-04-18 21:42:07,500 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/ripd
-INFO     | 2023-04-18 21:42:07,554 | Yasat.main_cli | [24/ 159 (24 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/zipnote
+INFO     | 2023-04-19 13:05:01,903 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/nas
+INFO     | 2023-04-19 13:05:01,913 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/lld2d
+INFO     | 2023-04-19 13:05:01,956 | Yasat.main_cli | [24/ 159 (24 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/igs
 **************************************************
                      Summary                      
 **************************************************
 Time: 0 seconds
 Misuses number: 0
 
-INFO     | 2023-04-18 21:42:07,561 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/dhcp6c
-INFO     | 2023-04-18 21:42:07,627 | Yasat.main_cli | [25/ 159 (25 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/ripd
+INFO     | 2023-04-19 13:05:01,970 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/acl_logd
+INFO     | 2023-04-19 13:05:01,997 | Yasat.main_cli | [25/ 159 (25 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/et
 **************************************************
                      Summary                      
 **************************************************
 Time: 0 seconds
 Misuses number: 0
 
-INFO     | 2023-04-18 21:42:07,632 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/dnsRedirectReplyd
-INFO     | 2023-04-18 21:42:07,643 | Yasat.main_cli | [26/ 159 (26 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/gproxy
+INFO     | 2023-04-19 13:05:02,003 | Yasat.main_cli | [26/ 159 (26 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/wpsd
 **************************************************
                      Summary                      
 **************************************************
 Time: 0 seconds
 Misuses number: 0
 
-INFO     | 2023-04-18 21:42:07,648 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/zipsplit
-INFO     | 2023-04-18 21:42:07,708 | Yasat.main_cli | [27/ 159 (27 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/dhcp6c
+INFO     | 2023-04-19 13:05:02,011 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/bzip2
+INFO     | 2023-04-19 13:05:02,013 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/outputimage
+INFO     | 2023-04-19 13:05:02,030 | Yasat.main_cli | [27/ 159 (27 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/upnpd
 **************************************************
                      Summary                      
 **************************************************
 Time: 0 seconds
 Misuses number: 0
 
-INFO     | 2023-04-18 21:42:07,713 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/mevent
-INFO     | 2023-04-18 21:42:07,716 | Yasat.main_cli | [28/ 159 (28 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/dnsRedirectReplyd
+INFO     | 2023-04-19 13:05:02,040 | Yasat.main_cli | [28/ 159 (28 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/acl_logd
 **************************************************
                      Summary                      
 **************************************************
 Time: 0 seconds
 Misuses number: 0
 
-INFO     | 2023-04-18 21:42:07,722 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/dhcp6s
-INFO     | 2023-04-18 21:42:07,800 | Yasat.main_cli | [29/ 159 (29 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/mevent
+INFO     | 2023-04-19 13:05:02,047 | Yasat.main_cli | [29/ 159 (29 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/lld2d
 **************************************************
                      Summary                      
 **************************************************
 Time: 0 seconds
 Misuses number: 0
 
-INFO     | 2023-04-18 21:42:07,806 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/vconfig
-INFO     | 2023-04-18 21:42:07,852 | Yasat.main_cli | [30/ 159 (30 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/zipsplit
+INFO     | 2023-04-19 13:05:02,052 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/wlanconfigd
+INFO     | 2023-04-19 13:05:02,055 | Yasat.main_cli | [30/ 159 (30 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/nas
 **************************************************
                      Summary                      
 **************************************************
 Time: 0 seconds
 Misuses number: 0
 
-INFO     | 2023-04-18 21:42:07,858 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/pppoecd
-INFO     | 2023-04-18 21:42:07,867 | Yasat.main_cli | [31/ 159 (31 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/dhcp6s
+INFO     | 2023-04-19 13:05:02,059 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/ripd
+INFO     | 2023-04-19 13:05:02,069 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/pot
+INFO     | 2023-04-19 13:05:02,074 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/unzipsfx
+INFO     | 2023-04-19 13:05:02,076 | Yasat.main_cli | [31/ 159 (31 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/outputimage
 **************************************************
                      Summary                      
 **************************************************
 Time: 0 seconds
 Misuses number: 0
 
-INFO     | 2023-04-18 21:42:07,872 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/igs
-INFO     | 2023-04-18 21:42:07,881 | Yasat.main_cli | [32/ 159 (32 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/tcpdump
+INFO     | 2023-04-19 13:05:02,085 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/unzip
+INFO     | 2023-04-19 13:05:02,104 | Yasat.main_cli | [32/ 159 (32 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/bzip2
 **************************************************
                      Summary                      
 **************************************************
 Time: 0 seconds
 Misuses number: 0
 
-INFO     | 2023-04-18 21:42:07,883 | Yasat.main_cli | [33/ 159 (33 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/vconfig
+INFO     | 2023-04-19 13:05:02,112 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/zip
+INFO     | 2023-04-19 13:05:02,117 | Yasat.main_cli | [33/ 159 (33 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/wlanconfigd
 **************************************************
                      Summary                      
 **************************************************
 Time: 0 seconds
 Misuses number: 0
 
-INFO     | 2023-04-18 21:42:07,887 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/cli
-INFO     | 2023-04-18 21:42:07,889 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/tcpdump.4.4.0
-INFO     | 2023-04-18 21:42:07,955 | Yasat.main_cli | [34/ 159 (34 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/igs
+INFO     | 2023-04-19 13:05:02,125 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/email
+INFO     | 2023-04-19 13:05:02,155 | Yasat.main_cli | [34/ 159 (34 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/pot
 **************************************************
                      Summary                      
 **************************************************
 Time: 0 seconds
 Misuses number: 0
 
-INFO     | 2023-04-18 21:42:07,961 | Yasat.main_cli | [35/ 159 (35 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/zip
+INFO     | 2023-04-19 13:05:02,163 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/heartbeat
+INFO     | 2023-04-19 13:05:02,174 | Yasat.main_cli | [35/ 159 (35 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/ripd
 **************************************************
                      Summary                      
 **************************************************
 Time: 0 seconds
 Misuses number: 0
 
-INFO     | 2023-04-18 21:42:07,966 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/acs_cli
-INFO     | 2023-04-18 21:42:07,969 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/ntpclient
-INFO     | 2023-04-18 21:42:07,989 | Yasat.main_cli | [36/ 159 (36 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/pppoecd
+INFO     | 2023-04-19 13:05:02,176 | Yasat.main_cli | [36/ 159 (36 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/unzipsfx
 **************************************************
                      Summary                      
 **************************************************
 Time: 0 seconds
 Misuses number: 0
 
-INFO     | 2023-04-18 21:42:07,994 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/brctl
-INFO     | 2023-04-18 21:42:08,050 | Yasat.main_cli | There are 10 tasks running now (36 success, 0 failure, 0 timeout, 113 pending)
-INFO     | 2023-04-18 21:42:08,076 | Yasat.main_cli | [37/ 159 (37 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/acs_cli
+INFO     | 2023-04-19 13:05:02,187 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/acsd
+INFO     | 2023-04-19 13:05:02,187 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/ip6tables
+INFO     | 2023-04-19 13:05:02,195 | Yasat.main_cli | [37/ 159 (37 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/unzip
 **************************************************
                      Summary                      
 **************************************************
 Time: 0 seconds
 Misuses number: 0
 
-INFO     | 2023-04-18 21:42:08,081 | Yasat.main_cli | [38/ 159 (38 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/ntpclient
+INFO     | 2023-04-19 13:05:02,203 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/zipnote
+INFO     | 2023-04-19 13:05:02,208 | Yasat.main_cli | [38/ 159 (38 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/email
 **************************************************
                      Summary                      
 **************************************************
 Time: 0 seconds
 Misuses number: 0
 
-INFO     | 2023-04-18 21:42:08,087 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/emf
-INFO     | 2023-04-18 21:42:08,089 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/dnsmasq
-INFO     | 2023-04-18 21:42:08,102 | Yasat.main_cli | [39/ 159 (39 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/brctl
+INFO     | 2023-04-19 13:05:02,217 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/zipinfo
+INFO     | 2023-04-19 13:05:02,252 | Yasat.main_cli | [39/ 159 (39 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/heartbeat
 **************************************************
                      Summary                      
 **************************************************
 Time: 0 seconds
 Misuses number: 0
 
-INFO     | 2023-04-18 21:42:08,108 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/swresetd
-INFO     | 2023-04-18 21:42:08,151 | Yasat.main_cli | [40/ 159 (40 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/cli
+INFO     | 2023-04-19 13:05:02,258 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/telnetenabled
+INFO     | 2023-04-19 13:05:02,293 | Yasat.main_cli | [40/ 159 (40 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/acsd
 **************************************************
                      Summary                      
 **************************************************
 Time: 0 seconds
 Misuses number: 0
 
-INFO     | 2023-04-18 21:42:08,156 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/pptp
-INFO     | 2023-04-18 21:42:08,170 | Yasat.main_cli | [41/ 159 (41 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/emf
+INFO     | 2023-04-19 13:05:02,299 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/acs_cli
+INFO     | 2023-04-19 13:05:02,321 | Yasat.main_cli | [41/ 159 (41 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/zipinfo
 **************************************************
                      Summary                      
 **************************************************
 Time: 0 seconds
 Misuses number: 0
 
-INFO     | 2023-04-18 21:42:08,175 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/tfmeter
-INFO     | 2023-04-18 21:42:08,195 | Yasat.main_cli | [42/ 159 (42 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/swresetd
+INFO     | 2023-04-19 13:05:02,325 | Yasat.main_cli | [42/ 159 (42 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/telnetenabled
 **************************************************
                      Summary                      
 **************************************************
 Time: 0 seconds
 Misuses number: 0
 
-INFO     | 2023-04-18 21:42:08,201 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/IPv6-relay
-INFO     | 2023-04-18 21:42:08,271 | Yasat.main_cli | [43/ 159 (43 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/dnsmasq
+INFO     | 2023-04-19 13:05:02,332 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/IPv6-relay
+INFO     | 2023-04-19 13:05:02,338 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/zipsplit
+INFO     | 2023-04-19 13:05:02,339 | Yasat.main_cli | [43/ 159 (43 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/zip
 **************************************************
                      Summary                      
 **************************************************
 Time: 0 seconds
 Misuses number: 0
 
-INFO     | 2023-04-18 21:42:08,276 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/wlanconfigd
-INFO     | 2023-04-18 21:42:08,318 | Yasat.main_cli | [44/ 159 (44 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/pptp
+INFO     | 2023-04-19 13:05:02,345 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/scheact
+INFO     | 2023-04-19 13:05:02,370 | Yasat.main_cli | [44/ 159 (44 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/zipnote
 **************************************************
                      Summary                      
 **************************************************
 Time: 0 seconds
 Misuses number: 0
 
-INFO     | 2023-04-18 21:42:08,321 | Yasat.main_cli | [45/ 159 (45 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/tfmeter
+INFO     | 2023-04-19 13:05:02,373 | Yasat.main_cli | [45/ 159 (45 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/acs_cli
 **************************************************
                      Summary                      
 **************************************************
 Time: 0 seconds
 Misuses number: 0
 
-INFO     | 2023-04-18 21:42:08,327 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/zeroconf
-INFO     | 2023-04-18 21:42:08,327 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/unzipsfx
-INFO     | 2023-04-18 21:42:08,344 | Yasat.main_cli | [46/ 159 (46 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/IPv6-relay
+INFO     | 2023-04-19 13:05:02,374 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/funzip
+INFO     | 2023-04-19 13:05:02,380 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/xtables-multi
+INFO     | 2023-04-19 13:05:02,405 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/cli
+INFO     | 2023-04-19 13:05:02,407 | Yasat.main_cli | [46/ 159 (46 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/scheact
 **************************************************
                      Summary                      
 **************************************************
 Time: 0 seconds
 Misuses number: 0
 
-INFO     | 2023-04-18 21:42:08,351 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/timesync
-INFO     | 2023-04-18 21:42:08,353 | Yasat.main_cli | [47/ 159 (47 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/wlanconfigd
+INFO     | 2023-04-19 13:05:02,433 | Yasat.main_cli | [47/ 159 (47 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/IPv6-relay
 **************************************************
                      Summary                      
 **************************************************
 Time: 0 seconds
 Misuses number: 0
 
-INFO     | 2023-04-18 21:42:08,358 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/acl_logd
-INFO     | 2023-04-18 21:42:08,416 | Yasat.main_cli | [48/ 159 (48 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/acl_logd
+INFO     | 2023-04-19 13:05:02,440 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/l2tpd
+INFO     | 2023-04-19 13:05:02,449 | Yasat.main_cli | [48/ 159 (48 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/funzip
 **************************************************
                      Summary                      
 **************************************************
 Time: 0 seconds
 Misuses number: 0
 
-INFO     | 2023-04-18 21:42:08,421 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/ses_cl
-INFO     | 2023-04-18 21:42:08,424 | Yasat.main_cli | [49/ 159 (49 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/zeroconf
+INFO     | 2023-04-19 13:05:02,460 | Yasat.main_cli | [49/ 159 (49 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/ip6tables
 **************************************************
                      Summary                      
 **************************************************
 Time: 0 seconds
 Misuses number: 0
 
-INFO     | 2023-04-18 21:42:08,426 | Yasat.main_cli | [50/ 159 (50 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/timesync
+INFO     | 2023-04-19 13:05:02,463 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/ses_cl
+INFO     | 2023-04-19 13:05:02,469 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/dhcp6c
+INFO     | 2023-04-19 13:05:02,491 | Yasat.main_cli | [50/ 159 (50 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/zipsplit
 **************************************************
                      Summary                      
 **************************************************
 Time: 0 seconds
 Misuses number: 0
 
-INFO     | 2023-04-18 21:42:08,432 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/ip6tables
-INFO     | 2023-04-18 21:42:08,436 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/bftpd
-INFO     | 2023-04-18 21:42:08,457 | Yasat.main_cli | [51/ 159 (51 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/unzipsfx
+INFO     | 2023-04-19 13:05:02,501 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/gproxy
+INFO     | 2023-04-19 13:05:02,524 | Yasat.main_cli | There are 9 tasks running now (50 success, 0 failure, 0 timeout, 100 pending)
+INFO     | 2023-04-19 13:05:02,559 | Yasat.main_cli | [51/ 159 (51 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/tcpdump
 **************************************************
                      Summary                      
 **************************************************
 Time: 0 seconds
 Misuses number: 0
 
-INFO     | 2023-04-18 21:42:08,462 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/nas
-INFO     | 2023-04-18 21:42:08,574 | Yasat.main_cli | [52/ 159 (52 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/ses_cl
+INFO     | 2023-04-19 13:05:02,567 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/tc
+INFO     | 2023-04-19 13:05:02,577 | Yasat.main_cli | [52/ 159 (52 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/l2tpd
 **************************************************
                      Summary                      
 **************************************************
 Time: 0 seconds
 Misuses number: 0
 
-INFO     | 2023-04-18 21:42:08,580 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/wlconf
-INFO     | 2023-04-18 21:42:08,611 | Yasat.main_cli | [53/ 159 (53 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/nas
+INFO     | 2023-04-19 13:05:02,578 | Yasat.main_cli | [53/ 159 (53 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/cli
 **************************************************
                      Summary                      
 **************************************************
 Time: 0 seconds
 Misuses number: 0
 
-INFO     | 2023-04-18 21:42:08,616 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/radvd
-INFO     | 2023-04-18 21:42:08,689 | Yasat.main_cli | [54/ 159 (54 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/wlconf
+INFO     | 2023-04-19 13:05:02,585 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/ses
+INFO     | 2023-04-19 13:05:02,587 | Yasat.main_cli | [54/ 159 (54 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/gproxy
 **************************************************
                      Summary                      
 **************************************************
 Time: 0 seconds
 Misuses number: 0
 
-INFO     | 2023-04-18 21:42:08,694 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/l2tpd
-INFO     | 2023-04-18 21:42:08,734 | Yasat.main_cli | [55/ 159 (55 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/ip6tables
+INFO     | 2023-04-19 13:05:02,589 | Yasat.main_cli | [55/ 159 (55 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/ses_cl
 **************************************************
                      Summary                      
 **************************************************
 Time: 0 seconds
 Misuses number: 0
 
-INFO     | 2023-04-18 21:42:08,738 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/wan_debug
-INFO     | 2023-04-18 21:42:08,764 | Yasat.main_cli | [56/ 159 (56 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/radvd
+INFO     | 2023-04-19 13:05:02,595 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/ftpc
+INFO     | 2023-04-19 13:05:02,600 | Yasat.main_cli | [56/ 159 (56 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/dhcp6c
 **************************************************
                      Summary                      
 **************************************************
 Time: 0 seconds
 Misuses number: 0
 
-INFO     | 2023-04-18 21:42:08,770 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/outputimage
-INFO     | 2023-04-18 21:42:08,800 | Yasat.main_cli | [57/ 159 (57 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/wan_debug
+INFO     | 2023-04-19 13:05:02,603 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/brctl
+INFO     | 2023-04-19 13:05:02,607 | Yasat.main_cli | [57/ 159 (57 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/xtables-multi
 **************************************************
                      Summary                      
 **************************************************
 Time: 0 seconds
 Misuses number: 0
 
-INFO     | 2023-04-18 21:42:08,808 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/wl
-INFO     | 2023-04-18 21:42:08,861 | Yasat.main_cli | [58/ 159 (58 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/outputimage
+INFO     | 2023-04-19 13:05:02,619 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/wandetect
+INFO     | 2023-04-19 13:05:02,620 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/radvd
+INFO     | 2023-04-19 13:05:02,622 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/dhcp6s
+INFO     | 2023-04-19 13:05:02,630 | Yasat.main_cli | [58/ 159 (58 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/tcpdump.4.4.0
 **************************************************
                      Summary                      
 **************************************************
 Time: 0 seconds
 Misuses number: 0
 
-INFO     | 2023-04-18 21:42:08,886 | Yasat.main_cli | [59/ 159 (59 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/l2tpd
+INFO     | 2023-04-19 13:05:02,638 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/minidlna.exe
+INFO     | 2023-04-19 13:05:02,676 | Yasat.main_cli | [59/ 159 (59 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/ftpc
 **************************************************
                      Summary                      
 **************************************************
 Time: 0 seconds
 Misuses number: 0
 
-INFO     | 2023-04-18 21:42:08,886 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/rtsol
-INFO     | 2023-04-18 21:42:08,894 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/ddnsd
-INFO     | 2023-04-18 21:42:08,900 | Yasat.main_cli | [60/ 159 (60 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/tcpdump.4.4.0
+INFO     | 2023-04-19 13:05:02,684 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/zeroconf
+INFO     | 2023-04-19 13:05:02,731 | Yasat.main_cli | [60/ 159 (60 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/tc
 **************************************************
                      Summary                      
 **************************************************
 Time: 0 seconds
 Misuses number: 0
 
-INFO     | 2023-04-18 21:42:08,906 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/tc
-INFO     | 2023-04-18 21:42:08,969 | Yasat.main_cli | [61/ 159 (61 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/wl
+INFO     | 2023-04-19 13:05:02,739 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/udhcpd
+INFO     | 2023-04-19 13:05:02,821 | Yasat.main_cli | [61/ 159 (61 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/brctl
 **************************************************
                      Summary                      
 **************************************************
 Time: 0 seconds
 Misuses number: 0
 
-INFO     | 2023-04-18 21:42:08,975 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/acsd
-INFO     | 2023-04-18 21:42:08,987 | Yasat.main_cli | [62/ 159 (62 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/rtsol
+INFO     | 2023-04-19 13:05:02,825 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/ntpclient
+INFO     | 2023-04-19 13:05:02,827 | Yasat.main_cli | [62/ 159 (62 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/ses
 **************************************************
                      Summary                      
 **************************************************
 Time: 0 seconds
 Misuses number: 0
 
-INFO     | 2023-04-18 21:42:08,993 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/lld2d
-INFO     | 2023-04-18 21:42:08,997 | Yasat.main_cli | [63/ 159 (63 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/ddnsd
+INFO     | 2023-04-19 13:05:02,835 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/httpd
+INFO     | 2023-04-19 13:05:02,840 | Yasat.main_cli | [63/ 159 (63 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/udhcpd
 **************************************************
                      Summary                      
 **************************************************
 Time: 0 seconds
 Misuses number: 0
 
-INFO     | 2023-04-18 21:42:09,003 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/dlnad
-INFO     | 2023-04-18 21:42:09,054 | Yasat.main_cli | There are 10 tasks running now (63 success, 0 failure, 0 timeout, 86 pending)
-INFO     | 2023-04-18 21:42:09,077 | Yasat.main_cli | [64/ 159 (64 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/dlnad
+INFO     | 2023-04-19 13:05:02,847 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/wl
+INFO     | 2023-04-19 13:05:02,848 | Yasat.main_cli | [64/ 159 (64 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/minidlna.exe
 **************************************************
                      Summary                      
 **************************************************
 Time: 0 seconds
 Misuses number: 0
 
-INFO     | 2023-04-18 21:42:09,083 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/udhcpd
-INFO     | 2023-04-18 21:42:09,101 | Yasat.main_cli | [65/ 159 (65 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/acsd
+INFO     | 2023-04-19 13:05:02,861 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/rtsol
+INFO     | 2023-04-19 13:05:02,871 | Yasat.main_cli | [65/ 159 (65 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/wandetect
 **************************************************
                      Summary                      
 **************************************************
 Time: 0 seconds
 Misuses number: 0
 
-INFO     | 2023-04-18 21:42:09,106 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/funzip
-INFO     | 2023-04-18 21:42:09,121 | Yasat.main_cli | [66/ 159 (66 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/lld2d
+INFO     | 2023-04-19 13:05:02,879 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/local/sbin/openvpn
+INFO     | 2023-04-19 13:05:02,893 | Yasat.main_cli | [66/ 159 (66 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/dhcp6s
 **************************************************
                      Summary                      
 **************************************************
 Time: 0 seconds
 Misuses number: 0
 
-INFO     | 2023-04-18 21:42:09,127 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/check_fw
-INFO     | 2023-04-18 21:42:09,151 | Yasat.main_cli | [67/ 159 (67 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/tc
+INFO     | 2023-04-19 13:05:02,905 | Yasat.main_cli | [67/ 159 (67 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/ntpclient
 **************************************************
                      Summary                      
 **************************************************
 Time: 0 seconds
 Misuses number: 0
 
-INFO     | 2023-04-18 21:42:09,156 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/upnpd
-INFO     | 2023-04-18 21:42:09,176 | Yasat.main_cli | [68/ 159 (68 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/funzip
+INFO     | 2023-04-19 13:05:02,909 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/local/samba/smb_pass
+INFO     | 2023-04-19 13:05:02,923 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/local/samba/smbd
+INFO     | 2023-04-19 13:05:02,936 | Yasat.main_cli | [68/ 159 (68 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/rtsol
 **************************************************
                      Summary                      
 **************************************************
 Time: 0 seconds
 Misuses number: 0
 
-INFO     | 2023-04-18 21:42:09,182 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/scheact
-INFO     | 2023-04-18 21:42:09,209 | Yasat.main_cli | [69/ 159 (69 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/udhcpd
+INFO     | 2023-04-19 13:05:02,952 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/local/samba/nmbd
+INFO     | 2023-04-19 13:05:02,993 | Yasat.main_cli | [69/ 159 (69 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/radvd
 **************************************************
                      Summary                      
 **************************************************
 Time: 0 seconds
 Misuses number: 0
 
-INFO     | 2023-04-18 21:42:09,215 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/email
-INFO     | 2023-04-18 21:42:09,240 | Yasat.main_cli | [70/ 159 (70 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/check_fw
+INFO     | 2023-04-19 13:05:02,999 | Yasat.main_cli | [70/ 159 (70 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/zeroconf
 **************************************************
                      Summary                      
 **************************************************
 Time: 0 seconds
 Misuses number: 0
 
-INFO     | 2023-04-18 21:42:09,245 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/et
-INFO     | 2023-04-18 21:42:09,271 | Yasat.main_cli | [71/ 159 (71 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/scheact
+INFO     | 2023-04-19 13:05:03,016 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/local/lib/openvpn/plugins/openvpn-plugin-down-root.so
+INFO     | 2023-04-19 13:05:03,020 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/bin/taskset
+INFO     | 2023-04-19 13:05:03,071 | Yasat.main_cli | [71/ 159 (71 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/bin/taskset
 **************************************************
                      Summary                      
 **************************************************
 Time: 0 seconds
 Misuses number: 0
 
-INFO     | 2023-04-18 21:42:09,276 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/minidlna.exe
-INFO     | 2023-04-18 21:42:09,320 | Yasat.main_cli | [72/ 159 (72 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/email
+INFO     | 2023-04-19 13:05:03,077 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/bin/vmstat
+INFO     | 2023-04-19 13:05:03,114 | Yasat.main_cli | [72/ 159 (72 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/local/lib/openvpn/plugins/openvpn-plugin-down-root.so
 **************************************************
                      Summary                      
 **************************************************
 Time: 0 seconds
 Misuses number: 0
 
-INFO     | 2023-04-18 21:42:09,326 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/ip6tables-save
-INFO     | 2023-04-18 21:42:09,339 | Yasat.main_cli | [73/ 159 (73 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/et
+INFO     | 2023-04-19 13:05:03,121 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/lib/libupnp.so
+INFO     | 2023-04-19 13:05:03,134 | Yasat.main_cli | [73/ 159 (73 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/httpd
 **************************************************
                      Summary                      
 **************************************************
 Time: 0 seconds
 Misuses number: 0
 
-INFO     | 2023-04-18 21:42:09,350 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/mld
-INFO     | 2023-04-18 21:42:09,414 | Yasat.main_cli | [74/ 159 (74 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/upnpd
+INFO     | 2023-04-19 13:05:03,145 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/lib/libbcmcrypto.so
+INFO     | 2023-04-19 13:05:03,175 | Yasat.main_cli | [74/ 159 (74 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/bin/vmstat
 **************************************************
                      Summary                      
 **************************************************
 Time: 0 seconds
 Misuses number: 0
 
-INFO     | 2023-04-18 21:42:09,420 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/heartbeat
-INFO     | 2023-04-18 21:42:09,452 | Yasat.main_cli | [75/ 159 (75 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/mld
+INFO     | 2023-04-19 13:05:03,179 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/lib/libshared.so
+INFO     | 2023-04-19 13:05:03,290 | Yasat.main_cli | [75/ 159 (75 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/wl
 **************************************************
                      Summary                      
 **************************************************
 Time: 0 seconds
 Misuses number: 0
 
-INFO     | 2023-04-18 21:42:09,457 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/lib/libbcmcrypto.so
-INFO     | 2023-04-18 21:42:09,518 | Yasat.main_cli | [76/ 159 (76 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/heartbeat
+INFO     | 2023-04-19 13:05:03,298 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/lib/libbcm.so
+INFO     | 2023-04-19 13:05:03,307 | Yasat.main_cli | [76/ 159 (76 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/lib/libupnp.so
 **************************************************
                      Summary                      
 **************************************************
 Time: 0 seconds
 Misuses number: 0
 
-INFO     | 2023-04-18 21:42:09,523 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/lib/libshared.so
-INFO     | 2023-04-18 21:42:09,611 | Yasat.main_cli | [77/ 159 (77 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/minidlna.exe
+INFO     | 2023-04-19 13:05:03,307 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/lib/libnetconf.so
+INFO     | 2023-04-19 13:05:03,316 | Yasat.main_cli | [77/ 159 (77 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/lib/libbcmcrypto.so
 **************************************************
                      Summary                      
 **************************************************
 Time: 0 seconds
 Misuses number: 0
 
-INFO     | 2023-04-18 21:42:09,616 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/lib/libnvram.so
-INFO     | 2023-04-18 21:42:09,623 | Yasat.main_cli | [78/ 159 (78 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/ip6tables-save
+INFO     | 2023-04-19 13:05:03,321 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/lib/libnat.so
+INFO     | 2023-04-19 13:05:03,360 | Yasat.main_cli | [78/ 159 (78 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/lib/libbcm.so
 **************************************************
                      Summary                      
 **************************************************
 Time: 0 seconds
 Misuses number: 0
 
-INFO     | 2023-04-18 21:42:09,627 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/lib/libacos_shared.so
-INFO     | 2023-04-18 21:42:09,658 | Yasat.main_cli | [79/ 159 (79 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/lib/libbcmcrypto.so
+INFO     | 2023-04-19 13:05:03,366 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/lib/libbigballofmud.so.0
+INFO     | 2023-04-19 13:05:03,372 | Yasat.main_cli | [79/ 159 (79 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/lib/libshared.so
 **************************************************
                      Summary                      
 **************************************************
 Time: 0 seconds
 Misuses number: 0
 
-INFO     | 2023-04-18 21:42:09,663 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/lib/libbigballofmud.so.0
-INFO     | 2023-04-18 21:42:09,758 | Yasat.main_cli | [80/ 159 (80 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/lib/libshared.so
+INFO     | 2023-04-19 13:05:03,375 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/lib/libacos_shared.so
+INFO     | 2023-04-19 13:05:03,436 | Yasat.main_cli | [80/ 159 (80 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/lib/libnetconf.so
 **************************************************
                      Summary                      
 **************************************************
 Time: 0 seconds
 Misuses number: 0
 
-INFO     | 2023-04-18 21:42:09,765 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/lib/libbcm.so
-INFO     | 2023-04-18 21:42:09,815 | Yasat.main_cli | [81/ 159 (81 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/lib/libnvram.so
+INFO     | 2023-04-19 13:05:03,442 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/lib/libnvram.so
+INFO     | 2023-04-19 13:05:03,463 | Yasat.main_cli | [81/ 159 (81 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/local/samba/smb_pass
 **************************************************
                      Summary                      
 **************************************************
 Time: 0 seconds
 Misuses number: 0
 
-INFO     | 2023-04-18 21:42:09,822 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/lib/libupnp.so
-INFO     | 2023-04-18 21:42:09,855 | Yasat.main_cli | [82/ 159 (82 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/lib/libbcm.so
+INFO     | 2023-04-19 13:05:03,469 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/lib/tc/q_netem.so
+INFO     | 2023-04-19 13:05:03,493 | Yasat.main_cli | [82/ 159 (82 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/local/sbin/openvpn
 **************************************************
                      Summary                      
 **************************************************
 Time: 0 seconds
 Misuses number: 0
 
-INFO     | 2023-04-18 21:42:09,861 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/lib/libnat.so
-INFO     | 2023-04-18 21:42:10,034 | Yasat.main_cli | [83/ 159 (83 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/lib/libacos_shared.so
+INFO     | 2023-04-19 13:05:03,497 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/sbin/htmlget
+INFO     | 2023-04-19 13:05:03,500 | Yasat.main_cli | [83/ 159 (83 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/lib/libnat.so
 **************************************************
                      Summary                      
 **************************************************
 Time: 0 seconds
 Misuses number: 0
 
-INFO     | 2023-04-18 21:42:10,042 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/lib/libnetconf.so
-INFO     | 2023-04-18 21:42:10,057 | Yasat.main_cli | There are 10 tasks running now (83 success, 0 failure, 0 timeout, 66 pending)
-INFO     | 2023-04-18 21:42:10,112 | Yasat.main_cli | [84/ 159 (84 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/lib/libupnp.so
+INFO     | 2023-04-19 13:05:03,506 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/sbin/pppd
+INFO     | 2023-04-19 13:05:03,528 | Yasat.main_cli | There are 10 tasks running now (83 success, 0 failure, 0 timeout, 66 pending)
+INFO     | 2023-04-19 13:05:03,551 | Yasat.main_cli | [84/ 159 (84 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/lib/tc/q_netem.so
 **************************************************
                      Summary                      
 **************************************************
 Time: 0 seconds
 Misuses number: 0
 
-INFO     | 2023-04-18 21:42:10,119 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/lib/tc/q_netem.so
-INFO     | 2023-04-18 21:42:10,162 | Yasat.main_cli | [85/ 159 (85 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/lib/libnat.so
+INFO     | 2023-04-19 13:05:03,555 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/sbin/ubdcmd
+INFO     | 2023-04-19 13:05:03,559 | Yasat.main_cli | [85/ 159 (85 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/sbin/htmlget
 **************************************************
                      Summary                      
 **************************************************
 Time: 0 seconds
 Misuses number: 0
 
-INFO     | 2023-04-18 21:42:10,168 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/bin/wget
-INFO     | 2023-04-18 21:42:10,229 | Yasat.main_cli | [86/ 159 (86 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/lib/libnetconf.so
+INFO     | 2023-04-19 13:05:03,563 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/sbin/bd
+INFO     | 2023-04-19 13:05:03,585 | Yasat.main_cli | [86/ 159 (86 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/local/samba/nmbd
 **************************************************
                      Summary                      
 **************************************************
 Time: 0 seconds
 Misuses number: 0
 
-INFO     | 2023-04-18 21:42:10,234 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/bin/eapd
-INFO     | 2023-04-18 21:42:10,236 | Yasat.main_cli | [87/ 159 (87 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/lib/tc/q_netem.so
+INFO     | 2023-04-19 13:05:03,592 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/sbin/gpio
+INFO     | 2023-04-19 13:05:03,611 | Yasat.main_cli | [87/ 159 (87 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/lib/libnvram.so
 **************************************************
                      Summary                      
 **************************************************
 Time: 0 seconds
 Misuses number: 0
 
-INFO     | 2023-04-18 21:42:10,242 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/bin/wps_monitor
-INFO     | 2023-04-18 21:42:10,351 | Yasat.main_cli | [88/ 159 (88 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/bin/eapd
+INFO     | 2023-04-19 13:05:03,614 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/sbin/rc
+INFO     | 2023-04-19 13:05:03,633 | Yasat.main_cli | [88/ 159 (88 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/sbin/ubdcmd
 **************************************************
                      Summary                      
 **************************************************
 Time: 0 seconds
 Misuses number: 0
 
-INFO     | 2023-04-18 21:42:10,356 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/bin/chkntfs
-INFO     | 2023-04-18 21:42:10,389 | Yasat.main_cli | [89/ 159 (89 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/bin/chkntfs
+INFO     | 2023-04-19 13:05:03,645 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/sbin/acos_service
+INFO     | 2023-04-19 13:05:03,648 | Yasat.main_cli | [89/ 159 (89 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/lib/libacos_shared.so
 **************************************************
                      Summary                      
 **************************************************
 Time: 0 seconds
 Misuses number: 0
 
-INFO     | 2023-04-18 21:42:10,397 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/bin/utelnetd
-INFO     | 2023-04-18 21:42:10,442 | Yasat.main_cli | [90/ 159 (90 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/bin/wps_monitor
+INFO     | 2023-04-19 13:05:03,648 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/sbin/udevtrigger
+INFO     | 2023-04-19 13:05:03,668 | Yasat.main_cli | [90/ 159 (90 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/sbin/gpio
 **************************************************
                      Summary                      
 **************************************************
 Time: 0 seconds
 Misuses number: 0
 
-INFO     | 2023-04-18 21:42:10,459 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/bin/busybox
-INFO     | 2023-04-18 21:42:10,528 | Yasat.main_cli | [91/ 159 (91 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/bin/utelnetd
+INFO     | 2023-04-19 13:05:03,671 | Yasat.main_cli | [91/ 159 (91 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/sbin/bd
 **************************************************
                      Summary                      
 **************************************************
 Time: 0 seconds
 Misuses number: 0
 
-INFO     | 2023-04-18 21:42:10,534 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/sbin/ubdcmd
-INFO     | 2023-04-18 21:42:10,653 | Yasat.main_cli | [92/ 159 (92 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/sbin/ubdcmd
+INFO     | 2023-04-19 13:05:03,677 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/sbin/hotplug2
+INFO     | 2023-04-19 13:05:03,688 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/sbin/parser
+INFO     | 2023-04-19 13:05:03,735 | Yasat.main_cli | [92/ 159 (92 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/sbin/udevtrigger
 **************************************************
                      Summary                      
 **************************************************
 Time: 0 seconds
 Misuses number: 0
 
-INFO     | 2023-04-18 21:42:10,659 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/sbin/gpio
-INFO     | 2023-04-18 21:42:10,731 | Yasat.main_cli | [93/ 159 (93 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/sbin/gpio
+INFO     | 2023-04-19 13:05:03,737 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/bin/wget
+INFO     | 2023-04-19 13:05:03,767 | Yasat.main_cli | [93/ 159 (93 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/sbin/hotplug2
 **************************************************
                      Summary                      
 **************************************************
 Time: 0 seconds
 Misuses number: 0
 
-INFO     | 2023-04-18 21:42:10,737 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/sbin/ntpclient
-INFO     | 2023-04-18 21:42:10,827 | Yasat.main_cli | [94/ 159 (94 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/sbin/ntpclient
+INFO     | 2023-04-19 13:05:03,773 | Yasat.main_cli | [94/ 159 (94 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/sbin/parser
 **************************************************
                      Summary                      
 **************************************************
 Time: 0 seconds
 Misuses number: 0
 
-INFO     | 2023-04-18 21:42:10,829 | Yasat.main_cli | [95/ 159 (95 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/bin/wget
+INFO     | 2023-04-19 13:05:03,774 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/bin/wps_monitor
+INFO     | 2023-04-19 13:05:03,782 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/bin/eapd
+INFO     | 2023-04-19 13:05:03,785 | Yasat.main_cli | [95/ 159 (95 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/sbin/rc
 **************************************************
                      Summary                      
 **************************************************
 Time: 0 seconds
 Misuses number: 0
 
-INFO     | 2023-04-18 21:42:10,836 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/sbin/pppd
-INFO     | 2023-04-18 21:42:10,837 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/sbin/hotplug2
-INFO     | 2023-04-18 21:42:10,965 | Yasat.main_cli | [96/ 159 (96 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/sbin/hotplug2
+INFO     | 2023-04-19 13:05:03,797 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/bin/chkntfs
+INFO     | 2023-04-19 13:05:03,811 | Yasat.main_cli | [96/ 159 (96 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/sbin/acos_service
 **************************************************
                      Summary                      
 **************************************************
 Time: 0 seconds
 Misuses number: 0
 
-INFO     | 2023-04-18 21:42:10,970 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/sbin/htmlget
-INFO     | 2023-04-18 21:42:11,045 | Yasat.main_cli | [97/ 159 (97 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/sbin/htmlget
+INFO     | 2023-04-19 13:05:03,813 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/bin/utelnetd
+INFO     | 2023-04-19 13:05:03,829 | Yasat.main_cli | [97/ 159 (97 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/bin/chkntfs
 **************************************************
                      Summary                      
 **************************************************
 Time: 0 seconds
 Misuses number: 0
 
-INFO     | 2023-04-18 21:42:11,051 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/sbin/acos_service
-INFO     | 2023-04-18 21:42:11,061 | Yasat.main_cli | There are 10 tasks running now (97 success, 0 failure, 0 timeout, 52 pending)
-INFO     | 2023-04-18 21:42:11,270 | Yasat.main_cli | [98/ 159 (98 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/sbin/acos_service
+INFO     | 2023-04-19 13:05:03,835 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/libnsl.so.0
+INFO     | 2023-04-19 13:05:03,876 | Yasat.main_cli | [98/ 159 (98 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/libnsl.so.0
 **************************************************
                      Summary                      
 **************************************************
 Time: 0 seconds
 Misuses number: 0
 
-INFO     | 2023-04-18 21:42:11,281 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/sbin/bd
-INFO     | 2023-04-18 21:42:11,419 | Yasat.main_cli | [99/ 159 (99 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/sbin/bd
+INFO     | 2023-04-19 13:05:03,878 | Yasat.main_cli | [99/ 159 (99 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/bin/eapd
 **************************************************
                      Summary                      
 **************************************************
 Time: 0 seconds
 Misuses number: 0
 
-INFO     | 2023-04-18 21:42:11,425 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/sbin/udevtrigger
-INFO     | 2023-04-18 21:42:11,521 | Yasat.main_cli | [100/ 159 (100 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/sbin/udevtrigger
+INFO     | 2023-04-19 13:05:03,886 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/libjpeg.so.7
+INFO     | 2023-04-19 13:05:03,886 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/ld-uClibc.so.0
+INFO     | 2023-04-19 13:05:03,906 | Yasat.main_cli | [100/ 159 (100 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/bin/wps_monitor
 **************************************************
                      Summary                      
 **************************************************
 Time: 0 seconds
 Misuses number: 0
 
-INFO     | 2023-04-18 21:42:11,526 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/sbin/parser
-INFO     | 2023-04-18 21:42:11,634 | Yasat.main_cli | [101/ 159 (101 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/sbin/parser
+INFO     | 2023-04-19 13:05:03,909 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/libresolv.so.0
+INFO     | 2023-04-19 13:05:03,920 | Yasat.main_cli | [101/ 159 (101 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/bin/utelnetd
 **************************************************
                      Summary                      
 **************************************************
 Time: 0 seconds
 Misuses number: 0
 
-INFO     | 2023-04-18 21:42:11,641 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/sbin/rc
-INFO     | 2023-04-18 21:42:11,837 | Yasat.main_cli | [102/ 159 (102 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/sbin/rc
+INFO     | 2023-04-19 13:05:03,923 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/libgcc_s.so.1
+INFO     | 2023-04-19 13:05:03,936 | Yasat.main_cli | [102/ 159 (102 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/ld-uClibc.so.0
 **************************************************
                      Summary                      
 **************************************************
 Time: 0 seconds
 Misuses number: 0
 
-INFO     | 2023-04-18 21:42:11,842 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/libvorbis.so.0
-INFO     | 2023-04-18 21:42:12,065 | Yasat.main_cli | There are 10 tasks running now (102 success, 0 failure, 0 timeout, 47 pending)
-INFO     | 2023-04-18 21:42:12,288 | Yasat.main_cli | [103/ 159 (103 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/libvorbis.so.0
+INFO     | 2023-04-19 13:05:03,937 | Yasat.main_cli | [103/ 159 (103 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/libresolv.so.0
 **************************************************
                      Summary                      
 **************************************************
 Time: 0 seconds
 Misuses number: 0
 
-INFO     | 2023-04-18 21:42:12,293 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/libavcodec.so.52
-INFO     | 2023-04-18 21:42:13,069 | Yasat.main_cli | There are 10 tasks running now (103 success, 0 failure, 0 timeout, 46 pending)
-INFO     | 2023-04-18 21:42:13,091 | Yasat.main_cli | [104/ 159 (104 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/libavcodec.so.52
+INFO     | 2023-04-19 13:05:03,944 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/libvolume_id.so.0.78.0
+INFO     | 2023-04-19 13:05:03,944 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/libogg.so.0
+INFO     | 2023-04-19 13:05:04,018 | Yasat.main_cli | [104/ 159 (104 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/libvolume_id.so.0.78.0
 **************************************************
                      Summary                      
 **************************************************
 Time: 0 seconds
 Misuses number: 0
 
-INFO     | 2023-04-18 21:42:13,098 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/libexif.so.12
-INFO     | 2023-04-18 21:42:13,447 | Yasat.main_cli | [105/ 159 (105 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/libexif.so.12
+INFO     | 2023-04-19 13:05:04,023 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/libavformat.so.52
+INFO     | 2023-04-19 13:05:04,042 | Yasat.main_cli | [105/ 159 (105 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/libogg.so.0
 **************************************************
                      Summary                      
 **************************************************
 Time: 0 seconds
 Misuses number: 0
 
-INFO     | 2023-04-18 21:42:13,452 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/libz.so.1
-INFO     | 2023-04-18 21:42:13,570 | Yasat.main_cli | [106/ 159 (106 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/lib/libbigballofmud.so.0
+INFO     | 2023-04-19 13:05:04,049 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/libssl.so
+INFO     | 2023-04-19 13:05:04,102 | Yasat.main_cli | [106/ 159 (106 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/libgcc_s.so.1
 **************************************************
                      Summary                      
 **************************************************
 Time: 0 seconds
 Misuses number: 0
 
-INFO     | 2023-04-18 21:42:13,575 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/libFLAC.so.8
-INFO     | 2023-04-18 21:42:13,599 | Yasat.main_cli | [107/ 159 (107 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/libz.so.1
+INFO     | 2023-04-19 13:05:04,107 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/libc.so.0
+INFO     | 2023-04-19 13:05:04,158 | Yasat.main_cli | [107/ 159 (107 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/bin/wget
 **************************************************
                      Summary                      
 **************************************************
 Time: 0 seconds
 Misuses number: 0
 
-INFO     | 2023-04-18 21:42:13,611 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/libc.so.0
-INFO     | 2023-04-18 21:42:14,073 | Yasat.main_cli | There are 10 tasks running now (107 success, 0 failure, 0 timeout, 42 pending)
-INFO     | 2023-04-18 21:42:14,139 | Yasat.main_cli | [108/ 159 (108 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/libFLAC.so.8
+INFO     | 2023-04-19 13:05:04,160 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/libdl.so.0
+INFO     | 2023-04-19 13:05:04,198 | Yasat.main_cli | [108/ 159 (108 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/libjpeg.so.7
 **************************************************
                      Summary                      
 **************************************************
 Time: 0 seconds
 Misuses number: 0
 
-INFO     | 2023-04-18 21:42:14,145 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/libdl.so.0
-INFO     | 2023-04-18 21:42:14,220 | Yasat.main_cli | [109/ 159 (109 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/libdl.so.0
+INFO     | 2023-04-19 13:05:04,204 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/libcrypto.so
+INFO     | 2023-04-19 13:05:04,233 | Yasat.main_cli | [109/ 159 (109 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/libdl.so.0
 **************************************************
                      Summary                      
 **************************************************
 Time: 0 seconds
 Misuses number: 0
 
-INFO     | 2023-04-18 21:42:14,226 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/libavutil.so.49
-INFO     | 2023-04-18 21:42:14,328 | Yasat.main_cli | [110/ 159 (110 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/libavutil.so.49
+INFO     | 2023-04-19 13:05:04,235 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/libexif.so.12
+INFO     | 2023-04-19 13:05:04,371 | Yasat.main_cli | [110/ 159 (110 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/libavformat.so.52
 **************************************************
                      Summary                      
 **************************************************
 Time: 0 seconds
 Misuses number: 0
 
-INFO     | 2023-04-18 21:42:14,332 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/ld-uClibc.so.0
-INFO     | 2023-04-18 21:42:14,390 | Yasat.main_cli | [111/ 159 (111 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/ld-uClibc.so.0
+INFO     | 2023-04-19 13:05:04,377 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/libcrypt.so.0
+INFO     | 2023-04-19 13:05:04,421 | Yasat.main_cli | [111/ 159 (111 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/libcrypt.so.0
 **************************************************
                      Summary                      
 **************************************************
 Time: 0 seconds
 Misuses number: 0
 
-INFO     | 2023-04-18 21:42:14,396 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/libnsl.so.0
-INFO     | 2023-04-18 21:42:14,434 | Yasat.main_cli | [112/ 159 (112 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/libnsl.so.0
+INFO     | 2023-04-19 13:05:04,421 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/libutil.so.0
+INFO     | 2023-04-19 13:05:04,490 | Yasat.main_cli | [112/ 159 (112 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/libutil.so.0
 **************************************************
                      Summary                      
 **************************************************
 Time: 0 seconds
 Misuses number: 0
 
-INFO     | 2023-04-18 21:42:14,440 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/libavdevice.so.52
-INFO     | 2023-04-18 21:42:14,540 | Yasat.main_cli | [113/ 159 (113 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/libavdevice.so.52
+INFO     | 2023-04-19 13:05:04,493 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/libm.so.0
+INFO     | 2023-04-19 13:05:04,521 | Yasat.main_cli | [113/ 159 (113 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/libexif.so.12
 **************************************************
                      Summary                      
 **************************************************
 Time: 0 seconds
 Misuses number: 0
 
-INFO     | 2023-04-18 21:42:14,545 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/libjpeg.so.7
-INFO     | 2023-04-18 21:42:14,930 | Yasat.main_cli | [114/ 159 (114 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/libjpeg.so.7
+INFO     | 2023-04-19 13:05:04,524 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/libavdevice.so.52
+INFO     | 2023-04-19 13:05:04,531 | Yasat.main_cli | There are 10 tasks running now (113 success, 0 failure, 0 timeout, 36 pending)
+INFO     | 2023-04-19 13:05:04,607 | Yasat.main_cli | [114/ 159 (114 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/libavdevice.so.52
 **************************************************
                      Summary                      
 **************************************************
 Time: 0 seconds
 Misuses number: 0
 
-INFO     | 2023-04-18 21:42:14,935 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/libutil.so.0
-INFO     | 2023-04-18 21:42:14,977 | Yasat.main_cli | [115/ 159 (115 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/libc.so.0
+INFO     | 2023-04-19 13:05:04,613 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/libz.so.1
+INFO     | 2023-04-19 13:05:04,633 | Yasat.main_cli | [115/ 159 (115 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/libm.so.0
 **************************************************
                      Summary                      
 **************************************************
 Time: 0 seconds
 Misuses number: 0
 
-INFO     | 2023-04-18 21:42:14,982 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/libcrypt.so.0
-INFO     | 2023-04-18 21:42:15,024 | Yasat.main_cli | [116/ 159 (116 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/libutil.so.0
+INFO     | 2023-04-19 13:05:04,635 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/libavcodec.so.52
+INFO     | 2023-04-19 13:05:04,737 | Yasat.main_cli | [116/ 159 (116 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/libz.so.1
 **************************************************
                      Summary                      
 **************************************************
 Time: 0 seconds
 Misuses number: 0
 
-INFO     | 2023-04-18 21:42:15,029 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/libsqlite3.so.0
-INFO     | 2023-04-18 21:42:15,040 | Yasat.main_cli | [117/ 159 (117 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/libcrypt.so.0
+INFO     | 2023-04-19 13:05:04,739 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/libsqlite3.so.0
+INFO     | 2023-04-19 13:05:04,793 | Yasat.main_cli | [117/ 159 (117 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/libssl.so
 **************************************************
                      Summary                      
 **************************************************
 Time: 0 seconds
 Misuses number: 0
 
-INFO     | 2023-04-18 21:42:15,045 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/libvolume_id.so.0.78.0
-INFO     | 2023-04-18 21:42:15,077 | Yasat.main_cli | There are 10 tasks running now (117 success, 0 failure, 0 timeout, 32 pending)
-INFO     | 2023-04-18 21:42:15,148 | Yasat.main_cli | [118/ 159 (118 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/libvolume_id.so.0.78.0
+INFO     | 2023-04-19 13:05:04,797 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/libpthread.so.0
+INFO     | 2023-04-19 13:05:05,009 | Yasat.main_cli | [118/ 159 (118 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/libsqlite3.so.0
 **************************************************
                      Summary                      
 **************************************************
 Time: 0 seconds
 Misuses number: 0
 
-INFO     | 2023-04-18 21:42:15,153 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/libgcc_s.so.1
-INFO     | 2023-04-18 21:42:15,320 | Yasat.main_cli | [119/ 159 (119 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/libgcc_s.so.1
+INFO     | 2023-04-19 13:05:05,013 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/libvorbis.so.0
+INFO     | 2023-04-19 13:05:05,025 | Yasat.main_cli | [119/ 159 (119 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/libpthread.so.0
 **************************************************
                      Summary                      
 **************************************************
 Time: 0 seconds
 Misuses number: 0
 
-INFO     | 2023-04-18 21:42:15,324 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/libcrypto.so
-INFO     | 2023-04-18 21:42:15,378 | Yasat.main_cli | [120/ 159 (120 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/libsqlite3.so.0
+INFO     | 2023-04-19 13:05:05,033 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/libavutil.so.49
+INFO     | 2023-04-19 13:05:05,120 | Yasat.main_cli | [120/ 159 (120 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/libavutil.so.49
 **************************************************
                      Summary                      
 **************************************************
 Time: 0 seconds
 Misuses number: 0
 
-INFO     | 2023-04-18 21:42:15,383 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/libpthread.so.0
-INFO     | 2023-04-18 21:42:15,658 | Yasat.main_cli | [121/ 159 (121 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/libpthread.so.0
+INFO     | 2023-04-19 13:05:05,126 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/libid3tag.so.0
+INFO     | 2023-04-19 13:05:05,132 | Yasat.main_cli | [121/ 159 (121 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/libavcodec.so.52
 **************************************************
                      Summary                      
 **************************************************
 Time: 0 seconds
 Misuses number: 0
 
-INFO     | 2023-04-18 21:42:15,678 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/libogg.so.0
-INFO     | 2023-04-18 21:42:15,807 | Yasat.main_cli | [122/ 159 (122 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/libogg.so.0
+INFO     | 2023-04-19 13:05:05,140 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/libFLAC.so.8
+INFO     | 2023-04-19 13:05:05,186 | Yasat.main_cli | [122/ 159 (122 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/libc.so.0
 **************************************************
                      Summary                      
 **************************************************
 Time: 0 seconds
 Misuses number: 0
 
-INFO     | 2023-04-18 21:42:15,815 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/libresolv.so.0
-INFO     | 2023-04-18 21:42:15,861 | Yasat.main_cli | [123/ 159 (123 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/libresolv.so.0
+INFO     | 2023-04-19 13:05:05,189 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/modules/2.6.36.4brcmarm+/kernel/drivers/usbprinter/GPL_NetUSB.ko
+INFO     | 2023-04-19 13:05:05,195 | Yasat.main_cli | [123/ 159 (123 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/libvorbis.so.0
 **************************************************
                      Summary                      
 **************************************************
 Time: 0 seconds
 Misuses number: 0
 
-INFO     | 2023-04-18 21:42:15,866 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/libssl.so
-INFO     | 2023-04-18 21:42:16,080 | Yasat.main_cli | There are 10 tasks running now (123 success, 0 failure, 0 timeout, 26 pending)
-INFO     | 2023-04-18 21:42:17,032 | Yasat.main_cli | [124/ 159 (124 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/libssl.so
+INFO     | 2023-04-19 13:05:05,202 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/modules/2.6.36.4brcmarm+/kernel/drivers/usbprinter/NetUSB.ko
+INFO     | 2023-04-19 13:05:05,272 | Yasat.main_cli | [124/ 159 (124 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/modules/2.6.36.4brcmarm+/kernel/drivers/usbprinter/GPL_NetUSB.ko
 **************************************************
                      Summary                      
 **************************************************
 Time: 0 seconds
 Misuses number: 0
 
-INFO     | 2023-04-18 21:42:17,037 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/libid3tag.so.0
-INFO     | 2023-04-18 21:42:17,084 | Yasat.main_cli | There are 10 tasks running now (124 success, 0 failure, 0 timeout, 25 pending)
-INFO     | 2023-04-18 21:42:17,325 | Yasat.main_cli | [125/ 159 (125 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/libid3tag.so.0
+INFO     | 2023-04-19 13:05:05,281 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/modules/2.6.36.4brcmarm+/kernel/drivers/net/emf/emf.ko
+INFO     | 2023-04-19 13:05:05,367 | Yasat.main_cli | [125/ 159 (125 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/libid3tag.so.0
 **************************************************
                      Summary                      
 **************************************************
 Time: 0 seconds
 Misuses number: 0
 
-INFO     | 2023-04-18 21:42:17,331 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/libm.so.0
-INFO     | 2023-04-18 21:42:17,511 | Yasat.main_cli | [126/ 159 (126 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/libm.so.0
+INFO     | 2023-04-19 13:05:05,373 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/modules/2.6.36.4brcmarm+/kernel/drivers/net/dpsta/dpsta.ko
+INFO     | 2023-04-19 13:05:05,420 | Yasat.main_cli | [126/ 159 (126 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/modules/2.6.36.4brcmarm+/kernel/drivers/net/emf/emf.ko
 **************************************************
                      Summary                      
 **************************************************
 Time: 0 seconds
 Misuses number: 0
 
-INFO     | 2023-04-18 21:42:17,516 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/libavformat.so.52
-INFO     | 2023-04-18 21:42:17,992 | Yasat.main_cli | [127/ 159 (127 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/libavformat.so.52
+INFO     | 2023-04-19 13:05:05,432 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/modules/2.6.36.4brcmarm+/kernel/drivers/net/igs/igs.ko
+INFO     | 2023-04-19 13:05:05,435 | Yasat.main_cli | [127/ 159 (127 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/modules/2.6.36.4brcmarm+/kernel/drivers/net/dpsta/dpsta.ko
 **************************************************
                      Summary                      
 **************************************************
 Time: 0 seconds
 Misuses number: 0
 
-INFO     | 2023-04-18 21:42:17,998 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/modules/2.6.36.4brcmarm+/kernel/drivers/net/dpsta/dpsta.ko
-INFO     | 2023-04-18 21:42:18,062 | Yasat.main_cli | [128/ 159 (128 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/modules/2.6.36.4brcmarm+/kernel/drivers/net/dpsta/dpsta.ko
+INFO     | 2023-04-19 13:05:05,444 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/modules/2.6.36.4brcmarm+/kernel/drivers/net/et/et.ko
+INFO     | 2023-04-19 13:05:05,538 | Yasat.main_cli | There are 10 tasks running now (127 success, 0 failure, 0 timeout, 22 pending)
+INFO     | 2023-04-19 13:05:05,550 | Yasat.main_cli | [128/ 159 (128 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/modules/2.6.36.4brcmarm+/kernel/drivers/net/igs/igs.ko
 **************************************************
                      Summary                      
 **************************************************
 Time: 0 seconds
 Misuses number: 0
 
-INFO     | 2023-04-18 21:42:18,069 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/modules/2.6.36.4brcmarm+/kernel/drivers/net/igs/igs.ko
-INFO     | 2023-04-18 21:42:18,087 | Yasat.main_cli | There are 10 tasks running now (128 success, 0 failure, 0 timeout, 21 pending)
-INFO     | 2023-04-18 21:42:18,194 | Yasat.main_cli | [129/ 159 (129 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/modules/2.6.36.4brcmarm+/kernel/drivers/net/igs/igs.ko
+INFO     | 2023-04-19 13:05:05,557 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/modules/2.6.36.4brcmarm+/kernel/drivers/net/ctf/ctf.ko
+INFO     | 2023-04-19 13:05:05,634 | Yasat.main_cli | [129/ 159 (129 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/libFLAC.so.8
 **************************************************
                      Summary                      
 **************************************************
 Time: 0 seconds
 Misuses number: 0
 
-INFO     | 2023-04-18 21:42:18,199 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/modules/2.6.36.4brcmarm+/kernel/drivers/net/emf/emf.ko
-INFO     | 2023-04-18 21:42:18,341 | Yasat.main_cli | [130/ 159 (130 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/modules/2.6.36.4brcmarm+/kernel/drivers/net/emf/emf.ko
+INFO     | 2023-04-19 13:05:05,641 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/modules/2.6.36.4brcmarm+/kernel/drivers/net/wl/wl.ko
+INFO     | 2023-04-19 13:05:05,662 | Yasat.main_cli | [130/ 159 (130 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/modules/2.6.36.4brcmarm+/kernel/drivers/net/ctf/ctf.ko
 **************************************************
                      Summary                      
 **************************************************
 Time: 0 seconds
 Misuses number: 0
 
-INFO     | 2023-04-18 21:42:18,345 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/modules/2.6.36.4brcmarm+/kernel/drivers/net/wl/wl.ko
-INFO     | 2023-04-18 21:42:18,831 | Yasat.main_cli | [131/ 159 (131 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/libcrypto.so
+INFO     | 2023-04-19 13:05:05,668 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/modules/2.6.36.4brcmarm+/kernel/drivers/connector/cn.ko
+INFO     | 2023-04-19 13:05:05,729 | Yasat.main_cli | [131/ 159 (131 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/modules/2.6.36.4brcmarm+/kernel/drivers/net/et/et.ko
 **************************************************
                      Summary                      
 **************************************************
 Time: 0 seconds
 Misuses number: 0
 
-INFO     | 2023-04-18 21:42:18,837 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/modules/2.6.36.4brcmarm+/kernel/drivers/net/ctf/ctf.ko
-INFO     | 2023-04-18 21:42:18,927 | Yasat.main_cli | [132/ 159 (132 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/modules/2.6.36.4brcmarm+/kernel/drivers/net/ctf/ctf.ko
+INFO     | 2023-04-19 13:05:05,735 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/modules/2.6.36.4brcmarm+/kernel/drivers/ufsd/ufsd.ko
+INFO     | 2023-04-19 13:05:05,747 | Yasat.main_cli | [132/ 159 (132 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/modules/2.6.36.4brcmarm+/kernel/drivers/connector/cn.ko
 **************************************************
                      Summary                      
 **************************************************
 Time: 0 seconds
 Misuses number: 0
 
-INFO     | 2023-04-18 21:42:18,932 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/modules/2.6.36.4brcmarm+/kernel/drivers/net/et/et.ko
-INFO     | 2023-04-18 21:42:19,091 | Yasat.main_cli | There are 10 tasks running now (132 success, 0 failure, 0 timeout, 17 pending)
-INFO     | 2023-04-18 21:42:19,198 | Yasat.main_cli | [133/ 159 (133 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/modules/2.6.36.4brcmarm+/kernel/drivers/net/et/et.ko
+INFO     | 2023-04-19 13:05:05,760 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/modules/2.6.36.4brcmarm+/kernel/drivers/ufsd/jnl.ko
+INFO     | 2023-04-19 13:05:05,926 | Yasat.main_cli | [133/ 159 (133 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/modules/2.6.36.4brcmarm+/kernel/drivers/ufsd/jnl.ko
 **************************************************
                      Summary                      
 **************************************************
 Time: 0 seconds
 Misuses number: 0
 
-INFO     | 2023-04-18 21:42:19,203 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/modules/2.6.36.4brcmarm+/kernel/drivers/ufsd/jnl.ko
-INFO     | 2023-04-18 21:42:19,406 | Yasat.main_cli | [134/ 159 (134 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/modules/2.6.36.4brcmarm+/kernel/drivers/ufsd/jnl.ko
+INFO     | 2023-04-19 13:05:05,934 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/modules/2.6.36.4brcmarm+/kernel/drivers/scsi/scsi_wait_scan.ko
+INFO     | 2023-04-19 13:05:05,966 | Yasat.main_cli | [134/ 159 (134 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/modules/2.6.36.4brcmarm+/kernel/drivers/scsi/scsi_wait_scan.ko
 **************************************************
                      Summary                      
 **************************************************
 Time: 0 seconds
 Misuses number: 0
 
-INFO     | 2023-04-18 21:42:19,414 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/modules/2.6.36.4brcmarm+/kernel/drivers/ufsd/ufsd.ko
-INFO     | 2023-04-18 21:42:20,095 | Yasat.main_cli | There are 10 tasks running now (134 success, 0 failure, 0 timeout, 15 pending)
-INFO     | 2023-04-18 21:42:21,085 | Yasat.main_cli | [135/ 159 (135 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/modules/2.6.36.4brcmarm+/kernel/drivers/ufsd/ufsd.ko
+INFO     | 2023-04-19 13:05:05,973 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/modules/2.6.36.4brcmarm+/kernel/net/sched/sch_tbf.ko
+INFO     | 2023-04-19 13:05:06,017 | Yasat.main_cli | [135/ 159 (135 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/modules/2.6.36.4brcmarm+/kernel/net/sched/sch_tbf.ko
 **************************************************
                      Summary                      
 **************************************************
 Time: 0 seconds
 Misuses number: 0
 
-INFO     | 2023-04-18 21:42:21,091 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/modules/2.6.36.4brcmarm+/kernel/drivers/usbprinter/NetUSB.ko
-INFO     | 2023-04-18 21:42:21,098 | Yasat.main_cli | There are 10 tasks running now (135 success, 0 failure, 0 timeout, 14 pending)
-INFO     | 2023-04-18 21:42:22,068 | Yasat.main_cli | [136/ 159 (136 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/modules/2.6.36.4brcmarm+/kernel/drivers/usbprinter/NetUSB.ko
+INFO     | 2023-04-19 13:05:06,026 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/modules/2.6.36.4brcmarm+/kernel/net/sched/sch_hfsc.ko
+INFO     | 2023-04-19 13:05:06,039 | Yasat.main_cli | [136/ 159 (136 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/modules/2.6.36.4brcmarm+/kernel/drivers/usbprinter/NetUSB.ko
 **************************************************
                      Summary                      
 **************************************************
 Time: 0 seconds
 Misuses number: 0
 
-INFO     | 2023-04-18 21:42:22,072 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/modules/2.6.36.4brcmarm+/kernel/drivers/usbprinter/GPL_NetUSB.ko
-INFO     | 2023-04-18 21:42:22,102 | Yasat.main_cli | There are 10 tasks running now (136 success, 0 failure, 0 timeout, 13 pending)
-INFO     | 2023-04-18 21:42:22,171 | Yasat.main_cli | [137/ 159 (137 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/modules/2.6.36.4brcmarm+/kernel/drivers/usbprinter/GPL_NetUSB.ko
+INFO     | 2023-04-19 13:05:06,050 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/modules/2.6.36.4brcmarm+/kernel/lib/opendns.ko
+INFO     | 2023-04-19 13:05:06,093 | Yasat.main_cli | [137/ 159 (137 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/modules/2.6.36.4brcmarm+/kernel/lib/opendns.ko
 **************************************************
                      Summary                      
 **************************************************
 Time: 0 seconds
 Misuses number: 0
 
-INFO     | 2023-04-18 21:42:22,179 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/modules/2.6.36.4brcmarm+/kernel/drivers/connector/cn.ko
-INFO     | 2023-04-18 21:42:22,267 | Yasat.main_cli | [138/ 159 (138 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/modules/2.6.36.4brcmarm+/kernel/drivers/connector/cn.ko
+INFO     | 2023-04-19 13:05:06,107 | Yasat.main_cli | [138/ 159 (138 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/lib/libbigballofmud.so.0
 **************************************************
                      Summary                      
 **************************************************
 Time: 0 seconds
 Misuses number: 0
 
-INFO     | 2023-04-18 21:42:22,273 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/modules/2.6.36.4brcmarm+/kernel/drivers/scsi/scsi_wait_scan.ko
-INFO     | 2023-04-18 21:42:22,315 | Yasat.main_cli | [139/ 159 (139 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/modules/2.6.36.4brcmarm+/kernel/drivers/scsi/scsi_wait_scan.ko
+INFO     | 2023-04-19 13:05:06,115 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/modules/2.6.36.4brcmarm+/kernel/lib/ipv6_spi.ko
+INFO     | 2023-04-19 13:05:06,120 | Yasat.main_cli | [139/ 159 (139 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/modules/2.6.36.4brcmarm+/kernel/net/sched/sch_hfsc.ko
 **************************************************
                      Summary                      
 **************************************************
 Time: 0 seconds
 Misuses number: 0
 
-INFO     | 2023-04-18 21:42:22,322 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/modules/2.6.36.4brcmarm+/kernel/net/sched/sch_hfsc.ko
-INFO     | 2023-04-18 21:42:22,416 | Yasat.main_cli | [140/ 159 (140 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/modules/2.6.36.4brcmarm+/kernel/net/sched/sch_hfsc.ko
+INFO     | 2023-04-19 13:05:06,136 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/modules/2.6.36.4brcmarm+/kernel/lib/l7_filter.ko
+INFO     | 2023-04-19 13:05:06,138 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/modules/2.6.36.4brcmarm+/kernel/lib/br_dns_hijack.ko
+INFO     | 2023-04-19 13:05:06,203 | Yasat.main_cli | [140/ 159 (140 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/modules/2.6.36.4brcmarm+/kernel/lib/br_dns_hijack.ko
 **************************************************
                      Summary                      
 **************************************************
 Time: 0 seconds
 Misuses number: 0
 
-INFO     | 2023-04-18 21:42:22,421 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/modules/2.6.36.4brcmarm+/kernel/net/sched/sch_tbf.ko
-INFO     | 2023-04-18 21:42:22,479 | Yasat.main_cli | [141/ 159 (141 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/modules/2.6.36.4brcmarm+/kernel/net/sched/sch_tbf.ko
+INFO     | 2023-04-19 13:05:06,205 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/modules/2.6.36.4brcmarm+/kernel/lib/MultiSsidCntl.ko
+INFO     | 2023-04-19 13:05:06,227 | Yasat.main_cli | [141/ 159 (141 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/modules/2.6.36.4brcmarm+/kernel/lib/l7_filter.ko
 **************************************************
                      Summary                      
 **************************************************
 Time: 0 seconds
 Misuses number: 0
 
-INFO     | 2023-04-18 21:42:22,485 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/modules/2.6.36.4brcmarm+/kernel/lib/ipv6_spi.ko
-INFO     | 2023-04-18 21:42:22,666 | Yasat.main_cli | [142/ 159 (142 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/modules/2.6.36.4brcmarm+/kernel/lib/ipv6_spi.ko
+INFO     | 2023-04-19 13:05:06,237 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/modules/2.6.36.4brcmarm+/kernel/lib/acos_nat.ko
+INFO     | 2023-04-19 13:05:06,265 | Yasat.main_cli | [142/ 159 (142 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/modules/2.6.36.4brcmarm+/kernel/lib/MultiSsidCntl.ko
 **************************************************
                      Summary                      
 **************************************************
 Time: 0 seconds
 Misuses number: 0
 
-INFO     | 2023-04-18 21:42:22,678 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/modules/2.6.36.4brcmarm+/kernel/lib/ubd.ko
-INFO     | 2023-04-18 21:42:22,750 | Yasat.main_cli | [143/ 159 (143 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/modules/2.6.36.4brcmarm+/kernel/lib/ubd.ko
+INFO     | 2023-04-19 13:05:06,270 | Yasat.main_cli | [143/ 159 (143 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/modules/2.6.36.4brcmarm+/kernel/lib/ipv6_spi.ko
 **************************************************
                      Summary                      
 **************************************************
 Time: 0 seconds
 Misuses number: 0
 
-INFO     | 2023-04-18 21:42:22,756 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/modules/2.6.36.4brcmarm+/kernel/lib/MultiSsidCntl.ko
-INFO     | 2023-04-18 21:42:22,808 | Yasat.main_cli | [144/ 159 (144 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/modules/2.6.36.4brcmarm+/kernel/lib/MultiSsidCntl.ko
+INFO     | 2023-04-19 13:05:06,274 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/modules/2.6.36.4brcmarm+/kernel/lib/libcrc32c.ko
+INFO     | 2023-04-19 13:05:06,279 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/modules/2.6.36.4brcmarm+/kernel/lib/ubd.ko
+INFO     | 2023-04-19 13:05:06,314 | Yasat.main_cli | [144/ 159 (144 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/modules/2.6.36.4brcmarm+/kernel/lib/libcrc32c.ko
 **************************************************
                      Summary                      
 **************************************************
 Time: 0 seconds
 Misuses number: 0
 
-INFO     | 2023-04-18 21:42:22,813 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/modules/2.6.36.4brcmarm+/kernel/lib/opendns.ko
-INFO     | 2023-04-18 21:42:22,862 | Yasat.main_cli | [145/ 159 (145 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/modules/2.6.36.4brcmarm+/kernel/lib/opendns.ko
+INFO     | 2023-04-19 13:05:06,321 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/udev/vol_id
+INFO     | 2023-04-19 13:05:06,333 | Yasat.main_cli | [145/ 159 (145 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/modules/2.6.36.4brcmarm+/kernel/lib/ubd.ko
 **************************************************
                      Summary                      
 **************************************************
 Time: 0 seconds
 Misuses number: 0
 
-INFO     | 2023-04-18 21:42:22,867 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/modules/2.6.36.4brcmarm+/kernel/lib/libcrc32c.ko
-INFO     | 2023-04-18 21:42:22,914 | Yasat.main_cli | [146/ 159 (146 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/modules/2.6.36.4brcmarm+/kernel/lib/libcrc32c.ko
+INFO     | 2023-04-19 13:05:06,343 | Yasat.main_cli | Analyzing examples/tmp/dropbearmulti
+INFO     | 2023-04-19 13:05:06,416 | Yasat.main_cli | Analyzing examples/tmp/boa
+INFO     | 2023-04-19 13:05:06,417 | Yasat.main_cli | [146/ 159 (146 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/udev/vol_id
 **************************************************
                      Summary                      
 **************************************************
 Time: 0 seconds
 Misuses number: 0
 
-INFO     | 2023-04-18 21:42:22,920 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/modules/2.6.36.4brcmarm+/kernel/lib/l7_filter.ko
-INFO     | 2023-04-18 21:42:23,047 | Yasat.main_cli | [147/ 159 (147 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/modules/2.6.36.4brcmarm+/kernel/lib/l7_filter.ko
+INFO     | 2023-04-19 13:05:06,545 | Yasat.main_cli | There are 9 tasks running now (146 success, 0 failure, 0 timeout, 4 pending)
+INFO     | 2023-04-19 13:05:07,199 | Yasat.main_cli | [147/ 159 (147 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/libcrypto.so
 **************************************************
                      Summary                      
 **************************************************
 Time: 0 seconds
 Misuses number: 0
 
-INFO     | 2023-04-18 21:42:23,052 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/modules/2.6.36.4brcmarm+/kernel/lib/br_dns_hijack.ko
-INFO     | 2023-04-18 21:42:23,106 | Yasat.main_cli | There are 10 tasks running now (147 success, 0 failure, 0 timeout, 2 pending)
-INFO     | 2023-04-18 21:42:23,158 | Yasat.main_cli | [148/ 159 (148 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/modules/2.6.36.4brcmarm+/kernel/lib/br_dns_hijack.ko
+INFO     | 2023-04-19 13:05:07,208 | Yasat.main_cli | Analyzing examples/tmp/logic
+INFO     | 2023-04-19 13:05:07,245 | Yasat.main_cli | [148/ 159 (148 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/modules/2.6.36.4brcmarm+/kernel/drivers/ufsd/ufsd.ko
 **************************************************
                      Summary                      
 **************************************************
 Time: 0 seconds
 Misuses number: 0
 
-INFO     | 2023-04-18 21:42:23,165 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/modules/2.6.36.4brcmarm+/kernel/lib/acos_nat.ko
-INFO     | 2023-04-18 21:42:24,110 | Yasat.main_cli | There are 10 tasks running now (148 success, 0 failure, 0 timeout, 1 pending)
-INFO     | 2023-04-18 21:42:24,809 | Yasat.main_cli | [149/ 159 (149 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/modules/2.6.36.4brcmarm+/kernel/lib/acos_nat.ko
+INFO     | 2023-04-19 13:05:07,549 | Yasat.main_cli | There are 8 tasks running now (148 success, 0 failure, 0 timeout, 3 pending)
+INFO     | 2023-04-19 13:05:07,740 | Yasat.main_cli | [149/ 159 (149 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/modules/2.6.36.4brcmarm+/kernel/lib/acos_nat.ko
 **************************************************
                      Summary                      
 **************************************************
 Time: 0 seconds
 Misuses number: 0
 
-INFO     | 2023-04-18 21:42:24,818 | Yasat.main_cli | Analyzing examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/udev/vol_id
-INFO     | 2023-04-18 21:42:24,917 | Yasat.main_cli | [150/ 159 (150 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/udev/vol_id
+INFO     | 2023-04-19 13:05:08,557 | Yasat.main_cli | There are 7 tasks running now (149 success, 0 failure, 0 timeout, 3 pending)
+INFO     | 2023-04-19 13:05:09,561 | Yasat.main_cli | There are 7 tasks running now (149 success, 0 failure, 0 timeout, 3 pending)
+INFO     | 2023-04-19 13:05:10,565 | Yasat.main_cli | There are 7 tasks running now (149 success, 0 failure, 0 timeout, 3 pending)
+INFO     | 2023-04-19 13:05:11,569 | Yasat.main_cli | There are 7 tasks running now (149 success, 0 failure, 0 timeout, 3 pending)
+INFO     | 2023-04-19 13:05:12,573 | Yasat.main_cli | There are 7 tasks running now (149 success, 0 failure, 0 timeout, 3 pending)
+INFO     | 2023-04-19 13:05:13,581 | Yasat.main_cli | There are 7 tasks running now (149 success, 0 failure, 0 timeout, 3 pending)
+INFO     | 2023-04-19 13:05:14,268 | Yasat.main_cli | [150/ 159 (150 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/modules/2.6.36.4brcmarm+/kernel/drivers/net/wl/wl.ko
 **************************************************
                      Summary                      
 **************************************************
 Time: 0 seconds
 Misuses number: 0
 
-INFO     | 2023-04-18 21:42:25,113 | Yasat.main_cli | There are 9 tasks running now (150 success, 0 failure, 0 timeout, 0 pending)
-INFO     | 2023-04-18 21:42:26,116 | Yasat.main_cli | There are 9 tasks running now (150 success, 0 failure, 0 timeout, 0 pending)
-INFO     | 2023-04-18 21:42:27,120 | Yasat.main_cli | There are 9 tasks running now (150 success, 0 failure, 0 timeout, 0 pending)
-INFO     | 2023-04-18 21:42:28,124 | Yasat.main_cli | There are 9 tasks running now (150 success, 0 failure, 0 timeout, 0 pending)
-INFO     | 2023-04-18 21:42:28,611 | Yasat.main_cli | [151/ 159 (151 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/modules/2.6.36.4brcmarm+/kernel/drivers/net/wl/wl.ko
-**************************************************
-                     Summary                      
-**************************************************
-Time: 0 seconds
-Misuses number: 0
-
-INFO     | 2023-04-18 21:42:29,128 | Yasat.main_cli | There are 8 tasks running now (151 success, 0 failure, 0 timeout, 0 pending)
-INFO     | 2023-04-18 21:42:30,132 | Yasat.main_cli | There are 8 tasks running now (151 success, 0 failure, 0 timeout, 0 pending)
-INFO     | 2023-04-18 21:42:31,135 | Yasat.main_cli | There are 8 tasks running now (151 success, 0 failure, 0 timeout, 0 pending)
-INFO     | 2023-04-18 21:42:32,138 | Yasat.main_cli | There are 8 tasks running now (151 success, 0 failure, 0 timeout, 0 pending)
-INFO     | 2023-04-18 21:42:33,142 | Yasat.main_cli | There are 8 tasks running now (151 success, 0 failure, 0 timeout, 0 pending)
-INFO     | 2023-04-18 21:42:34,145 | Yasat.main_cli | There are 8 tasks running now (151 success, 0 failure, 0 timeout, 0 pending)
-INFO     | 2023-04-18 21:42:35,149 | Yasat.main_cli | There are 8 tasks running now (151 success, 0 failure, 0 timeout, 0 pending)
-INFO     | 2023-04-18 21:42:36,152 | Yasat.main_cli | There are 8 tasks running now (151 success, 0 failure, 0 timeout, 0 pending)
-INFO     | 2023-04-18 21:42:37,157 | Yasat.main_cli | There are 8 tasks running now (151 success, 0 failure, 0 timeout, 0 pending)
-INFO     | 2023-04-18 21:42:38,161 | Yasat.main_cli | There are 8 tasks running now (151 success, 0 failure, 0 timeout, 0 pending)
-INFO     | 2023-04-18 21:42:39,165 | Yasat.main_cli | There are 8 tasks running now (151 success, 0 failure, 0 timeout, 0 pending)
-INFO     | 2023-04-18 21:42:40,168 | Yasat.main_cli | There are 8 tasks running now (151 success, 0 failure, 0 timeout, 0 pending)
-INFO     | 2023-04-18 21:42:41,171 | Yasat.main_cli | There are 8 tasks running now (151 success, 0 failure, 0 timeout, 0 pending)
-INFO     | 2023-04-18 21:42:42,174 | Yasat.main_cli | There are 8 tasks running now (151 success, 0 failure, 0 timeout, 0 pending)
-INFO     | 2023-04-18 21:42:43,178 | Yasat.main_cli | There are 8 tasks running now (151 success, 0 failure, 0 timeout, 0 pending)
-INFO     | 2023-04-18 21:42:44,181 | Yasat.main_cli | There are 8 tasks running now (151 success, 0 failure, 0 timeout, 0 pending)
-INFO     | 2023-04-18 21:42:45,184 | Yasat.main_cli | There are 8 tasks running now (151 success, 0 failure, 0 timeout, 0 pending)
-INFO     | 2023-04-18 21:42:46,188 | Yasat.main_cli | There are 8 tasks running now (151 success, 0 failure, 0 timeout, 0 pending)
-INFO     | 2023-04-18 21:42:47,191 | Yasat.main_cli | There are 8 tasks running now (151 success, 0 failure, 0 timeout, 0 pending)
-INFO     | 2023-04-18 21:42:48,194 | Yasat.main_cli | There are 8 tasks running now (151 success, 0 failure, 0 timeout, 0 pending)
-INFO     | 2023-04-18 21:42:49,197 | Yasat.main_cli | There are 8 tasks running now (151 success, 0 failure, 0 timeout, 0 pending)
-INFO     | 2023-04-18 21:42:50,201 | Yasat.main_cli | There are 8 tasks running now (151 success, 0 failure, 0 timeout, 0 pending)
-INFO     | 2023-04-18 21:42:51,205 | Yasat.main_cli | There are 8 tasks running now (151 success, 0 failure, 0 timeout, 0 pending)
-INFO     | 2023-04-18 21:42:52,208 | Yasat.main_cli | There are 8 tasks running now (151 success, 0 failure, 0 timeout, 0 pending)
-INFO     | 2023-04-18 21:42:53,212 | Yasat.main_cli | There are 8 tasks running now (151 success, 0 failure, 0 timeout, 0 pending)
-INFO     | 2023-04-18 21:42:54,216 | Yasat.main_cli | There are 8 tasks running now (151 success, 0 failure, 0 timeout, 0 pending)
-INFO     | 2023-04-18 21:42:55,219 | Yasat.main_cli | There are 8 tasks running now (151 success, 0 failure, 0 timeout, 0 pending)
-INFO     | 2023-04-18 21:42:56,223 | Yasat.main_cli | There are 8 tasks running now (151 success, 0 failure, 0 timeout, 0 pending)
-INFO     | 2023-04-18 21:42:57,227 | Yasat.main_cli | There are 8 tasks running now (151 success, 0 failure, 0 timeout, 0 pending)
-INFO     | 2023-04-18 21:42:58,231 | Yasat.main_cli | There are 8 tasks running now (151 success, 0 failure, 0 timeout, 0 pending)
-INFO     | 2023-04-18 21:42:59,235 | Yasat.main_cli | There are 8 tasks running now (151 success, 0 failure, 0 timeout, 0 pending)
-INFO     | 2023-04-18 21:43:00,239 | Yasat.main_cli | There are 8 tasks running now (151 success, 0 failure, 0 timeout, 0 pending)
-INFO     | 2023-04-18 21:43:01,216 | Yasat.main_cli | [152/ 159 (152 success, 0 failure, 0 timeout)] Discovered 1 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/bftpd
-**************************************************
-                     Summary                      
-**************************************************
-Time: 0 seconds
-Misuses number: 1
-- ConstantKeysChecker: 0
-- ConstantSaltsChecker: 1
-- PBEIterationsChecker: 0
-- RSAKeySizesChecker: 0
-
-INFO     | 2023-04-18 21:43:01,243 | Yasat.main_cli | There are 7 tasks running now (152 success, 0 failure, 0 timeout, 0 pending)
-INFO     | 2023-04-18 21:43:02,246 | Yasat.main_cli | There are 7 tasks running now (152 success, 0 failure, 0 timeout, 0 pending)
-INFO     | 2023-04-18 21:43:03,249 | Yasat.main_cli | There are 7 tasks running now (152 success, 0 failure, 0 timeout, 0 pending)
-INFO     | 2023-04-18 21:43:04,252 | Yasat.main_cli | There are 7 tasks running now (152 success, 0 failure, 0 timeout, 0 pending)
-INFO     | 2023-04-18 21:43:05,256 | Yasat.main_cli | There are 7 tasks running now (152 success, 0 failure, 0 timeout, 0 pending)
-INFO     | 2023-04-18 21:43:06,259 | Yasat.main_cli | There are 7 tasks running now (152 success, 0 failure, 0 timeout, 0 pending)
-INFO     | 2023-04-18 21:43:07,262 | Yasat.main_cli | There are 7 tasks running now (152 success, 0 failure, 0 timeout, 0 pending)
-INFO     | 2023-04-18 21:43:08,266 | Yasat.main_cli | There are 7 tasks running now (152 success, 0 failure, 0 timeout, 0 pending)
-INFO     | 2023-04-18 21:43:09,268 | Yasat.main_cli | There are 7 tasks running now (152 success, 0 failure, 0 timeout, 0 pending)
-INFO     | 2023-04-18 21:43:10,271 | Yasat.main_cli | There are 7 tasks running now (152 success, 0 failure, 0 timeout, 0 pending)
-INFO     | 2023-04-18 21:43:11,275 | Yasat.main_cli | There are 7 tasks running now (152 success, 0 failure, 0 timeout, 0 pending)
-INFO     | 2023-04-18 21:43:12,278 | Yasat.main_cli | There are 7 tasks running now (152 success, 0 failure, 0 timeout, 0 pending)
-INFO     | 2023-04-18 21:43:12,744 | Yasat.main_cli | [153/ 159 (153 success, 0 failure, 0 timeout)] Discovered 2 misuses in examples/tmp/busybox
-**************************************************
-                     Summary                      
-**************************************************
-Time: 0 seconds
-Misuses number: 2
-- ConstantKeysChecker: 0
-- ConstantSaltsChecker: 2
-- PBEIterationsChecker: 0
-- RSAKeySizesChecker: 0
-
-INFO     | 2023-04-18 21:43:13,282 | Yasat.main_cli | There are 6 tasks running now (153 success, 0 failure, 0 timeout, 0 pending)
-INFO     | 2023-04-18 21:43:14,284 | Yasat.main_cli | There are 6 tasks running now (153 success, 0 failure, 0 timeout, 0 pending)
-INFO     | 2023-04-18 21:43:15,287 | Yasat.main_cli | There are 6 tasks running now (153 success, 0 failure, 0 timeout, 0 pending)
-INFO     | 2023-04-18 21:43:16,290 | Yasat.main_cli | There are 6 tasks running now (153 success, 0 failure, 0 timeout, 0 pending)
-INFO     | 2023-04-18 21:43:17,293 | Yasat.main_cli | There are 6 tasks running now (153 success, 0 failure, 0 timeout, 0 pending)
-INFO     | 2023-04-18 21:43:18,296 | Yasat.main_cli | There are 6 tasks running now (153 success, 0 failure, 0 timeout, 0 pending)
-INFO     | 2023-04-18 21:43:18,574 | Yasat.main_cli | [154/ 159 (154 success, 0 failure, 0 timeout)] Discovered 2 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/bin/busybox
-**************************************************
-                     Summary                      
-**************************************************
-Time: 0 seconds
-Misuses number: 2
-- ConstantKeysChecker: 0
-- ConstantSaltsChecker: 2
-- PBEIterationsChecker: 0
-- RSAKeySizesChecker: 0
-
-INFO     | 2023-04-18 21:43:19,299 | Yasat.main_cli | There are 5 tasks running now (154 success, 0 failure, 0 timeout, 0 pending)
-INFO     | 2023-04-18 21:43:20,302 | Yasat.main_cli | There are 5 tasks running now (154 success, 0 failure, 0 timeout, 0 pending)
-INFO     | 2023-04-18 21:43:21,305 | Yasat.main_cli | There are 5 tasks running now (154 success, 0 failure, 0 timeout, 0 pending)
-INFO     | 2023-04-18 21:43:22,307 | Yasat.main_cli | There are 5 tasks running now (154 success, 0 failure, 0 timeout, 0 pending)
-INFO     | 2023-04-18 21:43:23,310 | Yasat.main_cli | There are 5 tasks running now (154 success, 0 failure, 0 timeout, 0 pending)
-INFO     | 2023-04-18 21:43:24,313 | Yasat.main_cli | There are 5 tasks running now (154 success, 0 failure, 0 timeout, 0 pending)
-INFO     | 2023-04-18 21:43:25,316 | Yasat.main_cli | There are 5 tasks running now (154 success, 0 failure, 0 timeout, 0 pending)
-INFO     | 2023-04-18 21:43:26,318 | Yasat.main_cli | There are 5 tasks running now (154 success, 0 failure, 0 timeout, 0 pending)
-INFO     | 2023-04-18 21:43:27,321 | Yasat.main_cli | There are 5 tasks running now (154 success, 0 failure, 0 timeout, 0 pending)
-INFO     | 2023-04-18 21:43:28,323 | Yasat.main_cli | There are 5 tasks running now (154 success, 0 failure, 0 timeout, 0 pending)
-INFO     | 2023-04-18 21:43:29,326 | Yasat.main_cli | There are 5 tasks running now (154 success, 0 failure, 0 timeout, 0 pending)
-INFO     | 2023-04-18 21:43:30,328 | Yasat.main_cli | There are 5 tasks running now (154 success, 0 failure, 0 timeout, 0 pending)
-INFO     | 2023-04-18 21:43:31,331 | Yasat.main_cli | There are 5 tasks running now (154 success, 0 failure, 0 timeout, 0 pending)
-INFO     | 2023-04-18 21:43:32,335 | Yasat.main_cli | There are 5 tasks running now (154 success, 0 failure, 0 timeout, 0 pending)
-INFO     | 2023-04-18 21:43:33,338 | Yasat.main_cli | There are 5 tasks running now (154 success, 0 failure, 0 timeout, 0 pending)
-INFO     | 2023-04-18 21:43:34,341 | Yasat.main_cli | There are 5 tasks running now (154 success, 0 failure, 0 timeout, 0 pending)
-INFO     | 2023-04-18 21:43:35,344 | Yasat.main_cli | There are 5 tasks running now (154 success, 0 failure, 0 timeout, 0 pending)
-INFO     | 2023-04-18 21:43:36,347 | Yasat.main_cli | There are 5 tasks running now (154 success, 0 failure, 0 timeout, 0 pending)
-INFO     | 2023-04-18 21:43:37,350 | Yasat.main_cli | There are 5 tasks running now (154 success, 0 failure, 0 timeout, 0 pending)
-INFO     | 2023-04-18 21:43:38,352 | Yasat.main_cli | There are 5 tasks running now (154 success, 0 failure, 0 timeout, 0 pending)
-INFO     | 2023-04-18 21:43:39,356 | Yasat.main_cli | There are 5 tasks running now (154 success, 0 failure, 0 timeout, 0 pending)
-INFO     | 2023-04-18 21:43:40,360 | Yasat.main_cli | There are 5 tasks running now (154 success, 0 failure, 0 timeout, 0 pending)
-INFO     | 2023-04-18 21:43:40,892 | Yasat.main_cli | [155/ 159 (155 success, 0 failure, 0 timeout)] Discovered 2 misuses in examples/tmp/boa
-**************************************************
-                     Summary                      
-**************************************************
-Time: 0 seconds
-Misuses number: 2
-- ConstantKeysChecker: 0
-- ConstantSaltsChecker: 2
-- PBEIterationsChecker: 0
-- RSAKeySizesChecker: 0
-
-INFO     | 2023-04-18 21:43:41,363 | Yasat.main_cli | There are 4 tasks running now (155 success, 0 failure, 0 timeout, 0 pending)
-INFO     | 2023-04-18 21:43:42,367 | Yasat.main_cli | There are 4 tasks running now (155 success, 0 failure, 0 timeout, 0 pending)
-INFO     | 2023-04-18 21:43:43,369 | Yasat.main_cli | There are 4 tasks running now (155 success, 0 failure, 0 timeout, 0 pending)
-INFO     | 2023-04-18 21:43:44,372 | Yasat.main_cli | There are 4 tasks running now (155 success, 0 failure, 0 timeout, 0 pending)
-INFO     | 2023-04-18 21:43:45,374 | Yasat.main_cli | There are 4 tasks running now (155 success, 0 failure, 0 timeout, 0 pending)
-INFO     | 2023-04-18 21:43:46,377 | Yasat.main_cli | There are 4 tasks running now (155 success, 0 failure, 0 timeout, 0 pending)
-INFO     | 2023-04-18 21:43:47,380 | Yasat.main_cli | There are 4 tasks running now (155 success, 0 failure, 0 timeout, 0 pending)
-INFO     | 2023-04-18 21:43:48,383 | Yasat.main_cli | There are 4 tasks running now (155 success, 0 failure, 0 timeout, 0 pending)
-INFO     | 2023-04-18 21:43:49,385 | Yasat.main_cli | There are 4 tasks running now (155 success, 0 failure, 0 timeout, 0 pending)
-INFO     | 2023-04-18 21:43:50,388 | Yasat.main_cli | There are 4 tasks running now (155 success, 0 failure, 0 timeout, 0 pending)
-INFO     | 2023-04-18 21:43:51,390 | Yasat.main_cli | There are 4 tasks running now (155 success, 0 failure, 0 timeout, 0 pending)
-INFO     | 2023-04-18 21:43:52,122 | Yasat.main_cli | [156/ 159 (156 success, 0 failure, 0 timeout)] Discovered 1 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/local/samba/smbd
-**************************************************
-                     Summary                      
-**************************************************
-Time: 0 seconds
-Misuses number: 1
-- ConstantKeysChecker: 0
-- ConstantSaltsChecker: 1
-- PBEIterationsChecker: 0
-- RSAKeySizesChecker: 0
-
-INFO     | 2023-04-18 21:43:52,393 | Yasat.main_cli | There are 3 tasks running now (156 success, 0 failure, 0 timeout, 0 pending)
-INFO     | 2023-04-18 21:43:53,396 | Yasat.main_cli | There are 3 tasks running now (156 success, 0 failure, 0 timeout, 0 pending)
-INFO     | 2023-04-18 21:43:54,398 | Yasat.main_cli | There are 3 tasks running now (156 success, 0 failure, 0 timeout, 0 pending)
-INFO     | 2023-04-18 21:43:55,400 | Yasat.main_cli | There are 3 tasks running now (156 success, 0 failure, 0 timeout, 0 pending)
-INFO     | 2023-04-18 21:43:56,403 | Yasat.main_cli | There are 3 tasks running now (156 success, 0 failure, 0 timeout, 0 pending)
-INFO     | 2023-04-18 21:43:57,406 | Yasat.main_cli | There are 3 tasks running now (156 success, 0 failure, 0 timeout, 0 pending)
-INFO     | 2023-04-18 21:43:58,408 | Yasat.main_cli | There are 3 tasks running now (156 success, 0 failure, 0 timeout, 0 pending)
-INFO     | 2023-04-18 21:43:59,411 | Yasat.main_cli | There are 3 tasks running now (156 success, 0 failure, 0 timeout, 0 pending)
-INFO     | 2023-04-18 21:44:00,414 | Yasat.main_cli | There are 3 tasks running now (156 success, 0 failure, 0 timeout, 0 pending)
-INFO     | 2023-04-18 21:44:01,416 | Yasat.main_cli | There are 3 tasks running now (156 success, 0 failure, 0 timeout, 0 pending)
-INFO     | 2023-04-18 21:44:02,419 | Yasat.main_cli | There are 3 tasks running now (156 success, 0 failure, 0 timeout, 0 pending)
-INFO     | 2023-04-18 21:44:03,421 | Yasat.main_cli | There are 3 tasks running now (156 success, 0 failure, 0 timeout, 0 pending)
-INFO     | 2023-04-18 21:44:04,424 | Yasat.main_cli | There are 3 tasks running now (156 success, 0 failure, 0 timeout, 0 pending)
-INFO     | 2023-04-18 21:44:05,426 | Yasat.main_cli | There are 3 tasks running now (156 success, 0 failure, 0 timeout, 0 pending)
-INFO     | 2023-04-18 21:44:06,429 | Yasat.main_cli | There are 3 tasks running now (156 success, 0 failure, 0 timeout, 0 pending)
-INFO     | 2023-04-18 21:44:07,432 | Yasat.main_cli | There are 3 tasks running now (156 success, 0 failure, 0 timeout, 0 pending)
-INFO     | 2023-04-18 21:44:08,434 | Yasat.main_cli | There are 3 tasks running now (156 success, 0 failure, 0 timeout, 0 pending)
-INFO     | 2023-04-18 21:44:09,437 | Yasat.main_cli | There are 3 tasks running now (156 success, 0 failure, 0 timeout, 0 pending)
-INFO     | 2023-04-18 21:44:10,439 | Yasat.main_cli | There are 3 tasks running now (156 success, 0 failure, 0 timeout, 0 pending)
-INFO     | 2023-04-18 21:44:11,442 | Yasat.main_cli | There are 3 tasks running now (156 success, 0 failure, 0 timeout, 0 pending)
-INFO     | 2023-04-18 21:44:12,444 | Yasat.main_cli | There are 3 tasks running now (156 success, 0 failure, 0 timeout, 0 pending)
-INFO     | 2023-04-18 21:44:13,447 | Yasat.main_cli | There are 3 tasks running now (156 success, 0 failure, 0 timeout, 0 pending)
-INFO     | 2023-04-18 21:44:14,449 | Yasat.main_cli | There are 3 tasks running now (156 success, 0 failure, 0 timeout, 0 pending)
-INFO     | 2023-04-18 21:44:15,451 | Yasat.main_cli | There are 3 tasks running now (156 success, 0 failure, 0 timeout, 0 pending)
-INFO     | 2023-04-18 21:44:15,904 | Yasat.main_cli | [157/ 159 (157 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/dropbearmulti
+INFO     | 2023-04-19 13:05:14,583 | Yasat.main_cli | There are 6 tasks running now (150 success, 0 failure, 0 timeout, 3 pending)
+INFO     | 2023-04-19 13:05:15,586 | Yasat.main_cli | There are 6 tasks running now (150 success, 0 failure, 0 timeout, 3 pending)
+INFO     | 2023-04-19 13:05:16,589 | Yasat.main_cli | There are 6 tasks running now (150 success, 0 failure, 0 timeout, 3 pending)
+INFO     | 2023-04-19 13:05:17,192 | Yasat.main_cli | [151/ 159 (151 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/local/samba/smbd
 **************************************************
                      Summary                      
 **************************************************
@@ -1421,46 +1243,48 @@ Misuses number: 0
 - PBEIterationsChecker: 0
 - RSAKeySizesChecker: 0
 
-INFO     | 2023-04-18 21:44:16,454 | Yasat.main_cli | There are 2 tasks running now (157 success, 0 failure, 0 timeout, 0 pending)
-INFO     | 2023-04-18 21:44:17,456 | Yasat.main_cli | There are 2 tasks running now (157 success, 0 failure, 0 timeout, 0 pending)
-INFO     | 2023-04-18 21:44:18,458 | Yasat.main_cli | There are 2 tasks running now (157 success, 0 failure, 0 timeout, 0 pending)
-INFO     | 2023-04-18 21:44:19,461 | Yasat.main_cli | There are 2 tasks running now (157 success, 0 failure, 0 timeout, 0 pending)
-INFO     | 2023-04-18 21:44:20,464 | Yasat.main_cli | There are 2 tasks running now (157 success, 0 failure, 0 timeout, 0 pending)
-INFO     | 2023-04-18 21:44:21,467 | Yasat.main_cli | There are 2 tasks running now (157 success, 0 failure, 0 timeout, 0 pending)
-INFO     | 2023-04-18 21:44:22,253 | Yasat.main_cli | [158/ 159 (158 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/sbin/pppd
+INFO     | 2023-04-19 13:05:17,532 | Yasat.main_cli | [152/ 159 (152 success, 0 failure, 0 timeout)] Discovered 2 misuses in examples/tmp/busybox
 **************************************************
                      Summary                      
 **************************************************
 Time: 0 seconds
-Misuses number: 0
+Misuses number: 2
 - ConstantKeysChecker: 0
-- ConstantSaltsChecker: 0
+- ConstantSaltsChecker: 2
 - PBEIterationsChecker: 0
 - RSAKeySizesChecker: 0
 
-INFO     | 2023-04-18 21:44:22,469 | Yasat.main_cli | There are 1 tasks running now (158 success, 0 failure, 0 timeout, 0 pending)
-INFO     | 2023-04-18 21:44:23,436 | Yasat.main_cli | [159/ 159 (159 success, 0 failure, 0 timeout)] Discovered 11 misuses in examples/tmp/logic
+INFO     | 2023-04-19 13:05:17,592 | Yasat.main_cli | There are 4 tasks running now (152 success, 0 failure, 0 timeout, 3 pending)
+INFO     | 2023-04-19 13:05:18,594 | Yasat.main_cli | There are 4 tasks running now (152 success, 0 failure, 0 timeout, 3 pending)
+INFO     | 2023-04-19 13:05:19,596 | Yasat.main_cli | There are 4 tasks running now (152 success, 0 failure, 0 timeout, 3 pending)
+INFO     | 2023-04-19 13:05:20,600 | Yasat.main_cli | There are 4 tasks running now (152 success, 0 failure, 0 timeout, 3 pending)
+INFO     | 2023-04-19 13:05:21,604 | Yasat.main_cli | There are 4 tasks running now (152 success, 0 failure, 0 timeout, 3 pending)
+INFO     | 2023-04-19 13:05:22,607 | Yasat.main_cli | There are 4 tasks running now (152 success, 0 failure, 0 timeout, 3 pending)
+INFO     | 2023-04-19 13:05:23,610 | Yasat.main_cli | There are 4 tasks running now (152 success, 0 failure, 0 timeout, 3 pending)
+INFO     | 2023-04-19 13:05:24,614 | Yasat.main_cli | There are 4 tasks running now (152 success, 0 failure, 0 timeout, 3 pending)
+INFO     | 2023-04-19 13:05:25,617 | Yasat.main_cli | There are 4 tasks running now (152 success, 0 failure, 0 timeout, 3 pending)
+INFO     | 2023-04-19 13:05:26,620 | Yasat.main_cli | There are 4 tasks running now (152 success, 0 failure, 0 timeout, 3 pending)
+INFO     | 2023-04-19 13:05:27,624 | Yasat.main_cli | There are 4 tasks running now (152 success, 0 failure, 0 timeout, 3 pending)
+INFO     | 2023-04-19 13:05:28,628 | Yasat.main_cli | There are 4 tasks running now (152 success, 0 failure, 0 timeout, 3 pending)
+INFO     | 2023-04-19 13:05:28,819 | Yasat.main_cli | [153/ 159 (153 success, 0 failure, 0 timeout)] Discovered 1 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/bftpd
 **************************************************
                      Summary                      
 **************************************************
 Time: 0 seconds
-Misuses number: 11
-- ConstantKeysChecker: 2
-- ConstantSaltsChecker: 9
+Misuses number: 1
+- ConstantKeysChecker: 0
+- ConstantSaltsChecker: 1
 - PBEIterationsChecker: 0
 - RSAKeySizesChecker: 0
 
-INFO     | 2023-04-18 21:44:23,470 | Yasat.main_cli | All done!!!
-INFO     | 2023-04-18 21:44:23,471 | Yasat.main_cli | 
-**************************************************
-                     Summary                      
-**************************************************
-Time: 0 seconds
-Extraction success rate: 100% (5 success, 0 failure)
-Analysis success rate: 100% (159 success, 0 failure, 0 timeout)
-Misuses number: 19
-- ConstantKeysChecker: 2
-- ConstantSaltsChecker: 17
-- PBEIterationsChecker: 0
-- RSAKeySizesChecker: 0
-
+INFO     | 2023-04-19 13:05:29,631 | Yasat.main_cli | There are 3 tasks running now (153 success, 0 failure, 0 timeout, 3 pending)
+INFO     | 2023-04-19 13:05:30,634 | Yasat.main_cli | There are 3 tasks running now (153 success, 0 failure, 0 timeout, 3 pending)
+INFO     | 2023-04-19 13:05:31,638 | Yasat.main_cli | There are 3 tasks running now (153 success, 0 failure, 0 timeout, 3 pending)
+INFO     | 2023-04-19 13:05:32,641 | Yasat.main_cli | There are 3 tasks running now (153 success, 0 failure, 0 timeout, 3 pending)
+INFO     | 2023-04-19 13:05:33,644 | Yasat.main_cli | There are 3 tasks running now (153 success, 0 failure, 0 timeout, 3 pending)
+INFO     | 2023-04-19 13:05:34,648 | Yasat.main_cli | There are 3 tasks running now (153 success, 0 failure, 0 timeout, 3 pending)
+INFO     | 2023-04-19 13:05:35,651 | Yasat.main_cli | There are 3 tasks running now (153 success, 0 failure, 0 timeout, 3 pending)
+INFO     | 2023-04-19 13:05:36,654 | Yasat.main_cli | There are 3 tasks running now (153 success, 0 failure, 0 timeout, 3 pending)
+INFO     | 2023-04-19 13:05:37,656 | Yasat.main_cli | There are 3 tasks running now (153 success, 0 failure, 0 timeout, 3 pending)
+INFO     | 2023-04-19 13:05:38,660 | Yasat.main_cli | There are 3 tasks running now (153 success, 0 failure, 0 timeout, 3 pending)
+INFO     | 2023-04-19 13:05:39,664 | Yasat.main_cli | There are 3 tasks running now (153 success, 0 failure, 0 timeout, 3 pending)

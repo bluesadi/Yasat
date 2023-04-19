@@ -49,10 +49,11 @@ class Task:
         # Load project from .adb file if exists
         Files.mkdirs(os.path.dirname(self._adb_path))
         if self._adb_path is not None and os.path.exists(self._adb_path):
-            l.info(f"Load angr project from {self._adb_path}")
             proj = AngrDB().load(self._adb_path)
         else:
             proj = angr.Project(self.filename, load_options={"auto_load_libs": False})
+        for dep in proj.loader.main_object.deps:
+            l.debug(f"Dep: {dep}")
         if any(proj.kb.subject.resolve_external_function(target_api) is not None 
                 for target_api in self._target_apis):
             for checker_cls, criteria in default_checkers.items():

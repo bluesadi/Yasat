@@ -6,7 +6,6 @@ import claripy
 from angr.engines.light.engine import SimEngineLight, SimEngineLightAILMixin
 from ailment.statement import *
 from ailment.expression import *
-from func_timeout.exceptions import FunctionTimedOut
 
 from .multi_values import MultiValues
 from .ast_enhancer import AstEnhancer
@@ -75,8 +74,6 @@ class SimEngineBackwardSlicing(
 
             try:
                 self._handle_Stmt(stmt)
-            except FunctionTimedOut as e:
-                raise e
             except:
                 l.error(f"Error occured when handling {self.project.filename}")
                 l.error(

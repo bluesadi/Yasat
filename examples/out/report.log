@@ -3,10 +3,10 @@
 **************************************************
 Time: 0 seconds
 Extraction success rate: 100% (5 success, 0 failure)
-Analysis success rate: 100% (159 success, 0 failure, 0 timeout)
-Misuses number: 19
-- ConstantKeysChecker: 2
-- ConstantSaltsChecker: 17
+Analysis success rate: 100% (153 success, 0 failure, 0 timeout)
+Misuses number: 3
+- ConstantKeysChecker: 0
+- ConstantSaltsChecker: 3
 - PBEIterationsChecker: 0
 - RSAKeySizesChecker: 0
 
@@ -14,144 +14,30 @@ Misuses number: 19
                 Potential Misuses                 
 **************************************************
 ConstantKeysChecker
-#1
-[-] Filename: examples/tmp/logic
-[-] Description: Call to crypt(key="tw007") at address 0x20e48
-[-] Correctness: UN
-[-] Statements:
-0x20e48 | Call(0xb738<32>, <SimCCARM>: [Call (target: 0xaf58<32>, prototype: (char*, char*) -> char*, args: [0x49a32<32>, 0x499d0<32>]), Add(r4<4>, 0xbe<32>)], ret: r0<4>, fp_ret: no-fp-ret-value)
-
-#2
-[-] Filename: examples/tmp/logic
-[-] Description: Call to crypt(key="password") at address 0x21eb4
-[-] Correctness: UN
-[-] Statements:
-0x21eb4 | Call(0xb81c<32>, <SimCCARM>: [0x49c86<32>, r0<4>, r0<4>, Call (target: 0xaf58<32>, prototype: (char*, char*) -> char*, args: [0x49a3e<32>, 0x499d0<32>])], ret: r0<4>, fp_ret: no-fp-ret-value)
-
 ConstantSaltsChecker
 #1
-[-] Filename: examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/bftpd
-[-] Description: Call to crypt(salt="ADMIN_PASS") at address 0xd794
-[-] Correctness: UN
-[-] Statements:
-0xd794 | Call(0x9be0<32>, <SimCCARM>: [Call (target: 0x9790<32>, prototype: (char*, char*) -> char*, args: [BaseOffset(stack_base, -56), r4<4>]), r4<4>], ret: r0<4>, fp_ret: no-fp-ret-value)
-0xd75c | r4<4> = Call(0x11870<32>, <SimCCARM>: [0x13584<32>], ret: r0<4>, fp_ret: no-fp-ret-value)
-
-#2
-[-] Filename: examples/tmp/busybox
+[-] Filename: /home/bluesadi/dev/Yasat/examples/tmp/busybox
 [-] Description: Call to crypt(salt="aa") at address 0x50290
 [-] Correctness: UN
 [-] Statements:
-0x50290 | Call(0xc1f0<32>, <SimCCARM>: [Call (target: 0xb758<32>, prototype: (char*, char*) -> char*, args: [r0<4>, r4<4>]), r4<4>], ret: r0<4>, fp_ret: no-fp-ret-value)
+0x50290 | Call(0xc1f0<32>, <SimCCARM>: [Call (target: 0xb758<32>, prototype: (int (32 bits), int (32 bits)) -> int (32 bits), args: [r0<4>, r4<4>]), r4<4>], ret: r0<4>, fp_ret: no-fp-ret-value)
+0x50248 | r4<4> = 0x6040a<32>
+
+#2
+[-] Filename: /home/bluesadi/dev/Yasat/examples/tmp/busybox
+[-] Description: Call to crypt(salt="aa") at address 0x50290
+[-] Correctness: UN
+[-] Statements:
+0x50290 | Call(0xc1f0<32>, <SimCCARM>: [Call (target: 0xb758<32>, prototype: (int (32 bits), int (32 bits)) -> int (32 bits), args: [r0<4>, r4<4>]), r4<4>], ret: r0<4>, fp_ret: no-fp-ret-value)
 0x50230 | r4<4> = 0x6040a<32>
 
 #3
-[-] Filename: examples/tmp/busybox
-[-] Description: Call to crypt(salt="aa") at address 0x50290
+[-] Filename: /home/bluesadi/dev/Yasat/examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/bftpd
+[-] Description: Call to crypt(salt="ADMIN_PASS") at address 0xd794
 [-] Correctness: UN
 [-] Statements:
-0x50290 | Call(0xc1f0<32>, <SimCCARM>: [Call (target: 0xb758<32>, prototype: (char*, char*) -> char*, args: [r0<4>, r4<4>]), r4<4>], ret: r0<4>, fp_ret: no-fp-ret-value)
-0x50248 | r4<4> = 0x6040a<32>
-
-#4
-[-] Filename: examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/bin/busybox
-[-] Description: Call to crypt(salt="aa") at address 0x50290
-[-] Correctness: UN
-[-] Statements:
-0x50290 | Call(0xc1f0<32>, <SimCCARM>: [Call (target: 0xb758<32>, prototype: (char*, char*) -> char*, args: [r0<4>, r4<4>]), r4<4>], ret: r0<4>, fp_ret: no-fp-ret-value)
-0x50230 | r4<4> = 0x6040a<32>
-
-#5
-[-] Filename: examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/bin/busybox
-[-] Description: Call to crypt(salt="aa") at address 0x50290
-[-] Correctness: UN
-[-] Statements:
-0x50290 | Call(0xc1f0<32>, <SimCCARM>: [Call (target: 0xb758<32>, prototype: (char*, char*) -> char*, args: [r0<4>, r4<4>]), r4<4>], ret: r0<4>, fp_ret: no-fp-ret-value)
-0x50248 | r4<4> = 0x6040a<32>
-
-#6
-[-] Filename: examples/tmp/boa
-[-] Description: Call to crypt(salt="$1$") at address 0x424358
-[-] Correctness: UN
-[-] Statements:
-0x424358 | a3<4> = Call(0x700284<32>, <SimCCO32>: [BaseOffset(stack_base, -1996), 0x43b748<32>], ret: v0<4>, fp_ret: no-fp-ret-value)
-
-#7
-[-] Filename: examples/tmp/boa
-[-] Description: Call to crypt(salt="$1$") at address 0x4245e4
-[-] Correctness: UN
-[-] Statements:
-0x4245e4 | Call(0x7000a8<32>, <SimCCO32>: [BaseOffset(stack_base, -312), 0x43b74c<32>, Load(addr=stack_base-52, size=4, endness=Iend_BE), Call (target: 0x700284<32>, prototype: (char*, char*) -> char*, args: [BaseOffset(stack_base, -1600), 0x43b748<32>])], ret: no-ret-value, fp_ret: no-fp-ret-value)
-
-#8
-[-] Filename: examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/local/samba/smbd
-[-] Description: Call to crypt(salt="") at address 0xcc1dc
-[-] Correctness: UN
-[-] Statements:
-0xcc1dc | r0<4> = (((Call(0x31ca0<32>, <SimCCARM>: [Call (target: 0x2ddb8<32>, prototype: (char*, char*) -> char*, args: [r0<4>, 0x100028<32>]), 0x100128<32>], ret: r0<4>, fp_ret: no-fp-ret-value) != 0x0<32>)) ? (0xc000006a<32>) : (0x0<32>))
-
-#9
-[-] Filename: examples/tmp/logic
-[-] Description: Call to crypt(salt="$1$TW") at address 0x209d8
-[-] Correctness: UN
-[-] Statements:
-0x209d8 | Call(0xb0b4<32>, <SimCCARM>: [0x102<32>, 0x49960<32>, Call (target: 0xaf58<32>, prototype: (char*, char*) -> char*, args: [BaseOffset(stack_base, -84), 0x499d0<32>])], ret: r0<4>, fp_ret: no-fp-ret-value)
-
-#10
-[-] Filename: examples/tmp/logic
-[-] Description: Call to crypt(salt="$1$TW") at address 0x209fc
-[-] Correctness: UN
-[-] Statements:
-0x209fc | Call(0xb0b4<32>, <SimCCARM>: [0x102<32>, 0x49998<32>, Call (target: 0xaf58<32>, prototype: (char*, char*) -> char*, args: [BaseOffset(stack_base, -152), 0x499d0<32>])], ret: r0<4>, fp_ret: no-fp-ret-value)
-
-#11
-[-] Filename: examples/tmp/logic
-[-] Description: Call to crypt(salt="$1$TW") at address 0x20af4
-[-] Correctness: UN
-[-] Statements:
-0x20af4 | Call(0xb8d0<32>, <SimCCARM>: [BaseOffset(stack_base, -160), Call (target: 0xaf58<32>, prototype: (char*, char*) -> char*, args: [BaseOffset(stack_base, -160), 0x499d0<32>])], ret: no-ret-value, fp_ret: no-fp-ret-value)
-
-#12
-[-] Filename: examples/tmp/logic
-[-] Description: Call to crypt(salt="$1$TW") at address 0x20b34
-[-] Correctness: UN
-[-] Statements:
-0x20b34 | Call(0xb0b4<32>, <SimCCARM>: [0x102<32>, r8<4>, Call (target: 0xaf58<32>, prototype: (char*, char*) -> char*, args: [BaseOffset(stack_base, -224), 0x499d0<32>])], ret: r0<4>, fp_ret: no-fp-ret-value)
-
-#13
-[-] Filename: examples/tmp/logic
-[-] Description: Call to crypt(salt="$1$TW") at address 0x20e48
-[-] Correctness: UN
-[-] Statements:
-0x20e48 | Call(0xb738<32>, <SimCCARM>: [Call (target: 0xaf58<32>, prototype: (char*, char*) -> char*, args: [0x49a32<32>, 0x499d0<32>]), Add(r4<4>, 0xbe<32>)], ret: r0<4>, fp_ret: no-fp-ret-value)
-
-#14
-[-] Filename: examples/tmp/logic
-[-] Description: Call to crypt(salt="$1$TW") at address 0x21500
-[-] Correctness: UN
-[-] Statements:
-0x21500 | r1<4> = Call(0xaf58<32>, <SimCCARM>: [BaseOffset(stack_base, -616), 0x499d0<32>], ret: r0<4>, fp_ret: no-fp-ret-value)
-
-#15
-[-] Filename: examples/tmp/logic
-[-] Description: Call to crypt(salt="$1$TW") at address 0x21e6c
-[-] Correctness: UN
-[-] Statements:
-0x21e6c | Call(0xb738<32>, <SimCCARM>: [Call (target: 0xaf58<32>, prototype: (char*, char*) -> char*, args: [BaseOffset(stack_base, -890), 0x499d0<32>]), r5<4>], ret: r0<4>, fp_ret: no-fp-ret-value)
-
-#16
-[-] Filename: examples/tmp/logic
-[-] Description: Call to crypt(salt="$1$TW") at address 0x21e8c
-[-] Correctness: UN
-[-] Statements:
-0x21e8c | Call(0xb738<32>, <SimCCARM>: [Call (target: 0xaf58<32>, prototype: (char*, char*) -> char*, args: [BaseOffset(stack_base, -825), 0x499d0<32>]), r7<4>], ret: r0<4>, fp_ret: no-fp-ret-value)
-
-#17
-[-] Filename: examples/tmp/logic
-[-] Description: Call to crypt(salt="$1$TW") at address 0x21eb4
-[-] Correctness: UN
-[-] Statements:
-0x21eb4 | Call(0xb81c<32>, <SimCCARM>: [0x49c86<32>, r0<4>, r0<4>, Call (target: 0xaf58<32>, prototype: (char*, char*) -> char*, args: [0x49a3e<32>, 0x499d0<32>])], ret: r0<4>, fp_ret: no-fp-ret-value)
+0xd794 | Call(0x9be0<32>, <SimCCARM>: [Call (target: 0x9790<32>, prototype: (int (32 bits), int (32 bits)) -> None, args: [BaseOffset(stack_base, -56), r4<4>]), r4<4>], ret: r0<4>, fp_ret: no-fp-ret-value)
+0xd75c | r4<4> = Call(0x11870<32>, <SimCCARM>: [0x13584<32>], ret: r0<4>, fp_ret: no-fp-ret-value)
 
 PBEIterationsChecker
 RSAKeySizesChecker

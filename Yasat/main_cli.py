@@ -5,6 +5,7 @@ import logging
 import signal
 import sys
 import time
+from elftools.elf.elffile import ELFFile
 
 import yaml
 from angr.misc.loggers import CuteFormatter
@@ -17,6 +18,14 @@ from .misc.extractor import Extractor
 from .utils import format_exception
 
 l = logging.getLogger(__name__)
+
+def _get_elf_arch(filename):
+    try:
+        with open(filename, 'rb') as fd:
+            return ELFFile(fd)['e_machine']
+    except:
+        l.error(f"Failed to parse {filename} as an ELF file")
+    return None
     
 def _extraction_worker(src, dst):
     """
@@ -48,7 +57,7 @@ def _analysis_worker(task: Task, global_state: GlobalState):
     l.info(f"Analyzing {task.filename}")
     try:
         task.start(global_state)
-    except Exception as e:
+    except BaseException as e:
         l.error(f"Analyzing {task.filename} failed with exception")
         l.error(format_exception(e))
         task.status = FAILURE
@@ -97,6 +106,7 @@ def main_cli():
         pool = mp.Pool(args.processes)
         global_state = GlobalState()
         report = global_state.report
+        start_time = time.perf_counter()
         
         def _collect_subjects():
             """
@@ -141,11 +151,34 @@ def main_cli():
         subjects = _collect_subjects()
         num_subjects = len(subjects)
         
+        # Discard redundant subjects with the same architectures and filenames
+        collected = set()
+        _subjects = []
+        discarded = 0
+        for i, filename in enumerate(subjects):
+            l.info(f"[{i + 1}/{num_subjects} {discarded} discarded] "
+                   "Filtering out redundant subjects")
+            t = (_get_elf_arch(filename), os.path.basename(filename))
+            if t[0] is None or t in collected:
+                discarded += 1
+                continue
+            collected.add(t)
+            _subjects.append(filename)
+        subjects = _subjects
+        num_subjects = len(subjects)
+        
         def _analyze_subjects():
             
             def on_analysis_done(task: Task):
+                # if task.status != TIMEOUT:
+                #     l.debug(f"Analyzing {task.filename} completed in "
+                #             f"{int(time.perf_counter() - task.start_time)} seconds")
                 if task.status == TIMEOUT:
-                    os.kill(task.pid, signal.SIGKILL)
+                    report.analysis_timeout += 1
+                    try:
+                        os.kill(task.pid, signal.SIGKILL)
+                    except OSError as e:
+                        l.error(e)
                 elif task.status == SUCCESS:
                     report.analysis_success += 1
                 elif task.status == FAILURE:
@@ -160,6 +193,7 @@ def main_cli():
                        f"\n{task.report.summary}")
                 if task.report.num_misuses > 0:
                     report.merge(task.report)
+                    report.time = int(time.perf_counter() - start_time)
                     report.save(Files.join(out_dir, "report.log"))
                 del global_state.running_tasks[task.pid]
             
@@ -172,11 +206,11 @@ def main_cli():
                 if report.analysis_total == num_subjects:
                     break
                 with global_state.lock:
-                    for pid, task in list(global_state.running_tasks.items()):
+                    for task in list(global_state.running_tasks.values()):
                         if int(time.perf_counter() - task.start_time) > timeout:
                             task.status = TIMEOUT
+                            # l.debug(f"Analyzing {task.filename} timed out")
                             on_analysis_done(task)
-                            del global_state.running_tasks[pid]
                 num_running = len(global_state.running_tasks.items())
                 l.info(f"There are {num_running} tasks running now "
                        f"({report.analysis_success} success, {report.analysis_failure} failure, "
