@@ -1,0 +1,34 @@
+**************************************************
+                     Summary                      
+**************************************************
+Time: 47 seconds
+Extraction success rate: 55% (324 success, 257 failure)
+Analysis success rate: 99% (526 success, 1 failure, 0 timeout)
+Misuses number: 2
+- ConstantKeysChecker: 0
+- ConstantSaltsChecker: 2
+- PBEIterationsChecker: 0
+- RSAKeySizesChecker: 0
+
+**************************************************
+                Potential Misuses                 
+**************************************************
+*** ConstantKeysChecker ***
+*** ConstantSaltsChecker ***
+Misuses #1
+[-] Filename: /home/bluesadi/dev/Yasat/tests_dev/tmp/Netgear/_JNR3210_V1.1.0.30_1.0.2.zip.extracted/_JNR3210-V1.1.0.30_1.0.2.img.extracted/_JNR3210.bin.extracted/squashfs-root/usr/sbin/bftpd
+[-] Description: Call to crypt(salt="") at address 0x408f28
+[-] Correctness: UN
+[-] Statements:
+0x408f28 | Call(0x500088<32>, <SimCCO32>: [Call (target: 0x5000dc<32>, prototype: (char*, char*) -> char*, args: [BaseOffset(stack_base, -336), s1<4>]), s1<4>], ret: v0<4>, fp_ret: no-fp-ret-value)
+0x408ed8 | s1<4> = Call(0x40eb40<32>, <SimCCO32>: [0x413134<32>], ret: v0<4>, fp_ret: no-fp-ret-value)
+
+Misuses #2
+[-] Filename: /home/bluesadi/dev/Yasat/tests_dev/tmp/Netgear/_JNR3210_V1.1.0.30_1.0.2.zip.extracted/_JNR3210-V1.1.0.30_1.0.2.img.extracted/_JNR3210.bin.extracted/squashfs-root/usr/sbin/smbd
+[-] Description: Call to crypt(salt="") at address 0x5400fc
+[-] Correctness: UN
+[-] Statements:
+0x5400fc | Call(0x60084c<32>, <SimCCO32>: [Call (target: 0x600b70<32>, prototype: (char*, char*) -> char*, args: [a1<4>, 0x5ef490<32>]), Sub(Load(addr=(Load(addr=stack_base-16, size=4, endness=Iend_BE) - 0x7fe8<32>), size=4, endness=Iend_BE), 0xa70<32>)], ret: v0<4>, fp_ret: no-fp-ret-value)
+
+*** PBEIterationsChecker ***
+*** RSAKeySizesChecker ***

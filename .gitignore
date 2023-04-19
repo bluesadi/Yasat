@@ -7,3 +7,5 @@ __pycache__
 /run_dev.py
 /test.py
 /examples/tmp
+/dataset
+/Yasat/main_dev.py

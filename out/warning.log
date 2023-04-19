@@ -1,112 +1,1131 @@
-WARNING  | 2023-04-18 20:29:22,543 | Yasat.main_cli | [1/581 (0 success, 1 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/ATT_AC340U_eMR2_upgrade_Mac.zip
-WARNING  | 2023-04-18 20:29:22,547 | Yasat.main_cli | [2/581 (0 success, 2 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/700 Series Managed Switch Firmware 2.6.5.zip
-WARNING  | 2023-04-18 20:29:22,549 | Yasat.main_cli | [3/581 (0 success, 3 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/AC319U_telus_FW_Mac_N2.0.8.1C.zip
-WARNING  | 2023-04-18 20:29:22,568 | Yasat.main_cli | [12/581 (8 success, 4 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/CBR40-V2.5.0.28.zip
-WARNING  | 2023-04-18 20:29:22,569 | Yasat.main_cli | [13/581 (8 success, 5 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/CBR750-V4.6.14.4.zip
-WARNING  | 2023-04-18 20:29:22,575 | Yasat.main_cli | [16/581 (10 success, 6 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/CGD24G Firmware Version 4.4.8.zip
-WARNING  | 2023-04-18 20:29:22,577 | Yasat.main_cli | [17/581 (10 success, 7 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/D1500-V1.0.0.28_1.0.1PE.zip
-WARNING  | 2023-04-18 20:29:22,577 | Yasat.main_cli | [18/581 (10 success, 8 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/CSM4532_V7.0.1.13.zip
-WARNING  | 2023-04-18 20:29:22,582 | Yasat.main_cli | [20/581 (11 success, 9 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/D500-V1.0.0.28_1.0.1PE.zip
-WARNING  | 2023-04-18 20:29:22,618 | Yasat.main_cli | [34/581 (24 success, 10 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/DG814 Firmware version 4.10.zip
-WARNING  | 2023-04-18 20:29:22,624 | Yasat.main_cli | [36/581 (25 success, 11 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/DG824M Firmware Version 1.4 Release 05.zip
-WARNING  | 2023-04-18 20:29:22,629 | Yasat.main_cli | [38/581 (26 success, 12 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/DG834GT_V1.03.23.zip
-WARNING  | 2023-04-18 20:29:22,634 | Yasat.main_cli | [40/581 (27 success, 13 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/DG834Gv4NA_V5.03.16.zip
-WARNING  | 2023-04-18 20:29:22,640 | Yasat.main_cli | [42/581 (28 success, 14 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/DG834Gv5-V1.6.01.34.zip
-WARNING  | 2023-04-18 20:29:22,644 | Yasat.main_cli | [43/581 (28 success, 15 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/DG834Nv1 Firmware Version 1.02.15 (For users OUTSIDE Germany and Austria only).zip
-WARNING  | 2023-04-18 20:29:22,645 | Yasat.main_cli | [44/581 (28 success, 16 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/DG834PN Firmware Version 1.03.39.zip
-WARNING  | 2023-04-18 20:29:22,646 | Yasat.main_cli | [45/581 (28 success, 17 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/dg834v3_dg834gv3_na_4_03_04.zip
-WARNING  | 2023-04-18 20:29:22,650 | Yasat.main_cli | [50/581 (32 success, 18 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/DGN2000_V1.3.16.0.zip
-WARNING  | 2023-04-18 20:29:22,662 | Yasat.main_cli | [57/581 (38 success, 19 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/DGND3700 Firmware Version 1.0.0.17(NA).zip
-WARNING  | 2023-04-18 20:29:22,668 | Yasat.main_cli | [61/581 (41 success, 20 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/Disclaimer.aspx?redirecturl=http:%2F%2Fwww.downloads.netgear.com%2Ffiles%2Faircard%2FM3.0.9.0ap.zip
-WARNING  | 2023-04-18 20:29:22,671 | Yasat.main_cli | [63/581 (42 success, 21 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/DM111Pv1 Firmware Version 3.64p.zip
-WARNING  | 2023-04-18 20:29:22,678 | Yasat.main_cli | [65/581 (43 success, 22 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/DM200_V1.0.0.66.zip
-WARNING  | 2023-04-18 20:29:22,682 | Yasat.main_cli | [66/581 (43 success, 23 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/EAX15_EAX11_EAX14-V1.0.3.34.zip
-WARNING  | 2023-04-18 20:29:22,688 | Yasat.main_cli | [67/581 (43 success, 24 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/EAX12_EAX11v2_EAX15v2-V1.0.2.30.zip
-WARNING  | 2023-04-18 20:29:22,696 | Yasat.main_cli | [69/581 (44 success, 25 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/EAX20-EAX18-V1.0.1.62_1.0.103.zip
-WARNING  | 2023-04-18 20:29:22,699 | Yasat.main_cli | [70/581 (44 success, 26 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/EAX80-V1.0.1.70_1.0.2.zip
-WARNING  | 2023-04-18 20:29:22,701 | Yasat.main_cli | [71/581 (44 success, 27 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/EVA9000 Firmware Recovery Tool (NA).zip
-WARNING  | 2023-04-18 20:29:22,702 | Yasat.main_cli | [72/581 (44 success, 28 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/EVA9100 Firmware Version 2.4.170 (North America).zip
-WARNING  | 2023-04-18 20:29:22,711 | Yasat.main_cli | [82/581 (53 success, 29 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/EX6250v2_EX6400v3_EX6410v2_EX6470-V1.0.3.30.zip
-WARNING  | 2023-04-18 20:29:22,730 | Yasat.main_cli | [89/581 (59 success, 30 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/EX7500-V1.0.1.76_1.0.80.zip
-WARNING  | 2023-04-18 20:29:22,733 | Yasat.main_cli | [90/581 (59 success, 31 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/FM114P Firmware version 1.3 (Release 05).zip
-WARNING  | 2023-04-18 20:29:22,735 | Yasat.main_cli | [91/581 (59 success, 32 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/Firmware version 3.24 for the RT311 and RT314.zip
-WARNING  | 2023-04-18 20:29:22,737 | Yasat.main_cli | [93/581 (60 success, 33 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/FR114P Firmware Version 1.5 Release 14.zip
-WARNING  | 2023-04-18 20:29:22,738 | Yasat.main_cli | [94/581 (60 success, 34 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/Firmware to Convert WG102 to WGL102 - Version 1.5.9 (North America).zip
-WARNING  | 2023-04-18 20:29:22,745 | Yasat.main_cli | [99/581 (64 success, 35 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/FR114W Firmware version 1.3 Release 05.zip
-WARNING  | 2023-04-18 20:29:22,748 | Yasat.main_cli | [100/581 (64 success, 36 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/FR314 Release Firmware Release 6.3.1.0.zip
-WARNING  | 2023-04-18 20:29:22,750 | Yasat.main_cli | [101/581 (64 success, 37 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/FR318 and FV318 Firmware Upgrade 6.3.1.0.zip
-WARNING  | 2023-04-18 20:29:22,751 | Yasat.main_cli | [102/581 (64 success, 38 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/FS726Tv2_FW_V1.0.0.16.zip
-WARNING  | 2023-04-18 20:29:22,754 | Yasat.main_cli | [103/581 (64 success, 39 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/FS728TLP_FS526Tv2_V1.0.1.23.zip
-WARNING  | 2023-04-18 20:29:22,754 | Yasat.main_cli | [104/581 (64 success, 40 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/FS726T_V2.0.1_14.zip
-WARNING  | 2023-04-18 20:29:22,755 | Yasat.main_cli | [105/581 (64 success, 41 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/FS728TLP_V1.0.1.36.zip
-WARNING  | 2023-04-18 20:29:22,756 | Yasat.main_cli | [106/581 (64 success, 42 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/FS728TP Firmware Version 5.0.0.8.zip
-WARNING  | 2023-04-18 20:29:22,757 | Yasat.main_cli | [107/581 (64 success, 43 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/FS728TS, FS752TS Firmware Version 3.1.0.1.zip
-WARNING  | 2023-04-18 20:29:22,758 | Yasat.main_cli | [108/581 (64 success, 44 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/FS728TPv2_V5.0.2.52.zip
-WARNING  | 2023-04-18 20:29:22,761 | Yasat.main_cli | [109/581 (64 success, 45 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/FS728TS, FS752TS, FS752TPS Firmware Version 3.0.0.30.zip
-WARNING  | 2023-04-18 20:29:22,763 | Yasat.main_cli | [110/581 (64 success, 46 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/FS728TS_FS752TS Firmware Version 3.1.0.1.zip
-WARNING  | 2023-04-18 20:29:22,765 | Yasat.main_cli | [111/581 (64 success, 47 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/FS752TP_V5.4.2.30.zip
-WARNING  | 2023-04-18 20:29:22,766 | Yasat.main_cli | [112/581 (64 success, 48 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/FSM726E Firmware Version 7.3.2.1.zip
-WARNING  | 2023-04-18 20:29:22,767 | Yasat.main_cli | [113/581 (64 success, 49 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/FSM7226RS_FSM7250RS Firmware Version 7.3.1.7.zip
-WARNING  | 2023-04-18 20:29:22,770 | Yasat.main_cli | [114/581 (64 success, 50 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/FVG318 Firmware Version 2.1.2-67 (North America).zip
-WARNING  | 2023-04-18 20:29:22,773 | Yasat.main_cli | [117/581 (66 success, 51 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/FVL328 Firmware Version 2.0_08.zip
-WARNING  | 2023-04-18 20:29:22,778 | Yasat.main_cli | [119/581 (67 success, 52 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/FVM318 Firmware Version R1.2.zip
-WARNING  | 2023-04-18 20:29:22,778 | Yasat.main_cli | [120/581 (67 success, 53 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/FVS114 Firmware Version 1.1_15.zip
-WARNING  | 2023-04-18 20:29:22,779 | Yasat.main_cli | [121/581 (67 success, 54 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/FVS124G Firmware V1.1.48.zip
-WARNING  | 2023-04-18 20:29:22,780 | Yasat.main_cli | [122/581 (67 success, 55 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/FVS318 Firmware Version 2.4.zip
-WARNING  | 2023-04-18 20:29:22,791 | Yasat.main_cli | [125/581 (69 success, 56 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/FVS328 Firmware Version 1.0.15.zip
-WARNING  | 2023-04-18 20:29:22,792 | Yasat.main_cli | [126/581 (69 success, 57 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/FVS318v3 Firmware Version 3.0_28.zip
-WARNING  | 2023-04-18 20:29:22,794 | Yasat.main_cli | [128/581 (70 success, 58 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/fvs336gv2_v4.3.3-6.zip
-WARNING  | 2023-04-18 20:29:22,795 | Yasat.main_cli | [129/581 (70 success, 59 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/FVS336Gv3_V4.3.5-3.zip
-WARNING  | 2023-04-18 20:29:22,802 | Yasat.main_cli | [130/581 (70 success, 60 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/FWG114Pv2 Firmware Version 1.2_07 (North America).zip
-WARNING  | 2023-04-18 20:29:22,804 | Yasat.main_cli | [131/581 (70 success, 61 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/FWAG114 Beta Version 1.0.29.zip
-WARNING  | 2023-04-18 20:29:22,805 | Yasat.main_cli | [132/581 (70 success, 62 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/FWG114P Firmware Version 2.0 Release 18.zip
-WARNING  | 2023-04-18 20:29:22,809 | Yasat.main_cli | [133/581 (70 success, 63 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/GA511 Initial Release Firmware.zip
-WARNING  | 2023-04-18 20:29:22,820 | Yasat.main_cli | [136/581 (72 success, 64 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/GS105E_V1.02.04.zip
-WARNING  | 2023-04-18 20:29:22,821 | Yasat.main_cli | [138/581 (73 success, 65 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/GS105Ev2_V1.6.0.10.zip
-WARNING  | 2023-04-18 20:29:22,825 | Yasat.main_cli | [139/581 (73 success, 66 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/GS105PE_V1.6.0.10.zip
-WARNING  | 2023-04-18 20:29:22,829 | Yasat.main_cli | [140/581 (73 success, 67 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/GS108E-Firmware Version-_1.00.09.zip
-WARNING  | 2023-04-18 20:29:22,830 | Yasat.main_cli | [141/581 (73 success, 68 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/GS108EV2_V1.00.12.zip
-WARNING  | 2023-04-18 20:29:22,834 | Yasat.main_cli | [142/581 (73 success, 69 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/GS108PE Firmware Version 1.00.09.zip
-WARNING  | 2023-04-18 20:29:22,836 | Yasat.main_cli | [143/581 (73 success, 70 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/GS108PEV2_V1.00.12.zip
-WARNING  | 2023-04-18 20:29:22,836 | Yasat.main_cli | [144/581 (73 success, 71 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/GS108Ev3_V2.06.16EN.zip
-WARNING  | 2023-04-18 20:29:22,841 | Yasat.main_cli | [145/581 (73 success, 72 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/GS108PEv3_V2.06.16EN.zip
-WARNING  | 2023-04-18 20:29:22,846 | Yasat.main_cli | [146/581 (73 success, 73 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/GS108Tv2_GS110TPv2_V5.4.2.36.zip
-WARNING  | 2023-04-18 20:29:22,852 | Yasat.main_cli | [148/581 (74 success, 74 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/GS110TP_GS108Tv2 Firmware Version 5.0.1.10.zip
-WARNING  | 2023-04-18 20:29:22,858 | Yasat.main_cli | [152/581 (77 success, 75 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/GS110T_V5.4.0.6.zip
-WARNING  | 2023-04-18 20:29:22,860 | Yasat.main_cli | [153/581 (77 success, 76 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/GS116E-v1.00.21.zip
-WARNING  | 2023-04-18 20:29:22,864 | Yasat.main_cli | [154/581 (77 success, 77 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/GS305EP_V1.0.0.10.zip
-WARNING  | 2023-04-18 20:29:22,865 | Yasat.main_cli | [155/581 (77 success, 78 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/GS305EPP_V1.0.0.10.zip
-WARNING  | 2023-04-18 20:29:22,865 | Yasat.main_cli | [156/581 (77 success, 79 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/GS305E_V1.0.0.9.zip
-WARNING  | 2023-04-18 20:29:22,869 | Yasat.main_cli | [157/581 (77 success, 80 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/GS308EPP_V1.0.0.10.zip
-WARNING  | 2023-04-18 20:29:22,870 | Yasat.main_cli | [158/581 (77 success, 81 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/GS308EP_V1.0.0.10.zip
-WARNING  | 2023-04-18 20:29:22,873 | Yasat.main_cli | [159/581 (77 success, 82 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/GS308E_V1.00.10EN.zip
-WARNING  | 2023-04-18 20:29:22,888 | Yasat.main_cli | [163/581 (80 success, 83 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/GS408EPP_V1.0.0.22.zip
-WARNING  | 2023-04-18 20:29:22,898 | Yasat.main_cli | [166/581 (82 success, 84 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/GS510TP_V5.4.2.30.zip
-WARNING  | 2023-04-18 20:29:22,900 | Yasat.main_cli | [167/581 (82 success, 85 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/GS516TP_V6.0.1.30.zip
-WARNING  | 2023-04-18 20:29:22,902 | Yasat.main_cli | [168/581 (82 success, 86 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/GS700TPS_TS_TS-V5.2.0.11.zip
-WARNING  | 2023-04-18 20:29:22,903 | Yasat.main_cli | [169/581 (82 success, 87 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/GS716T Firmware Version 1.1.8.zip
-WARNING  | 2023-04-18 20:29:22,912 | Yasat.main_cli | [172/581 (84 success, 88 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/GS716Tv2_GS724Tv3_V5.4.2.30.zip
-WARNING  | 2023-04-18 20:29:22,917 | Yasat.main_cli | [173/581 (84 success, 89 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/GS724AT, GS748AT Switch Firmware Version 4.0.1.1.zip
-WARNING  | 2023-04-18 20:29:22,919 | Yasat.main_cli | [175/581 (85 success, 90 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/GS724AT_GS748AT Switch Firmware Version 4.0.1.1.zip
-WARNING  | 2023-04-18 20:29:22,921 | Yasat.main_cli | [176/581 (85 success, 91 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/GS724T Firmware Version 1.2.3.zip
-WARNING  | 2023-04-18 20:29:22,932 | Yasat.main_cli | [179/581 (87 success, 92 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/gs724tv2_1_0_3_33.zip
-WARNING  | 2023-04-18 20:29:22,933 | Yasat.main_cli | [180/581 (87 success, 93 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/GS724_748TP-V5.2.0.11.zip
-WARNING  | 2023-04-18 20:29:22,934 | Yasat.main_cli | [181/581 (87 success, 94 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/GS728TP_GS728TPP_GS752TP_V6.0.1.30.zip
-WARNING  | 2023-04-18 20:29:22,948 | Yasat.main_cli | [185/581 (90 success, 95 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/GS728TX_GS728TXP_GS752TX_GS752TXP_V6.6.4.28.zip
-WARNING  | 2023-04-18 20:29:22,953 | Yasat.main_cli | [187/581 (91 success, 96 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/GS748Tv4_V5.4.2.30.zip
-WARNING  | 2023-04-18 20:29:22,963 | Yasat.main_cli | [190/581 (93 success, 97 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/GS808E_V1.7.1.0.zip
-WARNING  | 2023-04-18 20:29:22,964 | Yasat.main_cli | [191/581 (93 success, 98 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/GS908E_V1.7.0.3.zip
-WARNING  | 2023-04-18 20:29:22,978 | Yasat.main_cli | [195/581 (96 success, 99 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/GSM7212 Firmware Version 6.3.3.7.zip
-WARNING  | 2023-04-18 20:29:22,981 | Yasat.main_cli | [197/581 (97 success, 100 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/GSM7224 Firmware Version 6.2.0.14.zip
-WARNING  | 2023-04-18 20:29:22,986 | Yasat.main_cli | [199/581 (98 success, 101 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/GSM7224R, GSM7248R Firmware Version 7.3.1.7.zip
-WARNING  | 2023-04-18 20:29:22,994 | Yasat.main_cli | [201/581 (99 success, 102 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/GSM7300S_7200PS_V10.0.0.53.zip
-WARNING  | 2023-04-18 20:29:22,995 | Yasat.main_cli | [202/581 (99 success, 103 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/GSM7328S-FS-7352S_V8.0.3.49.zip
-WARNING  | 2023-04-18 20:29:22,996 | Yasat.main_cli | [203/581 (99 success, 104 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/GSM7324 Firmware Version 6.3.3.6.zip
-WARNING  | 2023-04-18 20:29:23,009 | Yasat.main_cli | [207/581 (102 success, 105 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/GSS108EPP_V1.0.0.22.zip
-WARNING  | 2023-04-18 20:29:23,010 | Yasat.main_cli | [208/581 (102 success, 106 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/GSS108E_V1.6.0.9.zip
-WARNING  | 2023-04-18 20:29:23,012 | Yasat.main_cli | [209/581 (102 success, 107 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/HDX111 Firmware Version 4.4.9.zip
-WARNING  | 2023-04-18 20:29:23,013 | Yasat.main_cli | [210/581 (102 success, 108 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/HR314 Firmware version 1.4.2.zip
-WARNING  | 2023-04-18 20:29:23,022 | Yasat.main_cli | [211/581 (102 success, 109 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/JGS524E-v1.00.21.zip
-WARNING  | 2023-04-18 20:29:23,023 | Yasat.main_cli | [212/581 (102 success, 110 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/JGS516PE_GS116Ev2_V2.6.0.48.zip
-WARNING  | 2023-04-18 20:29:23,024 | Yasat.main_cli | [213/581 (102 success, 111 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/JGS524PE_JGS524Ev2_V2.6.0.48.zip
-WARNING  | 2023-04-18 20:29:23,057 | Yasat.main_cli | [219/581 (107 success, 112 failure)] Failed to extract ELF files from /mnt/f/Yasat-storage/dataset/Netgear/LAX20-V1.1.6.28_2.0.49.zip
+WARNING  | 2023-04-19 16:34:59,856 | Yasat.main_cli | [1/581 (0 success, 1 failure)] Failed to extract ELF files from dataset/Netgear/FWG114Pv2 Firmware Version 1.2_07 (North America).zip
+WARNING  | 2023-04-19 16:34:59,877 | Yasat.main_cli | [2/581 (0 success, 2 failure)] Failed to extract ELF files from dataset/Netgear/RBS850-V4.6.3.9.zip
+WARNING  | 2023-04-19 16:34:59,877 | Yasat.main_cli | [3/581 (0 success, 3 failure)] Failed to extract ELF files from dataset/Netgear/JGS516PE_GS116Ev2_V2.6.0.48.zip
+WARNING  | 2023-04-19 16:34:59,879 | Yasat.main_cli | [4/581 (0 success, 4 failure)] Failed to extract ELF files from dataset/Netgear/WAC540_564_firmware_V9.5.3.2.zip
+WARNING  | 2023-04-19 16:34:59,879 | Yasat.main_cli | [5/581 (0 success, 5 failure)] Failed to extract ELF files from dataset/Netgear/FVL328 Firmware Version 2.0_08.zip
+WARNING  | 2023-04-19 16:34:59,883 | Yasat.main_cli | [6/581 (0 success, 6 failure)] Failed to extract ELF files from dataset/Netgear/GS724AT, GS748AT Switch Firmware Version 4.0.1.1.zip
+WARNING  | 2023-04-19 16:34:59,884 | Yasat.main_cli | [7/581 (0 success, 7 failure)] Failed to extract ELF files from dataset/Netgear/GSM7324 Firmware Version 6.3.3.6.zip
+WARNING  | 2023-04-19 16:34:59,887 | Yasat.main_cli | [11/581 (3 success, 8 failure)] Failed to extract ELF files from dataset/Netgear/WAG302v1 Firmware Version 2.0.11 (North America).zip
+WARNING  | 2023-04-19 16:34:59,888 | Yasat.main_cli | [13/581 (4 success, 9 failure)] Failed to extract ELF files from dataset/Netgear/wgt624v3_2_0_26_1_0_1_na_only.zip
+WARNING  | 2023-04-19 16:34:59,889 | Yasat.main_cli | [14/581 (4 success, 10 failure)] Failed to extract ELF files from dataset/Netgear/WNR2000 Firmware Version 1.2.3.7 (NA).zip
+WARNING  | 2023-04-19 16:34:59,911 | Yasat.main_cli | [24/581 (13 success, 11 failure)] Failed to extract ELF files from dataset/Netgear/XAV2501 Firmware Upgrade Utility Version 1.0.0.7.zip
+WARNING  | 2023-04-19 16:34:59,912 | Yasat.main_cli | [26/581 (14 success, 12 failure)] Failed to extract ELF files from dataset/Netgear/GS716Tv2_GS724Tv3_V5.4.2.30.zip
+WARNING  | 2023-04-19 16:34:59,913 | Yasat.main_cli | [27/581 (14 success, 13 failure)] Failed to extract ELF files from dataset/Netgear/FS728TLP_FS526Tv2_V1.0.1.23.zip
+WARNING  | 2023-04-19 16:34:59,919 | Yasat.main_cli | [30/581 (16 success, 14 failure)] Failed to extract ELF files from dataset/Netgear/RAX75-V1.0.5.126_1.0.65.zip
+WARNING  | 2023-04-19 16:34:59,928 | Yasat.main_cli | [36/581 (21 success, 15 failure)] Failed to extract ELF files from dataset/Netgear/GS510TP_V5.4.2.30.zip
+WARNING  | 2023-04-19 16:34:59,928 | Yasat.main_cli | [37/581 (21 success, 16 failure)] Failed to extract ELF files from dataset/Netgear/GSM7328S-FS-7352S_V8.0.3.49.zip
+WARNING  | 2023-04-19 16:34:59,928 | Yasat.main_cli | [38/581 (21 success, 17 failure)] Failed to extract ELF files from dataset/Netgear/MS60-V1.0.6.116_2.0.54.zip
+WARNING  | 2023-04-19 16:34:59,928 | Yasat.main_cli | [39/581 (21 success, 18 failure)] Failed to extract ELF files from dataset/Netgear/GS808E_V1.7.1.0.zip
+WARNING  | 2023-04-19 16:34:59,934 | Yasat.main_cli | [43/581 (24 success, 19 failure)] Failed to extract ELF files from dataset/Netgear/DM200_V1.0.0.66.zip
+WARNING  | 2023-04-19 16:34:59,934 | Yasat.main_cli | [44/581 (24 success, 20 failure)] Failed to extract ELF files from dataset/Netgear/FWAG114 Beta Version 1.0.29.zip
+WARNING  | 2023-04-19 16:34:59,944 | Yasat.main_cli | [49/581 (28 success, 21 failure)] Failed to extract ELF files from dataset/Netgear/WAX628-V10.3.1.8.zip
+WARNING  | 2023-04-19 16:34:59,945 | Yasat.main_cli | [50/581 (28 success, 22 failure)] Failed to extract ELF files from dataset/Netgear/WN203_V2.0.11.zip
+WARNING  | 2023-04-19 16:34:59,947 | Yasat.main_cli | [54/581 (31 success, 23 failure)] Failed to extract ELF files from dataset/Netgear/RAX80-V1.0.5.126_1.0.65.zip
+WARNING  | 2023-04-19 16:34:59,948 | Yasat.main_cli | [56/581 (32 success, 24 failure)] Failed to extract ELF files from dataset/Netgear/XAV5201_FW_V0.3.0.6NA.zip
+WARNING  | 2023-04-19 16:34:59,948 | Yasat.main_cli | [57/581 (32 success, 25 failure)] Failed to extract ELF files from dataset/Netgear/EX6250v2_EX6400v3_EX6410v2_EX6470-V1.0.3.30.zip
+WARNING  | 2023-04-19 16:34:59,948 | Yasat.main_cli | [58/581 (32 success, 26 failure)] Failed to extract ELF files from dataset/Netgear/RAX45-V1.0.3.96_2.0.59.zip
+WARNING  | 2023-04-19 16:34:59,948 | Yasat.main_cli | [59/581 (32 success, 27 failure)] Failed to extract ELF files from dataset/Netgear/DGND3700 Firmware Version 1.0.0.17(NA).zip
+WARNING  | 2023-04-19 16:34:59,951 | Yasat.main_cli | [63/581 (35 success, 28 failure)] Failed to extract ELF files from dataset/Netgear/GS748Tv4_V5.4.2.30.zip
+WARNING  | 2023-04-19 16:34:59,954 | Yasat.main_cli | [64/581 (35 success, 29 failure)] Failed to extract ELF files from dataset/Netgear/DG834GT_V1.03.23.zip
+WARNING  | 2023-04-19 16:34:59,958 | Yasat.main_cli | [67/581 (37 success, 30 failure)] Failed to extract ELF files from dataset/Netgear/XAV5004_FW_upgrade_v2.0.0.4.zip
+WARNING  | 2023-04-19 16:34:59,960 | Yasat.main_cli | [68/581 (37 success, 31 failure)] Failed to extract ELF files from dataset/Netgear/WPN802v2 Firmware Version 1.0.6.0 (North America).zip
+WARNING  | 2023-04-19 16:34:59,960 | Yasat.main_cli | [69/581 (37 success, 32 failure)] Failed to extract ELF files from dataset/Netgear/WAX214_firmware_V2.0.1.3.zip
+WARNING  | 2023-04-19 16:34:59,961 | Yasat.main_cli | [70/581 (37 success, 33 failure)] Failed to extract ELF files from dataset/Netgear/GS108PEv3_V2.06.16EN.zip
+WARNING  | 2023-04-19 16:34:59,962 | Yasat.main_cli | [71/581 (37 success, 34 failure)] Failed to extract ELF files from dataset/Netgear/PTV3000_V2.4.19.zip
+WARNING  | 2023-04-19 16:34:59,965 | Yasat.main_cli | [75/581 (40 success, 35 failure)] Failed to extract ELF files from dataset/Netgear/DGN2000_V1.3.16.0.zip
+WARNING  | 2023-04-19 16:34:59,965 | Yasat.main_cli | [76/581 (40 success, 36 failure)] Failed to extract ELF files from dataset/Netgear/R8000P-V1.4.4.94_1.3.56.zip
+WARNING  | 2023-04-19 16:34:59,966 | Yasat.main_cli | [77/581 (40 success, 37 failure)] Failed to extract ELF files from dataset/Netgear/GS105PE_V1.6.0.10.zip
+WARNING  | 2023-04-19 16:34:59,971 | Yasat.main_cli | [86/581 (48 success, 38 failure)] Failed to extract ELF files from dataset/Netgear/WBC502_firmware_V5.8.4.3.zip
+WARNING  | 2023-04-19 16:34:59,972 | Yasat.main_cli | [88/581 (49 success, 39 failure)] Failed to extract ELF files from dataset/Netgear/CGD24G Firmware Version 4.4.8.zip
+WARNING  | 2023-04-19 16:34:59,973 | Yasat.main_cli | [89/581 (49 success, 40 failure)] Failed to extract ELF files from dataset/Netgear/GS308E_V1.00.10EN.zip
+WARNING  | 2023-04-19 16:34:59,974 | Yasat.main_cli | [91/581 (50 success, 41 failure)] Failed to extract ELF files from dataset/Netgear/XSM4556_V7.0.1.13.zip
+WARNING  | 2023-04-19 16:34:59,975 | Yasat.main_cli | [92/581 (50 success, 42 failure)] Failed to extract ELF files from dataset/Netgear/FR114W Firmware version 1.3 Release 05.zip
+WARNING  | 2023-04-19 16:34:59,975 | Yasat.main_cli | [93/581 (50 success, 43 failure)] Failed to extract ELF files from dataset/Netgear/RAX38v2-V1.0.5.106_2.0.70.zip
+WARNING  | 2023-04-19 16:34:59,976 | Yasat.main_cli | [94/581 (50 success, 44 failure)] Failed to extract ELF files from dataset/Netgear/EAX12_EAX11v2_EAX15v2-V1.0.2.30.zip
+WARNING  | 2023-04-19 16:34:59,977 | Yasat.main_cli | [95/581 (50 success, 45 failure)] Failed to extract ELF files from dataset/Netgear/GS108PEV2_V1.00.12.zip
+WARNING  | 2023-04-19 16:34:59,979 | Yasat.main_cli | [96/581 (50 success, 46 failure)] Failed to extract ELF files from dataset/Netgear/700 Series Managed Switch Firmware 2.6.5.zip
+WARNING  | 2023-04-19 16:34:59,979 | Yasat.main_cli | [97/581 (50 success, 47 failure)] Failed to extract ELF files from dataset/Netgear/XS716E_V1.6.0.30.zip
+WARNING  | 2023-04-19 16:34:59,980 | Yasat.main_cli | [98/581 (50 success, 48 failure)] Failed to extract ELF files from dataset/Netgear/GS728TP_GS728TPP_GS752TP_V6.0.1.30.zip
+WARNING  | 2023-04-19 16:34:59,988 | Yasat.main_cli | [100/581 (51 success, 49 failure)] Failed to extract ELF files from dataset/Netgear/RBR840-V3.2.18.1_1.4.14.zip
+WARNING  | 2023-04-19 16:34:59,996 | Yasat.main_cli | [107/581 (57 success, 50 failure)] Failed to extract ELF files from dataset/Netgear/ATT_AC340U_eMR2_upgrade_Mac.zip
+WARNING  | 2023-04-19 16:34:59,996 | Yasat.main_cli | [108/581 (57 success, 51 failure)] Failed to extract ELF files from dataset/Netgear/MR60-V1.0.6.116_2.0.54.zip
+WARNING  | 2023-04-19 16:34:59,997 | Yasat.main_cli | [109/581 (57 success, 52 failure)] Failed to extract ELF files from dataset/Netgear/JGS524E-v1.00.21.zip
+WARNING  | 2023-04-19 16:35:00,001 | Yasat.main_cli | [112/581 (59 success, 53 failure)] Failed to extract ELF files from dataset/Netgear/WPN824v2 Firmware Version 2.0.26 (NA).zip
+WARNING  | 2023-04-19 16:35:00,001 | Yasat.main_cli | [113/581 (59 success, 54 failure)] Failed to extract ELF files from dataset/Netgear/FVS328 Firmware Version 1.0.15.zip
+WARNING  | 2023-04-19 16:35:00,007 | Yasat.main_cli | [116/581 (61 success, 55 failure)] Failed to extract ELF files from dataset/Netgear/WAX615-V10.3.1.8_firmware.zip
+WARNING  | 2023-04-19 16:35:00,007 | Yasat.main_cli | [117/581 (61 success, 56 failure)] Failed to extract ELF files from dataset/Netgear/JGS524PE_JGS524Ev2_V2.6.0.48.zip
+WARNING  | 2023-04-19 16:35:00,020 | Yasat.main_cli | [122/581 (65 success, 57 failure)] Failed to extract ELF files from dataset/Netgear/EAX80-V1.0.1.70_1.0.2.zip
+WARNING  | 2023-04-19 16:35:00,023 | Yasat.main_cli | [126/581 (68 success, 58 failure)] Failed to extract ELF files from dataset/Netgear/WAX630E_V10.3.2.4.zip
+WARNING  | 2023-04-19 16:35:00,033 | Yasat.main_cli | [129/581 (70 success, 59 failure)] Failed to extract ELF files from dataset/Netgear/GS305EP_V1.0.0.10.zip
+WARNING  | 2023-04-19 16:35:00,033 | Yasat.main_cli | [130/581 (70 success, 60 failure)] Failed to extract ELF files from dataset/Netgear/FS728TPv2_V5.0.2.52.zip
+WARNING  | 2023-04-19 16:35:00,033 | Yasat.main_cli | [131/581 (70 success, 61 failure)] Failed to extract ELF files from dataset/Netgear/FR318 and FV318 Firmware Upgrade 6.3.1.0.zip
+WARNING  | 2023-04-19 16:35:00,034 | Yasat.main_cli | [133/581 (71 success, 62 failure)] Failed to extract ELF files from dataset/Netgear/sph200d_upgrade_1.0.4.80.zip
+WARNING  | 2023-04-19 16:35:00,034 | Yasat.main_cli | [134/581 (71 success, 63 failure)] Failed to extract ELF files from dataset/Netgear/RP614-Firmware-Version-4.15.zip
+WARNING  | 2023-04-19 16:35:00,036 | Yasat.main_cli | [135/581 (71 success, 64 failure)] Failed to extract ELF files from dataset/Netgear/CSM4532_V7.0.1.13.zip
+WARNING  | 2023-04-19 16:35:00,038 | Yasat.main_cli | [137/581 (72 success, 65 failure)] Failed to extract ELF files from dataset/Netgear/WGR614V7-V2.0.30_2.0.30NA.zip
+WARNING  | 2023-04-19 16:35:00,038 | Yasat.main_cli | [138/581 (72 success, 66 failure)] Failed to extract ELF files from dataset/Netgear/RAX78-V1.0.14.134.zip
+WARNING  | 2023-04-19 16:35:00,044 | Yasat.main_cli | [140/581 (73 success, 67 failure)] Failed to extract ELF files from dataset/Netgear/RP614v2 Firmware Version 5.20.zip
+WARNING  | 2023-04-19 16:35:00,045 | Yasat.main_cli | [142/581 (74 success, 68 failure)] Failed to extract ELF files from dataset/Netgear/WNHDE111 Firmware Version 1.2.7_1.0.1 (North America).zip
+WARNING  | 2023-04-19 16:35:00,045 | Yasat.main_cli | [143/581 (74 success, 69 failure)] Failed to extract ELF files from dataset/Netgear/WN311B Firmware Version 2.0.zip
+WARNING  | 2023-04-19 16:35:00,048 | Yasat.main_cli | [147/581 (77 success, 70 failure)] Failed to extract ELF files from dataset/Netgear/WG602v2 Firmware Version 3.2.zip
+WARNING  | 2023-04-19 16:35:00,048 | Yasat.main_cli | [148/581 (77 success, 71 failure)] Failed to extract ELF files from dataset/Netgear/GS108Tv2_GS110TPv2_V5.4.2.36.zip
+WARNING  | 2023-04-19 16:35:00,049 | Yasat.main_cli | [149/581 (77 success, 72 failure)] Failed to extract ELF files from dataset/Netgear/DG814 Firmware version 4.10.zip
+WARNING  | 2023-04-19 16:35:00,049 | Yasat.main_cli | [150/581 (77 success, 73 failure)] Failed to extract ELF files from dataset/Netgear/WAG102 Firmware Version 2.0.16 (North America).zip
+WARNING  | 2023-04-19 16:35:00,068 | Yasat.main_cli | [159/581 (85 success, 74 failure)] Failed to extract ELF files from dataset/Netgear/ME103 Firmware Version 4.0 Release 29.zip
+WARNING  | 2023-04-19 16:35:00,070 | Yasat.main_cli | [162/581 (87 success, 75 failure)] Failed to extract ELF files from dataset/Netgear/FM114P Firmware version 1.3 (Release 05).zip
+WARNING  | 2023-04-19 16:35:00,087 | Yasat.main_cli | [167/581 (91 success, 76 failure)] Failed to extract ELF files from dataset/Netgear/NG8800-12.4.3.5-1-4.zip
+WARNING  | 2023-04-19 16:35:00,093 | Yasat.main_cli | [171/581 (94 success, 77 failure)] Failed to extract ELF files from dataset/Netgear/XAV2101v2_FW_V0.3.0.9NA.zip
+WARNING  | 2023-04-19 16:35:00,100 | Yasat.main_cli | [174/581 (96 success, 78 failure)] Failed to extract ELF files from dataset/Netgear/MR814v1 Firmware Version 4.14 Release Candidate 4.zip
+WARNING  | 2023-04-19 16:35:00,115 | Yasat.main_cli | [182/581 (103 success, 79 failure)] Failed to extract ELF files from dataset/Netgear/ME102 Firmware Download Instructions.zip
+WARNING  | 2023-04-19 16:35:00,115 | Yasat.main_cli | [183/581 (103 success, 80 failure)] Failed to extract ELF files from dataset/Netgear/Disclaimer.aspxredirecturl=http%2F%2Fwww.downloads.netgear.com%2Ffiles%2Faircard%2FM3.0.9.0ap.zip
+WARNING  | 2023-04-19 16:35:00,121 | Yasat.main_cli | [186/581 (105 success, 81 failure)] Failed to extract ELF files from dataset/Netgear/GS724T Firmware Version 1.2.3.zip
+WARNING  | 2023-04-19 16:35:00,121 | Yasat.main_cli | [187/581 (105 success, 82 failure)] Failed to extract ELF files from dataset/Netgear/GA511 Initial Release Firmware.zip
+WARNING  | 2023-04-19 16:35:00,124 | Yasat.main_cli | [189/581 (106 success, 83 failure)] Failed to extract ELF files from dataset/Netgear/NBR750-V4.6.5.11_1.5.64.zip
+WARNING  | 2023-04-19 16:35:00,127 | Yasat.main_cli | [192/581 (108 success, 84 failure)] Failed to extract ELF files from dataset/Netgear/RP614v3 Firmware Version 6.0.zip
+WARNING  | 2023-04-19 16:35:00,138 | Yasat.main_cli | [199/581 (114 success, 85 failure)] Failed to extract ELF files from dataset/Netgear/WNDR3300-V1.0.45_1.0.45NA.zip
+WARNING  | 2023-04-19 16:35:00,138 | Yasat.main_cli | [200/581 (114 success, 86 failure)] Failed to extract ELF files from dataset/Netgear/MS80-V1.1.7.14_3.1.109.zip
+WARNING  | 2023-04-19 16:35:00,139 | Yasat.main_cli | [202/581 (115 success, 87 failure)] Failed to extract ELF files from dataset/Netgear/EAX15_EAX11_EAX14-V1.0.3.34.zip
+WARNING  | 2023-04-19 16:35:00,142 | Yasat.main_cli | [204/581 (116 success, 88 failure)] Failed to extract ELF files from dataset/Netgear/WPN824v1 Firmware Version V2.0.15.zip
+WARNING  | 2023-04-19 16:35:00,153 | Yasat.main_cli | [212/581 (123 success, 89 failure)] Failed to extract ELF files from dataset/Netgear/WGU624 Firmware Version 2.0.1.1.zip
+WARNING  | 2023-04-19 16:35:00,161 | Yasat.main_cli | [216/581 (126 success, 90 failure)] Failed to extract ELF files from dataset/Netgear/D500-V1.0.0.28_1.0.1PE.zip
+WARNING  | 2023-04-19 16:35:00,164 | Yasat.main_cli | [219/581 (128 success, 91 failure)] Failed to extract ELF files from dataset/Netgear/FSM7226RS_FSM7250RS Firmware Version 7.3.1.7.zip
+WARNING  | 2023-04-19 16:35:00,164 | Yasat.main_cli | [220/581 (128 success, 92 failure)] Failed to extract ELF files from dataset/Netgear/wgps606_1025.zip
+WARNING  | 2023-04-19 16:35:00,170 | Yasat.main_cli | [223/581 (130 success, 93 failure)] Failed to extract ELF files from dataset/Netgear/CBR750-V4.6.14.4.zip
+WARNING  | 2023-04-19 16:35:00,173 | Yasat.main_cli | [225/581 (131 success, 94 failure)] Failed to extract ELF files from dataset/Netgear/WGE111 Firmware Version 1014.zip
+WARNING  | 2023-04-19 16:35:00,173 | Yasat.main_cli | [226/581 (131 success, 95 failure)] Failed to extract ELF files from dataset/Netgear/WAX638E_V10.3.1.8.zip
+WARNING  | 2023-04-19 16:35:00,368 | Yasat.main_cli | [229/581 (133 success, 96 failure)] Failed to extract ELF files from dataset/Netgear/GS728TX_GS728TXP_GS752TX_GS752TXP_V6.6.4.28.zip
+WARNING  | 2023-04-19 16:35:00,369 | Yasat.main_cli | [231/581 (134 success, 97 failure)] Failed to extract ELF files from dataset/Netgear/GS308EPP_V1.0.0.10.zip
+WARNING  | 2023-04-19 16:35:00,377 | Yasat.main_cli | [236/581 (138 success, 98 failure)] Failed to extract ELF files from dataset/Netgear/Managed Switch 700 Firmware 2.6.0.zip
+WARNING  | 2023-04-19 16:35:00,380 | Yasat.main_cli | [239/581 (140 success, 99 failure)] Failed to extract ELF files from dataset/Netgear/FS728TLP_V1.0.1.36.zip
+WARNING  | 2023-04-19 16:35:00,380 | Yasat.main_cli | [240/581 (140 success, 100 failure)] Failed to extract ELF files from dataset/Netgear/XAV101v2_Firmware_Upgrade_Utility-v2.1.7.zip
+WARNING  | 2023-04-19 16:35:00,382 | Yasat.main_cli | [242/581 (141 success, 101 failure)] Failed to extract ELF files from dataset/Netgear/WAX218_firmware_V2.1.1.3.zip
+WARNING  | 2023-04-19 16:35:00,384 | Yasat.main_cli | [244/581 (142 success, 102 failure)] Failed to extract ELF files from dataset/Netgear/FSM726E Firmware Version 7.3.2.1.zip
+WARNING  | 2023-04-19 16:35:00,384 | Yasat.main_cli | [245/581 (142 success, 103 failure)] Failed to extract ELF files from dataset/Netgear/RAX43-V1.0.3.96_2.0.59.zip
+WARNING  | 2023-04-19 16:35:00,386 | Yasat.main_cli | [249/581 (145 success, 104 failure)] Failed to extract ELF files from dataset/Netgear/HR314 Firmware version 1.4.2.zip
+WARNING  | 2023-04-19 16:35:00,390 | Yasat.main_cli | [251/581 (146 success, 105 failure)] Failed to extract ELF files from dataset/Netgear/RAX200-V1.0.10.140.zip
+WARNING  | 2023-04-19 16:35:00,390 | Yasat.main_cli | [252/581 (146 success, 106 failure)] Failed to extract ELF files from dataset/Netgear/gs724tv2_1_0_3_33.zip
+WARNING  | 2023-04-19 16:35:00,391 | Yasat.main_cli | [253/581 (146 success, 107 failure)] Failed to extract ELF files from dataset/Netgear/DG834Gv4NA_V5.03.16.zip
+WARNING  | 2023-04-19 16:35:00,391 | Yasat.main_cli | [254/581 (146 success, 108 failure)] Failed to extract ELF files from dataset/Netgear/FR114P Firmware Version 1.5 Release 14.zip
+WARNING  | 2023-04-19 16:35:00,391 | Yasat.main_cli | [255/581 (146 success, 109 failure)] Failed to extract ELF files from dataset/Netgear/GS908E_V1.7.0.3.zip
+WARNING  | 2023-04-19 16:35:00,391 | Yasat.main_cli | [256/581 (146 success, 110 failure)] Failed to extract ELF files from dataset/Netgear/GS108Ev3_V2.06.16EN.zip
+WARNING  | 2023-04-19 16:35:00,392 | Yasat.main_cli | [257/581 (146 success, 111 failure)] Failed to extract ELF files from dataset/Netgear/AC319U_telus_FW_Mac_N2.0.8.1C.zip
+WARNING  | 2023-04-19 16:35:00,393 | Yasat.main_cli | [259/581 (147 success, 112 failure)] Failed to extract ELF files from dataset/Netgear/RBS840-V3.2.18.1_1.4.14.zip
+WARNING  | 2023-04-19 16:35:00,393 | Yasat.main_cli | [261/581 (148 success, 113 failure)] Failed to extract ELF files from dataset/Netgear/WAX206_Firmware_V1.0.1.8.zip
+WARNING  | 2023-04-19 16:35:00,397 | Yasat.main_cli | [263/581 (149 success, 114 failure)] Failed to extract ELF files from dataset/Netgear/wnr834bv2_2_1_13_na_only.zip
+WARNING  | 2023-04-19 16:35:00,397 | Yasat.main_cli | [264/581 (149 success, 115 failure)] Failed to extract ELF files from dataset/Netgear/WGR614v2 and WGR614v3 Firmware Version 2.16.zip
+WARNING  | 2023-04-19 16:35:00,404 | Yasat.main_cli | [268/581 (152 success, 116 failure)] Failed to extract ELF files from dataset/Netgear/WAX610_610Y_firmware_V9.5.3.2.zip
+WARNING  | 2023-04-19 16:35:00,429 | Yasat.main_cli | [274/581 (157 success, 117 failure)] Failed to extract ELF files from dataset/Netgear/XAV5501 Firmware Upgrade Utility v2.0.0.0.zip
+WARNING  | 2023-04-19 16:35:00,429 | Yasat.main_cli | [275/581 (157 success, 118 failure)] Failed to extract ELF files from dataset/Netgear/GS110T_V5.4.0.6.zip
+WARNING  | 2023-04-19 16:35:00,456 | Yasat.main_cli | [281/581 (162 success, 119 failure)] Failed to extract ELF files from dataset/Netgear/RAX35v2-V1.0.3.96_2.0.59.zip
+WARNING  | 2023-04-19 16:35:00,464 | Yasat.main_cli | [288/581 (168 success, 120 failure)] Failed to extract ELF files from dataset/Netgear/WAX202_Firmware_V1.0.2.0.zip
+WARNING  | 2023-04-19 16:35:00,466 | Yasat.main_cli | [289/581 (168 success, 121 failure)] Failed to extract ELF files from dataset/Netgear/ME101 Firmware Version 2.0.zip
+WARNING  | 2023-04-19 16:35:00,478 | Yasat.main_cli | [294/581 (172 success, 122 failure)] Failed to extract ELF files from dataset/Netgear/WGR614v5 Firmware Version 1.09.zip
+WARNING  | 2023-04-19 16:35:00,479 | Yasat.main_cli | [295/581 (172 success, 123 failure)] Failed to extract ELF files from dataset/Netgear/PS121 Print Server Version 6033 Firmware.zip
+WARNING  | 2023-04-19 16:35:00,488 | Yasat.main_cli | [296/581 (172 success, 124 failure)] Failed to extract ELF files from dataset/Netgear/RAX50v2-V1.1.3.18.zip
+WARNING  | 2023-04-19 16:35:00,488 | Yasat.main_cli | [297/581 (172 success, 125 failure)] Failed to extract ELF files from dataset/Netgear/GS408EPP_V1.0.0.22.zip
+WARNING  | 2023-04-19 16:35:00,489 | Yasat.main_cli | [298/581 (172 success, 126 failure)] Failed to extract ELF files from dataset/Netgear/D1500-V1.0.0.28_1.0.1PE.zip
+WARNING  | 2023-04-19 16:35:00,489 | Yasat.main_cli | [299/581 (172 success, 127 failure)] Failed to extract ELF files from dataset/Netgear/XAV5602_FW_upgrade_V0.3.0.6.zip
+WARNING  | 2023-04-19 16:35:00,490 | Yasat.main_cli | [301/581 (173 success, 128 failure)] Failed to extract ELF files from dataset/Netgear/HDX111 Firmware Version 4.4.9.zip
+WARNING  | 2023-04-19 16:35:00,490 | Yasat.main_cli | [302/581 (173 success, 129 failure)] Failed to extract ELF files from dataset/Netgear/XAV1004 Firmware Upgrade Utility v2.0.0.0.zip
+WARNING  | 2023-04-19 16:35:00,491 | Yasat.main_cli | [303/581 (173 success, 130 failure)] Failed to extract ELF files from dataset/Netgear/XAV1601 Firmware Upgrade Utility Version 0.2.0.9.zip
+WARNING  | 2023-04-19 16:35:00,491 | Yasat.main_cli | [304/581 (173 success, 131 failure)] Failed to extract ELF files from dataset/Netgear/XR1000v2-V1.1.0.16.zip
+WARNING  | 2023-04-19 16:35:00,492 | Yasat.main_cli | [307/581 (175 success, 132 failure)] Failed to extract ELF files from dataset/Netgear/FVS124G Firmware V1.1.48.zip
+WARNING  | 2023-04-19 16:35:00,494 | Yasat.main_cli | [313/581 (180 success, 133 failure)] Failed to extract ELF files from dataset/Netgear/WAX618_V10.3.1.8.zip
+WARNING  | 2023-04-19 16:35:00,502 | Yasat.main_cli | [319/581 (185 success, 134 failure)] Failed to extract ELF files from dataset/Netgear/fvs336gv2_v4.3.3-6.zip
+WARNING  | 2023-04-19 16:35:00,503 | Yasat.main_cli | [320/581 (185 success, 135 failure)] Failed to extract ELF files from dataset/Netgear/GSM7224R, GSM7248R Firmware Version 7.3.1.7.zip
+WARNING  | 2023-04-19 16:35:00,503 | Yasat.main_cli | [321/581 (185 success, 136 failure)] Failed to extract ELF files from dataset/Netgear/WPN802v1 Firmware Version 2.0.9.0 (All regions except North America).zip
+WARNING  | 2023-04-19 16:35:00,505 | Yasat.main_cli | [324/581 (187 success, 137 failure)] Failed to extract ELF files from dataset/Netgear/R7960P-V1.4.1.68_1.3.28.zip
+WARNING  | 2023-04-19 16:35:00,509 | Yasat.main_cli | [327/581 (189 success, 138 failure)] Failed to extract ELF files from dataset/Netgear/MCA1001 Firmware Version 1.56.24.02.zip
+WARNING  | 2023-04-19 16:35:00,510 | Yasat.main_cli | [329/581 (190 success, 139 failure)] Failed to extract ELF files from dataset/Netgear/XAV5101_FW_upgrade_v2.0.0.0.zip
+WARNING  | 2023-04-19 16:35:00,512 | Yasat.main_cli | [333/581 (193 success, 140 failure)] Failed to extract ELF files from dataset/Netgear/DG834PN Firmware Version 1.03.39.zip
+WARNING  | 2023-04-19 16:35:00,513 | Yasat.main_cli | [334/581 (193 success, 141 failure)] Failed to extract ELF files from dataset/Netgear/DM111Pv1 Firmware Version 3.64p.zip
+WARNING  | 2023-04-19 16:35:00,514 | Yasat.main_cli | [335/581 (193 success, 142 failure)] Failed to extract ELF files from dataset/Netgear/WGR614v6 Firmware Version 2.0.19_1.0.19 (NA).zip
+WARNING  | 2023-04-19 16:35:00,514 | Yasat.main_cli | [336/581 (193 success, 143 failure)] Failed to extract ELF files from dataset/Netgear/Print Server Firmware Upgrade Utility Version 2.0 (for PS104, PS105 and PS110).zip
+WARNING  | 2023-04-19 16:35:00,514 | Yasat.main_cli | [337/581 (193 success, 144 failure)] Failed to extract ELF files from dataset/Netgear/DG824M Firmware Version 1.4 Release 05.zip
+WARNING  | 2023-04-19 16:35:00,517 | Yasat.main_cli | [340/581 (195 success, 145 failure)] Failed to extract ELF files from dataset/Netgear/FS728TS, FS752TS Firmware Version 3.1.0.1.zip
+WARNING  | 2023-04-19 16:35:00,524 | Yasat.main_cli | [343/581 (197 success, 146 failure)] Failed to extract ELF files from dataset/Netgear/EX7500-V1.0.1.76_1.0.80.zip
+WARNING  | 2023-04-19 16:35:00,524 | Yasat.main_cli | [344/581 (197 success, 147 failure)] Failed to extract ELF files from dataset/Netgear/WAX220_Firmware_V1.0.2.5.zip
+WARNING  | 2023-04-19 16:35:00,525 | Yasat.main_cli | [345/581 (197 success, 148 failure)] Failed to extract ELF files from dataset/Netgear/GS724_748TP-V5.2.0.11.zip
+WARNING  | 2023-04-19 16:35:00,526 | Yasat.main_cli | [346/581 (197 success, 149 failure)] Failed to extract ELF files from dataset/Netgear/FS728TP Firmware Version 5.0.0.8.zip
+WARNING  | 2023-04-19 16:35:00,526 | Yasat.main_cli | [347/581 (197 success, 150 failure)] Failed to extract ELF files from dataset/Netgear/FVG318 Firmware Version 2.1.2-67 (North America).zip
+WARNING  | 2023-04-19 16:35:00,526 | Yasat.main_cli | [348/581 (197 success, 151 failure)] Failed to extract ELF files from dataset/Netgear/XS708Ev2_V1.6.0.30.zip
+WARNING  | 2023-04-19 16:35:00,528 | Yasat.main_cli | [349/581 (197 success, 152 failure)] Failed to extract ELF files from dataset/Netgear/SC101T Firmware 1.1.3.zip
+WARNING  | 2023-04-19 16:35:00,528 | Yasat.main_cli | [350/581 (197 success, 153 failure)] Failed to extract ELF files from dataset/Netgear/WNA3100M_Setup_V1.2.0.9_BETA.zip
+WARNING  | 2023-04-19 16:35:00,541 | Yasat.main_cli | [362/581 (208 success, 154 failure)] Failed to extract ELF files from dataset/Netgear/WGE101 Firmware Version 3.1 Release Candidate 2.zip
+WARNING  | 2023-04-19 16:35:00,551 | Yasat.main_cli | [366/581 (211 success, 155 failure)] Failed to extract ELF files from dataset/Netgear/RAX15-V1.0.3.96_2.0.59.zip
+WARNING  | 2023-04-19 16:35:00,551 | Yasat.main_cli | [367/581 (211 success, 156 failure)] Failed to extract ELF files from dataset/Netgear/MR1100EUS_V12.06.11.00_00.zip
+WARNING  | 2023-04-19 16:35:00,554 | Yasat.main_cli | [370/581 (213 success, 157 failure)] Failed to extract ELF files from dataset/Netgear/RAX48-V1.0.4.100_2.0.64.zip
+WARNING  | 2023-04-19 16:35:00,556 | Yasat.main_cli | [372/581 (214 success, 158 failure)] Failed to extract ELF files from dataset/Netgear/GS110TP_GS108Tv2 Firmware Version 5.0.1.10.zip
+WARNING  | 2023-04-19 16:35:00,556 | Yasat.main_cli | [373/581 (214 success, 159 failure)] Failed to extract ELF files from dataset/Netgear/GS516TP_V6.0.1.30.zip
+WARNING  | 2023-04-19 16:35:00,567 | Yasat.main_cli | [379/581 (219 success, 160 failure)] Failed to extract ELF files from dataset/Netgear/DG834Nv1 Firmware Version 1.02.15 (For users OUTSIDE Germany and Austria only).zip
+WARNING  | 2023-04-19 16:35:00,568 | Yasat.main_cli | [380/581 (219 success, 161 failure)] Failed to extract ELF files from dataset/Netgear/WNDR3700-V1.0.16.98NA.zip
+WARNING  | 2023-04-19 16:35:00,569 | Yasat.main_cli | [382/581 (220 success, 162 failure)] Failed to extract ELF files from dataset/Netgear/GS716T Firmware Version 1.1.8.zip
+WARNING  | 2023-04-19 16:35:00,572 | Yasat.main_cli | [385/581 (222 success, 163 failure)] Failed to extract ELF files from dataset/Netgear/GS724AT_GS748AT Switch Firmware Version 4.0.1.1.zip
+WARNING  | 2023-04-19 16:35:00,577 | Yasat.main_cli | [387/581 (223 success, 164 failure)] Failed to extract ELF files from dataset/Netgear/FVS114 Firmware Version 1.1_15.zip
+WARNING  | 2023-04-19 16:35:00,577 | Yasat.main_cli | [388/581 (223 success, 165 failure)] Failed to extract ELF files from dataset/Netgear/PS101 Firmware Version 6023.zip
+WARNING  | 2023-04-19 16:35:00,577 | Yasat.main_cli | [389/581 (223 success, 166 failure)] Failed to extract ELF files from dataset/Netgear/RAX41v2-V1.1.3.18.zip
+WARNING  | 2023-04-19 16:35:00,578 | Yasat.main_cli | [392/581 (225 success, 167 failure)] Failed to extract ELF files from dataset/Netgear/GS305E_V1.0.0.9.zip
+WARNING  | 2023-04-19 16:35:00,579 | Yasat.main_cli | [394/581 (226 success, 168 failure)] Failed to extract ELF files from dataset/Netgear/FS726Tv2_FW_V1.0.0.16.zip
+WARNING  | 2023-04-19 16:35:00,580 | Yasat.main_cli | [395/581 (226 success, 169 failure)] Failed to extract ELF files from dataset/Netgear/ReadyDATAOS-V1.4.5.zip
+WARNING  | 2023-04-19 16:35:00,582 | Yasat.main_cli | [397/581 (227 success, 170 failure)] Failed to extract ELF files from dataset/Netgear/XR1000-V1.0.64.18_5.0.19.zip
+WARNING  | 2023-04-19 16:35:00,587 | Yasat.main_cli | [401/581 (230 success, 171 failure)] Failed to extract ELF files from dataset/Netgear/RAX50_V1.0.2.82_2.0.50.zip
+WARNING  | 2023-04-19 16:35:00,590 | Yasat.main_cli | [404/581 (232 success, 172 failure)] Failed to extract ELF files from dataset/Netgear/XAV2001 Firmware Upgrade Utility v2.0.0.1.zip
+WARNING  | 2023-04-19 16:35:00,590 | Yasat.main_cli | [405/581 (232 success, 173 failure)] Failed to extract ELF files from dataset/Netgear/NBR750-1BNCNS-V4.6.5.11.zip
+WARNING  | 2023-04-19 16:35:00,590 | Yasat.main_cli | [406/581 (232 success, 174 failure)] Failed to extract ELF files from dataset/Netgear/XAV5501 Firmware Upgrade Utility v2.0.0.2.zip
+WARNING  | 2023-04-19 16:35:00,595 | Yasat.main_cli | [408/581 (233 success, 175 failure)] Failed to extract ELF files from dataset/Netgear/WG311v2 Firmware Version 1.0.0.10.zip
+WARNING  | 2023-04-19 16:35:00,595 | Yasat.main_cli | [410/581 (234 success, 176 failure)] Failed to extract ELF files from dataset/Netgear/GSM7212 Firmware Version 6.3.3.7.zip
+WARNING  | 2023-04-19 16:35:00,596 | Yasat.main_cli | [411/581 (234 success, 177 failure)] Failed to extract ELF files from dataset/Netgear/RAX20-V1.0.3.96_2.0.59.zip
+WARNING  | 2023-04-19 16:35:00,596 | Yasat.main_cli | [412/581 (234 success, 178 failure)] Failed to extract ELF files from dataset/Netgear/WPN824N-V1.0.0.28.zip
+WARNING  | 2023-04-19 16:35:00,601 | Yasat.main_cli | [414/581 (235 success, 179 failure)] Failed to extract ELF files from dataset/Netgear/FVS318v3 Firmware Version 3.0_28.zip
+WARNING  | 2023-04-19 16:35:00,601 | Yasat.main_cli | [415/581 (235 success, 180 failure)] Failed to extract ELF files from dataset/Netgear/XSM7224S_V9.0.1.46.zip
+WARNING  | 2023-04-19 16:35:00,601 | Yasat.main_cli | [416/581 (235 success, 181 failure)] Failed to extract ELF files from dataset/Netgear/RBS750-V3.2.18.1_1.4.14.zip
+WARNING  | 2023-04-19 16:35:00,602 | Yasat.main_cli | [417/581 (235 success, 182 failure)] Failed to extract ELF files from dataset/Netgear/RAX70-V1.0.14.134.zip
+WARNING  | 2023-04-19 16:35:00,602 | Yasat.main_cli | [418/581 (235 success, 183 failure)] Failed to extract ELF files from dataset/Netgear/FS728TS, FS752TS, FS752TPS Firmware Version 3.0.0.30.zip
+WARNING  | 2023-04-19 16:35:00,603 | Yasat.main_cli | [419/581 (235 success, 184 failure)] Failed to extract ELF files from dataset/Netgear/FS726T_V2.0.1_14.zip
+WARNING  | 2023-04-19 16:35:00,610 | Yasat.main_cli | [422/581 (237 success, 185 failure)] Failed to extract ELF files from dataset/Netgear/RAX40v2-V1.0.3.96_2.0.59.zip
+WARNING  | 2023-04-19 16:35:00,610 | Yasat.main_cli | [423/581 (237 success, 186 failure)] Failed to extract ELF files from dataset/Netgear/GS108EV2_V1.00.12.zip
+WARNING  | 2023-04-19 16:35:00,610 | Yasat.main_cli | [424/581 (237 success, 187 failure)] Failed to extract ELF files from dataset/Netgear/WNCE2001 Firmware Version 1.0.0.26 (NA).zip
+WARNING  | 2023-04-19 16:35:00,611 | Yasat.main_cli | [426/581 (238 success, 188 failure)] Failed to extract ELF files from dataset/Netgear/GS105E_V1.02.04.zip
+WARNING  | 2023-04-19 16:35:00,617 | Yasat.main_cli | [430/581 (241 success, 189 failure)] Failed to extract ELF files from dataset/Netgear/Firmware to Convert WG102 to WGL102 - Version 1.5.9 (North America).zip
+WARNING  | 2023-04-19 16:35:00,618 | Yasat.main_cli | [431/581 (241 success, 190 failure)] Failed to extract ELF files from dataset/Netgear/FVM318 Firmware Version R1.2.zip
+WARNING  | 2023-04-19 16:35:00,620 | Yasat.main_cli | [434/581 (243 success, 191 failure)] Failed to extract ELF files from dataset/Netgear/GSS108E_V1.6.0.9.zip
+WARNING  | 2023-04-19 16:35:00,626 | Yasat.main_cli | [438/581 (246 success, 192 failure)] Failed to extract ELF files from dataset/Netgear/RBS40V_EXT-V1.0.1.4_1.0.45.zip
+WARNING  | 2023-04-19 16:35:00,627 | Yasat.main_cli | [439/581 (246 success, 193 failure)] Failed to extract ELF files from dataset/Netgear/EAX20-EAX18-V1.0.1.62_1.0.103.zip
+WARNING  | 2023-04-19 16:35:00,627 | Yasat.main_cli | [440/581 (246 success, 194 failure)] Failed to extract ELF files from dataset/Netgear/RBR850-V4.6.3.9.zip
+WARNING  | 2023-04-19 16:35:00,627 | Yasat.main_cli | [441/581 (246 success, 195 failure)] Failed to extract ELF files from dataset/Netgear/WAX214v2_firmware_V1.0.2.0.zip
+WARNING  | 2023-04-19 16:35:00,630 | Yasat.main_cli | [446/581 (250 success, 196 failure)] Failed to extract ELF files from dataset/Netgear/Mac_Firmware_Update_SWI9200X_01.00.01.01.zip
+WARNING  | 2023-04-19 16:35:00,630 | Yasat.main_cli | [447/581 (250 success, 197 failure)] Failed to extract ELF files from dataset/Netgear/MR1100NAS_V12.06.11.00_00.zip
+WARNING  | 2023-04-19 16:35:00,631 | Yasat.main_cli | [448/581 (250 success, 198 failure)] Failed to extract ELF files from dataset/Netgear/WPN824V3-V1.0.8_1.0.7NA.zip
+WARNING  | 2023-04-19 16:35:00,631 | Yasat.main_cli | [449/581 (250 success, 199 failure)] Failed to extract ELF files from dataset/Netgear/GSM7224 Firmware Version 6.2.0.14.zip
+WARNING  | 2023-04-19 16:35:00,632 | Yasat.main_cli | [450/581 (250 success, 200 failure)] Failed to extract ELF files from dataset/Netgear/FVS336Gv3_V4.3.5-3.zip
+WARNING  | 2023-04-19 16:35:00,632 | Yasat.main_cli | [451/581 (250 success, 201 failure)] Failed to extract ELF files from dataset/Netgear/SRX5308_V4.3.5-3.zip
+WARNING  | 2023-04-19 16:35:00,633 | Yasat.main_cli | [452/581 (250 success, 202 failure)] Failed to extract ELF files from dataset/Netgear/XAV1501 Firmware Upgrade Utility Version 2.1.7.zip
+WARNING  | 2023-04-19 16:35:00,633 | Yasat.main_cli | [453/581 (250 success, 203 failure)] Failed to extract ELF files from dataset/Netgear/R7900P-V1.4.4.94_1.3.56.zip
+WARNING  | 2023-04-19 16:35:00,633 | Yasat.main_cli | [454/581 (250 success, 204 failure)] Failed to extract ELF files from dataset/Netgear/FVS318 Firmware Version 2.4.zip
+WARNING  | 2023-04-19 16:35:00,634 | Yasat.main_cli | [456/581 (251 success, 205 failure)] Failed to extract ELF files from dataset/Netgear/XAV5001  XAVB5001 Firmware Upgrade Utility v2.0.0.2.zip
+WARNING  | 2023-04-19 16:35:00,635 | Yasat.main_cli | [458/581 (252 success, 206 failure)] Failed to extract ELF files from dataset/Netgear/MCA1001v2 Firmware Version 0.3.zip
+WARNING  | 2023-04-19 16:35:00,636 | Yasat.main_cli | [460/581 (253 success, 207 failure)] Failed to extract ELF files from dataset/Netgear/dg834v3_dg834gv3_na_4_03_04.zip
+WARNING  | 2023-04-19 16:35:00,638 | Yasat.main_cli | [462/581 (254 success, 208 failure)] Failed to extract ELF files from dataset/Netgear/XAV1301v2_V0.2.0.8NA.zip
+WARNING  | 2023-04-19 16:35:00,640 | Yasat.main_cli | [464/581 (255 success, 209 failure)] Failed to extract ELF files from dataset/Netgear/WGT624v1 and WGT624v2 Firmware Version 4.2.11.zip
+WARNING  | 2023-04-19 16:35:00,644 | Yasat.main_cli | [467/581 (257 success, 210 failure)] Failed to extract ELF files from dataset/Netgear/WG302v1 Firmware Version 4.2.17 (North America).zip
+WARNING  | 2023-04-19 16:35:00,645 | Yasat.main_cli | [468/581 (257 success, 211 failure)] Failed to extract ELF files from dataset/Netgear/WAX204_firmware_V1.0.2.0.zip
+WARNING  | 2023-04-19 16:35:00,658 | Yasat.main_cli | [474/581 (262 success, 212 failure)] Failed to extract ELF files from dataset/Netgear/CBR40-V2.5.0.28.zip
+WARNING  | 2023-04-19 16:35:00,658 | Yasat.main_cli | [475/581 (262 success, 213 failure)] Failed to extract ELF files from dataset/Netgear/GS116E-v1.00.21.zip
+WARNING  | 2023-04-19 16:35:00,659 | Yasat.main_cli | [476/581 (262 success, 214 failure)] Failed to extract ELF files from dataset/Netgear/RAX10-V1.0.10.110.zip
+WARNING  | 2023-04-19 16:35:00,660 | Yasat.main_cli | [478/581 (263 success, 215 failure)] Failed to extract ELF files from dataset/Netgear/RBR750-V3.2.18.1_1.4.14.zip
+WARNING  | 2023-04-19 16:35:00,660 | Yasat.main_cli | [479/581 (263 success, 216 failure)] Failed to extract ELF files from dataset/Netgear/WGR101 Firmware Version 1009.zip
+WARNING  | 2023-04-19 16:35:00,661 | Yasat.main_cli | [480/581 (263 success, 217 failure)] Failed to extract ELF files from dataset/Netgear/WAX625-V10.3.1.8.zip
+WARNING  | 2023-04-19 16:35:00,661 | Yasat.main_cli | [481/581 (263 success, 218 failure)] Failed to extract ELF files from dataset/Netgear/RBW30-V2.6.2.6_1.0.16.zip
+WARNING  | 2023-04-19 16:35:00,661 | Yasat.main_cli | [482/581 (263 success, 219 failure)] Failed to extract ELF files from dataset/Netgear/MR80-V1.1.7.14_3.1.109.zip
+WARNING  | 2023-04-19 16:35:00,662 | Yasat.main_cli | [483/581 (263 success, 220 failure)] Failed to extract ELF files from dataset/Netgear/R4500_V1.0.0.4_1.0.3.zip
+WARNING  | 2023-04-19 16:35:00,663 | Yasat.main_cli | [484/581 (263 success, 221 failure)] Failed to extract ELF files from dataset/Netgear/GSM7300S_7200PS_V10.0.0.53.zip
+WARNING  | 2023-04-19 16:35:00,664 | Yasat.main_cli | [486/581 (264 success, 222 failure)] Failed to extract ELF files from dataset/Netgear/WAX620_WAX630_firmware_V9.5.2.5.zip
+WARNING  | 2023-04-19 16:35:00,664 | Yasat.main_cli | [487/581 (264 success, 223 failure)] Failed to extract ELF files from dataset/Netgear/RAX42-V1.0.3.96_2.0.59.zip
+WARNING  | 2023-04-19 16:35:00,679 | Yasat.main_cli | [496/581 (272 success, 224 failure)] Failed to extract ELF files from dataset/Netgear/DG834Gv5-V1.6.01.34.zip
+WARNING  | 2023-04-19 16:35:00,693 | Yasat.main_cli | [500/581 (275 success, 225 failure)] Failed to extract ELF files from dataset/Netgear/GS108E-Firmware Version-_1.00.09.zip
+WARNING  | 2023-04-19 16:35:00,710 | Yasat.main_cli | [507/581 (281 success, 226 failure)] Failed to extract ELF files from dataset/Netgear/LAX20-V1.1.6.28_2.0.49.zip
+WARNING  | 2023-04-19 16:35:00,711 | Yasat.main_cli | [508/581 (281 success, 227 failure)] Failed to extract ELF files from dataset/Netgear/FWG114P Firmware Version 2.0 Release 18.zip
+WARNING  | 2023-04-19 16:35:00,711 | Yasat.main_cli | [509/581 (281 success, 228 failure)] Failed to extract ELF files from dataset/Netgear/RBS350_signed-V4.4.1.29.zip
+WARNING  | 2023-04-19 16:35:00,711 | Yasat.main_cli | [510/581 (281 success, 229 failure)] Failed to extract ELF files from dataset/Netgear/WGR614v1 Firmware Version 1400.zip
+WARNING  | 2023-04-19 16:35:00,714 | Yasat.main_cli | [512/581 (282 success, 230 failure)] Failed to extract ELF files from dataset/Netgear/PS113 Firmware Version 6207.zip
+WARNING  | 2023-04-19 16:35:00,715 | Yasat.main_cli | [513/581 (282 success, 231 failure)] Failed to extract ELF files from dataset/Netgear/EVA9100 Firmware Version 2.4.170 (North America).zip
+WARNING  | 2023-04-19 16:35:00,715 | Yasat.main_cli | [514/581 (282 success, 232 failure)] Failed to extract ELF files from dataset/Netgear/MR814v3 Firmware Version 5.4_06.zip
+WARNING  | 2023-04-19 16:35:00,716 | Yasat.main_cli | [516/581 (283 success, 233 failure)] Failed to extract ELF files from dataset/Netgear/FS728TS_FS752TS Firmware Version 3.1.0.1.zip
+WARNING  | 2023-04-19 16:35:00,717 | Yasat.main_cli | [518/581 (284 success, 234 failure)] Failed to extract ELF files from dataset/Netgear/RBS350-V4.6.14.3.zip
+WARNING  | 2023-04-19 16:35:00,724 | Yasat.main_cli | [521/581 (286 success, 235 failure)] Failed to extract ELF files from dataset/Netgear/NTV550_V3.2.16NA.zip
+WARNING  | 2023-04-19 16:35:00,724 | Yasat.main_cli | [522/581 (286 success, 236 failure)] Failed to extract ELF files from dataset/Netgear/GS108PE Firmware Version 1.00.09.zip
+WARNING  | 2023-04-19 16:35:00,725 | Yasat.main_cli | [523/581 (286 success, 237 failure)] Failed to extract ELF files from dataset/Netgear/WGR614v4 Firmware Version 5.0_07.zip
+WARNING  | 2023-04-19 16:35:00,725 | Yasat.main_cli | [524/581 (286 success, 238 failure)] Failed to extract ELF files from dataset/Netgear/RBRE960-V6.0.3.68.zip
+WARNING  | 2023-04-19 16:35:00,725 | Yasat.main_cli | [525/581 (286 success, 239 failure)] Failed to extract ELF files from dataset/Netgear/MR314 Firmware Version 3.29.zip
+WARNING  | 2023-04-19 16:35:00,731 | Yasat.main_cli | [528/581 (288 success, 240 failure)] Failed to extract ELF files from dataset/Netgear/XS708E-_V1.00.12.zip
+WARNING  | 2023-04-19 16:35:00,742 | Yasat.main_cli | [534/581 (293 success, 241 failure)] Failed to extract ELF files from dataset/Netgear/XR1000-V1.0.0.64_1.0.49.zip
+WARNING  | 2023-04-19 16:35:00,749 | Yasat.main_cli | [540/581 (298 success, 242 failure)] Failed to extract ELF files from dataset/Netgear/MR814v2 Firmware Version 5.3.zip
+WARNING  | 2023-04-19 16:35:00,767 | Yasat.main_cli | [543/581 (300 success, 243 failure)] Failed to extract ELF files from dataset/Netgear/GSS108EPP_V1.0.0.22.zip
+WARNING  | 2023-04-19 16:35:00,772 | Yasat.main_cli | [550/581 (306 success, 244 failure)] Failed to extract ELF files from dataset/Netgear/Firmware version 3.24 for the RT311 and RT314.zip
+WARNING  | 2023-04-19 16:35:00,773 | Yasat.main_cli | [551/581 (306 success, 245 failure)] Failed to extract ELF files from dataset/Netgear/M3.0.9.0ap.zip
+WARNING  | 2023-04-19 16:35:00,773 | Yasat.main_cli | [552/581 (306 success, 246 failure)] Failed to extract ELF files from dataset/Netgear/GS105Ev2_V1.6.0.10.zip
+WARNING  | 2023-04-19 16:35:00,773 | Yasat.main_cli | [553/581 (306 success, 247 failure)] Failed to extract ELF files from dataset/Netgear/ReleaseNotes_FR328S_fw_1.4 Release 09.zip
+WARNING  | 2023-04-19 16:35:00,774 | Yasat.main_cli | [555/581 (307 success, 248 failure)] Failed to extract ELF files from dataset/Netgear/XAV1201_FW_V0.2.0.8NA.zip
+WARNING  | 2023-04-19 16:35:00,774 | Yasat.main_cli | [556/581 (307 success, 249 failure)] Failed to extract ELF files from dataset/Netgear/WNDAP380R_V1.0.20.zip
+WARNING  | 2023-04-19 16:35:00,774 | Yasat.main_cli | [557/581 (307 success, 250 failure)] Failed to extract ELF files from dataset/Netgear/FS752TP_V5.4.2.30.zip
+WARNING  | 2023-04-19 16:35:00,775 | Yasat.main_cli | [558/581 (307 success, 251 failure)] Failed to extract ELF files from dataset/Netgear/R6700AX-V1.0.10.110.zip
+WARNING  | 2023-04-19 16:35:00,775 | Yasat.main_cli | [559/581 (307 success, 252 failure)] Failed to extract ELF files from dataset/Netgear/GS700TPS_TS_TS-V5.2.0.11.zip
+WARNING  | 2023-04-19 16:35:00,775 | Yasat.main_cli | [560/581 (307 success, 253 failure)] Failed to extract ELF files from dataset/Netgear/GS308EP_V1.0.0.10.zip
+WARNING  | 2023-04-19 16:35:00,778 | Yasat.main_cli | [562/581 (308 success, 254 failure)] Failed to extract ELF files from dataset/Netgear/RBR350_signed-4.4.1.29.zip
+WARNING  | 2023-04-19 16:35:00,788 | Yasat.main_cli | [574/581 (319 success, 255 failure)] Failed to extract ELF files from dataset/Netgear/WGT624v3 or WGT624SC Beta Firmware Version 2.0.13.zip
+WARNING  | 2023-04-19 16:35:00,789 | Yasat.main_cli | [575/581 (319 success, 256 failure)] Failed to extract ELF files from dataset/Netgear/FR314 Release Firmware Release 6.3.1.0.zip
+WARNING  | 2023-04-19 16:35:00,790 | Yasat.main_cli | [577/581 (320 success, 257 failure)] Failed to extract ELF files from dataset/Netgear/GS305EPP_V1.0.0.10.zip
+WARNING  | 2023-04-19 16:35:09,365 | Yasat.knowledge_plugins.clinic_manager | Failed to build AIL graph for sub_45eaa8 (1/2)
+WARNING  | 2023-04-19 16:35:09,391 | Yasat.knowledge_plugins.clinic_manager | Traceback (most recent call last):
+  File "/home/bluesadi/dev/Yasat/Yasat/knowledge_plugins/clinic_manager.py", line 43, in get_clinic
+    clinic = self._proj.analyses.Clinic(
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/analysis.py", line 143, in __call__
+    r = w(*args, **kwargs)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/analysis.py", line 128, in wrapper
+    oself.__init__(*args, **kwargs)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/decompiler/clinic.py", line 108, in __init__
+    self._analyze()
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/decompiler/clinic.py", line 163, in _analyze
+    self._recover_calling_conventions()
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/utils/timing.py", line 36, in timed_func
+    return func(*args, **kwargs)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/decompiler/clinic.py", line 432, in _recover_calling_conventions
+    cc = self.project.analyses.CallingConvention(
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/analysis.py", line 143, in __call__
+    r = w(*args, **kwargs)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/analysis.py", line 128, in wrapper
+    oself.__init__(*args, **kwargs)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/calling_convention.py", line 143, in __init__
+    self._analyze_callsite_only()
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/calling_convention.py", line 231, in _analyze_callsite_only
+    self._analyze_callsite(
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/calling_convention.py", line 379, in _analyze_callsite
+    fact = self._collect_callsite_fact(
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/calling_convention.py", line 500, in _collect_callsite_fact
+    self._analyze_callsite_arguments(cc, caller_block_addr, call_insn_addr, rda, fact)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/calling_convention.py", line 548, in _analyze_callsite_arguments
+    state = rda.observed_results[("insn", call_insn_addr, OP_BEFORE)]
+KeyError: ('insn', 0, <ObservationPointType.OP_BEFORE: 0>)
+
+WARNING  | 2023-04-19 16:35:09,405 | Yasat.knowledge_plugins.clinic_manager | Failed to build AIL graph for sub_45eaa8 (2/2)
+WARNING  | 2023-04-19 16:35:09,406 | Yasat.knowledge_plugins.clinic_manager | Traceback (most recent call last):
+  File "/home/bluesadi/dev/Yasat/Yasat/knowledge_plugins/clinic_manager.py", line 43, in get_clinic
+    clinic = self._proj.analyses.Clinic(
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/analysis.py", line 143, in __call__
+    r = w(*args, **kwargs)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/analysis.py", line 128, in wrapper
+    oself.__init__(*args, **kwargs)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/decompiler/clinic.py", line 108, in __init__
+    self._analyze()
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/decompiler/clinic.py", line 163, in _analyze
+    self._recover_calling_conventions()
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/utils/timing.py", line 36, in timed_func
+    return func(*args, **kwargs)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/decompiler/clinic.py", line 432, in _recover_calling_conventions
+    cc = self.project.analyses.CallingConvention(
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/analysis.py", line 143, in __call__
+    r = w(*args, **kwargs)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/analysis.py", line 128, in wrapper
+    oself.__init__(*args, **kwargs)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/calling_convention.py", line 143, in __init__
+    self._analyze_callsite_only()
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/calling_convention.py", line 231, in _analyze_callsite_only
+    self._analyze_callsite(
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/calling_convention.py", line 379, in _analyze_callsite
+    fact = self._collect_callsite_fact(
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/calling_convention.py", line 500, in _collect_callsite_fact
+    self._analyze_callsite_arguments(cc, caller_block_addr, call_insn_addr, rda, fact)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/calling_convention.py", line 548, in _analyze_callsite_arguments
+    state = rda.observed_results[("insn", call_insn_addr, OP_BEFORE)]
+KeyError: ('insn', 0, <ObservationPointType.OP_BEFORE: 0>)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/bluesadi/dev/Yasat/Yasat/knowledge_plugins/clinic_manager.py", line 52, in get_clinic
+    clinic = self._proj.analyses.Clinic(func,
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/analysis.py", line 143, in __call__
+    r = w(*args, **kwargs)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/analysis.py", line 128, in wrapper
+    oself.__init__(*args, **kwargs)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/decompiler/clinic.py", line 108, in __init__
+    self._analyze()
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/decompiler/clinic.py", line 163, in _analyze
+    self._recover_calling_conventions()
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/utils/timing.py", line 36, in timed_func
+    return func(*args, **kwargs)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/decompiler/clinic.py", line 432, in _recover_calling_conventions
+    cc = self.project.analyses.CallingConvention(
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/analysis.py", line 143, in __call__
+    r = w(*args, **kwargs)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/analysis.py", line 128, in wrapper
+    oself.__init__(*args, **kwargs)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/calling_convention.py", line 143, in __init__
+    self._analyze_callsite_only()
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/calling_convention.py", line 231, in _analyze_callsite_only
+    self._analyze_callsite(
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/calling_convention.py", line 379, in _analyze_callsite
+    fact = self._collect_callsite_fact(
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/calling_convention.py", line 500, in _collect_callsite_fact
+    self._analyze_callsite_arguments(cc, caller_block_addr, call_insn_addr, rda, fact)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/calling_convention.py", line 548, in _analyze_callsite_arguments
+    state = rda.observed_results[("insn", call_insn_addr, OP_BEFORE)]
+KeyError: ('insn', 0, <ObservationPointType.OP_BEFORE: 0>)
+
+WARNING  | 2023-04-19 16:35:09,497 | Yasat.knowledge_plugins.clinic_manager | Failed to build AIL graph for sub_45eaa8 (1/2)
+WARNING  | 2023-04-19 16:35:09,498 | Yasat.knowledge_plugins.clinic_manager | Traceback (most recent call last):
+  File "/home/bluesadi/dev/Yasat/Yasat/knowledge_plugins/clinic_manager.py", line 43, in get_clinic
+    clinic = self._proj.analyses.Clinic(
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/analysis.py", line 143, in __call__
+    r = w(*args, **kwargs)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/analysis.py", line 128, in wrapper
+    oself.__init__(*args, **kwargs)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/decompiler/clinic.py", line 108, in __init__
+    self._analyze()
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/decompiler/clinic.py", line 163, in _analyze
+    self._recover_calling_conventions()
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/utils/timing.py", line 36, in timed_func
+    return func(*args, **kwargs)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/decompiler/clinic.py", line 432, in _recover_calling_conventions
+    cc = self.project.analyses.CallingConvention(
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/analysis.py", line 143, in __call__
+    r = w(*args, **kwargs)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/analysis.py", line 128, in wrapper
+    oself.__init__(*args, **kwargs)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/calling_convention.py", line 143, in __init__
+    self._analyze_callsite_only()
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/calling_convention.py", line 231, in _analyze_callsite_only
+    self._analyze_callsite(
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/calling_convention.py", line 379, in _analyze_callsite
+    fact = self._collect_callsite_fact(
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/calling_convention.py", line 500, in _collect_callsite_fact
+    self._analyze_callsite_arguments(cc, caller_block_addr, call_insn_addr, rda, fact)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/calling_convention.py", line 548, in _analyze_callsite_arguments
+    state = rda.observed_results[("insn", call_insn_addr, OP_BEFORE)]
+KeyError: ('insn', 0, <ObservationPointType.OP_BEFORE: 0>)
+
+WARNING  | 2023-04-19 16:35:09,527 | Yasat.knowledge_plugins.clinic_manager | Failed to build AIL graph for sub_45eaa8 (2/2)
+WARNING  | 2023-04-19 16:35:09,529 | Yasat.knowledge_plugins.clinic_manager | Traceback (most recent call last):
+  File "/home/bluesadi/dev/Yasat/Yasat/knowledge_plugins/clinic_manager.py", line 43, in get_clinic
+    clinic = self._proj.analyses.Clinic(
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/analysis.py", line 143, in __call__
+    r = w(*args, **kwargs)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/analysis.py", line 128, in wrapper
+    oself.__init__(*args, **kwargs)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/decompiler/clinic.py", line 108, in __init__
+    self._analyze()
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/decompiler/clinic.py", line 163, in _analyze
+    self._recover_calling_conventions()
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/utils/timing.py", line 36, in timed_func
+    return func(*args, **kwargs)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/decompiler/clinic.py", line 432, in _recover_calling_conventions
+    cc = self.project.analyses.CallingConvention(
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/analysis.py", line 143, in __call__
+    r = w(*args, **kwargs)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/analysis.py", line 128, in wrapper
+    oself.__init__(*args, **kwargs)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/calling_convention.py", line 143, in __init__
+    self._analyze_callsite_only()
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/calling_convention.py", line 231, in _analyze_callsite_only
+    self._analyze_callsite(
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/calling_convention.py", line 379, in _analyze_callsite
+    fact = self._collect_callsite_fact(
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/calling_convention.py", line 500, in _collect_callsite_fact
+    self._analyze_callsite_arguments(cc, caller_block_addr, call_insn_addr, rda, fact)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/calling_convention.py", line 548, in _analyze_callsite_arguments
+    state = rda.observed_results[("insn", call_insn_addr, OP_BEFORE)]
+KeyError: ('insn', 0, <ObservationPointType.OP_BEFORE: 0>)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/bluesadi/dev/Yasat/Yasat/knowledge_plugins/clinic_manager.py", line 52, in get_clinic
+    clinic = self._proj.analyses.Clinic(func,
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/analysis.py", line 143, in __call__
+    r = w(*args, **kwargs)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/analysis.py", line 128, in wrapper
+    oself.__init__(*args, **kwargs)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/decompiler/clinic.py", line 108, in __init__
+    self._analyze()
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/decompiler/clinic.py", line 163, in _analyze
+    self._recover_calling_conventions()
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/utils/timing.py", line 36, in timed_func
+    return func(*args, **kwargs)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/decompiler/clinic.py", line 432, in _recover_calling_conventions
+    cc = self.project.analyses.CallingConvention(
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/analysis.py", line 143, in __call__
+    r = w(*args, **kwargs)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/analysis.py", line 128, in wrapper
+    oself.__init__(*args, **kwargs)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/calling_convention.py", line 143, in __init__
+    self._analyze_callsite_only()
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/calling_convention.py", line 231, in _analyze_callsite_only
+    self._analyze_callsite(
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/calling_convention.py", line 379, in _analyze_callsite
+    fact = self._collect_callsite_fact(
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/calling_convention.py", line 500, in _collect_callsite_fact
+    self._analyze_callsite_arguments(cc, caller_block_addr, call_insn_addr, rda, fact)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/calling_convention.py", line 548, in _analyze_callsite_arguments
+    state = rda.observed_results[("insn", call_insn_addr, OP_BEFORE)]
+KeyError: ('insn', 0, <ObservationPointType.OP_BEFORE: 0>)
+
+WARNING  | 2023-04-19 16:35:16,713 | Yasat.knowledge_plugins.clinic_manager | Failed to build AIL graph for sub_6181c (1/2)
+WARNING  | 2023-04-19 16:35:16,714 | Yasat.knowledge_plugins.clinic_manager | Traceback (most recent call last):
+  File "/home/bluesadi/dev/Yasat/Yasat/knowledge_plugins/clinic_manager.py", line 43, in get_clinic
+    clinic = self._proj.analyses.Clinic(
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/analysis.py", line 143, in __call__
+    r = w(*args, **kwargs)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/analysis.py", line 128, in wrapper
+    oself.__init__(*args, **kwargs)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/decompiler/clinic.py", line 108, in __init__
+    self._analyze()
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/decompiler/clinic.py", line 163, in _analyze
+    self._recover_calling_conventions()
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/utils/timing.py", line 36, in timed_func
+    return func(*args, **kwargs)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/decompiler/clinic.py", line 432, in _recover_calling_conventions
+    cc = self.project.analyses.CallingConvention(
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/analysis.py", line 143, in __call__
+    r = w(*args, **kwargs)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/analysis.py", line 128, in wrapper
+    oself.__init__(*args, **kwargs)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/calling_convention.py", line 143, in __init__
+    self._analyze_callsite_only()
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/calling_convention.py", line 231, in _analyze_callsite_only
+    self._analyze_callsite(
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/calling_convention.py", line 379, in _analyze_callsite
+    fact = self._collect_callsite_fact(
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/calling_convention.py", line 500, in _collect_callsite_fact
+    self._analyze_callsite_arguments(cc, caller_block_addr, call_insn_addr, rda, fact)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/calling_convention.py", line 548, in _analyze_callsite_arguments
+    state = rda.observed_results[("insn", call_insn_addr, OP_BEFORE)]
+KeyError: ('insn', 0, <ObservationPointType.OP_BEFORE: 0>)
+
+WARNING  | 2023-04-19 16:35:16,722 | Yasat.knowledge_plugins.clinic_manager | Failed to build AIL graph for sub_6181c (2/2)
+WARNING  | 2023-04-19 16:35:16,722 | Yasat.knowledge_plugins.clinic_manager | Traceback (most recent call last):
+  File "/home/bluesadi/dev/Yasat/Yasat/knowledge_plugins/clinic_manager.py", line 43, in get_clinic
+    clinic = self._proj.analyses.Clinic(
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/analysis.py", line 143, in __call__
+    r = w(*args, **kwargs)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/analysis.py", line 128, in wrapper
+    oself.__init__(*args, **kwargs)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/decompiler/clinic.py", line 108, in __init__
+    self._analyze()
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/decompiler/clinic.py", line 163, in _analyze
+    self._recover_calling_conventions()
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/utils/timing.py", line 36, in timed_func
+    return func(*args, **kwargs)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/decompiler/clinic.py", line 432, in _recover_calling_conventions
+    cc = self.project.analyses.CallingConvention(
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/analysis.py", line 143, in __call__
+    r = w(*args, **kwargs)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/analysis.py", line 128, in wrapper
+    oself.__init__(*args, **kwargs)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/calling_convention.py", line 143, in __init__
+    self._analyze_callsite_only()
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/calling_convention.py", line 231, in _analyze_callsite_only
+    self._analyze_callsite(
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/calling_convention.py", line 379, in _analyze_callsite
+    fact = self._collect_callsite_fact(
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/calling_convention.py", line 500, in _collect_callsite_fact
+    self._analyze_callsite_arguments(cc, caller_block_addr, call_insn_addr, rda, fact)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/calling_convention.py", line 548, in _analyze_callsite_arguments
+    state = rda.observed_results[("insn", call_insn_addr, OP_BEFORE)]
+KeyError: ('insn', 0, <ObservationPointType.OP_BEFORE: 0>)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/bluesadi/dev/Yasat/Yasat/knowledge_plugins/clinic_manager.py", line 52, in get_clinic
+    clinic = self._proj.analyses.Clinic(func,
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/analysis.py", line 143, in __call__
+    r = w(*args, **kwargs)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/analysis.py", line 128, in wrapper
+    oself.__init__(*args, **kwargs)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/decompiler/clinic.py", line 108, in __init__
+    self._analyze()
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/decompiler/clinic.py", line 163, in _analyze
+    self._recover_calling_conventions()
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/utils/timing.py", line 36, in timed_func
+    return func(*args, **kwargs)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/decompiler/clinic.py", line 432, in _recover_calling_conventions
+    cc = self.project.analyses.CallingConvention(
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/analysis.py", line 143, in __call__
+    r = w(*args, **kwargs)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/analysis.py", line 128, in wrapper
+    oself.__init__(*args, **kwargs)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/calling_convention.py", line 143, in __init__
+    self._analyze_callsite_only()
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/calling_convention.py", line 231, in _analyze_callsite_only
+    self._analyze_callsite(
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/calling_convention.py", line 379, in _analyze_callsite
+    fact = self._collect_callsite_fact(
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/calling_convention.py", line 500, in _collect_callsite_fact
+    self._analyze_callsite_arguments(cc, caller_block_addr, call_insn_addr, rda, fact)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/calling_convention.py", line 548, in _analyze_callsite_arguments
+    state = rda.observed_results[("insn", call_insn_addr, OP_BEFORE)]
+KeyError: ('insn', 0, <ObservationPointType.OP_BEFORE: 0>)
+
+WARNING  | 2023-04-19 16:35:16,763 | Yasat.knowledge_plugins.clinic_manager | Failed to build AIL graph for sub_6181c (1/2)
+WARNING  | 2023-04-19 16:35:16,764 | Yasat.knowledge_plugins.clinic_manager | Traceback (most recent call last):
+  File "/home/bluesadi/dev/Yasat/Yasat/knowledge_plugins/clinic_manager.py", line 43, in get_clinic
+    clinic = self._proj.analyses.Clinic(
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/analysis.py", line 143, in __call__
+    r = w(*args, **kwargs)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/analysis.py", line 128, in wrapper
+    oself.__init__(*args, **kwargs)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/decompiler/clinic.py", line 108, in __init__
+    self._analyze()
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/decompiler/clinic.py", line 163, in _analyze
+    self._recover_calling_conventions()
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/utils/timing.py", line 36, in timed_func
+    return func(*args, **kwargs)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/decompiler/clinic.py", line 432, in _recover_calling_conventions
+    cc = self.project.analyses.CallingConvention(
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/analysis.py", line 143, in __call__
+    r = w(*args, **kwargs)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/analysis.py", line 128, in wrapper
+    oself.__init__(*args, **kwargs)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/calling_convention.py", line 143, in __init__
+    self._analyze_callsite_only()
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/calling_convention.py", line 231, in _analyze_callsite_only
+    self._analyze_callsite(
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/calling_convention.py", line 379, in _analyze_callsite
+    fact = self._collect_callsite_fact(
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/calling_convention.py", line 500, in _collect_callsite_fact
+    self._analyze_callsite_arguments(cc, caller_block_addr, call_insn_addr, rda, fact)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/calling_convention.py", line 548, in _analyze_callsite_arguments
+    state = rda.observed_results[("insn", call_insn_addr, OP_BEFORE)]
+KeyError: ('insn', 0, <ObservationPointType.OP_BEFORE: 0>)
+
+WARNING  | 2023-04-19 16:35:16,770 | Yasat.knowledge_plugins.clinic_manager | Failed to build AIL graph for sub_6181c (2/2)
+WARNING  | 2023-04-19 16:35:16,770 | Yasat.knowledge_plugins.clinic_manager | Traceback (most recent call last):
+  File "/home/bluesadi/dev/Yasat/Yasat/knowledge_plugins/clinic_manager.py", line 43, in get_clinic
+    clinic = self._proj.analyses.Clinic(
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/analysis.py", line 143, in __call__
+    r = w(*args, **kwargs)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/analysis.py", line 128, in wrapper
+    oself.__init__(*args, **kwargs)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/decompiler/clinic.py", line 108, in __init__
+    self._analyze()
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/decompiler/clinic.py", line 163, in _analyze
+    self._recover_calling_conventions()
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/utils/timing.py", line 36, in timed_func
+    return func(*args, **kwargs)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/decompiler/clinic.py", line 432, in _recover_calling_conventions
+    cc = self.project.analyses.CallingConvention(
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/analysis.py", line 143, in __call__
+    r = w(*args, **kwargs)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/analysis.py", line 128, in wrapper
+    oself.__init__(*args, **kwargs)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/calling_convention.py", line 143, in __init__
+    self._analyze_callsite_only()
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/calling_convention.py", line 231, in _analyze_callsite_only
+    self._analyze_callsite(
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/calling_convention.py", line 379, in _analyze_callsite
+    fact = self._collect_callsite_fact(
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/calling_convention.py", line 500, in _collect_callsite_fact
+    self._analyze_callsite_arguments(cc, caller_block_addr, call_insn_addr, rda, fact)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/calling_convention.py", line 548, in _analyze_callsite_arguments
+    state = rda.observed_results[("insn", call_insn_addr, OP_BEFORE)]
+KeyError: ('insn', 0, <ObservationPointType.OP_BEFORE: 0>)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/bluesadi/dev/Yasat/Yasat/knowledge_plugins/clinic_manager.py", line 52, in get_clinic
+    clinic = self._proj.analyses.Clinic(func,
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/analysis.py", line 143, in __call__
+    r = w(*args, **kwargs)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/analysis.py", line 128, in wrapper
+    oself.__init__(*args, **kwargs)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/decompiler/clinic.py", line 108, in __init__
+    self._analyze()
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/decompiler/clinic.py", line 163, in _analyze
+    self._recover_calling_conventions()
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/utils/timing.py", line 36, in timed_func
+    return func(*args, **kwargs)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/decompiler/clinic.py", line 432, in _recover_calling_conventions
+    cc = self.project.analyses.CallingConvention(
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/analysis.py", line 143, in __call__
+    r = w(*args, **kwargs)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/analysis.py", line 128, in wrapper
+    oself.__init__(*args, **kwargs)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/calling_convention.py", line 143, in __init__
+    self._analyze_callsite_only()
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/calling_convention.py", line 231, in _analyze_callsite_only
+    self._analyze_callsite(
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/calling_convention.py", line 379, in _analyze_callsite
+    fact = self._collect_callsite_fact(
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/calling_convention.py", line 500, in _collect_callsite_fact
+    self._analyze_callsite_arguments(cc, caller_block_addr, call_insn_addr, rda, fact)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/calling_convention.py", line 548, in _analyze_callsite_arguments
+    state = rda.observed_results[("insn", call_insn_addr, OP_BEFORE)]
+KeyError: ('insn', 0, <ObservationPointType.OP_BEFORE: 0>)
+
+WARNING  | 2023-04-19 16:35:19,888 | Yasat.knowledge_plugins.clinic_manager | Failed to build AIL graph for sub_6181c (1/2)
+WARNING  | 2023-04-19 16:35:19,892 | Yasat.knowledge_plugins.clinic_manager | Traceback (most recent call last):
+  File "/home/bluesadi/dev/Yasat/Yasat/knowledge_plugins/clinic_manager.py", line 43, in get_clinic
+    clinic = self._proj.analyses.Clinic(
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/analysis.py", line 143, in __call__
+    r = w(*args, **kwargs)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/analysis.py", line 128, in wrapper
+    oself.__init__(*args, **kwargs)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/decompiler/clinic.py", line 108, in __init__
+    self._analyze()
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/decompiler/clinic.py", line 163, in _analyze
+    self._recover_calling_conventions()
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/utils/timing.py", line 36, in timed_func
+    return func(*args, **kwargs)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/decompiler/clinic.py", line 432, in _recover_calling_conventions
+    cc = self.project.analyses.CallingConvention(
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/analysis.py", line 143, in __call__
+    r = w(*args, **kwargs)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/analysis.py", line 128, in wrapper
+    oself.__init__(*args, **kwargs)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/calling_convention.py", line 143, in __init__
+    self._analyze_callsite_only()
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/calling_convention.py", line 231, in _analyze_callsite_only
+    self._analyze_callsite(
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/calling_convention.py", line 379, in _analyze_callsite
+    fact = self._collect_callsite_fact(
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/calling_convention.py", line 500, in _collect_callsite_fact
+    self._analyze_callsite_arguments(cc, caller_block_addr, call_insn_addr, rda, fact)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/calling_convention.py", line 548, in _analyze_callsite_arguments
+    state = rda.observed_results[("insn", call_insn_addr, OP_BEFORE)]
+KeyError: ('insn', 0, <ObservationPointType.OP_BEFORE: 0>)
+
+WARNING  | 2023-04-19 16:35:19,899 | Yasat.knowledge_plugins.clinic_manager | Failed to build AIL graph for sub_6181c (2/2)
+WARNING  | 2023-04-19 16:35:19,900 | Yasat.knowledge_plugins.clinic_manager | Traceback (most recent call last):
+  File "/home/bluesadi/dev/Yasat/Yasat/knowledge_plugins/clinic_manager.py", line 43, in get_clinic
+    clinic = self._proj.analyses.Clinic(
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/analysis.py", line 143, in __call__
+    r = w(*args, **kwargs)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/analysis.py", line 128, in wrapper
+    oself.__init__(*args, **kwargs)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/decompiler/clinic.py", line 108, in __init__
+    self._analyze()
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/decompiler/clinic.py", line 163, in _analyze
+    self._recover_calling_conventions()
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/utils/timing.py", line 36, in timed_func
+    return func(*args, **kwargs)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/decompiler/clinic.py", line 432, in _recover_calling_conventions
+    cc = self.project.analyses.CallingConvention(
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/analysis.py", line 143, in __call__
+    r = w(*args, **kwargs)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/analysis.py", line 128, in wrapper
+    oself.__init__(*args, **kwargs)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/calling_convention.py", line 143, in __init__
+    self._analyze_callsite_only()
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/calling_convention.py", line 231, in _analyze_callsite_only
+    self._analyze_callsite(
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/calling_convention.py", line 379, in _analyze_callsite
+    fact = self._collect_callsite_fact(
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/calling_convention.py", line 500, in _collect_callsite_fact
+    self._analyze_callsite_arguments(cc, caller_block_addr, call_insn_addr, rda, fact)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/calling_convention.py", line 548, in _analyze_callsite_arguments
+    state = rda.observed_results[("insn", call_insn_addr, OP_BEFORE)]
+KeyError: ('insn', 0, <ObservationPointType.OP_BEFORE: 0>)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/bluesadi/dev/Yasat/Yasat/knowledge_plugins/clinic_manager.py", line 52, in get_clinic
+    clinic = self._proj.analyses.Clinic(func,
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/analysis.py", line 143, in __call__
+    r = w(*args, **kwargs)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/analysis.py", line 128, in wrapper
+    oself.__init__(*args, **kwargs)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/decompiler/clinic.py", line 108, in __init__
+    self._analyze()
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/decompiler/clinic.py", line 163, in _analyze
+    self._recover_calling_conventions()
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/utils/timing.py", line 36, in timed_func
+    return func(*args, **kwargs)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/decompiler/clinic.py", line 432, in _recover_calling_conventions
+    cc = self.project.analyses.CallingConvention(
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/analysis.py", line 143, in __call__
+    r = w(*args, **kwargs)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/analysis.py", line 128, in wrapper
+    oself.__init__(*args, **kwargs)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/calling_convention.py", line 143, in __init__
+    self._analyze_callsite_only()
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/calling_convention.py", line 231, in _analyze_callsite_only
+    self._analyze_callsite(
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/calling_convention.py", line 379, in _analyze_callsite
+    fact = self._collect_callsite_fact(
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/calling_convention.py", line 500, in _collect_callsite_fact
+    self._analyze_callsite_arguments(cc, caller_block_addr, call_insn_addr, rda, fact)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/calling_convention.py", line 548, in _analyze_callsite_arguments
+    state = rda.observed_results[("insn", call_insn_addr, OP_BEFORE)]
+KeyError: ('insn', 0, <ObservationPointType.OP_BEFORE: 0>)
+
+WARNING  | 2023-04-19 16:35:19,952 | Yasat.knowledge_plugins.clinic_manager | Failed to build AIL graph for sub_6181c (1/2)
+WARNING  | 2023-04-19 16:35:19,952 | Yasat.knowledge_plugins.clinic_manager | Traceback (most recent call last):
+  File "/home/bluesadi/dev/Yasat/Yasat/knowledge_plugins/clinic_manager.py", line 43, in get_clinic
+    clinic = self._proj.analyses.Clinic(
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/analysis.py", line 143, in __call__
+    r = w(*args, **kwargs)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/analysis.py", line 128, in wrapper
+    oself.__init__(*args, **kwargs)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/decompiler/clinic.py", line 108, in __init__
+    self._analyze()
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/decompiler/clinic.py", line 163, in _analyze
+    self._recover_calling_conventions()
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/utils/timing.py", line 36, in timed_func
+    return func(*args, **kwargs)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/decompiler/clinic.py", line 432, in _recover_calling_conventions
+    cc = self.project.analyses.CallingConvention(
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/analysis.py", line 143, in __call__
+    r = w(*args, **kwargs)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/analysis.py", line 128, in wrapper
+    oself.__init__(*args, **kwargs)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/calling_convention.py", line 143, in __init__
+    self._analyze_callsite_only()
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/calling_convention.py", line 231, in _analyze_callsite_only
+    self._analyze_callsite(
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/calling_convention.py", line 379, in _analyze_callsite
+    fact = self._collect_callsite_fact(
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/calling_convention.py", line 500, in _collect_callsite_fact
+    self._analyze_callsite_arguments(cc, caller_block_addr, call_insn_addr, rda, fact)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/calling_convention.py", line 548, in _analyze_callsite_arguments
+    state = rda.observed_results[("insn", call_insn_addr, OP_BEFORE)]
+KeyError: ('insn', 0, <ObservationPointType.OP_BEFORE: 0>)
+
+WARNING  | 2023-04-19 16:35:19,957 | Yasat.knowledge_plugins.clinic_manager | Failed to build AIL graph for sub_6181c (2/2)
+WARNING  | 2023-04-19 16:35:19,958 | Yasat.knowledge_plugins.clinic_manager | Traceback (most recent call last):
+  File "/home/bluesadi/dev/Yasat/Yasat/knowledge_plugins/clinic_manager.py", line 43, in get_clinic
+    clinic = self._proj.analyses.Clinic(
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/analysis.py", line 143, in __call__
+    r = w(*args, **kwargs)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/analysis.py", line 128, in wrapper
+    oself.__init__(*args, **kwargs)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/decompiler/clinic.py", line 108, in __init__
+    self._analyze()
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/decompiler/clinic.py", line 163, in _analyze
+    self._recover_calling_conventions()
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/utils/timing.py", line 36, in timed_func
+    return func(*args, **kwargs)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/decompiler/clinic.py", line 432, in _recover_calling_conventions
+    cc = self.project.analyses.CallingConvention(
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/analysis.py", line 143, in __call__
+    r = w(*args, **kwargs)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/analysis.py", line 128, in wrapper
+    oself.__init__(*args, **kwargs)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/calling_convention.py", line 143, in __init__
+    self._analyze_callsite_only()
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/calling_convention.py", line 231, in _analyze_callsite_only
+    self._analyze_callsite(
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/calling_convention.py", line 379, in _analyze_callsite
+    fact = self._collect_callsite_fact(
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/calling_convention.py", line 500, in _collect_callsite_fact
+    self._analyze_callsite_arguments(cc, caller_block_addr, call_insn_addr, rda, fact)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/calling_convention.py", line 548, in _analyze_callsite_arguments
+    state = rda.observed_results[("insn", call_insn_addr, OP_BEFORE)]
+KeyError: ('insn', 0, <ObservationPointType.OP_BEFORE: 0>)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/bluesadi/dev/Yasat/Yasat/knowledge_plugins/clinic_manager.py", line 52, in get_clinic
+    clinic = self._proj.analyses.Clinic(func,
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/analysis.py", line 143, in __call__
+    r = w(*args, **kwargs)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/analysis.py", line 128, in wrapper
+    oself.__init__(*args, **kwargs)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/decompiler/clinic.py", line 108, in __init__
+    self._analyze()
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/decompiler/clinic.py", line 163, in _analyze
+    self._recover_calling_conventions()
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/utils/timing.py", line 36, in timed_func
+    return func(*args, **kwargs)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/decompiler/clinic.py", line 432, in _recover_calling_conventions
+    cc = self.project.analyses.CallingConvention(
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/analysis.py", line 143, in __call__
+    r = w(*args, **kwargs)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/analysis.py", line 128, in wrapper
+    oself.__init__(*args, **kwargs)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/calling_convention.py", line 143, in __init__
+    self._analyze_callsite_only()
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/calling_convention.py", line 231, in _analyze_callsite_only
+    self._analyze_callsite(
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/calling_convention.py", line 379, in _analyze_callsite
+    fact = self._collect_callsite_fact(
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/calling_convention.py", line 500, in _collect_callsite_fact
+    self._analyze_callsite_arguments(cc, caller_block_addr, call_insn_addr, rda, fact)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/calling_convention.py", line 548, in _analyze_callsite_arguments
+    state = rda.observed_results[("insn", call_insn_addr, OP_BEFORE)]
+KeyError: ('insn', 0, <ObservationPointType.OP_BEFORE: 0>)
+
+WARNING  | 2023-04-19 16:35:21,972 | Yasat.knowledge_plugins.clinic_manager | Failed to build AIL graph for lcp_close (1/2)
+WARNING  | 2023-04-19 16:35:21,974 | Yasat.knowledge_plugins.clinic_manager | Traceback (most recent call last):
+  File "/home/bluesadi/dev/Yasat/Yasat/knowledge_plugins/clinic_manager.py", line 43, in get_clinic
+    clinic = self._proj.analyses.Clinic(
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/analysis.py", line 143, in __call__
+    r = w(*args, **kwargs)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/analysis.py", line 128, in wrapper
+    oself.__init__(*args, **kwargs)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/decompiler/clinic.py", line 108, in __init__
+    self._analyze()
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/decompiler/clinic.py", line 163, in _analyze
+    self._recover_calling_conventions()
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/utils/timing.py", line 36, in timed_func
+    return func(*args, **kwargs)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/decompiler/clinic.py", line 432, in _recover_calling_conventions
+    cc = self.project.analyses.CallingConvention(
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/analysis.py", line 143, in __call__
+    r = w(*args, **kwargs)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/analysis.py", line 128, in wrapper
+    oself.__init__(*args, **kwargs)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/calling_convention.py", line 143, in __init__
+    self._analyze_callsite_only()
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/calling_convention.py", line 231, in _analyze_callsite_only
+    self._analyze_callsite(
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/calling_convention.py", line 379, in _analyze_callsite
+    fact = self._collect_callsite_fact(
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/calling_convention.py", line 500, in _collect_callsite_fact
+    self._analyze_callsite_arguments(cc, caller_block_addr, call_insn_addr, rda, fact)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/calling_convention.py", line 548, in _analyze_callsite_arguments
+    state = rda.observed_results[("insn", call_insn_addr, OP_BEFORE)]
+KeyError: ('insn', 0, <ObservationPointType.OP_BEFORE: 0>)
+
+WARNING  | 2023-04-19 16:35:21,983 | Yasat.knowledge_plugins.clinic_manager | Failed to build AIL graph for lcp_close (2/2)
+WARNING  | 2023-04-19 16:35:21,984 | Yasat.knowledge_plugins.clinic_manager | Traceback (most recent call last):
+  File "/home/bluesadi/dev/Yasat/Yasat/knowledge_plugins/clinic_manager.py", line 43, in get_clinic
+    clinic = self._proj.analyses.Clinic(
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/analysis.py", line 143, in __call__
+    r = w(*args, **kwargs)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/analysis.py", line 128, in wrapper
+    oself.__init__(*args, **kwargs)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/decompiler/clinic.py", line 108, in __init__
+    self._analyze()
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/decompiler/clinic.py", line 163, in _analyze
+    self._recover_calling_conventions()
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/utils/timing.py", line 36, in timed_func
+    return func(*args, **kwargs)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/decompiler/clinic.py", line 432, in _recover_calling_conventions
+    cc = self.project.analyses.CallingConvention(
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/analysis.py", line 143, in __call__
+    r = w(*args, **kwargs)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/analysis.py", line 128, in wrapper
+    oself.__init__(*args, **kwargs)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/calling_convention.py", line 143, in __init__
+    self._analyze_callsite_only()
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/calling_convention.py", line 231, in _analyze_callsite_only
+    self._analyze_callsite(
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/calling_convention.py", line 379, in _analyze_callsite
+    fact = self._collect_callsite_fact(
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/calling_convention.py", line 500, in _collect_callsite_fact
+    self._analyze_callsite_arguments(cc, caller_block_addr, call_insn_addr, rda, fact)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/calling_convention.py", line 548, in _analyze_callsite_arguments
+    state = rda.observed_results[("insn", call_insn_addr, OP_BEFORE)]
+KeyError: ('insn', 0, <ObservationPointType.OP_BEFORE: 0>)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/bluesadi/dev/Yasat/Yasat/knowledge_plugins/clinic_manager.py", line 52, in get_clinic
+    clinic = self._proj.analyses.Clinic(func,
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/analysis.py", line 143, in __call__
+    r = w(*args, **kwargs)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/analysis.py", line 128, in wrapper
+    oself.__init__(*args, **kwargs)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/decompiler/clinic.py", line 108, in __init__
+    self._analyze()
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/decompiler/clinic.py", line 163, in _analyze
+    self._recover_calling_conventions()
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/utils/timing.py", line 36, in timed_func
+    return func(*args, **kwargs)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/decompiler/clinic.py", line 432, in _recover_calling_conventions
+    cc = self.project.analyses.CallingConvention(
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/analysis.py", line 143, in __call__
+    r = w(*args, **kwargs)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/analysis.py", line 128, in wrapper
+    oself.__init__(*args, **kwargs)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/calling_convention.py", line 143, in __init__
+    self._analyze_callsite_only()
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/calling_convention.py", line 231, in _analyze_callsite_only
+    self._analyze_callsite(
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/calling_convention.py", line 379, in _analyze_callsite
+    fact = self._collect_callsite_fact(
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/calling_convention.py", line 500, in _collect_callsite_fact
+    self._analyze_callsite_arguments(cc, caller_block_addr, call_insn_addr, rda, fact)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/calling_convention.py", line 548, in _analyze_callsite_arguments
+    state = rda.observed_results[("insn", call_insn_addr, OP_BEFORE)]
+KeyError: ('insn', 0, <ObservationPointType.OP_BEFORE: 0>)
+
+WARNING  | 2023-04-19 16:35:23,234 | Yasat.knowledge_plugins.clinic_manager | Failed to build AIL graph for pw_encrypt (1/2)
+WARNING  | 2023-04-19 16:35:23,234 | Yasat.knowledge_plugins.clinic_manager | Traceback (most recent call last):
+  File "/home/bluesadi/dev/Yasat/Yasat/knowledge_plugins/clinic_manager.py", line 43, in get_clinic
+    clinic = self._proj.analyses.Clinic(
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/analysis.py", line 143, in __call__
+    r = w(*args, **kwargs)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/analysis.py", line 128, in wrapper
+    oself.__init__(*args, **kwargs)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/decompiler/clinic.py", line 108, in __init__
+    self._analyze()
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/decompiler/clinic.py", line 163, in _analyze
+    self._recover_calling_conventions()
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/utils/timing.py", line 36, in timed_func
+    return func(*args, **kwargs)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/decompiler/clinic.py", line 432, in _recover_calling_conventions
+    cc = self.project.analyses.CallingConvention(
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/analysis.py", line 143, in __call__
+    r = w(*args, **kwargs)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/analysis.py", line 128, in wrapper
+    oself.__init__(*args, **kwargs)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/calling_convention.py", line 143, in __init__
+    self._analyze_callsite_only()
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/calling_convention.py", line 231, in _analyze_callsite_only
+    self._analyze_callsite(
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/calling_convention.py", line 379, in _analyze_callsite
+    fact = self._collect_callsite_fact(
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/calling_convention.py", line 500, in _collect_callsite_fact
+    self._analyze_callsite_arguments(cc, caller_block_addr, call_insn_addr, rda, fact)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/calling_convention.py", line 548, in _analyze_callsite_arguments
+    state = rda.observed_results[("insn", call_insn_addr, OP_BEFORE)]
+KeyError: ('insn', 0, <ObservationPointType.OP_BEFORE: 0>)
+
+WARNING  | 2023-04-19 16:35:23,244 | Yasat.knowledge_plugins.clinic_manager | Failed to build AIL graph for pw_encrypt (2/2)
+WARNING  | 2023-04-19 16:35:23,244 | Yasat.knowledge_plugins.clinic_manager | Traceback (most recent call last):
+  File "/home/bluesadi/dev/Yasat/Yasat/knowledge_plugins/clinic_manager.py", line 43, in get_clinic
+    clinic = self._proj.analyses.Clinic(
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/analysis.py", line 143, in __call__
+    r = w(*args, **kwargs)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/analysis.py", line 128, in wrapper
+    oself.__init__(*args, **kwargs)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/decompiler/clinic.py", line 108, in __init__
+    self._analyze()
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/decompiler/clinic.py", line 163, in _analyze
+    self._recover_calling_conventions()
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/utils/timing.py", line 36, in timed_func
+    return func(*args, **kwargs)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/decompiler/clinic.py", line 432, in _recover_calling_conventions
+    cc = self.project.analyses.CallingConvention(
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/analysis.py", line 143, in __call__
+    r = w(*args, **kwargs)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/analysis.py", line 128, in wrapper
+    oself.__init__(*args, **kwargs)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/calling_convention.py", line 143, in __init__
+    self._analyze_callsite_only()
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/calling_convention.py", line 231, in _analyze_callsite_only
+    self._analyze_callsite(
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/calling_convention.py", line 379, in _analyze_callsite
+    fact = self._collect_callsite_fact(
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/calling_convention.py", line 500, in _collect_callsite_fact
+    self._analyze_callsite_arguments(cc, caller_block_addr, call_insn_addr, rda, fact)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/calling_convention.py", line 548, in _analyze_callsite_arguments
+    state = rda.observed_results[("insn", call_insn_addr, OP_BEFORE)]
+KeyError: ('insn', 0, <ObservationPointType.OP_BEFORE: 0>)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/bluesadi/dev/Yasat/Yasat/knowledge_plugins/clinic_manager.py", line 52, in get_clinic
+    clinic = self._proj.analyses.Clinic(func,
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/analysis.py", line 143, in __call__
+    r = w(*args, **kwargs)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/analysis.py", line 128, in wrapper
+    oself.__init__(*args, **kwargs)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/decompiler/clinic.py", line 108, in __init__
+    self._analyze()
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/decompiler/clinic.py", line 163, in _analyze
+    self._recover_calling_conventions()
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/utils/timing.py", line 36, in timed_func
+    return func(*args, **kwargs)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/decompiler/clinic.py", line 432, in _recover_calling_conventions
+    cc = self.project.analyses.CallingConvention(
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/analysis.py", line 143, in __call__
+    r = w(*args, **kwargs)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/analysis.py", line 128, in wrapper
+    oself.__init__(*args, **kwargs)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/calling_convention.py", line 143, in __init__
+    self._analyze_callsite_only()
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/calling_convention.py", line 231, in _analyze_callsite_only
+    self._analyze_callsite(
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/calling_convention.py", line 379, in _analyze_callsite
+    fact = self._collect_callsite_fact(
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/calling_convention.py", line 500, in _collect_callsite_fact
+    self._analyze_callsite_arguments(cc, caller_block_addr, call_insn_addr, rda, fact)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/calling_convention.py", line 548, in _analyze_callsite_arguments
+    state = rda.observed_results[("insn", call_insn_addr, OP_BEFORE)]
+KeyError: ('insn', 0, <ObservationPointType.OP_BEFORE: 0>)
+
+WARNING  | 2023-04-19 16:35:23,290 | Yasat.knowledge_plugins.clinic_manager | Failed to build AIL graph for pw_encrypt (1/2)
+WARNING  | 2023-04-19 16:35:23,291 | Yasat.knowledge_plugins.clinic_manager | Traceback (most recent call last):
+  File "/home/bluesadi/dev/Yasat/Yasat/knowledge_plugins/clinic_manager.py", line 43, in get_clinic
+    clinic = self._proj.analyses.Clinic(
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/analysis.py", line 143, in __call__
+    r = w(*args, **kwargs)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/analysis.py", line 128, in wrapper
+    oself.__init__(*args, **kwargs)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/decompiler/clinic.py", line 108, in __init__
+    self._analyze()
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/decompiler/clinic.py", line 163, in _analyze
+    self._recover_calling_conventions()
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/utils/timing.py", line 36, in timed_func
+    return func(*args, **kwargs)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/decompiler/clinic.py", line 432, in _recover_calling_conventions
+    cc = self.project.analyses.CallingConvention(
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/analysis.py", line 143, in __call__
+    r = w(*args, **kwargs)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/analysis.py", line 128, in wrapper
+    oself.__init__(*args, **kwargs)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/calling_convention.py", line 143, in __init__
+    self._analyze_callsite_only()
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/calling_convention.py", line 231, in _analyze_callsite_only
+    self._analyze_callsite(
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/calling_convention.py", line 379, in _analyze_callsite
+    fact = self._collect_callsite_fact(
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/calling_convention.py", line 500, in _collect_callsite_fact
+    self._analyze_callsite_arguments(cc, caller_block_addr, call_insn_addr, rda, fact)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/calling_convention.py", line 548, in _analyze_callsite_arguments
+    state = rda.observed_results[("insn", call_insn_addr, OP_BEFORE)]
+KeyError: ('insn', 0, <ObservationPointType.OP_BEFORE: 0>)
+
+WARNING  | 2023-04-19 16:35:23,300 | Yasat.knowledge_plugins.clinic_manager | Failed to build AIL graph for pw_encrypt (2/2)
+WARNING  | 2023-04-19 16:35:23,300 | Yasat.knowledge_plugins.clinic_manager | Traceback (most recent call last):
+  File "/home/bluesadi/dev/Yasat/Yasat/knowledge_plugins/clinic_manager.py", line 43, in get_clinic
+    clinic = self._proj.analyses.Clinic(
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/analysis.py", line 143, in __call__
+    r = w(*args, **kwargs)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/analysis.py", line 128, in wrapper
+    oself.__init__(*args, **kwargs)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/decompiler/clinic.py", line 108, in __init__
+    self._analyze()
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/decompiler/clinic.py", line 163, in _analyze
+    self._recover_calling_conventions()
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/utils/timing.py", line 36, in timed_func
+    return func(*args, **kwargs)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/decompiler/clinic.py", line 432, in _recover_calling_conventions
+    cc = self.project.analyses.CallingConvention(
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/analysis.py", line 143, in __call__
+    r = w(*args, **kwargs)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/analysis.py", line 128, in wrapper
+    oself.__init__(*args, **kwargs)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/calling_convention.py", line 143, in __init__
+    self._analyze_callsite_only()
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/calling_convention.py", line 231, in _analyze_callsite_only
+    self._analyze_callsite(
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/calling_convention.py", line 379, in _analyze_callsite
+    fact = self._collect_callsite_fact(
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/calling_convention.py", line 500, in _collect_callsite_fact
+    self._analyze_callsite_arguments(cc, caller_block_addr, call_insn_addr, rda, fact)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/calling_convention.py", line 548, in _analyze_callsite_arguments
+    state = rda.observed_results[("insn", call_insn_addr, OP_BEFORE)]
+KeyError: ('insn', 0, <ObservationPointType.OP_BEFORE: 0>)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/bluesadi/dev/Yasat/Yasat/knowledge_plugins/clinic_manager.py", line 52, in get_clinic
+    clinic = self._proj.analyses.Clinic(func,
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/analysis.py", line 143, in __call__
+    r = w(*args, **kwargs)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/analysis.py", line 128, in wrapper
+    oself.__init__(*args, **kwargs)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/decompiler/clinic.py", line 108, in __init__
+    self._analyze()
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/decompiler/clinic.py", line 163, in _analyze
+    self._recover_calling_conventions()
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/utils/timing.py", line 36, in timed_func
+    return func(*args, **kwargs)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/decompiler/clinic.py", line 432, in _recover_calling_conventions
+    cc = self.project.analyses.CallingConvention(
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/analysis.py", line 143, in __call__
+    r = w(*args, **kwargs)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/analysis.py", line 128, in wrapper
+    oself.__init__(*args, **kwargs)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/calling_convention.py", line 143, in __init__
+    self._analyze_callsite_only()
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/calling_convention.py", line 231, in _analyze_callsite_only
+    self._analyze_callsite(
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/calling_convention.py", line 379, in _analyze_callsite
+    fact = self._collect_callsite_fact(
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/calling_convention.py", line 500, in _collect_callsite_fact
+    self._analyze_callsite_arguments(cc, caller_block_addr, call_insn_addr, rda, fact)
+  File "/home/bluesadi/envs/Yasat/lib/python3.10/site-packages/angr/analyses/calling_convention.py", line 548, in _analyze_callsite_arguments
+    state = rda.observed_results[("insn", call_insn_addr, OP_BEFORE)]
+KeyError: ('insn', 0, <ObservationPointType.OP_BEFORE: 0>)
+
+WARNING  | 2023-04-19 16:35:37,466 | Yasat.analyses.backward_slicing.slicing_state | Failed to extract concrete string at 0x0

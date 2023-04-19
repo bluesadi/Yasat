@@ -16,7 +16,8 @@ authors = [
 dependencies = [
   "angr==9.2.46",
   "filetype==1.2.0",
-  "PyYAML==6.0"
+  "PyYAML==6.0",
+  "sqlalchemy==2.0.9"
 ]
 
 [project.scripts]

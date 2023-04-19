@@ -1,4 +1,4 @@
-from typing import Dict
+from typing import Dict, Set, Tuple
 import multiprocessing as mp
 
 from .report import Report

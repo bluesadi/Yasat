@@ -1,6 +1,5 @@
 from collections import defaultdict
-from typing import Dict, List, Tuple
-import fcntl
+from typing import Dict, List
 
 class Misuse:
     filename: str
@@ -87,10 +86,10 @@ class Report:
             f"{'*' * self._width}\n"
         )
         for checker_name in self._misuses:
-            details += f"{checker_name}\n"
+            details += f"*** {checker_name} ***\n"
             for i, misuse_report in enumerate(self._misuses[checker_name]):
                 details += (
-                    f"#{i + 1}\n"
+                    f"Misuses #{i + 1}\n"
                     f"{misuse_report}\n\n"
                 )
         return details
