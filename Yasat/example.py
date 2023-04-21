@@ -1,7 +1,6 @@
 import os
 import sys
 
-from .misc.api_scanner import scan
 from .task import Task
 
 def example():

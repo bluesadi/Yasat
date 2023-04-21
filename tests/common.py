@@ -18,5 +18,4 @@ def run_backward_slicing_on_binary(path, sink_func="sink", arg_idx=0, cast_to=in
     )
     if cast_to == str:
         return [result.string_value for result in bs.concrete_results]
-    ret = [result.int_value for result in bs.concrete_results]
-    return ret
+    return [result.int_value for result in bs.concrete_results]

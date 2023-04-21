@@ -1,34 +1,26 @@
-**************************************************
-                     Summary                      
-**************************************************
-Time: 47 seconds
-Extraction success rate: 55% (324 success, 257 failure)
-Analysis success rate: 99% (526 success, 1 failure, 0 timeout)
-Misuses number: 2
+##################################################
+#                    Summary                     #
+##################################################
+Time: 482 seconds
+Extraction success rate: 36% (487 success, 841 failure, 0)
+Analysis success rate: 98% (1487 success, 21 failure, 0 timeout)
+Misuses number: 1
 - ConstantKeysChecker: 0
-- ConstantSaltsChecker: 2
+- ConstantSaltsChecker: 1
 - PBEIterationsChecker: 0
 - RSAKeySizesChecker: 0
 
-**************************************************
-                Potential Misuses                 
-**************************************************
+##################################################
+#               Potential Misuses                #
+##################################################
 *** ConstantKeysChecker ***
 *** ConstantSaltsChecker ***
 Misuses #1
-[-] Filename: /home/bluesadi/dev/Yasat/tests_dev/tmp/Netgear/_JNR3210_V1.1.0.30_1.0.2.zip.extracted/_JNR3210-V1.1.0.30_1.0.2.img.extracted/_JNR3210.bin.extracted/squashfs-root/usr/sbin/bftpd
-[-] Description: Call to crypt(salt="") at address 0x408f28
+[-] Filename: tests_dev/tmp/TP-Link/_C400HP-4(UN)&C400HP-2.8(UN)_V2_220707.zip.extracted/_Cx00HP_x_2.0_en_1.0.10_Build_220707_Rel.57637n_up_boot.bin.extracted/libuhttpd.so
+[-] Description: Call to crypt(salt="$1$") at address 0x4052d3
 [-] Correctness: UN
 [-] Statements:
-0x408f28 | Call(0x500088<32>, <SimCCO32>: [Call (target: 0x5000dc<32>, prototype: (char*, char*) -> char*, args: [BaseOffset(stack_base, -336), s1<4>]), s1<4>], ret: v0<4>, fp_ret: no-fp-ret-value)
-0x408ed8 | s1<4> = Call(0x40eb40<32>, <SimCCO32>: [0x413134<32>], ret: v0<4>, fp_ret: no-fp-ret-value)
-
-Misuses #2
-[-] Filename: /home/bluesadi/dev/Yasat/tests_dev/tmp/Netgear/_JNR3210_V1.1.0.30_1.0.2.zip.extracted/_JNR3210-V1.1.0.30_1.0.2.img.extracted/_JNR3210.bin.extracted/squashfs-root/usr/sbin/smbd
-[-] Description: Call to crypt(salt="") at address 0x5400fc
-[-] Correctness: UN
-[-] Statements:
-0x5400fc | Call(0x60084c<32>, <SimCCO32>: [Call (target: 0x600b70<32>, prototype: (char*, char*) -> char*, args: [a1<4>, 0x5ef490<32>]), Sub(Load(addr=(Load(addr=stack_base-16, size=4, endness=Iend_BE) - 0x7fe8<32>), size=4, endness=Iend_BE), 0xa70<32>)], ret: v0<4>, fp_ret: no-fp-ret-value)
+0x4052d3 | Call(0x403898<32>, <SimCCARMHF>: [Call (target: 0x403d00<32>, prototype: (char*, char*) -> char*, args: [Load(addr=0x500008<32>, size=4, endness=Iend_LE), 0x40ccfa<32>])], ret: no-ret-value, fp_ret: no-fp-ret-value)
 
 *** PBEIterationsChecker ***
 *** RSAKeySizesChecker ***

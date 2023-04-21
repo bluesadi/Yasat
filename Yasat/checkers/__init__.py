@@ -12,10 +12,20 @@ class CheckerPrototype:
         
 default_checkers = {
     ConstantKeysChecker: [
-        ("crypt", 0)
+        ("crypt", 0),
+        ("EVP_CipherInit", 2),
+        ("EVP_EncryptInit", 2),
+        ("EVP_DecryptInit", 2),
+        ("EVP_CipherInit_ex", 3),
+        ("EVP_EncryptInit_ex", 3),
+        ("EVP_DecryptInit_ex", 3),
+        ("EVP_CipherInit_ex2", 2),
+        ("EVP_EncryptInit_ex2", 2),
+        ("EVP_DecryptInit_ex2", 2)
     ],
     ConstantSaltsChecker: [
-        ("crypt", 1)
+        ("crypt", 1),
+        ("EVP_BytesToKey", 2)
     ],
     PBEIterationsChecker: [
         ("EVP_BytesToKey", 5)

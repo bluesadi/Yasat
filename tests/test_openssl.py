@@ -1,8 +1,14 @@
 from .common import run_backward_slicing_on_binary
 
 def test_EVP_BytesToKey_arm():
-	assert run_backward_slicing_on_binary('binaries/openssl/EVP_BytesToKey_arm', 'EVP_BytesToKey', 5) == [760, 284, 169, 944, 196, 1858, 1748, 96, 946, 435, 1132, 1052, 905, 1517, 1117, 140, 305, 1086, 1213, 287, 296, 615, 695, 1232, 670, 575, 1862, 1286, 434, 1152, 1151, 1229, 1916, 161, 1832, 96, 1769, 1130, 992, 1212, 1886, 886, 1193, 673, 1030, 1393, 555, 1530, 785, 115]
+	assert run_backward_slicing_on_binary('binaries/openssl/EVP_BytesToKey_arm', 'EVP_BytesToKey', 5) == [954, 1050, 120, 1686, 1102, 1835, 719, 61, 1123, 105, 820, 727, 1882, 777, 1408, 1738, 807, 162, 1683, 336, 1672, 555, 669, 301, 187]
 
 def test_EVP_BytesToKey_mips():
-	assert run_backward_slicing_on_binary('binaries/openssl/EVP_BytesToKey_mips', 'EVP_BytesToKey', 5) == [760, 284, 169, 944, 196, 1858, 1748, 96, 946, 435, 1132, 1052, 905, 1517, 1117, 140, 305, 1086, 1213, 287, 296, 615, 695, 1232, 670, 575, 1862, 1286, 434, 1152, 1151, 1229, 1916, 161, 1832, 96, 1769, 1130, 992, 1212, 1886, 886, 1193, 673, 1030, 1393, 555, 1530, 785, 115]
+	assert run_backward_slicing_on_binary('binaries/openssl/EVP_BytesToKey_mips', 'EVP_BytesToKey', 5) == [954, 1050, 120, 1686, 1102, 1835, 719, 61, 1123, 105, 820, 727, 1882, 777, 1408, 1738, 807, 162, 1683, 336, 1672, 555, 669, 301, 187]
+
+def test_RSA_generate_key_arm():
+	assert run_backward_slicing_on_binary('binaries/openssl/RSA_generate_key_arm', 'RSA_generate_key', 0) == [1721, 2746, 36, 1563, 2975, 3087, 1338, 3882, 798, 195, 3654, 15, 678, 4013, 1454, 86, 701, 2117, 4081, 1452, 811, 3033, 668, 3047, 1180]
+
+def test_RSA_generate_key_mips():
+	assert run_backward_slicing_on_binary('binaries/openssl/RSA_generate_key_mips', 'RSA_generate_key', 0) == [1721, 2746, 36, 1563, 2975, 3087, 1338, 3882, 798, 195, 3654, 15, 678, 4013, 1454, 86, 701, 2117, 4081, 1452, 811, 3033, 668, 3047, 1180]
 

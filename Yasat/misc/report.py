@@ -33,6 +33,7 @@ class Report:
         self.time = 0
         self.extraction_success = 0
         self.extraction_failure = 0
+        self.extraction_timeout = 0
         
         self.analysis_success = 0
         self.analysis_failure = 0
@@ -43,7 +44,7 @@ class Report:
 
     @property
     def extraction_total(self):
-        return self.extraction_success + self.extraction_failure
+        return self.extraction_success + self.extraction_failure + self.extraction_timeout
 
     @property
     def analysis_total(self):
@@ -55,16 +56,17 @@ class Report:
     @property
     def summary(self):
         summary = (
-            f"{'*' * self._width}\n"
-            f"{'Summary'.center(self._width)}\n"
-            f"{'*' * self._width}\n"
+            f"{'#' * self._width}\n"
+            f"#{'Summary'.center(self._width - 2)}#\n"
+            f"{'#' * self._width}\n"
             f"Time: {self.time} seconds\n"
         )
         if self.extraction_total != 0:
             summary += (
                 f"Extraction success rate: "
                 f"{int(self.extraction_success / self.extraction_total * 100)}% "
-                f"({self.extraction_success} success, {self.extraction_failure} failure)\n"
+                f"({self.extraction_success} success, {self.extraction_failure} failure, "
+                f"{self.extraction_timeout})\n"
             )
         if self.analysis_total != 0:
             summary += (
@@ -81,9 +83,9 @@ class Report:
     @property
     def details(self):
         details = (
-            f"{'*' * self._width}\n"
-            f"{'Potential Misuses'.center(self._width)}\n"
-            f"{'*' * self._width}\n"
+            f"{'#' * self._width}\n"
+            f"#{'Potential Misuses'.center(self._width - 2)}#\n"
+            f"{'#' * self._width}\n"
         )
         for checker_name in self._misuses:
             details += f"*** {checker_name} ***\n"
