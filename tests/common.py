@@ -17,5 +17,9 @@ def run_backward_slicing_on_binary(path, sink_func="sink", arg_idx=0, cast_to=in
         target_func=main, criteria_selectors=[ArgumentSelector(sink_addr, arg_idx)]
     )
     if cast_to == str:
-        return [result.string_value for result in bs.concrete_results]
+        concrete_results = bs.concrete_results
+        results = [result.string_value for result in concrete_results]
+        if any(result is not None for result in results):
+            return results
+        return [result.function_value.name for result in concrete_results]
     return [result.int_value for result in bs.concrete_results]

@@ -22,7 +22,7 @@ class FunctionHandler:
             symbol = proj.loader.find_symbol(func.addr)
             is_extern = symbol is not None and symbol.is_extern
         if is_extern:
-            return self.handle_extern_function(func, args)
+            return self.handle_external_function(func, args)
         else:
             return self.handle_local_function(func, args)
 
@@ -31,7 +31,7 @@ class FunctionHandler:
     ) -> MultiValues:
         return None
 
-    def handle_extern_function(
+    def handle_external_function(
         self, func: Function, args: List[Tuple[MultiValues, MultiValues]]
     ) -> MultiValues:
         return None

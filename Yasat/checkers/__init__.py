@@ -2,6 +2,7 @@ from .constant_keys import ConstantKeysChecker
 from .constant_salts import ConstantSaltsChecker
 from .pbe_iterations import PBEIterationsChecker
 from .rsa_key_sizes import RSAKeySizesChecker
+from .ecb_encryption import ECBEncryptionChecker
 
 class CheckerPrototype:
     
@@ -35,5 +36,17 @@ default_checkers = {
         ("RSA_generate_key_ex", 1),
         ("RSA_generate_multi_prime_key", 1),
         ("EVP_RSA_gen", 0),
+    ],
+    ECBEncryptionChecker: [
+        ("EVP_BytesToKey", 0),
+        ("EVP_CipherInit", 1),
+        ("EVP_EncryptInit", 1),
+        ("EVP_DecryptInit", 1),
+        ("EVP_CipherInit_ex", 1),
+        ("EVP_EncryptInit_ex", 1),
+        ("EVP_DecryptInit_ex", 1),
+        ("EVP_CipherInit_ex2", 1),
+        ("EVP_EncryptInit_ex2", 1),
+        ("EVP_DecryptInit_ex2", 1)
     ]
 }

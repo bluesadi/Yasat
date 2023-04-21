@@ -1,0 +1,598 @@
+DEBUG    | 2023-04-21 18:09:14,122 | Yasat.analyses.rule_checker | Found function return value: Function EVP_EncryptInit_ex [87176]
+  Syscall: False
+  SP difference: 0
+  Has return: False
+  Returning: True
+  Alignment: False
+  Arguments: reg: [], stack: []
+  Blocks: [0x15488]
+  Calling convention: None
+DEBUG    | 2023-04-21 18:15:08,498 | Yasat.analyses.rule_checker | Found function return value: None
+DEBUG    | 2023-04-21 18:17:13,868 | Yasat.analyses.rule_checker | Found function return value: None
+DEBUG    | 2023-04-21 18:18:10,471 | Yasat.analyses.rule_checker | Found function return value: Function EVP_aes_128_cbc [4227524]
+  Syscall: False
+  SP difference: 0
+  Has return: False
+  Returning: True
+  Alignment: False
+  Arguments: reg: [], stack: []
+  Blocks: [0x4081c4]
+  Calling convention: None
+DEBUG    | 2023-04-21 18:18:10,843 | Yasat.analyses.rule_checker | Found function return value: Function EVP_aes_128_cbc [4227524]
+  Syscall: False
+  SP difference: 0
+  Has return: False
+  Returning: True
+  Alignment: False
+  Arguments: reg: [], stack: []
+  Blocks: [0x4081c4]
+  Calling convention: None
+DEBUG    | 2023-04-21 18:18:52,367 | Yasat.analyses.rule_checker | Found function return value: None
+DEBUG    | 2023-04-21 18:18:52,513 | Yasat.analyses.rule_checker | Found function return value: Function EVP_des_cbc [4211500]
+  Syscall: False
+  SP difference: 0
+  Has return: False
+  Returning: True
+  Alignment: False
+  Arguments: reg: [], stack: []
+  Blocks: [0x40432c]
+  Calling convention: None
+DEBUG    | 2023-04-21 18:18:52,514 | Yasat.analyses.rule_checker | Found function return value: Function EVP_des_cbc [4211500]
+  Syscall: False
+  SP difference: 0
+  Has return: False
+  Returning: True
+  Alignment: False
+  Arguments: reg: [], stack: []
+  Blocks: [0x40432c]
+  Calling convention: None
+DEBUG    | 2023-04-21 18:18:52,514 | Yasat.analyses.rule_checker | Found function return value: Function EVP_des_cbc [4211500]
+  Syscall: False
+  SP difference: 0
+  Has return: False
+  Returning: True
+  Alignment: False
+  Arguments: reg: [], stack: []
+  Blocks: [0x40432c]
+  Calling convention: None
+DEBUG    | 2023-04-21 18:18:56,934 | Yasat.analyses.rule_checker | Found function return value: None
+DEBUG    | 2023-04-21 18:18:57,094 | Yasat.analyses.rule_checker | Found function return value: Function EVP_des_cbc [4213420]
+  Syscall: False
+  SP difference: 0
+  Has return: False
+  Returning: True
+  Alignment: False
+  Arguments: reg: [], stack: []
+  Blocks: [0x404aac]
+  Calling convention: None
+DEBUG    | 2023-04-21 18:18:57,100 | Yasat.analyses.rule_checker | Found function return value: Function EVP_des_cbc [4213420]
+  Syscall: False
+  SP difference: 0
+  Has return: False
+  Returning: True
+  Alignment: False
+  Arguments: reg: [], stack: []
+  Blocks: [0x404aac]
+  Calling convention: None
+DEBUG    | 2023-04-21 18:18:57,101 | Yasat.analyses.rule_checker | Found function return value: Function EVP_des_cbc [4213420]
+  Syscall: False
+  SP difference: 0
+  Has return: False
+  Returning: True
+  Alignment: False
+  Arguments: reg: [], stack: []
+  Blocks: [0x404aac]
+  Calling convention: None
+DEBUG    | 2023-04-21 18:19:24,144 | Yasat.analyses.rule_checker | Found function return value: None
+DEBUG    | 2023-04-21 18:19:31,107 | Yasat.analyses.rule_checker | Found function return value: None
+DEBUG    | 2023-04-21 18:19:42,817 | Yasat.analyses.rule_checker | Found function return value: None
+DEBUG    | 2023-04-21 18:27:27,069 | Yasat.analyses.rule_checker | Found function return value: Function EVP_BytesToKey [68096]
+  Syscall: False
+  SP difference: 0
+  Has return: False
+  Returning: True
+  Alignment: False
+  Arguments: reg: [], stack: []
+  Blocks: [0x10a00]
+  Calling convention: None
+DEBUG    | 2023-04-21 18:27:27,132 | Yasat.analyses.rule_checker | Found function return value: Function EVP_aes_128_cbc [68324]
+  Syscall: False
+  SP difference: 0
+  Has return: False
+  Returning: True
+  Alignment: False
+  Arguments: reg: [], stack: []
+  Blocks: [0x10ae4]
+  Calling convention: None
+DEBUG    | 2023-04-21 18:27:27,189 | Yasat.analyses.rule_checker | Found function return value: Function EVP_aes_128_cbc [68324]
+  Syscall: False
+  SP difference: 0
+  Has return: False
+  Returning: True
+  Alignment: False
+  Arguments: reg: [], stack: []
+  Blocks: [0x10ae4]
+  Calling convention: None
+DEBUG    | 2023-04-21 18:31:38,282 | Yasat.analyses.rule_checker | Found function return value: None
+DEBUG    | 2023-04-21 18:36:17,083 | Yasat.analyses.rule_checker | Found function return value: None
+DEBUG    | 2023-04-21 18:38:12,491 | Yasat.analyses.rule_checker | Found function return value: Function EVP_aes_256_cbc [65712]
+  Syscall: False
+  SP difference: 0
+  Has return: False
+  Returning: True
+  Alignment: False
+  Arguments: reg: [], stack: []
+  Blocks: [0x100b0]
+  Calling convention: None
+DEBUG    | 2023-04-21 18:38:12,547 | Yasat.analyses.rule_checker | Found function return value: None
+DEBUG    | 2023-04-21 18:38:12,595 | Yasat.analyses.rule_checker | Found function return value: Function EVP_aes_256_cbc [65712]
+  Syscall: False
+  SP difference: 0
+  Has return: False
+  Returning: True
+  Alignment: False
+  Arguments: reg: [], stack: []
+  Blocks: [0x100b0]
+  Calling convention: None
+DEBUG    | 2023-04-21 18:38:12,649 | Yasat.analyses.rule_checker | Found function return value: None
+DEBUG    | 2023-04-21 18:38:12,702 | Yasat.analyses.rule_checker | Found function return value: Function EVP_aes_256_cbc [65712]
+  Syscall: False
+  SP difference: 0
+  Has return: False
+  Returning: True
+  Alignment: False
+  Arguments: reg: [], stack: []
+  Blocks: [0x100b0]
+  Calling convention: None
+DEBUG    | 2023-04-21 18:40:10,581 | Yasat.analyses.rule_checker | Found function return value: None
+DEBUG    | 2023-04-21 18:40:14,598 | Yasat.analyses.rule_checker | Found function return value: None
+DEBUG    | 2023-04-21 18:42:09,144 | Yasat.analyses.rule_checker | Found function return value: Function EVP_rc4 [4229884]
+  Syscall: False
+  SP difference: 0
+  Has return: False
+  Returning: True
+  Alignment: False
+  Arguments: reg: [], stack: []
+  Blocks: [0x408afc]
+  Calling convention: None
+DEBUG    | 2023-04-21 18:42:09,149 | Yasat.analyses.rule_checker | Found function return value: None
+DEBUG    | 2023-04-21 18:42:09,734 | Yasat.analyses.rule_checker | Found function return value: Function EVP_aes_128_cbc [4232128]
+  Syscall: False
+  SP difference: 0
+  Has return: False
+  Returning: True
+  Alignment: False
+  Arguments: reg: [], stack: []
+  Blocks: [0x4093c0]
+  Calling convention: None
+DEBUG    | 2023-04-21 18:42:10,455 | Yasat.analyses.rule_checker | Found function return value: Function EVP_rc2_ecb [4232752]
+  Syscall: False
+  SP difference: 0
+  Has return: False
+  Returning: True
+  Alignment: False
+  Arguments: reg: [], stack: []
+  Blocks: [0x409630]
+  Calling convention: None
+DEBUG    | 2023-04-21 18:42:10,456 | Yasat.analyses.rule_checker | Found function return value: Function EVP_aes_128_cbc [4232128]
+  Syscall: False
+  SP difference: 0
+  Has return: False
+  Returning: True
+  Alignment: False
+  Arguments: reg: [], stack: []
+  Blocks: [0x4093c0]
+  Calling convention: None
+DEBUG    | 2023-04-21 18:42:10,457 | Yasat.analyses.rule_checker | Found function return value: Function EVP_aes_256_cbc [4228768]
+  Syscall: False
+  SP difference: 0
+  Has return: False
+  Returning: True
+  Alignment: False
+  Arguments: reg: [], stack: []
+  Blocks: [0x4086a0]
+  Calling convention: None
+DEBUG    | 2023-04-21 18:42:10,458 | Yasat.analyses.rule_checker | Found function return value: Function EVP_des_cbc [4233100]
+  Syscall: False
+  SP difference: 0
+  Has return: False
+  Returning: True
+  Alignment: False
+  Arguments: reg: [], stack: []
+  Blocks: [0x40978c]
+  Calling convention: None
+DEBUG    | 2023-04-21 18:42:10,459 | Yasat.analyses.rule_checker | Found function return value: Function EVP_rc4 [4229884]
+  Syscall: False
+  SP difference: 0
+  Has return: False
+  Returning: True
+  Alignment: False
+  Arguments: reg: [], stack: []
+  Blocks: [0x408afc]
+  Calling convention: None
+DEBUG    | 2023-04-21 18:42:10,459 | Yasat.analyses.rule_checker | Found function return value: Function EVP_aes_192_cbc [4228948]
+  Syscall: False
+  SP difference: 0
+  Has return: False
+  Returning: True
+  Alignment: False
+  Arguments: reg: [], stack: []
+  Blocks: [0x408754]
+  Calling convention: None
+DEBUG    | 2023-04-21 18:42:10,460 | Yasat.analyses.rule_checker | Found function return value: Function EVP_des_ede3_cbc [4232272]
+  Syscall: False
+  SP difference: 0
+  Has return: False
+  Returning: True
+  Alignment: False
+  Arguments: reg: [], stack: []
+  Blocks: [0x409450]
+  Calling convention: None
+DEBUG    | 2023-04-21 18:42:10,461 | Yasat.analyses.rule_checker | Found function return value: None
+DEBUG    | 2023-04-21 18:42:10,550 | Yasat.analyses.rule_checker | Found function return value: Function EVP_aes_128_cbc [4232128]
+  Syscall: False
+  SP difference: 0
+  Has return: False
+  Returning: True
+  Alignment: False
+  Arguments: reg: [], stack: []
+  Blocks: [0x4093c0]
+  Calling convention: None
+DEBUG    | 2023-04-21 18:42:12,105 | Yasat.analyses.rule_checker | Found function return value: Function EVP_rc4 [4229884]
+  Syscall: False
+  SP difference: 0
+  Has return: False
+  Returning: True
+  Alignment: False
+  Arguments: reg: [], stack: []
+  Blocks: [0x408afc]
+  Calling convention: None
+DEBUG    | 2023-04-21 18:42:12,107 | Yasat.analyses.rule_checker | Found function return value: Function EVP_des_ede3_cbc [4232272]
+  Syscall: False
+  SP difference: 0
+  Has return: False
+  Returning: True
+  Alignment: False
+  Arguments: reg: [], stack: []
+  Blocks: [0x409450]
+  Calling convention: None
+DEBUG    | 2023-04-21 18:42:12,108 | Yasat.analyses.rule_checker | Found function return value: Function EVP_aes_192_cbc [4228948]
+  Syscall: False
+  SP difference: 0
+  Has return: False
+  Returning: True
+  Alignment: False
+  Arguments: reg: [], stack: []
+  Blocks: [0x408754]
+  Calling convention: None
+DEBUG    | 2023-04-21 18:42:12,113 | Yasat.analyses.rule_checker | Found function return value: Function EVP_aes_256_cbc [4228768]
+  Syscall: False
+  SP difference: 0
+  Has return: False
+  Returning: True
+  Alignment: False
+  Arguments: reg: [], stack: []
+  Blocks: [0x4086a0]
+  Calling convention: None
+DEBUG    | 2023-04-21 18:42:12,114 | Yasat.analyses.rule_checker | Found function return value: Function EVP_aes_128_cbc [4232128]
+  Syscall: False
+  SP difference: 0
+  Has return: False
+  Returning: True
+  Alignment: False
+  Arguments: reg: [], stack: []
+  Blocks: [0x4093c0]
+  Calling convention: None
+DEBUG    | 2023-04-21 18:42:12,115 | Yasat.analyses.rule_checker | Found function return value: Function EVP_des_cbc [4233100]
+  Syscall: False
+  SP difference: 0
+  Has return: False
+  Returning: True
+  Alignment: False
+  Arguments: reg: [], stack: []
+  Blocks: [0x40978c]
+  Calling convention: None
+DEBUG    | 2023-04-21 18:42:12,117 | Yasat.analyses.rule_checker | Found function return value: Function EVP_rc2_ecb [4232752]
+  Syscall: False
+  SP difference: 0
+  Has return: False
+  Returning: True
+  Alignment: False
+  Arguments: reg: [], stack: []
+  Blocks: [0x409630]
+  Calling convention: None
+DEBUG    | 2023-04-21 18:42:12,118 | Yasat.analyses.rule_checker | Found function return value: None
+DEBUG    | 2023-04-21 18:42:15,591 | Yasat.analyses.rule_checker | Found function return value: Function EVP_rc4 [4233508]
+  Syscall: False
+  SP difference: 0
+  Has return: False
+  Returning: True
+  Alignment: False
+  Arguments: reg: [], stack: []
+  Blocks: [0x409924]
+  Calling convention: None
+DEBUG    | 2023-04-21 18:42:15,595 | Yasat.analyses.rule_checker | Found function return value: None
+DEBUG    | 2023-04-21 18:42:16,076 | Yasat.analyses.rule_checker | Found function return value: Function EVP_aes_128_cbc [4235644]
+  Syscall: False
+  SP difference: 0
+  Has return: False
+  Returning: True
+  Alignment: False
+  Arguments: reg: [], stack: []
+  Blocks: [0x40a17c]
+  Calling convention: None
+DEBUG    | 2023-04-21 18:42:16,879 | Yasat.analyses.rule_checker | Found function return value: Function EVP_aes_192_cbc [4232596]
+  Syscall: False
+  SP difference: 0
+  Has return: False
+  Returning: True
+  Alignment: False
+  Arguments: reg: [], stack: []
+  Blocks: [0x409594]
+  Calling convention: None
+DEBUG    | 2023-04-21 18:42:16,880 | Yasat.analyses.rule_checker | Found function return value: Function EVP_rc2_ecb [4236220]
+  Syscall: False
+  SP difference: 0
+  Has return: False
+  Returning: True
+  Alignment: False
+  Arguments: reg: [], stack: []
+  Blocks: [0x40a3bc]
+  Calling convention: None
+DEBUG    | 2023-04-21 18:42:16,880 | Yasat.analyses.rule_checker | Found function return value: Function EVP_rc4 [4233508]
+  Syscall: False
+  SP difference: 0
+  Has return: False
+  Returning: True
+  Alignment: False
+  Arguments: reg: [], stack: []
+  Blocks: [0x409924]
+  Calling convention: None
+DEBUG    | 2023-04-21 18:42:16,880 | Yasat.analyses.rule_checker | Found function return value: Function EVP_des_cbc [4236532]
+  Syscall: False
+  SP difference: 0
+  Has return: False
+  Returning: True
+  Alignment: False
+  Arguments: reg: [], stack: []
+  Blocks: [0x40a4f4]
+  Calling convention: None
+DEBUG    | 2023-04-21 18:42:16,880 | Yasat.analyses.rule_checker | Found function return value: Function EVP_des_ede3_cbc [4235776]
+  Syscall: False
+  SP difference: 0
+  Has return: False
+  Returning: True
+  Alignment: False
+  Arguments: reg: [], stack: []
+  Blocks: [0x40a200]
+  Calling convention: None
+DEBUG    | 2023-04-21 18:42:16,881 | Yasat.analyses.rule_checker | Found function return value: Function EVP_aes_128_cbc [4235644]
+  Syscall: False
+  SP difference: 0
+  Has return: False
+  Returning: True
+  Alignment: False
+  Arguments: reg: [], stack: []
+  Blocks: [0x40a17c]
+  Calling convention: None
+DEBUG    | 2023-04-21 18:42:16,881 | Yasat.analyses.rule_checker | Found function return value: Function EVP_aes_256_cbc [4232416]
+  Syscall: False
+  SP difference: 0
+  Has return: False
+  Returning: True
+  Alignment: False
+  Arguments: reg: [], stack: []
+  Blocks: [0x4094e0]
+  Calling convention: None
+DEBUG    | 2023-04-21 18:42:16,881 | Yasat.analyses.rule_checker | Found function return value: None
+DEBUG    | 2023-04-21 18:42:16,944 | Yasat.analyses.rule_checker | Found function return value: Function EVP_aes_128_cbc [4235644]
+  Syscall: False
+  SP difference: 0
+  Has return: False
+  Returning: True
+  Alignment: False
+  Arguments: reg: [], stack: []
+  Blocks: [0x40a17c]
+  Calling convention: None
+DEBUG    | 2023-04-21 18:42:19,603 | Yasat.analyses.rule_checker | Found function return value: Function EVP_des_ede3_cbc [4235776]
+  Syscall: False
+  SP difference: 0
+  Has return: False
+  Returning: True
+  Alignment: False
+  Arguments: reg: [], stack: []
+  Blocks: [0x40a200]
+  Calling convention: None
+DEBUG    | 2023-04-21 18:42:19,623 | Yasat.analyses.rule_checker | Found function return value: Function EVP_aes_256_cbc [4232416]
+  Syscall: False
+  SP difference: 0
+  Has return: False
+  Returning: True
+  Alignment: False
+  Arguments: reg: [], stack: []
+  Blocks: [0x4094e0]
+  Calling convention: None
+DEBUG    | 2023-04-21 18:42:19,624 | Yasat.analyses.rule_checker | Found function return value: Function EVP_aes_128_cbc [4235644]
+  Syscall: False
+  SP difference: 0
+  Has return: False
+  Returning: True
+  Alignment: False
+  Arguments: reg: [], stack: []
+  Blocks: [0x40a17c]
+  Calling convention: None
+DEBUG    | 2023-04-21 18:42:19,626 | Yasat.analyses.rule_checker | Found function return value: Function EVP_aes_192_cbc [4232596]
+  Syscall: False
+  SP difference: 0
+  Has return: False
+  Returning: True
+  Alignment: False
+  Arguments: reg: [], stack: []
+  Blocks: [0x409594]
+  Calling convention: None
+DEBUG    | 2023-04-21 18:42:19,631 | Yasat.analyses.rule_checker | Found function return value: Function EVP_des_cbc [4236532]
+  Syscall: False
+  SP difference: 0
+  Has return: False
+  Returning: True
+  Alignment: False
+  Arguments: reg: [], stack: []
+  Blocks: [0x40a4f4]
+  Calling convention: None
+DEBUG    | 2023-04-21 18:42:19,642 | Yasat.analyses.rule_checker | Found function return value: Function EVP_rc2_ecb [4236220]
+  Syscall: False
+  SP difference: 0
+  Has return: False
+  Returning: True
+  Alignment: False
+  Arguments: reg: [], stack: []
+  Blocks: [0x40a3bc]
+  Calling convention: None
+DEBUG    | 2023-04-21 18:42:19,644 | Yasat.analyses.rule_checker | Found function return value: Function EVP_rc4 [4233508]
+  Syscall: False
+  SP difference: 0
+  Has return: False
+  Returning: True
+  Alignment: False
+  Arguments: reg: [], stack: []
+  Blocks: [0x409924]
+  Calling convention: None
+DEBUG    | 2023-04-21 18:42:19,651 | Yasat.analyses.rule_checker | Found function return value: None
+DEBUG    | 2023-04-21 18:44:11,638 | Yasat.analyses.rule_checker | Found function return value: Function EVP_aes_128_cbc [55740]
+  Syscall: False
+  SP difference: 0
+  Has return: False
+  Returning: True
+  Alignment: False
+  Arguments: reg: [], stack: []
+  Blocks: [0xd9bc]
+  Calling convention: None
+DEBUG    | 2023-04-21 18:44:14,876 | Yasat.analyses.rule_checker | Found function return value: Function EVP_aes_128_cbc [55740]
+  Syscall: False
+  SP difference: 0
+  Has return: False
+  Returning: True
+  Alignment: False
+  Arguments: reg: [], stack: []
+  Blocks: [0xd9bc]
+  Calling convention: None
+DEBUG    | 2023-04-21 18:44:21,314 | Yasat.analyses.rule_checker | Found function return value: Function EVP_aes_128_cbc [55740]
+  Syscall: False
+  SP difference: 0
+  Has return: False
+  Returning: True
+  Alignment: False
+  Arguments: reg: [], stack: []
+  Blocks: [0xd9bc]
+  Calling convention: None
+DEBUG    | 2023-04-21 18:44:28,924 | Yasat.analyses.rule_checker | Found function return value: Function EVP_aes_128_cbc [55740]
+  Syscall: False
+  SP difference: 0
+  Has return: False
+  Returning: True
+  Alignment: False
+  Arguments: reg: [], stack: []
+  Blocks: [0xd9bc]
+  Calling convention: None
+DEBUG    | 2023-04-21 18:44:39,242 | Yasat.analyses.rule_checker | Found function return value: Function EVP_aes_128_cbc [55740]
+  Syscall: False
+  SP difference: 0
+  Has return: False
+  Returning: True
+  Alignment: False
+  Arguments: reg: [], stack: []
+  Blocks: [0xd9bc]
+  Calling convention: None
+DEBUG    | 2023-04-21 18:45:30,784 | Yasat.analyses.rule_checker | Found function return value: Function EVP_aes_256_ecb [4244744]
+  Syscall: False
+  SP difference: 0
+  Has return: False
+  Returning: True
+  Alignment: False
+  Arguments: reg: [], stack: []
+  Blocks: [0x40c508]
+  Calling convention: None
+DEBUG    | 2023-04-21 18:45:31,626 | Yasat.analyses.rule_checker | Found function return value: Function EVP_aes_192_ecb [4246076]
+  Syscall: False
+  SP difference: 0
+  Has return: False
+  Returning: True
+  Alignment: False
+  Arguments: reg: [], stack: []
+  Blocks: [0x40ca3c]
+  Calling convention: None
+DEBUG    | 2023-04-21 18:45:31,674 | Yasat.analyses.rule_checker | Found function return value: Function EVP_aes_128_ecb [4243988]
+  Syscall: False
+  SP difference: 0
+  Has return: False
+  Returning: True
+  Alignment: False
+  Arguments: reg: [], stack: []
+  Blocks: [0x40c214]
+  Calling convention: None
+DEBUG    | 2023-04-21 18:46:25,823 | Yasat.analyses.rule_checker | Found function return value: Function EVP_des_cbc [4246192]
+  Syscall: False
+  SP difference: 0
+  Has return: False
+  Returning: True
+  Alignment: False
+  Arguments: reg: [], stack: []
+  Blocks: [0x40cab0]
+  Calling convention: None
+DEBUG    | 2023-04-21 18:46:25,832 | Yasat.analyses.rule_checker | Found function return value: Function EVP_des_cbc [4246192]
+  Syscall: False
+  SP difference: 0
+  Has return: False
+  Returning: True
+  Alignment: False
+  Arguments: reg: [], stack: []
+  Blocks: [0x40cab0]
+  Calling convention: None
+DEBUG    | 2023-04-21 18:46:25,832 | Yasat.analyses.rule_checker | Found function return value: Function EVP_des_cbc [4246192]
+  Syscall: False
+  SP difference: 0
+  Has return: False
+  Returning: True
+  Alignment: False
+  Arguments: reg: [], stack: []
+  Blocks: [0x40cab0]
+  Calling convention: None
+DEBUG    | 2023-04-21 18:47:31,383 | Yasat.analyses.rule_checker | Found function return value: None
+DEBUG    | 2023-04-21 18:47:31,423 | Yasat.analyses.rule_checker | Found function return value: None
+DEBUG    | 2023-04-21 18:52:13,091 | Yasat.analyses.rule_checker | Found function return value: Function EVP_aes_128_cbc [5242956]
+  Syscall: False
+  SP difference: 0
+  Has return: True
+  Returning: True
+  Alignment: False
+  Arguments: reg: [], stack: []
+  Blocks: [0x50004c]
+  Calling convention: <SimCCO32>
+DEBUG    | 2023-04-21 18:53:18,867 | Yasat.analyses.rule_checker | Found function return value: None
+DEBUG    | 2023-04-21 18:53:44,718 | Yasat.analyses.rule_checker | Found function return value: Function EVP_bf_cbc [5242888]
+  Syscall: False
+  SP difference: 0
+  Has return: True
+  Returning: True
+  Alignment: False
+  Arguments: reg: [], stack: []
+  Blocks: [0x500008]
+  Calling convention: <SimCCO32>
+DEBUG    | 2023-04-21 19:01:51,541 | Yasat.analyses.rule_checker | Found function return value: Function EVP_get_cipherbyname [4198872]
+  Syscall: False
+  SP difference: 0
+  Has return: False
+  Returning: True
+  Alignment: False
+  Arguments: reg: [], stack: []
+  Blocks: [0x4011d8]
+  Calling convention: None
+DEBUG    | 2023-04-21 19:01:51,603 | Yasat.analyses.rule_checker | Found function return value: Function EVP_get_cipherbyname [4198872]
+  Syscall: False
+  SP difference: 0
+  Has return: False
+  Returning: True
+  Alignment: False
+  Arguments: reg: [], stack: []
+  Blocks: [0x4011d8]
+  Calling convention: None

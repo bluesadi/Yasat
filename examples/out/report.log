@@ -1,37 +1,52 @@
-**************************************************
-                     Summary                      
-**************************************************
-Time: 0 seconds
-Extraction success rate: 100% (5 success, 0 failure)
-Analysis success rate: 100% (153 success, 0 failure, 0 timeout)
-Misuses number: 3
-- ConstantKeysChecker: 0
-- ConstantSaltsChecker: 3
+##################################################
+#                    Summary                     #
+##################################################
+Time: 165 seconds
+Extraction success rate: 100% (6 success, 0 failure, 0)
+Analysis success rate: 100% (156 success, 0 failure, 0 timeout)
+Misuses number: 39
+- ConstantKeysChecker: 2
+- ConstantSaltsChecker: 12
 - PBEIterationsChecker: 0
 - RSAKeySizesChecker: 0
+- ECBEncryptionChecker: 25
 
-**************************************************
-                Potential Misuses                 
-**************************************************
-ConstantKeysChecker
-ConstantSaltsChecker
-#1
-[-] Filename: /home/bluesadi/dev/Yasat/examples/tmp/busybox
+##################################################
+#               Potential Misuses                #
+##################################################
+*** ConstantKeysChecker ***
+Misuses #1
+[-] Filename: /home/bluesadi/dev/Yasat/examples/tmp/logic
+[-] Description: Call to crypt(key="tw007") at address 0x20e48
+[-] Correctness: UN
+[-] Statements:
+0x20e48 | Call(0xb738<32>, <SimCCARM>: [Call (target: 0xaf58<32>, prototype: (int (32 bits), int (32 bits)) -> None, args: [0x49a32<32>, 0x499d0<32>]), Add(r4<4>, 0xbe<32>)], ret: r0<4>, fp_ret: no-fp-ret-value)
+
+Misuses #2
+[-] Filename: /home/bluesadi/dev/Yasat/examples/tmp/logic
+[-] Description: Call to crypt(key="password") at address 0x21eb4
+[-] Correctness: UN
+[-] Statements:
+0x21eb4 | Call(0xb81c<32>, <SimCCARM>: [0x49c86<32>, r0<4>, r0<4>, Call (target: 0xaf58<32>, prototype: (int (32 bits), int (32 bits)) -> int (32 bits), args: [0x49a3e<32>, 0x499d0<32>])], ret: r0<4>, fp_ret: no-fp-ret-value)
+
+*** ConstantSaltsChecker ***
+Misuses #1
+[-] Filename: /home/bluesadi/dev/Yasat/examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/bin/busybox
 [-] Description: Call to crypt(salt="aa") at address 0x50290
 [-] Correctness: UN
 [-] Statements:
 0x50290 | Call(0xc1f0<32>, <SimCCARM>: [Call (target: 0xb758<32>, prototype: (int (32 bits), int (32 bits)) -> int (32 bits), args: [r0<4>, r4<4>]), r4<4>], ret: r0<4>, fp_ret: no-fp-ret-value)
 0x50248 | r4<4> = 0x6040a<32>
 
-#2
-[-] Filename: /home/bluesadi/dev/Yasat/examples/tmp/busybox
+Misuses #2
+[-] Filename: /home/bluesadi/dev/Yasat/examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/bin/busybox
 [-] Description: Call to crypt(salt="aa") at address 0x50290
 [-] Correctness: UN
 [-] Statements:
 0x50290 | Call(0xc1f0<32>, <SimCCARM>: [Call (target: 0xb758<32>, prototype: (int (32 bits), int (32 bits)) -> int (32 bits), args: [r0<4>, r4<4>]), r4<4>], ret: r0<4>, fp_ret: no-fp-ret-value)
 0x50230 | r4<4> = 0x6040a<32>
 
-#3
+Misuses #3
 [-] Filename: /home/bluesadi/dev/Yasat/examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/bftpd
 [-] Description: Call to crypt(salt="ADMIN_PASS") at address 0xd794
 [-] Correctness: UN
@@ -39,5 +54,469 @@ ConstantSaltsChecker
 0xd794 | Call(0x9be0<32>, <SimCCARM>: [Call (target: 0x9790<32>, prototype: (int (32 bits), int (32 bits)) -> None, args: [BaseOffset(stack_base, -56), r4<4>]), r4<4>], ret: r0<4>, fp_ret: no-fp-ret-value)
 0xd75c | r4<4> = Call(0x11870<32>, <SimCCARM>: [0x13584<32>], ret: r0<4>, fp_ret: no-fp-ret-value)
 
-PBEIterationsChecker
-RSAKeySizesChecker
+Misuses #4
+[-] Filename: /home/bluesadi/dev/Yasat/examples/tmp/logic
+[-] Description: Call to crypt(salt="$1$TW") at address 0x209d8
+[-] Correctness: UN
+[-] Statements:
+0x209d8 | Call(0xb0b4<32>, <SimCCARM>: [0x102<32>, 0x49960<32>, Call (target: 0xaf58<32>, prototype: (int (32 bits), int (32 bits)) -> int (32 bits), args: [BaseOffset(stack_base, -84), 0x499d0<32>])], ret: r0<4>, fp_ret: no-fp-ret-value)
+
+Misuses #5
+[-] Filename: /home/bluesadi/dev/Yasat/examples/tmp/logic
+[-] Description: Call to crypt(salt="$1$TW") at address 0x209fc
+[-] Correctness: UN
+[-] Statements:
+0x209fc | Call(0xb0b4<32>, <SimCCARM>: [0x102<32>, 0x49998<32>, Call (target: 0xaf58<32>, prototype: (int (32 bits), int (32 bits)) -> int (32 bits), args: [BaseOffset(stack_base, -152), 0x499d0<32>])], ret: r0<4>, fp_ret: no-fp-ret-value)
+
+Misuses #6
+[-] Filename: /home/bluesadi/dev/Yasat/examples/tmp/logic
+[-] Description: Call to crypt(salt="$1$TW") at address 0x20af4
+[-] Correctness: UN
+[-] Statements:
+0x20af4 | Call(0xb8d0<32>, <SimCCARM>: [BaseOffset(stack_base, -160), Call (target: 0xaf58<32>, prototype: (int (32 bits), int (32 bits)) -> int (32 bits), args: [BaseOffset(stack_base, -160), 0x499d0<32>])], ret: no-ret-value, fp_ret: no-fp-ret-value)
+
+Misuses #7
+[-] Filename: /home/bluesadi/dev/Yasat/examples/tmp/logic
+[-] Description: Call to crypt(salt="$1$TW") at address 0x20b34
+[-] Correctness: UN
+[-] Statements:
+0x20b34 | Call(0xb0b4<32>, <SimCCARM>: [0x102<32>, r8<4>, Call (target: 0xaf58<32>, prototype: (int (32 bits), int (32 bits)) -> int (32 bits), args: [BaseOffset(stack_base, -224), 0x499d0<32>])], ret: r0<4>, fp_ret: no-fp-ret-value)
+
+Misuses #8
+[-] Filename: /home/bluesadi/dev/Yasat/examples/tmp/logic
+[-] Description: Call to crypt(salt="$1$TW") at address 0x20e48
+[-] Correctness: UN
+[-] Statements:
+0x20e48 | Call(0xb738<32>, <SimCCARM>: [Call (target: 0xaf58<32>, prototype: (int (32 bits), int (32 bits)) -> None, args: [0x49a32<32>, 0x499d0<32>]), Add(r4<4>, 0xbe<32>)], ret: r0<4>, fp_ret: no-fp-ret-value)
+
+Misuses #9
+[-] Filename: /home/bluesadi/dev/Yasat/examples/tmp/logic
+[-] Description: Call to crypt(salt="$1$TW") at address 0x214fc
+[-] Correctness: UN
+[-] Statements:
+0x214fc | Call(0xaf58<32>, <SimCCARM>: [BaseOffset(stack_base, -616), 0x499d0<32>], ret: no-ret-value, fp_ret: no-fp-ret-value)
+
+Misuses #10
+[-] Filename: /home/bluesadi/dev/Yasat/examples/tmp/logic
+[-] Description: Call to crypt(salt="$1$TW") at address 0x21e6c
+[-] Correctness: UN
+[-] Statements:
+0x21e6c | Call(0xb738<32>, <SimCCARM>: [Call (target: 0xaf58<32>, prototype: (int (32 bits), int (32 bits)) -> None, args: [BaseOffset(stack_base, -890), 0x499d0<32>]), r5<4>], ret: r0<4>, fp_ret: no-fp-ret-value)
+
+Misuses #11
+[-] Filename: /home/bluesadi/dev/Yasat/examples/tmp/logic
+[-] Description: Call to crypt(salt="$1$TW") at address 0x21e8c
+[-] Correctness: UN
+[-] Statements:
+0x21e8c | Call(0xb738<32>, <SimCCARM>: [Call (target: 0xaf58<32>, prototype: (int (32 bits), int (32 bits)) -> None, args: [BaseOffset(stack_base, -825), 0x499d0<32>]), r7<4>], ret: r0<4>, fp_ret: no-fp-ret-value)
+
+Misuses #12
+[-] Filename: /home/bluesadi/dev/Yasat/examples/tmp/logic
+[-] Description: Call to crypt(salt="$1$TW") at address 0x21eb4
+[-] Correctness: UN
+[-] Statements:
+0x21eb4 | Call(0xb81c<32>, <SimCCARM>: [0x49c86<32>, r0<4>, r0<4>, Call (target: 0xaf58<32>, prototype: (int (32 bits), int (32 bits)) -> int (32 bits), args: [0x49a3e<32>, 0x499d0<32>])], ret: r0<4>, fp_ret: no-fp-ret-value)
+
+*** PBEIterationsChecker ***
+*** RSAKeySizesChecker ***
+*** ECBEncryptionChecker ***
+Misuses #1
+[-] Filename: examples/tmp/EVP_aes_128_ecb_arm
+[-] Description: Call to EVP_BytesToKey(type=Function EVP_aes_128_ecb [4195656]
+  Syscall: False
+  SP difference: 0
+  Has return: False
+  Returning: True
+  Alignment: False
+  Arguments: reg: [], stack: []
+  Blocks: [0x400548]
+  Calling convention: None) at address 0x400707
+[-] Correctness: UN
+[-] Statements:
+0x400707 | Call(0x400548<32>, <SimCCARMHF>: [Call (target: 0x400518<32>, prototype: (int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits)) -> None, args: [r0<4>, r1<4>, r2<4>, r3<4>, Load(addr=stack_base-40, size=4, endness=Iend_LE), Load(addr=stack_base-36, size=4, endness=Iend_LE), Load(addr=stack_base-32, size=4, endness=Iend_LE), Load(addr=stack_base-28, size=4, endness=Iend_LE)]), r1<4>, r2<4>, r3<4>, Load(addr=stack_base+0, size=4, endness=Iend_LE), Load(addr=stack_base+4, size=4, endness=Iend_LE), Load(addr=stack_base+8, size=4, endness=Iend_LE), Load(addr=stack_base+12, size=4, endness=Iend_LE)], ret: r0<4>, fp_ret: no-fp-ret-value)
+0x400707 | Call(0x400548<32>, <SimCCARMHF>: [Call (target: 0x400518<32>, prototype: (int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits)) -> None, args: [r0<4>, r1<4>, r2<4>, r3<4>, Load(addr=stack_base-40, size=4, endness=Iend_LE), Load(addr=stack_base-36, size=4, endness=Iend_LE), Load(addr=stack_base-32, size=4, endness=Iend_LE), Load(addr=stack_base-28, size=4, endness=Iend_LE)]), r1<4>, r2<4>, r3<4>, Load(addr=stack_base+0, size=4, endness=Iend_LE), Load(addr=stack_base+4, size=4, endness=Iend_LE), Load(addr=stack_base+8, size=4, endness=Iend_LE), Load(addr=stack_base+12, size=4, endness=Iend_LE)], ret: r0<4>, fp_ret: no-fp-ret-value)
+
+Misuses #2
+[-] Filename: examples/tmp/EVP_aes_128_ecb_arm
+[-] Description: Call to EVP_BytesToKey(type=Function EVP_aes_128_ecb [4195656]
+  Syscall: False
+  SP difference: 0
+  Has return: False
+  Returning: True
+  Alignment: False
+  Arguments: reg: [], stack: []
+  Blocks: [0x400548]
+  Calling convention: None) at address 0x40073f
+[-] Correctness: UN
+[-] Statements:
+0x40073f | Call(0x400548<32>, <SimCCARMHF>: [Call (target: 0x400518<32>, prototype: (int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits)) -> None, args: [r0<4>, r5<4>, r6<4>, r3<4>, Load(addr=stack_base-40, size=4, endness=Iend_LE), Load(addr=stack_base-36, size=4, endness=Iend_LE), Load(addr=stack_base-32, size=4, endness=Iend_LE), Load(addr=stack_base-28, size=4, endness=Iend_LE)]), r1<4>, r2<4>, r3<4>, Load(addr=stack_base+0, size=4, endness=Iend_LE), Load(addr=stack_base+4, size=4, endness=Iend_LE), Load(addr=stack_base+8, size=4, endness=Iend_LE), Load(addr=stack_base+12, size=4, endness=Iend_LE)], ret: r0<4>, fp_ret: no-fp-ret-value)
+0x40073f | Call(0x400548<32>, <SimCCARMHF>: [Call (target: 0x400518<32>, prototype: (int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits)) -> None, args: [r0<4>, r5<4>, r6<4>, r3<4>, Load(addr=stack_base-40, size=4, endness=Iend_LE), Load(addr=stack_base-36, size=4, endness=Iend_LE), Load(addr=stack_base-32, size=4, endness=Iend_LE), Load(addr=stack_base-28, size=4, endness=Iend_LE)]), r1<4>, r2<4>, r3<4>, Load(addr=stack_base+0, size=4, endness=Iend_LE), Load(addr=stack_base+4, size=4, endness=Iend_LE), Load(addr=stack_base+8, size=4, endness=Iend_LE), Load(addr=stack_base+12, size=4, endness=Iend_LE)], ret: r0<4>, fp_ret: no-fp-ret-value)
+
+Misuses #3
+[-] Filename: examples/tmp/EVP_aes_128_ecb_arm
+[-] Description: Call to EVP_BytesToKey(type=Function EVP_aes_128_ecb [4195656]
+  Syscall: False
+  SP difference: 0
+  Has return: False
+  Returning: True
+  Alignment: False
+  Arguments: reg: [], stack: []
+  Blocks: [0x400548]
+  Calling convention: None) at address 0x400777
+[-] Correctness: UN
+[-] Statements:
+0x400777 | Call(0x400548<32>, <SimCCARMHF>: [Call (target: 0x400518<32>, prototype: (int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits)) -> None, args: [r0<4>, r5<4>, r6<4>, r3<4>, Load(addr=stack_base-40, size=4, endness=Iend_LE), Load(addr=stack_base-36, size=4, endness=Iend_LE), Load(addr=stack_base-32, size=4, endness=Iend_LE), Load(addr=stack_base-28, size=4, endness=Iend_LE)]), r1<4>, r2<4>, r3<4>, Load(addr=stack_base+0, size=4, endness=Iend_LE), Load(addr=stack_base+4, size=4, endness=Iend_LE), Load(addr=stack_base+8, size=4, endness=Iend_LE), Load(addr=stack_base+12, size=4, endness=Iend_LE)], ret: r0<4>, fp_ret: no-fp-ret-value)
+0x400777 | Call(0x400548<32>, <SimCCARMHF>: [Call (target: 0x400518<32>, prototype: (int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits)) -> None, args: [r0<4>, r5<4>, r6<4>, r3<4>, Load(addr=stack_base-40, size=4, endness=Iend_LE), Load(addr=stack_base-36, size=4, endness=Iend_LE), Load(addr=stack_base-32, size=4, endness=Iend_LE), Load(addr=stack_base-28, size=4, endness=Iend_LE)]), r1<4>, r2<4>, r3<4>, Load(addr=stack_base+0, size=4, endness=Iend_LE), Load(addr=stack_base+4, size=4, endness=Iend_LE), Load(addr=stack_base+8, size=4, endness=Iend_LE), Load(addr=stack_base+12, size=4, endness=Iend_LE)], ret: r0<4>, fp_ret: no-fp-ret-value)
+
+Misuses #4
+[-] Filename: examples/tmp/EVP_aes_128_ecb_arm
+[-] Description: Call to EVP_BytesToKey(type=Function EVP_aes_128_ecb [4195656]
+  Syscall: False
+  SP difference: 0
+  Has return: False
+  Returning: True
+  Alignment: False
+  Arguments: reg: [], stack: []
+  Blocks: [0x400548]
+  Calling convention: None) at address 0x4007af
+[-] Correctness: UN
+[-] Statements:
+0x4007af | Call(0x400548<32>, <SimCCARMHF>: [Call (target: 0x400518<32>, prototype: (int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits)) -> None, args: [r0<4>, r5<4>, r6<4>, r3<4>, Load(addr=stack_base-40, size=4, endness=Iend_LE), Load(addr=stack_base-36, size=4, endness=Iend_LE), Load(addr=stack_base-32, size=4, endness=Iend_LE), Load(addr=stack_base-28, size=4, endness=Iend_LE)]), r1<4>, r2<4>, r3<4>, Load(addr=stack_base+0, size=4, endness=Iend_LE), Load(addr=stack_base+4, size=4, endness=Iend_LE), Load(addr=stack_base+8, size=4, endness=Iend_LE), Load(addr=stack_base+12, size=4, endness=Iend_LE)], ret: r0<4>, fp_ret: no-fp-ret-value)
+0x4007af | Call(0x400548<32>, <SimCCARMHF>: [Call (target: 0x400518<32>, prototype: (int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits)) -> None, args: [r0<4>, r5<4>, r6<4>, r3<4>, Load(addr=stack_base-40, size=4, endness=Iend_LE), Load(addr=stack_base-36, size=4, endness=Iend_LE), Load(addr=stack_base-32, size=4, endness=Iend_LE), Load(addr=stack_base-28, size=4, endness=Iend_LE)]), r1<4>, r2<4>, r3<4>, Load(addr=stack_base+0, size=4, endness=Iend_LE), Load(addr=stack_base+4, size=4, endness=Iend_LE), Load(addr=stack_base+8, size=4, endness=Iend_LE), Load(addr=stack_base+12, size=4, endness=Iend_LE)], ret: r0<4>, fp_ret: no-fp-ret-value)
+
+Misuses #5
+[-] Filename: examples/tmp/EVP_aes_128_ecb_arm
+[-] Description: Call to EVP_BytesToKey(type=Function EVP_aes_128_ecb [4195656]
+  Syscall: False
+  SP difference: 0
+  Has return: False
+  Returning: True
+  Alignment: False
+  Arguments: reg: [], stack: []
+  Blocks: [0x400548]
+  Calling convention: None) at address 0x4007e7
+[-] Correctness: UN
+[-] Statements:
+0x4007e7 | Call(0x400548<32>, <SimCCARMHF>: [Call (target: 0x400518<32>, prototype: (int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits)) -> None, args: [r0<4>, r5<4>, r6<4>, r3<4>, Load(addr=stack_base-40, size=4, endness=Iend_LE), Load(addr=stack_base-36, size=4, endness=Iend_LE), Load(addr=stack_base-32, size=4, endness=Iend_LE), Load(addr=stack_base-28, size=4, endness=Iend_LE)]), r1<4>, r2<4>, r3<4>, Load(addr=stack_base+0, size=4, endness=Iend_LE), Load(addr=stack_base+4, size=4, endness=Iend_LE), Load(addr=stack_base+8, size=4, endness=Iend_LE), Load(addr=stack_base+12, size=4, endness=Iend_LE)], ret: r0<4>, fp_ret: no-fp-ret-value)
+0x4007e7 | Call(0x400548<32>, <SimCCARMHF>: [Call (target: 0x400518<32>, prototype: (int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits)) -> None, args: [r0<4>, r5<4>, r6<4>, r3<4>, Load(addr=stack_base-40, size=4, endness=Iend_LE), Load(addr=stack_base-36, size=4, endness=Iend_LE), Load(addr=stack_base-32, size=4, endness=Iend_LE), Load(addr=stack_base-28, size=4, endness=Iend_LE)]), r1<4>, r2<4>, r3<4>, Load(addr=stack_base+0, size=4, endness=Iend_LE), Load(addr=stack_base+4, size=4, endness=Iend_LE), Load(addr=stack_base+8, size=4, endness=Iend_LE), Load(addr=stack_base+12, size=4, endness=Iend_LE)], ret: r0<4>, fp_ret: no-fp-ret-value)
+
+Misuses #6
+[-] Filename: examples/tmp/EVP_aes_128_ecb_arm
+[-] Description: Call to EVP_BytesToKey(type=Function EVP_aes_128_ecb [4195656]
+  Syscall: False
+  SP difference: 0
+  Has return: False
+  Returning: True
+  Alignment: False
+  Arguments: reg: [], stack: []
+  Blocks: [0x400548]
+  Calling convention: None) at address 0x40081f
+[-] Correctness: UN
+[-] Statements:
+0x40081f | Call(0x400548<32>, <SimCCARMHF>: [Call (target: 0x400518<32>, prototype: (int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits)) -> None, args: [r0<4>, r5<4>, r6<4>, r3<4>, Load(addr=stack_base-40, size=4, endness=Iend_LE), Load(addr=stack_base-36, size=4, endness=Iend_LE), Load(addr=stack_base-32, size=4, endness=Iend_LE), Load(addr=stack_base-28, size=4, endness=Iend_LE)]), r1<4>, r2<4>, r3<4>, Load(addr=stack_base+0, size=4, endness=Iend_LE), Load(addr=stack_base+4, size=4, endness=Iend_LE), Load(addr=stack_base+8, size=4, endness=Iend_LE), Load(addr=stack_base+12, size=4, endness=Iend_LE)], ret: r0<4>, fp_ret: no-fp-ret-value)
+0x40081f | Call(0x400548<32>, <SimCCARMHF>: [Call (target: 0x400518<32>, prototype: (int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits)) -> None, args: [r0<4>, r5<4>, r6<4>, r3<4>, Load(addr=stack_base-40, size=4, endness=Iend_LE), Load(addr=stack_base-36, size=4, endness=Iend_LE), Load(addr=stack_base-32, size=4, endness=Iend_LE), Load(addr=stack_base-28, size=4, endness=Iend_LE)]), r1<4>, r2<4>, r3<4>, Load(addr=stack_base+0, size=4, endness=Iend_LE), Load(addr=stack_base+4, size=4, endness=Iend_LE), Load(addr=stack_base+8, size=4, endness=Iend_LE), Load(addr=stack_base+12, size=4, endness=Iend_LE)], ret: r0<4>, fp_ret: no-fp-ret-value)
+
+Misuses #7
+[-] Filename: examples/tmp/EVP_aes_128_ecb_arm
+[-] Description: Call to EVP_BytesToKey(type=Function EVP_aes_128_ecb [4195656]
+  Syscall: False
+  SP difference: 0
+  Has return: False
+  Returning: True
+  Alignment: False
+  Arguments: reg: [], stack: []
+  Blocks: [0x400548]
+  Calling convention: None) at address 0x400857
+[-] Correctness: UN
+[-] Statements:
+0x400857 | Call(0x400548<32>, <SimCCARMHF>: [Call (target: 0x400518<32>, prototype: (int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits)) -> None, args: [r0<4>, r5<4>, r6<4>, r3<4>, Load(addr=stack_base-40, size=4, endness=Iend_LE), Load(addr=stack_base-36, size=4, endness=Iend_LE), Load(addr=stack_base-32, size=4, endness=Iend_LE), Load(addr=stack_base-28, size=4, endness=Iend_LE)]), r1<4>, r2<4>, r3<4>, Load(addr=stack_base+0, size=4, endness=Iend_LE), Load(addr=stack_base+4, size=4, endness=Iend_LE), Load(addr=stack_base+8, size=4, endness=Iend_LE), Load(addr=stack_base+12, size=4, endness=Iend_LE)], ret: r0<4>, fp_ret: no-fp-ret-value)
+0x400857 | Call(0x400548<32>, <SimCCARMHF>: [Call (target: 0x400518<32>, prototype: (int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits)) -> None, args: [r0<4>, r5<4>, r6<4>, r3<4>, Load(addr=stack_base-40, size=4, endness=Iend_LE), Load(addr=stack_base-36, size=4, endness=Iend_LE), Load(addr=stack_base-32, size=4, endness=Iend_LE), Load(addr=stack_base-28, size=4, endness=Iend_LE)]), r1<4>, r2<4>, r3<4>, Load(addr=stack_base+0, size=4, endness=Iend_LE), Load(addr=stack_base+4, size=4, endness=Iend_LE), Load(addr=stack_base+8, size=4, endness=Iend_LE), Load(addr=stack_base+12, size=4, endness=Iend_LE)], ret: r0<4>, fp_ret: no-fp-ret-value)
+
+Misuses #8
+[-] Filename: examples/tmp/EVP_aes_128_ecb_arm
+[-] Description: Call to EVP_BytesToKey(type=Function EVP_aes_128_ecb [4195656]
+  Syscall: False
+  SP difference: 0
+  Has return: False
+  Returning: True
+  Alignment: False
+  Arguments: reg: [], stack: []
+  Blocks: [0x400548]
+  Calling convention: None) at address 0x40088f
+[-] Correctness: UN
+[-] Statements:
+0x40088f | Call(0x400548<32>, <SimCCARMHF>: [Call (target: 0x400518<32>, prototype: (int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits)) -> None, args: [r0<4>, r5<4>, r6<4>, r3<4>, Load(addr=stack_base-40, size=4, endness=Iend_LE), Load(addr=stack_base-36, size=4, endness=Iend_LE), Load(addr=stack_base-32, size=4, endness=Iend_LE), Load(addr=stack_base-28, size=4, endness=Iend_LE)]), r1<4>, r2<4>, r3<4>, Load(addr=stack_base+0, size=4, endness=Iend_LE), Load(addr=stack_base+4, size=4, endness=Iend_LE), Load(addr=stack_base+8, size=4, endness=Iend_LE), Load(addr=stack_base+12, size=4, endness=Iend_LE)], ret: r0<4>, fp_ret: no-fp-ret-value)
+0x40088f | Call(0x400548<32>, <SimCCARMHF>: [Call (target: 0x400518<32>, prototype: (int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits)) -> None, args: [r0<4>, r5<4>, r6<4>, r3<4>, Load(addr=stack_base-40, size=4, endness=Iend_LE), Load(addr=stack_base-36, size=4, endness=Iend_LE), Load(addr=stack_base-32, size=4, endness=Iend_LE), Load(addr=stack_base-28, size=4, endness=Iend_LE)]), r1<4>, r2<4>, r3<4>, Load(addr=stack_base+0, size=4, endness=Iend_LE), Load(addr=stack_base+4, size=4, endness=Iend_LE), Load(addr=stack_base+8, size=4, endness=Iend_LE), Load(addr=stack_base+12, size=4, endness=Iend_LE)], ret: r0<4>, fp_ret: no-fp-ret-value)
+
+Misuses #9
+[-] Filename: examples/tmp/EVP_aes_128_ecb_arm
+[-] Description: Call to EVP_BytesToKey(type=Function EVP_aes_128_ecb [4195656]
+  Syscall: False
+  SP difference: 0
+  Has return: False
+  Returning: True
+  Alignment: False
+  Arguments: reg: [], stack: []
+  Blocks: [0x400548]
+  Calling convention: None) at address 0x4008c7
+[-] Correctness: UN
+[-] Statements:
+0x4008c7 | Call(0x400548<32>, <SimCCARMHF>: [Call (target: 0x400518<32>, prototype: (int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits)) -> None, args: [r0<4>, r5<4>, r6<4>, r3<4>, Load(addr=stack_base-40, size=4, endness=Iend_LE), Load(addr=stack_base-36, size=4, endness=Iend_LE), Load(addr=stack_base-32, size=4, endness=Iend_LE), Load(addr=stack_base-28, size=4, endness=Iend_LE)]), r1<4>, r2<4>, r3<4>, Load(addr=stack_base+0, size=4, endness=Iend_LE), Load(addr=stack_base+4, size=4, endness=Iend_LE), Load(addr=stack_base+8, size=4, endness=Iend_LE), Load(addr=stack_base+12, size=4, endness=Iend_LE)], ret: r0<4>, fp_ret: no-fp-ret-value)
+0x4008c7 | Call(0x400548<32>, <SimCCARMHF>: [Call (target: 0x400518<32>, prototype: (int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits)) -> None, args: [r0<4>, r5<4>, r6<4>, r3<4>, Load(addr=stack_base-40, size=4, endness=Iend_LE), Load(addr=stack_base-36, size=4, endness=Iend_LE), Load(addr=stack_base-32, size=4, endness=Iend_LE), Load(addr=stack_base-28, size=4, endness=Iend_LE)]), r1<4>, r2<4>, r3<4>, Load(addr=stack_base+0, size=4, endness=Iend_LE), Load(addr=stack_base+4, size=4, endness=Iend_LE), Load(addr=stack_base+8, size=4, endness=Iend_LE), Load(addr=stack_base+12, size=4, endness=Iend_LE)], ret: r0<4>, fp_ret: no-fp-ret-value)
+
+Misuses #10
+[-] Filename: examples/tmp/EVP_aes_128_ecb_arm
+[-] Description: Call to EVP_BytesToKey(type=Function EVP_aes_128_ecb [4195656]
+  Syscall: False
+  SP difference: 0
+  Has return: False
+  Returning: True
+  Alignment: False
+  Arguments: reg: [], stack: []
+  Blocks: [0x400548]
+  Calling convention: None) at address 0x4008ff
+[-] Correctness: UN
+[-] Statements:
+0x4008ff | Call(0x400548<32>, <SimCCARMHF>: [Call (target: 0x400518<32>, prototype: (int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits)) -> None, args: [r0<4>, r5<4>, r6<4>, r3<4>, Load(addr=stack_base-40, size=4, endness=Iend_LE), Load(addr=stack_base-36, size=4, endness=Iend_LE), Load(addr=stack_base-32, size=4, endness=Iend_LE), Load(addr=stack_base-28, size=4, endness=Iend_LE)]), r1<4>, r2<4>, r3<4>, Load(addr=stack_base+0, size=4, endness=Iend_LE), Load(addr=stack_base+4, size=4, endness=Iend_LE), Load(addr=stack_base+8, size=4, endness=Iend_LE), Load(addr=stack_base+12, size=4, endness=Iend_LE)], ret: r0<4>, fp_ret: no-fp-ret-value)
+0x4008ff | Call(0x400548<32>, <SimCCARMHF>: [Call (target: 0x400518<32>, prototype: (int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits)) -> None, args: [r0<4>, r5<4>, r6<4>, r3<4>, Load(addr=stack_base-40, size=4, endness=Iend_LE), Load(addr=stack_base-36, size=4, endness=Iend_LE), Load(addr=stack_base-32, size=4, endness=Iend_LE), Load(addr=stack_base-28, size=4, endness=Iend_LE)]), r1<4>, r2<4>, r3<4>, Load(addr=stack_base+0, size=4, endness=Iend_LE), Load(addr=stack_base+4, size=4, endness=Iend_LE), Load(addr=stack_base+8, size=4, endness=Iend_LE), Load(addr=stack_base+12, size=4, endness=Iend_LE)], ret: r0<4>, fp_ret: no-fp-ret-value)
+
+Misuses #11
+[-] Filename: examples/tmp/EVP_aes_128_ecb_arm
+[-] Description: Call to EVP_BytesToKey(type=Function EVP_aes_128_ecb [4195656]
+  Syscall: False
+  SP difference: 0
+  Has return: False
+  Returning: True
+  Alignment: False
+  Arguments: reg: [], stack: []
+  Blocks: [0x400548]
+  Calling convention: None) at address 0x400937
+[-] Correctness: UN
+[-] Statements:
+0x400937 | Call(0x400548<32>, <SimCCARMHF>: [Call (target: 0x400518<32>, prototype: (int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits)) -> None, args: [r0<4>, r5<4>, r6<4>, r3<4>, Load(addr=stack_base-40, size=4, endness=Iend_LE), Load(addr=stack_base-36, size=4, endness=Iend_LE), Load(addr=stack_base-32, size=4, endness=Iend_LE), Load(addr=stack_base-28, size=4, endness=Iend_LE)]), r1<4>, r2<4>, r3<4>, Load(addr=stack_base+0, size=4, endness=Iend_LE), Load(addr=stack_base+4, size=4, endness=Iend_LE), Load(addr=stack_base+8, size=4, endness=Iend_LE), Load(addr=stack_base+12, size=4, endness=Iend_LE)], ret: r0<4>, fp_ret: no-fp-ret-value)
+0x400937 | Call(0x400548<32>, <SimCCARMHF>: [Call (target: 0x400518<32>, prototype: (int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits)) -> None, args: [r0<4>, r5<4>, r6<4>, r3<4>, Load(addr=stack_base-40, size=4, endness=Iend_LE), Load(addr=stack_base-36, size=4, endness=Iend_LE), Load(addr=stack_base-32, size=4, endness=Iend_LE), Load(addr=stack_base-28, size=4, endness=Iend_LE)]), r1<4>, r2<4>, r3<4>, Load(addr=stack_base+0, size=4, endness=Iend_LE), Load(addr=stack_base+4, size=4, endness=Iend_LE), Load(addr=stack_base+8, size=4, endness=Iend_LE), Load(addr=stack_base+12, size=4, endness=Iend_LE)], ret: r0<4>, fp_ret: no-fp-ret-value)
+
+Misuses #12
+[-] Filename: examples/tmp/EVP_aes_128_ecb_arm
+[-] Description: Call to EVP_BytesToKey(type=Function EVP_aes_128_ecb [4195656]
+  Syscall: False
+  SP difference: 0
+  Has return: False
+  Returning: True
+  Alignment: False
+  Arguments: reg: [], stack: []
+  Blocks: [0x400548]
+  Calling convention: None) at address 0x40096f
+[-] Correctness: UN
+[-] Statements:
+0x40096f | Call(0x400548<32>, <SimCCARMHF>: [Call (target: 0x400518<32>, prototype: (int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits)) -> None, args: [r0<4>, r5<4>, r6<4>, r3<4>, Load(addr=stack_base-40, size=4, endness=Iend_LE), Load(addr=stack_base-36, size=4, endness=Iend_LE), Load(addr=stack_base-32, size=4, endness=Iend_LE), Load(addr=stack_base-28, size=4, endness=Iend_LE)]), r1<4>, r2<4>, r3<4>, Load(addr=stack_base+0, size=4, endness=Iend_LE), Load(addr=stack_base+4, size=4, endness=Iend_LE), Load(addr=stack_base+8, size=4, endness=Iend_LE), Load(addr=stack_base+12, size=4, endness=Iend_LE)], ret: r0<4>, fp_ret: no-fp-ret-value)
+0x40096f | Call(0x400548<32>, <SimCCARMHF>: [Call (target: 0x400518<32>, prototype: (int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits)) -> None, args: [r0<4>, r5<4>, r6<4>, r3<4>, Load(addr=stack_base-40, size=4, endness=Iend_LE), Load(addr=stack_base-36, size=4, endness=Iend_LE), Load(addr=stack_base-32, size=4, endness=Iend_LE), Load(addr=stack_base-28, size=4, endness=Iend_LE)]), r1<4>, r2<4>, r3<4>, Load(addr=stack_base+0, size=4, endness=Iend_LE), Load(addr=stack_base+4, size=4, endness=Iend_LE), Load(addr=stack_base+8, size=4, endness=Iend_LE), Load(addr=stack_base+12, size=4, endness=Iend_LE)], ret: r0<4>, fp_ret: no-fp-ret-value)
+
+Misuses #13
+[-] Filename: examples/tmp/EVP_aes_128_ecb_arm
+[-] Description: Call to EVP_BytesToKey(type=Function EVP_aes_128_ecb [4195656]
+  Syscall: False
+  SP difference: 0
+  Has return: False
+  Returning: True
+  Alignment: False
+  Arguments: reg: [], stack: []
+  Blocks: [0x400548]
+  Calling convention: None) at address 0x4009a7
+[-] Correctness: UN
+[-] Statements:
+0x4009a7 | Call(0x400548<32>, <SimCCARMHF>: [Call (target: 0x400518<32>, prototype: (int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits)) -> None, args: [r0<4>, r5<4>, r6<4>, r3<4>, Load(addr=stack_base-40, size=4, endness=Iend_LE), Load(addr=stack_base-36, size=4, endness=Iend_LE), Load(addr=stack_base-32, size=4, endness=Iend_LE), Load(addr=stack_base-28, size=4, endness=Iend_LE)]), r1<4>, r2<4>, r3<4>, Load(addr=stack_base+0, size=4, endness=Iend_LE), Load(addr=stack_base+4, size=4, endness=Iend_LE), Load(addr=stack_base+8, size=4, endness=Iend_LE), Load(addr=stack_base+12, size=4, endness=Iend_LE)], ret: r0<4>, fp_ret: no-fp-ret-value)
+0x4009a7 | Call(0x400548<32>, <SimCCARMHF>: [Call (target: 0x400518<32>, prototype: (int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits)) -> None, args: [r0<4>, r5<4>, r6<4>, r3<4>, Load(addr=stack_base-40, size=4, endness=Iend_LE), Load(addr=stack_base-36, size=4, endness=Iend_LE), Load(addr=stack_base-32, size=4, endness=Iend_LE), Load(addr=stack_base-28, size=4, endness=Iend_LE)]), r1<4>, r2<4>, r3<4>, Load(addr=stack_base+0, size=4, endness=Iend_LE), Load(addr=stack_base+4, size=4, endness=Iend_LE), Load(addr=stack_base+8, size=4, endness=Iend_LE), Load(addr=stack_base+12, size=4, endness=Iend_LE)], ret: r0<4>, fp_ret: no-fp-ret-value)
+
+Misuses #14
+[-] Filename: examples/tmp/EVP_aes_128_ecb_arm
+[-] Description: Call to EVP_BytesToKey(type=Function EVP_aes_128_ecb [4195656]
+  Syscall: False
+  SP difference: 0
+  Has return: False
+  Returning: True
+  Alignment: False
+  Arguments: reg: [], stack: []
+  Blocks: [0x400548]
+  Calling convention: None) at address 0x4009df
+[-] Correctness: UN
+[-] Statements:
+0x4009df | Call(0x400548<32>, <SimCCARMHF>: [Call (target: 0x400518<32>, prototype: (int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits)) -> None, args: [r0<4>, r5<4>, r6<4>, r3<4>, Load(addr=stack_base-40, size=4, endness=Iend_LE), Load(addr=stack_base-36, size=4, endness=Iend_LE), Load(addr=stack_base-32, size=4, endness=Iend_LE), Load(addr=stack_base-28, size=4, endness=Iend_LE)]), r1<4>, r2<4>, r3<4>, Load(addr=stack_base+0, size=4, endness=Iend_LE), Load(addr=stack_base+4, size=4, endness=Iend_LE), Load(addr=stack_base+8, size=4, endness=Iend_LE), Load(addr=stack_base+12, size=4, endness=Iend_LE)], ret: r0<4>, fp_ret: no-fp-ret-value)
+0x4009df | Call(0x400548<32>, <SimCCARMHF>: [Call (target: 0x400518<32>, prototype: (int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits)) -> None, args: [r0<4>, r5<4>, r6<4>, r3<4>, Load(addr=stack_base-40, size=4, endness=Iend_LE), Load(addr=stack_base-36, size=4, endness=Iend_LE), Load(addr=stack_base-32, size=4, endness=Iend_LE), Load(addr=stack_base-28, size=4, endness=Iend_LE)]), r1<4>, r2<4>, r3<4>, Load(addr=stack_base+0, size=4, endness=Iend_LE), Load(addr=stack_base+4, size=4, endness=Iend_LE), Load(addr=stack_base+8, size=4, endness=Iend_LE), Load(addr=stack_base+12, size=4, endness=Iend_LE)], ret: r0<4>, fp_ret: no-fp-ret-value)
+
+Misuses #15
+[-] Filename: examples/tmp/EVP_aes_128_ecb_arm
+[-] Description: Call to EVP_BytesToKey(type=Function EVP_aes_128_ecb [4195656]
+  Syscall: False
+  SP difference: 0
+  Has return: False
+  Returning: True
+  Alignment: False
+  Arguments: reg: [], stack: []
+  Blocks: [0x400548]
+  Calling convention: None) at address 0x400a17
+[-] Correctness: UN
+[-] Statements:
+0x400a17 | Call(0x400548<32>, <SimCCARMHF>: [Call (target: 0x400518<32>, prototype: (int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits)) -> None, args: [r0<4>, r5<4>, r6<4>, r3<4>, Load(addr=stack_base-40, size=4, endness=Iend_LE), Load(addr=stack_base-36, size=4, endness=Iend_LE), Load(addr=stack_base-32, size=4, endness=Iend_LE), Load(addr=stack_base-28, size=4, endness=Iend_LE)]), r1<4>, r2<4>, r3<4>, Load(addr=stack_base+0, size=4, endness=Iend_LE), Load(addr=stack_base+4, size=4, endness=Iend_LE), Load(addr=stack_base+8, size=4, endness=Iend_LE), Load(addr=stack_base+12, size=4, endness=Iend_LE)], ret: r0<4>, fp_ret: no-fp-ret-value)
+0x400a17 | Call(0x400548<32>, <SimCCARMHF>: [Call (target: 0x400518<32>, prototype: (int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits)) -> None, args: [r0<4>, r5<4>, r6<4>, r3<4>, Load(addr=stack_base-40, size=4, endness=Iend_LE), Load(addr=stack_base-36, size=4, endness=Iend_LE), Load(addr=stack_base-32, size=4, endness=Iend_LE), Load(addr=stack_base-28, size=4, endness=Iend_LE)]), r1<4>, r2<4>, r3<4>, Load(addr=stack_base+0, size=4, endness=Iend_LE), Load(addr=stack_base+4, size=4, endness=Iend_LE), Load(addr=stack_base+8, size=4, endness=Iend_LE), Load(addr=stack_base+12, size=4, endness=Iend_LE)], ret: r0<4>, fp_ret: no-fp-ret-value)
+
+Misuses #16
+[-] Filename: examples/tmp/EVP_aes_128_ecb_arm
+[-] Description: Call to EVP_BytesToKey(type=Function EVP_aes_128_ecb [4195656]
+  Syscall: False
+  SP difference: 0
+  Has return: False
+  Returning: True
+  Alignment: False
+  Arguments: reg: [], stack: []
+  Blocks: [0x400548]
+  Calling convention: None) at address 0x400a4f
+[-] Correctness: UN
+[-] Statements:
+0x400a4f | Call(0x400548<32>, <SimCCARMHF>: [Call (target: 0x400518<32>, prototype: (int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits)) -> None, args: [r0<4>, r5<4>, r6<4>, r3<4>, Load(addr=stack_base-40, size=4, endness=Iend_LE), Load(addr=stack_base-36, size=4, endness=Iend_LE), Load(addr=stack_base-32, size=4, endness=Iend_LE), Load(addr=stack_base-28, size=4, endness=Iend_LE)]), r1<4>, r2<4>, r3<4>, Load(addr=stack_base+0, size=4, endness=Iend_LE), Load(addr=stack_base+4, size=4, endness=Iend_LE), Load(addr=stack_base+8, size=4, endness=Iend_LE), Load(addr=stack_base+12, size=4, endness=Iend_LE)], ret: r0<4>, fp_ret: no-fp-ret-value)
+0x400a4f | Call(0x400548<32>, <SimCCARMHF>: [Call (target: 0x400518<32>, prototype: (int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits)) -> None, args: [r0<4>, r5<4>, r6<4>, r3<4>, Load(addr=stack_base-40, size=4, endness=Iend_LE), Load(addr=stack_base-36, size=4, endness=Iend_LE), Load(addr=stack_base-32, size=4, endness=Iend_LE), Load(addr=stack_base-28, size=4, endness=Iend_LE)]), r1<4>, r2<4>, r3<4>, Load(addr=stack_base+0, size=4, endness=Iend_LE), Load(addr=stack_base+4, size=4, endness=Iend_LE), Load(addr=stack_base+8, size=4, endness=Iend_LE), Load(addr=stack_base+12, size=4, endness=Iend_LE)], ret: r0<4>, fp_ret: no-fp-ret-value)
+
+Misuses #17
+[-] Filename: examples/tmp/EVP_aes_128_ecb_arm
+[-] Description: Call to EVP_BytesToKey(type=Function EVP_aes_128_ecb [4195656]
+  Syscall: False
+  SP difference: 0
+  Has return: False
+  Returning: True
+  Alignment: False
+  Arguments: reg: [], stack: []
+  Blocks: [0x400548]
+  Calling convention: None) at address 0x400a87
+[-] Correctness: UN
+[-] Statements:
+0x400a87 | Call(0x400548<32>, <SimCCARMHF>: [Call (target: 0x400518<32>, prototype: (int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits)) -> None, args: [r0<4>, r5<4>, r6<4>, r3<4>, Load(addr=stack_base-40, size=4, endness=Iend_LE), Load(addr=stack_base-36, size=4, endness=Iend_LE), Load(addr=stack_base-32, size=4, endness=Iend_LE), Load(addr=stack_base-28, size=4, endness=Iend_LE)]), r1<4>, r2<4>, r3<4>, Load(addr=stack_base+0, size=4, endness=Iend_LE), Load(addr=stack_base+4, size=4, endness=Iend_LE), Load(addr=stack_base+8, size=4, endness=Iend_LE), Load(addr=stack_base+12, size=4, endness=Iend_LE)], ret: r0<4>, fp_ret: no-fp-ret-value)
+0x400a87 | Call(0x400548<32>, <SimCCARMHF>: [Call (target: 0x400518<32>, prototype: (int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits)) -> None, args: [r0<4>, r5<4>, r6<4>, r3<4>, Load(addr=stack_base-40, size=4, endness=Iend_LE), Load(addr=stack_base-36, size=4, endness=Iend_LE), Load(addr=stack_base-32, size=4, endness=Iend_LE), Load(addr=stack_base-28, size=4, endness=Iend_LE)]), r1<4>, r2<4>, r3<4>, Load(addr=stack_base+0, size=4, endness=Iend_LE), Load(addr=stack_base+4, size=4, endness=Iend_LE), Load(addr=stack_base+8, size=4, endness=Iend_LE), Load(addr=stack_base+12, size=4, endness=Iend_LE)], ret: r0<4>, fp_ret: no-fp-ret-value)
+
+Misuses #18
+[-] Filename: examples/tmp/EVP_aes_128_ecb_arm
+[-] Description: Call to EVP_BytesToKey(type=Function EVP_aes_128_ecb [4195656]
+  Syscall: False
+  SP difference: 0
+  Has return: False
+  Returning: True
+  Alignment: False
+  Arguments: reg: [], stack: []
+  Blocks: [0x400548]
+  Calling convention: None) at address 0x400abf
+[-] Correctness: UN
+[-] Statements:
+0x400abf | Call(0x400548<32>, <SimCCARMHF>: [Call (target: 0x400518<32>, prototype: (int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits)) -> None, args: [r0<4>, r5<4>, r6<4>, r3<4>, Load(addr=stack_base-40, size=4, endness=Iend_LE), Load(addr=stack_base-36, size=4, endness=Iend_LE), Load(addr=stack_base-32, size=4, endness=Iend_LE), Load(addr=stack_base-28, size=4, endness=Iend_LE)]), r1<4>, r2<4>, r3<4>, Load(addr=stack_base+0, size=4, endness=Iend_LE), Load(addr=stack_base+4, size=4, endness=Iend_LE), Load(addr=stack_base+8, size=4, endness=Iend_LE), Load(addr=stack_base+12, size=4, endness=Iend_LE)], ret: r0<4>, fp_ret: no-fp-ret-value)
+0x400abf | Call(0x400548<32>, <SimCCARMHF>: [Call (target: 0x400518<32>, prototype: (int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits)) -> None, args: [r0<4>, r5<4>, r6<4>, r3<4>, Load(addr=stack_base-40, size=4, endness=Iend_LE), Load(addr=stack_base-36, size=4, endness=Iend_LE), Load(addr=stack_base-32, size=4, endness=Iend_LE), Load(addr=stack_base-28, size=4, endness=Iend_LE)]), r1<4>, r2<4>, r3<4>, Load(addr=stack_base+0, size=4, endness=Iend_LE), Load(addr=stack_base+4, size=4, endness=Iend_LE), Load(addr=stack_base+8, size=4, endness=Iend_LE), Load(addr=stack_base+12, size=4, endness=Iend_LE)], ret: r0<4>, fp_ret: no-fp-ret-value)
+
+Misuses #19
+[-] Filename: examples/tmp/EVP_aes_128_ecb_arm
+[-] Description: Call to EVP_BytesToKey(type=Function EVP_aes_128_ecb [4195656]
+  Syscall: False
+  SP difference: 0
+  Has return: False
+  Returning: True
+  Alignment: False
+  Arguments: reg: [], stack: []
+  Blocks: [0x400548]
+  Calling convention: None) at address 0x400af7
+[-] Correctness: UN
+[-] Statements:
+0x400af7 | Call(0x400548<32>, <SimCCARMHF>: [Call (target: 0x400518<32>, prototype: (int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits)) -> None, args: [r0<4>, r5<4>, r6<4>, r3<4>, Load(addr=stack_base-40, size=4, endness=Iend_LE), Load(addr=stack_base-36, size=4, endness=Iend_LE), Load(addr=stack_base-32, size=4, endness=Iend_LE), Load(addr=stack_base-28, size=4, endness=Iend_LE)]), r1<4>, r2<4>, r3<4>, Load(addr=stack_base+0, size=4, endness=Iend_LE), Load(addr=stack_base+4, size=4, endness=Iend_LE), Load(addr=stack_base+8, size=4, endness=Iend_LE), Load(addr=stack_base+12, size=4, endness=Iend_LE)], ret: r0<4>, fp_ret: no-fp-ret-value)
+0x400af7 | Call(0x400548<32>, <SimCCARMHF>: [Call (target: 0x400518<32>, prototype: (int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits)) -> None, args: [r0<4>, r5<4>, r6<4>, r3<4>, Load(addr=stack_base-40, size=4, endness=Iend_LE), Load(addr=stack_base-36, size=4, endness=Iend_LE), Load(addr=stack_base-32, size=4, endness=Iend_LE), Load(addr=stack_base-28, size=4, endness=Iend_LE)]), r1<4>, r2<4>, r3<4>, Load(addr=stack_base+0, size=4, endness=Iend_LE), Load(addr=stack_base+4, size=4, endness=Iend_LE), Load(addr=stack_base+8, size=4, endness=Iend_LE), Load(addr=stack_base+12, size=4, endness=Iend_LE)], ret: r0<4>, fp_ret: no-fp-ret-value)
+
+Misuses #20
+[-] Filename: examples/tmp/EVP_aes_128_ecb_arm
+[-] Description: Call to EVP_BytesToKey(type=Function EVP_aes_128_ecb [4195656]
+  Syscall: False
+  SP difference: 0
+  Has return: False
+  Returning: True
+  Alignment: False
+  Arguments: reg: [], stack: []
+  Blocks: [0x400548]
+  Calling convention: None) at address 0x400b2f
+[-] Correctness: UN
+[-] Statements:
+0x400b2f | Call(0x400548<32>, <SimCCARMHF>: [Call (target: 0x400518<32>, prototype: (int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits)) -> None, args: [r0<4>, r5<4>, r6<4>, r3<4>, Load(addr=stack_base-40, size=4, endness=Iend_LE), Load(addr=stack_base-36, size=4, endness=Iend_LE), Load(addr=stack_base-32, size=4, endness=Iend_LE), Load(addr=stack_base-28, size=4, endness=Iend_LE)]), r1<4>, r2<4>, r3<4>, Load(addr=stack_base+0, size=4, endness=Iend_LE), Load(addr=stack_base+4, size=4, endness=Iend_LE), Load(addr=stack_base+8, size=4, endness=Iend_LE), Load(addr=stack_base+12, size=4, endness=Iend_LE)], ret: r0<4>, fp_ret: no-fp-ret-value)
+0x400b2f | Call(0x400548<32>, <SimCCARMHF>: [Call (target: 0x400518<32>, prototype: (int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits)) -> None, args: [r0<4>, r5<4>, r6<4>, r3<4>, Load(addr=stack_base-40, size=4, endness=Iend_LE), Load(addr=stack_base-36, size=4, endness=Iend_LE), Load(addr=stack_base-32, size=4, endness=Iend_LE), Load(addr=stack_base-28, size=4, endness=Iend_LE)]), r1<4>, r2<4>, r3<4>, Load(addr=stack_base+0, size=4, endness=Iend_LE), Load(addr=stack_base+4, size=4, endness=Iend_LE), Load(addr=stack_base+8, size=4, endness=Iend_LE), Load(addr=stack_base+12, size=4, endness=Iend_LE)], ret: r0<4>, fp_ret: no-fp-ret-value)
+
+Misuses #21
+[-] Filename: examples/tmp/EVP_aes_128_ecb_arm
+[-] Description: Call to EVP_BytesToKey(type=Function EVP_aes_128_ecb [4195656]
+  Syscall: False
+  SP difference: 0
+  Has return: False
+  Returning: True
+  Alignment: False
+  Arguments: reg: [], stack: []
+  Blocks: [0x400548]
+  Calling convention: None) at address 0x400b67
+[-] Correctness: UN
+[-] Statements:
+0x400b67 | Call(0x400548<32>, <SimCCARMHF>: [Call (target: 0x400518<32>, prototype: (int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits)) -> None, args: [r0<4>, r5<4>, r6<4>, r3<4>, Load(addr=stack_base-40, size=4, endness=Iend_LE), Load(addr=stack_base-36, size=4, endness=Iend_LE), Load(addr=stack_base-32, size=4, endness=Iend_LE), Load(addr=stack_base-28, size=4, endness=Iend_LE)]), r1<4>, r2<4>, r3<4>, Load(addr=stack_base+0, size=4, endness=Iend_LE), Load(addr=stack_base+4, size=4, endness=Iend_LE), Load(addr=stack_base+8, size=4, endness=Iend_LE), Load(addr=stack_base+12, size=4, endness=Iend_LE)], ret: r0<4>, fp_ret: no-fp-ret-value)
+0x400b67 | Call(0x400548<32>, <SimCCARMHF>: [Call (target: 0x400518<32>, prototype: (int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits)) -> None, args: [r0<4>, r5<4>, r6<4>, r3<4>, Load(addr=stack_base-40, size=4, endness=Iend_LE), Load(addr=stack_base-36, size=4, endness=Iend_LE), Load(addr=stack_base-32, size=4, endness=Iend_LE), Load(addr=stack_base-28, size=4, endness=Iend_LE)]), r1<4>, r2<4>, r3<4>, Load(addr=stack_base+0, size=4, endness=Iend_LE), Load(addr=stack_base+4, size=4, endness=Iend_LE), Load(addr=stack_base+8, size=4, endness=Iend_LE), Load(addr=stack_base+12, size=4, endness=Iend_LE)], ret: r0<4>, fp_ret: no-fp-ret-value)
+
+Misuses #22
+[-] Filename: examples/tmp/EVP_aes_128_ecb_arm
+[-] Description: Call to EVP_BytesToKey(type=Function EVP_aes_128_ecb [4195656]
+  Syscall: False
+  SP difference: 0
+  Has return: False
+  Returning: True
+  Alignment: False
+  Arguments: reg: [], stack: []
+  Blocks: [0x400548]
+  Calling convention: None) at address 0x400b9f
+[-] Correctness: UN
+[-] Statements:
+0x400b9f | Call(0x400548<32>, <SimCCARMHF>: [Call (target: 0x400518<32>, prototype: (int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits)) -> None, args: [r0<4>, r5<4>, r6<4>, r3<4>, Load(addr=stack_base-40, size=4, endness=Iend_LE), Load(addr=stack_base-36, size=4, endness=Iend_LE), Load(addr=stack_base-32, size=4, endness=Iend_LE), Load(addr=stack_base-28, size=4, endness=Iend_LE)]), r1<4>, r2<4>, r3<4>, Load(addr=stack_base+0, size=4, endness=Iend_LE), Load(addr=stack_base+4, size=4, endness=Iend_LE), Load(addr=stack_base+8, size=4, endness=Iend_LE), Load(addr=stack_base+12, size=4, endness=Iend_LE)], ret: r0<4>, fp_ret: no-fp-ret-value)
+0x400b9f | Call(0x400548<32>, <SimCCARMHF>: [Call (target: 0x400518<32>, prototype: (int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits)) -> None, args: [r0<4>, r5<4>, r6<4>, r3<4>, Load(addr=stack_base-40, size=4, endness=Iend_LE), Load(addr=stack_base-36, size=4, endness=Iend_LE), Load(addr=stack_base-32, size=4, endness=Iend_LE), Load(addr=stack_base-28, size=4, endness=Iend_LE)]), r1<4>, r2<4>, r3<4>, Load(addr=stack_base+0, size=4, endness=Iend_LE), Load(addr=stack_base+4, size=4, endness=Iend_LE), Load(addr=stack_base+8, size=4, endness=Iend_LE), Load(addr=stack_base+12, size=4, endness=Iend_LE)], ret: r0<4>, fp_ret: no-fp-ret-value)
+
+Misuses #23
+[-] Filename: examples/tmp/EVP_aes_128_ecb_arm
+[-] Description: Call to EVP_BytesToKey(type=Function EVP_aes_128_ecb [4195656]
+  Syscall: False
+  SP difference: 0
+  Has return: False
+  Returning: True
+  Alignment: False
+  Arguments: reg: [], stack: []
+  Blocks: [0x400548]
+  Calling convention: None) at address 0x400bd7
+[-] Correctness: UN
+[-] Statements:
+0x400bd7 | Call(0x400548<32>, <SimCCARMHF>: [Call (target: 0x400518<32>, prototype: (int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits)) -> None, args: [r0<4>, r5<4>, r6<4>, r3<4>, Load(addr=stack_base-40, size=4, endness=Iend_LE), Load(addr=stack_base-36, size=4, endness=Iend_LE), Load(addr=stack_base-32, size=4, endness=Iend_LE), Load(addr=stack_base-28, size=4, endness=Iend_LE)]), r1<4>, r2<4>, r3<4>, Load(addr=stack_base+0, size=4, endness=Iend_LE), Load(addr=stack_base+4, size=4, endness=Iend_LE), Load(addr=stack_base+8, size=4, endness=Iend_LE), Load(addr=stack_base+12, size=4, endness=Iend_LE)], ret: r0<4>, fp_ret: no-fp-ret-value)
+0x400bd7 | Call(0x400548<32>, <SimCCARMHF>: [Call (target: 0x400518<32>, prototype: (int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits)) -> None, args: [r0<4>, r5<4>, r6<4>, r3<4>, Load(addr=stack_base-40, size=4, endness=Iend_LE), Load(addr=stack_base-36, size=4, endness=Iend_LE), Load(addr=stack_base-32, size=4, endness=Iend_LE), Load(addr=stack_base-28, size=4, endness=Iend_LE)]), r1<4>, r2<4>, r3<4>, Load(addr=stack_base+0, size=4, endness=Iend_LE), Load(addr=stack_base+4, size=4, endness=Iend_LE), Load(addr=stack_base+8, size=4, endness=Iend_LE), Load(addr=stack_base+12, size=4, endness=Iend_LE)], ret: r0<4>, fp_ret: no-fp-ret-value)
+
+Misuses #24
+[-] Filename: examples/tmp/EVP_aes_128_ecb_arm
+[-] Description: Call to EVP_BytesToKey(type=Function EVP_aes_128_ecb [4195656]
+  Syscall: False
+  SP difference: 0
+  Has return: False
+  Returning: True
+  Alignment: False
+  Arguments: reg: [], stack: []
+  Blocks: [0x400548]
+  Calling convention: None) at address 0x400c0f
+[-] Correctness: UN
+[-] Statements:
+0x400c0f | Call(0x400548<32>, <SimCCARMHF>: [Call (target: 0x400518<32>, prototype: (int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits)) -> None, args: [r0<4>, r5<4>, r6<4>, r3<4>, Load(addr=stack_base-40, size=4, endness=Iend_LE), Load(addr=stack_base-36, size=4, endness=Iend_LE), Load(addr=stack_base-32, size=4, endness=Iend_LE), Load(addr=stack_base-28, size=4, endness=Iend_LE)]), r1<4>, r2<4>, r3<4>, Load(addr=stack_base+0, size=4, endness=Iend_LE), Load(addr=stack_base+4, size=4, endness=Iend_LE), Load(addr=stack_base+8, size=4, endness=Iend_LE), Load(addr=stack_base+12, size=4, endness=Iend_LE)], ret: r0<4>, fp_ret: no-fp-ret-value)
+0x400c0f | Call(0x400548<32>, <SimCCARMHF>: [Call (target: 0x400518<32>, prototype: (int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits)) -> None, args: [r0<4>, r5<4>, r6<4>, r3<4>, Load(addr=stack_base-40, size=4, endness=Iend_LE), Load(addr=stack_base-36, size=4, endness=Iend_LE), Load(addr=stack_base-32, size=4, endness=Iend_LE), Load(addr=stack_base-28, size=4, endness=Iend_LE)]), r1<4>, r2<4>, r3<4>, Load(addr=stack_base+0, size=4, endness=Iend_LE), Load(addr=stack_base+4, size=4, endness=Iend_LE), Load(addr=stack_base+8, size=4, endness=Iend_LE), Load(addr=stack_base+12, size=4, endness=Iend_LE)], ret: r0<4>, fp_ret: no-fp-ret-value)
+
+Misuses #25
+[-] Filename: examples/tmp/EVP_aes_128_ecb_arm
+[-] Description: Call to EVP_BytesToKey(type=Function EVP_aes_128_ecb [4195656]
+  Syscall: False
+  SP difference: 0
+  Has return: False
+  Returning: True
+  Alignment: False
+  Arguments: reg: [], stack: []
+  Blocks: [0x400548]
+  Calling convention: None) at address 0x400c43
+[-] Correctness: UN
+[-] Statements:
+0x400c43 | Call(0x400518<32>, <SimCCARMHF>: [r0<4>, Call (target: 0x400530<32>, prototype: (int (32 bits)) -> int (32 bits), args: [r0<4>]), Call (target: 0x400673<32>, prototype: (int (32 bits)) -> int (32 bits), args: [0x8<32>]), Call (target: 0x400673<32>, prototype: (int (32 bits)) -> int (32 bits), args: [0x8<32>]), Load(addr=stack_base-40, size=4, endness=Iend_LE), Load(addr=stack_base-36, size=4, endness=Iend_LE), Load(addr=stack_base-32, size=4, endness=Iend_LE), Load(addr=stack_base-28, size=4, endness=Iend_LE)], ret: no-ret-value, fp_ret: no-fp-ret-value)
+0x400c0f | Call(0x400548<32>, <SimCCARMHF>: [Call (target: 0x400518<32>, prototype: (int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits)) -> None, args: [r0<4>, r5<4>, r6<4>, r3<4>, Load(addr=stack_base-40, size=4, endness=Iend_LE), Load(addr=stack_base-36, size=4, endness=Iend_LE), Load(addr=stack_base-32, size=4, endness=Iend_LE), Load(addr=stack_base-28, size=4, endness=Iend_LE)]), r1<4>, r2<4>, r3<4>, Load(addr=stack_base+0, size=4, endness=Iend_LE), Load(addr=stack_base+4, size=4, endness=Iend_LE), Load(addr=stack_base+8, size=4, endness=Iend_LE), Load(addr=stack_base+12, size=4, endness=Iend_LE)], ret: r0<4>, fp_ret: no-fp-ret-value)
+

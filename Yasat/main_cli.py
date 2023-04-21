@@ -191,10 +191,11 @@ def main_cli():
         _subjects = []
         discarded = 0
         collected = set()
+        excluded = ["openssl", "libssl", "libcrypto"]
         for i, subject in enumerate(subjects):
             l.info(f"[{i + 1}/{num_subjects} {discarded} discarded] Filtering subjects")
             t = (read_elf_machine(subject), os.path.basename(subject))
-            if t[0] is None or t in collected:
+            if t[0] is None or t in collected or os.path.basename(subject).split(".")[0] in excluded:
                 discarded += 1
                 continue
             collected.add(t)
@@ -208,9 +209,6 @@ def main_cli():
         ######################################
                 
         def on_analysis_done(worker: AnalysisWorker):
-            # if task.status != TIMEOUT:
-            #     l.debug(f"Analyzing {task.filename} completed in "
-            #             f"{int(time.perf_counter() - task.start_time)} seconds")
             if worker.status == TIMEOUT:
                 report.analysis_timeout += 1
             elif worker.status == FAILURE:

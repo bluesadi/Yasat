@@ -2,6 +2,7 @@ from typing import List
 import logging
 
 from angr import Analysis
+from angr.knowledge_plugins import Function
 
 from ..misc.report import Misuse
 from ..knowledge_plugins import Subject
@@ -52,6 +53,8 @@ class ConstantValuesChecker(RuleChecker):
     def _build_misuse_desc(self, func_name, arg_name, arg_value, caller_addr):
         if isinstance(arg_value, str):
             arg_value = f'"{arg_value}"'
+        elif isinstance(arg_value, Function):
+            arg_value = f"{arg_value.name}()"
         return (
             f"Call to {func_name}({arg_name}={arg_value}) at address {hex(caller_addr)}"
         )
@@ -67,11 +70,14 @@ class ConstantValuesChecker(RuleChecker):
                 criteria_selectors=[ArgumentSelector(callee_addr, arg_idx)]
             )
             for concrete_result in bs.concrete_results:
-                arg_value = (
-                    concrete_result.string_value
-                    if self.type is str
-                    else concrete_result.int_value
-                )
+                arg_value = None
+                if self.type is str:
+                    arg_value = concrete_result.string_value
+                elif self.type is int:
+                    arg_value = concrete_result.int_value
+                elif self.type is Function:
+                    arg_value = concrete_result.function_value
+                    l.debug(f"Found function return value: {arg_value}")
                 if arg_value is not None:
                     if self.filter is None or self.filter(arg_value):
                         results.append(
@@ -95,3 +101,7 @@ class ConstantStringsChecker(ConstantValuesChecker):
 class ConstantIntegersChecker(ConstantValuesChecker):
     def __init__(self, criteria, arg_name, filter=None):
         super().__init__(criteria, arg_name=arg_name, type=int, filter=filter)
+        
+class ReturnValuesChecker(ConstantValuesChecker):
+    def __init__(self, criteria, arg_name, filter=None):
+        super().__init__(criteria, arg_name=arg_name, type=Function, filter=filter)

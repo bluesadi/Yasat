@@ -63,7 +63,6 @@ class SimEngineBackwardSlicing(
     def _process_Stmt(self, whitelist=None):
         if whitelist is not None:
             whitelist = set(whitelist)
-        # print(self.state.dbg_repr())
         for stmt_idx, stmt in reversed(list(enumerate(self.block.statements))):
             if whitelist is not None and stmt_idx not in whitelist:
                 continue
@@ -121,7 +120,9 @@ class SimEngineBackwardSlicing(
 
     def _ail_handle_Call(self, stmt: Call):
         self._select_criteria_from_expr(stmt)
-        self._ail_handle_CallExpr(stmt)
+        ret_val = self._ail_handle_CallExpr(stmt)
+        if ret_val is not None and isinstance(stmt.ret_expr, ailment.expression.Register):
+            self.state.update_tracks(MultiValues(AstEnhancer.reg(stmt.ret_expr)), ret_val, stmt)
 
     def _ail_handle_Store(self, stmt: Store):
         addr = self._expr(stmt.addr)

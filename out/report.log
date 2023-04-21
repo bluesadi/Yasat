@@ -1,26 +1,259 @@
 ##################################################
 #                    Summary                     #
 ##################################################
-Time: 482 seconds
+Time: 2900 seconds
 Extraction success rate: 36% (487 success, 841 failure, 0)
-Analysis success rate: 98% (1487 success, 21 failure, 0 timeout)
-Misuses number: 1
-- ConstantKeysChecker: 0
-- ConstantSaltsChecker: 1
-- PBEIterationsChecker: 0
+Analysis success rate: 98% (11176 success, 132 failure, 32 timeout)
+Misuses number: 32
+- ConstantKeysChecker: 9
+- ConstantSaltsChecker: 18
+- PBEIterationsChecker: 3
 - RSAKeySizesChecker: 0
+- ECBEncryptionChecker: 2
 
 ##################################################
 #               Potential Misuses                #
 ##################################################
 *** ConstantKeysChecker ***
+Misuses #1
+[-] Filename: /home/bluesadi/dev/Yasat/tests_dev/tmp/Tomato/_freshtomato-RT-AC3200-ARM-2022.5-AIO-64K.zip.extracted/_freshtomato-RT-AC3200-ARM-2022.5-AIO-64K.trx.extracted/squashfs-root/sbin/rc
+[-] Description: Call to crypt(key="http_passwd") at address 0x21120
+[-] Correctness: UN
+[-] Statements:
+0x21120 | Call(0xbbb4<32>, <SimCCARM>: [Load(addr=stack_base-52, size=4, endness=Iend_LE), 0x54669<32>], ret: r0<4>, fp_ret: no-fp-ret-value)
+0x210d8 | s_34 =L Call(0x20864<32>, <SimCCARM>: [0x54650<32>], ret: r0<4>, fp_ret: no-fp-ret-value)<4>
+
+Misuses #2
+[-] Filename: /home/bluesadi/dev/Yasat/tests_dev/tmp/Tomato/_freshtomato-RT-AC3200-ARM-2022.5-AIO-64K.zip.extracted/_freshtomato-RT-AC3200-ARM-2022.5-AIO-64K.trx.extracted/squashfs-root/sbin/rc
+[-] Description: Call to crypt(key="admin") at address 0x21120
+[-] Correctness: UN
+[-] Statements:
+0x21120 | Call(0xbbb4<32>, <SimCCARM>: [Load(addr=stack_base-52, size=4, endness=Iend_LE), 0x54669<32>], ret: r0<4>, fp_ret: no-fp-ret-value)
+0x210ec | s_34 =L 0x541cc<32><4>[t40]
+
+Misuses #3
+[-] Filename: /home/bluesadi/dev/Yasat/tests_dev/tmp/Tomato/_freshtomato-RT-AC3200-ARM-2022.5-AIO-64K.zip.extracted/_freshtomato-RT-AC3200-ARM-2022.5-AIO-64K.trx.extracted/squashfs-root/sbin/rc
+[-] Description: Call to crypt(key="admin") at address 0x21274
+[-] Correctness: UN
+[-] Statements:
+0x21274 | Call(0xb974<32>, <SimCCARM>: [r5<4>, 0x54704<32>, Load(addr=stack_base-48, size=4, endness=Iend_LE), Call (target: 0xbbb4<32>, prototype: (int (32 bits), int (32 bits)) -> int (32 bits), args: [Load(addr=stack_base-52, size=4, endness=Iend_LE), 0x54669<32>]), Load(addr=stack_base-424, size=4, endness=Iend_LE), Load(addr=stack_base-420, size=4, endness=Iend_LE)], ret: no-ret-value, fp_ret: no-fp-ret-value)
+0x210ec | s_34 =L 0x541cc<32><4>[t40]
+
+Misuses #4
+[-] Filename: /home/bluesadi/dev/Yasat/tests_dev/tmp/Tomato/_freshtomato-RT-AC3200-ARM-2022.5-AIO-64K.zip.extracted/_freshtomato-RT-AC3200-ARM-2022.5-AIO-64K.trx.extracted/squashfs-root/sbin/rc
+[-] Description: Call to crypt(key="http_passwd") at address 0x21274
+[-] Correctness: UN
+[-] Statements:
+0x21274 | Call(0xb974<32>, <SimCCARM>: [r5<4>, 0x54704<32>, Load(addr=stack_base-48, size=4, endness=Iend_LE), Call (target: 0xbbb4<32>, prototype: (int (32 bits), int (32 bits)) -> int (32 bits), args: [Load(addr=stack_base-52, size=4, endness=Iend_LE), 0x54669<32>]), Load(addr=stack_base-424, size=4, endness=Iend_LE), Load(addr=stack_base-420, size=4, endness=Iend_LE)], ret: no-ret-value, fp_ret: no-fp-ret-value)
+0x210d8 | s_34 =L Call(0x20864<32>, <SimCCARM>: [0x54650<32>], ret: r0<4>, fp_ret: no-fp-ret-value)<4>
+
+Misuses #5
+[-] Filename: /home/bluesadi/dev/Yasat/tests_dev/tmp/Tomato/_freshtomato-RT-AC3200-ARM-2022.5-AIO-64K.zip.extracted/_freshtomato-RT-AC3200-ARM-2022.5-AIO-64K.trx.extracted/squashfs-root/sbin/rc
+[-] Description: Call to crypt(key="http_passwd") at address 0x2fe70
+[-] Correctness: UN
+[-] Statements:
+0x2fe70 | Call(0xb974<32>, <SimCCARM>: [r0<4>, 0x59300<32>, Call (target: 0xbbb4<32>, prototype: (int (32 bits), int (32 bits)) -> int (32 bits), args: [r7<4>, BaseOffset(stack_base, -56)])], ret: no-ret-value, fp_ret: no-fp-ret-value)
+0x2fe04 | r7<4> = (((Load(addr=r0<4>, size=1, endness=Iend_LE) == 0x0<8>)) ? (0x541cc<32>) : (r0<4>))
+0x2fdec | Call(0x2fcd8<32>, <SimCCARM>: [0x54650<32>], ret: r0<4>, fp_ret: no-fp-ret-value)
+
+Misuses #6
+[-] Filename: /home/bluesadi/dev/Yasat/tests_dev/tmp/Tomato/_freshtomato-RT-AC3200-ARM-2022.5-AIO-64K.zip.extracted/_freshtomato-RT-AC3200-ARM-2022.5-AIO-64K.trx.extracted/squashfs-root/sbin/rc
+[-] Description: Call to crypt(key="http_passwd") at address 0x2fe70
+[-] Correctness: UN
+[-] Statements:
+0x2fe70 | Call(0xb974<32>, <SimCCARM>: [r0<4>, 0x59300<32>, Call (target: 0xbbb4<32>, prototype: (int (32 bits), int (32 bits)) -> int (32 bits), args: [r7<4>, BaseOffset(stack_base, -56)])], ret: no-ret-value, fp_ret: no-fp-ret-value)
+0x2fdf0 | r7<4> = r0<4>
+0x2fdec | Call(0x2fcd8<32>, <SimCCARM>: [0x54650<32>], ret: r0<4>, fp_ret: no-fp-ret-value)
+
+Misuses #7
+[-] Filename: /home/bluesadi/dev/Yasat/tests_dev/tmp/Netgear/_DST6501-V1.0.1.6.zip.extracted/_DST6501-V1.0.1.6.img.extracted/squashfs-root/usr/bin/logic
+[-] Description: Call to crypt(key="tw007") at address 0x223fc
+[-] Correctness: UN
+[-] Statements:
+0x223fc | Call(0xb630<32>, <SimCCARM>: [Call (target: 0xae68<32>, prototype: (int (32 bits), int (32 bits)) -> None, args: [0x48e0e<32>, 0x48dac<32>]), Add(r4<4>, 0xbe<32>)], ret: r0<4>, fp_ret: no-fp-ret-value)
+
+Misuses #8
+[-] Filename: /home/bluesadi/dev/Yasat/tests_dev/tmp/Netgear/_DST6501-V1.0.1.6.zip.extracted/_DST6501-V1.0.1.6.img.extracted/squashfs-root/usr/bin/logic
+[-] Description: Call to crypt(key="password") at address 0x233b8
+[-] Correctness: UN
+[-] Statements:
+0x233b8 | Call(0xb714<32>, <SimCCARM>: [0x49062<32>, r0<4>, r0<4>, Call (target: 0xae68<32>, prototype: (int (32 bits), int (32 bits)) -> int (32 bits), args: [0x48e40<32>, 0x48dac<32>])], ret: r0<4>, fp_ret: no-fp-ret-value)
+
+Misuses #9
+[-] Filename: /home/bluesadi/dev/Yasat/tests_dev/tmp/Netgear/_R7300-V1.0.0.74_1.0.29.zip.extracted/_R7300-V1.0.0.74_1.0.29.chk.extracted/squashfs-root/usr/sbin/NetReadyAgent
+[-] Description: Call to EVP_DecryptInit(key="X0pPUoTIzsSpKpdtrxU7rIsSJevxhizF3.5.10") at address 0x3bbe4
+[-] Correctness: UN
+[-] Statements:
+0x3bbe4 | Call(0xd038<32>, <SimCCARM>: [BaseOffset(stack_base, -168), Call (target: 0xd9bc<32>, prototype: () -> int (32 bits), args: None), 0xb13ac<32>, 0xb139c<32>], ret: no-ret-value, fp_ret: no-fp-ret-value)
+
 *** ConstantSaltsChecker ***
 Misuses #1
-[-] Filename: tests_dev/tmp/TP-Link/_C400HP-4(UN)&C400HP-2.8(UN)_V2_220707.zip.extracted/_Cx00HP_x_2.0_en_1.0.10_Build_220707_Rel.57637n_up_boot.bin.extracted/libuhttpd.so
+[-] Filename: /home/bluesadi/dev/Yasat/tests_dev/tmp/TP-Link/_C400HP-4(UN)&C400HP-2.8(UN)_V2_220707.zip.extracted/_Cx00HP_x_2.0_en_1.0.10_Build_220707_Rel.57637n_up_boot.bin.extracted/libuhttpd.so
 [-] Description: Call to crypt(salt="$1$") at address 0x4052d3
 [-] Correctness: UN
 [-] Statements:
-0x4052d3 | Call(0x403898<32>, <SimCCARMHF>: [Call (target: 0x403d00<32>, prototype: (char*, char*) -> char*, args: [Load(addr=0x500008<32>, size=4, endness=Iend_LE), 0x40ccfa<32>])], ret: no-ret-value, fp_ret: no-fp-ret-value)
+0x4052d3 | Call(0x403898<32>, <SimCCARMHF>: [Call (target: 0x403d00<32>, prototype: (int (32 bits), int (32 bits)) -> None, args: [Load(addr=0x621f9c<32>, size=4, endness=Iend_LE), 0x40ccfa<32>]), 0x40ccfa<32>], ret: no-ret-value, fp_ret: no-fp-ret-value)
+
+Misuses #2
+[-] Filename: /home/bluesadi/dev/Yasat/tests_dev/tmp/Tomato/_freshtomato-RT-AC3200-ARM-2022.5-AIO-64K.zip.extracted/_freshtomato-RT-AC3200-ARM-2022.5-AIO-64K.trx.extracted/squashfs-root/sbin/rc
+[-] Description: Call to crypt(salt="$1$") at address 0x21120
+[-] Correctness: UN
+[-] Statements:
+0x21120 | Call(0xbbb4<32>, <SimCCARM>: [Load(addr=stack_base-52, size=4, endness=Iend_LE), 0x54669<32>], ret: r0<4>, fp_ret: no-fp-ret-value)
+
+Misuses #3
+[-] Filename: /home/bluesadi/dev/Yasat/tests_dev/tmp/Tomato/_freshtomato-RT-AC3200-ARM-2022.5-AIO-64K.zip.extracted/_freshtomato-RT-AC3200-ARM-2022.5-AIO-64K.trx.extracted/squashfs-root/sbin/rc
+[-] Description: Call to crypt(salt="$1$") at address 0x21274
+[-] Correctness: UN
+[-] Statements:
+0x21274 | Call(0xb974<32>, <SimCCARM>: [r5<4>, 0x54704<32>, Load(addr=stack_base-48, size=4, endness=Iend_LE), Call (target: 0xbbb4<32>, prototype: (int (32 bits), int (32 bits)) -> int (32 bits), args: [Load(addr=stack_base-52, size=4, endness=Iend_LE), 0x54669<32>]), Load(addr=stack_base-424, size=4, endness=Iend_LE), Load(addr=stack_base-420, size=4, endness=Iend_LE)], ret: no-ret-value, fp_ret: no-fp-ret-value)
+
+Misuses #4
+[-] Filename: /home/bluesadi/dev/Yasat/tests_dev/tmp/Linksys/_FW_EA9300_1.1.9.183697_prod.img.extracted/ubifs-root/0/rootfs_ubifs/usr/sbin/eurl
+[-] Description: Call to EVP_BytesToKey(salt="openssl.c") at address 0x114c4
+[-] Correctness: UN
+[-] Statements:
+0x114c4 | Call(0x10a00<32>, <SimCCARM>: [r0<4>, Call (target: 0x109f4<32>, prototype: (int (32 bits)) -> int (32 bits), args: [r0<4>]), 0x12aeb<32>, r4<4>, r0<4>, Load(addr=stack_base-28, size=4, endness=Iend_LE), Load(addr=stack_base-24, size=4, endness=Iend_LE), Load(addr=stack_base-20, size=4, endness=Iend_LE)], ret: r0<4>, fp_ret: no-fp-ret-value)
+
+Misuses #5
+[-] Filename: /home/bluesadi/dev/Yasat/tests_dev/tmp/Netgear/_R8000-V1.0.4.84_10.1.84.zip.extracted/_R8000-V1.0.4.84_10.1.84.chk.extracted/squashfs-root/usr/sbin/bftpd
+[-] Description: Call to crypt(salt="ADMIN_PASS") at address 0xd788
+[-] Correctness: UN
+[-] Statements:
+0xd788 | Call(0x9be4<32>, <SimCCARM>: [Call (target: 0x97a0<32>, prototype: (int (32 bits), int (32 bits)) -> None, args: [BaseOffset(stack_base, -56), r4<4>]), r4<4>], ret: r0<4>, fp_ret: no-fp-ret-value)
+0xd750 | r4<4> = Call(0x11858<32>, <SimCCARM>: [0x1356c<32>], ret: r0<4>, fp_ret: no-fp-ret-value)
+
+Misuses #6
+[-] Filename: /home/bluesadi/dev/Yasat/tests_dev/tmp/Netgear/_DST6501-V1.0.1.6.zip.extracted/_DST6501-V1.0.1.6.img.extracted/squashfs-root/usr/bin/logic
+[-] Description: Call to crypt(salt="$1$TW") at address 0x21f8c
+[-] Correctness: UN
+[-] Statements:
+0x21f8c | Call(0xafb8<32>, <SimCCARM>: [0x102<32>, 0x48d3c<32>, Call (target: 0xae68<32>, prototype: (int (32 bits), int (32 bits)) -> int (32 bits), args: [BaseOffset(stack_base, -84), 0x48dac<32>])], ret: r0<4>, fp_ret: no-fp-ret-value)
+
+Misuses #7
+[-] Filename: /home/bluesadi/dev/Yasat/tests_dev/tmp/Netgear/_DST6501-V1.0.1.6.zip.extracted/_DST6501-V1.0.1.6.img.extracted/squashfs-root/usr/bin/logic
+[-] Description: Call to crypt(salt="$1$TW") at address 0x21fb0
+[-] Correctness: UN
+[-] Statements:
+0x21fb0 | Call(0xafb8<32>, <SimCCARM>: [0x102<32>, 0x48d74<32>, Call (target: 0xae68<32>, prototype: (int (32 bits), int (32 bits)) -> int (32 bits), args: [BaseOffset(stack_base, -152), 0x48dac<32>])], ret: r0<4>, fp_ret: no-fp-ret-value)
+
+Misuses #8
+[-] Filename: /home/bluesadi/dev/Yasat/tests_dev/tmp/Netgear/_DST6501-V1.0.1.6.zip.extracted/_DST6501-V1.0.1.6.img.extracted/squashfs-root/usr/bin/logic
+[-] Description: Call to crypt(salt="$1$TW") at address 0x220a8
+[-] Correctness: UN
+[-] Statements:
+0x220a8 | Call(0xb7bc<32>, <SimCCARM>: [BaseOffset(stack_base, -160), Call (target: 0xae68<32>, prototype: (int (32 bits), int (32 bits)) -> int (32 bits), args: [BaseOffset(stack_base, -160), 0x48dac<32>])], ret: no-ret-value, fp_ret: no-fp-ret-value)
+
+Misuses #9
+[-] Filename: /home/bluesadi/dev/Yasat/tests_dev/tmp/Netgear/_DST6501-V1.0.1.6.zip.extracted/_DST6501-V1.0.1.6.img.extracted/squashfs-root/usr/bin/logic
+[-] Description: Call to crypt(salt="$1$TW") at address 0x220e8
+[-] Correctness: UN
+[-] Statements:
+0x220e8 | Call(0xafb8<32>, <SimCCARM>: [0x102<32>, r8<4>, Call (target: 0xae68<32>, prototype: (int (32 bits), int (32 bits)) -> int (32 bits), args: [BaseOffset(stack_base, -224), 0x48dac<32>])], ret: r0<4>, fp_ret: no-fp-ret-value)
+
+Misuses #10
+[-] Filename: /home/bluesadi/dev/Yasat/tests_dev/tmp/Netgear/_DST6501-V1.0.1.6.zip.extracted/_DST6501-V1.0.1.6.img.extracted/squashfs-root/usr/bin/logic
+[-] Description: Call to crypt(salt="$1$TW") at address 0x223fc
+[-] Correctness: UN
+[-] Statements:
+0x223fc | Call(0xb630<32>, <SimCCARM>: [Call (target: 0xae68<32>, prototype: (int (32 bits), int (32 bits)) -> None, args: [0x48e0e<32>, 0x48dac<32>]), Add(r4<4>, 0xbe<32>)], ret: r0<4>, fp_ret: no-fp-ret-value)
+
+Misuses #11
+[-] Filename: /home/bluesadi/dev/Yasat/tests_dev/tmp/Netgear/_DST6501-V1.0.1.6.zip.extracted/_DST6501-V1.0.1.6.img.extracted/squashfs-root/usr/bin/logic
+[-] Description: Call to crypt(salt="$1$TW") at address 0x23370
+[-] Correctness: UN
+[-] Statements:
+0x23370 | Call(0xb630<32>, <SimCCARM>: [Call (target: 0xae68<32>, prototype: (int (32 bits), int (32 bits)) -> None, args: [BaseOffset(stack_base, 1374), 0x48dac<32>]), r5<4>], ret: r0<4>, fp_ret: no-fp-ret-value)
+
+Misuses #12
+[-] Filename: /home/bluesadi/dev/Yasat/tests_dev/tmp/Netgear/_DST6501-V1.0.1.6.zip.extracted/_DST6501-V1.0.1.6.img.extracted/squashfs-root/usr/bin/logic
+[-] Description: Call to crypt(salt="$1$TW") at address 0x23390
+[-] Correctness: UN
+[-] Statements:
+0x23390 | Call(0xb630<32>, <SimCCARM>: [Call (target: 0xae68<32>, prototype: (int (32 bits), int (32 bits)) -> None, args: [BaseOffset(stack_base, 1439), 0x48dac<32>]), r7<4>], ret: r0<4>, fp_ret: no-fp-ret-value)
+
+Misuses #13
+[-] Filename: /home/bluesadi/dev/Yasat/tests_dev/tmp/Netgear/_DST6501-V1.0.1.6.zip.extracted/_DST6501-V1.0.1.6.img.extracted/squashfs-root/usr/bin/logic
+[-] Description: Call to crypt(salt="$1$TW") at address 0x233b8
+[-] Correctness: UN
+[-] Statements:
+0x233b8 | Call(0xb714<32>, <SimCCARM>: [0x49062<32>, r0<4>, r0<4>, Call (target: 0xae68<32>, prototype: (int (32 bits), int (32 bits)) -> int (32 bits), args: [0x48e40<32>, 0x48dac<32>])], ret: r0<4>, fp_ret: no-fp-ret-value)
+
+Misuses #14
+[-] Filename: /home/bluesadi/dev/Yasat/tests_dev/tmp/Netgear/_FVS318Gv2_V4.3.5-3.zip.extracted/_FVS318Gv2_v4.3.5-3.img.extracted/squashfs-root/sslvpn/bin/smm
+[-] Description: Call to crypt(salt="$1$mldcsfp$") at address 0x1eb30
+[-] Correctness: UN
+[-] Statements:
+0x1eb30 | Call(0xa344<32>, <SimCCARM>: [Add(r0<4>, 0x80<32>), Call (target: 0x9e70<32>, prototype: (int (32 bits), int (32 bits)) -> int (32 bits), args: [Load(addr=stack_base-3032, size=4, endness=Iend_LE), 0x2a0cd<32>])], ret: no-ret-value, fp_ret: no-fp-ret-value)
+
+Misuses #15
+[-] Filename: /home/bluesadi/dev/Yasat/tests_dev/tmp/Netgear/_FVS318Gv2_V4.3.5-3.zip.extracted/_FVS318Gv2_v4.3.5-3.img.extracted/squashfs-root/bin/sslvpnConfig
+[-] Description: Call to crypt(salt="$1$mldcsfp$") at address 0xde4c
+[-] Correctness: UN
+[-] Statements:
+0xde4c | Call(0x9a20<32>, <SimCCARM>: [BaseOffset(stack_base, -3780), Call (target: 0x96e4<32>, prototype: (int (32 bits), int (32 bits)) -> int (32 bits), args: [r4<4>, 0x1cbfc<32>])], ret: r0<4>, fp_ret: no-fp-ret-value)
+
+Misuses #16
+[-] Filename: tests_dev/tmp/Netgear/_CAX80-V2.1.3.5.zip.extracted/_CAX80-V2.1.3.5.bin.extracted/ubifs-root/1403050352/rootfs/usr/sbin/wanbftpd
+[-] Description: Call to crypt(salt="ADMIN_PASS") at address 0xeaac
+[-] Correctness: UN
+[-] Statements:
+0xeaac | Call(0x9578<32>, <SimCCARMHF>: [Call (target: 0x9848<32>, prototype: (char*, char*) -> char*, args: [BaseOffset(stack_base, -336), r4<4>]), r4<4>], ret: r0<4>, fp_ret: no-fp-ret-value)
+0xea70 | r4<4> = Call(0x12ac8<32>, <SimCCARMHF>: [0x16118<32>], ret: r0<4>, fp_ret: no-fp-ret-value)
+
+Misuses #17
+[-] Filename: tests_dev/tmp/Netgear/_D7000_V1.0.1.80_1.0.1.zip.extracted/_D7000 V1.0.1.80_1.0.1.img.extracted/_D7000.bin.extracted/jffs2-root/usr/sbin/rc_app/rc_apps
+[-] Description: Call to crypt(salt="sc") at address 0x4b1c8
+[-] Correctness: UN
+[-] Statements:
+0x4b1c8 | s_1c =L Call(0xa8d0<32>, <SimCCARM>: [BaseOffset(stack_base, -56), 0x83c14<32>], ret: r0<4>, fp_ret: no-fp-ret-value)<4>
+
+Misuses #18
+[-] Filename: tests_dev/tmp/Netgear/_D7000_V1.0.1.80_1.0.1.zip.extracted/_D7000 V1.0.1.80_1.0.1.img.extracted/_D7000.bin.extracted/jffs2-root/usr/sbin/rc_app/rc_apps
+[-] Description: Call to crypt(salt="sc") at address 0x4b204
+[-] Correctness: UN
+[-] Statements:
+0x4b204 | s_20 =L Call(0xa8d0<32>, <SimCCARM>: [BaseOffset(stack_base, -72), 0x83c14<32>], ret: r0<4>, fp_ret: no-fp-ret-value)<4>
 
 *** PBEIterationsChecker ***
+Misuses #1
+[-] Filename: /home/bluesadi/dev/Yasat/tests_dev/tmp/Linksys/_FW_EA9300_1.1.9.183697_prod.img.extracted/ubifs-root/0/rootfs_ubifs/usr/sbin/eurl
+[-] Description: Call to EVP_BytesToKey(iterations=1) at address 0x114c4
+[-] Correctness: UN
+[-] Statements:
+0x114c4 | Call(0x10a00<32>, <SimCCARM>: [r0<4>, Call (target: 0x109f4<32>, prototype: (int (32 bits)) -> int (32 bits), args: [r0<4>]), 0x12aeb<32>, r4<4>, r0<4>, Load(addr=stack_base-28, size=4, endness=Iend_LE), Load(addr=stack_base-24, size=4, endness=Iend_LE), Load(addr=stack_base-20, size=4, endness=Iend_LE)], ret: r0<4>, fp_ret: no-fp-ret-value)
+0x114b8 | s_1c =L 0x1<32><4>
+
+Misuses #2
+[-] Filename: /home/bluesadi/dev/Yasat/tests_dev/tmp/Zyxel/_XMG3927-B50A_5.13(ABMT.0)C0.zip.extracted/_V513ABMT0C0.bin.extracted/jffs2-root/bin/zcmd
+[-] Description: Call to EVP_BytesToKey(iterations=5) at address 0x24300
+[-] Correctness: UN
+[-] Statements:
+0x24300 | s_18 =L Call(0x10398<32>, <SimCCARM>: [r0<4>, Call (target: 0x10428<32>, prototype: (int (32 bits)) -> int (32 bits), args: [r0<4>]), r2<4>, Load(addr=stack_base-92, size=4, endness=Iend_LE), Load(addr=stack_base-120, size=4, endness=Iend_LE), Load(addr=stack_base-116, size=4, endness=Iend_LE), Load(addr=stack_base-112, size=4, endness=Iend_LE), Load(addr=stack_base-108, size=4, endness=Iend_LE)], ret: r0<4>, fp_ret: no-fp-ret-value)<4>
+0x242d8 | s_74 =L Load(addr=stack_base-20, size=4, endness=Iend_LE)<4>
+0x242b8 | s_14 =L 0x5<32><4>
+
+Misuses #3
+[-] Filename: tests_dev/tmp/Netgear/_AC803S_1780690_01.13.00_032.field.zip.extracted/_AC803S_1780690_01.13.00_032.field.bin.extracted/cramfs-root/apps/WanManager
+[-] Description: Call to EVP_BytesToKey(iterations=1) at address 0x6efb0
+[-] Correctness: UN
+[-] Statements:
+0x6efb0 | s_20 =L Call(0xa954<32>, <SimCCARM>: [Call (target: 0xaa50<32>, prototype: (int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits)) -> int (32 bits), args: [Call (target: 0xab7c<32>, prototype: (int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits)) -> None, args: [Load(addr=stack_base-104, size=4, endness=Iend_LE), Load(addr=stack_base+0, size=4, endness=Iend_LE), 0x0<32>, Load(addr=stack_base-20, size=4, endness=Iend_LE), Load(addr=stack_base-104, size=4, endness=Iend_LE), Load(addr=stack_base-116, size=4, endness=Iend_LE), Load(addr=stack_base-112, size=4, endness=Iend_LE), Load(addr=stack_base-108, size=4, endness=Iend_LE)]), Load(addr=stack_base+0, size=4, endness=Iend_LE), 0x0<32>, Load(addr=stack_base-20, size=4, endness=Iend_LE), Load(addr=stack_base+0, size=4, endness=Iend_LE), Load(addr=stack_base+4, size=4, endness=Iend_LE), Load(addr=stack_base+8, size=4, endness=Iend_LE), Load(addr=stack_base+12, size=4, endness=Iend_LE)])], ret: r0<4>, fp_ret: no-fp-ret-value)<4>
+0x6ef74 | s_74 =L 0x1<32><4>
+
 *** RSAKeySizesChecker ***
+*** ECBEncryptionChecker ***
+Misuses #1
+[-] Filename: /home/bluesadi/dev/Yasat/tests_dev/tmp/Netgear/_XR300-V1.0.3.56_10.3.41.zip.extracted/_XR300-V1.0.3.56_10.3.41.chk.extracted/squashfs-root/usr/lib/libisc.so.166.2.0
+[-] Description: Call to EVP_EncryptInit(type=EVP_aes_256_ecb()) at address 0x40dcf8
+[-] Correctness: UN
+[-] Statements:
+0x40dcf8 | Call(0x40c850<32>, <SimCCARM>: [BaseOffset(stack_base, -168), Call (target: 0x40c508<32>, prototype: (int (32 bits)) -> int (32 bits), args: [Call (target: 0x40c1a8<32>, prototype: (int (32 bits)) -> None, args: [BaseOffset(stack_base, -168)])]), r0<4>, 0x0<32>], ret: r0<4>, fp_ret: no-fp-ret-value)
+
+Misuses #2
+[-] Filename: /home/bluesadi/dev/Yasat/tests_dev/tmp/Netgear/_XR300-V1.0.3.56_10.3.41.zip.extracted/_XR300-V1.0.3.56_10.3.41.chk.extracted/squashfs-root/usr/lib/libisc.so.166.2.0
+[-] Description: Call to EVP_EncryptInit(type=EVP_aes_128_ecb()) at address 0x40dac8
+[-] Correctness: UN
+[-] Statements:
+0x40dac8 | Call(0x40c850<32>, <SimCCARM>: [BaseOffset(stack_base, -168), Call (target: 0x40c214<32>, prototype: (int (32 bits)) -> int (32 bits), args: [Call (target: 0x40c1a8<32>, prototype: (int (32 bits)) -> None, args: [BaseOffset(stack_base, -168)])]), r0<4>, 0x0<32>], ret: r0<4>, fp_ret: no-fp-ret-value)
+

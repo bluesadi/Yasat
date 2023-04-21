@@ -1,5 +1,4 @@
 import filetype
-import zipfile
 import os
 import shutil
 import logging
@@ -13,20 +12,9 @@ l = logging.getLogger(__name__)
 
 
 class Extractor:
-    """
-    Basically dirty work.
-    You won't want to dive into it.
-    """
-
-    def _decompress_zip(self, path, to_path):
-        with zipfile.ZipFile(path, "r") as ref:
-            ref.extractall(to_path)
-
-    def _is_file(self, path):
-        return not os.path.islink(path) and os.path.isfile(path)
 
     def _is_elf(self, path):
-        if self._is_file(path):
+        if not os.path.islink(path) and os.path.isfile(path):
             ftype = filetype.guess(path)
             if ftype is not None:
                 return ftype.extension == "elf"

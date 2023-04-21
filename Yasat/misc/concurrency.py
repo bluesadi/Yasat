@@ -1,5 +1,5 @@
 import multiprocessing as mp
-from typing import Dict, Any
+from typing import Dict
 import time
 import os
 import logging
@@ -13,14 +13,11 @@ l = logging.getLogger(__name__)
 class GlobalState:
     
     running_workers: Dict[int, "Worker"]
-    shared: Dict[Any, Any]
     
     def __init__(self):
         manager = mp.Manager()
         self.running_workers = manager.dict()
-        self.shared = manager.dict()
         self.lock = manager.Lock()
-        self.shared_lock = manager.Lock()
 
 RUNNING = "RUNNING"
 SUCCESS = "SUCCESS"
@@ -74,7 +71,7 @@ class PoolWrapper:
         self.global_state = GlobalState()
         self._pending_workers = 0
         
-        def default_callback(worker):
+        def default_callback(_):
             self._pending_workers -= 1
         self._callback = default_callback
        
@@ -97,7 +94,7 @@ class PoolWrapper:
                 if num_running_workers == 0 and self._pending_workers == 0:
                     break
                 l.info(f"There are {num_running_workers} tasks running now "
-                    f"({self._pending_workers} pending)")
+                    f"({self._pending_workers - num_running_workers} pending)")
                 l.info(f"|{'pid'.center(8)}|{'name'.center(40)}|{'running time'.center(15)}|"
                     f"{'memory'.center(10)}|")
                 for worker in self.global_state.running_workers.values():

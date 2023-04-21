@@ -55,6 +55,14 @@ class SlicingTrack:
         if int_value is not None:
             return int_value != 0
         return None
+    
+    @property
+    def function_value(self):
+        func_addr = AstEnhancer.resolve_call(self._expr)
+        if func_addr is not None:
+            if func_addr in self._proj.kb.functions:
+                return self._proj.kb.functions[func_addr]
+        return None
 
     def __str__(self) -> str:
         return "SlicingTrack " + PrintUtil.pstr(
@@ -100,7 +108,6 @@ class SlicingState:
         self._tracks = set()
         self._concrete_tracks = set()
         self._ended = False
-        self._cached_concrete_results = None
 
     def merge(self, *others):
         state = self.copy()
@@ -120,7 +127,7 @@ class SlicingState:
             if AstEnhancer.is_top(expr_v):
                 return
             track = SlicingTrack(expr_v, (stmt,), self)
-            if expr_v.concrete:
+            if expr_v.concrete or AstEnhancer.resolve_call(expr_v) is not None:
                 self._concrete_tracks.add(track)
             else:
                 self._tracks.add(track)
@@ -138,7 +145,7 @@ class SlicingState:
                     new_track = track
                     if hash(track.expr) != hash(new_expr):
                         new_track = SlicingTrack(new_expr, track.slice + (stmt,), self)
-                        if new_expr.concrete:
+                        if new_expr.concrete or AstEnhancer.resolve_call(new_expr) is not None:
                             self._concrete_tracks.add(new_track)
                             continue
                     new_tracks.add(new_track)
@@ -209,24 +216,14 @@ class SlicingState:
 
     @property
     def concrete_results(self):
-        # if self._cached_concrete_results:
-        # return self._cached_concrete_results
-
         concrete_results = self._concrete_tracks.copy()
         for track in self._tracks:
             new_expr = self._apply_preset_arguments(track.expr)
             new_expr = self._resolve_load_exprs(new_expr)
             new_expr = self._simplify(new_expr)
-
-            if new_expr.concrete:
+            if new_expr.concrete or AstEnhancer.resolve_call(new_expr) is not None:
                 concrete_results.add(SlicingTrack(new_expr, track.slice, self))
-
-        # self._cached_concrete_results = concrete_results
         return concrete_results
-
-    @property
-    def sorted_concrete_results(self):
-        return sorted(self.concrete_results, key=lambda track: track.slice[0].ins_addr)
 
     def __eq__(self, another: object) -> bool:
         if isinstance(another, SlicingState):

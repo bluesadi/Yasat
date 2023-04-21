@@ -3,4 +3,5 @@ tmp_dir: 'examples/tmp'
 out_dir: 'examples/out'
 
 debug: True
-timeout: 300
+extraction_timeout: 300
+analysis_timeout: 300
