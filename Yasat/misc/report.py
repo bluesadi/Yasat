@@ -6,7 +6,7 @@ class Misuse:
     desc: str
     stmts: List[str]
 
-    def __init__(self, filename, desc, stmts):
+    def __init__(self, filename, desc, stmts=[]):
         self.filename = filename
         self.desc = desc
         self.stmts = stmts

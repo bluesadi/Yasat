@@ -1,4 +1,4 @@
-from ..analyses.rule_checker import ConstantIntegersChecker
+from .rule_checker import ConstantIntegersChecker
 
 
 class PBEIterationsChecker(ConstantIntegersChecker):

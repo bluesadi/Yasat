@@ -7,9 +7,10 @@ from angr.engines.light.engine import SimEngineLight, SimEngineLightAILMixin
 from ailment.statement import *
 from ailment.expression import *
 
-from .multi_values import MultiValues
-from .ast_enhancer import AstEnhancer
+from ..multi_values import MultiValues
+from ..ast_enhancer import AstEnhancer
 from ...utils.print import PrintUtil
+from ...utils.format import format_stmt
 
 l = logging.getLogger(__name__)
 
@@ -75,9 +76,7 @@ class SimEngineBackwardSlicing(
                 self._handle_Stmt(stmt)
             except:
                 l.error(f"Error occured when handling {self.project.filename}")
-                l.error(
-                    f"Error occured when handling statment: {PrintUtil.pstr_stmt(stmt)}"
-                )
+                l.error(f"Error occured when handling statment: {PrintUtil.pstr_stmt(stmt)}")
                 l.error(traceback.format_exc())
 
     def _select_criteria_from_stmt(self, stmt):
@@ -152,22 +151,45 @@ class SimEngineBackwardSlicing(
         pass
 
     def _ail_handle_CallExpr(self, expr: Call):
-        if len(
-            self.analysis._call_stack
-        ) <= self.analysis._max_call_depth and isinstance(expr.target, Const):
+        ret_val = None
+        if len(self.analysis._call_stack) <= self.analysis._max_call_depth and isinstance(
+            expr.target, Const
+        ):
             args = [self._expr(arg) for arg in expr.args] if expr.args else []
             handler = self.analysis.function_handler
             if handler:
                 if expr.target.value in self.project.kb.functions:
                     func = self.project.kb.functions[expr.target.value]
-                    ret_expr = handler.handle(func, args)
-                    if ret_expr:
-                        return ret_expr
+                    ret_val = handler.handle(func, args)
                 else:
-                    l.warning(f'Cannot find function at {hex(expr.target.value)}')
-        if expr.ret_expr:
-            return MultiValues(AstEnhancer.top(expr.ret_expr.bits))
-        return None
+                    l.warning(f"Cannot find function at {hex(expr.target.value)}")
+        # Clear registers
+        cc = expr.calling_convention
+        cc = cc if cc is not None else self.project.factory.cc()
+        for reg_name in cc.CALLER_SAVED_REGS:
+            return_reg_offset, return_reg_size = self.arch.registers[reg_name]
+            reg = ailment.Expr.Register(
+                None, None, return_reg_offset, return_reg_size * self.arch.byte_width
+            )
+            self.state.update_tracks(
+                MultiValues(AstEnhancer.reg(reg)), MultiValues(AstEnhancer.top(reg.bits)), expr
+            )
+        if expr.ret_expr is not None and isinstance(expr.ret_expr, ailment.Expr.Register):
+            ret_val = ret_val if ret_val else MultiValues(AstEnhancer.top(expr.ret_expr.bits))
+            self.state.update_tracks(ret_val, ret_val, expr)
+        elif cc.RETURN_VAL is not None:
+            return_reg_offset, return_reg_size = self.arch.registers[cc.RETURN_VAL.reg_name]
+            bits = return_reg_size * self.arch.byte_width
+            ret_val = (
+                AstEnhancer.multi_convert(ret_val, bits)
+                if ret_val
+                else MultiValues(AstEnhancer.top(bits))
+            )
+            reg = ailment.Expr.Register(None, None, return_reg_offset, bits)
+            self.state.update_tracks(
+                MultiValues(AstEnhancer.reg(reg)), MultiValues(AstEnhancer.top(reg.bits)), expr
+            )
+        return ret_val
 
     def _ail_handle_BV(self, expr: claripy.ast.BV):
         return MultiValues(expr)
@@ -280,7 +302,9 @@ class SimEngineBackwardSlicing(
         )
 
     def _ail_handle_Shr(self, expr: BinaryOp):
-        return self._calc_BinaryOp(expr, lambda v0, v1: claripy.LShR(v0, v1), bits=expr.operands[0].bits)
+        return self._calc_BinaryOp(
+            expr, lambda v0, v1: claripy.LShR(v0, v1), bits=expr.operands[0].bits
+        )
 
     def _ail_handle_Sar(self, expr: BinaryOp):
         return self._calc_BinaryOp(expr, lambda v0, v1: v0 >> v1, bits=expr.operands[0].bits)
@@ -318,9 +342,7 @@ class SimEngineBackwardSlicing(
         op1 = self._expr(expr.operands[1], bits)
         if expr.op in self._Cmp_handlers:
             handler = self._Cmp_handlers[expr.op]
-            return MultiValues(
-                {handler(op0_v, op1_v) for op0_v in op0 for op1_v in op1}
-            )
+            return MultiValues({handler(op0_v, op1_v) for op0_v in op0 for op1_v in op1})
         return MultiValues(AstEnhancer.top(expr.bits))
 
     _ail_handle_CmpF = _ail_handle_Cmp

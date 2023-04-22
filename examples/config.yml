@@ -1,4 +1,4 @@
-input_path: 'examples/input'
+input_path: 'examples/input/rc'
 tmp_dir: 'examples/tmp'
 out_dir: 'examples/out'
 

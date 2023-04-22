@@ -2,7 +2,7 @@ from typing import Tuple, List
 
 from angr.knowledge_plugins.functions.function import Function
 
-from ..multi_values import MultiValues
+from ...multi_values import MultiValues
 
 
 class FunctionHandler:

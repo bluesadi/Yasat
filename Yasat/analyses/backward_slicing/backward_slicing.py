@@ -15,7 +15,7 @@ from .slicing_state import SlicingState, SlicingTrack
 from .engine_ail import SimEngineBackwardSlicing
 from .criteria_selector import CriteriaSelector, ConditionSelector
 from .function_handler import InterproceduralFunctionHandler, FunctionHandler
-from .multi_values import MultiValues
+from ..multi_values import MultiValues
 
 l = logging.getLogger(__name__)
 
@@ -192,7 +192,7 @@ class BackwardSlicing(Analysis):
     def _analyze(self):
         working_queue = sorted(self._blocks_by_addr.keys(), reverse=True)
         pending_queue = set(self._blocks_by_addr.keys())
-        last_states = {}
+        boundary_state = None
         while working_queue:
             block = self._blocks_by_addr[working_queue.pop(0)]
             pending_queue.discard(block.addr)
@@ -202,12 +202,14 @@ class BackwardSlicing(Analysis):
             # We set a limitation of iterations to avoid stucking in infinite loop
             self._node_iterations[block.addr] += 1
 
-            last_states[block.addr] = state
+            if block.addr == self.target_func.addr:
+                boundary_state = state
             if self._node_iterations[block.addr] > self._max_iterations:
                 continue
 
             state = self._run_on_node(state)
-            last_states[block.addr] = state
+            if block.addr == self.target_func.addr:
+                boundary_state = state
 
             old_state = self._output_states_by_addr[block.addr]
             # Update output state
@@ -228,13 +230,9 @@ class BackwardSlicing(Analysis):
                 working_queue += list(block.addr for block in revisit_iter)
                 pending_queue |= set(block.addr for block in revisit_iter)
 
-        # Collect concrete results from the last state of each block
-        self.concrete_results = set()
-        for state in last_states.values():
-            self.concrete_results |= state.concrete_results
-        self.concrete_results = sorted(
-            self.concrete_results, key=lambda track: track.slice[0].ins_addr
-        )
+        # Collect concrete results from the boundary state
+        self.concrete_results = sorted(boundary_state.concrete_results, 
+                                       key=lambda track: track.slice[0].ins_addr)
 
     def _run_on_node(self, state: SlicingState) -> SlicingState:
         return self._engine.process(state.copy(), block=state.block)

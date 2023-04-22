@@ -2,7 +2,7 @@ from typing import List
 
 import ailment
 
-from ..multi_values import MultiValues
+from ...multi_values import MultiValues
 
 
 class CriteriaSelector:

@@ -1,15 +1,16 @@
 ##################################################
 #                    Summary                     #
 ##################################################
-Time: 2900 seconds
+Time: 3171 seconds
 Extraction success rate: 36% (487 success, 841 failure, 0)
-Analysis success rate: 98% (11176 success, 132 failure, 32 timeout)
-Misuses number: 32
-- ConstantKeysChecker: 9
+Analysis success rate: 97% (12944 success, 346 failure, 29 timeout)
+Misuses number: 542
+- ConstantKeysChecker: 17
 - ConstantSaltsChecker: 18
 - PBEIterationsChecker: 3
 - RSAKeySizesChecker: 0
-- ECBEncryptionChecker: 2
+- UnsafeEVPAlogirthmsChecker: 62
+- UnsafeAlgorithmsChecker: 442
 
 ##################################################
 #               Potential Misuses                #
@@ -17,35 +18,35 @@ Misuses number: 32
 *** ConstantKeysChecker ***
 Misuses #1
 [-] Filename: /home/bluesadi/dev/Yasat/tests_dev/tmp/Tomato/_freshtomato-RT-AC3200-ARM-2022.5-AIO-64K.zip.extracted/_freshtomato-RT-AC3200-ARM-2022.5-AIO-64K.trx.extracted/squashfs-root/sbin/rc
-[-] Description: Call to crypt(key="http_passwd") at address 0x21120
-[-] Correctness: UN
-[-] Statements:
-0x21120 | Call(0xbbb4<32>, <SimCCARM>: [Load(addr=stack_base-52, size=4, endness=Iend_LE), 0x54669<32>], ret: r0<4>, fp_ret: no-fp-ret-value)
-0x210d8 | s_34 =L Call(0x20864<32>, <SimCCARM>: [0x54650<32>], ret: r0<4>, fp_ret: no-fp-ret-value)<4>
-
-Misuses #2
-[-] Filename: /home/bluesadi/dev/Yasat/tests_dev/tmp/Tomato/_freshtomato-RT-AC3200-ARM-2022.5-AIO-64K.zip.extracted/_freshtomato-RT-AC3200-ARM-2022.5-AIO-64K.trx.extracted/squashfs-root/sbin/rc
 [-] Description: Call to crypt(key="admin") at address 0x21120
 [-] Correctness: UN
 [-] Statements:
 0x21120 | Call(0xbbb4<32>, <SimCCARM>: [Load(addr=stack_base-52, size=4, endness=Iend_LE), 0x54669<32>], ret: r0<4>, fp_ret: no-fp-ret-value)
 0x210ec | s_34 =L 0x541cc<32><4>[t40]
 
-Misuses #3
+Misuses #2
 [-] Filename: /home/bluesadi/dev/Yasat/tests_dev/tmp/Tomato/_freshtomato-RT-AC3200-ARM-2022.5-AIO-64K.zip.extracted/_freshtomato-RT-AC3200-ARM-2022.5-AIO-64K.trx.extracted/squashfs-root/sbin/rc
-[-] Description: Call to crypt(key="admin") at address 0x21274
+[-] Description: Call to crypt(key="http_passwd") at address 0x21120
 [-] Correctness: UN
 [-] Statements:
-0x21274 | Call(0xb974<32>, <SimCCARM>: [r5<4>, 0x54704<32>, Load(addr=stack_base-48, size=4, endness=Iend_LE), Call (target: 0xbbb4<32>, prototype: (int (32 bits), int (32 bits)) -> int (32 bits), args: [Load(addr=stack_base-52, size=4, endness=Iend_LE), 0x54669<32>]), Load(addr=stack_base-424, size=4, endness=Iend_LE), Load(addr=stack_base-420, size=4, endness=Iend_LE)], ret: no-ret-value, fp_ret: no-fp-ret-value)
-0x210ec | s_34 =L 0x541cc<32><4>[t40]
+0x21120 | Call(0xbbb4<32>, <SimCCARM>: [Load(addr=stack_base-52, size=4, endness=Iend_LE), 0x54669<32>], ret: r0<4>, fp_ret: no-fp-ret-value)
+0x210d8 | s_34 =L Call(0x20864<32>, <SimCCARM>: [0x54650<32>], ret: r0<4>, fp_ret: no-fp-ret-value)<4>
 
-Misuses #4
+Misuses #3
 [-] Filename: /home/bluesadi/dev/Yasat/tests_dev/tmp/Tomato/_freshtomato-RT-AC3200-ARM-2022.5-AIO-64K.zip.extracted/_freshtomato-RT-AC3200-ARM-2022.5-AIO-64K.trx.extracted/squashfs-root/sbin/rc
 [-] Description: Call to crypt(key="http_passwd") at address 0x21274
 [-] Correctness: UN
 [-] Statements:
 0x21274 | Call(0xb974<32>, <SimCCARM>: [r5<4>, 0x54704<32>, Load(addr=stack_base-48, size=4, endness=Iend_LE), Call (target: 0xbbb4<32>, prototype: (int (32 bits), int (32 bits)) -> int (32 bits), args: [Load(addr=stack_base-52, size=4, endness=Iend_LE), 0x54669<32>]), Load(addr=stack_base-424, size=4, endness=Iend_LE), Load(addr=stack_base-420, size=4, endness=Iend_LE)], ret: no-ret-value, fp_ret: no-fp-ret-value)
 0x210d8 | s_34 =L Call(0x20864<32>, <SimCCARM>: [0x54650<32>], ret: r0<4>, fp_ret: no-fp-ret-value)<4>
+
+Misuses #4
+[-] Filename: /home/bluesadi/dev/Yasat/tests_dev/tmp/Tomato/_freshtomato-RT-AC3200-ARM-2022.5-AIO-64K.zip.extracted/_freshtomato-RT-AC3200-ARM-2022.5-AIO-64K.trx.extracted/squashfs-root/sbin/rc
+[-] Description: Call to crypt(key="admin") at address 0x21274
+[-] Correctness: UN
+[-] Statements:
+0x21274 | Call(0xb974<32>, <SimCCARM>: [r5<4>, 0x54704<32>, Load(addr=stack_base-48, size=4, endness=Iend_LE), Call (target: 0xbbb4<32>, prototype: (int (32 bits), int (32 bits)) -> int (32 bits), args: [Load(addr=stack_base-52, size=4, endness=Iend_LE), 0x54669<32>]), Load(addr=stack_base-424, size=4, endness=Iend_LE), Load(addr=stack_base-420, size=4, endness=Iend_LE)], ret: no-ret-value, fp_ret: no-fp-ret-value)
+0x210ec | s_34 =L 0x541cc<32><4>[t40]
 
 Misuses #5
 [-] Filename: /home/bluesadi/dev/Yasat/tests_dev/tmp/Tomato/_freshtomato-RT-AC3200-ARM-2022.5-AIO-64K.zip.extracted/_freshtomato-RT-AC3200-ARM-2022.5-AIO-64K.trx.extracted/squashfs-root/sbin/rc
@@ -85,6 +86,62 @@ Misuses #9
 [-] Correctness: UN
 [-] Statements:
 0x3bbe4 | Call(0xd038<32>, <SimCCARM>: [BaseOffset(stack_base, -168), Call (target: 0xd9bc<32>, prototype: () -> int (32 bits), args: None), 0xb13ac<32>, 0xb139c<32>], ret: no-ret-value, fp_ret: no-fp-ret-value)
+
+Misuses #10
+[-] Filename: tests_dev/tmp/Netgear/_R7350_V1.2.0.92.zip.extracted/_R7350_V1.2.0.92_1.0.1.img.extracted/_R6950.bin.extracted/squashfs-root/usr/sbin/Netgear_ddns
+[-] Description: Call to AES_set_encrypt_key(key="NETGEAR-rbu") at address 0x4081c4
+[-] Correctness: UN
+[-] Statements:
+0x4081c4 | Call(0x500048<32>, <SimCCO32>: [0x41b338<32>, 0x100<32>], ret: v0<4>, fp_ret: no-fp-ret-value)
+
+Misuses #11
+[-] Filename: tests_dev/tmp/Netgear/_R7350_V1.2.0.92.zip.extracted/_R7350_V1.2.0.92_1.0.1.img.extracted/_R6950.bin.extracted/squashfs-root/usr/sbin/Netgear_ddns
+[-] Description: Call to AES_set_encrypt_key(key="NETGEAR-rbu") at address 0x40702c
+[-] Correctness: UN
+[-] Statements:
+0x40702c | Call(0x500048<32>, <SimCCO32>: [0x41b338<32>, 0x100<32>], ret: v0<4>, fp_ret: no-fp-ret-value)
+
+Misuses #12
+[-] Filename: tests_dev/tmp/Netgear/_R7350_V1.2.0.92.zip.extracted/_R7350_V1.2.0.92_1.0.1.img.extracted/_R6950.bin.extracted/squashfs-root/usr/sbin/Netgear_ddns
+[-] Description: Call to AES_set_decrypt_key(key="NETGEAR-rbu") at address 0x4084c4
+[-] Correctness: UN
+[-] Statements:
+0x4084c4 | Call(0x5000f0<32>, <SimCCO32>: [0x41b338<32>, 0x100<32>], ret: v0<4>, fp_ret: no-fp-ret-value)
+
+Misuses #13
+[-] Filename: tests_dev/tmp/Netgear/_R7350_V1.2.0.92.zip.extracted/_R7350_V1.2.0.92_1.0.1.img.extracted/_R6950.bin.extracted/squashfs-root/usr/sbin/Netgear_ddns
+[-] Description: Call to AES_set_decrypt_key(key="NETGEAR-rbu") at address 0x403b58
+[-] Correctness: UN
+[-] Statements:
+0x403b58 | Call(0x5000f0<32>, <SimCCO32>: [0x41b338<32>, 0x100<32>], ret: v0<4>, fp_ret: no-fp-ret-value)
+
+Misuses #14
+[-] Filename: tests_dev/tmp/Netgear/_D7000_V1.0.1.80_1.0.1.zip.extracted/_D7000 V1.0.1.80_1.0.1.img.extracted/_D7000.bin.extracted/jffs2-root/usr/sbin/Netgear_ddns
+[-] Description: Call to AES_set_encrypt_key(key="NETGEAR-rbu") at address 0xd588
+[-] Correctness: UN
+[-] Statements:
+0xd588 | Call(0x9028<32>, <SimCCARM>: [0x17a32<32>, 0x100<32>, BaseOffset(stack_base, -860)], ret: r0<4>, fp_ret: no-fp-ret-value)
+
+Misuses #15
+[-] Filename: tests_dev/tmp/Netgear/_D7000_V1.0.1.80_1.0.1.zip.extracted/_D7000 V1.0.1.80_1.0.1.img.extracted/_D7000.bin.extracted/jffs2-root/usr/sbin/Netgear_ddns
+[-] Description: Call to AES_set_encrypt_key(key="NETGEAR-rbu") at address 0xca80
+[-] Correctness: UN
+[-] Statements:
+0xca80 | Call(0x9028<32>, <SimCCARM>: [0x17a32<32>, 0x100<32>, BaseOffset(stack_base, -676)], ret: r0<4>, fp_ret: no-fp-ret-value)
+
+Misuses #16
+[-] Filename: tests_dev/tmp/Netgear/_D7000_V1.0.1.80_1.0.1.zip.extracted/_D7000 V1.0.1.80_1.0.1.img.extracted/_D7000.bin.extracted/jffs2-root/usr/sbin/Netgear_ddns
+[-] Description: Call to AES_set_decrypt_key(key="NETGEAR-rbu") at address 0xd72c
+[-] Correctness: UN
+[-] Statements:
+0xd72c | Call(0x8e24<32>, <SimCCARM>: [0x17a32<32>, 0x100<32>, BaseOffset(stack_base, -616)], ret: r0<4>, fp_ret: no-fp-ret-value)
+
+Misuses #17
+[-] Filename: tests_dev/tmp/Netgear/_D7000_V1.0.1.80_1.0.1.zip.extracted/_D7000 V1.0.1.80_1.0.1.img.extracted/_D7000.bin.extracted/jffs2-root/usr/sbin/Netgear_ddns
+[-] Description: Call to AES_set_decrypt_key(key="NETGEAR-rbu") at address 0xaafc
+[-] Correctness: UN
+[-] Statements:
+0xaafc | Call(0x8e24<32>, <SimCCARM>: [0x17a32<32>, 0x100<32>, BaseOffset(stack_base, -648)], ret: r0<4>, fp_ret: no-fp-ret-value)
 
 *** ConstantSaltsChecker ***
 Misuses #1
@@ -194,22 +251,22 @@ Misuses #15
 0xde4c | Call(0x9a20<32>, <SimCCARM>: [BaseOffset(stack_base, -3780), Call (target: 0x96e4<32>, prototype: (int (32 bits), int (32 bits)) -> int (32 bits), args: [r4<4>, 0x1cbfc<32>])], ret: r0<4>, fp_ret: no-fp-ret-value)
 
 Misuses #16
-[-] Filename: tests_dev/tmp/Netgear/_CAX80-V2.1.3.5.zip.extracted/_CAX80-V2.1.3.5.bin.extracted/ubifs-root/1403050352/rootfs/usr/sbin/wanbftpd
+[-] Filename: /home/bluesadi/dev/Yasat/tests_dev/tmp/Netgear/_CAX80-V2.1.3.5.zip.extracted/_CAX80-V2.1.3.5.bin.extracted/ubifs-root/1403050352/rootfs/usr/sbin/wanbftpd
 [-] Description: Call to crypt(salt="ADMIN_PASS") at address 0xeaac
 [-] Correctness: UN
 [-] Statements:
-0xeaac | Call(0x9578<32>, <SimCCARMHF>: [Call (target: 0x9848<32>, prototype: (char*, char*) -> char*, args: [BaseOffset(stack_base, -336), r4<4>]), r4<4>], ret: r0<4>, fp_ret: no-fp-ret-value)
+0xeaac | Call(0x9578<32>, <SimCCARMHF>: [Call (target: 0x9848<32>, prototype: (int (32 bits), int (32 bits)) -> None, args: [BaseOffset(stack_base, -336), r4<4>]), r4<4>], ret: r0<4>, fp_ret: no-fp-ret-value)
 0xea70 | r4<4> = Call(0x12ac8<32>, <SimCCARMHF>: [0x16118<32>], ret: r0<4>, fp_ret: no-fp-ret-value)
 
 Misuses #17
-[-] Filename: tests_dev/tmp/Netgear/_D7000_V1.0.1.80_1.0.1.zip.extracted/_D7000 V1.0.1.80_1.0.1.img.extracted/_D7000.bin.extracted/jffs2-root/usr/sbin/rc_app/rc_apps
+[-] Filename: /home/bluesadi/dev/Yasat/tests_dev/tmp/Netgear/_D7000_V1.0.1.80_1.0.1.zip.extracted/_D7000 V1.0.1.80_1.0.1.img.extracted/_D7000.bin.extracted/jffs2-root/usr/sbin/rc_app/rc_apps
 [-] Description: Call to crypt(salt="sc") at address 0x4b1c8
 [-] Correctness: UN
 [-] Statements:
 0x4b1c8 | s_1c =L Call(0xa8d0<32>, <SimCCARM>: [BaseOffset(stack_base, -56), 0x83c14<32>], ret: r0<4>, fp_ret: no-fp-ret-value)<4>
 
 Misuses #18
-[-] Filename: tests_dev/tmp/Netgear/_D7000_V1.0.1.80_1.0.1.zip.extracted/_D7000 V1.0.1.80_1.0.1.img.extracted/_D7000.bin.extracted/jffs2-root/usr/sbin/rc_app/rc_apps
+[-] Filename: /home/bluesadi/dev/Yasat/tests_dev/tmp/Netgear/_D7000_V1.0.1.80_1.0.1.zip.extracted/_D7000 V1.0.1.80_1.0.1.img.extracted/_D7000.bin.extracted/jffs2-root/usr/sbin/rc_app/rc_apps
 [-] Description: Call to crypt(salt="sc") at address 0x4b204
 [-] Correctness: UN
 [-] Statements:
@@ -234,7 +291,7 @@ Misuses #2
 0x242b8 | s_14 =L 0x5<32><4>
 
 Misuses #3
-[-] Filename: tests_dev/tmp/Netgear/_AC803S_1780690_01.13.00_032.field.zip.extracted/_AC803S_1780690_01.13.00_032.field.bin.extracted/cramfs-root/apps/WanManager
+[-] Filename: /home/bluesadi/dev/Yasat/tests_dev/tmp/Netgear/_AC803S_1780690_01.13.00_032.field.zip.extracted/_AC803S_1780690_01.13.00_032.field.bin.extracted/cramfs-root/apps/WanManager
 [-] Description: Call to EVP_BytesToKey(iterations=1) at address 0x6efb0
 [-] Correctness: UN
 [-] Statements:
@@ -242,18 +299,3131 @@ Misuses #3
 0x6ef74 | s_74 =L 0x1<32><4>
 
 *** RSAKeySizesChecker ***
-*** ECBEncryptionChecker ***
+*** UnsafeEVPAlogirthmsChecker ***
 Misuses #1
+[-] Filename: /home/bluesadi/dev/Yasat/tests_dev/tmp/WD/_My_Cloud_LT4A_2.12.127.bin.extracted/squashfs-root/lib/libnetsnmp.so.20
+[-] Description: Call to EVP_DigestInit(type=EVP_md5()) at address 0x482b80
+[-] Correctness: UN
+[-] Statements:
+0x482b80 | Call(0x40ea5c<32>, <SimCCARM>: [Load(addr=stack_base-12, size=4, endness=Iend_LE), Call (target: 0x410568<32>, prototype: () -> int (32 bits), args: None)], ret: no-ret-value, fp_ret: no-fp-ret-value)
+
+Misuses #2
+[-] Filename: /home/bluesadi/dev/Yasat/tests_dev/tmp/WD/_My_Cloud_LT4A_2.12.127.bin.extracted/squashfs-root/lib/libnetsnmp.so.20
+[-] Description: Call to EVP_DigestInit(type=EVP_sha1()) at address 0x482bc4
+[-] Correctness: UN
+[-] Statements:
+0x482bc4 | Call(0x40ea5c<32>, <SimCCARM>: [Load(addr=stack_base-12, size=4, endness=Iend_LE), Call (target: 0x410784<32>, prototype: () -> int (32 bits), args: None)], ret: no-ret-value, fp_ret: no-fp-ret-value)
+
+Misuses #3
+[-] Filename: /home/bluesadi/dev/Yasat/tests_dev/tmp/WD/_My_Cloud_LT4A_2.12.127.bin.extracted/squashfs-root/lib/libnetsnmp.so.20
+[-] Description: Call to EVP_DigestInit(type=EVP_sha1()) at address 0x4850a0
+[-] Correctness: UN
+[-] Statements:
+0x4850a0 | Call(0x40ea5c<32>, <SimCCARM>: [Load(addr=stack_base-12, size=4, endness=Iend_LE), Load(addr=stack_base-16, size=4, endness=Iend_LE)], ret: no-ret-value, fp_ret: no-fp-ret-value)
+0x485044 | s_10 =L Call(0x410784<32>, <SimCCARM>: [], ret: r0<4>, fp_ret: no-fp-ret-value)<4>
+
+Misuses #4
+[-] Filename: /home/bluesadi/dev/Yasat/tests_dev/tmp/WD/_My_Cloud_LT4A_2.12.127.bin.extracted/squashfs-root/lib/libnetsnmp.so.20
+[-] Description: Call to EVP_DigestInit(type=EVP_md5()) at address 0x4850a0
+[-] Correctness: UN
+[-] Statements:
+0x4850a0 | Call(0x40ea5c<32>, <SimCCARM>: [Load(addr=stack_base-12, size=4, endness=Iend_LE), Load(addr=stack_base-16, size=4, endness=Iend_LE)], ret: no-ret-value, fp_ret: no-fp-ret-value)
+0x485008 | s_10 =L Call(0x410568<32>, <SimCCARM>: [], ret: r0<4>, fp_ret: no-fp-ret-value)<4>
+
+Misuses #5
+[-] Filename: /home/bluesadi/dev/Yasat/tests_dev/tmp/WD/_My_Cloud_LT4A_2.12.127.bin.extracted/squashfs-root/lib/libnetsnmp.so.20
+[-] Description: Call to EVP_DigestInit(type=EVP_md5()) at address 0x4850b8
+[-] Correctness: UN
+[-] Statements:
+0x4850b8 | Call(0x40ea5c<32>, <SimCCARM>: [Load(addr=stack_base-12, size=4, endness=Iend_LE), Load(addr=stack_base-16, size=4, endness=Iend_LE)], ret: no-ret-value, fp_ret: no-fp-ret-value)
+0x485008 | s_10 =L Call(0x410568<32>, <SimCCARM>: [], ret: r0<4>, fp_ret: no-fp-ret-value)<4>
+
+Misuses #6
+[-] Filename: /home/bluesadi/dev/Yasat/tests_dev/tmp/WD/_My_Cloud_LT4A_2.12.127.bin.extracted/squashfs-root/lib/libnetsnmp.so.20
+[-] Description: Call to EVP_DigestInit(type=EVP_sha1()) at address 0x4850b8
+[-] Correctness: UN
+[-] Statements:
+0x4850b8 | Call(0x40ea5c<32>, <SimCCARM>: [Load(addr=stack_base-12, size=4, endness=Iend_LE), Load(addr=stack_base-16, size=4, endness=Iend_LE)], ret: no-ret-value, fp_ret: no-fp-ret-value)
+0x485044 | s_10 =L Call(0x410784<32>, <SimCCARM>: [], ret: r0<4>, fp_ret: no-fp-ret-value)<4>
+
+Misuses #7
+[-] Filename: /home/bluesadi/dev/Yasat/tests_dev/tmp/WD/_MyPassportWirelessSSD_1.04.17.bin.extracted/_rootfs.tar.gz.extracted/_rootfs.tar.extracted/usr/libexec/ssh-pkcs11-helper
+[-] Description: Call to EVP_CipherInit(type=EVP_des_cbc()) at address 0x40f900
+[-] Correctness: UN
+[-] Statements:
+0x40f900 | Call(0x403a7c<32>, <SimCCARMHF>: [r4<4>, Call (target: 0x40432c<32>, prototype: (int (32 bits)) -> int (32 bits), args: [Call (target: 0x403e58<32>, prototype: (int (32 bits)) -> None, args: [Add(r4<4>, 0x118<32>)])]), r7<4>, 0x0<32>, Load(addr=stack_base-48, size=4, endness=Iend_LE)], ret: r0<4>, fp_ret: no-fp-ret-value)
+
+Misuses #8
+[-] Filename: /home/bluesadi/dev/Yasat/tests_dev/tmp/WD/_MyPassportWirelessSSD_1.04.17.bin.extracted/_rootfs.tar.gz.extracted/_rootfs.tar.extracted/usr/libexec/ssh-pkcs11-helper
+[-] Description: Call to EVP_CipherInit(type=EVP_des_cbc()) at address 0x40f954
+[-] Correctness: UN
+[-] Statements:
+0x40f954 | Call(0x403a7c<32>, <SimCCARMHF>: [Add(r4<4>, 0x8c<32>), Call (target: 0x40432c<32>, prototype: () -> int (32 bits), args: None), Add(r1<4>, 0x8<32>), 0x0<32>, Load(addr=stack_base-48, size=4, endness=Iend_LE)], ret: r0<4>, fp_ret: no-fp-ret-value)
+
+Misuses #9
+[-] Filename: /home/bluesadi/dev/Yasat/tests_dev/tmp/WD/_MyPassportWirelessSSD_1.04.17.bin.extracted/_rootfs.tar.gz.extracted/_rootfs.tar.extracted/usr/libexec/ssh-pkcs11-helper
+[-] Description: Call to EVP_CipherInit(type=EVP_des_cbc()) at address 0x40f978
+[-] Correctness: UN
+[-] Statements:
+0x40f978 | Call(0x403a7c<32>, <SimCCARMHF>: [Add(r4<4>, 0x118<32>), Call (target: 0x40432c<32>, prototype: () -> int (32 bits), args: None), r9<4>, 0x0<32>, Load(addr=stack_base-48, size=4, endness=Iend_LE)], ret: r0<4>, fp_ret: no-fp-ret-value)
+
+Misuses #10
+[-] Filename: /home/bluesadi/dev/Yasat/tests_dev/tmp/WD/_MyPassportWirelessSSD_1.04.17.bin.extracted/_rootfs.tar.gz.extracted/_rootfs.tar.extracted/usr/libexec/ssh-keysign
+[-] Description: Call to EVP_CipherInit(type=EVP_des_cbc()) at address 0x412bb0
+[-] Correctness: UN
+[-] Statements:
+0x412bb0 | Call(0x404adc<32>, <SimCCARMHF>: [r4<4>, Call (target: 0x404aac<32>, prototype: (int (32 bits)) -> int (32 bits), args: [Call (target: 0x4043ac<32>, prototype: (int (32 bits)) -> None, args: [Add(r4<4>, 0x118<32>)])]), r7<4>, 0x0<32>, Load(addr=stack_base-48, size=4, endness=Iend_LE)], ret: r0<4>, fp_ret: no-fp-ret-value)
+
+Misuses #11
+[-] Filename: /home/bluesadi/dev/Yasat/tests_dev/tmp/WD/_MyPassportWirelessSSD_1.04.17.bin.extracted/_rootfs.tar.gz.extracted/_rootfs.tar.extracted/usr/libexec/ssh-keysign
+[-] Description: Call to EVP_CipherInit(type=EVP_des_cbc()) at address 0x412c04
+[-] Correctness: UN
+[-] Statements:
+0x412c04 | Call(0x404adc<32>, <SimCCARMHF>: [Add(r4<4>, 0x8c<32>), Call (target: 0x404aac<32>, prototype: () -> int (32 bits), args: None), Add(r1<4>, 0x8<32>), 0x0<32>, Load(addr=stack_base-48, size=4, endness=Iend_LE)], ret: r0<4>, fp_ret: no-fp-ret-value)
+
+Misuses #12
+[-] Filename: /home/bluesadi/dev/Yasat/tests_dev/tmp/WD/_MyPassportWirelessSSD_1.04.17.bin.extracted/_rootfs.tar.gz.extracted/_rootfs.tar.extracted/usr/libexec/ssh-keysign
+[-] Description: Call to EVP_CipherInit(type=EVP_des_cbc()) at address 0x412c28
+[-] Correctness: UN
+[-] Statements:
+0x412c28 | Call(0x404adc<32>, <SimCCARMHF>: [Add(r4<4>, 0x118<32>), Call (target: 0x404aac<32>, prototype: () -> int (32 bits), args: None), r9<4>, 0x0<32>, Load(addr=stack_base-48, size=4, endness=Iend_LE)], ret: r0<4>, fp_ret: no-fp-ret-value)
+
+Misuses #13
+[-] Filename: /home/bluesadi/dev/Yasat/tests_dev/tmp/Zyxel/_NAS540_V5.21(AATB.8)C0.zip.extracted/_521AATB8C0.bin.extracted/_71643E.extracted/ext-root/usr/lib/libdar.so.4
+[-] Description: Call to EVP_DigestInit_ex(type=EVP_sha1()) at address 0x473ce8
+[-] Correctness: UN
+[-] Statements:
+0x473ce8 | Call(0x422c00<32>, <SimCCARMHF>: [r6<4>, r7<4>, 0x0<32>], ret: r0<4>, fp_ret: no-fp-ret-value)
+0x473c4c | r7<4> = r0<4>
+0x473c44 | Call(0x423038<32>, <SimCCARMHF>: [], ret: r0<4>, fp_ret: no-fp-ret-value)
+
+Misuses #14
+[-] Filename: /home/bluesadi/dev/Yasat/tests_dev/tmp/Zyxel/_WAC5302D-Sv2_6.25(ABVZ.9)C0.zip.extracted/_625ABVZ9C0.bin.extracted/squashfs-root/usr/lib/libcurl.so.4.5.0
+[-] Description: Call to EVP_DigestInit_ex(type=EVP_md5()) at address 0x43377c
+[-] Correctness: UN
+[-] Statements:
+0x43377c | Call(0x4058b4<32>, <SimCCARM>: [r0<4>, Call (target: 0x405938<32>, prototype: (int (32 bits)) -> int (32 bits), args: [r0<4>]), 0x0<32>], ret: no-ret-value, fp_ret: no-fp-ret-value)
+
+Misuses #15
+[-] Filename: /home/bluesadi/dev/Yasat/tests_dev/tmp/Zyxel/_WAC5302D-Sv2_6.25(ABVZ.9)C0.zip.extracted/_625ABVZ9C0.bin.extracted/squashfs-root/usr/local/lib/libnetsnmp.so.15.1.2
+[-] Description: Call to EVP_DigestInit(type=EVP_sha1()) at address 0x439834
+[-] Correctness: UN
+[-] Statements:
+0x439834 | Call(0x40cd90<32>, <SimCCARM>: [r4<4>, r0<4>], ret: no-ret-value, fp_ret: no-fp-ret-value)
+0x439820 | Call(0x40e860<32>, <SimCCARM>: [], ret: r0<4>, fp_ret: no-fp-ret-value)
+
+Misuses #16
+[-] Filename: /home/bluesadi/dev/Yasat/tests_dev/tmp/Zyxel/_WAC5302D-Sv2_6.25(ABVZ.9)C0.zip.extracted/_625ABVZ9C0.bin.extracted/squashfs-root/usr/local/lib/libnetsnmp.so.15.1.2
+[-] Description: Call to EVP_DigestInit(type=EVP_md5()) at address 0x439834
+[-] Correctness: UN
+[-] Statements:
+0x439834 | Call(0x40cd90<32>, <SimCCARM>: [r4<4>, r0<4>], ret: no-ret-value, fp_ret: no-fp-ret-value)
+0x4397f8 | Call(0x40e674<32>, <SimCCARM>: [], ret: r0<4>, fp_ret: no-fp-ret-value)
+
+Misuses #17
+[-] Filename: /home/bluesadi/dev/Yasat/tests_dev/tmp/Zyxel/_WAC5302D-Sv2_6.25(ABVZ.9)C0.zip.extracted/_625ABVZ9C0.bin.extracted/squashfs-root/usr/local/lib/libnetsnmp.so.15.1.2
+[-] Description: Call to EVP_DigestInit(type=EVP_sha1()) at address 0x43a2e4
+[-] Correctness: UN
+[-] Statements:
+0x43a2e4 | Call(0x40cd90<32>, <SimCCARM>: [r0<4>, r7<4>], ret: no-ret-value, fp_ret: no-fp-ret-value)
+0x43a2a8 | r7<4> = r0<4>
+0x43a298 | Call(0x40e860<32>, <SimCCARM>: [], ret: r0<4>, fp_ret: no-fp-ret-value)
+
+Misuses #18
+[-] Filename: /home/bluesadi/dev/Yasat/tests_dev/tmp/Zyxel/_WAC5302D-Sv2_6.25(ABVZ.9)C0.zip.extracted/_625ABVZ9C0.bin.extracted/squashfs-root/usr/local/lib/libnetsnmp.so.15.1.2
+[-] Description: Call to EVP_DigestInit(type=EVP_md5()) at address 0x43a2e4
+[-] Correctness: UN
+[-] Statements:
+0x43a2e4 | Call(0x40cd90<32>, <SimCCARM>: [r0<4>, r7<4>], ret: no-ret-value, fp_ret: no-fp-ret-value)
+0x43a2a8 | r7<4> = r0<4>
+0x43a270 | Call(0x40e674<32>, <SimCCARM>: [], ret: r0<4>, fp_ret: no-fp-ret-value)
+
+Misuses #19
+[-] Filename: /home/bluesadi/dev/Yasat/tests_dev/tmp/Netgear/_LBR20_V2.6.5.2.zip.extracted/_LBR20-V2.6.5.2.img.extracted/squashfs-root/usr/bin/circlev2/shares/usr/lib/libcurl.so.4.6.0
+[-] Description: Call to EVP_DigestInit_ex(type=EVP_md5()) at address 0x440510
+[-] Correctness: UN
+[-] Statements:
+0x440510 | Call(0x405738<32>, <SimCCARM>: [r0<4>, Call (target: 0x405348<32>, prototype: (int (32 bits)) -> int (32 bits), args: [r0<4>]), 0x0<32>], ret: no-ret-value, fp_ret: no-fp-ret-value)
+
+Misuses #20
+[-] Filename: /home/bluesadi/dev/Yasat/tests_dev/tmp/Netgear/_SXS30-V3.2.33.108-signed.zip.extracted/_SXS30-V3.2.33.108-signed.img.extracted/squashfs-root/opt/netgear/usr/lib/libcurl.so.4.7.0
+[-] Description: Call to EVP_DigestInit(type=EVP_md5()) at address 0x43879c
+[-] Correctness: UN
+[-] Statements:
+0x43879c | Call(0x406448<32>, <SimCCARM>: [r8<4>, Call (target: 0x405af4<32>, prototype: (int (32 bits)) -> int (32 bits), args: [r0<4>])], ret: no-ret-value, fp_ret: no-fp-ret-value)
+
+Misuses #21
+[-] Filename: /home/bluesadi/dev/Yasat/tests_dev/tmp/Netgear/_SXS30-V3.2.33.108-signed.zip.extracted/_SXS30-V3.2.33.108-signed.img.extracted/squashfs-root/usr/sbin/hostapd-macsec
+[-] Description: Call to EVP_EncryptInit_ex(type=EVP_des_cbc()) at address 0x4ce6fc
+[-] Correctness: UN
+[-] Statements:
+0x4ce6fc | Call(0x4092a0<32>, <SimCCARM>: [Load(addr=r4<4>, size=4, endness=Iend_LE), r6<4>, 0x0<32>, 0x0<32>, Load(addr=stack_base-40, size=4, endness=Iend_LE)], ret: r0<4>, fp_ret: no-fp-ret-value)
+0x4ce68c | r6<4> = r0<4>
+0x4ce6bc | Call(0x40978c<32>, <SimCCARM>: [], ret: r0<4>, fp_ret: no-fp-ret-value)
+
+Misuses #22
+[-] Filename: /home/bluesadi/dev/Yasat/tests_dev/tmp/Netgear/_SXS30-V3.2.33.108-signed.zip.extracted/_SXS30-V3.2.33.108-signed.img.extracted/squashfs-root/usr/sbin/hostapd-macsec
+[-] Description: Call to EVP_EncryptInit_ex(type=EVP_des_ede3_cbc()) at address 0x4ce6fc
+[-] Correctness: UN
+[-] Statements:
+0x4ce6fc | Call(0x4092a0<32>, <SimCCARM>: [Load(addr=r4<4>, size=4, endness=Iend_LE), r6<4>, 0x0<32>, 0x0<32>, Load(addr=stack_base-40, size=4, endness=Iend_LE)], ret: r0<4>, fp_ret: no-fp-ret-value)
+0x4ce68c | r6<4> = r0<4>
+0x4ce6b4 | Call(0x409450<32>, <SimCCARM>: [], ret: r0<4>, fp_ret: no-fp-ret-value)
+
+Misuses #23
+[-] Filename: /home/bluesadi/dev/Yasat/tests_dev/tmp/Netgear/_SXS30-V3.2.33.108-signed.zip.extracted/_SXS30-V3.2.33.108-signed.img.extracted/squashfs-root/usr/sbin/hostapd-macsec
+[-] Description: Call to EVP_DecryptInit_ex(type=EVP_des_ede3_cbc()) at address 0x4ce78c
+[-] Correctness: UN
+[-] Statements:
+0x4ce78c | Call(0x40912c<32>, <SimCCARM>: [Load(addr=(r4<4> + 0x4<32>), size=4, endness=Iend_LE), r6<4>, 0x0<32>, 0x0<32>, Load(addr=stack_base-40, size=4, endness=Iend_LE)], ret: r0<4>, fp_ret: no-fp-ret-value)
+0x4ce68c | r6<4> = r0<4>
+0x4ce6b4 | Call(0x409450<32>, <SimCCARM>: [], ret: r0<4>, fp_ret: no-fp-ret-value)
+
+Misuses #24
+[-] Filename: /home/bluesadi/dev/Yasat/tests_dev/tmp/Netgear/_SXS30-V3.2.33.108-signed.zip.extracted/_SXS30-V3.2.33.108-signed.img.extracted/squashfs-root/usr/sbin/hostapd-macsec
+[-] Description: Call to EVP_DecryptInit_ex(type=EVP_des_cbc()) at address 0x4ce78c
+[-] Correctness: UN
+[-] Statements:
+0x4ce78c | Call(0x40912c<32>, <SimCCARM>: [Load(addr=(r4<4> + 0x4<32>), size=4, endness=Iend_LE), r6<4>, 0x0<32>, 0x0<32>, Load(addr=stack_base-40, size=4, endness=Iend_LE)], ret: r0<4>, fp_ret: no-fp-ret-value)
+0x4ce68c | r6<4> = r0<4>
+0x4ce6bc | Call(0x40978c<32>, <SimCCARM>: [], ret: r0<4>, fp_ret: no-fp-ret-value)
+
+Misuses #25
+[-] Filename: /home/bluesadi/dev/Yasat/tests_dev/tmp/Netgear/_SXS30-V3.2.33.108-signed.zip.extracted/_SXS30-V3.2.33.108-signed.img.extracted/squashfs-root/usr/sbin/wpa_supplicant-macsec
+[-] Description: Call to EVP_EncryptInit_ex(type=EVP_des_cbc()) at address 0x4e2db4
+[-] Correctness: UN
+[-] Statements:
+0x4e2db4 | Call(0x40a05c<32>, <SimCCARM>: [Load(addr=r4<4>, size=4, endness=Iend_LE), r6<4>, 0x0<32>, 0x0<32>, Load(addr=stack_base-40, size=4, endness=Iend_LE)], ret: r0<4>, fp_ret: no-fp-ret-value)
+0x4e2d44 | r6<4> = r0<4>
+0x4e2d74 | Call(0x40a4f4<32>, <SimCCARM>: [], ret: r0<4>, fp_ret: no-fp-ret-value)
+
+Misuses #26
+[-] Filename: /home/bluesadi/dev/Yasat/tests_dev/tmp/Netgear/_SXS30-V3.2.33.108-signed.zip.extracted/_SXS30-V3.2.33.108-signed.img.extracted/squashfs-root/usr/sbin/wpa_supplicant-macsec
+[-] Description: Call to EVP_EncryptInit_ex(type=EVP_des_ede3_cbc()) at address 0x4e2db4
+[-] Correctness: UN
+[-] Statements:
+0x4e2db4 | Call(0x40a05c<32>, <SimCCARM>: [Load(addr=r4<4>, size=4, endness=Iend_LE), r6<4>, 0x0<32>, 0x0<32>, Load(addr=stack_base-40, size=4, endness=Iend_LE)], ret: r0<4>, fp_ret: no-fp-ret-value)
+0x4e2d44 | r6<4> = r0<4>
+0x4e2d6c | Call(0x40a200<32>, <SimCCARM>: [], ret: r0<4>, fp_ret: no-fp-ret-value)
+
+Misuses #27
+[-] Filename: /home/bluesadi/dev/Yasat/tests_dev/tmp/Netgear/_SXS30-V3.2.33.108-signed.zip.extracted/_SXS30-V3.2.33.108-signed.img.extracted/squashfs-root/usr/sbin/wpa_supplicant-macsec
+[-] Description: Call to EVP_DecryptInit_ex(type=EVP_des_ede3_cbc()) at address 0x4e2e44
+[-] Correctness: UN
+[-] Statements:
+0x4e2e44 | Call(0x409f00<32>, <SimCCARM>: [Load(addr=(r4<4> + 0x4<32>), size=4, endness=Iend_LE), r6<4>, 0x0<32>, 0x0<32>, Load(addr=stack_base-40, size=4, endness=Iend_LE)], ret: r0<4>, fp_ret: no-fp-ret-value)
+0x4e2d44 | r6<4> = r0<4>
+0x4e2d6c | Call(0x40a200<32>, <SimCCARM>: [], ret: r0<4>, fp_ret: no-fp-ret-value)
+
+Misuses #28
+[-] Filename: /home/bluesadi/dev/Yasat/tests_dev/tmp/Netgear/_SXS30-V3.2.33.108-signed.zip.extracted/_SXS30-V3.2.33.108-signed.img.extracted/squashfs-root/usr/sbin/wpa_supplicant-macsec
+[-] Description: Call to EVP_DecryptInit_ex(type=EVP_des_cbc()) at address 0x4e2e44
+[-] Correctness: UN
+[-] Statements:
+0x4e2e44 | Call(0x409f00<32>, <SimCCARM>: [Load(addr=(r4<4> + 0x4<32>), size=4, endness=Iend_LE), r6<4>, 0x0<32>, 0x0<32>, Load(addr=stack_base-40, size=4, endness=Iend_LE)], ret: r0<4>, fp_ret: no-fp-ret-value)
+0x4e2d44 | r6<4> = r0<4>
+0x4e2d74 | Call(0x40a4f4<32>, <SimCCARM>: [], ret: r0<4>, fp_ret: no-fp-ret-value)
+
+Misuses #29
+[-] Filename: /home/bluesadi/dev/Yasat/tests_dev/tmp/Netgear/_R7300-V1.0.0.74_1.0.29.zip.extracted/_R7300-V1.0.0.74_1.0.29.chk.extracted/squashfs-root/usr/sbin/NetReadyAgent
+[-] Description: Call to EVP_DigestInit(type=EVP_md5()) at address 0xa0620
+[-] Correctness: UN
+[-] Statements:
+0xa0620 | Call(0xcc78<32>, <SimCCARM>: [Load(addr=stack_base-12, size=4, endness=Iend_LE), Call (target: 0xda04<32>, prototype: () -> int (32 bits), args: None)], ret: no-ret-value, fp_ret: no-fp-ret-value)
+
+Misuses #30
+[-] Filename: /home/bluesadi/dev/Yasat/tests_dev/tmp/Netgear/_FVS318G_V3.1.1-18.zip.extracted/_fvs318g_v3.1.1-18.img.extracted/squashfs-root/pfrm1.0/libarmarm-linux-racoonlnx.so
+[-] Description: Call to EVP_DigestInit(type=EVP_sha1()) at address 0x41c4c4
+[-] Correctness: UN
+[-] Statements:
+0x41c4c4 | Call(0x40dcbc<32>, <SimCCARM>: [BaseOffset(stack_base, -40), Call (target: 0x40ea90<32>, prototype: () -> int (32 bits), args: None)], ret: no-ret-value, fp_ret: no-fp-ret-value)
+
+Misuses #31
 [-] Filename: /home/bluesadi/dev/Yasat/tests_dev/tmp/Netgear/_XR300-V1.0.3.56_10.3.41.zip.extracted/_XR300-V1.0.3.56_10.3.41.chk.extracted/squashfs-root/usr/lib/libisc.so.166.2.0
 [-] Description: Call to EVP_EncryptInit(type=EVP_aes_256_ecb()) at address 0x40dcf8
 [-] Correctness: UN
 [-] Statements:
 0x40dcf8 | Call(0x40c850<32>, <SimCCARM>: [BaseOffset(stack_base, -168), Call (target: 0x40c508<32>, prototype: (int (32 bits)) -> int (32 bits), args: [Call (target: 0x40c1a8<32>, prototype: (int (32 bits)) -> None, args: [BaseOffset(stack_base, -168)])]), r0<4>, 0x0<32>], ret: r0<4>, fp_ret: no-fp-ret-value)
 
-Misuses #2
+Misuses #32
+[-] Filename: /home/bluesadi/dev/Yasat/tests_dev/tmp/Netgear/_XR300-V1.0.3.56_10.3.41.zip.extracted/_XR300-V1.0.3.56_10.3.41.chk.extracted/squashfs-root/usr/lib/libisc.so.166.2.0
+[-] Description: Call to EVP_EncryptInit(type=EVP_aes_192_ecb()) at address 0x40dbe0
+[-] Correctness: UN
+[-] Statements:
+0x40dbe0 | Call(0x40c850<32>, <SimCCARM>: [BaseOffset(stack_base, -168), Call (target: 0x40ca3c<32>, prototype: (int (32 bits)) -> int (32 bits), args: [Call (target: 0x40c1a8<32>, prototype: (int (32 bits)) -> None, args: [BaseOffset(stack_base, -168)])]), r0<4>, 0x0<32>], ret: r0<4>, fp_ret: no-fp-ret-value)
+
+Misuses #33
 [-] Filename: /home/bluesadi/dev/Yasat/tests_dev/tmp/Netgear/_XR300-V1.0.3.56_10.3.41.zip.extracted/_XR300-V1.0.3.56_10.3.41.chk.extracted/squashfs-root/usr/lib/libisc.so.166.2.0
 [-] Description: Call to EVP_EncryptInit(type=EVP_aes_128_ecb()) at address 0x40dac8
 [-] Correctness: UN
 [-] Statements:
 0x40dac8 | Call(0x40c850<32>, <SimCCARM>: [BaseOffset(stack_base, -168), Call (target: 0x40c214<32>, prototype: (int (32 bits)) -> int (32 bits), args: [Call (target: 0x40c1a8<32>, prototype: (int (32 bits)) -> None, args: [BaseOffset(stack_base, -168)])]), r0<4>, 0x0<32>], ret: r0<4>, fp_ret: no-fp-ret-value)
+
+Misuses #34
+[-] Filename: /home/bluesadi/dev/Yasat/tests_dev/tmp/Netgear/_FVS318Gv2_V4.3.5-3.zip.extracted/_FVS318Gv2_v4.3.5-3.img.extracted/squashfs-root/lib/libarmarm-linux-sshield.so
+[-] Description: Call to EVP_CipherInit(type=EVP_des_cbc()) at address 0x443340
+[-] Correctness: UN
+[-] Statements:
+0x443340 | Call(0x40cc30<32>, <SimCCARM>: [r4<4>, Call (target: 0x40cab0<32>, prototype: (int (32 bits)) -> int (32 bits), args: [Call (target: 0x40b514<32>, prototype: (int (32 bits)) -> None, args: [Add(r4<4>, 0x2d8<32>)])]), r6<4>, 0x0<32>, Load(addr=stack_base-48, size=4, endness=Iend_LE)], ret: r0<4>, fp_ret: no-fp-ret-value)
+
+Misuses #35
+[-] Filename: /home/bluesadi/dev/Yasat/tests_dev/tmp/Netgear/_FVS318Gv2_V4.3.5-3.zip.extracted/_FVS318Gv2_v4.3.5-3.img.extracted/squashfs-root/lib/libarmarm-linux-sshield.so
+[-] Description: Call to EVP_CipherInit(type=EVP_des_cbc()) at address 0x44339c
+[-] Correctness: UN
+[-] Statements:
+0x44339c | Call(0x40cc30<32>, <SimCCARM>: [Add(r4<4>, 0x16c<32>), Call (target: 0x40cab0<32>, prototype: () -> int (32 bits), args: None), Add(r5<4>, 0x8<32>), 0x0<32>, (((0x1<32> < Load(addr=stack_base-48, size=4, endness=Iend_LE))) ? (0x0<32>) : ((0x1<32> - Load(addr=stack_base-48, size=4, endness=Iend_LE))))], ret: r0<4>, fp_ret: no-fp-ret-value)
+
+Misuses #36
+[-] Filename: /home/bluesadi/dev/Yasat/tests_dev/tmp/Netgear/_FVS318Gv2_V4.3.5-3.zip.extracted/_FVS318Gv2_v4.3.5-3.img.extracted/squashfs-root/lib/libarmarm-linux-sshield.so
+[-] Description: Call to EVP_CipherInit(type=EVP_des_cbc()) at address 0x4433c0
+[-] Correctness: UN
+[-] Statements:
+0x4433c0 | Call(0x40cc30<32>, <SimCCARM>: [Add(r4<4>, 0x2d8<32>), Call (target: 0x40cab0<32>, prototype: () -> int (32 bits), args: None), r11<4>, 0x0<32>, Load(addr=stack_base-48, size=4, endness=Iend_LE)], ret: r0<4>, fp_ret: no-fp-ret-value)
+
+Misuses #37
+[-] Filename: /home/bluesadi/dev/Yasat/tests_dev/tmp/Netgear/_FVS318Gv2_V4.3.5-3.zip.extracted/_FVS318Gv2_v4.3.5-3.img.extracted/squashfs-root/lib/libarmarm-linux-racoon.so
+[-] Description: Call to EVP_DigestInit(type=EVP_sha1()) at address 0x41fbcc
+[-] Correctness: UN
+[-] Statements:
+0x41fbcc | Call(0x40f0c8<32>, <SimCCARM>: [BaseOffset(stack_base, -40), Call (target: 0x411660<32>, prototype: () -> int (32 bits), args: None)], ret: no-ret-value, fp_ret: no-fp-ret-value)
+
+Misuses #38
+[-] Filename: /home/bluesadi/dev/Yasat/tests_dev/tmp/Netgear/_FVS318Gv2_V4.3.5-3.zip.extracted/_FVS318Gv2_v4.3.5-3.img.extracted/squashfs-root/lib/libnetsnmp.so.20.0.1
+[-] Description: Call to EVP_DigestInit(type=EVP_sha1()) at address 0x455e28
+[-] Correctness: UN
+[-] Statements:
+0x455e28 | Call(0x40dcc4<32>, <SimCCARM>: [r9<4>, Call (target: 0x40f95c<32>, prototype: () -> int (32 bits), args: None)], ret: no-ret-value, fp_ret: no-fp-ret-value)
+
+Misuses #39
+[-] Filename: /home/bluesadi/dev/Yasat/tests_dev/tmp/Netgear/_FVS318Gv2_V4.3.5-3.zip.extracted/_FVS318Gv2_v4.3.5-3.img.extracted/squashfs-root/lib/libnetsnmp.so.20.0.1
+[-] Description: Call to EVP_DigestInit(type=EVP_md5()) at address 0x455eb0
+[-] Correctness: UN
+[-] Statements:
+0x455eb0 | Call(0x40dcc4<32>, <SimCCARM>: [r9<4>, Call (target: 0x40f734<32>, prototype: () -> int (32 bits), args: None)], ret: no-ret-value, fp_ret: no-fp-ret-value)
+
+Misuses #40
+[-] Filename: /home/bluesadi/dev/Yasat/tests_dev/tmp/Netgear/_FVS318Gv2_V4.3.5-3.zip.extracted/_FVS318Gv2_v4.3.5-3.img.extracted/squashfs-root/lib/libnetsnmp.so.20.0.1
+[-] Description: Call to EVP_DigestInit(type=EVP_sha1()) at address 0x457884
+[-] Correctness: UN
+[-] Statements:
+0x457884 | Call(0x40dcc4<32>, <SimCCARM>: [r0<4>, r5<4>], ret: no-ret-value, fp_ret: no-fp-ret-value)
+0x4578f8 | r5<4> = Call(0x40f95c<32>, <SimCCARM>: [], ret: r0<4>, fp_ret: no-fp-ret-value)
+
+Misuses #41
+[-] Filename: /home/bluesadi/dev/Yasat/tests_dev/tmp/Netgear/_FVS318Gv2_V4.3.5-3.zip.extracted/_FVS318Gv2_v4.3.5-3.img.extracted/squashfs-root/lib/libnetsnmp.so.20.0.1
+[-] Description: Call to EVP_DigestInit(type=EVP_md5()) at address 0x457884
+[-] Correctness: UN
+[-] Statements:
+0x457884 | Call(0x40dcc4<32>, <SimCCARM>: [r0<4>, r5<4>], ret: no-ret-value, fp_ret: no-fp-ret-value)
+0x457848 | r5<4> = Call(0x40f734<32>, <SimCCARM>: [], ret: r0<4>, fp_ret: no-fp-ret-value)
+
+Misuses #42
+[-] Filename: /home/bluesadi/dev/Yasat/tests_dev/tmp/Netgear/_FVS318Gv2_V4.3.5-3.zip.extracted/_FVS318Gv2_v4.3.5-3.img.extracted/squashfs-root/lib/libnetsnmp.so.20.0.1
+[-] Description: Call to EVP_DigestInit(type=EVP_md5()) at address 0x45793c
+[-] Correctness: UN
+[-] Statements:
+0x45793c | Call(0x40dcc4<32>, <SimCCARM>: [BaseOffset(stack_base, -60), r5<4>], ret: no-ret-value, fp_ret: no-fp-ret-value)
+0x457848 | r5<4> = Call(0x40f734<32>, <SimCCARM>: [], ret: r0<4>, fp_ret: no-fp-ret-value)
+
+Misuses #43
+[-] Filename: /home/bluesadi/dev/Yasat/tests_dev/tmp/Netgear/_FVS318Gv2_V4.3.5-3.zip.extracted/_FVS318Gv2_v4.3.5-3.img.extracted/squashfs-root/lib/libnetsnmp.so.20.0.1
+[-] Description: Call to EVP_DigestInit(type=EVP_sha1()) at address 0x45793c
+[-] Correctness: UN
+[-] Statements:
+0x45793c | Call(0x40dcc4<32>, <SimCCARM>: [BaseOffset(stack_base, -60), r5<4>], ret: no-ret-value, fp_ret: no-fp-ret-value)
+0x4578f8 | r5<4> = Call(0x40f95c<32>, <SimCCARM>: [], ret: r0<4>, fp_ret: no-fp-ret-value)
+
+Misuses #44
+[-] Filename: /home/bluesadi/dev/Yasat/tests_dev/tmp/Netgear/_FVS318Gv2_V4.3.5-3.zip.extracted/_FVS318Gv2_v4.3.5-3.img.extracted/squashfs-root/lib/libarmarm-linux-sslim.so
+[-] Description: Call to EVP_DigestInit_ex(type=EVP_md5()) at address 0x410e84
+[-] Correctness: UN
+[-] Statements:
+0x410e84 | Call(0x409c70<32>, <SimCCARM>: [Load(addr=stack_base-184, size=4, endness=Iend_LE), Call (target: 0x409d3c<32>, prototype: () -> int (32 bits), args: None), 0x0<32>], ret: no-ret-value, fp_ret: no-fp-ret-value)
+
+Misuses #45
+[-] Filename: /home/bluesadi/dev/Yasat/tests_dev/tmp/Netgear/_FVS318Gv2_V4.3.5-3.zip.extracted/_FVS318Gv2_v4.3.5-3.img.extracted/squashfs-root/lib/libarmarm-linux-sslim.so
+[-] Description: Call to EVP_DigestInit_ex(type=EVP_md5()) at address 0x410eec
+[-] Correctness: UN
+[-] Statements:
+0x410eec | Call(0x409c70<32>, <SimCCARM>: [Load(addr=stack_base-184, size=4, endness=Iend_LE), Call (target: 0x409d3c<32>, prototype: () -> int (32 bits), args: None), 0x0<32>], ret: no-ret-value, fp_ret: no-fp-ret-value)
+
+Misuses #46
+[-] Filename: /home/bluesadi/dev/Yasat/tests_dev/tmp/Netgear/_FVS318Gv2_V4.3.5-3.zip.extracted/_FVS318Gv2_v4.3.5-3.img.extracted/squashfs-root/lib/libarmarm-linux-sslim.so
+[-] Description: Call to EVP_DigestInit_ex(type=EVP_sha1()) at address 0x41090c
+[-] Correctness: UN
+[-] Statements:
+0x41090c | Call(0x409c70<32>, <SimCCARM>: [BaseOffset(stack_base, -84), Call (target: 0x409e14<32>, prototype: () -> int (32 bits), args: None), 0x0<32>], ret: no-ret-value, fp_ret: no-fp-ret-value)
+
+Misuses #47
+[-] Filename: /home/bluesadi/dev/Yasat/tests_dev/tmp/Netgear/_FVS318Gv2_V4.3.5-3.zip.extracted/_FVS318Gv2_v4.3.5-3.img.extracted/squashfs-root/lib/libarmarm-linux-sslim.so
+[-] Description: Call to EVP_DigestInit_ex(type=EVP_md5()) at address 0x41097c
+[-] Correctness: UN
+[-] Statements:
+0x41097c | Call(0x409c70<32>, <SimCCARM>: [BaseOffset(stack_base, -68), Call (target: 0x409d3c<32>, prototype: (int (32 bits), int (32 bits), int (32 bits)) -> int (32 bits), args: [Call (target: 0x409ca0<32>, prototype: (int (32 bits), int (32 bits), int (32 bits)) -> None, args: [BaseOffset(stack_base, -84), BaseOffset(stack_base, -120), 0x0<32>]), BaseOffset(stack_base, -120), 0x0<32>]), 0x0<32>], ret: no-ret-value, fp_ret: no-fp-ret-value)
+
+Misuses #48
+[-] Filename: /home/bluesadi/dev/Yasat/tests_dev/tmp/Netgear/_CAX80-V2.1.3.5.zip.extracted/_CAX80-V2.1.3.5.bin.extracted/ubifs-root/1403050352/rootfs/usr/lib/libnopoll.so.0.0.0
+[-] Description: Call to EVP_DigestInit(type=EVP_sha1()) at address 0x40c254
+[-] Correctness: UN
+[-] Statements:
+0x40c254 | Call(0x405134<32>, <SimCCARMHF>: [BaseOffset(stack_base, -132), Call (target: 0x405128<32>, prototype: (int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits)) -> int (32 bits), args: [Call (target: 0x404ac8<32>, prototype: (int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits), int (32 bits)) -> None, args: [r0<4>, 0x418f68<32>, 0x414a9c<32>, 0xab4<32>, Load(addr=stack_base-168, size=4, endness=Iend_LE), Load(addr=stack_base-164, size=4, endness=Iend_LE), Load(addr=stack_base-160, size=4, endness=Iend_LE)]), 0x418f68<32>, 0x414a9c<32>, 0xab4<32>, Load(addr=stack_base+0, size=4, endness=Iend_LE), Load(addr=stack_base+4, size=4, endness=Iend_LE), Load(addr=stack_base+8, size=4, endness=Iend_LE)])], ret: no-ret-value, fp_ret: no-fp-ret-value)
+
+Misuses #49
+[-] Filename: /home/bluesadi/dev/Yasat/tests_dev/tmp/Netgear/_RBR20-V2.7.4.24.zip.extracted/_RBR20-V2.7.4.24.img.extracted/squashfs-root/data/funjsq/bin/funjsq_dl
+[-] Description: Call to EVP_DigestInit_ex(type=EVP_sha1()) at address 0x54a04
+[-] Correctness: UN
+[-] Statements:
+0x54a04 | Call(0x1e89c<32>, <SimCCARM>: [r0<4>, Call (target: 0x1e560<32>, prototype: () -> int (32 bits), args: None), 0x0<32>], ret: r0<4>, fp_ret: no-fp-ret-value)
+
+Misuses #50
+[-] Filename: /home/bluesadi/dev/Yasat/tests_dev/tmp/D-Link/_DNR-150N_REVA_FIRMWARE_v3.11.zip.extracted/_DSR-150N_A2_FW3.11_WW_intermediate.extracted/squashfs-root/lib/libarmarm-none-linux-gnueabi-racoon.so
+[-] Description: Call to EVP_DigestInit(type=EVP_sha1()) at address 0x41f46c
+[-] Correctness: UN
+[-] Statements:
+0x41f46c | Call(0x40ee64<32>, <SimCCARM>: [BaseOffset(stack_base, -48), Call (target: 0x411420<32>, prototype: () -> int (32 bits), args: None)], ret: no-ret-value, fp_ret: no-fp-ret-value)
+
+Misuses #51
+[-] Filename: /home/bluesadi/dev/Yasat/tests_dev/tmp/D-Link/_DNR-150N_REVA_FIRMWARE_v3.11.zip.extracted/_DSR-150N_A2_FW3.11_WW_intermediate.extracted/squashfs-root/lib/libnetsnmp.so.9.0.2
+[-] Description: Call to EVP_DigestInit(type=EVP_sha1()) at address 0x44e594
+[-] Correctness: UN
+[-] Statements:
+0x44e594 | Call(0x40c1ec<32>, <SimCCARM>: [r9<4>, Call (target: 0x40db30<32>, prototype: () -> int (32 bits), args: None)], ret: no-ret-value, fp_ret: no-fp-ret-value)
+
+Misuses #52
+[-] Filename: /home/bluesadi/dev/Yasat/tests_dev/tmp/D-Link/_DNR-150N_REVA_FIRMWARE_v3.11.zip.extracted/_DSR-150N_A2_FW3.11_WW_intermediate.extracted/squashfs-root/lib/libnetsnmp.so.9.0.2
+[-] Description: Call to EVP_DigestInit(type=EVP_md5()) at address 0x44e60c
+[-] Correctness: UN
+[-] Statements:
+0x44e60c | Call(0x40c1ec<32>, <SimCCARM>: [r9<4>, Call (target: 0x40d914<32>, prototype: () -> int (32 bits), args: None)], ret: no-ret-value, fp_ret: no-fp-ret-value)
+
+Misuses #53
+[-] Filename: /home/bluesadi/dev/Yasat/tests_dev/tmp/D-Link/_DNR-150N_REVA_FIRMWARE_v3.11.zip.extracted/_DSR-150N_A2_FW3.11_WW_intermediate.extracted/squashfs-root/lib/libnetsnmp.so.9.0.2
+[-] Description: Call to EVP_DigestInit(type=EVP_md5()) at address 0x44f03c
+[-] Correctness: UN
+[-] Statements:
+0x44f03c | Call(0x40c1ec<32>, <SimCCARM>: [r0<4>, r5<4>], ret: no-ret-value, fp_ret: no-fp-ret-value)
+0x44eff4 | r5<4> = Call(0x40d914<32>, <SimCCARM>: [], ret: r0<4>, fp_ret: no-fp-ret-value)
+
+Misuses #54
+[-] Filename: /home/bluesadi/dev/Yasat/tests_dev/tmp/D-Link/_DNR-150N_REVA_FIRMWARE_v3.11.zip.extracted/_DSR-150N_A2_FW3.11_WW_intermediate.extracted/squashfs-root/lib/libnetsnmp.so.9.0.2
+[-] Description: Call to EVP_DigestInit(type=EVP_sha1()) at address 0x44f03c
+[-] Correctness: UN
+[-] Statements:
+0x44f03c | Call(0x40c1ec<32>, <SimCCARM>: [r0<4>, r5<4>], ret: no-ret-value, fp_ret: no-fp-ret-value)
+0x44f0b0 | r5<4> = Call(0x40db30<32>, <SimCCARM>: [], ret: r0<4>, fp_ret: no-fp-ret-value)
+
+Misuses #55
+[-] Filename: /home/bluesadi/dev/Yasat/tests_dev/tmp/D-Link/_DNR-150N_REVA_FIRMWARE_v3.11.zip.extracted/_DSR-150N_A2_FW3.11_WW_intermediate.extracted/squashfs-root/lib/libnetsnmp.so.9.0.2
+[-] Description: Call to EVP_DigestInit(type=EVP_md5()) at address 0x44f0f4
+[-] Correctness: UN
+[-] Statements:
+0x44f0f4 | Call(0x40c1ec<32>, <SimCCARM>: [BaseOffset(stack_base, -68), r5<4>], ret: no-ret-value, fp_ret: no-fp-ret-value)
+0x44eff4 | r5<4> = Call(0x40d914<32>, <SimCCARM>: [], ret: r0<4>, fp_ret: no-fp-ret-value)
+
+Misuses #56
+[-] Filename: /home/bluesadi/dev/Yasat/tests_dev/tmp/D-Link/_DNR-150N_REVA_FIRMWARE_v3.11.zip.extracted/_DSR-150N_A2_FW3.11_WW_intermediate.extracted/squashfs-root/lib/libnetsnmp.so.9.0.2
+[-] Description: Call to EVP_DigestInit(type=EVP_sha1()) at address 0x44f0f4
+[-] Correctness: UN
+[-] Statements:
+0x44f0f4 | Call(0x40c1ec<32>, <SimCCARM>: [BaseOffset(stack_base, -68), r5<4>], ret: no-ret-value, fp_ret: no-fp-ret-value)
+0x44f0b0 | r5<4> = Call(0x40db30<32>, <SimCCARM>: [], ret: r0<4>, fp_ret: no-fp-ret-value)
+
+Misuses #57
+[-] Filename: /home/bluesadi/dev/Yasat/tests_dev/tmp/D-Link/_DWL-6610AP_REVA_FIRMWARE_4.3.0.4_WW.ZIP.extracted/_DWL-6610_FW_v4.3.0.4.tar.extracted/_rootfs.bin.extracted/ubifs-root/1376830434/rootfs/usr/lib/libnetsnmp.so.15.1.1
+[-] Description: Call to EVP_DigestInit(type=EVP_md5()) at address 0x42f288
+[-] Correctness: UN
+[-] Statements:
+0x42f288 | Call(0x40b498<32>, <SimCCARM>: [Load(addr=stack_base-116, size=4, endness=Iend_LE), Call (target: 0x40cb30<32>, prototype: () -> int (32 bits), args: None)], ret: no-ret-value, fp_ret: no-fp-ret-value)
+
+Misuses #58
+[-] Filename: /home/bluesadi/dev/Yasat/tests_dev/tmp/D-Link/_DWL-6610AP_REVA_FIRMWARE_4.3.0.4_WW.ZIP.extracted/_DWL-6610_FW_v4.3.0.4.tar.extracted/_rootfs.bin.extracted/ubifs-root/1376830434/rootfs/usr/lib/libnetsnmp.so.15.1.1
+[-] Description: Call to EVP_DigestInit(type=EVP_sha1()) at address 0x42f364
+[-] Correctness: UN
+[-] Statements:
+0x42f364 | Call(0x40b498<32>, <SimCCARM>: [Load(addr=stack_base-116, size=4, endness=Iend_LE), Call (target: 0x40ccf8<32>, prototype: () -> int (32 bits), args: None)], ret: no-ret-value, fp_ret: no-fp-ret-value)
+
+Misuses #59
+[-] Filename: /home/bluesadi/dev/Yasat/tests_dev/tmp/D-Link/_DWL-6610AP_REVA_FIRMWARE_4.3.0.4_WW.ZIP.extracted/_DWL-6610_FW_v4.3.0.4.tar.extracted/_rootfs.bin.extracted/ubifs-root/1376830434/rootfs/usr/lib/libnetsnmp.so.15.1.1
+[-] Description: Call to EVP_DigestInit(type=EVP_md5()) at address 0x42fe1c
+[-] Correctness: UN
+[-] Statements:
+0x42fe1c | Call(0x40b498<32>, <SimCCARM>: [r0<4>, r9<4>], ret: no-ret-value, fp_ret: no-fp-ret-value)
+0x42fde0 | r9<4> = Call(0x40cb30<32>, <SimCCARM>: [], ret: r0<4>, fp_ret: no-fp-ret-value)
+
+Misuses #60
+[-] Filename: /home/bluesadi/dev/Yasat/tests_dev/tmp/D-Link/_DWL-6610AP_REVA_FIRMWARE_4.3.0.4_WW.ZIP.extracted/_DWL-6610_FW_v4.3.0.4.tar.extracted/_rootfs.bin.extracted/ubifs-root/1376830434/rootfs/usr/lib/libnetsnmp.so.15.1.1
+[-] Description: Call to EVP_DigestInit(type=EVP_sha1()) at address 0x42fe1c
+[-] Correctness: UN
+[-] Statements:
+0x42fe1c | Call(0x40b498<32>, <SimCCARM>: [r0<4>, r9<4>], ret: no-ret-value, fp_ret: no-fp-ret-value)
+0x42fe90 | r9<4> = Call(0x40ccf8<32>, <SimCCARM>: [], ret: r0<4>, fp_ret: no-fp-ret-value)
+
+Misuses #61
+[-] Filename: /home/bluesadi/dev/Yasat/tests_dev/tmp/D-Link/_DWL-6610AP_REVA_FIRMWARE_4.3.0.4_WW.ZIP.extracted/_DWL-6610_FW_v4.3.0.4.tar.extracted/_rootfs.bin.extracted/ubifs-root/1376830434/rootfs/usr/lib/libnetsnmp.so.15.1.1
+[-] Description: Call to EVP_DigestInit(type=EVP_md5()) at address 0x42fed4
+[-] Correctness: UN
+[-] Statements:
+0x42fed4 | Call(0x40b498<32>, <SimCCARM>: [BaseOffset(stack_base, -60), r9<4>], ret: no-ret-value, fp_ret: no-fp-ret-value)
+0x42fde0 | r9<4> = Call(0x40cb30<32>, <SimCCARM>: [], ret: r0<4>, fp_ret: no-fp-ret-value)
+
+Misuses #62
+[-] Filename: /home/bluesadi/dev/Yasat/tests_dev/tmp/D-Link/_DWL-6610AP_REVA_FIRMWARE_4.3.0.4_WW.ZIP.extracted/_DWL-6610_FW_v4.3.0.4.tar.extracted/_rootfs.bin.extracted/ubifs-root/1376830434/rootfs/usr/lib/libnetsnmp.so.15.1.1
+[-] Description: Call to EVP_DigestInit(type=EVP_sha1()) at address 0x42fed4
+[-] Correctness: UN
+[-] Statements:
+0x42fed4 | Call(0x40b498<32>, <SimCCARM>: [BaseOffset(stack_base, -60), r9<4>], ret: no-ret-value, fp_ret: no-fp-ret-value)
+0x42fe90 | r9<4> = Call(0x40ccf8<32>, <SimCCARM>: [], ret: r0<4>, fp_ret: no-fp-ret-value)
+
+*** UnsafeAlgorithmsChecker ***
+Misuses #1
+[-] Filename: tests_dev/tmp/TP-Link/_C400HP-4(UN)&C400HP-2.8(UN)_V2_220707.zip.extracted/_Cx00HP_x_2.0_en_1.0.10_Build_220707_Rel.57637n_up_boot.bin.extracted/libpwr.so
+[-] Description: Call to MD5_Init() at address 0x400d21
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #2
+[-] Filename: tests_dev/tmp/TP-Link/_C400HP-4(UN)&C400HP-2.8(UN)_V2_220707.zip.extracted/_Cx00HP_x_2.0_en_1.0.10_Build_220707_Rel.57637n_up_boot.bin.extracted/libpwr.so
+[-] Description: Call to MD5_Init() at address 0x400d53
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #3
+[-] Filename: /home/bluesadi/dev/Yasat/tests_dev/tmp/TP-Link/_Deco_M5_1.5.7_20210819.zip.extracted/_M5 1.0_en_1.5.7 Build 20210819 rel. 43499_US_EU_JP_AU_CA_TW_B4_ID_UK_SW_up.bin.extracted/squashfs-root/usr/lib/libssh.so.4.4.1
+[-] Description: Call to SHA1_Init() at address 0x405e64
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #4
+[-] Filename: /home/bluesadi/dev/Yasat/tests_dev/tmp/TP-Link/_Deco_M5_1.5.7_20210819.zip.extracted/_M5 1.0_en_1.5.7 Build 20210819 rel. 43499_US_EU_JP_AU_CA_TW_B4_ID_UK_SW_up.bin.extracted/squashfs-root/usr/lib/libssh.so.4.4.1
+[-] Description: Call to MD5_Init() at address 0x405f9c
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #5
+[-] Filename: tests_dev/tmp/TP-Link/_Deco_M5_1.5.7_20210819.zip.extracted/_M5 1.0_en_1.5.7 Build 20210819 rel. 43499_US_EU_JP_AU_CA_TW_B4_ID_UK_SW_up.bin.extracted/squashfs-root/lib/libshn_utils.so
+[-] Description: Call to MD5() at address 0x4016cc
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #6
+[-] Filename: /home/bluesadi/dev/Yasat/tests_dev/tmp/WD/_My_Cloud_LT4A_2.12.127.bin.extracted/squashfs-root/sbin/openvpn
+[-] Description: Call to DES_ecb_encrypt() at address 0x127ac
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #7
+[-] Filename: tests_dev/tmp/WD/_My_Cloud_LT4A_2.12.127.bin.extracted/squashfs-root/sbin/transmission-remote
+[-] Description: Call to SHA1_Init() at address 0x5bd78
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #8
+[-] Filename: tests_dev/tmp/WD/_My_Cloud_LT4A_2.12.127.bin.extracted/squashfs-root/sbin/transmission-remote
+[-] Description: Call to SHA1_Init() at address 0x5abe8
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #9
+[-] Filename: tests_dev/tmp/WD/_My_Cloud_LT4A_2.12.127.bin.extracted/squashfs-root/sbin/transmission-remote
+[-] Description: Call to SHA1_Init() at address 0x5a5f4
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #10
+[-] Filename: tests_dev/tmp/WD/_My_Cloud_LT4A_2.12.127.bin.extracted/squashfs-root/sbin/transmission-remote
+[-] Description: Call to SHA1_Init() at address 0x49650
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #11
+[-] Filename: tests_dev/tmp/WD/_My_Cloud_LT4A_2.12.127.bin.extracted/squashfs-root/sbin/transmission-remote
+[-] Description: Call to SHA1_Init() at address 0x499fc
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #12
+[-] Filename: tests_dev/tmp/TP-Link/_Deco_M5_1.5.7_20210819.zip.extracted/_M5 1.0_en_1.5.7 Build 20210819 rel. 43499_US_EU_JP_AU_CA_TW_B4_ID_UK_SW_up.bin.extracted/squashfs-root/usr/bin/tm-shn/dcd
+[-] Description: Call to SHA1() at address 0x16984
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #13
+[-] Filename: tests_dev/tmp/WD/_My_Cloud_LT4A_2.12.127.bin.extracted/squashfs-root/sbin/transmission-daemon
+[-] Description: Call to SHA1_Init() at address 0x4f058
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #14
+[-] Filename: tests_dev/tmp/WD/_My_Cloud_LT4A_2.12.127.bin.extracted/squashfs-root/sbin/transmission-daemon
+[-] Description: Call to SHA1_Init() at address 0x4d8d4
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #15
+[-] Filename: tests_dev/tmp/WD/_My_Cloud_LT4A_2.12.127.bin.extracted/squashfs-root/sbin/transmission-daemon
+[-] Description: Call to SHA1_Init() at address 0x3c930
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #16
+[-] Filename: tests_dev/tmp/WD/_My_Cloud_LT4A_2.12.127.bin.extracted/squashfs-root/sbin/transmission-daemon
+[-] Description: Call to SHA1_Init() at address 0x3ccdc
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #17
+[-] Filename: tests_dev/tmp/WD/_My_Cloud_LT4A_2.12.127.bin.extracted/squashfs-root/sbin/transmission-daemon
+[-] Description: Call to SHA1_Init() at address 0x4dec8
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #18
+[-] Filename: tests_dev/tmp/WD/_My_Cloud_LT4A_2.12.127.bin.extracted/squashfs-root/usrsbin/newp2p
+[-] Description: Call to SHA1_Init() at address 0x5c114
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #19
+[-] Filename: tests_dev/tmp/WD/_My_Cloud_LT4A_2.12.127.bin.extracted/squashfs-root/usrsbin/newp2p
+[-] Description: Call to SHA1_Init() at address 0x5d898
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #20
+[-] Filename: tests_dev/tmp/WD/_My_Cloud_LT4A_2.12.127.bin.extracted/squashfs-root/usrsbin/newp2p
+[-] Description: Call to SHA1_Init() at address 0x5c708
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #21
+[-] Filename: tests_dev/tmp/WD/_My_Cloud_LT4A_2.12.127.bin.extracted/squashfs-root/usrsbin/newp2p
+[-] Description: Call to SHA1_Init() at address 0x4b170
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #22
+[-] Filename: tests_dev/tmp/WD/_My_Cloud_LT4A_2.12.127.bin.extracted/squashfs-root/usrsbin/newp2p
+[-] Description: Call to SHA1_Init() at address 0x4b51c
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #23
+[-] Filename: tests_dev/tmp/WD/_My_Cloud_LT4A_2.12.127.bin.extracted/squashfs-root/bin/wget
+[-] Description: Call to DES_ecb_encrypt() at address 0x36630
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #24
+[-] Filename: tests_dev/tmp/WD/_My_Cloud_LT4A_2.12.127.bin.extracted/squashfs-root/bin/wget
+[-] Description: Call to DES_ecb_encrypt() at address 0x36650
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #25
+[-] Filename: tests_dev/tmp/WD/_My_Cloud_LT4A_2.12.127.bin.extracted/squashfs-root/bin/wget
+[-] Description: Call to DES_ecb_encrypt() at address 0x3652c
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #26
+[-] Filename: tests_dev/tmp/WD/_My_Cloud_LT4A_2.12.127.bin.extracted/squashfs-root/bin/wget
+[-] Description: Call to DES_ecb_encrypt() at address 0x3654c
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #27
+[-] Filename: tests_dev/tmp/WD/_My_Cloud_LT4A_2.12.127.bin.extracted/squashfs-root/bin/wget
+[-] Description: Call to DES_ecb_encrypt() at address 0x36570
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #28
+[-] Filename: tests_dev/tmp/WD/_My_Cloud_LT4A_2.12.127.bin.extracted/squashfs-root/bin/wget
+[-] Description: Call to MD4_Init() at address 0x366bc
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #29
+[-] Filename: tests_dev/tmp/WD/_My_Cloud_LT4A_2.12.127.bin.extracted/squashfs-root/lib/netatalk/uams_randnum.so
+[-] Description: Call to DES_ecb_encrypt() at address 0x401830
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #30
+[-] Filename: tests_dev/tmp/WD/_My_Cloud_LT4A_2.12.127.bin.extracted/squashfs-root/lib/netatalk/uams_randnum.so
+[-] Description: Call to DES_ecb_encrypt() at address 0x40180c
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #31
+[-] Filename: tests_dev/tmp/WD/_My_Cloud_LT4A_2.12.127.bin.extracted/squashfs-root/lib/netatalk/uams_randnum.so
+[-] Description: Call to DES_ecb_encrypt() at address 0x4021c0
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #32
+[-] Filename: tests_dev/tmp/WD/_My_Cloud_LT4A_2.12.127.bin.extracted/squashfs-root/lib/netatalk/uams_randnum.so
+[-] Description: Call to DES_ecb_encrypt() at address 0x4023f4
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #33
+[-] Filename: tests_dev/tmp/WD/_My_Cloud_LT4A_2.12.127.bin.extracted/squashfs-root/lib/netatalk/uams_randnum.so
+[-] Description: Call to DES_ecb_encrypt() at address 0x4024b0
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #34
+[-] Filename: tests_dev/tmp/WD/_My_Cloud_LT4A_2.12.127.bin.extracted/squashfs-root/lib/netatalk/uams_randnum.so
+[-] Description: Call to DES_ecb_encrypt() at address 0x402664
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #35
+[-] Filename: tests_dev/tmp/WD/_My_Cloud_LT4A_2.12.127.bin.extracted/squashfs-root/lib/netatalk/uams_randnum.so
+[-] Description: Call to DES_ecb_encrypt() at address 0x4026b4
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #36
+[-] Filename: /home/bluesadi/dev/Yasat/tests_dev/tmp/WD/_My_Cloud_BZVM_2.12.127.bin.extracted/squashfs-root/sbin/openvpn.bin
+[-] Description: Call to DES_ecb_encrypt() at address 0x1c4e8
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #37
+[-] Filename: tests_dev/tmp/WD/_MyPassportWirelessSSD_1.04.17.bin.extracted/_rootfs.tar.gz.extracted/_rootfs.tar.extracted/usr/bin/afppasswd
+[-] Description: Call to DES_ecb_encrypt() at address 0x11728
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #38
+[-] Filename: tests_dev/tmp/WD/_MyPassportWirelessSSD_1.04.17.bin.extracted/_rootfs.tar.gz.extracted/_rootfs.tar.extracted/usr/bin/idevicebackup
+[-] Description: Call to SHA1() at address 0x13544
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #39
+[-] Filename: tests_dev/tmp/WD/_MyPassportWirelessSSD_1.04.17.bin.extracted/_rootfs.tar.gz.extracted/_rootfs.tar.extracted/usr/bin/idevicebackup
+[-] Description: Call to SHA1() at address 0x13914
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #40
+[-] Filename: tests_dev/tmp/WD/_MyPassportWirelessSSD_1.04.17.bin.extracted/_rootfs.tar.gz.extracted/_rootfs.tar.extracted/usr/bin/idevicebackup
+[-] Description: Call to SHA1_Init() at address 0x13a5c
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #41
+[-] Filename: tests_dev/tmp/Tomato/_freshtomato-RT-AC3200-ARM-2022.5-AIO-64K.zip.extracted/_freshtomato-RT-AC3200-ARM-2022.5-AIO-64K.trx.extracted/squashfs-root/usr/sbin/mkfs.hfsplus
+[-] Description: Call to SHA1_Init() at address 0xc430
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #42
+[-] Filename: /home/bluesadi/dev/Yasat/tests_dev/tmp/Tomato/_freshtomato-RT-AC3200-ARM-2022.5-AIO-64K.zip.extracted/_freshtomato-RT-AC3200-ARM-2022.5-AIO-64K.trx.extracted/squashfs-root/usr/sbin/tor
+[-] Description: Call to SHA1() at address 0x4c1154
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #43
+[-] Filename: /home/bluesadi/dev/Yasat/tests_dev/tmp/Tomato/_freshtomato-RT-AC3200-ARM-2022.5-AIO-64K.zip.extracted/_freshtomato-RT-AC3200-ARM-2022.5-AIO-64K.trx.extracted/squashfs-root/usr/sbin/tor
+[-] Description: Call to SHA1_Init() at address 0x4c10cc
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #44
+[-] Filename: /home/bluesadi/dev/Yasat/tests_dev/tmp/Tomato/_freshtomato-RT-AC3200-ARM-2022.5-AIO-64K.zip.extracted/_freshtomato-RT-AC3200-ARM-2022.5-AIO-64K.trx.extracted/squashfs-root/usr/lib/libcurl.so.4.8.0
+[-] Description: Call to DES_ecb_encrypt() at address 0x40e0b4
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #45
+[-] Filename: /home/bluesadi/dev/Yasat/tests_dev/tmp/Tomato/_freshtomato-RT-AC3200-ARM-2022.5-AIO-64K.zip.extracted/_freshtomato-RT-AC3200-ARM-2022.5-AIO-64K.trx.extracted/squashfs-root/usr/lib/libcurl.so.4.8.0
+[-] Description: Call to DES_ecb_encrypt() at address 0x40e0d4
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #46
+[-] Filename: /home/bluesadi/dev/Yasat/tests_dev/tmp/Tomato/_freshtomato-RT-AC3200-ARM-2022.5-AIO-64K.zip.extracted/_freshtomato-RT-AC3200-ARM-2022.5-AIO-64K.trx.extracted/squashfs-root/usr/lib/libcurl.so.4.8.0
+[-] Description: Call to DES_ecb_encrypt() at address 0x40e0f8
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #47
+[-] Filename: /home/bluesadi/dev/Yasat/tests_dev/tmp/Tomato/_freshtomato-RT-AC3200-ARM-2022.5-AIO-64K.zip.extracted/_freshtomato-RT-AC3200-ARM-2022.5-AIO-64K.trx.extracted/squashfs-root/usr/lib/libcurl.so.4.8.0
+[-] Description: Call to DES_ecb_encrypt() at address 0x40e178
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #48
+[-] Filename: /home/bluesadi/dev/Yasat/tests_dev/tmp/Tomato/_freshtomato-RT-AC3200-ARM-2022.5-AIO-64K.zip.extracted/_freshtomato-RT-AC3200-ARM-2022.5-AIO-64K.trx.extracted/squashfs-root/usr/lib/libcurl.so.4.8.0
+[-] Description: Call to DES_ecb_encrypt() at address 0x40e198
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #49
+[-] Filename: /home/bluesadi/dev/Yasat/tests_dev/tmp/Tomato/_freshtomato-RT-AC3200-ARM-2022.5-AIO-64K.zip.extracted/_freshtomato-RT-AC3200-ARM-2022.5-AIO-64K.trx.extracted/squashfs-root/usr/lib/libcurl.so.4.8.0
+[-] Description: Call to MD4_Init() at address 0x42777c
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #50
+[-] Filename: /home/bluesadi/dev/Yasat/tests_dev/tmp/Tomato/_freshtomato-RT-AC3200-ARM-2022.5-AIO-64K.zip.extracted/_freshtomato-RT-AC3200-ARM-2022.5-AIO-64K.trx.extracted/squashfs-root/usr/lib/libcurl.so.4.8.0
+[-] Description: Call to MD5_Init() at address 0x4277b8
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #51
+[-] Filename: tests_dev/tmp/Linksys/_FW_EA6500_1.1.29.162351_prod.SSA.extracted/squashfs-root/usr/sbin/stunnel
+[-] Description: Call to DES_ecb_encrypt() at address 0x40ded0
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #52
+[-] Filename: tests_dev/tmp/Linksys/_FW_EA6500_1.1.29.162351_prod.SSA.extracted/squashfs-root/usr/sbin/stunnel
+[-] Description: Call to MD4_Init() at address 0x40e6f0
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #53
+[-] Filename: tests_dev/tmp/Linksys/_FW_EA9300_1.1.9.183697_prod.img.extracted/ubifs-root/0/rootfs_ubifs/usr/sbin/stunnel
+[-] Description: Call to DES_ecb_encrypt() at address 0x406134
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #54
+[-] Filename: tests_dev/tmp/Linksys/_FW_EA9300_1.1.9.183697_prod.img.extracted/ubifs-root/0/rootfs_ubifs/usr/sbin/stunnel
+[-] Description: Call to MD4_Init() at address 0x4065a0
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #55
+[-] Filename: tests_dev/tmp/Linksys/_FW_EA9300_1.1.9.183697_prod.img.extracted/ubifs-root/0/rootfs_ubifs/lib/mod_auth.so
+[-] Description: Call to SHA1() at address 0x403104
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #56
+[-] Filename: tests_dev/tmp/Linksys/_FW_EA9300_1.1.9.183697_prod.img.extracted/ubifs-root/0/rootfs_ubifs/lib/libcurl.so.5.3.0
+[-] Description: Call to DES_ecb_encrypt() at address 0x43ccc0
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #57
+[-] Filename: tests_dev/tmp/Linksys/_FW_EA9300_1.1.9.183697_prod.img.extracted/ubifs-root/0/rootfs_ubifs/lib/libcurl.so.5.3.0
+[-] Description: Call to DES_ecb_encrypt() at address 0x43cce0
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #58
+[-] Filename: tests_dev/tmp/Linksys/_FW_EA9300_1.1.9.183697_prod.img.extracted/ubifs-root/0/rootfs_ubifs/lib/libcurl.so.5.3.0
+[-] Description: Call to DES_ecb_encrypt() at address 0x43cd00
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #59
+[-] Filename: tests_dev/tmp/Linksys/_FW_EA9300_1.1.9.183697_prod.img.extracted/ubifs-root/0/rootfs_ubifs/lib/libcurl.so.5.3.0
+[-] Description: Call to DES_ecb_encrypt() at address 0x43cd78
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #60
+[-] Filename: tests_dev/tmp/Linksys/_FW_EA9300_1.1.9.183697_prod.img.extracted/ubifs-root/0/rootfs_ubifs/lib/libcurl.so.5.3.0
+[-] Description: Call to DES_ecb_encrypt() at address 0x43cd98
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #61
+[-] Filename: tests_dev/tmp/Linksys/_FW_EA9300_1.1.9.183697_prod.img.extracted/ubifs-root/0/rootfs_ubifs/lib/libcurl.so.5.3.0
+[-] Description: Call to MD4_Init() at address 0x43ce2c
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #62
+[-] Filename: tests_dev/tmp/Linksys/_FW_EA9300_1.1.9.183697_prod.img.extracted/ubifs-root/0/rootfs_ubifs/lib/libcurl.so.5.3.0
+[-] Description: Call to MD5_Init() at address 0x42fd30
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #63
+[-] Filename: tests_dev/tmp/Linksys/_FW_EA9300_1.1.9.183697_prod.img.extracted/ubifs-root/0/rootfs_ubifs/lib/libcurl.so.5.3.0
+[-] Description: Call to MD5_Init() at address 0x445b14
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #64
+[-] Filename: tests_dev/tmp/Linksys/_FW_EA6500_1.1.29.162351_prod.SSA.extracted/squashfs-root/lib/libcurl.so.5.3.0
+[-] Description: Call to DES_ecb_encrypt() at address 0x448670
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #65
+[-] Filename: tests_dev/tmp/Linksys/_FW_EA6500_1.1.29.162351_prod.SSA.extracted/squashfs-root/lib/libcurl.so.5.3.0
+[-] Description: Call to DES_ecb_encrypt() at address 0x4486a0
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #66
+[-] Filename: tests_dev/tmp/Linksys/_FW_EA6500_1.1.29.162351_prod.SSA.extracted/squashfs-root/lib/libcurl.so.5.3.0
+[-] Description: Call to DES_ecb_encrypt() at address 0x448588
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #67
+[-] Filename: tests_dev/tmp/Linksys/_FW_EA6500_1.1.29.162351_prod.SSA.extracted/squashfs-root/lib/libcurl.so.5.3.0
+[-] Description: Call to DES_ecb_encrypt() at address 0x4485b8
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #68
+[-] Filename: tests_dev/tmp/Linksys/_FW_EA6500_1.1.29.162351_prod.SSA.extracted/squashfs-root/lib/libcurl.so.5.3.0
+[-] Description: Call to MD4_Init() at address 0x448330
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #69
+[-] Filename: tests_dev/tmp/Linksys/_FW_EA6500_1.1.29.162351_prod.SSA.extracted/squashfs-root/lib/libcurl.so.5.3.0
+[-] Description: Call to MD5_Init() at address 0x434d0c
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #70
+[-] Filename: tests_dev/tmp/Linksys/_FW_EA6500_1.1.29.162351_prod.SSA.extracted/squashfs-root/lib/libcurl.so.5.3.0
+[-] Description: Call to MD5_Init() at address 0x44b738
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #71
+[-] Filename: tests_dev/tmp/Linksys/_FW_E1500_v1.0.06.001_US_20140327_code.bin.extracted/squashfs-root/usr/lib/libdhcp.so
+[-] Description: Call to MD5_Init() at address 0x41fd94
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #72
+[-] Filename: tests_dev/tmp/Linksys/_FW_RE6500_v1.0.05.003_20160305.bin.extracted/_40.extracted/_4D7000.extracted/cpio-root/sbin/wget
+[-] Description: Call to DES_ecb_encrypt() at address 0x41e7dc
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #73
+[-] Filename: tests_dev/tmp/Linksys/_FW_RE6500_v1.0.05.003_20160305.bin.extracted/_40.extracted/_4D7000.extracted/cpio-root/sbin/wget
+[-] Description: Call to DES_ecb_encrypt() at address 0x41e804
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #74
+[-] Filename: tests_dev/tmp/Linksys/_FW_RE6500_v1.0.05.003_20160305.bin.extracted/_40.extracted/_4D7000.extracted/cpio-root/sbin/wget
+[-] Description: Call to DES_ecb_encrypt() at address 0x41e680
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #75
+[-] Filename: tests_dev/tmp/Linksys/_FW_RE6500_v1.0.05.003_20160305.bin.extracted/_40.extracted/_4D7000.extracted/cpio-root/sbin/wget
+[-] Description: Call to DES_ecb_encrypt() at address 0x41e6a8
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #76
+[-] Filename: tests_dev/tmp/Linksys/_FW_RE6500_v1.0.05.003_20160305.bin.extracted/_40.extracted/_4D7000.extracted/cpio-root/sbin/wget
+[-] Description: Call to DES_ecb_encrypt() at address 0x41e6d0
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #77
+[-] Filename: tests_dev/tmp/Linksys/_FW_RE6500_v1.0.05.003_20160305.bin.extracted/_40.extracted/_4D7000.extracted/cpio-root/sbin/wget
+[-] Description: Call to MD4_Init() at address 0x41e874
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #78
+[-] Filename: tests_dev/tmp/Linksys/_FW_RE6500_v1.0.05.003_20160305.bin.extracted/_40.extracted/_4D7000.extracted/cpio-root/sbin/wget
+[-] Description: Call to MD5_Init() at address 0x422f8c
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #79
+[-] Filename: tests_dev/tmp/Linksys/_LNR0208C_1.0.01.04_082014.bin.extracted/jffs2-root/usr/local/lib/mod_secdownload.so
+[-] Description: Call to MD5_Init() at address 0x402f70
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #80
+[-] Filename: tests_dev/tmp/Linksys/_FW_EA6500_1.1.29.162351_prod.SSA.extracted/squashfs-root/sbin/dhclient
+[-] Description: Call to MD5_Init() at address 0x431254
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #81
+[-] Filename: tests_dev/tmp/Linksys/_FW_EA6500_1.1.29.162351_prod.SSA.extracted/squashfs-root/sbin/dhclient
+[-] Description: Call to MD5_Init() at address 0x477860
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #82
+[-] Filename: tests_dev/tmp/Linksys/_FW_EA6500_1.1.29.162351_prod.SSA.extracted/squashfs-root/sbin/dhclient
+[-] Description: Call to MD5_Init() at address 0x477bb4
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #83
+[-] Filename: tests_dev/tmp/Linksys/_FW_EA6500_1.1.29.162351_prod.SSA.extracted/squashfs-root/sbin/dhclient
+[-] Description: Call to MD5_Init() at address 0x477c50
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #84
+[-] Filename: tests_dev/tmp/Linksys/_FW_EA6500_1.1.29.162351_prod.SSA.extracted/squashfs-root/sbin/dhclient
+[-] Description: Call to MD5_Init() at address 0x477fb4
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #85
+[-] Filename: tests_dev/tmp/Linksys/_FW_EA6500_1.1.29.162351_prod.SSA.extracted/squashfs-root/sbin/dhclient
+[-] Description: Call to MD5_Init() at address 0x478054
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #86
+[-] Filename: tests_dev/tmp/Linksys/_LCAB03VLNOD_1.0.1.05_FW.bin.extracted/_34C9.extracted/_19C80.extracted/cpio-root/lib/libcurl.so.4.2.0
+[-] Description: Call to DES_ecb_encrypt() at address 0x4253b0
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #87
+[-] Filename: tests_dev/tmp/Linksys/_LCAB03VLNOD_1.0.1.05_FW.bin.extracted/_34C9.extracted/_19C80.extracted/cpio-root/lib/libcurl.so.4.2.0
+[-] Description: Call to DES_ecb_encrypt() at address 0x4253d0
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #88
+[-] Filename: tests_dev/tmp/Linksys/_LCAB03VLNOD_1.0.1.05_FW.bin.extracted/_34C9.extracted/_19C80.extracted/cpio-root/lib/libcurl.so.4.2.0
+[-] Description: Call to DES_ecb_encrypt() at address 0x4253f4
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #89
+[-] Filename: tests_dev/tmp/Linksys/_LCAB03VLNOD_1.0.1.05_FW.bin.extracted/_34C9.extracted/_19C80.extracted/cpio-root/lib/libcurl.so.4.2.0
+[-] Description: Call to DES_ecb_encrypt() at address 0x42570c
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #90
+[-] Filename: tests_dev/tmp/Linksys/_LCAB03VLNOD_1.0.1.05_FW.bin.extracted/_34C9.extracted/_19C80.extracted/cpio-root/lib/libcurl.so.4.2.0
+[-] Description: Call to DES_ecb_encrypt() at address 0x425740
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #91
+[-] Filename: tests_dev/tmp/Linksys/_LCAB03VLNOD_1.0.1.05_FW.bin.extracted/_34C9.extracted/_19C80.extracted/cpio-root/lib/libcurl.so.4.2.0
+[-] Description: Call to MD4_Init() at address 0x425284
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #92
+[-] Filename: tests_dev/tmp/Linksys/_LCAB03VLNOD_1.0.1.05_FW.bin.extracted/_34C9.extracted/_19C80.extracted/cpio-root/lib/libcurl.so.4.2.0
+[-] Description: Call to MD5_Init() at address 0x42515c
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #93
+[-] Filename: tests_dev/tmp/Linksys/_LCAB03VLNOD_1.0.1.05_FW.bin.extracted/_34C9.extracted/_19C80.extracted/cpio-root/lib/libcurl.so.4.2.0
+[-] Description: Call to MD5_Init() at address 0x425aa0
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #94
+[-] Filename: tests_dev/tmp/Zyxel/_NWA50AX_6.29(ABYW.1)C0.zip.extracted/_629ABYW1C0.bin.extracted/squashfs-root/usr/local/lighttpd/cgi-bin/fbwifi_forward.cgi
+[-] Description: Call to MD5_Init() at address 0x401d10
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #95
+[-] Filename: tests_dev/tmp/Zyxel/_NWA50AX_6.29(ABYW.1)C0.zip.extracted/_629ABYW1C0.bin.extracted/squashfs-root/usr/local/lighttpd/cgi-bin/fbwifi_continue.cgi
+[-] Description: Call to MD5_Init() at address 0x4016d0
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #96
+[-] Filename: tests_dev/tmp/Zyxel/_NWA50AX_6.29(ABYW.1)C0.zip.extracted/_629ABYW1C0.bin.extracted/squashfs-root/usr/local/lighttpd/cgi-bin/fbwifi_auth.cgi
+[-] Description: Call to MD5_Init() at address 0x402a30
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #97
+[-] Filename: tests_dev/tmp/Linksys/_FW_E2500_3.0.05.002_20180914.bin.extracted/squashfs-root/usr/lib/libcurl.so
+[-] Description: Call to DES_ecb_encrypt() at address 0x414824
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #98
+[-] Filename: tests_dev/tmp/Linksys/_FW_E2500_3.0.05.002_20180914.bin.extracted/squashfs-root/usr/lib/libcurl.so
+[-] Description: Call to DES_ecb_encrypt() at address 0x414854
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #99
+[-] Filename: tests_dev/tmp/Linksys/_FW_E2500_3.0.05.002_20180914.bin.extracted/squashfs-root/usr/lib/libcurl.so
+[-] Description: Call to DES_ecb_encrypt() at address 0x414488
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #100
+[-] Filename: tests_dev/tmp/Linksys/_FW_E2500_3.0.05.002_20180914.bin.extracted/squashfs-root/usr/lib/libcurl.so
+[-] Description: Call to DES_ecb_encrypt() at address 0x4144b8
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #101
+[-] Filename: tests_dev/tmp/Linksys/_FW_E2500_3.0.05.002_20180914.bin.extracted/squashfs-root/usr/lib/libcurl.so
+[-] Description: Call to MD4_Init() at address 0x4148e0
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #102
+[-] Filename: tests_dev/tmp/Linksys/_FW_E2500_3.0.05.002_20180914.bin.extracted/squashfs-root/usr/lib/libcurl.so
+[-] Description: Call to MD5_Init() at address 0x419088
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #103
+[-] Filename: tests_dev/tmp/Zyxel/_NWA50AX_6.29(ABYW.1)C0.zip.extracted/_629ABYW1C0.bin.extracted/squashfs-root/usr/local/lighttpd/lib/mod_authn_file.so
+[-] Description: Call to SHA1() at address 0x402608
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #104
+[-] Filename: tests_dev/tmp/Zyxel/_NWA50AX_6.29(ABYW.1)C0.zip.extracted/_629ABYW1C0.bin.extracted/squashfs-root/usr/local/lighttpd/lib/mod_authn_file.so
+[-] Description: Call to MD4_Init() at address 0x40272c
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #105
+[-] Filename: tests_dev/tmp/Zyxel/_NWA50AX_6.29(ABYW.1)C0.zip.extracted/_629ABYW1C0.bin.extracted/squashfs-root/usr/lib/rlm_otp.so
+[-] Description: Call to SHA1_Init() at address 0x402ffc
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #106
+[-] Filename: tests_dev/tmp/Zyxel/_NWA50AX_6.29(ABYW.1)C0.zip.extracted/_629ABYW1C0.bin.extracted/squashfs-root/usr/lib/rlm_otp.so
+[-] Description: Call to SHA1_Init() at address 0x403070
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #107
+[-] Filename: tests_dev/tmp/Zyxel/_NWA50AX_6.29(ABYW.1)C0.zip.extracted/_629ABYW1C0.bin.extracted/squashfs-root/usr/lib/rlm_otp.so
+[-] Description: Call to SHA1_Init() at address 0x4030d8
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #108
+[-] Filename: tests_dev/tmp/Zyxel/_NWA50AX_6.29(ABYW.1)C0.zip.extracted/_629ABYW1C0.bin.extracted/squashfs-root/usr/lib/rlm_otp.so
+[-] Description: Call to MD4() at address 0x402fcc
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #109
+[-] Filename: tests_dev/tmp/Zyxel/_NWA50AX_6.29(ABYW.1)C0.zip.extracted/_629ABYW1C0.bin.extracted/squashfs-root/usr/lib/rlm_otp.so
+[-] Description: Call to MD4() at address 0x402fe8
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #110
+[-] Filename: tests_dev/tmp/Zyxel/_NWA50AX_6.29(ABYW.1)C0.zip.extracted/_629ABYW1C0.bin.extracted/squashfs-root/usr/lib/rlm_otp.so
+[-] Description: Call to MD4() at address 0x402f04
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #111
+[-] Filename: tests_dev/tmp/Zyxel/_NWA50AX_6.29(ABYW.1)C0.zip.extracted/_629ABYW1C0.bin.extracted/squashfs-root/usr/lib/rlm_otp.so
+[-] Description: Call to MD4() at address 0x402f18
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #112
+[-] Filename: /home/bluesadi/dev/Yasat/tests_dev/tmp/Zyxel/_NWA50AX_6.29(ABYW.1)C0.zip.extracted/_629ABYW1C0.bin.extracted/squashfs-root/usr/bin/hostapd
+[-] Description: Call to DES_ecb_encrypt() at address 0x49ebfc
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #113
+[-] Filename: tests_dev/tmp/Zyxel/_NWA50AX_6.29(ABYW.1)C0.zip.extracted/_629ABYW1C0.bin.extracted/squashfs-root/usr/lib/rlm_cram.so
+[-] Description: Call to MD4_Init() at address 0x400ba4
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #114
+[-] Filename: tests_dev/tmp/Zyxel/_NWA50AX_6.29(ABYW.1)C0.zip.extracted/_629ABYW1C0.bin.extracted/squashfs-root/usr/lib/rlm_cram.so
+[-] Description: Call to MD5_Init() at address 0x4009b8
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #115
+[-] Filename: tests_dev/tmp/Zyxel/_NWA50AX_6.29(ABYW.1)C0.zip.extracted/_629ABYW1C0.bin.extracted/squashfs-root/usr/lib/rlm_cram.so
+[-] Description: Call to MD5_Init() at address 0x40109c
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #116
+[-] Filename: tests_dev/tmp/Zyxel/_NWA50AX_6.29(ABYW.1)C0.zip.extracted/_629ABYW1C0.bin.extracted/squashfs-root/usr/lib/libcert_util.so
+[-] Description: Call to MD5() at address 0x400f9c
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #117
+[-] Filename: tests_dev/tmp/Zyxel/_NWA50AX_6.29(ABYW.1)C0.zip.extracted/_629ABYW1C0.bin.extracted/squashfs-root/usr/lib/libcert_util.so
+[-] Description: Call to MD5() at address 0x4013d0
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #118
+[-] Filename: tests_dev/tmp/Zyxel/_NWA50AX_6.29(ABYW.1)C0.zip.extracted/_629ABYW1C0.bin.extracted/squashfs-root/usr/bin/radeapclient
+[-] Description: Call to MD5_Init() at address 0x407fb4
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #119
+[-] Filename: tests_dev/tmp/Zyxel/_WAC5302D-Sv2_6.25(ABVZ.9)C0.zip.extracted/_625ABVZ9C0.bin.extracted/squashfs-root/usr/local/lighttpd/cgi-bin/fbwifi_continue.cgi
+[-] Description: Call to MD5_Init() at address 0x953c
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #120
+[-] Filename: tests_dev/tmp/Zyxel/_WAC5302D-Sv2_6.25(ABVZ.9)C0.zip.extracted/_625ABVZ9C0.bin.extracted/squashfs-root/usr/local/lighttpd/cgi-bin/fbwifi_forward.cgi
+[-] Description: Call to MD5_Init() at address 0x9d40
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #121
+[-] Filename: tests_dev/tmp/Zyxel/_WAC5302D-Sv2_6.25(ABVZ.9)C0.zip.extracted/_625ABVZ9C0.bin.extracted/squashfs-root/usr/local/lighttpd/cgi-bin/fbwifi_auth.cgi
+[-] Description: Call to MD5_Init() at address 0xab60
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #122
+[-] Filename: tests_dev/tmp/Zyxel/_WAC5302D-Sv2_6.25(ABVZ.9)C0.zip.extracted/_625ABVZ9C0.bin.extracted/squashfs-root/usr/local/bin/capwap_client
+[-] Description: Call to MD5_Init() at address 0x4a68c
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #123
+[-] Filename: tests_dev/tmp/Zyxel/_NWA50AX_6.29(ABYW.1)C0.zip.extracted/_629ABYW1C0.bin.extracted/squashfs-root/usr/lib/libfreeradius-radius.so
+[-] Description: Call to MD4_Init() at address 0x413418
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #124
+[-] Filename: tests_dev/tmp/Zyxel/_NWA50AX_6.29(ABYW.1)C0.zip.extracted/_629ABYW1C0.bin.extracted/squashfs-root/usr/lib/libfreeradius-radius.so
+[-] Description: Call to MD5_Init() at address 0x4134b8
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #125
+[-] Filename: tests_dev/tmp/Zyxel/_NWA50AX_6.29(ABYW.1)C0.zip.extracted/_629ABYW1C0.bin.extracted/squashfs-root/usr/lib/libfreeradius-radius.so
+[-] Description: Call to MD5_Init() at address 0x419180
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #126
+[-] Filename: tests_dev/tmp/Zyxel/_NWA50AX_6.29(ABYW.1)C0.zip.extracted/_629ABYW1C0.bin.extracted/squashfs-root/usr/lib/libfreeradius-radius.so
+[-] Description: Call to MD5_Init() at address 0x41a314
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #127
+[-] Filename: tests_dev/tmp/Zyxel/_NWA50AX_6.29(ABYW.1)C0.zip.extracted/_629ABYW1C0.bin.extracted/squashfs-root/usr/lib/libfreeradius-radius.so
+[-] Description: Call to MD5_Init() at address 0x41b0b4
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #128
+[-] Filename: tests_dev/tmp/Zyxel/_NWA50AX_6.29(ABYW.1)C0.zip.extracted/_629ABYW1C0.bin.extracted/squashfs-root/usr/lib/libfreeradius-radius.so
+[-] Description: Call to MD5_Init() at address 0x41afb4
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #129
+[-] Filename: tests_dev/tmp/Zyxel/_NWA50AX_6.29(ABYW.1)C0.zip.extracted/_629ABYW1C0.bin.extracted/squashfs-root/usr/lib/libfreeradius-radius.so
+[-] Description: Call to MD5_Init() at address 0x41b560
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #130
+[-] Filename: tests_dev/tmp/Zyxel/_NWA50AX_6.29(ABYW.1)C0.zip.extracted/_629ABYW1C0.bin.extracted/squashfs-root/usr/lib/libfreeradius-radius.so
+[-] Description: Call to MD5_Init() at address 0x41b734
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #131
+[-] Filename: tests_dev/tmp/Zyxel/_NWA50AX_6.29(ABYW.1)C0.zip.extracted/_629ABYW1C0.bin.extracted/squashfs-root/usr/lib/libfreeradius-radius.so
+[-] Description: Call to MD5_Init() at address 0x41b998
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #132
+[-] Filename: tests_dev/tmp/Zyxel/_NWA50AX_6.29(ABYW.1)C0.zip.extracted/_629ABYW1C0.bin.extracted/squashfs-root/usr/lib/libfreeradius-radius.so
+[-] Description: Call to MD5_Init() at address 0x41d5b0
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #133
+[-] Filename: tests_dev/tmp/Zyxel/_NWA50AX_6.29(ABYW.1)C0.zip.extracted/_629ABYW1C0.bin.extracted/squashfs-root/usr/lib/libfreeradius-radius.so
+[-] Description: Call to MD5_Init() at address 0x418fd4
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #134
+[-] Filename: tests_dev/tmp/Zyxel/_WAC5302D-Sv2_6.25(ABVZ.9)C0.zip.extracted/_625ABVZ9C0.bin.extracted/squashfs-root/usr/bin/radeapclient
+[-] Description: Call to MD5_Init() at address 0x11910
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #135
+[-] Filename: tests_dev/tmp/Zyxel/_WAC5302D-Sv2_6.25(ABVZ.9)C0.zip.extracted/_625ABVZ9C0.bin.extracted/squashfs-root/usr/lib/rlm_otp.so
+[-] Description: Call to SHA1_Init() at address 0x40394c
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #136
+[-] Filename: tests_dev/tmp/Zyxel/_WAC5302D-Sv2_6.25(ABVZ.9)C0.zip.extracted/_625ABVZ9C0.bin.extracted/squashfs-root/usr/lib/rlm_otp.so
+[-] Description: Call to SHA1_Init() at address 0x4039bc
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #137
+[-] Filename: tests_dev/tmp/Zyxel/_WAC5302D-Sv2_6.25(ABVZ.9)C0.zip.extracted/_625ABVZ9C0.bin.extracted/squashfs-root/usr/lib/rlm_otp.so
+[-] Description: Call to SHA1_Init() at address 0x403a30
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #138
+[-] Filename: tests_dev/tmp/Zyxel/_WAC5302D-Sv2_6.25(ABVZ.9)C0.zip.extracted/_625ABVZ9C0.bin.extracted/squashfs-root/usr/lib/rlm_otp.so
+[-] Description: Call to SHA1_Init() at address 0x403db4
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #139
+[-] Filename: tests_dev/tmp/Zyxel/_WAC5302D-Sv2_6.25(ABVZ.9)C0.zip.extracted/_625ABVZ9C0.bin.extracted/squashfs-root/usr/lib/rlm_otp.so
+[-] Description: Call to SHA1_Init() at address 0x403e3c
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #140
+[-] Filename: tests_dev/tmp/Zyxel/_WAC5302D-Sv2_6.25(ABVZ.9)C0.zip.extracted/_625ABVZ9C0.bin.extracted/squashfs-root/usr/lib/rlm_otp.so
+[-] Description: Call to SHA1_Init() at address 0x403ed4
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #141
+[-] Filename: tests_dev/tmp/Zyxel/_WAC5302D-Sv2_6.25(ABVZ.9)C0.zip.extracted/_625ABVZ9C0.bin.extracted/squashfs-root/usr/lib/rlm_otp.so
+[-] Description: Call to MD4() at address 0x403928
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #142
+[-] Filename: tests_dev/tmp/Zyxel/_WAC5302D-Sv2_6.25(ABVZ.9)C0.zip.extracted/_625ABVZ9C0.bin.extracted/squashfs-root/usr/lib/rlm_otp.so
+[-] Description: Call to MD4() at address 0x403940
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #143
+[-] Filename: tests_dev/tmp/Zyxel/_WAC5302D-Sv2_6.25(ABVZ.9)C0.zip.extracted/_625ABVZ9C0.bin.extracted/squashfs-root/usr/lib/rlm_otp.so
+[-] Description: Call to MD4() at address 0x403718
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #144
+[-] Filename: tests_dev/tmp/Zyxel/_WAC5302D-Sv2_6.25(ABVZ.9)C0.zip.extracted/_625ABVZ9C0.bin.extracted/squashfs-root/usr/lib/rlm_otp.so
+[-] Description: Call to MD4() at address 0x403734
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #145
+[-] Filename: /home/bluesadi/dev/Yasat/tests_dev/tmp/Zyxel/_WAC5302D-Sv2_6.25(ABVZ.9)C0.zip.extracted/_625ABVZ9C0.bin.extracted/squashfs-root/usr/lib/libcurl.so.4.5.0
+[-] Description: Call to DES_ecb_encrypt() at address 0x427d84
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #146
+[-] Filename: /home/bluesadi/dev/Yasat/tests_dev/tmp/Zyxel/_WAC5302D-Sv2_6.25(ABVZ.9)C0.zip.extracted/_625ABVZ9C0.bin.extracted/squashfs-root/usr/lib/libcurl.so.4.5.0
+[-] Description: Call to DES_ecb_encrypt() at address 0x427da4
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #147
+[-] Filename: /home/bluesadi/dev/Yasat/tests_dev/tmp/Zyxel/_WAC5302D-Sv2_6.25(ABVZ.9)C0.zip.extracted/_625ABVZ9C0.bin.extracted/squashfs-root/usr/lib/libcurl.so.4.5.0
+[-] Description: Call to DES_ecb_encrypt() at address 0x427dc8
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #148
+[-] Filename: /home/bluesadi/dev/Yasat/tests_dev/tmp/Zyxel/_WAC5302D-Sv2_6.25(ABVZ.9)C0.zip.extracted/_625ABVZ9C0.bin.extracted/squashfs-root/usr/lib/libcurl.so.4.5.0
+[-] Description: Call to DES_ecb_encrypt() at address 0x427e54
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #149
+[-] Filename: /home/bluesadi/dev/Yasat/tests_dev/tmp/Zyxel/_WAC5302D-Sv2_6.25(ABVZ.9)C0.zip.extracted/_625ABVZ9C0.bin.extracted/squashfs-root/usr/lib/libcurl.so.4.5.0
+[-] Description: Call to DES_ecb_encrypt() at address 0x427e74
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #150
+[-] Filename: /home/bluesadi/dev/Yasat/tests_dev/tmp/Zyxel/_WAC5302D-Sv2_6.25(ABVZ.9)C0.zip.extracted/_625ABVZ9C0.bin.extracted/squashfs-root/usr/lib/libcurl.so.4.5.0
+[-] Description: Call to MD4_Init() at address 0x427f2c
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #151
+[-] Filename: /home/bluesadi/dev/Yasat/tests_dev/tmp/Zyxel/_WAC5302D-Sv2_6.25(ABVZ.9)C0.zip.extracted/_625ABVZ9C0.bin.extracted/squashfs-root/usr/lib/libcurl.so.4.5.0
+[-] Description: Call to MD5_Init() at address 0x423c20
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #152
+[-] Filename: tests_dev/tmp/Zyxel/_WAC5302D-Sv2_6.25(ABVZ.9)C0.zip.extracted/_625ABVZ9C0.bin.extracted/squashfs-root/usr/lib/libfreeradius-radius.so
+[-] Description: Call to MD4_Init() at address 0x419e5c
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #153
+[-] Filename: tests_dev/tmp/Zyxel/_WAC5302D-Sv2_6.25(ABVZ.9)C0.zip.extracted/_625ABVZ9C0.bin.extracted/squashfs-root/usr/lib/libfreeradius-radius.so
+[-] Description: Call to MD5_Init() at address 0x419eac
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #154
+[-] Filename: tests_dev/tmp/Zyxel/_WAC5302D-Sv2_6.25(ABVZ.9)C0.zip.extracted/_625ABVZ9C0.bin.extracted/squashfs-root/usr/lib/libfreeradius-radius.so
+[-] Description: Call to MD5_Init() at address 0x4223f8
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #155
+[-] Filename: tests_dev/tmp/Zyxel/_WAC5302D-Sv2_6.25(ABVZ.9)C0.zip.extracted/_625ABVZ9C0.bin.extracted/squashfs-root/usr/lib/libfreeradius-radius.so
+[-] Description: Call to MD5_Init() at address 0x429dd8
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #156
+[-] Filename: tests_dev/tmp/Zyxel/_WAC5302D-Sv2_6.25(ABVZ.9)C0.zip.extracted/_625ABVZ9C0.bin.extracted/squashfs-root/usr/lib/libfreeradius-radius.so
+[-] Description: Call to MD5_Init() at address 0x42a578
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #157
+[-] Filename: tests_dev/tmp/Zyxel/_WAC5302D-Sv2_6.25(ABVZ.9)C0.zip.extracted/_625ABVZ9C0.bin.extracted/squashfs-root/usr/lib/libfreeradius-radius.so
+[-] Description: Call to MD5_Init() at address 0x429f9c
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #158
+[-] Filename: tests_dev/tmp/Zyxel/_WAC5302D-Sv2_6.25(ABVZ.9)C0.zip.extracted/_625ABVZ9C0.bin.extracted/squashfs-root/usr/lib/libfreeradius-radius.so
+[-] Description: Call to MD5_Init() at address 0x4257d4
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #159
+[-] Filename: tests_dev/tmp/Zyxel/_WAC5302D-Sv2_6.25(ABVZ.9)C0.zip.extracted/_625ABVZ9C0.bin.extracted/squashfs-root/usr/lib/libfreeradius-radius.so
+[-] Description: Call to MD5_Init() at address 0x422578
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #160
+[-] Filename: tests_dev/tmp/Zyxel/_WAC5302D-Sv2_6.25(ABVZ.9)C0.zip.extracted/_625ABVZ9C0.bin.extracted/squashfs-root/usr/lib/libfreeradius-radius.so
+[-] Description: Call to MD5_Init() at address 0x425b54
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #161
+[-] Filename: tests_dev/tmp/Zyxel/_WAC5302D-Sv2_6.25(ABVZ.9)C0.zip.extracted/_625ABVZ9C0.bin.extracted/squashfs-root/usr/lib/libfreeradius-radius.so
+[-] Description: Call to MD5_Init() at address 0x4228a0
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #162
+[-] Filename: tests_dev/tmp/Zyxel/_WAC5302D-Sv2_6.25(ABVZ.9)C0.zip.extracted/_625ABVZ9C0.bin.extracted/squashfs-root/usr/lib/libfreeradius-radius.so
+[-] Description: Call to MD5_Init() at address 0x425a60
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #163
+[-] Filename: tests_dev/tmp/Zyxel/_WAC5302D-Sv2_6.25(ABVZ.9)C0.zip.extracted/_625ABVZ9C0.bin.extracted/squashfs-root/usr/lib/rlm_cram.so
+[-] Description: Call to MD4_Init() at address 0x400ba0
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #164
+[-] Filename: tests_dev/tmp/Zyxel/_WAC5302D-Sv2_6.25(ABVZ.9)C0.zip.extracted/_625ABVZ9C0.bin.extracted/squashfs-root/usr/lib/rlm_cram.so
+[-] Description: Call to MD4_Init() at address 0x400cac
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #165
+[-] Filename: tests_dev/tmp/Zyxel/_WAC5302D-Sv2_6.25(ABVZ.9)C0.zip.extracted/_625ABVZ9C0.bin.extracted/squashfs-root/usr/lib/rlm_cram.so
+[-] Description: Call to MD5_Init() at address 0x4007d8
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #166
+[-] Filename: tests_dev/tmp/Zyxel/_WAC5302D-Sv2_6.25(ABVZ.9)C0.zip.extracted/_625ABVZ9C0.bin.extracted/squashfs-root/usr/lib/rlm_cram.so
+[-] Description: Call to MD5_Init() at address 0x40093c
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #167
+[-] Filename: tests_dev/tmp/Zyxel/_WAC5302D-Sv2_6.25(ABVZ.9)C0.zip.extracted/_625ABVZ9C0.bin.extracted/squashfs-root/usr/lib/rlm_cram.so
+[-] Description: Call to MD5_Init() at address 0x400a48
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #168
+[-] Filename: tests_dev/tmp/Zyxel/_NAS540_V5.21(AATB.8)C0.zip.extracted/_521AATB8C0.bin.extracted/_71643E.extracted/ext-root/usr/sbin/dservice
+[-] Description: Call to SHA1_Init() at address 0x159c80
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #169
+[-] Filename: tests_dev/tmp/Zyxel/_NAS540_V5.21(AATB.8)C0.zip.extracted/_521AATB8C0.bin.extracted/_71643E.extracted/ext-root/usr/sbin/dservice
+[-] Description: Call to SHA1_Init() at address 0x128bfc
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #170
+[-] Filename: tests_dev/tmp/Zyxel/_NAS540_V5.21(AATB.8)C0.zip.extracted/_521AATB8C0.bin.extracted/_71643E.extracted/ext-root/usr/sbin/dservice
+[-] Description: Call to SHA1_Init() at address 0x10bf14
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #171
+[-] Filename: tests_dev/tmp/Zyxel/_NAS540_V5.21(AATB.8)C0.zip.extracted/_521AATB8C0.bin.extracted/_71643E.extracted/ext-root/usr/sbin/dservice
+[-] Description: Call to SHA1_Init() at address 0x1046ac
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #172
+[-] Filename: tests_dev/tmp/Zyxel/_NAS540_V5.21(AATB.8)C0.zip.extracted/_521AATB8C0.bin.extracted/_71643E.extracted/ext-root/usr/sbin/dservice
+[-] Description: Call to SHA1_Init() at address 0xa3c58
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #173
+[-] Filename: tests_dev/tmp/Zyxel/_NAS540_V5.21(AATB.8)C0.zip.extracted/_521AATB8C0.bin.extracted/_71643E.extracted/ext-root/usr/sbin/dservice
+[-] Description: Call to SHA1_Init() at address 0xa3d00
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #174
+[-] Filename: tests_dev/tmp/Zyxel/_NAS540_V5.21(AATB.8)C0.zip.extracted/_521AATB8C0.bin.extracted/_71643E.extracted/ext-root/usr/sbin/dservice
+[-] Description: Call to SHA1_Init() at address 0xef3e4
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #175
+[-] Filename: tests_dev/tmp/Zyxel/_NAS540_V5.21(AATB.8)C0.zip.extracted/_521AATB8C0.bin.extracted/_71643E.extracted/ext-root/usr/sbin/dservice
+[-] Description: Call to SHA1_Init() at address 0xef948
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #176
+[-] Filename: tests_dev/tmp/Zyxel/_NAS540_V5.21(AATB.8)C0.zip.extracted/_521AATB8C0.bin.extracted/_71643E.extracted/ext-root/usr/sbin/dservice
+[-] Description: Call to SHA1_Init() at address 0xf1270
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #177
+[-] Filename: tests_dev/tmp/Zyxel/_NAS540_V5.21(AATB.8)C0.zip.extracted/_521AATB8C0.bin.extracted/_71643E.extracted/ext-root/usr/sbin/dservice
+[-] Description: Call to SHA1_Init() at address 0x129a90
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #178
+[-] Filename: tests_dev/tmp/Zyxel/_NAS540_V5.21(AATB.8)C0.zip.extracted/_521AATB8C0.bin.extracted/_71643E.extracted/ext-root/usr/sbin/dservice
+[-] Description: Call to SHA1_Init() at address 0x155828
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #179
+[-] Filename: tests_dev/tmp/Zyxel/_NAS540_V5.21(AATB.8)C0.zip.extracted/_521AATB8C0.bin.extracted/_71643E.extracted/ext-root/usr/sbin/dservice
+[-] Description: Call to SHA1_Init() at address 0x155a48
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #180
+[-] Filename: tests_dev/tmp/Zyxel/_NAS540_V5.21(AATB.8)C0.zip.extracted/_521AATB8C0.bin.extracted/_71643E.extracted/ext-root/usr/sbin/dservice
+[-] Description: Call to SHA1_Init() at address 0x155bc0
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #181
+[-] Filename: tests_dev/tmp/Zyxel/_NAS540_V5.21(AATB.8)C0.zip.extracted/_521AATB8C0.bin.extracted/_71643E.extracted/ext-root/usr/sbin/dservice
+[-] Description: Call to SHA1_Init() at address 0x159a78
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #182
+[-] Filename: tests_dev/tmp/Zyxel/_NAS540_V5.21(AATB.8)C0.zip.extracted/_521AATB8C0.bin.extracted/_71643E.extracted/ext-root/usr/sbin/dservice
+[-] Description: Call to SHA1_Init() at address 0x159a00
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #183
+[-] Filename: tests_dev/tmp/Zyxel/_NAS540_V5.21(AATB.8)C0.zip.extracted/_521AATB8C0.bin.extracted/_71643E.extracted/ext-root/usr/sbin/dservice
+[-] Description: Call to SHA1_Init() at address 0x16a34c
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #184
+[-] Filename: tests_dev/tmp/Zyxel/_NAS540_V5.21(AATB.8)C0.zip.extracted/_521AATB8C0.bin.extracted/_71643E.extracted/ext-root/usr/sbin/dservice
+[-] Description: Call to SHA1_Init() at address 0x16a3b8
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #185
+[-] Filename: tests_dev/tmp/Zyxel/_NAS540_V5.21(AATB.8)C0.zip.extracted/_521AATB8C0.bin.extracted/_71643E.extracted/ext-root/usr/sbin/dservice
+[-] Description: Call to SHA1_Init() at address 0x16a54c
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #186
+[-] Filename: tests_dev/tmp/Zyxel/_NAS540_V5.21(AATB.8)C0.zip.extracted/_521AATB8C0.bin.extracted/_71643E.extracted/ext-root/usr/sbin/dservice
+[-] Description: Call to SHA1_Init() at address 0x16a5a0
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #187
+[-] Filename: tests_dev/tmp/Zyxel/_NAS540_V5.21(AATB.8)C0.zip.extracted/_521AATB8C0.bin.extracted/_71643E.extracted/ext-root/usr/sbin/dservice
+[-] Description: Call to SHA1_Init() at address 0x16a620
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #188
+[-] Filename: tests_dev/tmp/Zyxel/_NAS540_V5.21(AATB.8)C0.zip.extracted/_521AATB8C0.bin.extracted/_71643E.extracted/ext-root/usr/sbin/dservice
+[-] Description: Call to SHA1_Init() at address 0x16a678
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #189
+[-] Filename: tests_dev/tmp/Zyxel/_NAS540_V5.21(AATB.8)C0.zip.extracted/_521AATB8C0.bin.extracted/_71643E.extracted/ext-root/usr/sbin/dservice
+[-] Description: Call to SHA1_Init() at address 0x16dae0
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #190
+[-] Filename: tests_dev/tmp/Zyxel/_NAS540_V5.21(AATB.8)C0.zip.extracted/_521AATB8C0.bin.extracted/_71643E.extracted/ext-root/usr/sbin/dservice
+[-] Description: Call to SHA1_Init() at address 0x1aa718
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #191
+[-] Filename: tests_dev/tmp/Zyxel/_NAS540_V5.21(AATB.8)C0.zip.extracted/_521AATB8C0.bin.extracted/_71643E.extracted/ext-root/usr/sbin/dservice
+[-] Description: Call to SHA1_Init() at address 0x175e64
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #192
+[-] Filename: tests_dev/tmp/Zyxel/_NAS540_V5.21(AATB.8)C0.zip.extracted/_521AATB8C0.bin.extracted/_71643E.extracted/ext-root/usr/sbin/dservice
+[-] Description: Call to SHA1_Init() at address 0x1a51d0
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #193
+[-] Filename: /home/bluesadi/dev/Yasat/tests_dev/tmp/Zyxel/_WAC5302D-Sv2_6.25(ABVZ.9)C0.zip.extracted/_625ABVZ9C0.bin.extracted/squashfs-root/usr/lib/rlm_expr.so
+[-] Description: Call to MD5_Init() at address 0x403e34
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #194
+[-] Filename: tests_dev/tmp/Zyxel/_WAC5302D-Sv2_6.25(ABVZ.9)C0.zip.extracted/_625ABVZ9C0.bin.extracted/squashfs-root/usr/lib/libcert_util.so
+[-] Description: Call to MD5() at address 0x400d64
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #195
+[-] Filename: tests_dev/tmp/Zyxel/_WAC5302D-Sv2_6.25(ABVZ.9)C0.zip.extracted/_625ABVZ9C0.bin.extracted/squashfs-root/usr/lib/libcert_util.so
+[-] Description: Call to MD5() at address 0x400fe8
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #196
+[-] Filename: /home/bluesadi/dev/Yasat/tests_dev/tmp/Zyxel/_WAC5302D-Sv2_6.25(ABVZ.9)C0.zip.extracted/_625ABVZ9C0.bin.extracted/squashfs-root/usr/lib/rlm_pap.so
+[-] Description: Call to MD5_Init() at address 0x402514
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #197
+[-] Filename: /home/bluesadi/dev/Yasat/tests_dev/tmp/Zyxel/_WAC5302D-Sv2_6.25(ABVZ.9)C0.zip.extracted/_625ABVZ9C0.bin.extracted/squashfs-root/usr/lib/rlm_pap.so
+[-] Description: Call to MD5_Init() at address 0x402680
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #198
+[-] Filename: /home/bluesadi/dev/Yasat/tests_dev/tmp/Zyxel/_WAC5302D-Sv2_6.25(ABVZ.9)C0.zip.extracted/_625ABVZ9C0.bin.extracted/squashfs-root/usr/lib/rlm_pap.so
+[-] Description: Call to MD5_Init() at address 0x4034c0
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #199
+[-] Filename: tests_dev/tmp/Zyxel/_XMG3927-B50A_5.13(ABMT.0)C0.zip.extracted/_V513ABMT0C0.bin.extracted/jffs2-root/lib/libzyutil.so
+[-] Description: Call to MD5() at address 0x402fc4
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #200
+[-] Filename: tests_dev/tmp/Zyxel/_XMG3927-B50A_5.13(ABMT.0)C0.zip.extracted/_V513ABMT0C0.bin.extracted/jffs2-root/bin/zywifid
+[-] Description: Call to MD5_Init() at address 0xcb3c
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #201
+[-] Filename: tests_dev/tmp/Zyxel/_XMG3927-B50A_5.13(ABMT.0)C0.zip.extracted/_V513ABMT0C0.bin.extracted/jffs2-root/lib/private/libzcfg_be.so
+[-] Description: Call to MD5() at address 0x41b20c
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #202
+[-] Filename: tests_dev/tmp/Zyxel/_XMG3927-B50A_5.13(ABMT.0)C0.zip.extracted/_V513ABMT0C0.bin.extracted/jffs2-root/lib/private/libzcfg_be.so
+[-] Description: Call to MD5_Init() at address 0x41b584
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #203
+[-] Filename: tests_dev/tmp/Netgear/_R8000-V1.0.4.84_10.1.84.zip.extracted/_R8000-V1.0.4.84_10.1.84.chk.extracted/squashfs-root/usr/lib/libcurl.so
+[-] Description: Call to DES_ecb_encrypt() at address 0x4205ac
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #204
+[-] Filename: tests_dev/tmp/Netgear/_R8000-V1.0.4.84_10.1.84.zip.extracted/_R8000-V1.0.4.84_10.1.84.chk.extracted/squashfs-root/usr/lib/libcurl.so
+[-] Description: Call to DES_ecb_encrypt() at address 0x4205cc
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #205
+[-] Filename: tests_dev/tmp/Netgear/_R8000-V1.0.4.84_10.1.84.zip.extracted/_R8000-V1.0.4.84_10.1.84.chk.extracted/squashfs-root/usr/lib/libcurl.so
+[-] Description: Call to DES_ecb_encrypt() at address 0x4205f0
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #206
+[-] Filename: tests_dev/tmp/Netgear/_R8000-V1.0.4.84_10.1.84.zip.extracted/_R8000-V1.0.4.84_10.1.84.chk.extracted/squashfs-root/usr/lib/libcurl.so
+[-] Description: Call to DES_ecb_encrypt() at address 0x420674
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #207
+[-] Filename: tests_dev/tmp/Netgear/_R8000-V1.0.4.84_10.1.84.zip.extracted/_R8000-V1.0.4.84_10.1.84.chk.extracted/squashfs-root/usr/lib/libcurl.so
+[-] Description: Call to DES_ecb_encrypt() at address 0x420694
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #208
+[-] Filename: tests_dev/tmp/Netgear/_R8000-V1.0.4.84_10.1.84.zip.extracted/_R8000-V1.0.4.84_10.1.84.chk.extracted/squashfs-root/usr/lib/libcurl.so
+[-] Description: Call to MD4_Init() at address 0x420714
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #209
+[-] Filename: tests_dev/tmp/Netgear/_R8000-V1.0.4.84_10.1.84.zip.extracted/_R8000-V1.0.4.84_10.1.84.chk.extracted/squashfs-root/usr/lib/libcurl.so
+[-] Description: Call to MD5_Init() at address 0x4265b0
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #210
+[-] Filename: tests_dev/tmp/Netgear/_R8000-V1.0.4.84_10.1.84.zip.extracted/_R8000-V1.0.4.84_10.1.84.chk.extracted/squashfs-root/usr/lib/libcurl.so
+[-] Description: Call to MD5_Init() at address 0x41d474
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #211
+[-] Filename: /home/bluesadi/dev/Yasat/tests_dev/tmp/Netgear/_R8000-V1.0.4.84_10.1.84.zip.extracted/_R8000-V1.0.4.84_10.1.84.chk.extracted/squashfs-root/bin/circled
+[-] Description: Call to MD5() at address 0xffb8
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #212
+[-] Filename: tests_dev/tmp/Netgear/_R7500v2-V1.0.3.50.zip.extracted/_R7500v2-V1.0.3.50.img.extracted/fbwifi
+[-] Description: Call to DES_ecb_encrypt() at address 0x534e8
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #213
+[-] Filename: tests_dev/tmp/Netgear/_R7500v2-V1.0.3.50.zip.extracted/_R7500v2-V1.0.3.50.img.extracted/fbwifi
+[-] Description: Call to DES_ecb_encrypt() at address 0x53508
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #214
+[-] Filename: tests_dev/tmp/Netgear/_R7500v2-V1.0.3.50.zip.extracted/_R7500v2-V1.0.3.50.img.extracted/fbwifi
+[-] Description: Call to DES_ecb_encrypt() at address 0x53528
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #215
+[-] Filename: tests_dev/tmp/Netgear/_R7500v2-V1.0.3.50.zip.extracted/_R7500v2-V1.0.3.50.img.extracted/fbwifi
+[-] Description: Call to DES_ecb_encrypt() at address 0x535a0
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #216
+[-] Filename: tests_dev/tmp/Netgear/_R7500v2-V1.0.3.50.zip.extracted/_R7500v2-V1.0.3.50.img.extracted/fbwifi
+[-] Description: Call to DES_ecb_encrypt() at address 0x535c0
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #217
+[-] Filename: tests_dev/tmp/Netgear/_R7500v2-V1.0.3.50.zip.extracted/_R7500v2-V1.0.3.50.img.extracted/fbwifi
+[-] Description: Call to MD4_Init() at address 0x5365c
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #218
+[-] Filename: tests_dev/tmp/Netgear/_R7500v2-V1.0.3.50.zip.extracted/_R7500v2-V1.0.3.50.img.extracted/fbwifi
+[-] Description: Call to MD5_Init() at address 0x35ebc
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #219
+[-] Filename: tests_dev/tmp/Netgear/_R7500v2-V1.0.3.50.zip.extracted/_R7500v2-V1.0.3.50.img.extracted/fbwifi
+[-] Description: Call to MD5_Init() at address 0x3dc88
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #220
+[-] Filename: /home/bluesadi/dev/Yasat/tests_dev/tmp/Netgear/_R6400v2-V1.0.4.120_10.0.91.zip.extracted/_R6400v2-V1.0.4.120_10.0.91.chk.extracted/squashfs-root/usr/sbin/tcpdump.4.4.0
+[-] Description: Call to MD5_Init() at address 0x535d8
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #221
+[-] Filename: /home/bluesadi/dev/Yasat/tests_dev/tmp/Netgear/_R6400v2-V1.0.4.120_10.0.91.zip.extracted/_R6400v2-V1.0.4.120_10.0.91.chk.extracted/squashfs-root/usr/sbin/tcpdump.4.4.0
+[-] Description: Call to MD5_Init() at address 0x53680
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #222
+[-] Filename: /home/bluesadi/dev/Yasat/tests_dev/tmp/Netgear/_R6400v2-V1.0.4.120_10.0.91.zip.extracted/_R6400v2-V1.0.4.120_10.0.91.chk.extracted/squashfs-root/usr/sbin/tcpdump.4.4.0
+[-] Description: Call to MD5_Init() at address 0x536b4
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #223
+[-] Filename: /home/bluesadi/dev/Yasat/tests_dev/tmp/Netgear/_R6400v2-V1.0.4.120_10.0.91.zip.extracted/_R6400v2-V1.0.4.120_10.0.91.chk.extracted/squashfs-root/usr/sbin/tcpdump.4.4.0
+[-] Description: Call to MD5_Init() at address 0x4e280
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #224
+[-] Filename: tests_dev/tmp/Netgear/_R8000-V1.0.4.84_10.1.84.zip.extracted/_R8000-V1.0.4.84_10.1.84.chk.extracted/squashfs-root/bin/upAgent
+[-] Description: Call to DES_ecb_encrypt() at address 0x52560
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #225
+[-] Filename: tests_dev/tmp/Netgear/_R8000-V1.0.4.84_10.1.84.zip.extracted/_R8000-V1.0.4.84_10.1.84.chk.extracted/squashfs-root/bin/upAgent
+[-] Description: Call to DES_ecb_encrypt() at address 0x52580
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #226
+[-] Filename: tests_dev/tmp/Netgear/_R8000-V1.0.4.84_10.1.84.zip.extracted/_R8000-V1.0.4.84_10.1.84.chk.extracted/squashfs-root/bin/upAgent
+[-] Description: Call to DES_ecb_encrypt() at address 0x525a4
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #227
+[-] Filename: tests_dev/tmp/Netgear/_R8000-V1.0.4.84_10.1.84.zip.extracted/_R8000-V1.0.4.84_10.1.84.chk.extracted/squashfs-root/bin/upAgent
+[-] Description: Call to DES_ecb_encrypt() at address 0x52620
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #228
+[-] Filename: tests_dev/tmp/Netgear/_R8000-V1.0.4.84_10.1.84.zip.extracted/_R8000-V1.0.4.84_10.1.84.chk.extracted/squashfs-root/bin/upAgent
+[-] Description: Call to DES_ecb_encrypt() at address 0x52640
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #229
+[-] Filename: tests_dev/tmp/Netgear/_R8000-V1.0.4.84_10.1.84.zip.extracted/_R8000-V1.0.4.84_10.1.84.chk.extracted/squashfs-root/bin/upAgent
+[-] Description: Call to MD4_Init() at address 0x526e0
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #230
+[-] Filename: tests_dev/tmp/Netgear/_R8000-V1.0.4.84_10.1.84.zip.extracted/_R8000-V1.0.4.84_10.1.84.chk.extracted/squashfs-root/bin/upAgent
+[-] Description: Call to MD5_Init() at address 0x37900
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #231
+[-] Filename: tests_dev/tmp/Netgear/_R8000-V1.0.4.84_10.1.84.zip.extracted/_R8000-V1.0.4.84_10.1.84.chk.extracted/squashfs-root/bin/upAgent
+[-] Description: Call to MD5_Init() at address 0x49bc8
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #232
+[-] Filename: /home/bluesadi/dev/Yasat/tests_dev/tmp/Netgear/_LBR20_V2.6.5.2.zip.extracted/_LBR20-V2.6.5.2.img.extracted/squashfs-root/usr/sbin/soap-api
+[-] Description: Call to MD5() at address 0x468f30
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #233
+[-] Filename: tests_dev/tmp/Netgear/_LBR20_V2.6.5.2.zip.extracted/_LBR20-V2.6.5.2.img.extracted/squashfs-root/usr/sbin/soapclient
+[-] Description: Call to MD5() at address 0x406c84
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #234
+[-] Filename: tests_dev/tmp/Netgear/_LBR20_V2.6.5.2.zip.extracted/_LBR20-V2.6.5.2.img.extracted/squashfs-root/usr/sbin/cwmpclient
+[-] Description: Call to MD5_Init() at address 0x2011c
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #235
+[-] Filename: tests_dev/tmp/Netgear/_LBR20_V2.6.5.2.zip.extracted/_LBR20-V2.6.5.2.img.extracted/squashfs-root/usr/sbin/cwmpclient
+[-] Description: Call to MD5_Init() at address 0x200a8
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #236
+[-] Filename: tests_dev/tmp/Netgear/_MVBR1210C_V1.2.0.35BM.zip.extracted/_MVBR1210C-v1.2.0.35BM.chk.extracted/squashfs-root/usr/sbin/wget_d
+[-] Description: Call to MD4_Init() at address 0x41de5c
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #237
+[-] Filename: tests_dev/tmp/Netgear/_MVBR1210C_V1.2.0.35BM.zip.extracted/_MVBR1210C-v1.2.0.35BM.chk.extracted/squashfs-root/usr/sbin/wget_d
+[-] Description: Call to MD5_Init() at address 0x4237e8
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #238
+[-] Filename: tests_dev/tmp/Netgear/_MVBR1210C_V1.2.0.35BM.zip.extracted/_MVBR1210C-v1.2.0.35BM.chk.extracted/squashfs-root/usr/sbin/wget_d
+[-] Description: Call to MD5_Init() at address 0x435944
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #239
+[-] Filename: tests_dev/tmp/Netgear/_MVBR1210C_V1.2.0.35BM.zip.extracted/_MVBR1210C-v1.2.0.35BM.chk.extracted/squashfs-root/usr/sbin/wget_d
+[-] Description: Call to MD5_Init() at address 0x435a3c
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #240
+[-] Filename: tests_dev/tmp/Netgear/_MVBR1210C_V1.2.0.35BM.zip.extracted/_MVBR1210C-v1.2.0.35BM.chk.extracted/squashfs-root/usr/sbin/wget_d
+[-] Description: Call to MD5_Init() at address 0x435dac
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #241
+[-] Filename: tests_dev/tmp/Netgear/_LBR20_V2.6.5.2.zip.extracted/_LBR20-V2.6.5.2.img.extracted/squashfs-root/usr/bin/bob
+[-] Description: Call to MD5_Init() at address 0x115e0
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #242
+[-] Filename: tests_dev/tmp/Netgear/_LBR20_V2.6.5.2.zip.extracted/_LBR20-V2.6.5.2.img.extracted/squashfs-root/usr/bin/circlev2/shares/usr/bin/rclient
+[-] Description: Call to SHA1() at address 0x19420
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #243
+[-] Filename: tests_dev/tmp/Netgear/_LBR20_V2.6.5.2.zip.extracted/_LBR20-V2.6.5.2.img.extracted/squashfs-root/usr/bin/wget-ssl
+[-] Description: Call to DES_ecb_encrypt() at address 0x3d21c
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #244
+[-] Filename: tests_dev/tmp/Netgear/_LBR20_V2.6.5.2.zip.extracted/_LBR20-V2.6.5.2.img.extracted/squashfs-root/usr/bin/wget-ssl
+[-] Description: Call to DES_ecb_encrypt() at address 0x3d23c
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #245
+[-] Filename: tests_dev/tmp/Netgear/_LBR20_V2.6.5.2.zip.extracted/_LBR20-V2.6.5.2.img.extracted/squashfs-root/usr/bin/wget-ssl
+[-] Description: Call to DES_ecb_encrypt() at address 0x3d12c
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #246
+[-] Filename: tests_dev/tmp/Netgear/_LBR20_V2.6.5.2.zip.extracted/_LBR20-V2.6.5.2.img.extracted/squashfs-root/usr/bin/wget-ssl
+[-] Description: Call to DES_ecb_encrypt() at address 0x3d14c
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #247
+[-] Filename: tests_dev/tmp/Netgear/_LBR20_V2.6.5.2.zip.extracted/_LBR20-V2.6.5.2.img.extracted/squashfs-root/usr/bin/wget-ssl
+[-] Description: Call to DES_ecb_encrypt() at address 0x3d16c
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #248
+[-] Filename: tests_dev/tmp/Netgear/_LBR20_V2.6.5.2.zip.extracted/_LBR20-V2.6.5.2.img.extracted/squashfs-root/usr/bin/wget-ssl
+[-] Description: Call to MD4_Init() at address 0x3d28c
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #249
+[-] Filename: tests_dev/tmp/Netgear/_LBR20_V2.6.5.2.zip.extracted/_LBR20-V2.6.5.2.img.extracted/squashfs-root/usr/bin/circlev2/shares/usr/bin/timetracker
+[-] Description: Call to MD5() at address 0x22c5c
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #250
+[-] Filename: tests_dev/tmp/Netgear/_LBR20_V2.6.5.2.zip.extracted/_LBR20-V2.6.5.2.img.extracted/squashfs-root/usr/bin/circlev2/shares/usr/bin/timetracker
+[-] Description: Call to MD5() at address 0x22be0
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #251
+[-] Filename: /home/bluesadi/dev/Yasat/tests_dev/tmp/Netgear/_LBR20_V2.6.5.2.zip.extracted/_LBR20-V2.6.5.2.img.extracted/squashfs-root/usr/bin/circlev2/shares/usr/lib/libcurl.so.4.6.0
+[-] Description: Call to DES_ecb_encrypt() at address 0x40d058
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #252
+[-] Filename: /home/bluesadi/dev/Yasat/tests_dev/tmp/Netgear/_LBR20_V2.6.5.2.zip.extracted/_LBR20-V2.6.5.2.img.extracted/squashfs-root/usr/bin/circlev2/shares/usr/lib/libcurl.so.4.6.0
+[-] Description: Call to DES_ecb_encrypt() at address 0x40d078
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #253
+[-] Filename: /home/bluesadi/dev/Yasat/tests_dev/tmp/Netgear/_LBR20_V2.6.5.2.zip.extracted/_LBR20-V2.6.5.2.img.extracted/squashfs-root/usr/bin/circlev2/shares/usr/lib/libcurl.so.4.6.0
+[-] Description: Call to DES_ecb_encrypt() at address 0x40d098
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #254
+[-] Filename: /home/bluesadi/dev/Yasat/tests_dev/tmp/Netgear/_LBR20_V2.6.5.2.zip.extracted/_LBR20-V2.6.5.2.img.extracted/squashfs-root/usr/bin/circlev2/shares/usr/lib/libcurl.so.4.6.0
+[-] Description: Call to DES_ecb_encrypt() at address 0x40d118
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #255
+[-] Filename: /home/bluesadi/dev/Yasat/tests_dev/tmp/Netgear/_LBR20_V2.6.5.2.zip.extracted/_LBR20-V2.6.5.2.img.extracted/squashfs-root/usr/bin/circlev2/shares/usr/lib/libcurl.so.4.6.0
+[-] Description: Call to DES_ecb_encrypt() at address 0x40d138
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #256
+[-] Filename: /home/bluesadi/dev/Yasat/tests_dev/tmp/Netgear/_LBR20_V2.6.5.2.zip.extracted/_LBR20-V2.6.5.2.img.extracted/squashfs-root/usr/bin/circlev2/shares/usr/lib/libcurl.so.4.6.0
+[-] Description: Call to MD4_Init() at address 0x425860
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #257
+[-] Filename: /home/bluesadi/dev/Yasat/tests_dev/tmp/Netgear/_LBR20_V2.6.5.2.zip.extracted/_LBR20-V2.6.5.2.img.extracted/squashfs-root/usr/bin/circlev2/shares/usr/lib/libcurl.so.4.6.0
+[-] Description: Call to MD5_Init() at address 0x4258ac
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #258
+[-] Filename: tests_dev/tmp/Netgear/_MVBR1210C_V1.2.0.35BM.zip.extracted/_MVBR1210C-v1.2.0.35BM.chk.extracted/squashfs-root/usr/sbin/cwmpCPE
+[-] Description: Call to MD5_Init() at address 0x4ce074
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #259
+[-] Filename: tests_dev/tmp/Netgear/_MVBR1210C_V1.2.0.35BM.zip.extracted/_MVBR1210C-v1.2.0.35BM.chk.extracted/squashfs-root/usr/sbin/cwmpCPE
+[-] Description: Call to MD5_Init() at address 0x4ce16c
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #260
+[-] Filename: tests_dev/tmp/Netgear/_MVBR1210C_V1.2.0.35BM.zip.extracted/_MVBR1210C-v1.2.0.35BM.chk.extracted/squashfs-root/usr/sbin/cwmpCPE
+[-] Description: Call to MD5_Init() at address 0x4ce4dc
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #261
+[-] Filename: tests_dev/tmp/Netgear/_EX6100-V1.0.2.28_1.1.138.zip.extracted/_EX6100-V1.0.2.28_1.1.138.chk.extracted/squashfs-root/bin/wpa_passphrase
+[-] Description: Call to DES_ecb_encrypt() at address 0x4034bc
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #262
+[-] Filename: tests_dev/tmp/Netgear/_EX6100-V1.0.2.28_1.1.138.zip.extracted/_EX6100-V1.0.2.28_1.1.138.chk.extracted/squashfs-root/bin/wpa_passphrase
+[-] Description: Call to SHA1_Init() at address 0x403618
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #263
+[-] Filename: tests_dev/tmp/Netgear/_EX6100-V1.0.2.28_1.1.138.zip.extracted/_EX6100-V1.0.2.28_1.1.138.chk.extracted/squashfs-root/bin/wpa_passphrase
+[-] Description: Call to MD4_Init() at address 0x403368
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #264
+[-] Filename: tests_dev/tmp/Netgear/_EX6100-V1.0.2.28_1.1.138.zip.extracted/_EX6100-V1.0.2.28_1.1.138.chk.extracted/squashfs-root/bin/wpa_passphrase
+[-] Description: Call to MD5_Init() at address 0x403524
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #265
+[-] Filename: /home/bluesadi/dev/Yasat/tests_dev/tmp/Netgear/_SXS30-V3.2.33.108-signed.zip.extracted/_SXS30-V3.2.33.108-signed.img.extracted/squashfs-root/opt/netgear/usr/lib/libcurl.so.4.7.0
+[-] Description: Call to DES_ecb_encrypt() at address 0x40b980
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #266
+[-] Filename: /home/bluesadi/dev/Yasat/tests_dev/tmp/Netgear/_SXS30-V3.2.33.108-signed.zip.extracted/_SXS30-V3.2.33.108-signed.img.extracted/squashfs-root/opt/netgear/usr/lib/libcurl.so.4.7.0
+[-] Description: Call to DES_ecb_encrypt() at address 0x40b9a0
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #267
+[-] Filename: /home/bluesadi/dev/Yasat/tests_dev/tmp/Netgear/_SXS30-V3.2.33.108-signed.zip.extracted/_SXS30-V3.2.33.108-signed.img.extracted/squashfs-root/opt/netgear/usr/lib/libcurl.so.4.7.0
+[-] Description: Call to DES_ecb_encrypt() at address 0x40b9c0
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #268
+[-] Filename: /home/bluesadi/dev/Yasat/tests_dev/tmp/Netgear/_SXS30-V3.2.33.108-signed.zip.extracted/_SXS30-V3.2.33.108-signed.img.extracted/squashfs-root/opt/netgear/usr/lib/libcurl.so.4.7.0
+[-] Description: Call to DES_ecb_encrypt() at address 0x40ba78
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #269
+[-] Filename: /home/bluesadi/dev/Yasat/tests_dev/tmp/Netgear/_SXS30-V3.2.33.108-signed.zip.extracted/_SXS30-V3.2.33.108-signed.img.extracted/squashfs-root/opt/netgear/usr/lib/libcurl.so.4.7.0
+[-] Description: Call to DES_ecb_encrypt() at address 0x40ba98
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #270
+[-] Filename: /home/bluesadi/dev/Yasat/tests_dev/tmp/Netgear/_SXS30-V3.2.33.108-signed.zip.extracted/_SXS30-V3.2.33.108-signed.img.extracted/squashfs-root/opt/netgear/usr/lib/libcurl.so.4.7.0
+[-] Description: Call to MD4_Init() at address 0x41d140
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #271
+[-] Filename: /home/bluesadi/dev/Yasat/tests_dev/tmp/Netgear/_SXS30-V3.2.33.108-signed.zip.extracted/_SXS30-V3.2.33.108-signed.img.extracted/squashfs-root/opt/netgear/usr/lib/libcurl.so.4.7.0
+[-] Description: Call to MD5_Init() at address 0x41d1bc
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #272
+[-] Filename: /home/bluesadi/dev/Yasat/tests_dev/tmp/Netgear/_SXS30-V3.2.33.108-signed.zip.extracted/_SXS30-V3.2.33.108-signed.img.extracted/squashfs-root/usr/sbin/hostapd-macsec
+[-] Description: Call to DES_ecb_encrypt() at address 0x4cd9fc
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #273
+[-] Filename: /home/bluesadi/dev/Yasat/tests_dev/tmp/Netgear/_SXS30-V3.2.33.108-signed.zip.extracted/_SXS30-V3.2.33.108-signed.img.extracted/squashfs-root/usr/sbin/wpa_supplicant-macsec
+[-] Description: Call to DES_ecb_encrypt() at address 0x4e20b4
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #274
+[-] Filename: tests_dev/tmp/Netgear/_BR500-FW-V5.10.0.5.zip.extracted/_BR500-V5.10.0.5.img.extracted/vpncloud_agent
+[-] Description: Call to MD5() at address 0x1bb50
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #275
+[-] Filename: tests_dev/tmp/Netgear/_BR500-FW-V5.10.0.5.zip.extracted/_BR500-V5.10.0.5.img.extracted/vppnctrl
+[-] Description: Call to MD5() at address 0x2aef8
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #276
+[-] Filename: tests_dev/tmp/Netgear/_BR500-FW-V5.10.0.5.zip.extracted/_BR500-V5.10.0.5.img.extracted/swap-routed
+[-] Description: Call to MD5() at address 0x1abfc
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #277
+[-] Filename: tests_dev/tmp/Netgear/_BR500-FW-V5.10.0.5.zip.extracted/_BR500-V5.10.0.5.img.extracted/mqtt-client
+[-] Description: Call to MD5() at address 0x24a5c
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #278
+[-] Filename: tests_dev/tmp/Netgear/_R7350_V1.2.0.92.zip.extracted/_R7350_V1.2.0.92_1.0.1.img.extracted/_R6950.bin.extracted/squashfs-root/usr/sbin/trcli
+[-] Description: Call to SHA1_Init() at address 0x447a3c
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #279
+[-] Filename: tests_dev/tmp/Netgear/_R7350_V1.2.0.92.zip.extracted/_R7350_V1.2.0.92_1.0.1.img.extracted/_R6950.bin.extracted/squashfs-root/usr/sbin/trcli
+[-] Description: Call to SHA1_Init() at address 0x447544
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #280
+[-] Filename: tests_dev/tmp/Netgear/_R7350_V1.2.0.92.zip.extracted/_R7350_V1.2.0.92_1.0.1.img.extracted/_R6950.bin.extracted/squashfs-root/usr/sbin/trcli
+[-] Description: Call to SHA1_Init() at address 0x448bfc
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #281
+[-] Filename: tests_dev/tmp/Netgear/_R7350_V1.2.0.92.zip.extracted/_R7350_V1.2.0.92_1.0.1.img.extracted/_R6950.bin.extracted/squashfs-root/usr/sbin/trcli
+[-] Description: Call to SHA1_Init() at address 0x439be8
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #282
+[-] Filename: tests_dev/tmp/Netgear/_R7350_V1.2.0.92.zip.extracted/_R7350_V1.2.0.92_1.0.1.img.extracted/_R6950.bin.extracted/squashfs-root/usr/sbin/trcli
+[-] Description: Call to SHA1_Init() at address 0x439f1c
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #283
+[-] Filename: tests_dev/tmp/Netgear/_BR500-FW-V5.10.0.5.zip.extracted/_BR500-V5.10.0.5.img.extracted/mqtt-agent
+[-] Description: Call to MD5() at address 0x1bb3c
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #284
+[-] Filename: tests_dev/tmp/Netgear/_BR500-FW-V5.10.0.5.zip.extracted/_BR500-V5.10.0.5.img.extracted/vpnctrl.cgi
+[-] Description: Call to MD5() at address 0x1c6d8
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #285
+[-] Filename: tests_dev/tmp/Netgear/_BR500-FW-V5.10.0.5.zip.extracted/_BR500-V5.10.0.5.img.extracted/vpnguard
+[-] Description: Call to MD5() at address 0x1af2c
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #286
+[-] Filename: tests_dev/tmp/Netgear/_BR500-FW-V5.10.0.5.zip.extracted/_BR500-V5.10.0.5.img.extracted/monitor-agent
+[-] Description: Call to MD5() at address 0x1bec8
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #287
+[-] Filename: tests_dev/tmp/Netgear/_FVS318G_V3.1.1-18.zip.extracted/_fvs318g_v3.1.1-18.img.extracted/squashfs-root/pfrm1.0/libarmarm-linux-radiuslnx.so
+[-] Description: Call to MD5_Init() at address 0x405618
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #288
+[-] Filename: tests_dev/tmp/Netgear/_FVS318G_V3.1.1-18.zip.extracted/_fvs318g_v3.1.1-18.img.extracted/squashfs-root/pfrm1.0/libarmarm-linux-radiuslnx.so
+[-] Description: Call to MD5_Init() at address 0x405684
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #289
+[-] Filename: tests_dev/tmp/Netgear/_FVS318G_V3.1.1-18.zip.extracted/_fvs318g_v3.1.1-18.img.extracted/squashfs-root/pfrm1.0/libarmarm-linux-radiuslnx.so
+[-] Description: Call to MD5_Init() at address 0x4056d0
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #290
+[-] Filename: tests_dev/tmp/Netgear/_FVS318G_V3.1.1-18.zip.extracted/_fvs318g_v3.1.1-18.img.extracted/squashfs-root/pfrm1.0/libarmarm-linux-radiuslnx.so
+[-] Description: Call to MD5_Init() at address 0x40572c
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #291
+[-] Filename: /home/bluesadi/dev/Yasat/tests_dev/tmp/Netgear/_FVS318G_V3.1.1-18.zip.extracted/_fvs318g_v3.1.1-18.img.extracted/squashfs-root/pfrm1.0/libarmarm-linux-racoonlnx.so
+[-] Description: Call to SHA1_Init() at address 0x41ded8
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #292
+[-] Filename: /home/bluesadi/dev/Yasat/tests_dev/tmp/Netgear/_FVS318G_V3.1.1-18.zip.extracted/_fvs318g_v3.1.1-18.img.extracted/squashfs-root/pfrm1.0/libarmarm-linux-racoonlnx.so
+[-] Description: Call to MD5_Init() at address 0x41df6c
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #293
+[-] Filename: tests_dev/tmp/Netgear/_FVS318G_V3.1.1-18.zip.extracted/_fvs318g_v3.1.1-18.img.extracted/squashfs-root/pfrm1.0/vipsec.ko
+[-] Description: Call to DES_ecb_encrypt() at address 0x415f8c
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #294
+[-] Filename: tests_dev/tmp/Netgear/_FVS318G_V3.1.1-18.zip.extracted/_fvs318g_v3.1.1-18.img.extracted/squashfs-root/pfrm1.0/vipsec.ko
+[-] Description: Call to DES_ecb_encrypt() at address 0x415f4c
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #295
+[-] Filename: tests_dev/tmp/Netgear/_FVS318G_V3.1.1-18.zip.extracted/_fvs318g_v3.1.1-18.img.extracted/squashfs-root/pfrm1.0/vipsec.ko
+[-] Description: Call to DES_ecb3_encrypt() at address 0x416584
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #296
+[-] Filename: tests_dev/tmp/Netgear/_FVS318G_V3.1.1-18.zip.extracted/_fvs318g_v3.1.1-18.img.extracted/squashfs-root/pfrm1.0/vipsec.ko
+[-] Description: Call to DES_ecb3_encrypt() at address 0x416530
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #297
+[-] Filename: tests_dev/tmp/Netgear/_FVS318G_V3.1.1-18.zip.extracted/_fvs318g_v3.1.1-18.img.extracted/squashfs-root/pfrm1.0/vipsec.ko
+[-] Description: Call to SHA1_Init() at address 0x413788
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #298
+[-] Filename: tests_dev/tmp/Netgear/_FVS318G_V3.1.1-18.zip.extracted/_fvs318g_v3.1.1-18.img.extracted/squashfs-root/pfrm1.0/vipsec.ko
+[-] Description: Call to SHA1_Init() at address 0x41363c
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #299
+[-] Filename: tests_dev/tmp/Netgear/_FVS318G_V3.1.1-18.zip.extracted/_fvs318g_v3.1.1-18.img.extracted/squashfs-root/pfrm1.0/vipsec.ko
+[-] Description: Call to SHA1_Init() at address 0x4136dc
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #300
+[-] Filename: tests_dev/tmp/Netgear/_FVS318G_V3.1.1-18.zip.extracted/_fvs318g_v3.1.1-18.img.extracted/squashfs-root/pfrm1.0/vipsec.ko
+[-] Description: Call to SHA1_Init() at address 0x4130bc
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #301
+[-] Filename: tests_dev/tmp/Netgear/_FVS318G_V3.1.1-18.zip.extracted/_fvs318g_v3.1.1-18.img.extracted/squashfs-root/pfrm1.0/vipsec.ko
+[-] Description: Call to MD5_Init() at address 0x4134d0
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #302
+[-] Filename: tests_dev/tmp/Netgear/_FVS318G_V3.1.1-18.zip.extracted/_fvs318g_v3.1.1-18.img.extracted/squashfs-root/pfrm1.0/vipsec.ko
+[-] Description: Call to MD5_Init() at address 0x413384
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #303
+[-] Filename: tests_dev/tmp/Netgear/_FVS318G_V3.1.1-18.zip.extracted/_fvs318g_v3.1.1-18.img.extracted/squashfs-root/pfrm1.0/vipsec.ko
+[-] Description: Call to MD5_Init() at address 0x413424
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #304
+[-] Filename: tests_dev/tmp/Netgear/_FVS318G_V3.1.1-18.zip.extracted/_fvs318g_v3.1.1-18.img.extracted/squashfs-root/pfrm1.0/vipsec.ko
+[-] Description: Call to MD5_Init() at address 0x412e38
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #305
+[-] Filename: /home/bluesadi/dev/Yasat/tests_dev/tmp/Netgear/_MR70-V1.0.3.32.zip.extracted/_MR70-V1.0.3.32_2.0.57.chk.extracted/squashfs-root/usr/lib/libcurl.so.4
+[-] Description: Call to DES_ecb_encrypt() at address 0x414ce4
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #306
+[-] Filename: /home/bluesadi/dev/Yasat/tests_dev/tmp/Netgear/_MR70-V1.0.3.32.zip.extracted/_MR70-V1.0.3.32_2.0.57.chk.extracted/squashfs-root/usr/lib/libcurl.so.4
+[-] Description: Call to DES_ecb_encrypt() at address 0x414d04
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #307
+[-] Filename: /home/bluesadi/dev/Yasat/tests_dev/tmp/Netgear/_MR70-V1.0.3.32.zip.extracted/_MR70-V1.0.3.32_2.0.57.chk.extracted/squashfs-root/usr/lib/libcurl.so.4
+[-] Description: Call to DES_ecb_encrypt() at address 0x414d24
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #308
+[-] Filename: /home/bluesadi/dev/Yasat/tests_dev/tmp/Netgear/_MR70-V1.0.3.32.zip.extracted/_MR70-V1.0.3.32_2.0.57.chk.extracted/squashfs-root/usr/lib/libcurl.so.4
+[-] Description: Call to DES_ecb_encrypt() at address 0x414da8
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #309
+[-] Filename: /home/bluesadi/dev/Yasat/tests_dev/tmp/Netgear/_MR70-V1.0.3.32.zip.extracted/_MR70-V1.0.3.32_2.0.57.chk.extracted/squashfs-root/usr/lib/libcurl.so.4
+[-] Description: Call to DES_ecb_encrypt() at address 0x414dc8
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #310
+[-] Filename: /home/bluesadi/dev/Yasat/tests_dev/tmp/Netgear/_MR70-V1.0.3.32.zip.extracted/_MR70-V1.0.3.32_2.0.57.chk.extracted/squashfs-root/usr/lib/libcurl.so.4
+[-] Description: Call to MD4_Init() at address 0x422758
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #311
+[-] Filename: /home/bluesadi/dev/Yasat/tests_dev/tmp/Netgear/_MR70-V1.0.3.32.zip.extracted/_MR70-V1.0.3.32_2.0.57.chk.extracted/squashfs-root/usr/lib/libcurl.so.4
+[-] Description: Call to MD5_Init() at address 0x4227a4
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #312
+[-] Filename: tests_dev/tmp/Netgear/_FVS318Gv2_V4.3.5-3.zip.extracted/_FVS318Gv2_v4.3.5-3.img.extracted/squashfs-root/bin/l2tp
+[-] Description: Call to MD5_Init() at address 0xe90c
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #313
+[-] Filename: tests_dev/tmp/Netgear/_FVS318Gv2_V4.3.5-3.zip.extracted/_FVS318Gv2_v4.3.5-3.img.extracted/squashfs-root/bin/l2tp
+[-] Description: Call to MD5_Init() at address 0xeb00
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #314
+[-] Filename: tests_dev/tmp/Netgear/_FVS318Gv2_V4.3.5-3.zip.extracted/_FVS318Gv2_v4.3.5-3.img.extracted/squashfs-root/bin/l2tp
+[-] Description: Call to MD5_Init() at address 0x151f8
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #315
+[-] Filename: tests_dev/tmp/Netgear/_FVS318Gv2_V4.3.5-3.zip.extracted/_FVS318Gv2_v4.3.5-3.img.extracted/squashfs-root/bin/l2tp
+[-] Description: Call to MD5_Init() at address 0x15260
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #316
+[-] Filename: tests_dev/tmp/Netgear/_FVS318Gv2_V4.3.5-3.zip.extracted/_FVS318Gv2_v4.3.5-3.img.extracted/squashfs-root/bin/l2tp
+[-] Description: Call to MD5_Init() at address 0x14c44
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #317
+[-] Filename: tests_dev/tmp/Netgear/_FVS318Gv2_V4.3.5-3.zip.extracted/_FVS318Gv2_v4.3.5-3.img.extracted/squashfs-root/bin/l2tp
+[-] Description: Call to MD5_Init() at address 0x14cf8
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #318
+[-] Filename: tests_dev/tmp/Netgear/_FVS318Gv2_V4.3.5-3.zip.extracted/_FVS318Gv2_v4.3.5-3.img.extracted/squashfs-root/lib/libSys.so
+[-] Description: Call to DES_ecb_encrypt() at address 0x42b0cc
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #319
+[-] Filename: tests_dev/tmp/Netgear/_R7350_V1.2.0.92.zip.extracted/_R7350_V1.2.0.92_1.0.1.img.extracted/_R6950.bin.extracted/squashfs-root/usr/sbin/Netgear_ddns
+[-] Description: Call to MD5_Init() at address 0x408b68
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #320
+[-] Filename: tests_dev/tmp/Netgear/_FVS318Gv2_V4.3.5-3.zip.extracted/_FVS318Gv2_v4.3.5-3.img.extracted/squashfs-root/lib/libarmarm-linux-radius.so
+[-] Description: Call to MD5_Init() at address 0x409cb8
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #321
+[-] Filename: tests_dev/tmp/Netgear/_FVS318Gv2_V4.3.5-3.zip.extracted/_FVS318Gv2_v4.3.5-3.img.extracted/squashfs-root/lib/libarmarm-linux-radius.so
+[-] Description: Call to MD5_Init() at address 0x409bb4
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #322
+[-] Filename: tests_dev/tmp/Netgear/_FVS318Gv2_V4.3.5-3.zip.extracted/_FVS318Gv2_v4.3.5-3.img.extracted/squashfs-root/lib/libarmarm-linux-radius.so
+[-] Description: Call to MD5_Init() at address 0x409bf8
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #323
+[-] Filename: tests_dev/tmp/Netgear/_FVS318Gv2_V4.3.5-3.zip.extracted/_FVS318Gv2_v4.3.5-3.img.extracted/squashfs-root/lib/libarmarm-linux-radius.so
+[-] Description: Call to MD5_Init() at address 0x409c4c
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #324
+[-] Filename: /home/bluesadi/dev/Yasat/tests_dev/tmp/Netgear/_FVS318Gv2_V4.3.5-3.zip.extracted/_FVS318Gv2_v4.3.5-3.img.extracted/squashfs-root/lib/libarmarm-linux-racoon.so
+[-] Description: Call to SHA1_Init() at address 0x41e760
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #325
+[-] Filename: /home/bluesadi/dev/Yasat/tests_dev/tmp/Netgear/_FVS318Gv2_V4.3.5-3.zip.extracted/_FVS318Gv2_v4.3.5-3.img.extracted/squashfs-root/lib/libarmarm-linux-racoon.so
+[-] Description: Call to MD5_Init() at address 0x41e6c4
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #326
+[-] Filename: /home/bluesadi/dev/Yasat/tests_dev/tmp/Netgear/_RBR20-V2.7.4.24.zip.extracted/_RBR20-V2.7.4.24.img.extracted/squashfs-root/data/funjsq/bin/funjsq_cli
+[-] Description: Call to DES_ecb_encrypt() at address 0x1ecac
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #327
+[-] Filename: tests_dev/tmp/Netgear/_LG6100D-Firmware-02_02_84.zip.extracted/_LG6100D_02_02_84_MobileApp_rel.upg.extracted/_27FBA53.extracted/yaffs-root/bin/swiapp
+[-] Description: Call to DES_ecb3_encrypt() at address 0x27b64
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #328
+[-] Filename: tests_dev/tmp/Netgear/_LG6100D-Firmware-02_02_84.zip.extracted/_LG6100D_02_02_84_MobileApp_rel.upg.extracted/_27FBA53.extracted/yaffs-root/lib/libcurl.so.5
+[-] Description: Call to DES_ecb_encrypt() at address 0x43dbe0
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #329
+[-] Filename: tests_dev/tmp/Netgear/_LG6100D-Firmware-02_02_84.zip.extracted/_LG6100D_02_02_84_MobileApp_rel.upg.extracted/_27FBA53.extracted/yaffs-root/lib/libcurl.so.5
+[-] Description: Call to DES_ecb_encrypt() at address 0x43dc00
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #330
+[-] Filename: tests_dev/tmp/Netgear/_LG6100D-Firmware-02_02_84.zip.extracted/_LG6100D_02_02_84_MobileApp_rel.upg.extracted/_27FBA53.extracted/yaffs-root/lib/libcurl.so.5
+[-] Description: Call to DES_ecb_encrypt() at address 0x43dc20
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #331
+[-] Filename: tests_dev/tmp/Netgear/_LG6100D-Firmware-02_02_84.zip.extracted/_LG6100D_02_02_84_MobileApp_rel.upg.extracted/_27FBA53.extracted/yaffs-root/lib/libcurl.so.5
+[-] Description: Call to DES_ecb_encrypt() at address 0x43dca0
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #332
+[-] Filename: tests_dev/tmp/Netgear/_LG6100D-Firmware-02_02_84.zip.extracted/_LG6100D_02_02_84_MobileApp_rel.upg.extracted/_27FBA53.extracted/yaffs-root/lib/libcurl.so.5
+[-] Description: Call to DES_ecb_encrypt() at address 0x43dcc0
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #333
+[-] Filename: tests_dev/tmp/Netgear/_LG6100D-Firmware-02_02_84.zip.extracted/_LG6100D_02_02_84_MobileApp_rel.upg.extracted/_27FBA53.extracted/yaffs-root/lib/libcurl.so.5
+[-] Description: Call to MD4_Init() at address 0x43dd68
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #334
+[-] Filename: tests_dev/tmp/Netgear/_LG6100D-Firmware-02_02_84.zip.extracted/_LG6100D_02_02_84_MobileApp_rel.upg.extracted/_27FBA53.extracted/yaffs-root/lib/libcurl.so.5
+[-] Description: Call to MD5_Init() at address 0x431e30
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #335
+[-] Filename: tests_dev/tmp/Netgear/_LG6100D-Firmware-02_02_84.zip.extracted/_LG6100D_02_02_84_MobileApp_rel.upg.extracted/_27FBA53.extracted/yaffs-root/lib/libcurl.so.5
+[-] Description: Call to MD5_Init() at address 0x43e104
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #336
+[-] Filename: tests_dev/tmp/Netgear/_CAX80-V2.1.3.5.zip.extracted/_CAX80-V2.1.3.5.bin.extracted/ubifs-root/1403050352/rootfs/usr/sbin/fxInit
+[-] Description: Call to MD5_Init() at address 0x948c
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #337
+[-] Filename: tests_dev/tmp/Netgear/_CAX80-V2.1.3.5.zip.extracted/_CAX80-V2.1.3.5.bin.extracted/ubifs-root/1403050352/rootfs/usr/sbin/fxInit
+[-] Description: Call to MD5_Init() at address 0x94f4
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #338
+[-] Filename: tests_dev/tmp/Netgear/_CAX80-V2.1.3.5.zip.extracted/_CAX80-V2.1.3.5.bin.extracted/ubifs-root/1403050352/rootfs/usr/lib/libsyscfg.so.0.0.0
+[-] Description: Call to MD5_Init() at address 0x402fb8
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #339
+[-] Filename: tests_dev/tmp/Netgear/_CAX80-V2.1.3.5.zip.extracted/_CAX80-V2.1.3.5.bin.extracted/ubifs-root/1403050352/rootfs/usr/lib/libsyscfg.so.0.0.0
+[-] Description: Call to MD5_Init() at address 0x403898
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #340
+[-] Filename: tests_dev/tmp/Netgear/_CAX80-V2.1.3.5.zip.extracted/_CAX80-V2.1.3.5.bin.extracted/ubifs-root/1403050352/rootfs/usr/bin/wget.wget
+[-] Description: Call to DES_ecb_encrypt() at address 0x32820
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #341
+[-] Filename: tests_dev/tmp/Netgear/_CAX80-V2.1.3.5.zip.extracted/_CAX80-V2.1.3.5.bin.extracted/ubifs-root/1403050352/rootfs/usr/bin/wget.wget
+[-] Description: Call to DES_ecb_encrypt() at address 0x32840
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #342
+[-] Filename: tests_dev/tmp/Netgear/_CAX80-V2.1.3.5.zip.extracted/_CAX80-V2.1.3.5.bin.extracted/ubifs-root/1403050352/rootfs/usr/bin/wget.wget
+[-] Description: Call to DES_ecb_encrypt() at address 0x32740
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #343
+[-] Filename: tests_dev/tmp/Netgear/_CAX80-V2.1.3.5.zip.extracted/_CAX80-V2.1.3.5.bin.extracted/ubifs-root/1403050352/rootfs/usr/bin/wget.wget
+[-] Description: Call to DES_ecb_encrypt() at address 0x32760
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #344
+[-] Filename: tests_dev/tmp/Netgear/_CAX80-V2.1.3.5.zip.extracted/_CAX80-V2.1.3.5.bin.extracted/ubifs-root/1403050352/rootfs/usr/bin/wget.wget
+[-] Description: Call to DES_ecb_encrypt() at address 0x32780
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #345
+[-] Filename: tests_dev/tmp/Netgear/_CAX80-V2.1.3.5.zip.extracted/_CAX80-V2.1.3.5.bin.extracted/ubifs-root/1403050352/rootfs/usr/bin/wget.wget
+[-] Description: Call to MD4_Init() at address 0x32880
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #346
+[-] Filename: tests_dev/tmp/Netgear/_JR6150_R6050-V1.0.1.26_1.0.1.zip.extracted/_JR6150_R6050-V1.0.1.26_1.0.1.img.extracted/_JR6150.bin.extracted/squashfs-root/lib/libcurl.so.4.2.0
+[-] Description: Call to DES_ecb_encrypt() at address 0x44f6a0
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #347
+[-] Filename: tests_dev/tmp/Netgear/_JR6150_R6050-V1.0.1.26_1.0.1.zip.extracted/_JR6150_R6050-V1.0.1.26_1.0.1.img.extracted/_JR6150.bin.extracted/squashfs-root/lib/libcurl.so.4.2.0
+[-] Description: Call to DES_ecb_encrypt() at address 0x44f6cc
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #348
+[-] Filename: tests_dev/tmp/Netgear/_JR6150_R6050-V1.0.1.26_1.0.1.zip.extracted/_JR6150_R6050-V1.0.1.26_1.0.1.img.extracted/_JR6150.bin.extracted/squashfs-root/lib/libcurl.so.4.2.0
+[-] Description: Call to DES_ecb_encrypt() at address 0x44f6f8
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #349
+[-] Filename: tests_dev/tmp/Netgear/_JR6150_R6050-V1.0.1.26_1.0.1.zip.extracted/_JR6150_R6050-V1.0.1.26_1.0.1.img.extracted/_JR6150.bin.extracted/squashfs-root/lib/libcurl.so.4.2.0
+[-] Description: Call to DES_ecb_encrypt() at address 0x44f7e4
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #350
+[-] Filename: tests_dev/tmp/Netgear/_JR6150_R6050-V1.0.1.26_1.0.1.zip.extracted/_JR6150_R6050-V1.0.1.26_1.0.1.img.extracted/_JR6150.bin.extracted/squashfs-root/lib/libcurl.so.4.2.0
+[-] Description: Call to DES_ecb_encrypt() at address 0x44f810
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #351
+[-] Filename: tests_dev/tmp/Netgear/_JR6150_R6050-V1.0.1.26_1.0.1.zip.extracted/_JR6150_R6050-V1.0.1.26_1.0.1.img.extracted/_JR6150.bin.extracted/squashfs-root/lib/libcurl.so.4.2.0
+[-] Description: Call to MD4_Init() at address 0x44f8f8
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #352
+[-] Filename: tests_dev/tmp/Netgear/_JR6150_R6050-V1.0.1.26_1.0.1.zip.extracted/_JR6150_R6050-V1.0.1.26_1.0.1.img.extracted/_JR6150.bin.extracted/squashfs-root/lib/libcurl.so.4.2.0
+[-] Description: Call to MD5_Init() at address 0x43ecd0
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #353
+[-] Filename: tests_dev/tmp/Netgear/_JR6150_R6050-V1.0.1.26_1.0.1.zip.extracted/_JR6150_R6050-V1.0.1.26_1.0.1.img.extracted/_JR6150.bin.extracted/squashfs-root/lib/libcurl.so.4.2.0
+[-] Description: Call to MD5_Init() at address 0x44fdc4
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #354
+[-] Filename: tests_dev/tmp/Netgear/_GSM421xxx_MSM4214_XSM4216F_V13.0.4.12.zip.extracted/_M4250L-v13.0.4.12.stk.extracted/_697BE4.extracted/_AVUI.tar.gz.extracted/_0.extracted/usr/lib/lighttpd/mod_wstunnel.so
+[-] Description: Call to SHA1_Init() at address 0x402ceb
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #355
+[-] Filename: tests_dev/tmp/Netgear/_GSM421xxx_MSM4214_XSM4216F_V13.0.4.12.zip.extracted/_M4250L-v13.0.4.12.stk.extracted/_697BE4.extracted/_AVUI.tar.gz.extracted/_0.extracted/usr/lib/lighttpd/mod_wstunnel.so
+[-] Description: Call to MD5_Init() at address 0x402e9f
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #356
+[-] Filename: tests_dev/tmp/Netgear/_CAX80-V2.1.3.5.zip.extracted/_CAX80-V2.1.3.5.bin.extracted/ubifs-root/1403050352/rootfs/usr/lib/libtr181.so.0.0.0
+[-] Description: Call to DES_ecb_encrypt() at address 0x48a684
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #357
+[-] Filename: tests_dev/tmp/D-Link/_DIR-860L_REVA_FIRMWARE_1.08B02.ZIP.extracted/_DIR860LA1_FW108b02.bin.extracted/squashfs-root/mydlink/signalc
+[-] Description: Call to MD5_Init() at address 0x1b6f4
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #358
+[-] Filename: tests_dev/tmp/D-Link/_DIR-865L_FIRMWARE_1.00B24.ZIP.extracted/_DIR865L_A1_firmware_100b24.bin.extracted/squashfs-root/mydlink/signalc
+[-] Description: Call to MD5_Init() at address 0x4149d0
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #359
+[-] Filename: tests_dev/tmp/Netgear/_CAX80-V2.1.3.5.zip.extracted/_CAX80-V2.1.3.5.bin.extracted/ubifs-root/1403050352/rootfs/usr/lib/libccsp_common.so.0.0.0
+[-] Description: Call to SHA1_Init() at address 0x52c5b4
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #360
+[-] Filename: tests_dev/tmp/Netgear/_CAX80-V2.1.3.5.zip.extracted/_CAX80-V2.1.3.5.bin.extracted/ubifs-root/1403050352/rootfs/usr/lib/libccsp_common.so.0.0.0
+[-] Description: Call to SHA1_Init() at address 0x52c178
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #361
+[-] Filename: tests_dev/tmp/Netgear/_CAX80-V2.1.3.5.zip.extracted/_CAX80-V2.1.3.5.bin.extracted/ubifs-root/1403050352/rootfs/usr/lib/libccsp_common.so.0.0.0
+[-] Description: Call to SHA1_Init() at address 0x52c1ec
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #362
+[-] Filename: tests_dev/tmp/Netgear/_CAX80-V2.1.3.5.zip.extracted/_CAX80-V2.1.3.5.bin.extracted/ubifs-root/1403050352/rootfs/usr/lib/libccsp_common.so.0.0.0
+[-] Description: Call to SHA1_Init() at address 0x52c224
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #363
+[-] Filename: tests_dev/tmp/Netgear/_CAX80-V2.1.3.5.zip.extracted/_CAX80-V2.1.3.5.bin.extracted/ubifs-root/1403050352/rootfs/usr/lib/libccsp_common.so.0.0.0
+[-] Description: Call to SHA1_Init() at address 0x52be00
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #364
+[-] Filename: tests_dev/tmp/Netgear/_CAX80-V2.1.3.5.zip.extracted/_CAX80-V2.1.3.5.bin.extracted/ubifs-root/1403050352/rootfs/usr/lib/libccsp_common.so.0.0.0
+[-] Description: Call to SHA1_Init() at address 0x52be50
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #365
+[-] Filename: tests_dev/tmp/Netgear/_CAX80-V2.1.3.5.zip.extracted/_CAX80-V2.1.3.5.bin.extracted/ubifs-root/1403050352/rootfs/usr/lib/libccsp_common.so.0.0.0
+[-] Description: Call to SHA1_Init() at address 0x52bcc8
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #366
+[-] Filename: tests_dev/tmp/Netgear/_CAX80-V2.1.3.5.zip.extracted/_CAX80-V2.1.3.5.bin.extracted/ubifs-root/1403050352/rootfs/usr/lib/libccsp_common.so.0.0.0
+[-] Description: Call to SHA1_Init() at address 0x52bbf8
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #367
+[-] Filename: tests_dev/tmp/Netgear/_CAX80-V2.1.3.5.zip.extracted/_CAX80-V2.1.3.5.bin.extracted/ubifs-root/1403050352/rootfs/usr/lib/libccsp_common.so.0.0.0
+[-] Description: Call to SHA1_Init() at address 0x52bb68
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #368
+[-] Filename: tests_dev/tmp/Netgear/_CAX80-V2.1.3.5.zip.extracted/_CAX80-V2.1.3.5.bin.extracted/ubifs-root/1403050352/rootfs/usr/lib/libccsp_common.so.0.0.0
+[-] Description: Call to SHA1_Init() at address 0x52baa8
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #369
+[-] Filename: tests_dev/tmp/Netgear/_CAX80-V2.1.3.5.zip.extracted/_CAX80-V2.1.3.5.bin.extracted/ubifs-root/1403050352/rootfs/usr/lib/libccsp_common.so.0.0.0
+[-] Description: Call to MD5_Init() at address 0x52c56c
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #370
+[-] Filename: tests_dev/tmp/Netgear/_CAX80-V2.1.3.5.zip.extracted/_CAX80-V2.1.3.5.bin.extracted/ubifs-root/1403050352/rootfs/usr/lib/libccsp_common.so.0.0.0
+[-] Description: Call to MD5_Init() at address 0x52bfc8
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #371
+[-] Filename: tests_dev/tmp/Netgear/_CAX80-V2.1.3.5.zip.extracted/_CAX80-V2.1.3.5.bin.extracted/ubifs-root/1403050352/rootfs/usr/lib/libccsp_common.so.0.0.0
+[-] Description: Call to MD5_Init() at address 0x52c03c
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #372
+[-] Filename: tests_dev/tmp/Netgear/_CAX80-V2.1.3.5.zip.extracted/_CAX80-V2.1.3.5.bin.extracted/ubifs-root/1403050352/rootfs/usr/lib/libccsp_common.so.0.0.0
+[-] Description: Call to MD5_Init() at address 0x52c074
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #373
+[-] Filename: tests_dev/tmp/Netgear/_D7000_V1.0.1.80_1.0.1.zip.extracted/_D7000 V1.0.1.80_1.0.1.img.extracted/_D7000.bin.extracted/jffs2-root/usr/sbin/Netgear_ddns
+[-] Description: Call to MD5_Init() at address 0xdaa0
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #374
+[-] Filename: tests_dev/tmp/D-Link/_DSP-W115_REVA_FIRMWARE_v1.00B10.zip.extracted/_DSPW115_A1_FW100b10-agent-b37.bin.extracted/cramfs-root/ca-refresh
+[-] Description: Call to MD5_Init() at address 0x401d7c
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #375
+[-] Filename: tests_dev/tmp/D-Link/_DSP-W115_REVA_FIRMWARE_v1.00B10.zip.extracted/_DSPW115_A1_FW100b10-agent-b37.bin.extracted/cramfs-root/lib/libcurl.so.4
+[-] Description: Call to DES_ecb_encrypt() at address 0x43565c
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #376
+[-] Filename: tests_dev/tmp/D-Link/_DSP-W115_REVA_FIRMWARE_v1.00B10.zip.extracted/_DSPW115_A1_FW100b10-agent-b37.bin.extracted/cramfs-root/lib/libcurl.so.4
+[-] Description: Call to DES_ecb_encrypt() at address 0x435688
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #377
+[-] Filename: tests_dev/tmp/D-Link/_DSP-W115_REVA_FIRMWARE_v1.00B10.zip.extracted/_DSPW115_A1_FW100b10-agent-b37.bin.extracted/cramfs-root/lib/libcurl.so.4
+[-] Description: Call to DES_ecb_encrypt() at address 0x4356b4
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #378
+[-] Filename: tests_dev/tmp/D-Link/_DSP-W115_REVA_FIRMWARE_v1.00B10.zip.extracted/_DSPW115_A1_FW100b10-agent-b37.bin.extracted/cramfs-root/lib/libcurl.so.4
+[-] Description: Call to DES_ecb_encrypt() at address 0x4357a0
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #379
+[-] Filename: tests_dev/tmp/D-Link/_DSP-W115_REVA_FIRMWARE_v1.00B10.zip.extracted/_DSPW115_A1_FW100b10-agent-b37.bin.extracted/cramfs-root/lib/libcurl.so.4
+[-] Description: Call to DES_ecb_encrypt() at address 0x4357cc
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #380
+[-] Filename: tests_dev/tmp/D-Link/_DSP-W115_REVA_FIRMWARE_v1.00B10.zip.extracted/_DSPW115_A1_FW100b10-agent-b37.bin.extracted/cramfs-root/lib/libcurl.so.4
+[-] Description: Call to MD4_Init() at address 0x4358e4
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #381
+[-] Filename: tests_dev/tmp/D-Link/_DSP-W115_REVA_FIRMWARE_v1.00B10.zip.extracted/_DSPW115_A1_FW100b10-agent-b37.bin.extracted/cramfs-root/lib/libcurl.so.4
+[-] Description: Call to MD5_Init() at address 0x430b50
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #382
+[-] Filename: tests_dev/tmp/D-Link/_DSP-W115_REVA_FIRMWARE_v1.00B10.zip.extracted/_DSPW115_A1_FW100b10-agent-b37.bin.extracted/cramfs-root/lib/libcurl.so.4
+[-] Description: Call to MD5_Init() at address 0x440f98
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #383
+[-] Filename: tests_dev/tmp/D-Link/_DSP-W115_REVA_FIRMWARE_v1.00B10.zip.extracted/_DSPW115_A1_FW100b10-agent-b37.bin.extracted/cramfs-root/da_adaptor
+[-] Description: Call to MD5() at address 0x440360
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #384
+[-] Filename: tests_dev/tmp/D-Link/_DSP-W115_REVA_FIRMWARE_v1.00B10.zip.extracted/_DSPW115_A1_FW100b10-agent-b37.bin.extracted/cramfs-root/da_adaptor
+[-] Description: Call to MD5_Init() at address 0x440480
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #385
+[-] Filename: tests_dev/tmp/D-Link/_DNR-150N_REVA_FIRMWARE_v3.11.zip.extracted/_DSR-150N_A2_FW3.11_WW_intermediate.extracted/squashfs-root/lib/radius.so
+[-] Description: Call to MD5_Init() at address 0x408480
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #386
+[-] Filename: tests_dev/tmp/D-Link/_DNR-150N_REVA_FIRMWARE_v3.11.zip.extracted/_DSR-150N_A2_FW3.11_WW_intermediate.extracted/squashfs-root/lib/radius.so
+[-] Description: Call to MD5_Init() at address 0x4038a8
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #387
+[-] Filename: tests_dev/tmp/D-Link/_DNR-150N_REVA_FIRMWARE_v3.11.zip.extracted/_DSR-150N_A2_FW3.11_WW_intermediate.extracted/squashfs-root/lib/radius.so
+[-] Description: Call to MD5_Init() at address 0x403924
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #388
+[-] Filename: tests_dev/tmp/D-Link/_DNR-150N_REVA_FIRMWARE_v3.11.zip.extracted/_DSR-150N_A2_FW3.11_WW_intermediate.extracted/squashfs-root/lib/radius.so
+[-] Description: Call to MD5_Init() at address 0x4039c0
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #389
+[-] Filename: tests_dev/tmp/D-Link/_DNR-150N_REVA_FIRMWARE_v3.11.zip.extracted/_DSR-150N_A2_FW3.11_WW_intermediate.extracted/squashfs-root/lib/radius.so
+[-] Description: Call to MD5_Init() at address 0x403a20
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #390
+[-] Filename: tests_dev/tmp/D-Link/_DNR-150N_REVA_FIRMWARE_v3.11.zip.extracted/_DSR-150N_A2_FW3.11_WW_intermediate.extracted/squashfs-root/lib/libarmarm-none-linux-gnueabi-radius.so
+[-] Description: Call to MD5_Init() at address 0x40bb34
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #391
+[-] Filename: tests_dev/tmp/D-Link/_DNR-150N_REVA_FIRMWARE_v3.11.zip.extracted/_DSR-150N_A2_FW3.11_WW_intermediate.extracted/squashfs-root/lib/libarmarm-none-linux-gnueabi-radius.so
+[-] Description: Call to MD5_Init() at address 0x40ba30
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #392
+[-] Filename: tests_dev/tmp/D-Link/_DNR-150N_REVA_FIRMWARE_v3.11.zip.extracted/_DSR-150N_A2_FW3.11_WW_intermediate.extracted/squashfs-root/lib/libarmarm-none-linux-gnueabi-radius.so
+[-] Description: Call to MD5_Init() at address 0x40ba74
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #393
+[-] Filename: tests_dev/tmp/D-Link/_DNR-150N_REVA_FIRMWARE_v3.11.zip.extracted/_DSR-150N_A2_FW3.11_WW_intermediate.extracted/squashfs-root/lib/libarmarm-none-linux-gnueabi-radius.so
+[-] Description: Call to MD5_Init() at address 0x40bac8
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #394
+[-] Filename: /home/bluesadi/dev/Yasat/tests_dev/tmp/D-Link/_DNR-150N_REVA_FIRMWARE_v3.11.zip.extracted/_DSR-150N_A2_FW3.11_WW_intermediate.extracted/squashfs-root/lib/libarmarm-none-linux-gnueabi-racoon.so
+[-] Description: Call to SHA1_Init() at address 0x41e058
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #395
+[-] Filename: /home/bluesadi/dev/Yasat/tests_dev/tmp/D-Link/_DNR-150N_REVA_FIRMWARE_v3.11.zip.extracted/_DSR-150N_A2_FW3.11_WW_intermediate.extracted/squashfs-root/lib/libarmarm-none-linux-gnueabi-racoon.so
+[-] Description: Call to MD5_Init() at address 0x41dfcc
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #396
+[-] Filename: /home/bluesadi/dev/Yasat/tests_dev/tmp/D-Link/_DNR-150N_REVA_FIRMWARE_v3.11.zip.extracted/_DSR-150N_A2_FW3.11_WW_intermediate.extracted/squashfs-root/lib/lua/5.1/kliteLib.so
+[-] Description: Call to SHA1() at address 0x401d78
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #397
+[-] Filename: /home/bluesadi/dev/Yasat/tests_dev/tmp/D-Link/_DNR-150N_REVA_FIRMWARE_v3.11.zip.extracted/_DSR-150N_A2_FW3.11_WW_intermediate.extracted/squashfs-root/lib/lua/5.1/kliteLib.so
+[-] Description: Call to MD5() at address 0x401d5c
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #398
+[-] Filename: tests_dev/tmp/D-Link/_DNS-315_REVA_FIRMWARE_1.02.B03(1.02.0515.2014)BETA.ZIP.extracted/_DNS-315_REVA_FIRMWARE_1.02.B03(1.02.0515.2014)(BETA).extracted/squashfs-root/bin/gogoc
+[-] Description: Call to SHA1() at address 0xedec
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #399
+[-] Filename: tests_dev/tmp/D-Link/_DNS-315_REVA_FIRMWARE_1.02.B03(1.02.0515.2014)BETA.ZIP.extracted/_DNS-315_REVA_FIRMWARE_1.02.B03(1.02.0515.2014)(BETA).extracted/squashfs-root/bin/gogoc
+[-] Description: Call to SHA1() at address 0xef2c
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #400
+[-] Filename: tests_dev/tmp/D-Link/_DNS-315_REVA_FIRMWARE_1.02.B03(1.02.0515.2014)BETA.ZIP.extracted/_DNS-315_REVA_FIRMWARE_1.02.B03(1.02.0515.2014)(BETA).extracted/squashfs-root/bin/gogoc
+[-] Description: Call to SHA1() at address 0xef90
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #401
+[-] Filename: tests_dev/tmp/D-Link/_DNS-315_REVA_FIRMWARE_1.02.B03(1.02.0515.2014)BETA.ZIP.extracted/_DNS-315_REVA_FIRMWARE_1.02.B03(1.02.0515.2014)(BETA).extracted/squashfs-root/bin/gogoc
+[-] Description: Call to SHA1() at address 0xefe4
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #402
+[-] Filename: tests_dev/tmp/D-Link/_DNS-315_REVA_FIRMWARE_1.02.B03(1.02.0515.2014)BETA.ZIP.extracted/_DNS-315_REVA_FIRMWARE_1.02.B03(1.02.0515.2014)(BETA).extracted/squashfs-root/bin/gogoc
+[-] Description: Call to SHA1() at address 0xf02c
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #403
+[-] Filename: tests_dev/tmp/D-Link/_DIR-882-US_REVA_FIRMWARE_v1.00B07.zip.extracted/_DIR-882_A1_FW100B07.bin.extracted/_A0.extracted/_89B5D4.extracted/cpio-root/lib/librcm.so
+[-] Description: Call to SHA1() at address 0x4068b8
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #404
+[-] Filename: tests_dev/tmp/D-Link/_DNR-150N_REVA_FIRMWARE_v3.11.zip.extracted/_DSR-150N_A2_FW3.11_WW_intermediate.extracted/squashfs-root/lib/libcurl.so.4.1.0
+[-] Description: Call to DES_ecb_encrypt() at address 0x43e298
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #405
+[-] Filename: tests_dev/tmp/D-Link/_DNR-150N_REVA_FIRMWARE_v3.11.zip.extracted/_DSR-150N_A2_FW3.11_WW_intermediate.extracted/squashfs-root/lib/libcurl.so.4.1.0
+[-] Description: Call to DES_ecb_encrypt() at address 0x43e2d0
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #406
+[-] Filename: tests_dev/tmp/D-Link/_DNR-150N_REVA_FIRMWARE_v3.11.zip.extracted/_DSR-150N_A2_FW3.11_WW_intermediate.extracted/squashfs-root/lib/libcurl.so.4.1.0
+[-] Description: Call to DES_ecb_encrypt() at address 0x43e308
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #407
+[-] Filename: tests_dev/tmp/D-Link/_DNR-150N_REVA_FIRMWARE_v3.11.zip.extracted/_DSR-150N_A2_FW3.11_WW_intermediate.extracted/squashfs-root/lib/libcurl.so.4.1.0
+[-] Description: Call to DES_ecb_encrypt() at address 0x43e438
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #408
+[-] Filename: tests_dev/tmp/D-Link/_DNR-150N_REVA_FIRMWARE_v3.11.zip.extracted/_DSR-150N_A2_FW3.11_WW_intermediate.extracted/squashfs-root/lib/libcurl.so.4.1.0
+[-] Description: Call to DES_ecb_encrypt() at address 0x43e47c
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #409
+[-] Filename: tests_dev/tmp/D-Link/_DNR-150N_REVA_FIRMWARE_v3.11.zip.extracted/_DSR-150N_A2_FW3.11_WW_intermediate.extracted/squashfs-root/lib/libcurl.so.4.1.0
+[-] Description: Call to MD4_Init() at address 0x43e5c8
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #410
+[-] Filename: tests_dev/tmp/D-Link/_DNR-150N_REVA_FIRMWARE_v3.11.zip.extracted/_DSR-150N_A2_FW3.11_WW_intermediate.extracted/squashfs-root/lib/libcurl.so.4.1.0
+[-] Description: Call to MD5_Init() at address 0x43ec20
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #411
+[-] Filename: tests_dev/tmp/D-Link/_DWL-6610AP_REVA_FIRMWARE_4.3.0.4_WW.ZIP.extracted/_DWL-6610_FW_v4.3.0.4.tar.extracted/_rootfs.bin.extracted/ubifs-root/1376830434/rootfs/usr/sbin/clusterd
+[-] Description: Call to MD5_Init() at address 0x33c08
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #412
+[-] Filename: tests_dev/tmp/D-Link/_DWL-6610AP_REVA_FIRMWARE_4.3.0.4_WW.ZIP.extracted/_DWL-6610_FW_v4.3.0.4.tar.extracted/_rootfs.bin.extracted/ubifs-root/1376830434/rootfs/usr/sbin/clusterd
+[-] Description: Call to MD5_Init() at address 0x12738
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #413
+[-] Filename: tests_dev/tmp/D-Link/_DWL-6610AP_REVA_FIRMWARE_4.3.0.4_WW.ZIP.extracted/_DWL-6610_FW_v4.3.0.4.tar.extracted/_rootfs.bin.extracted/ubifs-root/1376830434/rootfs/usr/sbin/clusterd
+[-] Description: Call to MD5_Init() at address 0x135fc
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #414
+[-] Filename: tests_dev/tmp/D-Link/_DWL-6610AP_REVA_FIRMWARE_4.3.0.4_WW.ZIP.extracted/_DWL-6610_FW_v4.3.0.4.tar.extracted/_rootfs.bin.extracted/ubifs-root/1376830434/rootfs/usr/sbin/clusterd
+[-] Description: Call to MD5_Init() at address 0x15380
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #415
+[-] Filename: tests_dev/tmp/D-Link/_DIR-640L_FIRMWARE_1.02B02.ZIP.extracted/_DIR-640LAx_FW102b02.bin.extracted/squashfs-root/usr/sbin/keepalived
+[-] Description: Call to MD5_Init() at address 0x415ef4
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #416
+[-] Filename: tests_dev/tmp/D-Link/_DIR-640L_FIRMWARE_1.02B02.ZIP.extracted/_DIR-640LAx_FW102b02.bin.extracted/squashfs-root/usr/sbin/keepalived
+[-] Description: Call to MD5_Init() at address 0x416070
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #417
+[-] Filename: tests_dev/tmp/D-Link/_DIR-640L_FIRMWARE_1.02B02.ZIP.extracted/_DIR-640LAx_FW102b02.bin.extracted/squashfs-root/usr/sbin/keepalived
+[-] Description: Call to MD5_Init() at address 0x4160e8
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #418
+[-] Filename: tests_dev/tmp/D-Link/_DNS-320_A2_FIRMWARE_2.05B08.ZIP.extracted/_DLINK_DNS320.2.05b08(2.13.0507.2014).extracted/squashfs-root/lib/libtorrent-rasterbar.so.5.0.0
+[-] Description: Call to SHA1_Init() at address 0x53ec1c
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #419
+[-] Filename: tests_dev/tmp/D-Link/_DNS-320_A2_FIRMWARE_2.05B08.ZIP.extracted/_DLINK_DNS320.2.05b08(2.13.0507.2014).extracted/squashfs-root/lib/libtorrent-rasterbar.so.5.0.0
+[-] Description: Call to SHA1_Init() at address 0x53ec7c
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #420
+[-] Filename: tests_dev/tmp/D-Link/_DNS-320_A2_FIRMWARE_2.05B08.ZIP.extracted/_DLINK_DNS320.2.05b08(2.13.0507.2014).extracted/squashfs-root/lib/libtorrent-rasterbar.so.5.0.0
+[-] Description: Call to SHA1_Init() at address 0x5abcb4
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #421
+[-] Filename: tests_dev/tmp/D-Link/_DNS-320_A2_FIRMWARE_2.05B08.ZIP.extracted/_DLINK_DNS320.2.05b08(2.13.0507.2014).extracted/squashfs-root/lib/libtorrent-rasterbar.so.5.0.0
+[-] Description: Call to SHA1_Init() at address 0x620d74
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #422
+[-] Filename: tests_dev/tmp/D-Link/_DNS-320_A2_FIRMWARE_2.05B08.ZIP.extracted/_DLINK_DNS320.2.05b08(2.13.0507.2014).extracted/squashfs-root/lib/libtorrent-rasterbar.so.5.0.0
+[-] Description: Call to SHA1_Init() at address 0x5436cc
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #423
+[-] Filename: tests_dev/tmp/D-Link/_DNS-320_A2_FIRMWARE_2.05B08.ZIP.extracted/_DLINK_DNS320.2.05b08(2.13.0507.2014).extracted/squashfs-root/lib/libtorrent-rasterbar.so.5.0.0
+[-] Description: Call to SHA1_Init() at address 0x543738
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #424
+[-] Filename: tests_dev/tmp/D-Link/_DNS-320_A2_FIRMWARE_2.05B08.ZIP.extracted/_DLINK_DNS320.2.05b08(2.13.0507.2014).extracted/squashfs-root/lib/libtorrent-rasterbar.so.5.0.0
+[-] Description: Call to SHA1_Init() at address 0x5437b0
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #425
+[-] Filename: tests_dev/tmp/D-Link/_DNS-320_A2_FIRMWARE_2.05B08.ZIP.extracted/_DLINK_DNS320.2.05b08(2.13.0507.2014).extracted/squashfs-root/lib/libtorrent-rasterbar.so.5.0.0
+[-] Description: Call to SHA1_Init() at address 0x5437ec
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #426
+[-] Filename: tests_dev/tmp/D-Link/_DNS-320_A2_FIRMWARE_2.05B08.ZIP.extracted/_DLINK_DNS320.2.05b08(2.13.0507.2014).extracted/squashfs-root/lib/libtorrent-rasterbar.so.5.0.0
+[-] Description: Call to SHA1_Init() at address 0x7228bc
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #427
+[-] Filename: tests_dev/tmp/D-Link/_DNS-320_A2_FIRMWARE_2.05B08.ZIP.extracted/_DLINK_DNS320.2.05b08(2.13.0507.2014).extracted/squashfs-root/lib/libtorrent-rasterbar.so.5.0.0
+[-] Description: Call to SHA1_Init() at address 0x722bec
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #428
+[-] Filename: tests_dev/tmp/D-Link/_DNS-320_A2_FIRMWARE_2.05B08.ZIP.extracted/_DLINK_DNS320.2.05b08(2.13.0507.2014).extracted/squashfs-root/lib/libtorrent-rasterbar.so.5.0.0
+[-] Description: Call to SHA1_Init() at address 0x727948
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #429
+[-] Filename: tests_dev/tmp/D-Link/_DNS-320_A2_FIRMWARE_2.05B08.ZIP.extracted/_DLINK_DNS320.2.05b08(2.13.0507.2014).extracted/squashfs-root/lib/libtorrent-rasterbar.so.5.0.0
+[-] Description: Call to SHA1_Init() at address 0x7223c4
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #430
+[-] Filename: tests_dev/tmp/D-Link/_DNS-320_A2_FIRMWARE_2.05B08.ZIP.extracted/_DLINK_DNS320.2.05b08(2.13.0507.2014).extracted/squashfs-root/lib/libtorrent-rasterbar.so.5.0.0
+[-] Description: Call to SHA1_Init() at address 0x61f278
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #431
+[-] Filename: tests_dev/tmp/D-Link/_DNS-320_A2_FIRMWARE_2.05B08.ZIP.extracted/_DLINK_DNS320.2.05b08(2.13.0507.2014).extracted/squashfs-root/lib/libtorrent-rasterbar.so.5.0.0
+[-] Description: Call to SHA1_Init() at address 0x70a0dc
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #432
+[-] Filename: tests_dev/tmp/D-Link/_DNS-320_A2_FIRMWARE_2.05B08.ZIP.extracted/_DLINK_DNS320.2.05b08(2.13.0507.2014).extracted/squashfs-root/lib/libtorrent-rasterbar.so.5.0.0
+[-] Description: Call to SHA1_Init() at address 0x5acc64
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #433
+[-] Filename: tests_dev/tmp/D-Link/_DNS-320_A2_FIRMWARE_2.05B08.ZIP.extracted/_DLINK_DNS320.2.05b08(2.13.0507.2014).extracted/squashfs-root/lib/libtorrent-rasterbar.so.5.0.0
+[-] Description: Call to SHA1_Init() at address 0x500c14
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #434
+[-] Filename: tests_dev/tmp/D-Link/_DNS-320_A2_FIRMWARE_2.05B08.ZIP.extracted/_DLINK_DNS320.2.05b08(2.13.0507.2014).extracted/squashfs-root/lib/libtorrent-rasterbar.so.5.0.0
+[-] Description: Call to SHA1_Init() at address 0x500c94
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #435
+[-] Filename: tests_dev/tmp/D-Link/_DNS-320_A2_FIRMWARE_2.05B08.ZIP.extracted/_DLINK_DNS320.2.05b08(2.13.0507.2014).extracted/squashfs-root/lib/libtorrent-rasterbar.so.5.0.0
+[-] Description: Call to SHA1_Init() at address 0x54b250
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #436
+[-] Filename: tests_dev/tmp/D-Link/_DNS-320_A2_FIRMWARE_2.05B08.ZIP.extracted/_DLINK_DNS320.2.05b08(2.13.0507.2014).extracted/squashfs-root/lib/libtorrent-rasterbar.so.5.0.0
+[-] Description: Call to SHA1_Init() at address 0x5e0a28
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #437
+[-] Filename: tests_dev/tmp/D-Link/_DNS-320_A2_FIRMWARE_2.05B08.ZIP.extracted/_DLINK_DNS320.2.05b08(2.13.0507.2014).extracted/squashfs-root/lib/libtorrent-rasterbar.so.5.0.0
+[-] Description: Call to SHA1_Init() at address 0x5dc7c8
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #438
+[-] Filename: tests_dev/tmp/D-Link/_DNS-320_A2_FIRMWARE_2.05B08.ZIP.extracted/_DLINK_DNS320.2.05b08(2.13.0507.2014).extracted/squashfs-root/lib/libtorrent-rasterbar.so.5.0.0
+[-] Description: Call to SHA1_Init() at address 0x5e17e8
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #439
+[-] Filename: tests_dev/tmp/D-Link/_DNS-320_A2_FIRMWARE_2.05B08.ZIP.extracted/_DLINK_DNS320.2.05b08(2.13.0507.2014).extracted/squashfs-root/lib/libtorrent-rasterbar.so.5.0.0
+[-] Description: Call to SHA1_Init() at address 0x5e28d8
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #440
+[-] Filename: tests_dev/tmp/D-Link/_DNS-320_A2_FIRMWARE_2.05B08.ZIP.extracted/_DLINK_DNS320.2.05b08(2.13.0507.2014).extracted/squashfs-root/lib/libtorrent-rasterbar.so.5.0.0
+[-] Description: Call to SHA1_Init() at address 0x67f10c
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #441
+[-] Filename: tests_dev/tmp/D-Link/_DNS-320_A2_FIRMWARE_2.05B08.ZIP.extracted/_DLINK_DNS320.2.05b08(2.13.0507.2014).extracted/squashfs-root/lib/libtorrent-rasterbar.so.5.0.0
+[-] Description: Call to SHA1_Init() at address 0x6e5000
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #442
+[-] Filename: tests_dev/tmp/D-Link/_DNS-320_A2_FIRMWARE_2.05B08.ZIP.extracted/_DLINK_DNS320.2.05b08(2.13.0507.2014).extracted/squashfs-root/lib/libtorrent-rasterbar.so.5.0.0
+[-] Description: Call to SHA1_Init() at address 0x5acb98
+[-] Correctness: UN
+[-] Statements:
 
