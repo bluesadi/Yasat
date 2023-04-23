@@ -1,5 +1,6 @@
 from .constant_keys import ConstantKeysChecker
 from .constant_salts import ConstantSaltsChecker
+from .constant_ivs import ConstantIVsChecker
 from .pbe_iterations import PBEIterationsChecker
 from .rsa_key_sizes import RSAKeySizesChecker
 from .unsafe_evp_algorithms import UnsafeEVPAlogirthmsChecker
@@ -35,6 +36,18 @@ default_checkers = {
         ("DES_crypt", 1),
         ("DES_fcrypt", 1),
         ("EVP_BytesToKey", 2)
+    ],
+    ConstantIVsChecker: [
+        ("EVP_CipherInit", 3),
+        ("EVP_EncryptInit", 3),
+        ("EVP_DecryptInit", 3),
+        ("EVP_CipherInit_ex", 4),
+        ("EVP_EncryptInit_ex", 4),
+        ("EVP_DecryptInit_ex", 4),
+        ("EVP_CipherInit_ex2", 3),
+        ("EVP_EncryptInit_ex2", 3),
+        ("EVP_DecryptInit_ex2", 3),
+        ("AES_cbc_encrypt", 4)
     ],
     PBEIterationsChecker: [
         ("EVP_BytesToKey", 5)
@@ -73,5 +86,14 @@ default_checkers = {
         ("MD4_Init", 0),
         ("MD5", 0),
         ("MD5_Init", 0),
+        
+        # ("EVP_aes_128_ecb", 0),
+        # ("EVP_aes_192_ecb", 0),
+        # ("EVP_aes_256_ecb", 0)
     ]
 }
+
+target_apis = set()
+for _, criteria in default_checkers.items():
+    for func_name, _ in criteria:
+        target_apis.add(func_name)

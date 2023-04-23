@@ -1,95 +1,1760 @@
-INFO     | 2023-04-22 22:31:32,964 | Yasat.misc.concurrency | There are 0 tasks running now (1 pending)
-INFO     | 2023-04-22 22:31:32,964 | Yasat.misc.concurrency | |  pid   |                  name                  |  running time |  memory  |
-INFO     | 2023-04-22 22:31:32,972 | Yasat.main_cli | Lol! Found cache file examples/tmp/rc.cache!!!
-INFO     | 2023-04-22 22:31:32,976 | Yasat.main_cli | [1/1 (1 success, 0 failure, 0 timeout)] Extracted 1 ELF files from examples/input/rc
-INFO     | 2023-04-22 22:31:33,968 | Yasat.main_cli | Successfully extracted 1 ELF files!
-INFO     | 2023-04-22 22:31:33,968 | Yasat.main_cli | [1/1 0 discarded] Filtering subjects
-INFO     | 2023-04-22 22:31:33,968 | Yasat.main_cli | Got 1 unique ELF files!
-INFO     | 2023-04-22 22:31:34,007 | Yasat.misc.concurrency | There are 0 tasks running now (1 pending)
-INFO     | 2023-04-22 22:31:34,007 | Yasat.misc.concurrency | |  pid   |                  name                  |  running time |  memory  |
-INFO     | 2023-04-22 22:31:35,010 | Yasat.misc.concurrency | There are 1 tasks running now (0 pending)
-INFO     | 2023-04-22 22:31:35,010 | Yasat.misc.concurrency | |  pid   |                  name                  |  running time |  memory  |
-INFO     | 2023-04-22 22:31:35,014 | Yasat.misc.concurrency | |  5435  |                   rc                   |   1 seconds   |  181 MB  |
-INFO     | 2023-04-22 22:31:36,017 | Yasat.misc.concurrency | There are 1 tasks running now (0 pending)
-INFO     | 2023-04-22 22:31:36,017 | Yasat.misc.concurrency | |  pid   |                  name                  |  running time |  memory  |
-INFO     | 2023-04-22 22:31:36,022 | Yasat.misc.concurrency | |  5435  |                   rc                   |   2 seconds   |  202 MB  |
-INFO     | 2023-04-22 22:31:37,025 | Yasat.misc.concurrency | There are 1 tasks running now (0 pending)
-INFO     | 2023-04-22 22:31:37,025 | Yasat.misc.concurrency | |  pid   |                  name                  |  running time |  memory  |
-INFO     | 2023-04-22 22:31:37,029 | Yasat.misc.concurrency | |  5435  |                   rc                   |   3 seconds   |  230 MB  |
-INFO     | 2023-04-22 22:31:38,032 | Yasat.misc.concurrency | There are 1 tasks running now (0 pending)
-INFO     | 2023-04-22 22:31:38,032 | Yasat.misc.concurrency | |  pid   |                  name                  |  running time |  memory  |
-INFO     | 2023-04-22 22:31:38,037 | Yasat.misc.concurrency | |  5435  |                   rc                   |   4 seconds   |  239 MB  |
-INFO     | 2023-04-22 22:31:39,041 | Yasat.misc.concurrency | There are 1 tasks running now (0 pending)
-INFO     | 2023-04-22 22:31:39,041 | Yasat.misc.concurrency | |  pid   |                  name                  |  running time |  memory  |
-INFO     | 2023-04-22 22:31:39,046 | Yasat.misc.concurrency | |  5435  |                   rc                   |   5 seconds   |  246 MB  |
-INFO     | 2023-04-22 22:31:40,048 | Yasat.misc.concurrency | There are 1 tasks running now (0 pending)
-INFO     | 2023-04-22 22:31:40,048 | Yasat.misc.concurrency | |  pid   |                  name                  |  running time |  memory  |
-INFO     | 2023-04-22 22:31:40,052 | Yasat.misc.concurrency | |  5435  |                   rc                   |   6 seconds   |  247 MB  |
-INFO     | 2023-04-22 22:31:41,057 | Yasat.misc.concurrency | There are 1 tasks running now (0 pending)
-INFO     | 2023-04-22 22:31:41,057 | Yasat.misc.concurrency | |  pid   |                  name                  |  running time |  memory  |
-INFO     | 2023-04-22 22:31:41,061 | Yasat.misc.concurrency | |  5435  |                   rc                   |   7 seconds   |  261 MB  |
-INFO     | 2023-04-22 22:31:42,064 | Yasat.misc.concurrency | There are 1 tasks running now (0 pending)
-INFO     | 2023-04-22 22:31:42,064 | Yasat.misc.concurrency | |  pid   |                  name                  |  running time |  memory  |
-INFO     | 2023-04-22 22:31:42,069 | Yasat.misc.concurrency | |  5435  |                   rc                   |   8 seconds   |  274 MB  |
-INFO     | 2023-04-22 22:31:43,072 | Yasat.misc.concurrency | There are 1 tasks running now (0 pending)
-INFO     | 2023-04-22 22:31:43,073 | Yasat.misc.concurrency | |  pid   |                  name                  |  running time |  memory  |
-INFO     | 2023-04-22 22:31:43,078 | Yasat.misc.concurrency | |  5435  |                   rc                   |   9 seconds   |  274 MB  |
-INFO     | 2023-04-22 22:31:44,081 | Yasat.misc.concurrency | There are 1 tasks running now (0 pending)
-INFO     | 2023-04-22 22:31:44,081 | Yasat.misc.concurrency | |  pid   |                  name                  |  running time |  memory  |
-INFO     | 2023-04-22 22:31:44,085 | Yasat.misc.concurrency | |  5435  |                   rc                   |   10 seconds  |  274 MB  |
-INFO     | 2023-04-22 22:31:45,087 | Yasat.misc.concurrency | There are 1 tasks running now (0 pending)
-INFO     | 2023-04-22 22:31:45,088 | Yasat.misc.concurrency | |  pid   |                  name                  |  running time |  memory  |
-INFO     | 2023-04-22 22:31:45,092 | Yasat.misc.concurrency | |  5435  |                   rc                   |   11 seconds  |  274 MB  |
-INFO     | 2023-04-22 22:31:46,095 | Yasat.misc.concurrency | There are 1 tasks running now (0 pending)
-INFO     | 2023-04-22 22:31:46,096 | Yasat.misc.concurrency | |  pid   |                  name                  |  running time |  memory  |
-INFO     | 2023-04-22 22:31:46,100 | Yasat.misc.concurrency | |  5435  |                   rc                   |   12 seconds  |  274 MB  |
-INFO     | 2023-04-22 22:31:47,102 | Yasat.misc.concurrency | There are 1 tasks running now (0 pending)
-INFO     | 2023-04-22 22:31:47,103 | Yasat.misc.concurrency | |  pid   |                  name                  |  running time |  memory  |
-INFO     | 2023-04-22 22:31:47,107 | Yasat.misc.concurrency | |  5435  |                   rc                   |   13 seconds  |  274 MB  |
-INFO     | 2023-04-22 22:31:48,111 | Yasat.misc.concurrency | There are 1 tasks running now (0 pending)
-INFO     | 2023-04-22 22:31:48,111 | Yasat.misc.concurrency | |  pid   |                  name                  |  running time |  memory  |
-INFO     | 2023-04-22 22:31:48,116 | Yasat.misc.concurrency | |  5435  |                   rc                   |   14 seconds  |  274 MB  |
-INFO     | 2023-04-22 22:31:49,119 | Yasat.misc.concurrency | There are 1 tasks running now (0 pending)
-INFO     | 2023-04-22 22:31:49,119 | Yasat.misc.concurrency | |  pid   |                  name                  |  running time |  memory  |
-INFO     | 2023-04-22 22:31:49,123 | Yasat.misc.concurrency | |  5435  |                   rc                   |   15 seconds  |  274 MB  |
-INFO     | 2023-04-22 22:31:50,126 | Yasat.misc.concurrency | There are 1 tasks running now (0 pending)
-INFO     | 2023-04-22 22:31:50,127 | Yasat.misc.concurrency | |  pid   |                  name                  |  running time |  memory  |
-INFO     | 2023-04-22 22:31:50,131 | Yasat.misc.concurrency | |  5435  |                   rc                   |   16 seconds  |  274 MB  |
-INFO     | 2023-04-22 22:31:51,134 | Yasat.misc.concurrency | There are 1 tasks running now (0 pending)
-INFO     | 2023-04-22 22:31:51,134 | Yasat.misc.concurrency | |  pid   |                  name                  |  running time |  memory  |
-INFO     | 2023-04-22 22:31:51,138 | Yasat.misc.concurrency | |  5435  |                   rc                   |   17 seconds  |  274 MB  |
-INFO     | 2023-04-22 22:31:52,142 | Yasat.misc.concurrency | There are 1 tasks running now (0 pending)
-INFO     | 2023-04-22 22:31:52,142 | Yasat.misc.concurrency | |  pid   |                  name                  |  running time |  memory  |
-INFO     | 2023-04-22 22:31:52,147 | Yasat.misc.concurrency | |  5435  |                   rc                   |   18 seconds  |  274 MB  |
-INFO     | 2023-04-22 22:31:53,151 | Yasat.misc.concurrency | There are 1 tasks running now (0 pending)
-INFO     | 2023-04-22 22:31:53,151 | Yasat.misc.concurrency | |  pid   |                  name                  |  running time |  memory  |
-INFO     | 2023-04-22 22:31:53,156 | Yasat.misc.concurrency | |  5435  |                   rc                   |   19 seconds  |  274 MB  |
-INFO     | 2023-04-22 22:31:53,509 | Yasat.main_cli | [1/ 1 (1 success, 0 failure, 0 timeout)] Discovered 4 misuses in examples/tmp/rc
+INFO     | 2023-04-22 22:40:48,474 | Yasat.misc.concurrency | There are 0 tasks running now (6 pending)
+INFO     | 2023-04-22 22:40:48,475 | Yasat.misc.concurrency | |  pid   |                  name                  |  running time |  memory  |
+INFO     | 2023-04-22 22:40:48,502 | Yasat.main_cli | Lol! Found cache file examples/tmp/AC1450-V1.0.0.36_10.0.17.zip.cache!!!
+INFO     | 2023-04-22 22:40:48,506 | Yasat.main_cli | Lol! Found cache file examples/tmp/dropbearmulti.cache!!!
+INFO     | 2023-04-22 22:40:48,509 | Yasat.main_cli | Lol! Found cache file examples/tmp/busybox.cache!!!
+INFO     | 2023-04-22 22:40:48,515 | Yasat.main_cli | Lol! Found cache file examples/tmp/boa.cache!!!
+INFO     | 2023-04-22 22:40:48,517 | Yasat.main_cli | Lol! Found cache file examples/tmp/logic.cache!!!
+INFO     | 2023-04-22 22:40:48,518 | Yasat.main_cli | [1/6 (1 success, 0 failure, 0 timeout)] Extracted 155 ELF files from examples/input/AC1450-V1.0.0.36_10.0.17.zip
+INFO     | 2023-04-22 22:40:48,521 | Yasat.main_cli | Lol! Found cache file examples/tmp/rc.cache!!!
+INFO     | 2023-04-22 22:40:48,536 | Yasat.main_cli | [2/6 (2 success, 0 failure, 0 timeout)] Extracted 1 ELF files from examples/input/dropbearmulti
+INFO     | 2023-04-22 22:40:48,545 | Yasat.main_cli | [3/6 (3 success, 0 failure, 0 timeout)] Extracted 1 ELF files from examples/input/busybox
+INFO     | 2023-04-22 22:40:48,554 | Yasat.main_cli | [4/6 (4 success, 0 failure, 0 timeout)] Extracted 1 ELF files from examples/input/boa
+INFO     | 2023-04-22 22:40:48,566 | Yasat.main_cli | [5/6 (5 success, 0 failure, 0 timeout)] Extracted 1 ELF files from examples/input/logic
+INFO     | 2023-04-22 22:40:48,574 | Yasat.main_cli | [6/6 (6 success, 0 failure, 0 timeout)] Extracted 1 ELF files from examples/input/rc
+INFO     | 2023-04-22 22:40:49,480 | Yasat.main_cli | Successfully extracted 160 ELF files!
+INFO     | 2023-04-22 22:40:49,480 | Yasat.main_cli | [1/160 0 discarded] Filtering subjects
+INFO     | 2023-04-22 22:40:49,483 | Yasat.main_cli | [2/160 0 discarded] Filtering subjects
+INFO     | 2023-04-22 22:40:49,485 | Yasat.main_cli | [3/160 0 discarded] Filtering subjects
+INFO     | 2023-04-22 22:40:49,485 | Yasat.main_cli | [4/160 0 discarded] Filtering subjects
+INFO     | 2023-04-22 22:40:49,488 | Yasat.main_cli | [5/160 0 discarded] Filtering subjects
+INFO     | 2023-04-22 22:40:49,490 | Yasat.main_cli | [6/160 0 discarded] Filtering subjects
+INFO     | 2023-04-22 22:40:49,491 | Yasat.main_cli | [7/160 0 discarded] Filtering subjects
+INFO     | 2023-04-22 22:40:49,492 | Yasat.main_cli | [8/160 0 discarded] Filtering subjects
+INFO     | 2023-04-22 22:40:49,493 | Yasat.main_cli | [9/160 0 discarded] Filtering subjects
+INFO     | 2023-04-22 22:40:49,494 | Yasat.main_cli | [10/160 0 discarded] Filtering subjects
+INFO     | 2023-04-22 22:40:49,494 | Yasat.main_cli | [11/160 0 discarded] Filtering subjects
+INFO     | 2023-04-22 22:40:49,495 | Yasat.main_cli | [12/160 0 discarded] Filtering subjects
+INFO     | 2023-04-22 22:40:49,497 | Yasat.main_cli | [13/160 0 discarded] Filtering subjects
+INFO     | 2023-04-22 22:40:49,498 | Yasat.main_cli | [14/160 0 discarded] Filtering subjects
+INFO     | 2023-04-22 22:40:49,498 | Yasat.main_cli | [15/160 0 discarded] Filtering subjects
+INFO     | 2023-04-22 22:40:49,499 | Yasat.main_cli | [16/160 0 discarded] Filtering subjects
+INFO     | 2023-04-22 22:40:49,500 | Yasat.main_cli | [17/160 0 discarded] Filtering subjects
+INFO     | 2023-04-22 22:40:49,500 | Yasat.main_cli | [18/160 0 discarded] Filtering subjects
+INFO     | 2023-04-22 22:40:49,502 | Yasat.main_cli | [19/160 0 discarded] Filtering subjects
+INFO     | 2023-04-22 22:40:49,503 | Yasat.main_cli | [20/160 0 discarded] Filtering subjects
+INFO     | 2023-04-22 22:40:49,504 | Yasat.main_cli | [21/160 0 discarded] Filtering subjects
+INFO     | 2023-04-22 22:40:49,504 | Yasat.main_cli | [22/160 0 discarded] Filtering subjects
+INFO     | 2023-04-22 22:40:49,505 | Yasat.main_cli | [23/160 0 discarded] Filtering subjects
+INFO     | 2023-04-22 22:40:49,506 | Yasat.main_cli | [24/160 0 discarded] Filtering subjects
+INFO     | 2023-04-22 22:40:49,507 | Yasat.main_cli | [25/160 0 discarded] Filtering subjects
+INFO     | 2023-04-22 22:40:49,508 | Yasat.main_cli | [26/160 0 discarded] Filtering subjects
+INFO     | 2023-04-22 22:40:49,510 | Yasat.main_cli | [27/160 0 discarded] Filtering subjects
+INFO     | 2023-04-22 22:40:49,511 | Yasat.main_cli | [28/160 0 discarded] Filtering subjects
+INFO     | 2023-04-22 22:40:49,512 | Yasat.main_cli | [29/160 0 discarded] Filtering subjects
+INFO     | 2023-04-22 22:40:49,513 | Yasat.main_cli | [30/160 0 discarded] Filtering subjects
+INFO     | 2023-04-22 22:40:49,514 | Yasat.main_cli | [31/160 0 discarded] Filtering subjects
+INFO     | 2023-04-22 22:40:49,515 | Yasat.main_cli | [32/160 0 discarded] Filtering subjects
+INFO     | 2023-04-22 22:40:49,517 | Yasat.main_cli | [33/160 0 discarded] Filtering subjects
+INFO     | 2023-04-22 22:40:49,518 | Yasat.main_cli | [34/160 0 discarded] Filtering subjects
+INFO     | 2023-04-22 22:40:49,519 | Yasat.main_cli | [35/160 0 discarded] Filtering subjects
+INFO     | 2023-04-22 22:40:49,520 | Yasat.main_cli | [36/160 0 discarded] Filtering subjects
+INFO     | 2023-04-22 22:40:49,520 | Yasat.main_cli | [37/160 0 discarded] Filtering subjects
+INFO     | 2023-04-22 22:40:49,521 | Yasat.main_cli | [38/160 0 discarded] Filtering subjects
+INFO     | 2023-04-22 22:40:49,522 | Yasat.main_cli | [39/160 0 discarded] Filtering subjects
+INFO     | 2023-04-22 22:40:49,523 | Yasat.main_cli | [40/160 0 discarded] Filtering subjects
+INFO     | 2023-04-22 22:40:49,524 | Yasat.main_cli | [41/160 0 discarded] Filtering subjects
+INFO     | 2023-04-22 22:40:49,525 | Yasat.main_cli | [42/160 0 discarded] Filtering subjects
+INFO     | 2023-04-22 22:40:49,526 | Yasat.main_cli | [43/160 0 discarded] Filtering subjects
+INFO     | 2023-04-22 22:40:49,527 | Yasat.main_cli | [44/160 0 discarded] Filtering subjects
+INFO     | 2023-04-22 22:40:49,528 | Yasat.main_cli | [45/160 0 discarded] Filtering subjects
+INFO     | 2023-04-22 22:40:49,529 | Yasat.main_cli | [46/160 0 discarded] Filtering subjects
+INFO     | 2023-04-22 22:40:49,530 | Yasat.main_cli | [47/160 0 discarded] Filtering subjects
+INFO     | 2023-04-22 22:40:49,530 | Yasat.main_cli | [48/160 0 discarded] Filtering subjects
+INFO     | 2023-04-22 22:40:49,531 | Yasat.main_cli | [49/160 0 discarded] Filtering subjects
+INFO     | 2023-04-22 22:40:49,532 | Yasat.main_cli | [50/160 0 discarded] Filtering subjects
+INFO     | 2023-04-22 22:40:49,533 | Yasat.main_cli | [51/160 0 discarded] Filtering subjects
+INFO     | 2023-04-22 22:40:49,534 | Yasat.main_cli | [52/160 0 discarded] Filtering subjects
+INFO     | 2023-04-22 22:40:49,535 | Yasat.main_cli | [53/160 0 discarded] Filtering subjects
+INFO     | 2023-04-22 22:40:49,536 | Yasat.main_cli | [54/160 0 discarded] Filtering subjects
+INFO     | 2023-04-22 22:40:49,538 | Yasat.main_cli | [55/160 0 discarded] Filtering subjects
+INFO     | 2023-04-22 22:40:49,540 | Yasat.main_cli | [56/160 0 discarded] Filtering subjects
+INFO     | 2023-04-22 22:40:49,541 | Yasat.main_cli | [57/160 0 discarded] Filtering subjects
+INFO     | 2023-04-22 22:40:49,542 | Yasat.main_cli | [58/160 0 discarded] Filtering subjects
+INFO     | 2023-04-22 22:40:49,544 | Yasat.main_cli | [59/160 0 discarded] Filtering subjects
+INFO     | 2023-04-22 22:40:49,546 | Yasat.main_cli | [60/160 0 discarded] Filtering subjects
+INFO     | 2023-04-22 22:40:49,547 | Yasat.main_cli | [61/160 0 discarded] Filtering subjects
+INFO     | 2023-04-22 22:40:49,548 | Yasat.main_cli | [62/160 0 discarded] Filtering subjects
+INFO     | 2023-04-22 22:40:49,550 | Yasat.main_cli | [63/160 0 discarded] Filtering subjects
+INFO     | 2023-04-22 22:40:49,551 | Yasat.main_cli | [64/160 0 discarded] Filtering subjects
+INFO     | 2023-04-22 22:40:49,553 | Yasat.main_cli | [65/160 0 discarded] Filtering subjects
+INFO     | 2023-04-22 22:40:49,554 | Yasat.main_cli | [66/160 0 discarded] Filtering subjects
+INFO     | 2023-04-22 22:40:49,555 | Yasat.main_cli | [67/160 0 discarded] Filtering subjects
+INFO     | 2023-04-22 22:40:49,556 | Yasat.main_cli | [68/160 0 discarded] Filtering subjects
+INFO     | 2023-04-22 22:40:49,558 | Yasat.main_cli | [69/160 0 discarded] Filtering subjects
+INFO     | 2023-04-22 22:40:49,559 | Yasat.main_cli | [70/160 0 discarded] Filtering subjects
+INFO     | 2023-04-22 22:40:49,560 | Yasat.main_cli | [71/160 0 discarded] Filtering subjects
+INFO     | 2023-04-22 22:40:49,561 | Yasat.main_cli | [72/160 0 discarded] Filtering subjects
+INFO     | 2023-04-22 22:40:49,563 | Yasat.main_cli | [73/160 0 discarded] Filtering subjects
+INFO     | 2023-04-22 22:40:49,564 | Yasat.main_cli | [74/160 0 discarded] Filtering subjects
+INFO     | 2023-04-22 22:40:49,565 | Yasat.main_cli | [75/160 0 discarded] Filtering subjects
+INFO     | 2023-04-22 22:40:49,566 | Yasat.main_cli | [76/160 0 discarded] Filtering subjects
+INFO     | 2023-04-22 22:40:49,567 | Yasat.main_cli | [77/160 0 discarded] Filtering subjects
+INFO     | 2023-04-22 22:40:49,568 | Yasat.main_cli | [78/160 0 discarded] Filtering subjects
+INFO     | 2023-04-22 22:40:49,569 | Yasat.main_cli | [79/160 0 discarded] Filtering subjects
+INFO     | 2023-04-22 22:40:49,570 | Yasat.main_cli | [80/160 0 discarded] Filtering subjects
+INFO     | 2023-04-22 22:40:49,571 | Yasat.main_cli | [81/160 0 discarded] Filtering subjects
+INFO     | 2023-04-22 22:40:49,572 | Yasat.main_cli | [82/160 0 discarded] Filtering subjects
+INFO     | 2023-04-22 22:40:49,572 | Yasat.main_cli | [83/160 0 discarded] Filtering subjects
+INFO     | 2023-04-22 22:40:49,573 | Yasat.main_cli | [84/160 0 discarded] Filtering subjects
+INFO     | 2023-04-22 22:40:49,574 | Yasat.main_cli | [85/160 0 discarded] Filtering subjects
+INFO     | 2023-04-22 22:40:49,575 | Yasat.main_cli | [86/160 0 discarded] Filtering subjects
+INFO     | 2023-04-22 22:40:49,576 | Yasat.main_cli | [87/160 0 discarded] Filtering subjects
+INFO     | 2023-04-22 22:40:49,577 | Yasat.main_cli | [88/160 0 discarded] Filtering subjects
+INFO     | 2023-04-22 22:40:49,578 | Yasat.main_cli | [89/160 0 discarded] Filtering subjects
+INFO     | 2023-04-22 22:40:49,579 | Yasat.main_cli | [90/160 0 discarded] Filtering subjects
+INFO     | 2023-04-22 22:40:49,585 | Yasat.main_cli | [91/160 0 discarded] Filtering subjects
+INFO     | 2023-04-22 22:40:49,586 | Yasat.main_cli | [92/160 0 discarded] Filtering subjects
+INFO     | 2023-04-22 22:40:49,587 | Yasat.main_cli | [93/160 0 discarded] Filtering subjects
+INFO     | 2023-04-22 22:40:49,588 | Yasat.main_cli | [94/160 0 discarded] Filtering subjects
+INFO     | 2023-04-22 22:40:49,589 | Yasat.main_cli | [95/160 0 discarded] Filtering subjects
+INFO     | 2023-04-22 22:40:49,590 | Yasat.main_cli | [96/160 0 discarded] Filtering subjects
+INFO     | 2023-04-22 22:40:49,591 | Yasat.main_cli | [97/160 0 discarded] Filtering subjects
+INFO     | 2023-04-22 22:40:49,592 | Yasat.main_cli | [98/160 0 discarded] Filtering subjects
+INFO     | 2023-04-22 22:40:49,593 | Yasat.main_cli | [99/160 0 discarded] Filtering subjects
+INFO     | 2023-04-22 22:40:49,594 | Yasat.main_cli | [100/160 1 discarded] Filtering subjects
+INFO     | 2023-04-22 22:40:49,596 | Yasat.main_cli | [101/160 1 discarded] Filtering subjects
+INFO     | 2023-04-22 22:40:49,598 | Yasat.main_cli | [102/160 1 discarded] Filtering subjects
+INFO     | 2023-04-22 22:40:49,599 | Yasat.main_cli | [103/160 1 discarded] Filtering subjects
+INFO     | 2023-04-22 22:40:49,601 | Yasat.main_cli | [104/160 1 discarded] Filtering subjects
+INFO     | 2023-04-22 22:40:49,602 | Yasat.main_cli | [105/160 1 discarded] Filtering subjects
+INFO     | 2023-04-22 22:40:49,603 | Yasat.main_cli | [106/160 1 discarded] Filtering subjects
+INFO     | 2023-04-22 22:40:49,604 | Yasat.main_cli | [107/160 1 discarded] Filtering subjects
+INFO     | 2023-04-22 22:40:49,604 | Yasat.main_cli | [108/160 1 discarded] Filtering subjects
+INFO     | 2023-04-22 22:40:49,606 | Yasat.main_cli | [109/160 1 discarded] Filtering subjects
+INFO     | 2023-04-22 22:40:49,607 | Yasat.main_cli | [110/160 1 discarded] Filtering subjects
+INFO     | 2023-04-22 22:40:49,608 | Yasat.main_cli | [111/160 1 discarded] Filtering subjects
+INFO     | 2023-04-22 22:40:49,609 | Yasat.main_cli | [112/160 1 discarded] Filtering subjects
+INFO     | 2023-04-22 22:40:49,610 | Yasat.main_cli | [113/160 1 discarded] Filtering subjects
+INFO     | 2023-04-22 22:40:49,611 | Yasat.main_cli | [114/160 1 discarded] Filtering subjects
+INFO     | 2023-04-22 22:40:49,613 | Yasat.main_cli | [115/160 1 discarded] Filtering subjects
+INFO     | 2023-04-22 22:40:49,615 | Yasat.main_cli | [116/160 1 discarded] Filtering subjects
+INFO     | 2023-04-22 22:40:49,616 | Yasat.main_cli | [117/160 2 discarded] Filtering subjects
+INFO     | 2023-04-22 22:40:49,617 | Yasat.main_cli | [118/160 2 discarded] Filtering subjects
+INFO     | 2023-04-22 22:40:49,618 | Yasat.main_cli | [119/160 2 discarded] Filtering subjects
+INFO     | 2023-04-22 22:40:49,619 | Yasat.main_cli | [120/160 3 discarded] Filtering subjects
+INFO     | 2023-04-22 22:40:49,620 | Yasat.main_cli | [121/160 3 discarded] Filtering subjects
+INFO     | 2023-04-22 22:40:49,621 | Yasat.main_cli | [122/160 3 discarded] Filtering subjects
+INFO     | 2023-04-22 22:40:49,622 | Yasat.main_cli | [123/160 3 discarded] Filtering subjects
+INFO     | 2023-04-22 22:40:49,623 | Yasat.main_cli | [124/160 3 discarded] Filtering subjects
+INFO     | 2023-04-22 22:40:49,624 | Yasat.main_cli | [125/160 3 discarded] Filtering subjects
+INFO     | 2023-04-22 22:40:49,625 | Yasat.main_cli | [126/160 3 discarded] Filtering subjects
+INFO     | 2023-04-22 22:40:49,626 | Yasat.main_cli | [127/160 3 discarded] Filtering subjects
+INFO     | 2023-04-22 22:40:49,627 | Yasat.main_cli | [128/160 3 discarded] Filtering subjects
+INFO     | 2023-04-22 22:40:49,628 | Yasat.main_cli | [129/160 3 discarded] Filtering subjects
+INFO     | 2023-04-22 22:40:49,629 | Yasat.main_cli | [130/160 3 discarded] Filtering subjects
+INFO     | 2023-04-22 22:40:49,630 | Yasat.main_cli | [131/160 3 discarded] Filtering subjects
+INFO     | 2023-04-22 22:40:49,631 | Yasat.main_cli | [132/160 3 discarded] Filtering subjects
+INFO     | 2023-04-22 22:40:49,632 | Yasat.main_cli | [133/160 3 discarded] Filtering subjects
+INFO     | 2023-04-22 22:40:49,633 | Yasat.main_cli | [134/160 3 discarded] Filtering subjects
+INFO     | 2023-04-22 22:40:49,634 | Yasat.main_cli | [135/160 3 discarded] Filtering subjects
+INFO     | 2023-04-22 22:40:49,635 | Yasat.main_cli | [136/160 3 discarded] Filtering subjects
+INFO     | 2023-04-22 22:40:49,636 | Yasat.main_cli | [137/160 3 discarded] Filtering subjects
+INFO     | 2023-04-22 22:40:49,637 | Yasat.main_cli | [138/160 3 discarded] Filtering subjects
+INFO     | 2023-04-22 22:40:49,638 | Yasat.main_cli | [139/160 3 discarded] Filtering subjects
+INFO     | 2023-04-22 22:40:49,639 | Yasat.main_cli | [140/160 3 discarded] Filtering subjects
+INFO     | 2023-04-22 22:40:49,640 | Yasat.main_cli | [141/160 3 discarded] Filtering subjects
+INFO     | 2023-04-22 22:40:49,641 | Yasat.main_cli | [142/160 3 discarded] Filtering subjects
+INFO     | 2023-04-22 22:40:49,642 | Yasat.main_cli | [143/160 3 discarded] Filtering subjects
+INFO     | 2023-04-22 22:40:49,643 | Yasat.main_cli | [144/160 3 discarded] Filtering subjects
+INFO     | 2023-04-22 22:40:49,645 | Yasat.main_cli | [145/160 3 discarded] Filtering subjects
+INFO     | 2023-04-22 22:40:49,646 | Yasat.main_cli | [146/160 3 discarded] Filtering subjects
+INFO     | 2023-04-22 22:40:49,647 | Yasat.main_cli | [147/160 3 discarded] Filtering subjects
+INFO     | 2023-04-22 22:40:49,648 | Yasat.main_cli | [148/160 3 discarded] Filtering subjects
+INFO     | 2023-04-22 22:40:49,649 | Yasat.main_cli | [149/160 3 discarded] Filtering subjects
+INFO     | 2023-04-22 22:40:49,650 | Yasat.main_cli | [150/160 3 discarded] Filtering subjects
+INFO     | 2023-04-22 22:40:49,651 | Yasat.main_cli | [151/160 3 discarded] Filtering subjects
+INFO     | 2023-04-22 22:40:49,652 | Yasat.main_cli | [152/160 3 discarded] Filtering subjects
+INFO     | 2023-04-22 22:40:49,653 | Yasat.main_cli | [153/160 3 discarded] Filtering subjects
+INFO     | 2023-04-22 22:40:49,654 | Yasat.main_cli | [154/160 3 discarded] Filtering subjects
+INFO     | 2023-04-22 22:40:49,655 | Yasat.main_cli | [155/160 3 discarded] Filtering subjects
+INFO     | 2023-04-22 22:40:49,656 | Yasat.main_cli | [156/160 3 discarded] Filtering subjects
+INFO     | 2023-04-22 22:40:49,657 | Yasat.main_cli | [157/160 3 discarded] Filtering subjects
+INFO     | 2023-04-22 22:40:49,658 | Yasat.main_cli | [158/160 4 discarded] Filtering subjects
+INFO     | 2023-04-22 22:40:49,659 | Yasat.main_cli | [159/160 5 discarded] Filtering subjects
+INFO     | 2023-04-22 22:40:49,660 | Yasat.main_cli | [160/160 5 discarded] Filtering subjects
+INFO     | 2023-04-22 22:40:49,660 | Yasat.main_cli | Got 154 unique ELF files!
+INFO     | 2023-04-22 22:40:49,739 | Yasat.misc.concurrency | There are 0 tasks running now (154 pending)
+INFO     | 2023-04-22 22:40:49,740 | Yasat.misc.concurrency | |  pid   |                  name                  |  running time |  memory  |
+INFO     | 2023-04-22 22:40:49,812 | Yasat.main_cli | [1/ 154 (1 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/pppoecd
 ##################################################
 #                    Summary                     #
 ##################################################
 Time: 0 seconds
-Misuses number: 4
-- ConstantKeysChecker: 2
-- ConstantSaltsChecker: 2
+Misuses number: 0
+
+INFO     | 2023-04-22 22:40:49,834 | Yasat.main_cli | [2/ 154 (2 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/emf
+##################################################
+#                    Summary                     #
+##################################################
+Time: 0 seconds
+Misuses number: 0
+
+INFO     | 2023-04-22 22:40:49,859 | Yasat.main_cli | [3/ 154 (3 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/swresetd
+##################################################
+#                    Summary                     #
+##################################################
+Time: 0 seconds
+Misuses number: 0
+
+INFO     | 2023-04-22 22:40:49,880 | Yasat.main_cli | [4/ 154 (4 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/mld
+##################################################
+#                    Summary                     #
+##################################################
+Time: 0 seconds
+Misuses number: 0
+
+INFO     | 2023-04-22 22:40:49,886 | Yasat.main_cli | [5/ 154 (5 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/ddnsd
+##################################################
+#                    Summary                     #
+##################################################
+Time: 0 seconds
+Misuses number: 0
+
+INFO     | 2023-04-22 22:40:49,892 | Yasat.main_cli | [6/ 154 (6 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/wlconf
+##################################################
+#                    Summary                     #
+##################################################
+Time: 0 seconds
+Misuses number: 0
+
+INFO     | 2023-04-22 22:40:49,896 | Yasat.main_cli | [7/ 154 (7 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/dnsmasq
+##################################################
+#                    Summary                     #
+##################################################
+Time: 0 seconds
+Misuses number: 0
+
+INFO     | 2023-04-22 22:40:49,904 | Yasat.main_cli | [8/ 154 (8 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/pptp
+##################################################
+#                    Summary                     #
+##################################################
+Time: 0 seconds
+Misuses number: 0
+
+INFO     | 2023-04-22 22:40:49,939 | Yasat.main_cli | [9/ 154 (9 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/dlnad
+##################################################
+#                    Summary                     #
+##################################################
+Time: 0 seconds
+Misuses number: 0
+
+INFO     | 2023-04-22 22:40:49,980 | Yasat.main_cli | [10/ 154 (10 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/autoipd
+##################################################
+#                    Summary                     #
+##################################################
+Time: 0 seconds
+Misuses number: 0
+
+INFO     | 2023-04-22 22:40:50,030 | Yasat.main_cli | [11/ 154 (11 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/timesync
+##################################################
+#                    Summary                     #
+##################################################
+Time: 0 seconds
+Misuses number: 0
+
+INFO     | 2023-04-22 22:40:50,064 | Yasat.main_cli | [12/ 154 (12 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/ip6tables-save
+##################################################
+#                    Summary                     #
+##################################################
+Time: 0 seconds
+Misuses number: 0
+
+INFO     | 2023-04-22 22:40:50,074 | Yasat.main_cli | [13/ 154 (13 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/wan_debug
+##################################################
+#                    Summary                     #
+##################################################
+Time: 0 seconds
+Misuses number: 0
+
+INFO     | 2023-04-22 22:40:50,097 | Yasat.main_cli | [14/ 154 (14 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/ip6tables-restore
+##################################################
+#                    Summary                     #
+##################################################
+Time: 0 seconds
+Misuses number: 0
+
+INFO     | 2023-04-22 22:40:50,134 | Yasat.main_cli | [15/ 154 (15 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/dnsRedirectReplyd
+##################################################
+#                    Summary                     #
+##################################################
+Time: 0 seconds
+Misuses number: 0
+
+INFO     | 2023-04-22 22:40:50,160 | Yasat.main_cli | [16/ 154 (16 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/tfmeter
+##################################################
+#                    Summary                     #
+##################################################
+Time: 0 seconds
+Misuses number: 0
+
+INFO     | 2023-04-22 22:40:50,219 | Yasat.main_cli | [17/ 154 (17 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/check_fw
+##################################################
+#                    Summary                     #
+##################################################
+Time: 0 seconds
+Misuses number: 0
+
+INFO     | 2023-04-22 22:40:50,268 | Yasat.main_cli | [18/ 154 (18 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/zebra
+##################################################
+#                    Summary                     #
+##################################################
+Time: 0 seconds
+Misuses number: 0
+
+INFO     | 2023-04-22 22:40:50,278 | Yasat.main_cli | [19/ 154 (19 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/zipcloak
+##################################################
+#                    Summary                     #
+##################################################
+Time: 0 seconds
+Misuses number: 0
+
+INFO     | 2023-04-22 22:40:50,304 | Yasat.main_cli | [20/ 154 (20 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/ip
+##################################################
+#                    Summary                     #
+##################################################
+Time: 0 seconds
+Misuses number: 0
+
+INFO     | 2023-04-22 22:40:50,331 | Yasat.main_cli | [21/ 154 (21 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/nvram
+##################################################
+#                    Summary                     #
+##################################################
+Time: 0 seconds
+Misuses number: 0
+
+INFO     | 2023-04-22 22:40:50,349 | Yasat.main_cli | [22/ 154 (22 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/vconfig
+##################################################
+#                    Summary                     #
+##################################################
+Time: 0 seconds
+Misuses number: 0
+
+INFO     | 2023-04-22 22:40:50,375 | Yasat.main_cli | [23/ 154 (23 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/igs
+##################################################
+#                    Summary                     #
+##################################################
+Time: 0 seconds
+Misuses number: 0
+
+INFO     | 2023-04-22 22:40:50,400 | Yasat.main_cli | [24/ 154 (24 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/mevent
+##################################################
+#                    Summary                     #
+##################################################
+Time: 0 seconds
+Misuses number: 0
+
+INFO     | 2023-04-22 22:40:50,424 | Yasat.main_cli | [25/ 154 (25 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/et
+##################################################
+#                    Summary                     #
+##################################################
+Time: 0 seconds
+Misuses number: 0
+
+INFO     | 2023-04-22 22:40:50,468 | Yasat.main_cli | [26/ 154 (26 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/wpsd
+##################################################
+#                    Summary                     #
+##################################################
+Time: 0 seconds
+Misuses number: 0
+
+INFO     | 2023-04-22 22:40:50,501 | Yasat.main_cli | [27/ 154 (27 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/acl_logd
+##################################################
+#                    Summary                     #
+##################################################
+Time: 0 seconds
+Misuses number: 0
+
+INFO     | 2023-04-22 22:40:50,521 | Yasat.main_cli | [28/ 154 (28 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/upnpd
+##################################################
+#                    Summary                     #
+##################################################
+Time: 0 seconds
+Misuses number: 0
+
+INFO     | 2023-04-22 22:40:50,551 | Yasat.main_cli | [29/ 154 (29 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/bzip2
+##################################################
+#                    Summary                     #
+##################################################
+Time: 0 seconds
+Misuses number: 0
+
+INFO     | 2023-04-22 22:40:50,562 | Yasat.main_cli | [30/ 154 (30 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/outputimage
+##################################################
+#                    Summary                     #
+##################################################
+Time: 0 seconds
+Misuses number: 0
+
+INFO     | 2023-04-22 22:40:50,579 | Yasat.main_cli | [31/ 154 (31 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/wlanconfigd
+##################################################
+#                    Summary                     #
+##################################################
+Time: 0 seconds
+Misuses number: 0
+
+INFO     | 2023-04-22 22:40:50,630 | Yasat.main_cli | [32/ 154 (32 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/lld2d
+##################################################
+#                    Summary                     #
+##################################################
+Time: 0 seconds
+Misuses number: 0
+
+INFO     | 2023-04-22 22:40:50,656 | Yasat.main_cli | [33/ 154 (33 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/nas
+##################################################
+#                    Summary                     #
+##################################################
+Time: 0 seconds
+Misuses number: 0
+
+INFO     | 2023-04-22 22:40:50,680 | Yasat.main_cli | [34/ 154 (34 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/pot
+##################################################
+#                    Summary                     #
+##################################################
+Time: 0 seconds
+Misuses number: 0
+
+INFO     | 2023-04-22 22:40:50,707 | Yasat.main_cli | [35/ 154 (35 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/ripd
+##################################################
+#                    Summary                     #
+##################################################
+Time: 0 seconds
+Misuses number: 0
+
+INFO     | 2023-04-22 22:40:50,732 | Yasat.main_cli | [36/ 154 (36 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/unzipsfx
+##################################################
+#                    Summary                     #
+##################################################
+Time: 0 seconds
+Misuses number: 0
+
+INFO     | 2023-04-22 22:40:50,746 | Yasat.misc.concurrency | There are 10 tasks running now (108 pending)
+INFO     | 2023-04-22 22:40:50,746 | Yasat.misc.concurrency | |  pid   |                  name                  |  running time |  memory  |
+INFO     | 2023-04-22 22:40:50,747 | Yasat.main_cli | [37/ 154 (37 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/unzip
+##################################################
+#                    Summary                     #
+##################################################
+Time: 0 seconds
+Misuses number: 0
+
+INFO     | 2023-04-22 22:40:50,761 | Yasat.main_cli | [38/ 154 (38 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/email
+##################################################
+#                    Summary                     #
+##################################################
+Time: 0 seconds
+Misuses number: 0
+
+INFO     | 2023-04-22 22:40:50,778 | Yasat.main_cli | [39/ 154 (39 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/heartbeat
+##################################################
+#                    Summary                     #
+##################################################
+Time: 0 seconds
+Misuses number: 0
+
+INFO     | 2023-04-22 22:40:50,793 | Yasat.main_cli | [40/ 154 (40 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/acsd
+##################################################
+#                    Summary                     #
+##################################################
+Time: 0 seconds
+Misuses number: 0
+
+INFO     | 2023-04-22 22:40:50,808 | Yasat.main_cli | [41/ 154 (41 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/telnetenabled
+##################################################
+#                    Summary                     #
+##################################################
+Time: 0 seconds
+Misuses number: 0
+
+INFO     | 2023-04-22 22:40:50,824 | Yasat.misc.concurrency | |  7171  |                 bftpd                  |   0 seconds   |  125 MB  |
+INFO     | 2023-04-22 22:40:50,829 | Yasat.misc.concurrency | |  7168  |                tcpdump                 |   0 seconds   |  128 MB  |
+INFO     | 2023-04-22 22:40:50,831 | Yasat.misc.concurrency | |  7180  |             tcpdump.4.4.0              |   0 seconds   |  125 MB  |
+INFO     | 2023-04-22 22:40:50,832 | Yasat.misc.concurrency | |  7154  |                  cli                   |   0 seconds   |  103 MB  |
+INFO     | 2023-04-22 22:40:50,836 | Yasat.misc.concurrency | |  7162  |                   tc                   |   0 seconds   |  103 MB  |
+INFO     | 2023-04-22 22:40:50,841 | Yasat.misc.concurrency | |  7156  |                  ses                   |   0 seconds   |  103 MB  |
+INFO     | 2023-04-22 22:40:50,843 | Yasat.misc.concurrency | |  7159  |                 radvd                  |   0 seconds   |  103 MB  |
+INFO     | 2023-04-22 22:40:50,845 | Yasat.main_cli | [42/ 154 (42 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/acs_cli
+##################################################
+#                    Summary                     #
+##################################################
+Time: 0 seconds
+Misuses number: 0
+
+INFO     | 2023-04-22 22:40:50,847 | Yasat.misc.concurrency | |  7165  |               wandetect                |   0 seconds   |  104 MB  |
+INFO     | 2023-04-22 22:40:50,857 | Yasat.misc.concurrency | |  7174  |                 dhcp6s                 |   0 seconds   |  104 MB  |
+INFO     | 2023-04-22 22:40:50,859 | Yasat.misc.concurrency | |  7177  |              minidlna.exe              |   0 seconds   |  104 MB  |
+INFO     | 2023-04-22 22:40:50,902 | Yasat.main_cli | [43/ 154 (43 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/zip
+##################################################
+#                    Summary                     #
+##################################################
+Time: 0 seconds
+Misuses number: 0
+
+INFO     | 2023-04-22 22:40:50,950 | Yasat.main_cli | [44/ 154 (44 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/zipinfo
+##################################################
+#                    Summary                     #
+##################################################
+Time: 0 seconds
+Misuses number: 0
+
+INFO     | 2023-04-22 22:40:51,006 | Yasat.main_cli | [45/ 154 (45 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/zipnote
+##################################################
+#                    Summary                     #
+##################################################
+Time: 0 seconds
+Misuses number: 0
+
+INFO     | 2023-04-22 22:40:51,027 | Yasat.main_cli | [46/ 154 (46 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/IPv6-relay
+##################################################
+#                    Summary                     #
+##################################################
+Time: 0 seconds
+Misuses number: 0
+
+INFO     | 2023-04-22 22:40:51,042 | Yasat.main_cli | [47/ 154 (47 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/ip6tables
+##################################################
+#                    Summary                     #
+##################################################
+Time: 0 seconds
+Misuses number: 0
+
+INFO     | 2023-04-22 22:40:51,061 | Yasat.main_cli | [48/ 154 (48 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/scheact
+##################################################
+#                    Summary                     #
+##################################################
+Time: 0 seconds
+Misuses number: 0
+
+INFO     | 2023-04-22 22:40:51,082 | Yasat.main_cli | [49/ 154 (49 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/funzip
+##################################################
+#                    Summary                     #
+##################################################
+Time: 0 seconds
+Misuses number: 0
+
+INFO     | 2023-04-22 22:40:51,104 | Yasat.main_cli | [50/ 154 (50 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/zipsplit
+##################################################
+#                    Summary                     #
+##################################################
+Time: 0 seconds
+Misuses number: 0
+
+INFO     | 2023-04-22 22:40:51,127 | Yasat.main_cli | [51/ 154 (51 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/l2tpd
+##################################################
+#                    Summary                     #
+##################################################
+Time: 0 seconds
+Misuses number: 0
+
+INFO     | 2023-04-22 22:40:51,138 | Yasat.main_cli | [52/ 154 (52 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/ses_cl
+##################################################
+#                    Summary                     #
+##################################################
+Time: 0 seconds
+Misuses number: 0
+
+INFO     | 2023-04-22 22:40:51,166 | Yasat.main_cli | [53/ 154 (53 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/xtables-multi
+##################################################
+#                    Summary                     #
+##################################################
+Time: 0 seconds
+Misuses number: 0
+
+INFO     | 2023-04-22 22:40:51,176 | Yasat.main_cli | [54/ 154 (54 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/dhcp6c
+##################################################
+#                    Summary                     #
+##################################################
+Time: 0 seconds
+Misuses number: 0
+
+INFO     | 2023-04-22 22:40:51,181 | Yasat.main_cli | [55/ 154 (55 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/ftpc
+##################################################
+#                    Summary                     #
+##################################################
+Time: 0 seconds
+Misuses number: 0
+
+INFO     | 2023-04-22 22:40:51,188 | Yasat.main_cli | [56/ 154 (56 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/brctl
+##################################################
+#                    Summary                     #
+##################################################
+Time: 0 seconds
+Misuses number: 0
+
+INFO     | 2023-04-22 22:40:51,196 | Yasat.main_cli | [57/ 154 (57 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/gproxy
+##################################################
+#                    Summary                     #
+##################################################
+Time: 0 seconds
+Misuses number: 0
+
+INFO     | 2023-04-22 22:40:51,208 | Yasat.main_cli | [58/ 154 (58 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/radvd
+##################################################
+#                    Summary                     #
+##################################################
+Time: 0 seconds
+Misuses number: 0
+
+INFO     | 2023-04-22 22:40:51,215 | Yasat.main_cli | [59/ 154 (59 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/cli
+##################################################
+#                    Summary                     #
+##################################################
+Time: 0 seconds
+Misuses number: 0
+
+INFO     | 2023-04-22 22:40:51,223 | Yasat.main_cli | [60/ 154 (60 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/minidlna.exe
+##################################################
+#                    Summary                     #
+##################################################
+Time: 0 seconds
+Misuses number: 0
+
+INFO     | 2023-04-22 22:40:51,236 | Yasat.main_cli | [61/ 154 (61 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/ses
+##################################################
+#                    Summary                     #
+##################################################
+Time: 0 seconds
+Misuses number: 0
+
+INFO     | 2023-04-22 22:40:51,251 | Yasat.main_cli | [62/ 154 (62 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/zeroconf
+##################################################
+#                    Summary                     #
+##################################################
+Time: 0 seconds
+Misuses number: 0
+
+INFO     | 2023-04-22 22:40:51,261 | Yasat.main_cli | [63/ 154 (63 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/ntpclient
+##################################################
+#                    Summary                     #
+##################################################
+Time: 0 seconds
+Misuses number: 0
+
+INFO     | 2023-04-22 22:40:51,276 | Yasat.main_cli | [64/ 154 (64 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/rtsol
+##################################################
+#                    Summary                     #
+##################################################
+Time: 0 seconds
+Misuses number: 0
+
+INFO     | 2023-04-22 22:40:51,292 | Yasat.main_cli | [65/ 154 (65 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/tc
+##################################################
+#                    Summary                     #
+##################################################
+Time: 0 seconds
+Misuses number: 0
+
+INFO     | 2023-04-22 22:40:51,301 | Yasat.main_cli | [66/ 154 (66 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/wl
+##################################################
+#                    Summary                     #
+##################################################
+Time: 0 seconds
+Misuses number: 0
+
+INFO     | 2023-04-22 22:40:51,309 | Yasat.main_cli | [67/ 154 (67 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/wandetect
+##################################################
+#                    Summary                     #
+##################################################
+Time: 0 seconds
+Misuses number: 0
+
+INFO     | 2023-04-22 22:40:51,319 | Yasat.main_cli | [68/ 154 (68 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/dhcp6s
+##################################################
+#                    Summary                     #
+##################################################
+Time: 0 seconds
+Misuses number: 0
+
+INFO     | 2023-04-22 22:40:51,380 | Yasat.main_cli | [69/ 154 (69 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/local/lib/openvpn/plugins/openvpn-plugin-down-root.so
+##################################################
+#                    Summary                     #
+##################################################
+Time: 0 seconds
+Misuses number: 0
+
+INFO     | 2023-04-22 22:40:51,417 | Yasat.main_cli | [70/ 154 (70 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/bin/taskset
+##################################################
+#                    Summary                     #
+##################################################
+Time: 0 seconds
+Misuses number: 0
+
+INFO     | 2023-04-22 22:40:51,473 | Yasat.main_cli | [71/ 154 (71 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/local/samba/nmbd
+##################################################
+#                    Summary                     #
+##################################################
+Time: 0 seconds
+Misuses number: 0
+
+INFO     | 2023-04-22 22:40:51,512 | Yasat.main_cli | [72/ 154 (72 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/bin/vmstat
+##################################################
+#                    Summary                     #
+##################################################
+Time: 0 seconds
+Misuses number: 0
+
+INFO     | 2023-04-22 22:40:51,520 | Yasat.main_cli | [73/ 154 (73 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/udhcpd
+##################################################
+#                    Summary                     #
+##################################################
+Time: 0 seconds
+Misuses number: 0
+
+INFO     | 2023-04-22 22:40:51,609 | Yasat.main_cli | [74/ 154 (74 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/lib/libupnp.so
+##################################################
+#                    Summary                     #
+##################################################
+Time: 0 seconds
+Misuses number: 0
+
+INFO     | 2023-04-22 22:40:51,640 | Yasat.main_cli | [75/ 154 (75 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/lib/libbcmcrypto.so
+##################################################
+#                    Summary                     #
+##################################################
+Time: 0 seconds
+Misuses number: 0
+
+INFO     | 2023-04-22 22:40:51,652 | Yasat.main_cli | [76/ 154 (76 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/lib/libshared.so
+##################################################
+#                    Summary                     #
+##################################################
+Time: 0 seconds
+Misuses number: 0
+
+INFO     | 2023-04-22 22:40:51,657 | Yasat.main_cli | [77/ 154 (77 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/lib/libbcm.so
+##################################################
+#                    Summary                     #
+##################################################
+Time: 0 seconds
+Misuses number: 0
+
+INFO     | 2023-04-22 22:40:51,711 | Yasat.main_cli | [78/ 154 (78 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/local/samba/smb_pass
+##################################################
+#                    Summary                     #
+##################################################
+Time: 0 seconds
+Misuses number: 0
+
+INFO     | 2023-04-22 22:40:51,723 | Yasat.main_cli | [79/ 154 (79 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/lib/libnetconf.so
+##################################################
+#                    Summary                     #
+##################################################
+Time: 0 seconds
+Misuses number: 0
+
+INFO     | 2023-04-22 22:40:51,777 | Yasat.main_cli | [80/ 154 (80 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/lib/libnat.so
+##################################################
+#                    Summary                     #
+##################################################
+Time: 0 seconds
+Misuses number: 0
+
+INFO     | 2023-04-22 22:40:51,837 | Yasat.main_cli | [81/ 154 (81 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/lib/tc/q_netem.so
+##################################################
+#                    Summary                     #
+##################################################
+Time: 0 seconds
+Misuses number: 0
+
+INFO     | 2023-04-22 22:40:51,857 | Yasat.main_cli | [82/ 154 (82 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/lib/libnvram.so
+##################################################
+#                    Summary                     #
+##################################################
+Time: 0 seconds
+Misuses number: 0
+
+INFO     | 2023-04-22 22:40:51,877 | Yasat.main_cli | [83/ 154 (83 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/sbin/htmlget
+##################################################
+#                    Summary                     #
+##################################################
+Time: 0 seconds
+Misuses number: 0
+
+INFO     | 2023-04-22 22:40:51,921 | Yasat.main_cli | [84/ 154 (84 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/lib/libacos_shared.so
+##################################################
+#                    Summary                     #
+##################################################
+Time: 0 seconds
+Misuses number: 0
+
+INFO     | 2023-04-22 22:40:51,925 | Yasat.main_cli | [85/ 154 (85 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/sbin/ubdcmd
+##################################################
+#                    Summary                     #
+##################################################
+Time: 0 seconds
+Misuses number: 0
+
+INFO     | 2023-04-22 22:40:51,963 | Yasat.main_cli | [86/ 154 (86 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/sbin/gpio
+##################################################
+#                    Summary                     #
+##################################################
+Time: 0 seconds
+Misuses number: 0
+
+INFO     | 2023-04-22 22:40:51,986 | Yasat.main_cli | [87/ 154 (87 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/sbin/bd
+##################################################
+#                    Summary                     #
+##################################################
+Time: 0 seconds
+Misuses number: 0
+
+INFO     | 2023-04-22 22:40:52,037 | Yasat.misc.concurrency | There are 10 tasks running now (57 pending)
+INFO     | 2023-04-22 22:40:52,037 | Yasat.misc.concurrency | |  pid   |                  name                  |  running time |  memory  |
+INFO     | 2023-04-22 22:40:52,056 | Yasat.misc.concurrency | |  7171  |                 bftpd                  |   2 seconds   |  137 MB  |
+INFO     | 2023-04-22 22:40:52,057 | Yasat.misc.concurrency | |  7168  |                tcpdump                 |   2 seconds   |  177 MB  |
+INFO     | 2023-04-22 22:40:52,057 | Yasat.misc.concurrency | |  7180  |             tcpdump.4.4.0              |   2 seconds   |  163 MB  |
+INFO     | 2023-04-22 22:40:52,057 | Yasat.misc.concurrency | |  7156  |                 httpd                  |   0 seconds   |  143 MB  |
+INFO     | 2023-04-22 22:40:52,057 | Yasat.misc.concurrency | |  7177  |                openvpn                 |   0 seconds   |  131 MB  |
+INFO     | 2023-04-22 22:40:52,057 | Yasat.misc.concurrency | |  7154  |                  smbd                  |   0 seconds   |  112 MB  |
+INFO     | 2023-04-22 22:40:52,058 | Yasat.misc.concurrency | |  7165  |          libbigballofmud.so.0          |   0 seconds   |  107 MB  |
+INFO     | 2023-04-22 22:40:52,058 | Yasat.misc.concurrency | |  7174  |                  pppd                  |   0 seconds   |  109 MB  |
+INFO     | 2023-04-22 22:40:52,058 | Yasat.misc.concurrency | |  7159  |                   rc                   |   0 seconds   |  103 MB  |
+INFO     | 2023-04-22 22:40:52,058 | Yasat.misc.concurrency | |  7162  |              acos_service              |   0 seconds   |  105 MB  |
+INFO     | 2023-04-22 22:40:52,083 | Yasat.main_cli | [88/ 154 (88 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/sbin/rc
+##################################################
+#                    Summary                     #
+##################################################
+Time: 0 seconds
+Misuses number: 0
+
+INFO     | 2023-04-22 22:40:52,106 | Yasat.main_cli | [89/ 154 (89 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/sbin/acos_service
+##################################################
+#                    Summary                     #
+##################################################
+Time: 0 seconds
+Misuses number: 0
+
+INFO     | 2023-04-22 22:40:52,143 | Yasat.main_cli | [90/ 154 (90 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/sbin/udevtrigger
+##################################################
+#                    Summary                     #
+##################################################
+Time: 0 seconds
+Misuses number: 0
+
+INFO     | 2023-04-22 22:40:52,174 | Yasat.main_cli | [91/ 154 (91 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/sbin/hotplug2
+##################################################
+#                    Summary                     #
+##################################################
+Time: 0 seconds
+Misuses number: 0
+
+INFO     | 2023-04-22 22:40:52,226 | Yasat.main_cli | [92/ 154 (92 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/sbin/parser
+##################################################
+#                    Summary                     #
+##################################################
+Time: 0 seconds
+Misuses number: 0
+
+INFO     | 2023-04-22 22:40:52,355 | Yasat.main_cli | [93/ 154 (93 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/bin/wps_monitor
+##################################################
+#                    Summary                     #
+##################################################
+Time: 0 seconds
+Misuses number: 0
+
+INFO     | 2023-04-22 22:40:53,177 | Yasat.misc.concurrency | There are 10 tasks running now (51 pending)
+INFO     | 2023-04-22 22:40:53,177 | Yasat.misc.concurrency | |  pid   |                  name                  |  running time |  memory  |
+INFO     | 2023-04-22 22:40:53,187 | Yasat.misc.concurrency | |  7171  |                 bftpd                  |   3 seconds   |  141 MB  |
+INFO     | 2023-04-22 22:40:53,248 | Yasat.misc.concurrency | |  7168  |                tcpdump                 |   3 seconds   |  186 MB  |
+INFO     | 2023-04-22 22:40:53,248 | Yasat.misc.concurrency | |  7180  |             tcpdump.4.4.0              |   3 seconds   |  173 MB  |
+INFO     | 2023-04-22 22:40:53,248 | Yasat.misc.concurrency | |  7156  |                 httpd                  |   2 seconds   |  180 MB  |
+INFO     | 2023-04-22 22:40:53,249 | Yasat.misc.concurrency | |  7177  |                openvpn                 |   2 seconds   |  165 MB  |
+INFO     | 2023-04-22 22:40:53,249 | Yasat.misc.concurrency | |  7154  |                  smbd                  |   2 seconds   |  123 MB  |
+INFO     | 2023-04-22 22:40:53,249 | Yasat.misc.concurrency | |  7165  |          libbigballofmud.so.0          |   1 seconds   |  113 MB  |
+INFO     | 2023-04-22 22:40:53,249 | Yasat.misc.concurrency | |  7174  |                  pppd                  |   1 seconds   |  140 MB  |
+INFO     | 2023-04-22 22:40:53,250 | Yasat.misc.concurrency | |  7162  |                  wget                  |   1 seconds   |  131 MB  |
+INFO     | 2023-04-22 22:40:53,250 | Yasat.misc.concurrency | |  7159  |                busybox                 |   0 seconds   |  128 MB  |
+INFO     | 2023-04-22 22:40:54,554 | Yasat.misc.concurrency | There are 10 tasks running now (51 pending)
+INFO     | 2023-04-22 22:40:54,554 | Yasat.misc.concurrency | |  pid   |                  name                  |  running time |  memory  |
+INFO     | 2023-04-22 22:40:54,810 | Yasat.misc.concurrency | |  7171  |                 bftpd                  |   4 seconds   |  142 MB  |
+INFO     | 2023-04-22 22:40:54,810 | Yasat.misc.concurrency | |  7168  |                tcpdump                 |   4 seconds   |  186 MB  |
+INFO     | 2023-04-22 22:40:54,811 | Yasat.misc.concurrency | |  7180  |             tcpdump.4.4.0              |   4 seconds   |  174 MB  |
+INFO     | 2023-04-22 22:40:54,811 | Yasat.misc.concurrency | |  7156  |                 httpd                  |   3 seconds   |  181 MB  |
+INFO     | 2023-04-22 22:40:54,811 | Yasat.misc.concurrency | |  7177  |                openvpn                 |   3 seconds   |  166 MB  |
+INFO     | 2023-04-22 22:40:54,811 | Yasat.misc.concurrency | |  7154  |                  smbd                  |   3 seconds   |  124 MB  |
+INFO     | 2023-04-22 22:40:54,811 | Yasat.misc.concurrency | |  7165  |          libbigballofmud.so.0          |   3 seconds   |  113 MB  |
+INFO     | 2023-04-22 22:40:54,811 | Yasat.misc.concurrency | |  7174  |                  pppd                  |   2 seconds   |  140 MB  |
+INFO     | 2023-04-22 22:40:54,811 | Yasat.misc.concurrency | |  7162  |                  wget                  |   2 seconds   |  131 MB  |
+INFO     | 2023-04-22 22:40:54,812 | Yasat.misc.concurrency | |  7159  |                busybox                 |   2 seconds   |  128 MB  |
+INFO     | 2023-04-22 22:40:56,072 | Yasat.main_cli | [94/ 154 (94 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/lib/libbigballofmud.so.0
+##################################################
+#                    Summary                     #
+##################################################
+Time: 0 seconds
+Misuses number: 0
+
+INFO     | 2023-04-22 22:40:56,078 | Yasat.misc.concurrency | There are 10 tasks running now (50 pending)
+INFO     | 2023-04-22 22:40:56,079 | Yasat.misc.concurrency | |  pid   |                  name                  |  running time |  memory  |
+INFO     | 2023-04-22 22:40:56,097 | Yasat.misc.concurrency | |  7171  |                 bftpd                  |   6 seconds   |  143 MB  |
+INFO     | 2023-04-22 22:40:56,098 | Yasat.misc.concurrency | |  7168  |                tcpdump                 |   6 seconds   |  190 MB  |
+INFO     | 2023-04-22 22:40:56,098 | Yasat.misc.concurrency | |  7180  |             tcpdump.4.4.0              |   6 seconds   |  180 MB  |
+INFO     | 2023-04-22 22:40:56,098 | Yasat.misc.concurrency | |  7156  |                 httpd                  |   5 seconds   |  189 MB  |
+INFO     | 2023-04-22 22:40:56,100 | Yasat.misc.concurrency | |  7177  |                openvpn                 |   4 seconds   |  174 MB  |
+INFO     | 2023-04-22 22:40:56,100 | Yasat.misc.concurrency | |  7154  |                  smbd                  |   4 seconds   |  135 MB  |
+INFO     | 2023-04-22 22:40:56,100 | Yasat.misc.concurrency | |  7174  |                  pppd                  |   4 seconds   |  147 MB  |
+INFO     | 2023-04-22 22:40:56,100 | Yasat.misc.concurrency | |  7162  |                  wget                  |   3 seconds   |  139 MB  |
+INFO     | 2023-04-22 22:40:56,101 | Yasat.misc.concurrency | |  7159  |                busybox                 |   3 seconds   |  137 MB  |
+INFO     | 2023-04-22 22:40:56,101 | Yasat.misc.concurrency | |  7165  |                  eapd                  |   0 seconds   |  116 MB  |
+INFO     | 2023-04-22 22:40:56,237 | Yasat.main_cli | [95/ 154 (95 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/bin/eapd
+##################################################
+#                    Summary                     #
+##################################################
+Time: 0 seconds
+Misuses number: 0
+
+INFO     | 2023-04-22 22:40:56,278 | Yasat.main_cli | [96/ 154 (96 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/bin/chkntfs
+##################################################
+#                    Summary                     #
+##################################################
+Time: 0 seconds
+Misuses number: 0
+
+INFO     | 2023-04-22 22:40:56,342 | Yasat.main_cli | [97/ 154 (97 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/bin/utelnetd
+##################################################
+#                    Summary                     #
+##################################################
+Time: 0 seconds
+Misuses number: 0
+
+INFO     | 2023-04-22 22:40:56,375 | Yasat.main_cli | [98/ 154 (98 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/libnsl.so.0
+##################################################
+#                    Summary                     #
+##################################################
+Time: 0 seconds
+Misuses number: 0
+
+INFO     | 2023-04-22 22:40:56,423 | Yasat.main_cli | [99/ 154 (99 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/ld-uClibc.so.0
+##################################################
+#                    Summary                     #
+##################################################
+Time: 0 seconds
+Misuses number: 0
+
+INFO     | 2023-04-22 22:40:56,646 | Yasat.main_cli | [100/ 154 (100 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/libjpeg.so.7
+##################################################
+#                    Summary                     #
+##################################################
+Time: 0 seconds
+Misuses number: 0
+
+INFO     | 2023-04-22 22:40:56,681 | Yasat.main_cli | [101/ 154 (101 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/libresolv.so.0
+##################################################
+#                    Summary                     #
+##################################################
+Time: 0 seconds
+Misuses number: 0
+
+INFO     | 2023-04-22 22:40:56,792 | Yasat.main_cli | [102/ 154 (102 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/libgcc_s.so.1
+##################################################
+#                    Summary                     #
+##################################################
+Time: 0 seconds
+Misuses number: 0
+
+INFO     | 2023-04-22 22:40:56,871 | Yasat.main_cli | [103/ 154 (103 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/libogg.so.0
+##################################################
+#                    Summary                     #
+##################################################
+Time: 0 seconds
+Misuses number: 0
+
+INFO     | 2023-04-22 22:40:56,942 | Yasat.main_cli | [104/ 154 (104 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/libvolume_id.so.0.78.0
+##################################################
+#                    Summary                     #
+##################################################
+Time: 0 seconds
+Misuses number: 0
+
+INFO     | 2023-04-22 22:40:57,115 | Yasat.misc.concurrency | There are 10 tasks running now (40 pending)
+INFO     | 2023-04-22 22:40:57,116 | Yasat.misc.concurrency | |  pid   |                  name                  |  running time |  memory  |
+INFO     | 2023-04-22 22:40:57,137 | Yasat.misc.concurrency | |  7171  |                 bftpd                  |   7 seconds   |  144 MB  |
+INFO     | 2023-04-22 22:40:57,138 | Yasat.misc.concurrency | |  7168  |                tcpdump                 |   7 seconds   |  213 MB  |
+INFO     | 2023-04-22 22:40:57,139 | Yasat.misc.concurrency | |  7180  |             tcpdump.4.4.0              |   7 seconds   |  196 MB  |
+INFO     | 2023-04-22 22:40:57,140 | Yasat.misc.concurrency | |  7156  |                 httpd                  |   6 seconds   |  189 MB  |
+INFO     | 2023-04-22 22:40:57,144 | Yasat.misc.concurrency | |  7177  |                openvpn                 |   5 seconds   |  177 MB  |
+INFO     | 2023-04-22 22:40:57,145 | Yasat.misc.concurrency | |  7154  |                  smbd                  |   5 seconds   |  165 MB  |
+INFO     | 2023-04-22 22:40:57,145 | Yasat.misc.concurrency | |  7174  |                  pppd                  |   5 seconds   |  154 MB  |
+INFO     | 2023-04-22 22:40:57,145 | Yasat.misc.concurrency | |  7162  |                  wget                  |   4 seconds   |  153 MB  |
+INFO     | 2023-04-22 22:40:57,145 | Yasat.misc.concurrency | |  7159  |                busybox                 |   4 seconds   |  164 MB  |
+INFO     | 2023-04-22 22:40:57,146 | Yasat.misc.concurrency | |  7165  |           libavformat.so.52            |   0 seconds   |  111 MB  |
+INFO     | 2023-04-22 22:40:57,181 | Yasat.main_cli | [105/ 154 (105 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/libavformat.so.52
+##################################################
+#                    Summary                     #
+##################################################
+Time: 0 seconds
+Misuses number: 0
+
+INFO     | 2023-04-22 22:40:57,830 | Yasat.main_cli | [106/ 154 (106 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/libc.so.0
+##################################################
+#                    Summary                     #
+##################################################
+Time: 0 seconds
+Misuses number: 0
+
+INFO     | 2023-04-22 22:40:57,887 | Yasat.main_cli | [107/ 154 (107 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/libdl.so.0
+##################################################
+#                    Summary                     #
+##################################################
+Time: 0 seconds
+Misuses number: 0
+
+INFO     | 2023-04-22 22:40:58,116 | Yasat.main_cli | [108/ 154 (108 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/libexif.so.12
+##################################################
+#                    Summary                     #
+##################################################
+Time: 0 seconds
+Misuses number: 0
+
+INFO     | 2023-04-22 22:40:58,171 | Yasat.misc.concurrency | There are 9 tasks running now (37 pending)
+INFO     | 2023-04-22 22:40:58,172 | Yasat.main_cli | [109/ 154 (109 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/libcrypt.so.0
+##################################################
+#                    Summary                     #
+##################################################
+Time: 0 seconds
+Misuses number: 0
+
+INFO     | 2023-04-22 22:40:58,190 | Yasat.misc.concurrency | |  pid   |                  name                  |  running time |  memory  |
+INFO     | 2023-04-22 22:40:58,229 | Yasat.misc.concurrency | |  7171  |                 bftpd                  |   8 seconds   |  147 MB  |
+INFO     | 2023-04-22 22:40:58,229 | Yasat.misc.concurrency | |  7168  |                tcpdump                 |   8 seconds   |  231 MB  |
+INFO     | 2023-04-22 22:40:58,229 | Yasat.misc.concurrency | |  7180  |             tcpdump.4.4.0              |   8 seconds   |  216 MB  |
+INFO     | 2023-04-22 22:40:58,229 | Yasat.misc.concurrency | |  7156  |                 httpd                  |   7 seconds   |  208 MB  |
+INFO     | 2023-04-22 22:40:58,230 | Yasat.misc.concurrency | |  7177  |                openvpn                 |   7 seconds   |  199 MB  |
+INFO     | 2023-04-22 22:40:58,230 | Yasat.misc.concurrency | |  7154  |                  smbd                  |   6 seconds   |  193 MB  |
+INFO     | 2023-04-22 22:40:58,230 | Yasat.misc.concurrency | |  7174  |                  pppd                  |   6 seconds   |  165 MB  |
+INFO     | 2023-04-22 22:40:58,230 | Yasat.misc.concurrency | |  7162  |                  wget                  |   6 seconds   |  165 MB  |
+INFO     | 2023-04-22 22:40:58,230 | Yasat.misc.concurrency | |  7159  |                busybox                 |   5 seconds   |  168 MB  |
+INFO     | 2023-04-22 22:40:58,283 | Yasat.main_cli | [110/ 154 (110 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/libutil.so.0
+##################################################
+#                    Summary                     #
+##################################################
+Time: 0 seconds
+Misuses number: 0
+
+INFO     | 2023-04-22 22:40:58,484 | Yasat.main_cli | [111/ 154 (111 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/libm.so.0
+##################################################
+#                    Summary                     #
+##################################################
+Time: 0 seconds
+Misuses number: 0
+
+INFO     | 2023-04-22 22:40:58,593 | Yasat.main_cli | [112/ 154 (112 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/libavdevice.so.52
+##################################################
+#                    Summary                     #
+##################################################
+Time: 0 seconds
+Misuses number: 0
+
+INFO     | 2023-04-22 22:40:58,691 | Yasat.main_cli | [113/ 154 (113 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/libz.so.1
+##################################################
+#                    Summary                     #
+##################################################
+Time: 0 seconds
+Misuses number: 0
+
+INFO     | 2023-04-22 22:40:59,257 | Yasat.misc.concurrency | There are 10 tasks running now (31 pending)
+INFO     | 2023-04-22 22:40:59,257 | Yasat.misc.concurrency | |  pid   |                  name                  |  running time |  memory  |
+INFO     | 2023-04-22 22:40:59,293 | Yasat.misc.concurrency | |  7171  |                 bftpd                  |   9 seconds   |  147 MB  |
+INFO     | 2023-04-22 22:40:59,294 | Yasat.misc.concurrency | |  7168  |                tcpdump                 |   9 seconds   |  236 MB  |
+INFO     | 2023-04-22 22:40:59,294 | Yasat.misc.concurrency | |  7180  |             tcpdump.4.4.0              |   9 seconds   |  222 MB  |
+INFO     | 2023-04-22 22:40:59,294 | Yasat.misc.concurrency | |  7156  |                 httpd                  |   8 seconds   |  214 MB  |
+INFO     | 2023-04-22 22:40:59,294 | Yasat.misc.concurrency | |  7177  |                openvpn                 |   8 seconds   |  205 MB  |
+INFO     | 2023-04-22 22:40:59,295 | Yasat.misc.concurrency | |  7154  |                  smbd                  |   8 seconds   |  201 MB  |
+INFO     | 2023-04-22 22:40:59,295 | Yasat.misc.concurrency | |  7174  |                  pppd                  |   7 seconds   |  170 MB  |
+INFO     | 2023-04-22 22:40:59,295 | Yasat.misc.concurrency | |  7162  |                  wget                  |   7 seconds   |  171 MB  |
+INFO     | 2023-04-22 22:40:59,295 | Yasat.misc.concurrency | |  7159  |                busybox                 |   6 seconds   |  175 MB  |
+INFO     | 2023-04-22 22:40:59,295 | Yasat.misc.concurrency | |  7165  |            libavcodec.so.52            |   0 seconds   |  114 MB  |
+INFO     | 2023-04-22 22:40:59,798 | Yasat.main_cli | [114/ 154 (114 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/libavcodec.so.52
+##################################################
+#                    Summary                     #
+##################################################
+Time: 0 seconds
+Misuses number: 0
+
+INFO     | 2023-04-22 22:41:00,175 | Yasat.main_cli | [115/ 154 (115 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/libsqlite3.so.0
+##################################################
+#                    Summary                     #
+##################################################
+Time: 0 seconds
+Misuses number: 0
+
+INFO     | 2023-04-22 22:41:00,322 | Yasat.misc.concurrency | There are 10 tasks running now (29 pending)
+INFO     | 2023-04-22 22:41:00,323 | Yasat.misc.concurrency | |  pid   |                  name                  |  running time |  memory  |
+INFO     | 2023-04-22 22:41:00,340 | Yasat.misc.concurrency | |  7171  |                 bftpd                  |   10 seconds  |  148 MB  |
+INFO     | 2023-04-22 22:41:00,340 | Yasat.misc.concurrency | |  7168  |                tcpdump                 |   10 seconds  |  248 MB  |
+INFO     | 2023-04-22 22:41:00,341 | Yasat.misc.concurrency | |  7180  |             tcpdump.4.4.0              |   10 seconds  |  238 MB  |
+INFO     | 2023-04-22 22:41:00,342 | Yasat.misc.concurrency | |  7156  |                 httpd                  |   9 seconds   |  236 MB  |
+INFO     | 2023-04-22 22:41:00,342 | Yasat.misc.concurrency | |  7177  |                openvpn                 |   9 seconds   |  224 MB  |
+INFO     | 2023-04-22 22:41:00,343 | Yasat.misc.concurrency | |  7154  |                  smbd                  |   9 seconds   |  231 MB  |
+INFO     | 2023-04-22 22:41:00,343 | Yasat.misc.concurrency | |  7174  |                  pppd                  |   8 seconds   |  180 MB  |
+INFO     | 2023-04-22 22:41:00,344 | Yasat.misc.concurrency | |  7162  |                  wget                  |   8 seconds   |  178 MB  |
+INFO     | 2023-04-22 22:41:00,345 | Yasat.misc.concurrency | |  7159  |                busybox                 |   7 seconds   |  192 MB  |
+INFO     | 2023-04-22 22:41:00,345 | Yasat.misc.concurrency | |  7165  |            libpthread.so.0             |   0 seconds   |  114 MB  |
+INFO     | 2023-04-22 22:41:00,369 | Yasat.main_cli | [116/ 154 (116 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/libpthread.so.0
+##################################################
+#                    Summary                     #
+##################################################
+Time: 0 seconds
+Misuses number: 0
+
+INFO     | 2023-04-22 22:41:00,477 | Yasat.main_cli | [117/ 154 (117 success, 0 failure, 0 timeout)] Discovered 7 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/bin/wget
+##################################################
+#                    Summary                     #
+##################################################
+Time: 0 seconds
+Misuses number: 7
+- ConstantKeysChecker: 0
+- ConstantSaltsChecker: 0
+- ConstantIVsChecker: 0
+- PBEIterationsChecker: 0
+- RSAKeySizesChecker: 0
+- UnsafeEVPAlogirthmsChecker: 0
+- UnsafeAlgorithmsChecker: 7
+
+INFO     | 2023-04-22 22:41:00,505 | Yasat.main_cli | [118/ 154 (118 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/libvorbis.so.0
+##################################################
+#                    Summary                     #
+##################################################
+Time: 0 seconds
+Misuses number: 0
+
+INFO     | 2023-04-22 22:41:00,545 | Yasat.main_cli | [119/ 154 (119 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/libavutil.so.49
+##################################################
+#                    Summary                     #
+##################################################
+Time: 0 seconds
+Misuses number: 0
+
+INFO     | 2023-04-22 22:41:00,673 | Yasat.main_cli | [120/ 154 (120 success, 0 failure, 0 timeout)] Discovered 3 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/httpd
+##################################################
+#                    Summary                     #
+##################################################
+Time: 0 seconds
+Misuses number: 3
+- ConstantKeysChecker: 0
+- ConstantSaltsChecker: 0
+- ConstantIVsChecker: 0
+- PBEIterationsChecker: 0
+- RSAKeySizesChecker: 0
+- UnsafeEVPAlogirthmsChecker: 0
+- UnsafeAlgorithmsChecker: 3
+
+INFO     | 2023-04-22 22:41:00,692 | Yasat.main_cli | [121/ 154 (121 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/libid3tag.so.0
+##################################################
+#                    Summary                     #
+##################################################
+Time: 0 seconds
+Misuses number: 0
+
+INFO     | 2023-04-22 22:41:00,732 | Yasat.main_cli | [122/ 154 (122 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/modules/2.6.36.4brcmarm+/kernel/drivers/usbprinter/GPL_NetUSB.ko
+##################################################
+#                    Summary                     #
+##################################################
+Time: 0 seconds
+Misuses number: 0
+
+INFO     | 2023-04-22 22:41:00,818 | Yasat.main_cli | [123/ 154 (123 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/modules/2.6.36.4brcmarm+/kernel/drivers/net/emf/emf.ko
+##################################################
+#                    Summary                     #
+##################################################
+Time: 0 seconds
+Misuses number: 0
+
+INFO     | 2023-04-22 22:41:00,858 | Yasat.main_cli | [124/ 154 (124 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/modules/2.6.36.4brcmarm+/kernel/drivers/net/dpsta/dpsta.ko
+##################################################
+#                    Summary                     #
+##################################################
+Time: 0 seconds
+Misuses number: 0
+
+INFO     | 2023-04-22 22:41:00,870 | Yasat.main_cli | [125/ 154 (125 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/libFLAC.so.8
+##################################################
+#                    Summary                     #
+##################################################
+Time: 0 seconds
+Misuses number: 0
+
+INFO     | 2023-04-22 22:41:00,932 | Yasat.main_cli | [126/ 154 (126 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/modules/2.6.36.4brcmarm+/kernel/drivers/net/igs/igs.ko
+##################################################
+#                    Summary                     #
+##################################################
+Time: 0 seconds
+Misuses number: 0
+
+INFO     | 2023-04-22 22:41:01,019 | Yasat.main_cli | [127/ 154 (127 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/modules/2.6.36.4brcmarm+/kernel/drivers/net/ctf/ctf.ko
+##################################################
+#                    Summary                     #
+##################################################
+Time: 0 seconds
+Misuses number: 0
+
+INFO     | 2023-04-22 22:41:01,030 | Yasat.main_cli | [128/ 154 (128 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/modules/2.6.36.4brcmarm+/kernel/drivers/net/et/et.ko
+##################################################
+#                    Summary                     #
+##################################################
+Time: 0 seconds
+Misuses number: 0
+
+INFO     | 2023-04-22 22:41:01,211 | Yasat.main_cli | [129/ 154 (129 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/modules/2.6.36.4brcmarm+/kernel/drivers/usbprinter/NetUSB.ko
+##################################################
+#                    Summary                     #
+##################################################
+Time: 0 seconds
+Misuses number: 0
+
+INFO     | 2023-04-22 22:41:01,399 | Yasat.misc.concurrency | There are 7 tasks running now (18 pending)
+INFO     | 2023-04-22 22:41:01,399 | Yasat.misc.concurrency | |  pid   |                  name                  |  running time |  memory  |
+INFO     | 2023-04-22 22:41:01,424 | Yasat.misc.concurrency | |  7171  |                 bftpd                  |   11 seconds  |  151 MB  |
+INFO     | 2023-04-22 22:41:01,424 | Yasat.misc.concurrency | |  7168  |                tcpdump                 |   11 seconds  |  249 MB  |
+INFO     | 2023-04-22 22:41:01,425 | Yasat.misc.concurrency | |  7180  |             tcpdump.4.4.0              |   11 seconds  |  249 MB  |
+INFO     | 2023-04-22 22:41:01,425 | Yasat.misc.concurrency | |  7154  |                  smbd                  |   10 seconds  |  220 MB  |
+INFO     | 2023-04-22 22:41:01,426 | Yasat.misc.concurrency | |  7174  |                  pppd                  |   9 seconds   |  185 MB  |
+INFO     | 2023-04-22 22:41:01,426 | Yasat.misc.concurrency | |  7159  |                busybox                 |   9 seconds   |  205 MB  |
+INFO     | 2023-04-22 22:41:01,426 | Yasat.misc.concurrency | |  7162  |                 wl.ko                  |   0 seconds   |  178 MB  |
+INFO     | 2023-04-22 22:41:01,438 | Yasat.main_cli | [130/ 154 (130 success, 0 failure, 0 timeout)] Discovered 1 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/local/sbin/openvpn
+##################################################
+#                    Summary                     #
+##################################################
+Time: 0 seconds
+Misuses number: 1
+- ConstantKeysChecker: 0
+- ConstantSaltsChecker: 0
+- ConstantIVsChecker: 0
+- PBEIterationsChecker: 0
+- RSAKeySizesChecker: 0
+- UnsafeEVPAlogirthmsChecker: 0
+- UnsafeAlgorithmsChecker: 1
+
+INFO     | 2023-04-22 22:41:01,546 | Yasat.main_cli | [131/ 154 (131 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/modules/2.6.36.4brcmarm+/kernel/drivers/connector/cn.ko
+##################################################
+#                    Summary                     #
+##################################################
+Time: 0 seconds
+Misuses number: 0
+
+INFO     | 2023-04-22 22:41:01,824 | Yasat.main_cli | [132/ 154 (132 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/modules/2.6.36.4brcmarm+/kernel/drivers/ufsd/jnl.ko
+##################################################
+#                    Summary                     #
+##################################################
+Time: 0 seconds
+Misuses number: 0
+
+INFO     | 2023-04-22 22:41:01,834 | Yasat.main_cli | [133/ 154 (133 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/modules/2.6.36.4brcmarm+/kernel/drivers/scsi/scsi_wait_scan.ko
+##################################################
+#                    Summary                     #
+##################################################
+Time: 0 seconds
+Misuses number: 0
+
+INFO     | 2023-04-22 22:41:01,868 | Yasat.main_cli | [134/ 154 (134 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/modules/2.6.36.4brcmarm+/kernel/net/sched/sch_tbf.ko
+##################################################
+#                    Summary                     #
+##################################################
+Time: 0 seconds
+Misuses number: 0
+
+INFO     | 2023-04-22 22:41:01,897 | Yasat.main_cli | [135/ 154 (135 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/modules/2.6.36.4brcmarm+/kernel/lib/opendns.ko
+##################################################
+#                    Summary                     #
+##################################################
+Time: 0 seconds
+Misuses number: 0
+
+INFO     | 2023-04-22 22:41:01,914 | Yasat.main_cli | [136/ 154 (136 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/modules/2.6.36.4brcmarm+/kernel/net/sched/sch_hfsc.ko
+##################################################
+#                    Summary                     #
+##################################################
+Time: 0 seconds
+Misuses number: 0
+
+INFO     | 2023-04-22 22:41:01,958 | Yasat.main_cli | [137/ 154 (137 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/modules/2.6.36.4brcmarm+/kernel/lib/br_dns_hijack.ko
+##################################################
+#                    Summary                     #
+##################################################
+Time: 0 seconds
+Misuses number: 0
+
+INFO     | 2023-04-22 22:41:01,992 | Yasat.main_cli | [138/ 154 (138 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/modules/2.6.36.4brcmarm+/kernel/lib/ipv6_spi.ko
+##################################################
+#                    Summary                     #
+##################################################
+Time: 0 seconds
+Misuses number: 0
+
+INFO     | 2023-04-22 22:41:02,044 | Yasat.main_cli | [139/ 154 (139 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/modules/2.6.36.4brcmarm+/kernel/lib/MultiSsidCntl.ko
+##################################################
+#                    Summary                     #
+##################################################
+Time: 0 seconds
+Misuses number: 0
+
+INFO     | 2023-04-22 22:41:02,055 | Yasat.main_cli | [140/ 154 (140 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/modules/2.6.36.4brcmarm+/kernel/lib/l7_filter.ko
+##################################################
+#                    Summary                     #
+##################################################
+Time: 0 seconds
+Misuses number: 0
+
+INFO     | 2023-04-22 22:41:02,082 | Yasat.main_cli | [141/ 154 (141 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/modules/2.6.36.4brcmarm+/kernel/lib/libcrc32c.ko
+##################################################
+#                    Summary                     #
+##################################################
+Time: 0 seconds
+Misuses number: 0
+
+INFO     | 2023-04-22 22:41:02,129 | Yasat.main_cli | [142/ 154 (142 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/modules/2.6.36.4brcmarm+/kernel/lib/ubd.ko
+##################################################
+#                    Summary                     #
+##################################################
+Time: 0 seconds
+Misuses number: 0
+
+INFO     | 2023-04-22 22:41:02,194 | Yasat.main_cli | [143/ 154 (143 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/udev/vol_id
+##################################################
+#                    Summary                     #
+##################################################
+Time: 0 seconds
+Misuses number: 0
+
+INFO     | 2023-04-22 22:41:02,553 | Yasat.misc.concurrency | There are 10 tasks running now (1 pending)
+INFO     | 2023-04-22 22:41:02,554 | Yasat.misc.concurrency | |  pid   |                  name                  |  running time |  memory  |
+INFO     | 2023-04-22 22:41:02,572 | Yasat.misc.concurrency | |  7171  |                 bftpd                  |   12 seconds  |  156 MB  |
+INFO     | 2023-04-22 22:41:02,572 | Yasat.misc.concurrency | |  7168  |                tcpdump                 |   12 seconds  |  256 MB  |
+INFO     | 2023-04-22 22:41:02,573 | Yasat.misc.concurrency | |  7180  |             tcpdump.4.4.0              |   12 seconds  |  252 MB  |
+INFO     | 2023-04-22 22:41:02,573 | Yasat.misc.concurrency | |  7154  |                  smbd                  |   11 seconds  |  236 MB  |
+INFO     | 2023-04-22 22:41:02,573 | Yasat.misc.concurrency | |  7174  |                  pppd                  |   10 seconds  |  190 MB  |
+INFO     | 2023-04-22 22:41:02,574 | Yasat.misc.concurrency | |  7159  |                busybox                 |   10 seconds  |  212 MB  |
+INFO     | 2023-04-22 22:41:02,574 | Yasat.misc.concurrency | |  7162  |                 wl.ko                  |   1 seconds   |  183 MB  |
+INFO     | 2023-04-22 22:41:02,574 | Yasat.misc.concurrency | |  7165  |                ufsd.ko                 |   1 seconds   |  114 MB  |
+INFO     | 2023-04-22 22:41:02,575 | Yasat.misc.concurrency | |  7177  |              acos_nat.ko               |   0 seconds   |  228 MB  |
+INFO     | 2023-04-22 22:41:02,575 | Yasat.misc.concurrency | |  7156  |             dropbearmulti              |   0 seconds   |  246 MB  |
+INFO     | 2023-04-22 22:41:02,610 | Yasat.main_cli | [144/ 154 (144 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/modules/2.6.36.4brcmarm+/kernel/drivers/ufsd/ufsd.ko
+##################################################
+#                    Summary                     #
+##################################################
+Time: 0 seconds
+Misuses number: 0
+
+INFO     | 2023-04-22 22:41:02,924 | Yasat.main_cli | [145/ 154 (145 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/modules/2.6.36.4brcmarm+/kernel/lib/acos_nat.ko
+##################################################
+#                    Summary                     #
+##################################################
+Time: 0 seconds
+Misuses number: 0
+
+INFO     | 2023-04-22 22:41:03,591 | Yasat.misc.concurrency | There are 9 tasks running now (0 pending)
+INFO     | 2023-04-22 22:41:03,591 | Yasat.misc.concurrency | |  pid   |                  name                  |  running time |  memory  |
+INFO     | 2023-04-22 22:41:03,614 | Yasat.misc.concurrency | |  7171  |                 bftpd                  |   13 seconds  |  157 MB  |
+INFO     | 2023-04-22 22:41:03,614 | Yasat.misc.concurrency | |  7168  |                tcpdump                 |   13 seconds  |  263 MB  |
+INFO     | 2023-04-22 22:41:03,615 | Yasat.misc.concurrency | |  7180  |             tcpdump.4.4.0              |   13 seconds  |  261 MB  |
+INFO     | 2023-04-22 22:41:03,615 | Yasat.misc.concurrency | |  7154  |                  smbd                  |   12 seconds  |  263 MB  |
+INFO     | 2023-04-22 22:41:03,615 | Yasat.misc.concurrency | |  7174  |                  pppd                  |   11 seconds  |  190 MB  |
+INFO     | 2023-04-22 22:41:03,615 | Yasat.misc.concurrency | |  7159  |                busybox                 |   11 seconds  |  212 MB  |
+INFO     | 2023-04-22 22:41:03,615 | Yasat.misc.concurrency | |  7162  |                 wl.ko                  |   2 seconds   |  184 MB  |
+INFO     | 2023-04-22 22:41:03,616 | Yasat.misc.concurrency | |  7156  |             dropbearmulti              |   1 seconds   |  173 MB  |
+INFO     | 2023-04-22 22:41:03,616 | Yasat.misc.concurrency | |  7165  |                 logic                  |   1 seconds   |  145 MB  |
+INFO     | 2023-04-22 22:41:04,635 | Yasat.misc.concurrency | There are 9 tasks running now (0 pending)
+INFO     | 2023-04-22 22:41:04,635 | Yasat.misc.concurrency | |  pid   |                  name                  |  running time |  memory  |
+INFO     | 2023-04-22 22:41:04,655 | Yasat.misc.concurrency | |  7171  |                 bftpd                  |   14 seconds  |  157 MB  |
+INFO     | 2023-04-22 22:41:04,655 | Yasat.misc.concurrency | |  7168  |                tcpdump                 |   14 seconds  |  263 MB  |
+INFO     | 2023-04-22 22:41:04,656 | Yasat.misc.concurrency | |  7180  |             tcpdump.4.4.0              |   14 seconds  |  262 MB  |
+INFO     | 2023-04-22 22:41:04,656 | Yasat.misc.concurrency | |  7154  |                  smbd                  |   13 seconds  |  284 MB  |
+INFO     | 2023-04-22 22:41:04,656 | Yasat.misc.concurrency | |  7174  |                  pppd                  |   12 seconds  |  190 MB  |
+INFO     | 2023-04-22 22:41:04,656 | Yasat.misc.concurrency | |  7159  |                busybox                 |   12 seconds  |  223 MB  |
+INFO     | 2023-04-22 22:41:04,656 | Yasat.misc.concurrency | |  7162  |                 wl.ko                  |   3 seconds   |  186 MB  |
+INFO     | 2023-04-22 22:41:04,656 | Yasat.misc.concurrency | |  7156  |             dropbearmulti              |   2 seconds   |  183 MB  |
+INFO     | 2023-04-22 22:41:04,656 | Yasat.misc.concurrency | |  7165  |                 logic                  |   2 seconds   |  161 MB  |
+INFO     | 2023-04-22 22:41:05,671 | Yasat.misc.concurrency | There are 9 tasks running now (0 pending)
+INFO     | 2023-04-22 22:41:05,671 | Yasat.misc.concurrency | |  pid   |                  name                  |  running time |  memory  |
+INFO     | 2023-04-22 22:41:05,696 | Yasat.misc.concurrency | |  7171  |                 bftpd                  |   15 seconds  |  161 MB  |
+INFO     | 2023-04-22 22:41:05,698 | Yasat.misc.concurrency | |  7168  |                tcpdump                 |   15 seconds  |  266 MB  |
+INFO     | 2023-04-22 22:41:05,700 | Yasat.misc.concurrency | |  7180  |             tcpdump.4.4.0              |   15 seconds  |  263 MB  |
+INFO     | 2023-04-22 22:41:05,705 | Yasat.misc.concurrency | |  7154  |                  smbd                  |   14 seconds  |  288 MB  |
+INFO     | 2023-04-22 22:41:05,707 | Yasat.misc.concurrency | |  7174  |                  pppd                  |   13 seconds  |  191 MB  |
+INFO     | 2023-04-22 22:41:05,709 | Yasat.misc.concurrency | |  7159  |                busybox                 |   13 seconds  |  226 MB  |
+INFO     | 2023-04-22 22:41:05,712 | Yasat.misc.concurrency | |  7162  |                 wl.ko                  |   4 seconds   |  187 MB  |
+INFO     | 2023-04-22 22:41:05,713 | Yasat.misc.concurrency | |  7156  |             dropbearmulti              |   3 seconds   |  185 MB  |
+INFO     | 2023-04-22 22:41:05,715 | Yasat.misc.concurrency | |  7165  |                 logic                  |   3 seconds   |  166 MB  |
+INFO     | 2023-04-22 22:41:06,740 | Yasat.misc.concurrency | There are 9 tasks running now (0 pending)
+INFO     | 2023-04-22 22:41:06,741 | Yasat.misc.concurrency | |  pid   |                  name                  |  running time |  memory  |
+INFO     | 2023-04-22 22:41:06,763 | Yasat.misc.concurrency | |  7171  |                 bftpd                  |   16 seconds  |  161 MB  |
+INFO     | 2023-04-22 22:41:06,763 | Yasat.misc.concurrency | |  7168  |                tcpdump                 |   16 seconds  |  270 MB  |
+INFO     | 2023-04-22 22:41:06,765 | Yasat.misc.concurrency | |  7180  |             tcpdump.4.4.0              |   16 seconds  |  269 MB  |
+INFO     | 2023-04-22 22:41:06,766 | Yasat.misc.concurrency | |  7154  |                  smbd                  |   15 seconds  |  304 MB  |
+INFO     | 2023-04-22 22:41:06,766 | Yasat.misc.concurrency | |  7174  |                  pppd                  |   14 seconds  |  196 MB  |
+INFO     | 2023-04-22 22:41:06,767 | Yasat.misc.concurrency | |  7159  |                busybox                 |   14 seconds  |  226 MB  |
+INFO     | 2023-04-22 22:41:06,767 | Yasat.misc.concurrency | |  7162  |                 wl.ko                  |   5 seconds   |  192 MB  |
+INFO     | 2023-04-22 22:41:06,768 | Yasat.misc.concurrency | |  7156  |             dropbearmulti              |   4 seconds   |  190 MB  |
+INFO     | 2023-04-22 22:41:06,768 | Yasat.misc.concurrency | |  7165  |                 logic                  |   4 seconds   |  186 MB  |
+INFO     | 2023-04-22 22:41:07,541 | Yasat.main_cli | [146/ 154 (146 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/lib/modules/2.6.36.4brcmarm+/kernel/drivers/net/wl/wl.ko
+##################################################
+#                    Summary                     #
+##################################################
+Time: 0 seconds
+Misuses number: 0
+
+INFO     | 2023-04-22 22:41:07,789 | Yasat.misc.concurrency | There are 8 tasks running now (0 pending)
+INFO     | 2023-04-22 22:41:07,790 | Yasat.misc.concurrency | |  pid   |                  name                  |  running time |  memory  |
+INFO     | 2023-04-22 22:41:07,807 | Yasat.misc.concurrency | |  7171  |                 bftpd                  |   17 seconds  |  161 MB  |
+INFO     | 2023-04-22 22:41:07,807 | Yasat.misc.concurrency | |  7168  |                tcpdump                 |   17 seconds  |  270 MB  |
+INFO     | 2023-04-22 22:41:07,808 | Yasat.misc.concurrency | |  7180  |             tcpdump.4.4.0              |   17 seconds  |  269 MB  |
+INFO     | 2023-04-22 22:41:07,808 | Yasat.misc.concurrency | |  7154  |                  smbd                  |   16 seconds  |  326 MB  |
+INFO     | 2023-04-22 22:41:07,808 | Yasat.misc.concurrency | |  7174  |                  pppd                  |   15 seconds  |  208 MB  |
+INFO     | 2023-04-22 22:41:07,808 | Yasat.misc.concurrency | |  7159  |                busybox                 |   15 seconds  |  232 MB  |
+INFO     | 2023-04-22 22:41:07,809 | Yasat.misc.concurrency | |  7156  |             dropbearmulti              |   5 seconds   |  193 MB  |
+INFO     | 2023-04-22 22:41:07,809 | Yasat.misc.concurrency | |  7165  |                 logic                  |   5 seconds   |  196 MB  |
+INFO     | 2023-04-22 22:41:08,826 | Yasat.misc.concurrency | There are 8 tasks running now (0 pending)
+INFO     | 2023-04-22 22:41:08,826 | Yasat.misc.concurrency | |  pid   |                  name                  |  running time |  memory  |
+INFO     | 2023-04-22 22:41:08,844 | Yasat.misc.concurrency | |  7171  |                 bftpd                  |   19 seconds  |  162 MB  |
+INFO     | 2023-04-22 22:41:08,845 | Yasat.misc.concurrency | |  7168  |                tcpdump                 |   18 seconds  |  270 MB  |
+INFO     | 2023-04-22 22:41:08,845 | Yasat.misc.concurrency | |  7180  |             tcpdump.4.4.0              |   18 seconds  |  283 MB  |
+INFO     | 2023-04-22 22:41:08,845 | Yasat.misc.concurrency | |  7154  |                  smbd                  |   17 seconds  |  343 MB  |
+INFO     | 2023-04-22 22:41:08,845 | Yasat.misc.concurrency | |  7174  |                  pppd                  |   16 seconds  |  208 MB  |
+INFO     | 2023-04-22 22:41:08,846 | Yasat.misc.concurrency | |  7159  |                busybox                 |   16 seconds  |  234 MB  |
+INFO     | 2023-04-22 22:41:08,846 | Yasat.misc.concurrency | |  7156  |             dropbearmulti              |   6 seconds   |  196 MB  |
+INFO     | 2023-04-22 22:41:08,846 | Yasat.misc.concurrency | |  7165  |                 logic                  |   6 seconds   |  200 MB  |
+INFO     | 2023-04-22 22:41:09,549 | Yasat.main_cli | [147/ 154 (147 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/local/samba/smbd
+##################################################
+#                    Summary                     #
+##################################################
+Time: 0 seconds
+Misuses number: 0
+- ConstantKeysChecker: 0
+- ConstantSaltsChecker: 0
+- ConstantIVsChecker: 0
 - PBEIterationsChecker: 0
 - RSAKeySizesChecker: 0
 - UnsafeEVPAlogirthmsChecker: 0
 - UnsafeAlgorithmsChecker: 0
 
-INFO     | 2023-04-22 22:31:54,163 | Yasat.main_cli | All done!!!
-INFO     | 2023-04-22 22:31:54,164 | Yasat.main_cli | 
+INFO     | 2023-04-22 22:41:09,554 | Yasat.main_cli | [148/ 154 (148 success, 0 failure, 0 timeout)] Discovered 2 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/bin/busybox
 ##################################################
 #                    Summary                     #
 ##################################################
-Time: 20 seconds
-Extraction success rate: 100% (1 success, 0 failure, 0)
-Analysis success rate: 100% (1 success, 0 failure, 0 timeout)
-Misuses number: 4
-- ConstantKeysChecker: 2
+Time: 0 seconds
+Misuses number: 2
+- ConstantKeysChecker: 0
 - ConstantSaltsChecker: 2
+- ConstantIVsChecker: 0
 - PBEIterationsChecker: 0
 - RSAKeySizesChecker: 0
 - UnsafeEVPAlogirthmsChecker: 0
 - UnsafeAlgorithmsChecker: 0
+
+INFO     | 2023-04-22 22:41:09,864 | Yasat.misc.concurrency | There are 6 tasks running now (0 pending)
+INFO     | 2023-04-22 22:41:09,864 | Yasat.misc.concurrency | |  pid   |                  name                  |  running time |  memory  |
+INFO     | 2023-04-22 22:41:09,896 | Yasat.misc.concurrency | |  7171  |                 bftpd                  |   20 seconds  |  162 MB  |
+INFO     | 2023-04-22 22:41:09,897 | Yasat.misc.concurrency | |  7168  |                tcpdump                 |   19 seconds  |  270 MB  |
+INFO     | 2023-04-22 22:41:09,897 | Yasat.misc.concurrency | |  7180  |             tcpdump.4.4.0              |   19 seconds  |  283 MB  |
+INFO     | 2023-04-22 22:41:09,897 | Yasat.misc.concurrency | |  7174  |                  pppd                  |   18 seconds  |  213 MB  |
+INFO     | 2023-04-22 22:41:09,898 | Yasat.misc.concurrency | |  7156  |             dropbearmulti              |   7 seconds   |  198 MB  |
+INFO     | 2023-04-22 22:41:09,898 | Yasat.misc.concurrency | |  7165  |                 logic                  |   7 seconds   |  209 MB  |
+INFO     | 2023-04-22 22:41:10,918 | Yasat.misc.concurrency | There are 6 tasks running now (0 pending)
+INFO     | 2023-04-22 22:41:10,919 | Yasat.misc.concurrency | |  pid   |                  name                  |  running time |  memory  |
+INFO     | 2023-04-22 22:41:10,933 | Yasat.misc.concurrency | |  7171  |                 bftpd                  |   21 seconds  |  162 MB  |
+INFO     | 2023-04-22 22:41:10,933 | Yasat.misc.concurrency | |  7168  |                tcpdump                 |   21 seconds  |  278 MB  |
+INFO     | 2023-04-22 22:41:10,934 | Yasat.misc.concurrency | |  7180  |             tcpdump.4.4.0              |   20 seconds  |  283 MB  |
+INFO     | 2023-04-22 22:41:10,934 | Yasat.misc.concurrency | |  7174  |                  pppd                  |   19 seconds  |  213 MB  |
+INFO     | 2023-04-22 22:41:10,934 | Yasat.misc.concurrency | |  7156  |             dropbearmulti              |   8 seconds   |  198 MB  |
+INFO     | 2023-04-22 22:41:10,934 | Yasat.misc.concurrency | |  7165  |                 logic                  |   8 seconds   |  215 MB  |
+INFO     | 2023-04-22 22:41:11,734 | Yasat.main_cli | [149/ 154 (149 success, 0 failure, 0 timeout)] Discovered 1 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/bftpd
+##################################################
+#                    Summary                     #
+##################################################
+Time: 0 seconds
+Misuses number: 1
+- ConstantKeysChecker: 0
+- ConstantSaltsChecker: 0
+- ConstantIVsChecker: 0
+- PBEIterationsChecker: 0
+- RSAKeySizesChecker: 0
+- UnsafeEVPAlogirthmsChecker: 0
+- UnsafeAlgorithmsChecker: 1
+
+INFO     | 2023-04-22 22:41:11,948 | Yasat.misc.concurrency | There are 5 tasks running now (0 pending)
+INFO     | 2023-04-22 22:41:11,948 | Yasat.misc.concurrency | |  pid   |                  name                  |  running time |  memory  |
+INFO     | 2023-04-22 22:41:11,962 | Yasat.misc.concurrency | |  7168  |                tcpdump                 |   22 seconds  |  278 MB  |
+INFO     | 2023-04-22 22:41:11,962 | Yasat.misc.concurrency | |  7180  |             tcpdump.4.4.0              |   21 seconds  |  283 MB  |
+INFO     | 2023-04-22 22:41:11,963 | Yasat.misc.concurrency | |  7174  |                  pppd                  |   20 seconds  |  213 MB  |
+INFO     | 2023-04-22 22:41:11,963 | Yasat.misc.concurrency | |  7156  |             dropbearmulti              |   9 seconds   |  203 MB  |
+INFO     | 2023-04-22 22:41:11,964 | Yasat.misc.concurrency | |  7165  |                 logic                  |   9 seconds   |  215 MB  |
+INFO     | 2023-04-22 22:41:12,974 | Yasat.misc.concurrency | There are 5 tasks running now (0 pending)
+INFO     | 2023-04-22 22:41:12,975 | Yasat.misc.concurrency | |  pid   |                  name                  |  running time |  memory  |
+INFO     | 2023-04-22 22:41:12,987 | Yasat.misc.concurrency | |  7168  |                tcpdump                 |   23 seconds  |  278 MB  |
+INFO     | 2023-04-22 22:41:12,988 | Yasat.misc.concurrency | |  7180  |             tcpdump.4.4.0              |   22 seconds  |  283 MB  |
+INFO     | 2023-04-22 22:41:12,988 | Yasat.misc.concurrency | |  7174  |                  pppd                  |   21 seconds  |  213 MB  |
+INFO     | 2023-04-22 22:41:12,988 | Yasat.misc.concurrency | |  7156  |             dropbearmulti              |   10 seconds  |  203 MB  |
+INFO     | 2023-04-22 22:41:12,988 | Yasat.misc.concurrency | |  7165  |                 logic                  |   10 seconds  |  215 MB  |
+INFO     | 2023-04-22 22:41:13,926 | Yasat.main_cli | [150/ 154 (150 success, 0 failure, 0 timeout)] Discovered 4 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/tcpdump
+##################################################
+#                    Summary                     #
+##################################################
+Time: 0 seconds
+Misuses number: 4
+- ConstantKeysChecker: 0
+- ConstantSaltsChecker: 0
+- ConstantIVsChecker: 0
+- PBEIterationsChecker: 0
+- RSAKeySizesChecker: 0
+- UnsafeEVPAlogirthmsChecker: 0
+- UnsafeAlgorithmsChecker: 4
+
+INFO     | 2023-04-22 22:41:13,998 | Yasat.misc.concurrency | There are 4 tasks running now (0 pending)
+INFO     | 2023-04-22 22:41:13,998 | Yasat.misc.concurrency | |  pid   |                  name                  |  running time |  memory  |
+INFO     | 2023-04-22 22:41:14,011 | Yasat.misc.concurrency | |  7180  |             tcpdump.4.4.0              |   23 seconds  |  283 MB  |
+INFO     | 2023-04-22 22:41:14,011 | Yasat.misc.concurrency | |  7174  |                  pppd                  |   22 seconds  |  213 MB  |
+INFO     | 2023-04-22 22:41:14,012 | Yasat.misc.concurrency | |  7156  |             dropbearmulti              |   11 seconds  |  204 MB  |
+INFO     | 2023-04-22 22:41:14,012 | Yasat.misc.concurrency | |  7165  |                 logic                  |   11 seconds  |  216 MB  |
+INFO     | 2023-04-22 22:41:14,186 | Yasat.main_cli | [151/ 154 (151 success, 0 failure, 0 timeout)] Discovered 4 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/tcpdump.4.4.0
+##################################################
+#                    Summary                     #
+##################################################
+Time: 0 seconds
+Misuses number: 4
+- ConstantKeysChecker: 0
+- ConstantSaltsChecker: 0
+- ConstantIVsChecker: 0
+- PBEIterationsChecker: 0
+- RSAKeySizesChecker: 0
+- UnsafeEVPAlogirthmsChecker: 0
+- UnsafeAlgorithmsChecker: 4
+
+INFO     | 2023-04-22 22:41:15,022 | Yasat.misc.concurrency | There are 3 tasks running now (0 pending)
+INFO     | 2023-04-22 22:41:15,022 | Yasat.misc.concurrency | |  pid   |                  name                  |  running time |  memory  |
+INFO     | 2023-04-22 22:41:15,030 | Yasat.misc.concurrency | |  7174  |                  pppd                  |   23 seconds  |  213 MB  |
+INFO     | 2023-04-22 22:41:15,031 | Yasat.misc.concurrency | |  7156  |             dropbearmulti              |   12 seconds  |  204 MB  |
+INFO     | 2023-04-22 22:41:15,031 | Yasat.misc.concurrency | |  7165  |                 logic                  |   12 seconds  |  218 MB  |
+INFO     | 2023-04-22 22:41:16,037 | Yasat.misc.concurrency | There are 3 tasks running now (0 pending)
+INFO     | 2023-04-22 22:41:16,038 | Yasat.misc.concurrency | |  pid   |                  name                  |  running time |  memory  |
+INFO     | 2023-04-22 22:41:16,045 | Yasat.misc.concurrency | |  7174  |                  pppd                  |   24 seconds  |  213 MB  |
+INFO     | 2023-04-22 22:41:16,045 | Yasat.misc.concurrency | |  7156  |             dropbearmulti              |   13 seconds  |  205 MB  |
+INFO     | 2023-04-22 22:41:16,046 | Yasat.misc.concurrency | |  7165  |                 logic                  |   13 seconds  |  224 MB  |
+INFO     | 2023-04-22 22:41:17,052 | Yasat.misc.concurrency | There are 3 tasks running now (0 pending)
+INFO     | 2023-04-22 22:41:17,052 | Yasat.misc.concurrency | |  pid   |                  name                  |  running time |  memory  |
+INFO     | 2023-04-22 22:41:17,064 | Yasat.misc.concurrency | |  7174  |                  pppd                  |   25 seconds  |  213 MB  |
+INFO     | 2023-04-22 22:41:17,065 | Yasat.misc.concurrency | |  7156  |             dropbearmulti              |   14 seconds  |  205 MB  |
+INFO     | 2023-04-22 22:41:17,065 | Yasat.misc.concurrency | |  7165  |                 logic                  |   14 seconds  |  239 MB  |
+INFO     | 2023-04-22 22:41:18,073 | Yasat.misc.concurrency | There are 3 tasks running now (0 pending)
+INFO     | 2023-04-22 22:41:18,073 | Yasat.misc.concurrency | |  pid   |                  name                  |  running time |  memory  |
+INFO     | 2023-04-22 22:41:18,081 | Yasat.misc.concurrency | |  7174  |                  pppd                  |   26 seconds  |  213 MB  |
+INFO     | 2023-04-22 22:41:18,082 | Yasat.misc.concurrency | |  7156  |             dropbearmulti              |   15 seconds  |  210 MB  |
+INFO     | 2023-04-22 22:41:18,082 | Yasat.misc.concurrency | |  7165  |                 logic                  |   15 seconds  |  253 MB  |
+INFO     | 2023-04-22 22:41:19,092 | Yasat.misc.concurrency | There are 3 tasks running now (0 pending)
+INFO     | 2023-04-22 22:41:19,092 | Yasat.misc.concurrency | |  pid   |                  name                  |  running time |  memory  |
+INFO     | 2023-04-22 22:41:19,101 | Yasat.misc.concurrency | |  7174  |                  pppd                  |   27 seconds  |  213 MB  |
+INFO     | 2023-04-22 22:41:19,102 | Yasat.misc.concurrency | |  7156  |             dropbearmulti              |   16 seconds  |  221 MB  |
+INFO     | 2023-04-22 22:41:19,102 | Yasat.misc.concurrency | |  7165  |                 logic                  |   16 seconds  |  265 MB  |
+INFO     | 2023-04-22 22:41:20,110 | Yasat.misc.concurrency | There are 3 tasks running now (0 pending)
+INFO     | 2023-04-22 22:41:20,110 | Yasat.misc.concurrency | |  pid   |                  name                  |  running time |  memory  |
+INFO     | 2023-04-22 22:41:20,121 | Yasat.misc.concurrency | |  7174  |                  pppd                  |   28 seconds  |  213 MB  |
+INFO     | 2023-04-22 22:41:20,121 | Yasat.misc.concurrency | |  7156  |             dropbearmulti              |   17 seconds  |  224 MB  |
+INFO     | 2023-04-22 22:41:20,121 | Yasat.misc.concurrency | |  7165  |                 logic                  |   17 seconds  |  273 MB  |
+INFO     | 2023-04-22 22:41:21,128 | Yasat.misc.concurrency | There are 3 tasks running now (0 pending)
+INFO     | 2023-04-22 22:41:21,128 | Yasat.misc.concurrency | |  pid   |                  name                  |  running time |  memory  |
+INFO     | 2023-04-22 22:41:21,137 | Yasat.misc.concurrency | |  7174  |                  pppd                  |   29 seconds  |  213 MB  |
+INFO     | 2023-04-22 22:41:21,137 | Yasat.misc.concurrency | |  7156  |             dropbearmulti              |   18 seconds  |  225 MB  |
+INFO     | 2023-04-22 22:41:21,138 | Yasat.misc.concurrency | |  7165  |                 logic                  |   18 seconds  |  280 MB  |
+INFO     | 2023-04-22 22:41:22,144 | Yasat.misc.concurrency | There are 3 tasks running now (0 pending)
+INFO     | 2023-04-22 22:41:22,144 | Yasat.misc.concurrency | |  pid   |                  name                  |  running time |  memory  |
+INFO     | 2023-04-22 22:41:22,157 | Yasat.misc.concurrency | |  7174  |                  pppd                  |   30 seconds  |  216 MB  |
+INFO     | 2023-04-22 22:41:22,157 | Yasat.misc.concurrency | |  7156  |             dropbearmulti              |   19 seconds  |  225 MB  |
+INFO     | 2023-04-22 22:41:22,157 | Yasat.misc.concurrency | |  7165  |                 logic                  |   19 seconds  |  282 MB  |
+INFO     | 2023-04-22 22:41:23,168 | Yasat.misc.concurrency | There are 3 tasks running now (0 pending)
+INFO     | 2023-04-22 22:41:23,168 | Yasat.misc.concurrency | |  pid   |                  name                  |  running time |  memory  |
+INFO     | 2023-04-22 22:41:23,176 | Yasat.misc.concurrency | |  7174  |                  pppd                  |   31 seconds  |  218 MB  |
+INFO     | 2023-04-22 22:41:23,177 | Yasat.misc.concurrency | |  7156  |             dropbearmulti              |   20 seconds  |  225 MB  |
+INFO     | 2023-04-22 22:41:23,177 | Yasat.misc.concurrency | |  7165  |                 logic                  |   20 seconds  |  282 MB  |
+INFO     | 2023-04-22 22:41:24,184 | Yasat.misc.concurrency | There are 3 tasks running now (0 pending)
+INFO     | 2023-04-22 22:41:24,184 | Yasat.misc.concurrency | |  pid   |                  name                  |  running time |  memory  |
+INFO     | 2023-04-22 22:41:24,192 | Yasat.misc.concurrency | |  7174  |                  pppd                  |   32 seconds  |  219 MB  |
+INFO     | 2023-04-22 22:41:24,193 | Yasat.misc.concurrency | |  7156  |             dropbearmulti              |   21 seconds  |  225 MB  |
+INFO     | 2023-04-22 22:41:24,193 | Yasat.misc.concurrency | |  7165  |                 logic                  |   21 seconds  |  283 MB  |
+INFO     | 2023-04-22 22:41:25,200 | Yasat.misc.concurrency | There are 3 tasks running now (0 pending)
+INFO     | 2023-04-22 22:41:25,200 | Yasat.misc.concurrency | |  pid   |                  name                  |  running time |  memory  |
+INFO     | 2023-04-22 22:41:25,208 | Yasat.misc.concurrency | |  7174  |                  pppd                  |   33 seconds  |  219 MB  |
+INFO     | 2023-04-22 22:41:25,209 | Yasat.misc.concurrency | |  7156  |             dropbearmulti              |   23 seconds  |  225 MB  |
+INFO     | 2023-04-22 22:41:25,209 | Yasat.misc.concurrency | |  7165  |                 logic                  |   22 seconds  |  283 MB  |
+INFO     | 2023-04-22 22:41:26,215 | Yasat.misc.concurrency | There are 3 tasks running now (0 pending)
+INFO     | 2023-04-22 22:41:26,216 | Yasat.misc.concurrency | |  pid   |                  name                  |  running time |  memory  |
+INFO     | 2023-04-22 22:41:26,224 | Yasat.misc.concurrency | |  7174  |                  pppd                  |   34 seconds  |  219 MB  |
+INFO     | 2023-04-22 22:41:26,224 | Yasat.misc.concurrency | |  7156  |             dropbearmulti              |   24 seconds  |  225 MB  |
+INFO     | 2023-04-22 22:41:26,225 | Yasat.misc.concurrency | |  7165  |                 logic                  |   23 seconds  |  283 MB  |
+INFO     | 2023-04-22 22:41:27,232 | Yasat.misc.concurrency | There are 3 tasks running now (0 pending)
+INFO     | 2023-04-22 22:41:27,232 | Yasat.misc.concurrency | |  pid   |                  name                  |  running time |  memory  |
+INFO     | 2023-04-22 22:41:27,240 | Yasat.misc.concurrency | |  7174  |                  pppd                  |   35 seconds  |  219 MB  |
+INFO     | 2023-04-22 22:41:27,240 | Yasat.misc.concurrency | |  7156  |             dropbearmulti              |   25 seconds  |  225 MB  |
+INFO     | 2023-04-22 22:41:27,240 | Yasat.misc.concurrency | |  7165  |                 logic                  |   24 seconds  |  283 MB  |
+INFO     | 2023-04-22 22:41:28,247 | Yasat.misc.concurrency | There are 3 tasks running now (0 pending)
+INFO     | 2023-04-22 22:41:28,247 | Yasat.misc.concurrency | |  pid   |                  name                  |  running time |  memory  |
+INFO     | 2023-04-22 22:41:28,256 | Yasat.misc.concurrency | |  7174  |                  pppd                  |   36 seconds  |  219 MB  |
+INFO     | 2023-04-22 22:41:28,257 | Yasat.misc.concurrency | |  7156  |             dropbearmulti              |   26 seconds  |  225 MB  |
+INFO     | 2023-04-22 22:41:28,257 | Yasat.misc.concurrency | |  7165  |                 logic                  |   25 seconds  |  291 MB  |
+INFO     | 2023-04-22 22:41:29,263 | Yasat.misc.concurrency | There are 3 tasks running now (0 pending)
+INFO     | 2023-04-22 22:41:29,264 | Yasat.misc.concurrency | |  pid   |                  name                  |  running time |  memory  |
+INFO     | 2023-04-22 22:41:29,272 | Yasat.misc.concurrency | |  7174  |                  pppd                  |   37 seconds  |  219 MB  |
+INFO     | 2023-04-22 22:41:29,272 | Yasat.misc.concurrency | |  7156  |             dropbearmulti              |   27 seconds  |  225 MB  |
+INFO     | 2023-04-22 22:41:29,272 | Yasat.misc.concurrency | |  7165  |                 logic                  |   26 seconds  |  310 MB  |
+INFO     | 2023-04-22 22:41:30,279 | Yasat.misc.concurrency | There are 3 tasks running now (0 pending)
+INFO     | 2023-04-22 22:41:30,279 | Yasat.misc.concurrency | |  pid   |                  name                  |  running time |  memory  |
+INFO     | 2023-04-22 22:41:30,288 | Yasat.misc.concurrency | |  7174  |                  pppd                  |   38 seconds  |  219 MB  |
+INFO     | 2023-04-22 22:41:30,288 | Yasat.misc.concurrency | |  7156  |             dropbearmulti              |   28 seconds  |  225 MB  |
+INFO     | 2023-04-22 22:41:30,288 | Yasat.misc.concurrency | |  7165  |                 logic                  |   27 seconds  |  310 MB  |
+INFO     | 2023-04-22 22:41:31,295 | Yasat.misc.concurrency | There are 3 tasks running now (0 pending)
+INFO     | 2023-04-22 22:41:31,295 | Yasat.misc.concurrency | |  pid   |                  name                  |  running time |  memory  |
+INFO     | 2023-04-22 22:41:31,307 | Yasat.misc.concurrency | |  7174  |                  pppd                  |   39 seconds  |  231 MB  |
+INFO     | 2023-04-22 22:41:31,307 | Yasat.misc.concurrency | |  7156  |             dropbearmulti              |   29 seconds  |  225 MB  |
+INFO     | 2023-04-22 22:41:31,307 | Yasat.misc.concurrency | |  7165  |                 logic                  |   28 seconds  |  310 MB  |
+INFO     | 2023-04-22 22:41:32,316 | Yasat.misc.concurrency | There are 3 tasks running now (0 pending)
+INFO     | 2023-04-22 22:41:32,316 | Yasat.misc.concurrency | |  pid   |                  name                  |  running time |  memory  |
+INFO     | 2023-04-22 22:41:32,325 | Yasat.misc.concurrency | |  7174  |                  pppd                  |   40 seconds  |  232 MB  |
+INFO     | 2023-04-22 22:41:32,325 | Yasat.misc.concurrency | |  7156  |             dropbearmulti              |   30 seconds  |  225 MB  |
+INFO     | 2023-04-22 22:41:32,326 | Yasat.misc.concurrency | |  7165  |                 logic                  |   29 seconds  |  310 MB  |
+INFO     | 2023-04-22 22:41:33,333 | Yasat.misc.concurrency | There are 3 tasks running now (0 pending)
+INFO     | 2023-04-22 22:41:33,333 | Yasat.misc.concurrency | |  pid   |                  name                  |  running time |  memory  |
+INFO     | 2023-04-22 22:41:33,341 | Yasat.misc.concurrency | |  7174  |                  pppd                  |   41 seconds  |  233 MB  |
+INFO     | 2023-04-22 22:41:33,341 | Yasat.misc.concurrency | |  7156  |             dropbearmulti              |   31 seconds  |  226 MB  |
+INFO     | 2023-04-22 22:41:33,342 | Yasat.misc.concurrency | |  7165  |                 logic                  |   30 seconds  |  310 MB  |
+INFO     | 2023-04-22 22:41:34,349 | Yasat.misc.concurrency | There are 3 tasks running now (0 pending)
+INFO     | 2023-04-22 22:41:34,349 | Yasat.misc.concurrency | |  pid   |                  name                  |  running time |  memory  |
+INFO     | 2023-04-22 22:41:34,357 | Yasat.misc.concurrency | |  7174  |                  pppd                  |   42 seconds  |  233 MB  |
+INFO     | 2023-04-22 22:41:34,358 | Yasat.misc.concurrency | |  7156  |             dropbearmulti              |   32 seconds  |  226 MB  |
+INFO     | 2023-04-22 22:41:34,358 | Yasat.misc.concurrency | |  7165  |                 logic                  |   31 seconds  |  312 MB  |
+INFO     | 2023-04-22 22:41:35,365 | Yasat.misc.concurrency | There are 3 tasks running now (0 pending)
+INFO     | 2023-04-22 22:41:35,365 | Yasat.misc.concurrency | |  pid   |                  name                  |  running time |  memory  |
+INFO     | 2023-04-22 22:41:35,374 | Yasat.misc.concurrency | |  7174  |                  pppd                  |   43 seconds  |  228 MB  |
+INFO     | 2023-04-22 22:41:35,374 | Yasat.misc.concurrency | |  7156  |             dropbearmulti              |   33 seconds  |  228 MB  |
+INFO     | 2023-04-22 22:41:35,374 | Yasat.misc.concurrency | |  7165  |                 logic                  |   32 seconds  |  312 MB  |
+INFO     | 2023-04-22 22:41:36,382 | Yasat.misc.concurrency | There are 3 tasks running now (0 pending)
+INFO     | 2023-04-22 22:41:36,383 | Yasat.misc.concurrency | |  pid   |                  name                  |  running time |  memory  |
+INFO     | 2023-04-22 22:41:36,391 | Yasat.misc.concurrency | |  7174  |                  pppd                  |   44 seconds  |  231 MB  |
+INFO     | 2023-04-22 22:41:36,392 | Yasat.misc.concurrency | |  7156  |             dropbearmulti              |   34 seconds  |  228 MB  |
+INFO     | 2023-04-22 22:41:36,392 | Yasat.misc.concurrency | |  7165  |                 logic                  |   33 seconds  |  319 MB  |
+INFO     | 2023-04-22 22:41:37,398 | Yasat.misc.concurrency | There are 3 tasks running now (0 pending)
+INFO     | 2023-04-22 22:41:37,398 | Yasat.misc.concurrency | |  pid   |                  name                  |  running time |  memory  |
+INFO     | 2023-04-22 22:41:37,406 | Yasat.misc.concurrency | |  7174  |                  pppd                  |   45 seconds  |  235 MB  |
+INFO     | 2023-04-22 22:41:37,407 | Yasat.misc.concurrency | |  7156  |             dropbearmulti              |   35 seconds  |  228 MB  |
+INFO     | 2023-04-22 22:41:37,407 | Yasat.misc.concurrency | |  7165  |                 logic                  |   34 seconds  |  319 MB  |
+INFO     | 2023-04-22 22:41:38,414 | Yasat.misc.concurrency | There are 3 tasks running now (0 pending)
+INFO     | 2023-04-22 22:41:38,414 | Yasat.misc.concurrency | |  pid   |                  name                  |  running time |  memory  |
+INFO     | 2023-04-22 22:41:38,424 | Yasat.misc.concurrency | |  7174  |                  pppd                  |   46 seconds  |  235 MB  |
+INFO     | 2023-04-22 22:41:38,424 | Yasat.misc.concurrency | |  7156  |             dropbearmulti              |   36 seconds  |  228 MB  |
+INFO     | 2023-04-22 22:41:38,424 | Yasat.misc.concurrency | |  7165  |                 logic                  |   35 seconds  |  322 MB  |
+INFO     | 2023-04-22 22:41:39,431 | Yasat.misc.concurrency | There are 3 tasks running now (0 pending)
+INFO     | 2023-04-22 22:41:39,431 | Yasat.misc.concurrency | |  pid   |                  name                  |  running time |  memory  |
+INFO     | 2023-04-22 22:41:39,443 | Yasat.misc.concurrency | |  7174  |                  pppd                  |   47 seconds  |  235 MB  |
+INFO     | 2023-04-22 22:41:39,443 | Yasat.misc.concurrency | |  7156  |             dropbearmulti              |   37 seconds  |  228 MB  |
+INFO     | 2023-04-22 22:41:39,444 | Yasat.misc.concurrency | |  7165  |                 logic                  |   36 seconds  |  322 MB  |
+INFO     | 2023-04-22 22:41:40,453 | Yasat.misc.concurrency | There are 3 tasks running now (0 pending)
+INFO     | 2023-04-22 22:41:40,453 | Yasat.misc.concurrency | |  pid   |                  name                  |  running time |  memory  |
+INFO     | 2023-04-22 22:41:40,464 | Yasat.misc.concurrency | |  7174  |                  pppd                  |   48 seconds  |  235 MB  |
+INFO     | 2023-04-22 22:41:40,464 | Yasat.misc.concurrency | |  7156  |             dropbearmulti              |   38 seconds  |  228 MB  |
+INFO     | 2023-04-22 22:41:40,464 | Yasat.misc.concurrency | |  7165  |                 logic                  |   37 seconds  |  322 MB  |
+INFO     | 2023-04-22 22:41:40,980 | Yasat.main_cli | [152/ 154 (152 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/sbin/pppd
+##################################################
+#                    Summary                     #
+##################################################
+Time: 0 seconds
+Misuses number: 0
+- ConstantKeysChecker: 0
+- ConstantSaltsChecker: 0
+- ConstantIVsChecker: 0
+- PBEIterationsChecker: 0
+- RSAKeySizesChecker: 0
+- UnsafeEVPAlogirthmsChecker: 0
+- UnsafeAlgorithmsChecker: 0
+
+INFO     | 2023-04-22 22:41:41,472 | Yasat.misc.concurrency | There are 2 tasks running now (0 pending)
+INFO     | 2023-04-22 22:41:41,472 | Yasat.misc.concurrency | |  pid   |                  name                  |  running time |  memory  |
+INFO     | 2023-04-22 22:41:41,479 | Yasat.misc.concurrency | |  7156  |             dropbearmulti              |   39 seconds  |  228 MB  |
+INFO     | 2023-04-22 22:41:41,479 | Yasat.misc.concurrency | |  7165  |                 logic                  |   38 seconds  |  323 MB  |
+INFO     | 2023-04-22 22:41:42,484 | Yasat.misc.concurrency | There are 2 tasks running now (0 pending)
+INFO     | 2023-04-22 22:41:42,484 | Yasat.misc.concurrency | |  pid   |                  name                  |  running time |  memory  |
+INFO     | 2023-04-22 22:41:42,495 | Yasat.misc.concurrency | |  7156  |             dropbearmulti              |   40 seconds  |  228 MB  |
+INFO     | 2023-04-22 22:41:42,495 | Yasat.misc.concurrency | |  7165  |                 logic                  |   39 seconds  |  323 MB  |
+INFO     | 2023-04-22 22:41:43,503 | Yasat.misc.concurrency | There are 2 tasks running now (0 pending)
+INFO     | 2023-04-22 22:41:43,503 | Yasat.misc.concurrency | |  pid   |                  name                  |  running time |  memory  |
+INFO     | 2023-04-22 22:41:43,512 | Yasat.misc.concurrency | |  7156  |             dropbearmulti              |   41 seconds  |  228 MB  |
+INFO     | 2023-04-22 22:41:43,512 | Yasat.misc.concurrency | |  7165  |                 logic                  |   40 seconds  |  323 MB  |
+INFO     | 2023-04-22 22:41:44,521 | Yasat.misc.concurrency | There are 2 tasks running now (0 pending)
+INFO     | 2023-04-22 22:41:44,521 | Yasat.misc.concurrency | |  pid   |                  name                  |  running time |  memory  |
+INFO     | 2023-04-22 22:41:44,530 | Yasat.misc.concurrency | |  7156  |             dropbearmulti              |   42 seconds  |  228 MB  |
+INFO     | 2023-04-22 22:41:44,530 | Yasat.misc.concurrency | |  7165  |                 logic                  |   41 seconds  |  323 MB  |
+INFO     | 2023-04-22 22:41:45,535 | Yasat.misc.concurrency | There are 2 tasks running now (0 pending)
+INFO     | 2023-04-22 22:41:45,535 | Yasat.misc.concurrency | |  pid   |                  name                  |  running time |  memory  |
+INFO     | 2023-04-22 22:41:45,543 | Yasat.misc.concurrency | |  7156  |             dropbearmulti              |   43 seconds  |  228 MB  |
+INFO     | 2023-04-22 22:41:45,543 | Yasat.misc.concurrency | |  7165  |                 logic                  |   42 seconds  |  323 MB  |
+INFO     | 2023-04-22 22:41:46,549 | Yasat.misc.concurrency | There are 2 tasks running now (0 pending)
+INFO     | 2023-04-22 22:41:46,549 | Yasat.misc.concurrency | |  pid   |                  name                  |  running time |  memory  |
+INFO     | 2023-04-22 22:41:46,556 | Yasat.misc.concurrency | |  7156  |             dropbearmulti              |   44 seconds  |  228 MB  |
+INFO     | 2023-04-22 22:41:46,557 | Yasat.misc.concurrency | |  7165  |                 logic                  |   43 seconds  |  323 MB  |
+INFO     | 2023-04-22 22:41:47,568 | Yasat.misc.concurrency | There are 2 tasks running now (0 pending)
+INFO     | 2023-04-22 22:41:47,568 | Yasat.misc.concurrency | |  pid   |                  name                  |  running time |  memory  |
+INFO     | 2023-04-22 22:41:47,575 | Yasat.misc.concurrency | |  7156  |             dropbearmulti              |   45 seconds  |  228 MB  |
+INFO     | 2023-04-22 22:41:47,575 | Yasat.misc.concurrency | |  7165  |                 logic                  |   44 seconds  |  323 MB  |
+INFO     | 2023-04-22 22:41:48,581 | Yasat.misc.concurrency | There are 2 tasks running now (0 pending)
+INFO     | 2023-04-22 22:41:48,581 | Yasat.misc.concurrency | |  pid   |                  name                  |  running time |  memory  |
+INFO     | 2023-04-22 22:41:48,593 | Yasat.misc.concurrency | |  7156  |             dropbearmulti              |   46 seconds  |  228 MB  |
+INFO     | 2023-04-22 22:41:48,593 | Yasat.misc.concurrency | |  7165  |                 logic                  |   45 seconds  |  323 MB  |
+INFO     | 2023-04-22 22:41:49,600 | Yasat.misc.concurrency | There are 2 tasks running now (0 pending)
+INFO     | 2023-04-22 22:41:49,600 | Yasat.misc.concurrency | |  pid   |                  name                  |  running time |  memory  |
+INFO     | 2023-04-22 22:41:49,607 | Yasat.misc.concurrency | |  7156  |             dropbearmulti              |   47 seconds  |  228 MB  |
+INFO     | 2023-04-22 22:41:49,607 | Yasat.misc.concurrency | |  7165  |                 logic                  |   46 seconds  |  323 MB  |
+INFO     | 2023-04-22 22:41:50,612 | Yasat.misc.concurrency | There are 2 tasks running now (0 pending)
+INFO     | 2023-04-22 22:41:50,612 | Yasat.misc.concurrency | |  pid   |                  name                  |  running time |  memory  |
+INFO     | 2023-04-22 22:41:50,618 | Yasat.misc.concurrency | |  7156  |             dropbearmulti              |   48 seconds  |  228 MB  |
+INFO     | 2023-04-22 22:41:50,619 | Yasat.misc.concurrency | |  7165  |                 logic                  |   48 seconds  |  323 MB  |
+INFO     | 2023-04-22 22:41:51,624 | Yasat.misc.concurrency | There are 2 tasks running now (0 pending)
+INFO     | 2023-04-22 22:41:51,624 | Yasat.misc.concurrency | |  pid   |                  name                  |  running time |  memory  |
+INFO     | 2023-04-22 22:41:51,632 | Yasat.misc.concurrency | |  7156  |             dropbearmulti              |   49 seconds  |  228 MB  |
+INFO     | 2023-04-22 22:41:51,633 | Yasat.misc.concurrency | |  7165  |                 logic                  |   49 seconds  |  323 MB  |
+INFO     | 2023-04-22 22:41:52,639 | Yasat.misc.concurrency | There are 2 tasks running now (0 pending)
+INFO     | 2023-04-22 22:41:52,640 | Yasat.misc.concurrency | |  pid   |                  name                  |  running time |  memory  |
+INFO     | 2023-04-22 22:41:52,647 | Yasat.misc.concurrency | |  7156  |             dropbearmulti              |   50 seconds  |  228 MB  |
+INFO     | 2023-04-22 22:41:52,647 | Yasat.misc.concurrency | |  7165  |                 logic                  |   50 seconds  |  323 MB  |
+INFO     | 2023-04-22 22:41:53,652 | Yasat.misc.concurrency | There are 2 tasks running now (0 pending)
+INFO     | 2023-04-22 22:41:53,652 | Yasat.misc.concurrency | |  pid   |                  name                  |  running time |  memory  |
+INFO     | 2023-04-22 22:41:53,659 | Yasat.misc.concurrency | |  7156  |             dropbearmulti              |   51 seconds  |  228 MB  |
+INFO     | 2023-04-22 22:41:53,659 | Yasat.misc.concurrency | |  7165  |                 logic                  |   51 seconds  |  323 MB  |
+INFO     | 2023-04-22 22:41:54,310 | Yasat.main_cli | [153/ 154 (153 success, 0 failure, 0 timeout)] Discovered 0 misuses in examples/tmp/dropbearmulti
+##################################################
+#                    Summary                     #
+##################################################
+Time: 0 seconds
+Misuses number: 0
+- ConstantKeysChecker: 0
+- ConstantSaltsChecker: 0
+- ConstantIVsChecker: 0
+- PBEIterationsChecker: 0
+- RSAKeySizesChecker: 0
+- UnsafeEVPAlogirthmsChecker: 0
+- UnsafeAlgorithmsChecker: 0
+
+INFO     | 2023-04-22 22:41:54,532 | Yasat.main_cli | [154/ 154 (154 success, 0 failure, 0 timeout)] Discovered 11 misuses in examples/tmp/logic
+##################################################
+#                    Summary                     #
+##################################################
+Time: 0 seconds
+Misuses number: 11
+- ConstantKeysChecker: 2
+- ConstantSaltsChecker: 9
+- ConstantIVsChecker: 0
+- PBEIterationsChecker: 0
+- RSAKeySizesChecker: 0
+- UnsafeEVPAlogirthmsChecker: 0
+- UnsafeAlgorithmsChecker: 0
+
+INFO     | 2023-04-22 22:41:54,669 | Yasat.main_cli | All done!!!
+INFO     | 2023-04-22 22:41:54,669 | Yasat.main_cli | 
+##################################################
+#                    Summary                     #
+##################################################
+Time: 66 seconds
+Extraction success rate: 100% (6 success, 0 failure, 0)
+Analysis success rate: 100% (154 success, 0 failure, 0 timeout)
+Misuses number: 33
+- ConstantKeysChecker: 2
+- ConstantSaltsChecker: 11
+- ConstantIVsChecker: 0
+- PBEIterationsChecker: 0
+- RSAKeySizesChecker: 0
+- UnsafeEVPAlogirthmsChecker: 0
+- UnsafeAlgorithmsChecker: 20
 

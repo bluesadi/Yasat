@@ -2,10 +2,8 @@ import argparse
 import os
 import multiprocessing as mp
 import logging
-import signal
 import sys
 import time
-import psutil
 import struct
 
 import yaml
@@ -20,7 +18,7 @@ from .misc.extractor import Extractor
 from .misc.report import Report
 from .misc.concurrency import *
 from .utils import format_exception
-from .checkers import default_checkers
+from .checkers import default_checkers, target_apis
 
 l = logging.getLogger(__name__)
     
@@ -52,11 +50,7 @@ class AnalysisWorker(Worker):
         super().__init__(name=os.path.basename(filename))
         self.filename = filename
         self.report = Report()
-        self._target_apis = set()
         self._adb_path = adb_path
-        for _, criteria in default_checkers.items():
-            for func_name, _ in criteria:
-                self._target_apis.add(func_name)
         
     def run(self):
         # Load project from .adb file if exists
@@ -66,7 +60,7 @@ class AnalysisWorker(Worker):
         else:
             proj = angr.Project(self.filename, load_options={"auto_load_libs": False})
         if any(proj.kb.subject.resolve_external_function(target_api) is not None 
-                for target_api in self._target_apis):
+                for target_api in target_apis):
             for checker_cls, criteria in default_checkers.items():
                 name = checker_cls.__name__
                 try:

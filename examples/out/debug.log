@@ -1,0 +1,4 @@
+DEBUG    | 2023-04-22 22:41:13,370 | Yasat.checkers.rule_checker | Found function return value: None
+DEBUG    | 2023-04-22 22:41:13,609 | Yasat.checkers.rule_checker | Found function return value: None
+DEBUG    | 2023-04-22 22:41:13,917 | Yasat.checkers.rule_checker | Found function return value: None
+DEBUG    | 2023-04-22 22:41:14,178 | Yasat.checkers.rule_checker | Found function return value: None
