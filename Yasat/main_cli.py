@@ -21,14 +21,14 @@ from .utils import format_exception
 from .checkers import default_checkers, target_apis
 
 l = logging.getLogger(__name__)
-    
+
+
 class ExtractionWorker(Worker):
-    
     def __init__(self, src, dst):
         super().__init__(name=os.path.basename(src))
         self.src = src
         self.dst = dst
-    
+
     def run(self):
         src, dst = self.src, self.dst
         # First check if cache file is available
@@ -43,15 +43,15 @@ class ExtractionWorker(Worker):
             with open(cache_file, "w") as fd:
                 fd.write("\n".join(elf_files))
             return elf_files
-       
+
+
 class AnalysisWorker(Worker):
-    
     def __init__(self, filename, adb_path=None):
         super().__init__(name=os.path.basename(filename))
         self.filename = filename
         self.report = Report()
         self._adb_path = adb_path
-        
+
     def run(self):
         # Load project from .adb file if exists
         Files.mkdirs(os.path.dirname(self._adb_path))
@@ -59,8 +59,10 @@ class AnalysisWorker(Worker):
             proj = AngrDB().load(self._adb_path)
         else:
             proj = angr.Project(self.filename, load_options={"auto_load_libs": False})
-        if any(proj.kb.subject.resolve_external_function(target_api) is not None 
-                for target_api in target_apis):
+        if any(
+            proj.kb.subject.resolve_external_function(target_api) is not None
+            for target_api in target_apis
+        ):
             for checker_cls, criteria in default_checkers.items():
                 name = checker_cls.__name__
                 try:
@@ -73,13 +75,12 @@ class AnalysisWorker(Worker):
                 self.report.report_misuses(name, misuses)
             if not os.path.exists(self._adb_path):
                 AngrDB(proj).dump(self._adb_path)
-        
-def main_cli():    
+
+
+def main_cli():
     # Parse arguments
     parser = argparse.ArgumentParser()
-    parser.add_argument(
-        "-c", "--config", help="configuration file path", default="config.yml"
-    )
+    parser.add_argument("-c", "--config", help="configuration file path", default="config.yml")
     parser.add_argument(
         "-p",
         "--processes",
@@ -88,9 +89,9 @@ def main_cli():
         default=mp.cpu_count() // 2,
     )
     args = parser.parse_args()
-    
+
     processes = args.processes
-    
+
     # Load configuration
     with open(args.config, "r") as fd:
         config = yaml.safe_load(fd)
@@ -99,10 +100,10 @@ def main_cli():
     out_dir = os.path.abspath(config["out_dir"])
     extraction_timeout = config["extraction_timeout"]
     analysis_timeout = config["analysis_timeout"]
-    
+
     Files.mkdirs(tmp_dir)
     Files.clear(out_dir)
-        
+
     # Set up loggers
     # logging.root.handlers.clear()
     root = logging.getLogger("Yasat")
@@ -115,10 +116,11 @@ def main_cli():
         handler.setFormatter(CuteFormatter(should_color=False))
         root.addHandler(handler)
     sys.stderr = open(Files.join(out_dir, "stderr.log"), "w")
-        
+
     try:
         report = Report()
         start_time = time.perf_counter()
+
         ###############################################################
         #   First step: Extract ELF files (subjects) from firmware    #
         ###############################################################
@@ -134,14 +136,16 @@ def main_cli():
             else:
                 report.extraction_success += 1
                 elf_files = worker.result
-            progress = (f"[{report.extraction_success + report.extraction_failure}/"
-                        f"{num_input_files} ({report.extraction_success} success, "
-                        f"{report.extraction_failure} failure, "
-                        f"{report.extraction_timeout} timeout)] ")
+            progress = (
+                f"[{report.extraction_success + report.extraction_failure}/"
+                f"{num_input_files} ({report.extraction_success} success, "
+                f"{report.extraction_failure} failure, "
+                f"{report.extraction_timeout} timeout)] "
+            )
             # We say it failure when no ELF files are extracted
             l.info(f"{progress}Extracted {len(elf_files)} ELF files from {worker.src}")
             subjects.extend(elf_files)
-            
+
         pool = PoolWrapper(processes)
         pool.set_callback(on_extraction_done)
         input_files = []
@@ -164,24 +168,24 @@ def main_cli():
         pool.terminate()
         num_subjects = len(subjects)
         l.info(f"Successfully extracted {num_subjects} ELF files!")
-        
+
         ##########################################################################################
         #   Second step: Filter out redundant ELF files with the same architectures and names    #
         ##########################################################################################
         def read_elf_machine(filepath):
             ELFCLASS32 = 1
             ELFCLASS64 = 2
-            ELFMAG = b'\x7fELF'
-            with open(filepath, 'rb') as f:
+            ELFMAG = b"\x7fELF"
+            with open(filepath, "rb") as f:
                 elf_header = f.read(20)
             if len(elf_header) < 20 or not elf_header.startswith(ELFMAG):
                 return None
-            elf_class = struct.unpack('B', elf_header[4:5])[0]
-            e_machine, = struct.unpack('H', elf_header[18:18+2])
+            elf_class = struct.unpack("B", elf_header[4:5])[0]
+            (e_machine,) = struct.unpack("H", elf_header[18 : 18 + 2])
             if elf_class not in [ELFCLASS32, ELFCLASS64] or e_machine > 100:
                 return None
             return e_machine
-                
+
         _subjects = []
         discarded = 0
         collected = set()
@@ -189,7 +193,11 @@ def main_cli():
         for i, subject in enumerate(subjects):
             l.info(f"[{i + 1}/{num_subjects} {discarded} discarded] Filtering subjects")
             t = (read_elf_machine(subject), os.path.basename(subject))
-            if t[0] is None or t in collected or os.path.basename(subject).split(".")[0] in excluded:
+            if (
+                t[0] is None
+                or t in collected
+                or os.path.basename(subject).split(".")[0] in excluded
+            ):
                 discarded += 1
                 continue
             collected.add(t)
@@ -197,11 +205,11 @@ def main_cli():
         subjects = _subjects
         num_subjects = len(subjects)
         l.info(f"Got {num_subjects} unique ELF files!")
-        
+
         ######################################
         #   Final step: Analyze ELF files    #
         ######################################
-                
+
         def on_analysis_done(worker: AnalysisWorker):
             if worker.status == TIMEOUT:
                 report.analysis_timeout += 1
@@ -209,28 +217,32 @@ def main_cli():
                 report.analysis_failure += 1
             else:
                 report.analysis_success += 1
-            progress = (f"[{report.analysis_total}/ {num_subjects} "
-                        f"({report.analysis_success} success, "
-                        f"{report.analysis_failure} failure, "
-                        f"{report.analysis_timeout} timeout)] ")
-            l.info(f"{progress}Discovered {worker.report.num_misuses} misuses in {worker.filename}"
-                   f"\n{worker.report.summary}")
+            progress = (
+                f"[{report.analysis_total}/ {num_subjects} "
+                f"({report.analysis_success} success, "
+                f"{report.analysis_failure} failure, "
+                f"{report.analysis_timeout} timeout)] "
+            )
+            l.info(
+                f"{progress}Discovered {worker.report.num_misuses} misuses in {worker.filename}"
+                f"\n{worker.report.summary}"
+            )
             if worker.report.num_misuses > 0:
                 report.merge(worker.report)
                 report.time = int(time.perf_counter() - start_time)
                 report.save(Files.join(out_dir, "report.log"))
-            
+
         pool = PoolWrapper(processes, maxtasksperchild=100)
         pool.set_callback(on_analysis_done)
-        
+
         for filename in subjects:
             pool.apply_async(AnalysisWorker(filename=filename, adb_path=filename + ".adb"))
         pool.close()
         pool.wait(analysis_timeout)
         pool.terminate()
-                
-        l.info("All done!!!")    
-        l.info("\n" + report.summary)                
-        
+
+        l.info("All done!!!")
+        l.info("\n" + report.summary)
+
     except BaseException as e:
         l.error(format_exception(e))

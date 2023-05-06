@@ -19,6 +19,7 @@ from ..multi_values import MultiValues
 
 l = logging.getLogger(__name__)
 
+
 class SlicingCriterion:
     def __init__(self, caller_addr: int, arg_idx: int):
         self.caller_addr = caller_addr
@@ -54,10 +55,10 @@ class BackwardSlicing(Analysis):
         call_stack=None,
     ) -> None:
         super().__init__()
-        
+
         if call_stack is None:
             call_stack = [target_func.addr]
-            
+
         self.target_func = target_func
         self.criteria_selectors = criteria_selectors
         self.preset_arguments = preset_arguments
@@ -72,14 +73,14 @@ class BackwardSlicing(Analysis):
         self._engine = SimEngineBackwardSlicing(self)
         self._blocks_by_addr = dict()
         self._output_states_by_addr = dict()
-        
+
         if criteria_selectors is None or len(criteria_selectors) == 0:
             raise ValueError("You should set up at least 1 criteria selector.")
 
         # Bind to slicing citeria selectors
         for selector in criteria_selectors:
             selector.hook(self)
-            
+
         # Bind to function handler
         if function_handler is not None:
             function_handler.hook(self)
@@ -90,7 +91,7 @@ class BackwardSlicing(Analysis):
             cfg = self.project.analyses.CFGFast(
                 resolve_indirect_jumps=True, force_complete_scan=False, normalize=True
             )
-            
+
         # That's for recovering prototypes of callees in this function, in order to achieve a higher
         # accuracy
         # Sometimes Clinic analysis cannot correctly deduce callees' stack arguments
@@ -103,7 +104,7 @@ class BackwardSlicing(Analysis):
         #             self.project.kb.clinic_manager.get_clinic(called_func)
         #     else:
         #         l.warning(f'Cannot find function at {hex(addr)}')
-                
+
         # Generate AIL CFG for target function
         clinic: Clinic = self.project.kb.clinic_manager.get_clinic(target_func)
         if clinic is not None:
@@ -112,13 +113,13 @@ class BackwardSlicing(Analysis):
             )
 
             self.graph = clinic.graph.copy()
-            
+
             # Initialize address-block mappings and output states
             for block in self.graph:
                 self._blocks_by_addr[block.addr] = block
                 self._output_states_by_addr[block.addr] = self._initial_state(block)
 
-            # Sometimes a called function with preset arguments may contain some unreachable 
+            # Sometimes a called function with preset arguments may contain some unreachable
             # branches.
             # We remove them to make analysis more precise and efficient.
             if remove_unreachable_blocks and preset_arguments:
@@ -176,8 +177,7 @@ class BackwardSlicing(Analysis):
 
     def _meet_successors(self, block: Block):
         output_states_of_succs = [
-            self._output_states_by_addr[succ.addr]
-            for succ in self.graph.successors(block)
+            self._output_states_by_addr[succ.addr] for succ in self.graph.successors(block)
         ]
         if len(output_states_of_succs) == 1:
             state = output_states_of_succs[0]
@@ -231,8 +231,9 @@ class BackwardSlicing(Analysis):
                 pending_queue |= set(block.addr for block in revisit_iter)
 
         # Collect concrete results from the boundary state
-        self.concrete_results = sorted(boundary_state.concrete_results, 
-                                       key=lambda track: track.slice[0].ins_addr)
+        self.concrete_results = sorted(
+            boundary_state.concrete_results, key=lambda track: track.slice[0].ins_addr
+        )
 
     def _run_on_node(self, state: SlicingState) -> SlicingState:
         return self._engine.process(state.copy(), block=state.block)

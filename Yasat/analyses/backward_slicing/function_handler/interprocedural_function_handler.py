@@ -10,12 +10,12 @@ from ...multi_values import MultiValues
 from ...ast_enhancer import AstEnhancer
 
 import logging
+
 l = logging.getLogger(__name__)
 
+
 class InterproceduralFunctionHandler(FunctionHandler):
-    def handle_local_function(
-        self, func: Function, args: List[MultiValues]
-    ) -> MultiValues:
+    def handle_local_function(self, func: Function, args: List[MultiValues]) -> MultiValues:
         bs = func.project.analyses.BackwardSlicing(
             target_func=func,
             criteria_selectors=[ReturnSelector()],

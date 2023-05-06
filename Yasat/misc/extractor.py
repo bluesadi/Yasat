@@ -12,7 +12,6 @@ l = logging.getLogger(__name__)
 
 
 class Extractor:
-
     def _is_elf(self, path):
         if not os.path.islink(path) and os.path.isfile(path):
             ftype = filetype.guess(path)
@@ -24,8 +23,9 @@ class Extractor:
         extracted_path = os.path.join(dst, f"_{os.path.basename(src)}.extracted")
         Files.remove(extracted_path)
         # We use this flag to denote that the firmware has been cached
-        binwalk.scan(src, signature=True, quiet=True, extract=True, matryoshka=True, depth=2, 
-                     directory=dst)
+        binwalk.scan(
+            src, signature=True, quiet=True, extract=True, matryoshka=True, depth=2, directory=dst
+        )
         paths = []
         for dirpath, _, filenames in os.walk(extracted_path):
             if "squashfs-root-0" not in dirpath:

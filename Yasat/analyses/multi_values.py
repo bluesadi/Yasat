@@ -31,9 +31,9 @@ class MultiValues:
             if v.concrete:
                 return v
         return None
-    
+
     def __repr__(self) -> str:
         str(self)
-        
+
     def __str__(self) -> str:
-        return f'MultiValues {self.values}'
+        return f"MultiValues {self.values}"

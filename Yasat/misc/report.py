@@ -1,6 +1,7 @@
 from collections import defaultdict
 from typing import Dict, List
 
+
 class Misuse:
     filename: str
     desc: str
@@ -25,6 +26,7 @@ class Misuse:
             repr += f"\n{stmt}"
         return repr
 
+
 class Report:
     _misuses: Dict[str, List[Misuse]]
     time: int
@@ -34,11 +36,11 @@ class Report:
         self.extraction_success = 0
         self.extraction_failure = 0
         self.extraction_timeout = 0
-        
+
         self.analysis_success = 0
         self.analysis_failure = 0
         self.analysis_timeout = 0
-        
+
         self._width = 50
         self._misuses = defaultdict(list)
 
@@ -79,7 +81,7 @@ class Report:
         for checker in self._misuses:
             summary += f"- {checker}: {len(self._misuses[checker])}\n"
         return summary
-    
+
     @property
     def details(self):
         details = (
@@ -90,12 +92,9 @@ class Report:
         for checker_name in self._misuses:
             details += f"*** {checker_name} ***\n"
             for i, misuse_report in enumerate(self._misuses[checker_name]):
-                details += (
-                    f"Misuses #{i + 1}\n"
-                    f"{misuse_report}\n\n"
-                )
+                details += f"Misuses #{i + 1}\n" f"{misuse_report}\n\n"
         return details
-    
+
     def __str__(self) -> str:
         return self.summary
 
@@ -109,7 +108,7 @@ class Report:
     def merge(self, another: "Report"):
         for key in another._misuses:
             self.report_misuses(key, another._misuses[key])
-            
+
     def save(self, path):
         with open(path, "w") as fd:
             fd.write(self.summary + "\n" + self.details)

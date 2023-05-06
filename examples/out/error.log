@@ -1,1 +1,3 @@
-ERROR    | 2023-04-22 22:41:09,096 | Yasat.analyses.backward_slicing.slicing_state | Expression <BV32 __call__ ** 0xc1f0> is not a BV or concrete value
+ERROR    | 2023-05-04 16:32:27,895 | Yasat.analyses.backward_slicing.slicing_state | Expression <BV32 __call__ ** 0xc1f0> is not a BV or concrete value
+ERROR    | 2023-05-04 16:32:58,666 | Yasat.analyses.backward_slicing.slicing_state | Expression <BV32 __call__ ** 0x40a17c> is not a BV or concrete value
+ERROR    | 2023-05-04 16:32:58,830 | Yasat.analyses.backward_slicing.slicing_state | Expression <BV32 __call__ ** 0x40a17c> is not a BV or concrete value

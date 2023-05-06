@@ -55,7 +55,7 @@ class SlicingTrack:
         if int_value is not None:
             return int_value != 0
         return None
-    
+
     @property
     def function_value(self):
         func_addr = AstEnhancer.resolve_call(self._expr)
@@ -240,8 +240,6 @@ class SlicingState:
             {
                 "stmts": [PrintUtil.pstr_stmt(stmt) for stmt in self.block.statements],
                 "tracks": [track_to_dict(track) for track in self._tracks],
-                "concrete_tracks": [
-                    track_to_dict(track) for track in self._concrete_tracks
-                ],
+                "concrete_tracks": [track_to_dict(track) for track in self._concrete_tracks],
             }
         )

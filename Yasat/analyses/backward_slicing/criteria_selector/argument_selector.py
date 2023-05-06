@@ -19,10 +19,7 @@ class ArgumentSelector(CriteriaSelector):
     ) -> List[ailment.expression.Expression]:
         if isinstance(expr, ailment.statement.Call):
             v = self.eval(expr.target).one_concrete
-            if (
-                isinstance(v, claripy.ast.BV)
-                and v._model_concrete.value == self.callee_addr
-            ):
+            if isinstance(v, claripy.ast.BV) and v._model_concrete.value == self.callee_addr:
                 if expr.args is not None and len(expr.args) > self.arg_idx:
                     return [expr.args[self.arg_idx]]
         return []

@@ -3,6 +3,7 @@ from collections import defaultdict
 import logging
 import time
 
+import angr
 from angr import AngrNoPluginError, Project
 from angr.knowledge_plugins.cfg.cfg_model import CFGModel
 from angr.analyses.cfg.cfg_fast import CFGFast
@@ -10,6 +11,8 @@ from angr.knowledge_plugins.plugin import KnowledgeBasePlugin
 from angr.knowledge_base.knowledge_base import KnowledgeBase
 
 l = logging.getLogger(__name__)
+
+default_prototypes = {"EVP_EncryptInit_ex": "int(int, int, char*, char*, int, int, char*, char *)"}
 
 
 class Subject(KnowledgeBasePlugin):
@@ -22,7 +25,7 @@ class Subject(KnowledgeBasePlugin):
     def cfg(self) -> CFGModel:
         """
         Returns the CFG of the current function.
-        
+
         :return: A CFGModel object representing the CFG.
         """
         cfg = self._proj.kb.cfgs.get_most_accurate()
@@ -31,11 +34,16 @@ class Subject(KnowledgeBasePlugin):
         return cfg
 
     def build_cfg(self) -> CFGModel:
-        return self._proj.analyses.CFGFast(
+        cfg = self._proj.analyses.CFGFast(
             resolve_indirect_jumps=True,
             force_complete_scan=False,
             normalize=True,
         ).model
+        for func_addr in self._proj.kb.functions:
+            func = self._proj.kb.functions[func_addr]
+            if func.name in default_prototypes:
+                func.prototype = angr.types.parse_type(default_prototypes[func.name])
+        return cfg
 
     def is_local_function(self, func):
         proj = self._proj

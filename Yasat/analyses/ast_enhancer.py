@@ -68,13 +68,13 @@ class AstEnhancer:
                 if ast.args[0].op == "BVS" and "__load__" in ast.args[0].variables:
                     return not concrete or ast.args[1].concrete
         return False
-    
+
     @staticmethod
     def call(addr_v: claripy.ast.BV):
         assert isinstance(addr_v, claripy.ast.BV)
         call = claripy.BVS("__call__", addr_v.size(), explicit_name=True)
         return call**addr_v
-    
+
     @staticmethod
     def resolve_call(ast):
         if isinstance(ast, claripy.ast.Base) and len(ast.args) == 2:
@@ -84,7 +84,7 @@ class AstEnhancer:
                 if ast.args[0].op == "BVS" and "__call__" in ast.args[0].variables:
                     return AstEnhancer.concrete_value(ast.args[1])
         return None
-    
+
     @staticmethod
     def extract_loads(expr: claripy.ast.Base, concrete=True):
         asts = list(expr.children_asts()) + [expr]
@@ -115,7 +115,7 @@ class AstEnhancer:
 
     def const(expr: Const):
         return claripy.BVV(expr.value, expr.bits)
-    
+
     def concrete_value(base: claripy.ast.Base) -> Optional[int]:
         if base.concrete:
             if isinstance(base, claripy.ast.Bool):

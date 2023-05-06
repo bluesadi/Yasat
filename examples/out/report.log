@@ -1,17 +1,17 @@
 ##################################################
 #                    Summary                     #
 ##################################################
-Time: 66 seconds
-Extraction success rate: 100% (6 success, 0 failure, 0)
-Analysis success rate: 100% (154 success, 0 failure, 0 timeout)
-Misuses number: 33
+Time: 163 seconds
+Extraction success rate: 100% (7 success, 0 failure, 0)
+Analysis success rate: 100% (155 success, 0 failure, 0 timeout)
+Misuses number: 38
 - ConstantKeysChecker: 2
 - ConstantSaltsChecker: 11
 - ConstantIVsChecker: 0
 - PBEIterationsChecker: 0
 - RSAKeySizesChecker: 0
-- UnsafeEVPAlogirthmsChecker: 0
-- UnsafeAlgorithmsChecker: 20
+- UnsafeEVPAlogirthmsChecker: 4
+- UnsafeAlgorithmsChecker: 21
 
 ##################################################
 #               Potential Misuses                #
@@ -38,7 +38,7 @@ Misuses #1
 [-] Correctness: UN
 [-] Statements:
 0x50290 | Call(0xc1f0<32>, <SimCCARM>: [Call (target: 0xb758<32>, prototype: (int (32 bits), int (32 bits)) -> int (32 bits), args: [r0<4>, r4<4>]), r4<4>], ret: r0<4>, fp_ret: no-fp-ret-value)
-0x50248 | r4<4> = 0x6040a<32>
+0x50230 | r4<4> = 0x6040a<32>
 
 Misuses #2
 [-] Filename: /home/bluesadi/dev/Yasat/examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/bin/busybox
@@ -46,7 +46,7 @@ Misuses #2
 [-] Correctness: UN
 [-] Statements:
 0x50290 | Call(0xc1f0<32>, <SimCCARM>: [Call (target: 0xb758<32>, prototype: (int (32 bits), int (32 bits)) -> int (32 bits), args: [r0<4>, r4<4>]), r4<4>], ret: r0<4>, fp_ret: no-fp-ret-value)
-0x50230 | r4<4> = 0x6040a<32>
+0x50248 | r4<4> = 0x6040a<32>
 
 Misuses #3
 [-] Filename: /home/bluesadi/dev/Yasat/examples/tmp/logic
@@ -115,124 +115,166 @@ Misuses #11
 *** PBEIterationsChecker ***
 *** RSAKeySizesChecker ***
 *** UnsafeEVPAlogirthmsChecker ***
-*** UnsafeAlgorithmsChecker ***
 Misuses #1
-[-] Filename: /home/bluesadi/dev/Yasat/examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/bin/wget
-[-] Description: Call to DES_ecb_encrypt() at address 0x2bff0
+[-] Filename: /home/bluesadi/dev/Yasat/examples/tmp/wpa_supplicant-macsec
+[-] Description: Call to EVP_EncryptInit_ex(type=EVP_des_ede3_cbc()) at address 0x4e2db4
 [-] Correctness: UN
 [-] Statements:
+0x4e2db4 | Call(0x40a05c<32>, <SimCCARM>: [Load(addr=r4<4>, size=4, endness=Iend_LE), r6<4>, 0x0<32>, 0x0<32>, Load(addr=stack_base-40, size=4, endness=Iend_LE)], ret: r0<4>, fp_ret: no-fp-ret-value)
+0x4e2d44 | r6<4> = r0<4>
+0x4e2d6c | Call(0x40a200<32>, <SimCCARM>: [], ret: r0<4>, fp_ret: no-fp-ret-value)
 
 Misuses #2
-[-] Filename: /home/bluesadi/dev/Yasat/examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/bin/wget
-[-] Description: Call to DES_ecb_encrypt() at address 0x2c010
+[-] Filename: /home/bluesadi/dev/Yasat/examples/tmp/wpa_supplicant-macsec
+[-] Description: Call to EVP_EncryptInit_ex(type=EVP_des_cbc()) at address 0x4e2db4
 [-] Correctness: UN
 [-] Statements:
+0x4e2db4 | Call(0x40a05c<32>, <SimCCARM>: [Load(addr=r4<4>, size=4, endness=Iend_LE), r6<4>, 0x0<32>, 0x0<32>, Load(addr=stack_base-40, size=4, endness=Iend_LE)], ret: r0<4>, fp_ret: no-fp-ret-value)
+0x4e2d44 | r6<4> = r0<4>
+0x4e2d74 | Call(0x40a4f4<32>, <SimCCARM>: [], ret: r0<4>, fp_ret: no-fp-ret-value)
 
 Misuses #3
-[-] Filename: /home/bluesadi/dev/Yasat/examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/bin/wget
-[-] Description: Call to DES_ecb_encrypt() at address 0x2c034
+[-] Filename: /home/bluesadi/dev/Yasat/examples/tmp/wpa_supplicant-macsec
+[-] Description: Call to EVP_DecryptInit_ex(type=EVP_des_ede3_cbc()) at address 0x4e2e44
 [-] Correctness: UN
 [-] Statements:
+0x4e2e44 | Call(0x409f00<32>, <SimCCARM>: [Load(addr=(r4<4> + 0x4<32>), size=4, endness=Iend_LE), r6<4>, 0x0<32>, 0x0<32>, Load(addr=stack_base-40, size=4, endness=Iend_LE)], ret: r0<4>, fp_ret: no-fp-ret-value)
+0x4e2d44 | r6<4> = r0<4>
+0x4e2d6c | Call(0x40a200<32>, <SimCCARM>: [], ret: r0<4>, fp_ret: no-fp-ret-value)
 
 Misuses #4
-[-] Filename: /home/bluesadi/dev/Yasat/examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/bin/wget
-[-] Description: Call to DES_ecb_encrypt() at address 0x2c0e8
+[-] Filename: /home/bluesadi/dev/Yasat/examples/tmp/wpa_supplicant-macsec
+[-] Description: Call to EVP_DecryptInit_ex(type=EVP_des_cbc()) at address 0x4e2e44
 [-] Correctness: UN
 [-] Statements:
+0x4e2e44 | Call(0x409f00<32>, <SimCCARM>: [Load(addr=(r4<4> + 0x4<32>), size=4, endness=Iend_LE), r6<4>, 0x0<32>, 0x0<32>, Load(addr=stack_base-40, size=4, endness=Iend_LE)], ret: r0<4>, fp_ret: no-fp-ret-value)
+0x4e2d44 | r6<4> = r0<4>
+0x4e2d74 | Call(0x40a4f4<32>, <SimCCARM>: [], ret: r0<4>, fp_ret: no-fp-ret-value)
 
-Misuses #5
-[-] Filename: /home/bluesadi/dev/Yasat/examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/bin/wget
-[-] Description: Call to DES_ecb_encrypt() at address 0x2c108
-[-] Correctness: UN
-[-] Statements:
-
-Misuses #6
-[-] Filename: /home/bluesadi/dev/Yasat/examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/bin/wget
-[-] Description: Call to MD4_Init() at address 0x2c168
-[-] Correctness: UN
-[-] Statements:
-
-Misuses #7
-[-] Filename: /home/bluesadi/dev/Yasat/examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/bin/wget
-[-] Description: Call to MD5_Init() at address 0x2c6cc
-[-] Correctness: UN
-[-] Statements:
-
-Misuses #8
+*** UnsafeAlgorithmsChecker ***
+Misuses #1
 [-] Filename: /home/bluesadi/dev/Yasat/examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/httpd
 [-] Description: Call to SHA1() at address 0x15ea8
 [-] Correctness: UN
 [-] Statements:
 
-Misuses #9
+Misuses #2
 [-] Filename: /home/bluesadi/dev/Yasat/examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/httpd
 [-] Description: Call to SHA1() at address 0x15ed4
 [-] Correctness: UN
 [-] Statements:
 
-Misuses #10
+Misuses #3
 [-] Filename: /home/bluesadi/dev/Yasat/examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/httpd
 [-] Description: Call to SHA1() at address 0x5e144
 [-] Correctness: UN
 [-] Statements:
 
-Misuses #11
+Misuses #4
 [-] Filename: /home/bluesadi/dev/Yasat/examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/local/sbin/openvpn
 [-] Description: Call to DES_ecb_encrypt() at address 0x120c8
 [-] Correctness: UN
 [-] Statements:
 
+Misuses #5
+[-] Filename: /home/bluesadi/dev/Yasat/examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/bin/wget
+[-] Description: Call to DES_ecb_encrypt() at address 0x2bff0
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #6
+[-] Filename: /home/bluesadi/dev/Yasat/examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/bin/wget
+[-] Description: Call to DES_ecb_encrypt() at address 0x2c010
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #7
+[-] Filename: /home/bluesadi/dev/Yasat/examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/bin/wget
+[-] Description: Call to DES_ecb_encrypt() at address 0x2c034
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #8
+[-] Filename: /home/bluesadi/dev/Yasat/examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/bin/wget
+[-] Description: Call to DES_ecb_encrypt() at address 0x2c0e8
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #9
+[-] Filename: /home/bluesadi/dev/Yasat/examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/bin/wget
+[-] Description: Call to DES_ecb_encrypt() at address 0x2c108
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #10
+[-] Filename: /home/bluesadi/dev/Yasat/examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/bin/wget
+[-] Description: Call to MD4_Init() at address 0x2c168
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #11
+[-] Filename: /home/bluesadi/dev/Yasat/examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/bin/wget
+[-] Description: Call to MD5_Init() at address 0x2c6cc
+[-] Correctness: UN
+[-] Statements:
+
 Misuses #12
-[-] Filename: /home/bluesadi/dev/Yasat/examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/bftpd
-[-] Description: Call to SHA1() at address 0xeaec
+[-] Filename: /home/bluesadi/dev/Yasat/examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/tcpdump
+[-] Description: Call to MD5_Init() at address 0x535d8
 [-] Correctness: UN
 [-] Statements:
 
 Misuses #13
 [-] Filename: /home/bluesadi/dev/Yasat/examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/tcpdump
-[-] Description: Call to MD5_Init() at address 0x535d8
+[-] Description: Call to MD5_Init() at address 0x53680
 [-] Correctness: UN
 [-] Statements:
 
 Misuses #14
 [-] Filename: /home/bluesadi/dev/Yasat/examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/tcpdump
-[-] Description: Call to MD5_Init() at address 0x53680
+[-] Description: Call to MD5_Init() at address 0x536b4
 [-] Correctness: UN
 [-] Statements:
 
 Misuses #15
 [-] Filename: /home/bluesadi/dev/Yasat/examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/tcpdump
-[-] Description: Call to MD5_Init() at address 0x536b4
-[-] Correctness: UN
-[-] Statements:
-
-Misuses #16
-[-] Filename: /home/bluesadi/dev/Yasat/examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/tcpdump
 [-] Description: Call to MD5_Init() at address 0x4e280
 [-] Correctness: UN
 [-] Statements:
 
-Misuses #17
+Misuses #16
 [-] Filename: /home/bluesadi/dev/Yasat/examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/tcpdump.4.4.0
 [-] Description: Call to MD5_Init() at address 0x535d8
 [-] Correctness: UN
 [-] Statements:
 
-Misuses #18
+Misuses #17
 [-] Filename: /home/bluesadi/dev/Yasat/examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/tcpdump.4.4.0
 [-] Description: Call to MD5_Init() at address 0x53680
 [-] Correctness: UN
 [-] Statements:
 
-Misuses #19
+Misuses #18
 [-] Filename: /home/bluesadi/dev/Yasat/examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/tcpdump.4.4.0
 [-] Description: Call to MD5_Init() at address 0x536b4
 [-] Correctness: UN
 [-] Statements:
 
-Misuses #20
+Misuses #19
 [-] Filename: /home/bluesadi/dev/Yasat/examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/tcpdump.4.4.0
 [-] Description: Call to MD5_Init() at address 0x4e280
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #20
+[-] Filename: /home/bluesadi/dev/Yasat/examples/tmp/_AC1450-V1.0.0.36_10.0.17.zip.extracted/_AC1450-V1.0.0.36_10.0.17.chk.extracted/squashfs-root/usr/sbin/bftpd
+[-] Description: Call to SHA1() at address 0xeaec
+[-] Correctness: UN
+[-] Statements:
+
+Misuses #21
+[-] Filename: /home/bluesadi/dev/Yasat/examples/tmp/wpa_supplicant-macsec
+[-] Description: Call to DES_ecb_encrypt() at address 0x4e20b4
 [-] Correctness: UN
 [-] Statements:
 

@@ -6,6 +6,7 @@ from ailment.statement import Statement
 
 l = logging.getLogger(__name__)
 
+
 class PrintUtil:
     def pstr(obj):
         """

@@ -7,7 +7,7 @@ class Config:
     report_dir: str
     log_dir: str
     db_dir: str
-    
+
     debug_mode: bool
     timeout: int
     analyzing_timeout: int

@@ -6,13 +6,14 @@ from .rsa_key_sizes import RSAKeySizesChecker
 from .unsafe_evp_algorithms import UnsafeEVPAlogirthmsChecker
 from .unsafe_algorithms import UnsafeAlgorithmsChecker
 
+
 class CheckerPrototype:
-    
     def __init__(self, name, desc, criteria):
         self.name = name
         self.desc = desc
         self.criteria = criteria
-        
+
+
 default_checkers = {
     ConstantKeysChecker: [
         ("crypt", 0),
@@ -29,13 +30,13 @@ default_checkers = {
         ("EVP_DecryptInit_ex2", 2),
         ("AES_set_encrypt_key", 0),
         ("AES_set_decrypt_key", 0),
-        ("DES_set_key", 0)
+        ("DES_set_key", 0),
     ],
     ConstantSaltsChecker: [
         ("crypt", 1),
         ("DES_crypt", 1),
         ("DES_fcrypt", 1),
-        ("EVP_BytesToKey", 2)
+        ("EVP_BytesToKey", 2),
     ],
     ConstantIVsChecker: [
         ("EVP_CipherInit", 3),
@@ -47,11 +48,9 @@ default_checkers = {
         ("EVP_CipherInit_ex2", 3),
         ("EVP_EncryptInit_ex2", 3),
         ("EVP_DecryptInit_ex2", 3),
-        ("AES_cbc_encrypt", 4)
+        ("AES_cbc_encrypt", 4),
     ],
-    PBEIterationsChecker: [
-        ("EVP_BytesToKey", 5)
-    ],
+    PBEIterationsChecker: [("EVP_BytesToKey", 5)],
     RSAKeySizesChecker: [
         ("EVP_RSA_gen", 0),
         ("RSA_generate_key_ex", 1),
@@ -71,7 +70,7 @@ default_checkers = {
         ("EVP_DecryptInit_ex2", 1),
         ("EVP_DigestInit", 1),
         ("EVP_DigestInit_ex", 1),
-        ("EVP_DigestInit_ex2", 1)
+        ("EVP_DigestInit_ex2", 1),
     ],
     UnsafeAlgorithmsChecker: [
         ("AES_ecb_encrypt", 0),
@@ -86,11 +85,10 @@ default_checkers = {
         ("MD4_Init", 0),
         ("MD5", 0),
         ("MD5_Init", 0),
-        
         # ("EVP_aes_128_ecb", 0),
         # ("EVP_aes_192_ecb", 0),
         # ("EVP_aes_256_ecb", 0)
-    ]
+    ],
 }
 
 target_apis = set()

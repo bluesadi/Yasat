@@ -13,9 +13,10 @@ from ..utils.format import format_stmt
 
 l = logging.getLogger(__name__)
 
+
 class RuleChecker(Analysis):
     subject: Subject
-    
+
     def __init__(self, criteria):
         super().__init__()
         self.proj = self.project
@@ -62,6 +63,7 @@ class FunctionCallsChecker(RuleChecker):
                 )
         return results
 
+
 class ConstantValuesChecker(RuleChecker):
     def __init__(self, criteria, arg_name, type, filter=None):
         super().__init__(criteria)
@@ -74,9 +76,7 @@ class ConstantValuesChecker(RuleChecker):
             arg_value = f'"{arg_value}"'
         elif isinstance(arg_value, Function):
             arg_value = f"{arg_value.name}()"
-        return (
-            f"Call to {func_name}({arg_name}={arg_value}) at address {hex(caller_addr)}"
-        )
+        return f"Call to {func_name}({arg_name}={arg_value}) at address {hex(caller_addr)}"
 
     def _check_one(self, func_name, arg_idx) -> List[Misuse]:
         results = []
@@ -85,8 +85,7 @@ class ConstantValuesChecker(RuleChecker):
         for caller_func_addr in callers:
             target_func = self.proj.kb.functions[caller_func_addr]
             bs: BackwardSlicing = self.proj.analyses.BackwardSlicing(
-                target_func=target_func, 
-                criteria_selectors=[ArgumentSelector(callee_addr, arg_idx)]
+                target_func=target_func, criteria_selectors=[ArgumentSelector(callee_addr, arg_idx)]
             )
             for concrete_result in bs.concrete_results:
                 arg_value = None
@@ -103,9 +102,12 @@ class ConstantValuesChecker(RuleChecker):
                             Misuse(
                                 self.proj.filename,
                                 self._build_misuse_desc(
-                                    func_name, self.arg_name, arg_value, concrete_result.slice[0].ins_addr
+                                    func_name,
+                                    self.arg_name,
+                                    arg_value,
+                                    concrete_result.slice[0].ins_addr,
                                 ),
-                                [PrintUtil.pstr_stmt(stmt) for stmt in concrete_result.slice]
+                                [PrintUtil.pstr_stmt(stmt) for stmt in concrete_result.slice],
                             )
                         )
                     else:
@@ -117,10 +119,12 @@ class ConstantStringsChecker(ConstantValuesChecker):
     def __init__(self, criteria, arg_name, filter=None):
         super().__init__(criteria, arg_name=arg_name, type=str, filter=filter)
 
+
 class ConstantIntegersChecker(ConstantValuesChecker):
     def __init__(self, criteria, arg_name, filter=None):
         super().__init__(criteria, arg_name=arg_name, type=int, filter=filter)
-        
+
+
 class ReturnValuesChecker(ConstantValuesChecker):
     def __init__(self, criteria, arg_name, filter=None):
         super().__init__(criteria, arg_name=arg_name, type=Function, filter=filter)

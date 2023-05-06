@@ -27,10 +27,11 @@ class ClinicManager(KnowledgeBasePlugin):
 
         :param func: Function's address or Function instance.
         """
-        optimization_passes = get_default_optimization_passes(self._proj.arch, 
-                                                              self._proj.simos.name)
+        optimization_passes = get_default_optimization_passes(
+            self._proj.arch, self._proj.simos.name
+        )
         # We should avoid duplicate return blocks.
-        # If this optimization is enabled, some blocks with the same addresses may have different 
+        # If this optimization is enabled, some blocks with the same addresses may have different
         # AIL instructions.
         # See: https://github.com/angr/angr/issues/3784
         if EagerReturnsSimplifier in optimization_passes:
@@ -41,19 +42,16 @@ class ClinicManager(KnowledgeBasePlugin):
             return self._cached[func.addr]
         try:
             clinic = self._proj.analyses.Clinic(
-                func, 
-                cfg=self._kb.cfgs.get_most_accurate(),
-                optimization_passes=optimization_passes
+                func, cfg=self._kb.cfgs.get_most_accurate(), optimization_passes=optimization_passes
             )
         except Exception as e:
             l.warning(f"Failed to build AIL graph for {func.name} (1/2)")
-            l.warning(''.join(traceback.format_exception(type(e), e, e.__traceback__)))
+            l.warning("".join(traceback.format_exception(type(e), e, e.__traceback__)))
             try:
-                clinic = self._proj.analyses.Clinic(func,
-                                                    optimization_passes=optimization_passes)
+                clinic = self._proj.analyses.Clinic(func, optimization_passes=optimization_passes)
             except Exception as e:
                 l.warning(f"Failed to build AIL graph for {func.name} (2/2)")
-                l.warning(''.join(traceback.format_exception(type(e), e, e.__traceback__)))
+                l.warning("".join(traceback.format_exception(type(e), e, e.__traceback__)))
                 return None
         self._cached[func.addr] = clinic
         return clinic
