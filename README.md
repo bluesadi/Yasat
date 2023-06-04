@@ -53,7 +53,7 @@ Misuses number: 42
 ```
 Also you can check the detailed reports out in [examples/out](examples/out).
 
-The more formal command is `yasat`, `yasat` takes two arguments as follows.
+The more formal command is `yasat`, which takes two arguments as follows.
 
 **Configuration:** Yasat's behavior is fully controlled by the configuration file, which you can specify by -c option. If not specified, Yasat will use [config.yml](config.yml) by default. Take a look at [config.yml](config.yml) and [Yasat/main_cli.py](Yasat/main_cli.py) for a better idea.
 
